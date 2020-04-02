@@ -1,18 +1,20 @@
-package tei2xmi;
+package utils;
 
 import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Paragraph;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
+import de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity;
 
 import org.apache.uima.UIMAFramework;
 import org.apache.uima.cas.CASException;
+import org.apache.uima.cas.impl.XmiCasDeserializer;
 import org.apache.uima.cas.impl.XmiCasSerializer;
 import org.apache.uima.fit.factory.AnnotationFactory;
 import org.apache.uima.fit.factory.JCasFactory;
+import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
-import org.apache.uima.jcas.tcas.DocumentAnnotation;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.metadata.TypeSystemDescription;
 import org.apache.uima.util.InvalidXMLException;
@@ -20,10 +22,8 @@ import org.apache.uima.util.XMLInputSource;
 import org.apache.uima.util.XMLParser;
 import org.apache.uima.util.XMLSerializer;
 import org.xml.sax.SAXException;
-import utils.Metadata;
-import utils.Segment;
-import utils.Segments;
 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -68,6 +68,21 @@ public class CasDoc {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public void read(String xmi) {
+        try {
+            FileInputStream fis = new FileInputStream(xmi);
+            try {
+                XmiCasDeserializer.deserialize(fis, jCas.getCas());
+            } catch (SAXException e) {
+                System.out.println(xmi);
+                e.printStackTrace();
+            }
+            fis.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void write(String outXmi) {
@@ -132,6 +147,29 @@ public class CasDoc {
         a.setCollectionId(metadata.getCollectionId());
         a.setDocumentTitle(metadata.getDocumentTitle());
         a.addToIndexes(jCas);
+    }
+
+    public List<Token> getTokens() {
+        return (List) JCasUtil.select(jCas, Token.class);
+    }
+
+    public List<NamedEntity> getEntities() {
+        return (List) JCasUtil.select(jCas, NamedEntity.class);
+    }
+
+    public void addEntity(int begin, int end, String value) {
+        Annotation a = AnnotationFactory.createAnnotation(jCas, begin, end, NamedEntity.class);
+        ((NamedEntity) a).setValue(value);
+        a.addToIndexes(jCas);
+    }
+
+    public String getId() {
+        List<DocumentMetaData> metadata = (List) JCasUtil.select(jCas, DocumentMetaData.class);
+        return metadata.get(0).getDocumentId();
+    }
+
+    public String getRawText() {
+        return jCas.getDocumentText();
     }
 }
 

@@ -1,0 +1,76 @@
+package utils;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.BiConsumer;
+import java.util.stream.Stream;
+
+public class IO {
+    /**
+     * Processes files in dir given a file consumer
+     * @param indir     input directory
+     * @param outdir    output directory
+     * @param fileConsumer a bi-consumer (input file path, output directory)
+     */
+    public static void loop(String indir, String outdir, BiConsumer<Path, String> fileConsumer) {
+        Path dirpath = Paths.get(outdir);
+        if (!Files.exists(dirpath)) {
+            try {
+                Files.createDirectories(Paths.get(outdir));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        try (Stream<Path> paths = Files.walk(Paths.get(indir))) {
+            paths.filter(p -> Files.isRegularFile(p)).filter(p -> {
+                try {
+                    return ! Files.isHidden(p);
+                } catch (IOException e) {
+                    return false;
+                }}).forEach(f -> fileConsumer.accept(f, outdir));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    /**
+     * Processes files in dir given a file consumer
+     * @param indir1    input directory
+     * @param indir2    input directory
+     * @param outdir    output directory
+     * @param fileConsumer a bi-consumer (input file from dir1, (indir2 , outdir))
+     */
+    public static void loop(String indir1, String indir2, String outdir, BiConsumer<Path, List<String>> fileConsumer) {
+        Path dirpath = Paths.get(outdir);
+        if (!Files.exists(dirpath)) {
+            try {
+                Files.createDirectories(Paths.get(outdir));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        List<String> dirs = new ArrayList<>();
+        dirs.add(indir2);
+        dirs.add(outdir);
+        try (Stream<Path> paths = Files.walk(Paths.get(indir1))) {
+            paths.filter(p -> Files.isRegularFile(p)).filter(p -> {
+                try {
+                    return ! Files.isHidden(p);
+                } catch (IOException e) {
+                    return false;
+                }}).forEach(f -> fileConsumer.accept(f, dirs));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static String append(String dirName, String fileName) {
+        if (dirName.endsWith("/"))
+            return dirName + fileName;
+        else
+            return dirName + "/" + fileName;
+    }
+}

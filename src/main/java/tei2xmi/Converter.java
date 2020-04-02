@@ -1,23 +1,14 @@
 package tei2xmi;
 
 import utils.*;
-import xjc.tei.Date;
-import xjc.tei.P;
 import xjc.tei.TEI;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.UnmarshalException;
 import javax.xml.bind.Unmarshaller;
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.List;
-import java.util.stream.Stream;
 
 public class Converter {
 
@@ -91,57 +82,11 @@ public class Converter {
         noteConverter.convert(tei, outfile);
     }
 
-    /**
-     * Reads files in dir and converts them to index, or text/note files
-     * @param indir
-     * @param outdir
-     */
-    public static void convertDir(String indir, String outdir) {
-        Path dirpath = Paths.get(outdir);
-        if (!Files.exists(dirpath)) {
-            try {
-                Files.createDirectories(Paths.get(outdir));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        try (Stream<Path> paths = Files.walk(Paths.get(indir))) {
-            paths.filter(p -> Files.isRegularFile(p)).filter(p -> {
-                try {
-                    return ! Files.isHidden(p);
-                } catch (IOException e) {
-                    return false;
-                }}).forEach(f -> convertFile(f, dirpath.toString()));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+
 
     public static void main(String[] args) {
-        Converter.convertDir(args[0], args[1]);
+        IO.loop(args[0], args[1], (x, y) -> convertFile(x, y));
     }
 
-    private static String filedate(Path file) {
-        String fileId = file.getFileName().toString().replaceAll("\\." + TEI_SFX, "");
-        TEI tei = load(file.toString());
-        StringBuilder sb = new StringBuilder();
-        sb.append(fileId);
-        try {
-            List<P> z = tei.getTeiHeader().getFileDesc().getPublicationStmt().getPS();
-            List<Object> x = z.get(0).getContent();
-            Object y = x.stream().filter(c -> c instanceof Date).findFirst().orElse(null);
-            try {
-                String d = (String) ((Date) y).getContent().get(0);
-                sb.append("\t").append(d);
-            } catch (IndexOutOfBoundsException e) {
-                sb.append("\t").append("None");
-            }
-        } catch (NullPointerException e) {
-            sb.append("\t").append("None");
-        }
-
-        sb.append("\n");
-        return sb.toString();
-    }
 
 }
