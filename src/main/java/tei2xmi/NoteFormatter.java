@@ -21,10 +21,7 @@ public class NoteFormatter extends Formatter {
     }
 
     private List<ATeiTree> listNotes(ATeiTree tree) {
-        return tree.collect(t -> t.getTeiType().equals(ATeiTree.TeiType.NOTE) || isFoliaReference(t));
+        return tree.collect(t -> t.getTeiType().equals(ATeiTree.TeiType.NOTE));
     }
 
-    private boolean isFoliaReference(ATeiTree t) {
-        return t.getTeiType().equals(ATeiTree.TeiType.P) && FOLIA.matcher(createParagraph(t).getContent()).matches();
-    }
 }

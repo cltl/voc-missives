@@ -20,11 +20,7 @@ public class TextFormatter extends Formatter {
         cleanStrings(paragraphs);
         filterNotesAndBreaks(paragraphs);
         List<TeiLeaf> paragraphsAsText = flatten(paragraphs);
-        return paragraphsAsText.stream().filter(p -> ! isFoliaReference(p)).collect(Collectors.toList());
-    }
-
-    private boolean isFoliaReference(TeiLeaf p) {
-        return FOLIA.matcher(p.getContent()).matches();
+        return paragraphsAsText;
     }
 
     protected void filterNotesAndBreaks(List<ATeiTree> paragraphs) {

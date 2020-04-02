@@ -15,7 +15,6 @@ import java.util.stream.Collectors;
  */
 public abstract class Formatter {
     public static final String PARA_SEP = "\n";
-    final static Pattern FOLIA = Pattern.compile(".* [fF]ol\\. \\d+-\\d+.");
 
     String fileExtension;
 
