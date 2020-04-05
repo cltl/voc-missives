@@ -171,5 +171,9 @@ public class CasDoc {
     public String getRawText() {
         return jCas.getDocumentText();
     }
+
+    public List getSentences() {
+        return (List) JCasUtil.select(jCas, Sentence.class);
+    }
 }
 
