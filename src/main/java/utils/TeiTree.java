@@ -1,5 +1,8 @@
 package utils;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -7,7 +10,6 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class TeiTree extends ATeiTree {
-
     List<ATeiTree> children;
     String content;
 

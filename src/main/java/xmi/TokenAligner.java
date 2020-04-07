@@ -76,8 +76,8 @@ public class TokenAligner {
             Token ref = refTokens.get(iRef);
             Token ext = extTokens.get(iExt);
             boolean aligned = extTokenMatchesRef(ext, ref)
-                    || extTokenMatchesHyphenatedRef(ext, ref)
                     || extTokensMatchSingleRef(ext, ref)
+                    || extTokenMatchesHyphenatedRef(ext, ref)
                     || manyToManyAlignment(ext, ref)
                     || refTokensNotInExt(ext)
                     || extTokensNotInRef(ref);
@@ -145,6 +145,11 @@ public class TokenAligner {
         } else if (matchesHyphenatedRef(ext, ref)) {
             mapIndices(ext, ref);
             iRef++;
+            iExt++;
+            return true;
+        } else if (matches3SplitRef(ext, refTokens, iRef)) {
+            mapIndices(ext, ref.getBegin(), refTokens.get(iRef + 2).getEnd());
+            iRef += 3;
             iExt++;
             return true;
         }
@@ -222,6 +227,14 @@ public class TokenAligner {
         String refText = refTokens.get(iRef).getText();
         return ext.getText().startsWith(refText.substring(0, refText.length() - 1))
                 && ext.getText().endsWith(refTokens.get(iRef + 1).getText());
+    }
+
+    private boolean matches3SplitRef(Token ext, List<Token> refTokens, int iRef) {
+        if (iRef == refTokens.size() - 2)
+            return false;
+        String refText = refTokens.get(iRef).getText();
+        return ext.getText().startsWith(refText.substring(0, refText.length() - 1))
+                && ext.getText().endsWith(refTokens.get(iRef + 2).getText());
     }
 
     private boolean matchesText(Token t1, Token t2) {

@@ -1,6 +1,8 @@
 package xmi;
 
 import de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import utils.CasDoc;
 import utils.IO;
 import utils.Span;
@@ -29,6 +31,7 @@ public class EntityAligner {
      */
     static final int MAX_TOKEN_LOOK_AHEAD = 350;
 
+    public static final Logger logger = LogManager.getLogger(EntityAligner.class);
     private EntityAligner(CasDoc reference, CasDoc external) {
         this.reference = reference;
         this.external = external;
@@ -62,8 +65,8 @@ public class EntityAligner {
         for (NamedEntity e: external.getEntities()) {
             Span ref = aligner.getReferenceSpan(e.getBegin(), e.getEnd());
             if (ref.getBegin() == -1 || ref.getEnd() < ref.getBegin())
-                throw new IllegalArgumentException("Entity has invalid reference span " + ref.toString()
-                        + "\n" + e.toShortString());
+                throw new IllegalArgumentException("Found entity with invalid reference span " + ref.toString()
+                        + "; " + e.getCoveredText() + "@ " + e.getBegin() + "-" + e.getEnd());
             reference.addEntity(ref.getBegin(), ref.getEnd(), e.getValue());
         }
     }
@@ -79,7 +82,11 @@ public class EntityAligner {
             String outFile = IO.append(dirs.get(1), fileName);
 
             EntityAligner entityAligner = EntityAligner.create(refFile, file.toString());
-            entityAligner.run();
+            try {
+                entityAligner.run();
+            } catch (IllegalArgumentException e) {
+                logger.fatal("Error while aligning entities for " + fileName, e);
+            }
             entityAligner.write(outFile);
         }
     }

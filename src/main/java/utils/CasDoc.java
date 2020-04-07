@@ -6,6 +6,8 @@ import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.uima.UIMAFramework;
 import org.apache.uima.cas.CASException;
 import org.apache.uima.cas.impl.XmiCasDeserializer;
@@ -34,6 +36,7 @@ public class CasDoc {
     TypeSystemDescription tsd;
     private static final String TSD_FILE = "src/main/resources/dkproTypeSystem.xml";
     public static final String FILE_EXT = ".xmi";
+    private static final Logger logger = LogManager.getLogger(CasDoc.class);
 
     private CasDoc(JCas jCas, TypeSystemDescription tsd) {
         this.jCas = jCas;
@@ -43,29 +46,19 @@ public class CasDoc {
 
     public static CasDoc create() {
         XMLParser xmlp = UIMAFramework.getXMLParser();
-        XMLInputSource fis = null;
         try {
-            fis = new XMLInputSource(TSD_FILE);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        TypeSystemDescription tsd = null;
-        try {
-            tsd = xmlp.parseTypeSystemDescription(fis);
-        } catch (InvalidXMLException e) {
-            e.printStackTrace();
-        }
-        try {
+            XMLInputSource fis = new XMLInputSource(TSD_FILE);
+            TypeSystemDescription tsd = xmlp.parseTypeSystemDescription(fis);
             fis.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
             return new CasDoc(JCasFactory.createJCas(tsd), tsd);
+        } catch (InvalidXMLException e) {
+            logger.fatal("Error creating CAS doc", e);
+        } catch (IOException e) {
+            logger.fatal("Error creating CAS doc", e);
         } catch (ResourceInitializationException e) {
-            e.printStackTrace();
+            logger.fatal("Error creating CAS doc", e);
         } catch (CASException e) {
-            e.printStackTrace();
+            logger.fatal("Error creating CAS doc", e);
         }
         return null;
     }
@@ -73,15 +66,12 @@ public class CasDoc {
     public void read(String xmi) {
         try {
             FileInputStream fis = new FileInputStream(xmi);
-            try {
-                XmiCasDeserializer.deserialize(fis, jCas.getCas());
-            } catch (SAXException e) {
-                System.out.println(xmi);
-                e.printStackTrace();
-            }
+            XmiCasDeserializer.deserialize(fis, jCas.getCas());
             fis.close();
+        } catch (SAXException e) {
+            logger.fatal("Error reading " + xmi, e);
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.fatal("Error reading " + xmi, e);
         }
     }
 
@@ -90,19 +80,19 @@ public class CasDoc {
         try {
             fos = new FileOutputStream(outXmi);
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            logger.fatal("Error writing to " + outXmi, e);
         }
         XMLSerializer sax2xml = new XMLSerializer(fos, true);
         XmiCasSerializer xmiCasSerializer = new XmiCasSerializer(jCas.getTypeSystem());
         try {
             xmiCasSerializer.serialize(jCas.getCas(), sax2xml.getContentHandler());
         } catch (SAXException e) {
-            e.printStackTrace();
+            logger.fatal("Error writing to " + outXmi, e);
         }
         try {
             fos.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.fatal("Error writing to " + outXmi, e);
         }
     }
 

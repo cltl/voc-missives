@@ -1,13 +1,15 @@
 package tei2xmi;
 
 
-import utils.*;
+import utils.ATeiTree;
+import utils.Paragraph;
+import utils.TeiLeaf;
+import utils.TeiTree;
 
 import java.util.LinkedList;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
-import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 /**
@@ -15,7 +17,6 @@ import java.util.stream.Collectors;
  */
 public abstract class Formatter {
     public static final String PARA_SEP = "\n";
-
     String fileExtension;
 
     public Formatter(String fileExtension) {
@@ -36,12 +37,8 @@ public abstract class Formatter {
         paragraphs.forEach(p -> p.accept(cleanLeaf));
     }
 
-    private boolean isParagraph(ATeiTree t) {
+    protected boolean isParagraph(ATeiTree t) {
         return t.getTeiType().equals(ATeiTree.TeiType.HEAD) || t.getTeiType().equals(ATeiTree.TeiType.P);
-    }
-
-    protected List<ATeiTree> listParagraphs(ATeiTree tree) {
-        return tree.collect(t -> isParagraph(t));
     }
 
     protected List<TeiLeaf> flatten(List<ATeiTree> paragraphs) {

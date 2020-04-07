@@ -1,5 +1,8 @@
 package utils;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -10,6 +13,8 @@ import java.util.function.BiConsumer;
 import java.util.stream.Stream;
 
 public class IO {
+
+    private static final Logger logger = LogManager.getLogger(CasDoc.class);
     /**
      * Processes files in dir given a file consumer
      * @param indir     input directory
@@ -22,7 +27,7 @@ public class IO {
             try {
                 Files.createDirectories(Paths.get(outdir));
             } catch (IOException e) {
-                e.printStackTrace();
+                logger.fatal("Error creating " + outdir, e);
             }
         }
         try (Stream<Path> paths = Files.walk(Paths.get(indir))) {
@@ -30,10 +35,11 @@ public class IO {
                 try {
                     return ! Files.isHidden(p);
                 } catch (IOException e) {
+                    logger.warn("Error testing " + p, e);
                     return false;
                 }}).forEach(f -> fileConsumer.accept(f, outdir));
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.fatal("Error processing files in " + indir, e);
         }
     }
     /**
@@ -49,7 +55,7 @@ public class IO {
             try {
                 Files.createDirectories(Paths.get(outdir));
             } catch (IOException e) {
-                e.printStackTrace();
+                logger.fatal("Error creating " + outdir, e);
             }
         }
         List<String> dirs = new ArrayList<>();
@@ -60,10 +66,11 @@ public class IO {
                 try {
                     return ! Files.isHidden(p);
                 } catch (IOException e) {
+                    logger.warn("Error testing " + p, e);
                     return false;
                 }}).forEach(f -> fileConsumer.accept(f, dirs));
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.fatal("Error processing files in " + indir1, e);
         }
     }
 

@@ -1,5 +1,7 @@
 package tei2xmi;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import utils.*;
 import xjc.tei.TEI;
 
@@ -17,7 +19,7 @@ public class Converter {
     Document document;
 
     static String TEI_SFX = "xml";
-
+    public static final Logger logger = LogManager.getLogger(Converter.class);
 
     public Converter(Formatter formatter, Metadata metadata) {
         this.teiXmi = CasDoc.create();
@@ -33,16 +35,16 @@ public class Converter {
             TEI tei = (TEI) jaxbUnmarshaller.unmarshal(file);
             return tei;
         } catch (UnmarshalException e) {
-            System.out.println(file.toString());
-            e.printStackTrace();
+            logger.error(file.toString(), e);
         } catch (JAXBException e) {
-            e.printStackTrace();
+            logger.error(file.toString(), e);
         }
         return null;
     }
 
     private void convert(TEI tei, String outfile) {
-        document.formatParagraphs(TeiTreeFactory.create(tei));
+        ATeiTree tree = TeiTreeFactory.create(tei);
+        document.formatParagraphs(tree);
         document.segmentAndTokenize(tokenizer);
         if (! document.isEmpty())
             writeXmi(fullName(outfile));
@@ -73,7 +75,7 @@ public class Converter {
         try {
             metadata = Metadata.create(tei);
         } catch (NullPointerException e) {
-            System.out.println("no fileDesc for " + fileId);
+            logger.warn("no fileDesc for " + fileId, e);
         }
         String outfile = outdir + "/" + fileId;
         Converter textConverter = new Converter(new TextFormatter(), metadata);

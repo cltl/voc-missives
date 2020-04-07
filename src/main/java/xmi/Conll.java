@@ -3,6 +3,8 @@ package xmi;
 import de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import utils.CasDoc;
 import utils.IO;
 
@@ -21,6 +23,7 @@ public class Conll {
     CasDoc doc;
     final static String Conll2Sep = " ";
     final static String ConllUSep = "\t";
+    final static Logger logger = LogManager.getLogger(Conll.class);
     String sep;
 
     public Conll(CasDoc doc) {
@@ -34,10 +37,13 @@ public class Conll {
         return new Conll(doc);
     }
 
-    public void write(String outfile) throws IOException {
-        BufferedWriter bw = new BufferedWriter(new FileWriter(outfile));
-        write(bw);
-        bw.close();
+    public void write(String outfile) {
+        try {
+            BufferedWriter bw = new BufferedWriter(new FileWriter(outfile));
+            write(bw);
+        } catch (IOException e) {
+            logger.fatal("Error writing to " + outfile, e);
+        }
     }
 
     public void write(BufferedWriter writer) throws IOException {
@@ -110,11 +116,7 @@ public class Conll {
         if (fileName.endsWith(".xmi")) {
             String outFile = IO.append(outdir, fileName.replaceAll("\\.xmi", ".conll"));
             Conll conll = Conll.create(file.toString());
-            try {
-                conll.write(outFile);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            conll.write(outFile);
         }
     }
 

@@ -17,7 +17,7 @@ class DocumentTest {
 
     @BeforeAll
     public static void init() {
-        textFile = "src/test/resources/short_text.xml";
+        textFile = "src/test/resources/tei-xml/short_text.xml";
         rawText = "III. ANTONIO VAN DIEMEN, IN HET SCHIP DEVENTER NABIJ DE ZUIDPUNT VAN AFRIKA 5 juni 1631 *).\n" +
                 "1011, fol. 1-64.\n" +
                 "(Af gedrukt Indisch Verslag^.\n" +

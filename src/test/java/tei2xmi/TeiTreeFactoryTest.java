@@ -12,7 +12,7 @@ class TeiTreeFactoryTest {
 
     @Test
     public void testCreationSimpleTEI() {
-        String textFile = "src/test/resources/short_text.xml";
+        String textFile = "src/test/resources/tei-xml/short_text.xml";
         TEI tei = Converter.load(textFile);
         ATeiTree tree = TeiTreeFactory.create(tei);
         assertEquals(tree.getTeiType(), ATeiTree.TeiType.TEI);

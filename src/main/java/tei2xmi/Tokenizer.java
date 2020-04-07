@@ -6,6 +6,8 @@ import eus.ixa.ixa.pipe.ml.tok.RuleBasedSegmenter;
 import eus.ixa.ixa.pipe.ml.tok.RuleBasedTokenizer;
 import eus.ixa.ixa.pipe.ml.tok.Token;
 import net.sourceforge.argparse4j.inf.ArgumentParserException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import utils.Paragraph;
 
 import java.util.List;
@@ -15,6 +17,7 @@ import java.util.Properties;
 public class Tokenizer {
 
     private Properties properties;
+    private static final Logger logger = LogManager.getLogger(Tokenizer.class);
 
     private Tokenizer(Properties properties) {
         this.properties = properties;
@@ -40,7 +43,7 @@ public class Tokenizer {
         try {
             parameters = argumentsParser.parse(args);
         } catch (ArgumentParserException e) {
-            e.printStackTrace();
+            logger.fatal("", e);
         }
         Properties properties = parameters.getAnnotateProperties();
         return new Tokenizer(properties);
@@ -53,7 +56,9 @@ public class Tokenizer {
         int sentenceIndex = 1;
         int tokenIndex = 0;
         for (List<Token> tokenizedSentence: tokenizedSentences) {
-            try {
+            if (tokenizedSentence.isEmpty())
+                logger.warn("Attempting to tokenize empty sentence in paragraph " + paragraph.getTeiId() + "; this sentence will be ignored.");
+            else {
                 startSentence = paragraph.getOffset() + tokenizedSentence.get(0).startOffset();
                 for (Token t : tokenizedSentence) {
                     paragraph.getTokens().addSegment(paragraph.getOffset() + t.startOffset(), t.tokenLength(), nbTokens + tokenIndex);
@@ -61,8 +66,6 @@ public class Tokenizer {
                 }
                 paragraph.getSentences().addSegment(startSentence, paragraph.getTokens().endIndex() - startSentence, nbSentences + sentenceIndex);
                 sentenceIndex++;
-            } catch (IndexOutOfBoundsException e) {
-                int x = tokenizedSentence.size();
             }
         }
     }

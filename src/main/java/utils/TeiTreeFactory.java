@@ -1,12 +1,14 @@
 package utils;
 
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import xjc.tei.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class TeiTreeFactory {
-
 
     public static ATeiTree create(Object o) {
         if (o instanceof TEI)
@@ -37,8 +39,8 @@ public class TeiTreeFactory {
             return TeiBreak.createPageBreak(((Pb) o).getId(),(((Pb) o).getN()));
         else if (o instanceof Text)
             return TeiDiv.create(ATeiTree.TeiType.TEXT, ((Text) o).getId(), createChildren(((Text) o).getIndicesAndInterpsAndInterpGrps()));
-        else throw new IllegalArgumentException("Unknown TEI type");
-
+        else
+            throw new IllegalArgumentException("Unknown TEI type: " + o.getClass());
     }
 
 
