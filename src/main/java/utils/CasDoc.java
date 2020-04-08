@@ -6,8 +6,6 @@ import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.apache.uima.UIMAFramework;
 import org.apache.uima.cas.CASException;
 import org.apache.uima.cas.impl.XmiCasDeserializer;
@@ -36,7 +34,6 @@ public class CasDoc {
     TypeSystemDescription tsd;
     private static final String TSD_FILE = "src/main/resources/dkproTypeSystem.xml";
     public static final String FILE_EXT = ".xmi";
-    private static final Logger logger = LogManager.getLogger(CasDoc.class);
 
     private CasDoc(JCas jCas, TypeSystemDescription tsd) {
         this.jCas = jCas;
@@ -44,55 +41,54 @@ public class CasDoc {
         init();
     }
 
-    public static CasDoc create() {
+    public static CasDoc create() throws AbnormalProcessException {
         XMLParser xmlp = UIMAFramework.getXMLParser();
+        XMLInputSource fis = null;
         try {
-            XMLInputSource fis = new XMLInputSource(TSD_FILE);
+            fis = new XMLInputSource(TSD_FILE);
             TypeSystemDescription tsd = xmlp.parseTypeSystemDescription(fis);
             fis.close();
             return new CasDoc(JCasFactory.createJCas(tsd), tsd);
         } catch (InvalidXMLException e) {
-            logger.fatal("Error creating CAS doc", e);
+            throw new AbnormalProcessException("Error creating CAS doc", e);
         } catch (IOException e) {
-            logger.fatal("Error creating CAS doc", e);
+            throw new AbnormalProcessException("Error creating CAS doc", e);
         } catch (ResourceInitializationException e) {
-            logger.fatal("Error creating CAS doc", e);
+            throw new AbnormalProcessException("Error creating CAS doc", e);
         } catch (CASException e) {
-            logger.fatal("Error creating CAS doc", e);
+            throw new AbnormalProcessException("Error creating CAS doc", e);
+        } finally {
+            if (fis != null) {
+                try {
+                    fis.close();
+                } catch (IOException e) {
+                    throw new AbnormalProcessException("Error creating CAS doc", e);
+                }
+            }
         }
-        return null;
     }
 
-    public void read(String xmi) {
-        try {
-            FileInputStream fis = new FileInputStream(xmi);
+    public void read(String xmi) throws AbnormalProcessException {
+        try (FileInputStream fis = new FileInputStream(xmi)) {
             XmiCasDeserializer.deserialize(fis, jCas.getCas());
-            fis.close();
         } catch (SAXException e) {
-            logger.fatal("Error reading " + xmi, e);
+            throw new AbnormalProcessException("Error reading " + xmi, e);
         } catch (IOException e) {
-            logger.fatal("Error reading " + xmi, e);
+            throw new AbnormalProcessException("Error reading " + xmi, e);
         }
     }
 
-    public void write(String outXmi) {
-        FileOutputStream fos = null;
-        try {
-            fos = new FileOutputStream(outXmi);
-        } catch (FileNotFoundException e) {
-            logger.fatal("Error writing to " + outXmi, e);
-        }
-        XMLSerializer sax2xml = new XMLSerializer(fos, true);
-        XmiCasSerializer xmiCasSerializer = new XmiCasSerializer(jCas.getTypeSystem());
-        try {
+    public void write(String outXmi) throws AbnormalProcessException {
+        try (FileOutputStream fos = new FileOutputStream(outXmi)) {
+            XMLSerializer sax2xml = new XMLSerializer(fos, true);
+            XmiCasSerializer xmiCasSerializer = new XmiCasSerializer(jCas.getTypeSystem());
             xmiCasSerializer.serialize(jCas.getCas(), sax2xml.getContentHandler());
         } catch (SAXException e) {
-            logger.fatal("Error writing to " + outXmi, e);
-        }
-        try {
-            fos.close();
+            throw new AbnormalProcessException("Error writing to " + outXmi, e);
+        } catch (FileNotFoundException e) {
+            throw new AbnormalProcessException("Error writing to " + outXmi, e);
         } catch (IOException e) {
-            logger.fatal("Error writing to " + outXmi, e);
+            throw new AbnormalProcessException("Error writing to " + outXmi, e);
         }
     }
 

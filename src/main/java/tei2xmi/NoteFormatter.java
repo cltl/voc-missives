@@ -16,12 +16,15 @@ public class NoteFormatter extends Formatter {
     @Override
     public List<TeiLeaf> format(ATeiTree tei) {
         List<ATeiTree> paragraphs = listNotes(tei);
-        cleanStrings(paragraphs);
-        return flatten(paragraphs);
+        return getContent(paragraphs);
     }
 
     private List<ATeiTree> listNotes(ATeiTree tree) {
-        return tree.collect(t -> t.getTeiType().equals(ATeiTree.TeiType.NOTE));
+        return tree.getAllNodes(t -> t.getTeiType().equals(ATeiTree.TeiType.NOTE));
     }
 
+    protected TeiLeaf toLeaf(ATeiTree p) {
+        String str = getString(p, x -> x.replaceAll("\n", ""), "");
+        return TeiLeaf.create(p.getTeiType(), p.getId(), str);
+    }
 }

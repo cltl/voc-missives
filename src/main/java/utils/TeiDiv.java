@@ -23,12 +23,12 @@ public class TeiDiv extends ATeiTree {
     }
 
     @Override
-    public List<ATeiTree> filterHighest(Predicate<ATeiTree> p) {
+    public List<ATeiTree> getTopNodes(Predicate<ATeiTree> p) {
         List<ATeiTree> list = new LinkedList<>();
         if (p.test(this))
             list.add(this);
         else
-            children.forEach(c -> list.addAll(c.filterHighest(p)));
+            children.forEach(c -> list.addAll(c.getTopNodes(p)));
         return list;
     }
 
@@ -49,11 +49,11 @@ public class TeiDiv extends ATeiTree {
     }
 
     @Override
-    public List<ATeiTree> collect(Predicate<ATeiTree> p) {
+    public List<ATeiTree> getAllNodes(Predicate<ATeiTree> p) {
         List<ATeiTree> list = new LinkedList<>();
         if (p.test(this))
             list.add(this);
-        list.addAll(children.stream().map(c -> c.collect(p)).flatMap(x -> x.stream()).collect(Collectors.toList()));
+        list.addAll(children.stream().map(c -> c.getAllNodes(p)).flatMap(x -> x.stream()).collect(Collectors.toList()));
         return list;
     }
 }

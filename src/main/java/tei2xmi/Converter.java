@@ -12,6 +12,8 @@ import javax.xml.bind.Unmarshaller;
 import java.io.File;
 import java.nio.file.Path;
 
+import static utils.ThrowingBiConsumer.throwingBiConsumerWrapper;
+
 public class Converter {
 
     CasDoc teiXmi;
@@ -21,13 +23,13 @@ public class Converter {
     static String TEI_SFX = "xml";
     public static final Logger logger = LogManager.getLogger(Converter.class);
 
-    public Converter(Formatter formatter, Metadata metadata) {
+    public Converter(Formatter formatter, Metadata metadata) throws AbnormalProcessException {
         this.teiXmi = CasDoc.create();
         this.tokenizer = Tokenizer.create();
         this.document = Document.create(formatter, metadata);
     }
 
-    public static TEI load(String xml) {
+    public static TEI load(String xml) throws AbnormalProcessException {
         File file = new File(xml);
         try {
             JAXBContext jaxbContext = JAXBContext.newInstance(TEI.class);
@@ -35,15 +37,19 @@ public class Converter {
             TEI tei = (TEI) jaxbUnmarshaller.unmarshal(file);
             return tei;
         } catch (UnmarshalException e) {
-            logger.error(file.toString(), e);
+            throw new AbnormalProcessException(file.toString(), e);
         } catch (JAXBException e) {
-            logger.error(file.toString(), e);
+            throw new AbnormalProcessException(file.toString(), e);
         }
-        return null;
     }
 
-    private void convert(TEI tei, String outfile) {
-        ATeiTree tree = TeiTreeFactory.create(tei);
+    private void convert(TEI tei, String outfile) throws AbnormalProcessException {
+        ATeiTree tree;
+        try {
+            tree = TeiTreeFactory.create(tei);
+        } catch (IllegalArgumentException e) {
+            throw new AbnormalProcessException("Error while creating TEI tree", e);
+        }
         document.formatParagraphs(tree);
         document.segmentAndTokenize(tokenizer);
         if (! document.isEmpty())
@@ -54,7 +60,7 @@ public class Converter {
         return document.typedFileName(outfile) + CasDoc.FILE_EXT;
     }
 
-    private void writeXmi(String xmiOut) {
+    private void writeXmi(String xmiOut) throws AbnormalProcessException {
         teiXmi.addMetadata(document.getMetadata());
         teiXmi.addRawText(document.getRawText());
         teiXmi.addParagraphs(document.getParagraphs());
@@ -63,12 +69,8 @@ public class Converter {
         teiXmi.write(xmiOut);
     }
 
-    public static boolean isIndex(TEI tei) {
-        String title = (String) tei.getTeiHeader().getFileDesc().getTitleStmt().getTitles().get(0).getContent().get(0);
-        return title.startsWith("Index");
-    }
 
-    public static void convertFile(Path file, String outdir) {
+    public static void convertFile(Path file, String outdir) throws AbnormalProcessException {
         String fileId = file.getFileName().toString().replaceAll("\\." + TEI_SFX, "");
         TEI tei = load(file.toString());
         Metadata metadata = null;
@@ -85,10 +87,9 @@ public class Converter {
     }
 
 
-
     public static void main(String[] args) {
-        IO.loop(args[0], args[1], (x, y) -> convertFile(x, y));
+        IO.loop(args[0], args[1],
+            throwingBiConsumerWrapper((x, y) -> convertFile(x, y)));
     }
-
 
 }

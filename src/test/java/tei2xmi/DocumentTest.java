@@ -3,6 +3,7 @@ package tei2xmi;
 import org.junit.Before;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import utils.AbnormalProcessException;
 import utils.Metadata;
 import utils.Segments;
 import utils.TeiTreeFactory;
@@ -22,7 +23,11 @@ class DocumentTest {
                 "1011, fol. 1-64.\n" +
                 "(Af gedrukt Indisch Verslag^.\n" +
                 "1) Daar de retourvloot begin maart 1631 diende te vertrekken en Specx zijn generale missive niet gereed had, sloot hij het begin (ons nr. II) op 7 maart af, terwijl hij aan Van Diemen opdroeg de brief gedurende de reis naar patria af te maken, waartoe hem de nodige stukken werden meegegeven. Van Diemen’s brief van 5 juni 1631 dient dus als een generale missive beschouwd te worden.";
-        tei = Converter.load(textFile);
+        try {
+            tei = Converter.load(textFile);
+        } catch (AbnormalProcessException e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -40,7 +45,12 @@ class DocumentTest {
 
         Document document = Document.create(new TextFormatter(), null);
         document.formatParagraphs(TeiTreeFactory.create(tei));
-        Tokenizer tokenizer = Tokenizer.create();
+        Tokenizer tokenizer = null;
+        try {
+            tokenizer = Tokenizer.create();
+        } catch (AbnormalProcessException e) {
+            e.printStackTrace();
+        }
         document.segmentAndTokenize(tokenizer);
         Segments sentences = document.getSentences();
         Segments tokens = document.getTokens();

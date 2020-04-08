@@ -23,7 +23,7 @@ public class TeiLeaf extends ATeiTree {
     }
 
     @Override
-    public List<ATeiTree> filterHighest(Predicate<ATeiTree> p) {
+    public List<ATeiTree> getTopNodes(Predicate<ATeiTree> p) {
         List<ATeiTree> list = new LinkedList<>();
         if (p.test(this))
             list.add(this);
@@ -44,7 +44,7 @@ public class TeiLeaf extends ATeiTree {
     }
 
     @Override
-    public List<ATeiTree> collect(Predicate<ATeiTree> p) {
+    public List<ATeiTree> getAllNodes(Predicate<ATeiTree> p) {
         if (p.test(this))
             return Collections.singletonList(this);
         return Collections.EMPTY_LIST;

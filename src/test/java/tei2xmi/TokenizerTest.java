@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class TokenizerTest {
     @Test
-    public void testTokenizer() {
+    public void testTokenizer() throws AbnormalProcessException {
         String textFile = "src/test/resources/tei-xml/short_text.xml";
         String sentence1 = "III. ANTONIO VAN DIEMEN, IN HET SCHIP DEVENTER NABIJ DE ZUIDPUNT VAN AFRIKA 5 juni 1631 *).";
         String rawText = "III. ANTONIO VAN DIEMEN, IN HET SCHIP DEVENTER NABIJ DE ZUIDPUNT VAN AFRIKA 5 juni 1631 *).\n" +

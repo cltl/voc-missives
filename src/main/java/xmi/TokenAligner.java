@@ -71,7 +71,7 @@ public class TokenAligner {
      *  - reference tokens are missing from external file;
      *  - external tokens are missing from reference file.
      */
-    public void align() {
+    public void align() throws IllegalArgumentException {
         while (iExt < extTokens.size()) {
             Token ref = refTokens.get(iRef);
             Token ext = extTokens.get(iExt);
@@ -256,7 +256,4 @@ public class TokenAligner {
         endToRef.put(ext.getEnd(), ref.getEnd());
     }
 
-    public boolean isEmpty() {
-        return extTokens.isEmpty() && refTokens.isEmpty();
-    }
 }

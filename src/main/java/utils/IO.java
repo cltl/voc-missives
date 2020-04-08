@@ -14,7 +14,7 @@ import java.util.stream.Stream;
 
 public class IO {
 
-    private static final Logger logger = LogManager.getLogger(CasDoc.class);
+    private static final Logger logger = LogManager.getLogger(IO.class);
     /**
      * Processes files in dir given a file consumer
      * @param indir     input directory
@@ -69,9 +69,11 @@ public class IO {
                     logger.warn("Error testing " + p, e);
                     return false;
                 }}).forEach(f -> fileConsumer.accept(f, dirs));
+
         } catch (IOException e) {
             logger.fatal("Error processing files in " + indir1, e);
         }
+
     }
 
     public static String append(String dirName, String fileName) {

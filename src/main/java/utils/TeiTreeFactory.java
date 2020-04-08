@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 public class TeiTreeFactory {
 
-    public static ATeiTree create(Object o) {
+    public static ATeiTree create(Object o) throws IllegalArgumentException {
         if (o instanceof TEI)
             return TeiDiv.create(ATeiTree.TeiType.TEI, ((TEI) o).getId(), createChildren((TEI) o));
         else if (o instanceof Body)

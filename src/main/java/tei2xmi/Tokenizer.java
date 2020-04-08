@@ -8,6 +8,7 @@ import eus.ixa.ixa.pipe.ml.tok.Token;
 import net.sourceforge.argparse4j.inf.ArgumentParserException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utils.AbnormalProcessException;
 import utils.Paragraph;
 
 import java.util.List;
@@ -35,15 +36,15 @@ public class Tokenizer {
     }
 
 
-    public static Tokenizer create() {
+    public static Tokenizer create() throws AbnormalProcessException {
         String[] args = {"tok", "-l", "nl"};
         String version = "2.0.0";
         CLIArgumentsParser argumentsParser = new CLIArgumentsParser(version);
-        Parameters parameters = null;
+        Parameters parameters;
         try {
             parameters = argumentsParser.parse(args);
         } catch (ArgumentParserException e) {
-            logger.fatal("", e);
+            throw new AbnormalProcessException("Cannot parse Tokenizer parameters", e);
         }
         Properties properties = parameters.getAnnotateProperties();
         return new Tokenizer(properties);

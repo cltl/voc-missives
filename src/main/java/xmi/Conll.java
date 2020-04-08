@@ -5,6 +5,7 @@ import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utils.AbnormalProcessException;
 import utils.CasDoc;
 import utils.IO;
 
@@ -16,6 +17,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 
+import static utils.ThrowingBiConsumer.throwingBiConsumerWrapper;
+
 /**
  * Writes out entities in XMI doc to CoNLL 2002 format.
  */
@@ -23,26 +26,24 @@ public class Conll {
     CasDoc doc;
     final static String Conll2Sep = " ";
     final static String ConllUSep = "\t";
-    final static Logger logger = LogManager.getLogger(Conll.class);
     String sep;
 
-    public Conll(CasDoc doc) {
+    public Conll(CasDoc doc, String sep) {
         this.doc = doc;
-        this.sep = Conll2Sep;
+        this.sep = sep;
     }
 
-    public static Conll create(String xmi) {
+    public static Conll create(String xmi, String sep) throws AbnormalProcessException {
         CasDoc doc = CasDoc.create();
         doc.read(xmi);
-        return new Conll(doc);
+        return new Conll(doc, sep);
     }
 
-    public void write(String outfile) {
-        try {
-            BufferedWriter bw = new BufferedWriter(new FileWriter(outfile));
+    public void write(String outfile) throws AbnormalProcessException {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(outfile))) {
             write(bw);
         } catch (IOException e) {
-            logger.fatal("Error writing to " + outfile, e);
+            throw new AbnormalProcessException("Error writing to " + outfile, e);
         }
     }
 
@@ -69,7 +70,6 @@ public class Conll {
             else if (t.getEnd() <= e.getEnd())
                 writer.write(innerLabel(t, e));
         }
-        writer.close();
     }
 
     private String innerLabel(Token t, NamedEntity e) {
@@ -111,16 +111,24 @@ public class Conll {
         return e.getEnd() - e.getBegin() > other.getEnd() - other.getBegin();
     }
 
-    public static void run(Path file, String outdir) {
+    public static void run(Path file, String outdir, String sep) throws AbnormalProcessException {
         String fileName = file.getFileName().toString();
         if (fileName.endsWith(".xmi")) {
             String outFile = IO.append(outdir, fileName.replaceAll("\\.xmi", ".conll"));
-            Conll conll = Conll.create(file.toString());
+            Conll conll = Conll.create(file.toString(), sep);
             conll.write(outFile);
         }
     }
 
+    /**
+     *
+     * @param args  input-dir, output-dir, conll-separator (conll02|conllU)
+     */
     public static void main(String[] args) {
-        IO.loop(args[0], args[1], (x, y) -> run(x, y));
+        String sep = ConllUSep;
+        if (args.length > 2 && args[2].equals("conll02"))
+            sep = Conll2Sep;
+        String finalSep = sep;
+        IO.loop(args[0], args[1], throwingBiConsumerWrapper((x, y) -> run(x, y, finalSep)));
     }
 }
