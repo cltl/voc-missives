@@ -3,6 +3,8 @@ package utils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -10,6 +12,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BiConsumer;
+import java.util.function.Consumer;
 import java.util.stream.Stream;
 
 public class IO {
@@ -74,6 +77,22 @@ public class IO {
             logger.fatal("Error processing files in " + indir1, e);
         }
 
+    }
+
+    public static void loopToFile(String indir, String outFile, BiConsumer<Path,BufferedWriter> fileConsumer) {
+        try (Stream<Path> paths = Files.walk(Paths.get(indir));
+            BufferedWriter bw = new BufferedWriter(new FileWriter(outFile))) {
+            paths.filter(p -> Files.isRegularFile(p)).filter(p -> {
+                try {
+                    return ! Files.isHidden(p);
+                } catch (IOException e) {
+                    logger.warn("Error testing " + p, e);
+                    return false;
+                }}).forEach(f -> fileConsumer.accept(f, bw));
+
+        } catch (IOException e) {
+            logger.fatal("Error processing files in " + indir, e);
+        }
     }
 
     public static String append(String dirName, String fileName) {

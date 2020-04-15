@@ -13,9 +13,11 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Path;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.stream.Collectors;
 
 import static utils.ThrowingBiConsumer.throwingBiConsumerWrapper;
 
@@ -27,6 +29,8 @@ public class Conll {
     final static String Conll2Sep = " ";
     final static String ConllUSep = "\t";
     String sep;
+    static HashMap<String,Integer> labels = new HashMap<>();
+    private static Logger logger = LogManager.getLogger(Conll.class);
 
     public Conll(CasDoc doc, String sep) {
         this.doc = doc;
@@ -72,15 +76,35 @@ public class Conll {
         }
     }
 
+    private static void addLabel(String label) {
+        if (labels.containsKey(label))
+            labels.put(label, labels.get(label) + 1);
+        else
+            labels.put(label, 1);
+    }
+
     private String innerLabel(Token t, NamedEntity e) {
-        return t.getText() + sep + "I-" + e.getValue() + "\n";
+        addLabel(e.getValue());
+        return t.getText() + sep + "I-" + simplify(e.getValue()) + "\n";
     }
 
     private String beginLabel(Token t, NamedEntity e) {
-        return t.getText() + sep + "B-" + e.getValue() + "\n";
+        addLabel(e.getValue());
+        return t.getText() + sep + "B-" + simplify(e.getValue()) + "\n";
+    }
+
+    private String simplify(String value) {
+        if (value == null)
+            return "OTH";
+        if (value.equals("ORGpart"))
+            return "ORG";
+        if (value.equals("LOCpart"))
+            return "LOC";
+        return value;
     }
 
     private String defaultLabel(Token t) {
+        addLabel("O");
         return t.getText() + sep + "O\n";
     }
 
@@ -126,9 +150,14 @@ public class Conll {
      */
     public static void main(String[] args) {
         String sep = ConllUSep;
-        if (args.length > 2 && args[2].equals("conll02"))
-            sep = Conll2Sep;
+        if (args.length > 2) {
+            if (args[2].equals("conll02"))
+                sep = Conll2Sep;
+            else if (args[2].equals("conll03"))
+                sep = ConllUSep + ConllUSep;
+        }
         String finalSep = sep;
         IO.loop(args[0], args[1], throwingBiConsumerWrapper((x, y) -> run(x, y, finalSep)));
+        logger.info("label counts:\n" + labels.entrySet().stream().map(e -> e.getKey() + ": " + e.getValue()).collect(Collectors.joining("\n")));
     }
 }
