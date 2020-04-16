@@ -4,6 +4,7 @@ import de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity;
 import utils.*;
 
 import java.nio.file.Path;
+import java.util.Collections;
 import java.util.List;
 
 import static utils.ThrowingBiConsumer.throwingBiConsumerWrapper;
@@ -93,7 +94,7 @@ public class EntityAligner {
     }
 
     public static void main(String[] args) {
-        IO.loop(args[0], args[1], args[2],
+        IO.loop(args[0], Collections.singletonList(args[1]), args[2],
                 throwingBiConsumerWrapper((x, y) -> run(x, y)));
     }
 

@@ -1,11 +1,11 @@
 package utils;
 
 import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
+import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.MetaDataStringField;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Paragraph;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity;
-
 import org.apache.uima.UIMAFramework;
 import org.apache.uima.cas.CASException;
 import org.apache.uima.cas.impl.XmiCasDeserializer;
@@ -34,6 +34,8 @@ public class CasDoc {
     TypeSystemDescription tsd;
     private static final String TSD_FILE = "src/main/resources/dkproTypeSystem.xml";
     public static final String FILE_EXT = ".xmi";
+    private static final String VOL_ID_PFX = "missiven:vol";
+    private static final int VOL_FORMAT_INDEX = VOL_ID_PFX.length();
 
     private CasDoc(JCas jCas, TypeSystemDescription tsd) {
         this.jCas = jCas;
@@ -133,7 +135,13 @@ public class CasDoc {
         a.setCollectionId(metadata.getCollectionId());
         a.setDocumentTitle(metadata.getDocumentTitle());
         a.addToIndexes(jCas);
+
+        MetaDataStringField dateStringField = new MetaDataStringField(jCas);
+        dateStringField.setKey("date");
+        dateStringField.setValue(metadata.getDate());
+        dateStringField.addToIndexes(jCas);
     }
+
 
     public List<Token> getTokens() {
         return (List) JCasUtil.select(jCas, Token.class);
@@ -154,12 +162,30 @@ public class CasDoc {
         return metadata.get(0).getDocumentId();
     }
 
+    public String getVolumeId() {
+        List<DocumentMetaData> metadata = (List) JCasUtil.select(jCas, DocumentMetaData.class);
+        String collectionId = metadata.get(0).getCollectionId();
+
+        if (! collectionId.startsWith(VOL_ID_PFX))
+            throw new IllegalArgumentException("Collection ID has unexpected form: " + collectionId);
+        return collectionId.substring(VOL_FORMAT_INDEX);
+    }
+
     public String getRawText() {
         return jCas.getDocumentText();
     }
 
-    public List getSentences() {
+    public List<Sentence> getSentences() {
         return (List) JCasUtil.select(jCas, Sentence.class);
+    }
+
+    public String getDate() {
+        Object x = ((List) JCasUtil.select(jCas, MetaDataStringField.class)).get(0);
+        return ((MetaDataStringField) x).getValue();
+    }
+
+    public List<Paragraph> getParagraphs() {
+        return (List) JCasUtil.select(jCas, Paragraph.class);
     }
 }
 

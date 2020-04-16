@@ -48,11 +48,11 @@ public class IO {
     /**
      * Processes files in dir given a file consumer
      * @param indir1    input directory
-     * @param indir2    input directory
+     * @param auxdirs   auxilliary input directories
      * @param outdir    output directory
      * @param fileConsumer a bi-consumer (input file from dir1, (indir2 , outdir))
      */
-    public static void loop(String indir1, String indir2, String outdir, BiConsumer<Path, List<String>> fileConsumer) {
+    public static void loop(String indir1, List<String> auxdirs, String outdir, BiConsumer<Path, List<String>> fileConsumer) {
         Path dirpath = Paths.get(outdir);
         if (!Files.exists(dirpath)) {
             try {
@@ -62,7 +62,7 @@ public class IO {
             }
         }
         List<String> dirs = new ArrayList<>();
-        dirs.add(indir2);
+        dirs.addAll(auxdirs);
         dirs.add(outdir);
         try (Stream<Path> paths = Files.walk(Paths.get(indir1))) {
             paths.filter(p -> Files.isRegularFile(p)).filter(p -> {

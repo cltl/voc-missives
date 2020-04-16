@@ -74,7 +74,7 @@ class DocumentTest {
     }
 
     @Test
-    public void testMetadata() {
+    public void testMetadata() throws AbnormalProcessException {
         Metadata metadata = Metadata.create(tei);
         assertEquals(metadata.getDocumentTitle(), "Van Diemen, Deventer, nabij de Zuidpunt van Afrika, 5 juni 1631");
         assertEquals(metadata.getDocumentId(), "INT_0ca18bf8-8884-3a20-93ff-55c46b62ccbf");

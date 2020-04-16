@@ -73,12 +73,7 @@ public class Converter {
     public static void convertFile(Path file, String outdir) throws AbnormalProcessException {
         String fileId = file.getFileName().toString().replaceAll("\\." + TEI_SFX, "");
         TEI tei = load(file.toString());
-        Metadata metadata = null;
-        try {
-            metadata = Metadata.create(tei);
-        } catch (NullPointerException e) {
-            logger.warn("no fileDesc for " + fileId, e);
-        }
+        Metadata metadata = Metadata.create(tei);
         String outfile = outdir + "/" + fileId;
         Converter textConverter = new Converter(new TextFormatter(), metadata);
         textConverter.convert(tei, outfile);

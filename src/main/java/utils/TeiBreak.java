@@ -49,4 +49,8 @@ public class TeiBreak extends ATeiTree {
             return Collections.singletonList(this);
         return Collections.EMPTY_LIST;
     }
+
+    public String getPageNumber() {
+        return number;
+    }
 }
