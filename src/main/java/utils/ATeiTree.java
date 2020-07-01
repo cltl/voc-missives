@@ -6,7 +6,7 @@ import java.util.function.Predicate;
 
 public abstract class ATeiTree {
 
-    public enum TeiType {TEI, STR, TEXT, DIV, P, LB, HEAD, NOTE, BODY, HI, TABLE, ROW, CELL, PB}
+    public enum TeiType {TEI, STR, TEXT, DIV, P, FW, LB, HEAD, NOTE, BODY, HI, TABLE, ROW, CELL, PB}
     TeiType teiType;
     String id;
 

@@ -1,0 +1,34 @@
+<jaxb:bindings 
+  xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+  jaxb:version="2.1" 
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc">
+    <jaxb:bindings schemaLocation="tei_all.xsd">
+        <jaxb:bindings>
+           <jaxb:globalBindings>
+               <xjc:simple />
+           </jaxb:globalBindings>
+        </jaxb:bindings>
+        <jaxb:schemaBindings>
+            <jaxb:package name="teiAll"/>
+        </jaxb:schemaBindings>
+        <jaxb:bindings node="//xs:attributeGroup/xs:attribute[@name='rendition']">
+            <jaxb:property name="renditionAttribute"/>
+        </jaxb:bindings>
+        <jaxb:bindings node="//xs:attributeGroup/xs:attribute[@name='change']">
+            <jaxb:property name="changeAttribute"/>
+        </jaxb:bindings>
+        <jaxb:bindings node="//xs:element[@name='string']">
+            <jaxb:class name="strng:"/>
+        </jaxb:bindings>
+        <jaxb:bindings node="//xs:element[@name='object']">
+            <jaxb:class name="objct"/>
+        </jaxb:bindings>
+        <jaxb:bindings node="//xs:extension/xs:attribute[@name='space']">
+            <jaxb:property name="spaceAttribute"/>
+        </jaxb:bindings>
+        <jaxb:bindings node="//xs:element[@name='code']/xs:complexType/xs:attribute[@name='lang']">
+            <jaxb:property name="lang1"/> 
+        </jaxb:bindings>
+    </jaxb:bindings>
+</jaxb:bindings>

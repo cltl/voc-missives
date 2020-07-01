@@ -14,10 +14,11 @@ import java.util.stream.Collectors;
  * Lists paragraph-like elements.
  */
 public abstract class Formatter {
-    public static final String PARA_SEP = "\n";
+    String paragraphSeparator;
     String fileExtension;
 
-    public Formatter(String fileExtension) {
+    public Formatter(String paragraphSeparator, String fileExtension) {
+        this.paragraphSeparator = paragraphSeparator;
         this.fileExtension = fileExtension;
     }
 
@@ -27,6 +28,9 @@ public abstract class Formatter {
 
     public abstract List<TeiLeaf> format(ATeiTree tei);
 
+    public String getParagraphSeparator() {
+        return paragraphSeparator;
+    }
 
     protected String getString(ATeiTree tree, Function<String, String> leafFct, String sep) {
         return tree.getAllNodes(t -> t.getTeiType().equals(ATeiTree.TeiType.STR)).stream()
@@ -45,7 +49,7 @@ public abstract class Formatter {
         for (TeiLeaf p: format(tree)) {
             Paragraph paragraph = Paragraph.create(p, offset);
             paragraphs.add(paragraph);
-            offset += p.getContent().length() + PARA_SEP.length();
+            offset += p.getContent().length() + paragraphSeparator.length();
         }
         return paragraphs;
     }

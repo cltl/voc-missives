@@ -50,7 +50,7 @@ public class Document {
     }
 
     public String getRawText() {
-        return paragraphs.stream().map(p -> p.getContent()).collect(Collectors.joining(Formatter.PARA_SEP));
+        return paragraphs.stream().map(p -> p.getContent()).collect(Collectors.joining(formatter.getParagraphSeparator()));
     }
 
     public List<Paragraph> getParagraphs() {

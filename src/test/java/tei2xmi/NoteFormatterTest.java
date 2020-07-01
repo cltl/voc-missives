@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import utils.AbnormalProcessException;
 import utils.TeiLeaf;
 import utils.TeiTreeFactory;
-import xjc.tei.TEI;
+import xjc.teiAll.TEI;
 
 import java.util.List;
 

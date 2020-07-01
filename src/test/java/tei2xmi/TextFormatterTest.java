@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import utils.AbnormalProcessException;
 import utils.TeiLeaf;
 import utils.TeiTreeFactory;
-import xjc.tei.TEI;
+import xjc.teiAll.TEI;
 
 import java.util.List;
 
@@ -42,7 +42,7 @@ class TextFormatterTest {
         String p2 = "Daer wort gepresumeert ende heeft groote waerschijnelijcheyt, dat den" +
                 " Coningh voorgehat heeft het jacht1) af te loopen ende het volck doot te slaen, deselve priserende" +
                 " 2) ende betalende na sijn welgevallen, daer sij apparent noch" +
-                " 1) Geheten Jacob Discordt. ";
+                " 1) Geheten Jacob Discordt.";
         assertEquals(paragraphs.size(), 3);
         assertEquals(paragraphs.get(0).getContent(), head);
         assertEquals(paragraphs.get(1).getContent(), p1);

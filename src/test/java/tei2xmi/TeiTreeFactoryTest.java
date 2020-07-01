@@ -5,7 +5,7 @@ import utils.ATeiTree;
 import utils.AbnormalProcessException;
 import utils.TeiDiv;
 import utils.TeiTreeFactory;
-import xjc.tei.TEI;
+import xjc.teiAll.TEI;
 
 import static org.junit.jupiter.api.Assertions.*;
 

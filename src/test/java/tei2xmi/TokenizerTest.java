@@ -3,7 +3,7 @@ package tei2xmi;
 import eus.ixa.ixa.pipe.ml.tok.Token;
 import org.junit.jupiter.api.Test;
 import utils.*;
-import xjc.tei.TEI;
+import xjc.teiAll.TEI;
 
 import java.util.List;
 

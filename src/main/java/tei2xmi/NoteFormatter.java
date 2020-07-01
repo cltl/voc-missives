@@ -10,7 +10,7 @@ public class NoteFormatter extends Formatter {
     final static String FILE_EXTENSION = "_notes";
 
     public NoteFormatter() {
-        super(FILE_EXTENSION);
+        super(TextFormatter.PARAGRAPH_SEPARATOR, FILE_EXTENSION);
     }
 
     @Override

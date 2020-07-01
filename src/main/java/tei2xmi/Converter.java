@@ -3,7 +3,7 @@ package tei2xmi;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utils.*;
-import xjc.tei.TEI;
+import xjc.teiAll.TEI;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -20,7 +20,7 @@ public class Converter {
     Tokenizer tokenizer;
     Document document;
 
-    static String TEI_SFX = "xml";
+    public static String TEI_SFX = "xml";
     public static final Logger logger = LogManager.getLogger(Converter.class);
 
     public Converter(Formatter formatter, Metadata metadata) throws AbnormalProcessException {

@@ -7,7 +7,7 @@ import utils.AbnormalProcessException;
 import utils.Metadata;
 import utils.Segments;
 import utils.TeiTreeFactory;
-import xjc.tei.TEI;
+import xjc.teiAll.TEI;
 
 import static org.junit.jupiter.api.Assertions.*;
 

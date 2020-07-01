@@ -2,13 +2,10 @@ package utils;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import tei2xmi.Converter;
-import xjc.tei.Date;
-import xjc.tei.FileDesc;
-import xjc.tei.Idno;
-import xjc.tei.TEI;
+import xjc.teiAll.Date;
+import xjc.teiAll.Idno;
+import xjc.teiAll.TEI;
 
-import java.security.KeyException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -53,11 +50,12 @@ public class Metadata {
         this.date = date;
     }
 
+
     public static Metadata create(TEI tei) throws AbnormalProcessException {
         try {
-            FileDesc header = tei.getTeiHeader().getFileDesc();
+            xjc.teiAll.FileDesc header = tei.getTeiHeader().getFileDesc();
             String title = (String) (header.getTitleStmt().getTitles().get(0)).getContent().get(0);
-            List<Object> ids = header.getPublicationStmt().getPS().get(0).getContent();
+            List<Object> ids = header.getPublicationStmt().getPSAndAbs().get(0).getContent();
             String date = "";
             List<Object> dates = ids.stream().filter(x -> x instanceof Date).collect(Collectors.toList());
             if (! dates.isEmpty()) {

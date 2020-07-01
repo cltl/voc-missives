@@ -6,13 +6,19 @@ Specifically, TEI input files are converted to UIMA CAS XMI, and segmented and t
 
 ## Quick start
 
-Download the content of this repository, and run:
+Preprocessing relies on the ixa-pipe tokenizer `ixa-pipe-tok`, version 2.0.0. To install:
+
+>   git clone https://github.com/ixa-ehu/ixa-pipe-tok.git
+>   cd ixa-pipe-tok
+>   mvn clean install
+
+You can now clone this repository, and run:
 
 >   mvn clean package
 
-
 This will generate code for binding TEI XML elements to Java objects, as well as an executable jar for TEI-to-XMI conversion.  
-Binding was tested with `xjc` version 2.3.1 under Java 10, and `xjc` version 2.2.8 under Java 8.
+
+**Note**: TEI-to-XMI conversion is currently set to output raw text and paragraphs only.
 
 You can use the script `run-tei2xmi.sh` to convert files from directory to directory:
 
@@ -25,20 +31,15 @@ The code relies on [Jaxb](https://javaee.github.io/jaxb-v2/) to map the TEI XML 
 
 >   mvn clean compile
 
-Code binding relies on a XSD schema for the input TEI files, and on a bindings file. The schema and bindings are located in `./src/main/resources/`. We are using [tei_lite.xsd](https://tei-c.org/release/xml/tei/custom/schema/xsd/tei_lite.xsd).
-
+Code binding relies on a XSD schema for the input TEI files, and on a bindings file. The schema and bindings are located in `./src/main/resources/`. 
+Binding was tested with `xjc` version 2.3.1 under Java 10, and `xjc` version 2.2.8 under Java 8.
+We are using [tei_all.xsd](https://tei-c.org/release/xml/tei/custom/schema/xsd/tei_all.xsd) and the related files [tei_all_dcr.xsd](https://tei-c.org/release/xml/tei/custom/schema/xsd/tei_all_dcr.xsd), [tei_all_teix.xsd](https://tei-c.org/release/xml/tei/custom/schema/xsd/tei_all_teix.xsd) and [tei_all_xml.xsd](https://tei-c.org/release/xml/tei/custom/schema/xsd/tei_all_xml.xsd).
 
 ## Segmentation and tokenization
 
 Paragraphs respect the structure of the input TEI, and bear their TEI identifier.
 
 Paragraphs are segmented into sentences and tokenized using the [ixa-pipe-tok](https://github.com/ixa-ehu/ixa-pipe-tok) library.
-
-Text Formatting is minimal:
-
-- Line-break elements are ignored
-- TEI 'fw' elements are ignored
-- Each TEI paragraph appears on its own line.
 
 ## UIMA CAS XMI conversion
 

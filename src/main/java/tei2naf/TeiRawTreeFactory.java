@@ -1,14 +1,19 @@
-package utils;
+package tei2naf;
 
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import utils.ATeiTree;
+import utils.TeiBreak;
+import utils.TeiDiv;
+import utils.TeiLeaf;
 import xjc.teiAll.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class TeiTreeFactory {
+/**
+ * this class is derived from TeiTreeFactory, with the intention of preserving the raw text as it appears in the TEI
+ */
+public class TeiRawTreeFactory {
 
     public static ATeiTree create(Object o) throws IllegalArgumentException {
         if (o instanceof TEI)
@@ -17,12 +22,14 @@ public class TeiTreeFactory {
             return TeiDiv.create(ATeiTree.TeiType.BODY, ((Body) o).getId(), createChildren((Body) o));
         else if (o instanceof Div)
             return TeiDiv.create(ATeiTree.TeiType.DIV, ((Div) o).getId(), createChildren(((Div) o)));
-        else if (o instanceof String)
-            return TeiLeaf.create(ATeiTree.TeiType.STR, null, ((String) o).replace("\n", ""));
+        else if (o instanceof java.lang.String)
+            return TeiLeaf.create(ATeiTree.TeiType.STR, null, (String) o);
         else if (o instanceof Lb)
-            return TeiBreak.createLineBreak();
+            return TeiLeaf.create(ATeiTree.TeiType.STR, null, "\n");
         else if (o instanceof Head)
             return TeiDiv.create(ATeiTree.TeiType.HEAD, ((Head) o).getId(), createChildren(((Head) o).getContent()));
+        else if (o instanceof Fw)
+            return TeiDiv.create(ATeiTree.TeiType.FW, ((Fw) o).getId(), createChildren(((Fw) o).getContent()));
         else if (o instanceof P)
             return TeiDiv.create(ATeiTree.TeiType.P, ((P) o).getId(), createChildren(((P) o).getContent()));
         else if (o instanceof Hi)
@@ -35,8 +42,6 @@ public class TeiTreeFactory {
             return TeiDiv.create(ATeiTree.TeiType.ROW, ((Row) o).getId(), createChildren((Row) o));
         else if (o instanceof Cell)
             return TeiDiv.create(ATeiTree.TeiType.CELL, ((Cell) o).getId(), createChildren(((Cell) o).getContent()));
-        else if (o instanceof Fw)
-            return TeiBreak.createLineBreak();  // Fw ignored
         else if (o instanceof Pb)
             return TeiBreak.createPageBreak(((Pb) o).getId(),(((Pb) o).getN()));
         else if (o instanceof Text)

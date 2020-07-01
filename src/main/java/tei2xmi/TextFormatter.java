@@ -7,8 +7,9 @@ import java.util.List;
 public class TextFormatter extends Formatter {
 
     final static String FILE_EXTENSION = "";
+    final static String PARAGRAPH_SEPARATOR = "\n";
     public TextFormatter() {
-        super(FILE_EXTENSION);
+        super(PARAGRAPH_SEPARATOR, FILE_EXTENSION);
     }
 
     public List<TeiLeaf> format(ATeiTree tei) {

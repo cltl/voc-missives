@@ -4,7 +4,7 @@ import de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Paragraph;
 import tei2xmi.Converter;
 import utils.*;
-import xjc.tei.TEI;
+import xjc.teiAll.TEI;
 
 import java.io.*;
 import java.nio.file.Files;
