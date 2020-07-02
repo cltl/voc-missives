@@ -31,4 +31,5 @@
             <jaxb:property name="lang1"/> 
         </jaxb:bindings>
     </jaxb:bindings>
+
 </jaxb:bindings>
