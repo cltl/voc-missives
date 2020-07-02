@@ -12,6 +12,9 @@
         <jaxb:schemaBindings>
             <jaxb:package name="naf"/>
         </jaxb:schemaBindings>
+        <jaxb:bindings node="//xs:element[@name='raw']">
+            <jaxb:class name="raw"/>
+        </jaxb:bindings>
 <!--        <jaxb:bindings node="//xs:attribute[@name='lang']">
             <jaxb:property name="lang2"/>
         </jaxb:bindings> -->

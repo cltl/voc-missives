@@ -1,7 +1,6 @@
 package tei2naf;
 
 import tei2xmi.Formatter;
-import tei2xmi.TextFormatter;
 import utils.ATeiTree;
 import utils.TeiLeaf;
 

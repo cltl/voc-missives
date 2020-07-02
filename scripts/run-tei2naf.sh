@@ -1,8 +1,8 @@
 #!/bin/bash
 #
-# runs tei2xmi conversion over a directory of tei files with subdirectories.
+# runs tei2naf conversion over a directory of tei files with subdirectories.
 # this is useful for the missives, which are subdivided by volume
-# the assumed structure is input: $1/tei/volume; output: $1/xmi_1.1/volume
+# the assumed structure is input: $1/tei/volume; output: $1/naf/volume
 #---------------------------------------------------------------------------
 
 datadir=$1
@@ -11,5 +11,5 @@ jar=${wdir}/target/voc-missives-1.0-SNAPSHOT-jar-with-dependencies.jar
 
 for subdir in ${datadir}/tei/*; do
   volume=$(basename $subdir)
-  java -jar $jar ${datadir}/tei/${volume} ${datadir}/xmi_1.1/${volume}
+  java -jar $jar ${datadir}/tei/${volume} ${datadir}/naf/${volume}
 done

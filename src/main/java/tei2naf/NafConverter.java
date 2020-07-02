@@ -5,7 +5,6 @@ import utils.*;
 import xjc.teiAll.TEI;
 
 import java.nio.file.Path;
-import java.util.List;
 
 import static utils.ThrowingBiConsumer.throwingBiConsumerWrapper;
 
@@ -15,7 +14,7 @@ import static utils.ThrowingBiConsumer.throwingBiConsumerWrapper;
  * 01/07/20 Raw text layer extraction, and writing to XMI
  */
 public class NafConverter {
-
+    private static final String NAF_SFX = ".naf";
 
     /**
      * Extracts raw text from TEI file
@@ -56,11 +55,20 @@ public class NafConverter {
         }
     }
 
+    public void writeNaf(String teiFile, String nafFile) throws AbnormalProcessException {
+        Document document = extractParagraphs(teiFile);
+        if (! document.isEmpty()) {
+            NafDoc naf = new NafDoc();
+            naf.read(document);
+            naf.write(nafFile);
+        }
+    }
+
     public static void convertFile(Path file, String outdir) throws AbnormalProcessException {
-        String fileId = file.getFileName().toString().replaceAll("\\." + Converter.TEI_SFX, "");
+        String fileId = file.getFileName().toString().replaceAll("\\." + Converter.TEI_SFX, NAF_SFX);
         String outfile = outdir + "/" + fileId;
         NafConverter converter = new NafConverter();
-        converter.writeXmi(file.toString(), outfile);
+        converter.writeNaf(file.toString(), outfile);
     }
 
     public static void main(String[] args) {
