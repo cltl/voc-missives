@@ -8,8 +8,10 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.sun.org.apache.xml.internal.serialize.OutputFormat;
 import com.sun.org.apache.xml.internal.serialize.XMLSerializer;
@@ -71,14 +73,24 @@ public class NafDoc {
         return lps;
     }
 
-    private NafHeader getNafHeader() {
-        return (NafHeader) naf.getNafHeadersAndRawsAndTopics().stream().filter(x -> x instanceof NafHeader).findFirst().orElse(null);
+    public List<Wf> getWfs() {
+        Text textLayer = (Text) naf.getNafHeadersAndRawsAndTopics().stream().filter(x -> x instanceof Text).findFirst().orElse(null);
+        return textLayer.getWves();
     }
 
-    private Raw getRawLayer() {
-        return (Raw) naf.getNafHeadersAndRawsAndTopics().stream().filter(x -> x instanceof Raw).findFirst().orElse(null);
+    public List<Entity> getEntities() {
+        Entities entitiesLayer = (Entities) naf.getNafHeadersAndRawsAndTopics().stream().filter(x -> x instanceof Entities).findFirst().orElse(null);
+        if (entitiesLayer != null)
+            return entitiesLayer.getEntities();
+        else
+            return Collections.EMPTY_LIST;
     }
 
+    public List<Wf> entitySpan(Entity e) {
+        List<Span> spans = e.getReferencesAndExternalReferences().stream().filter(x -> x instanceof References).map(x -> ((References) x).getSpen()).findFirst().orElse(Collections.EMPTY_LIST);
+        List<String> targets = spans.get(0).getTargets().stream().map(x -> (String) x.getId()).collect(Collectors.toList());
+        return getWfs().stream().filter(w -> targets.contains(w.getId())).collect(Collectors.toList());
+    }
 
     public void read(BaseDoc document) {
 
@@ -106,6 +118,7 @@ public class NafDoc {
             layers.add(text);
         }
     }
+
 
 
     private Text getWfs(BaseDoc document) {

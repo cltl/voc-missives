@@ -94,6 +94,10 @@ public class IO {
         }
     }
 
+    public static String replaceExtension(Path file, String oldExtension, String newExtension) {
+        return file.getFileName().toString().replaceAll(oldExtension, newExtension);
+    }
+
     public static String append(String dirName, String fileName) {
         if (dirName.endsWith("/"))
             return dirName + fileName;

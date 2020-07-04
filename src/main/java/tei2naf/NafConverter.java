@@ -1,5 +1,6 @@
 package tei2naf;
 
+import missives.Handler;
 import missives.IO;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -21,7 +22,8 @@ import static missives.ThrowingBiConsumer.throwingBiConsumerWrapper;
  * 01/07/20 Raw text layer extraction, and writing to XMI
  */
 public class NafConverter {
-    private static final String NAF_SFX = ".naf";
+    private static final String IN = "." + Handler.TEI_SFX;
+    private static final String OUT = "." + Handler.NAF_SFX;
     boolean tokenize;
     public static final Logger logger = LogManager.getLogger(NafConverter.class);
     BaseDoc doc;
@@ -123,7 +125,7 @@ public class NafConverter {
     }
 
     public static void convertFile(Path file, String outdir, boolean tokenize) throws AbnormalProcessException {
-        String fileId = file.getFileName().toString().replaceAll("\\." + Converter.TEI_SFX, NAF_SFX);
+        String fileId = IO.replaceExtension(file, IN, OUT);
         String outfile = outdir + "/" + fileId;
         NafConverter converter = new NafConverter(tokenize);
         converter.process(file.toString());
