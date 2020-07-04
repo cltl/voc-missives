@@ -1,12 +1,13 @@
 package tei2naf;
 
+import missives.IO;
 import tei2xmi.*;
 import utils.*;
 import xjc.teiAll.TEI;
 
 import java.nio.file.Path;
 
-import static utils.ThrowingBiConsumer.throwingBiConsumerWrapper;
+import static missives.ThrowingBiConsumer.throwingBiConsumerWrapper;
 
 /**
  * Converts TEI document to NAF
@@ -15,7 +16,10 @@ import static utils.ThrowingBiConsumer.throwingBiConsumerWrapper;
  */
 public class NafConverter {
     private static final String NAF_SFX = ".naf";
-
+    boolean tokenize;
+    public NafConverter(boolean tokenize) {
+        this.tokenize = tokenize;
+    }
     /**
      * Extracts raw text from TEI file
      * @param teiFile
@@ -37,26 +41,11 @@ public class NafConverter {
         return document;
     }
 
-    /**
-     * TODO replace XMI by NAF
-     * @param teiFile
-     * @param xmiFile
-     * @throws AbnormalProcessException
-     */
-    public void writeXmi(String teiFile, String xmiFile) throws AbnormalProcessException {
-        Document document = extractParagraphs(teiFile);
-        if (! document.isEmpty()) {
-            CasDoc teiXmi = CasDoc.create();
-            String outFile = document.typedFileName(xmiFile) + CasDoc.FILE_EXT;
-            teiXmi.addMetadata(document.getMetadata());
-            teiXmi.addRawText(document.getRawText());
-            teiXmi.addParagraphs(document.getParagraphs());
-            teiXmi.write(outFile);
-        }
-    }
 
-    public void writeNaf(String teiFile, String nafFile) throws AbnormalProcessException {
+    public void toNaf(String teiFile, String nafFile) throws AbnormalProcessException {
         Document document = extractParagraphs(teiFile);
+        if (tokenize)
+            document.segmentAndTokenize(Tokenizer.create());
         if (! document.isEmpty()) {
             NafDoc naf = new NafDoc();
             naf.read(document);
@@ -64,16 +53,17 @@ public class NafConverter {
         }
     }
 
-    public static void convertFile(Path file, String outdir) throws AbnormalProcessException {
+    public static void convertFile(Path file, String outdir, boolean tokenize) throws AbnormalProcessException {
         String fileId = file.getFileName().toString().replaceAll("\\." + Converter.TEI_SFX, NAF_SFX);
         String outfile = outdir + "/" + fileId;
-        NafConverter converter = new NafConverter();
-        converter.writeNaf(file.toString(), outfile);
+        NafConverter converter = new NafConverter(tokenize);
+        converter.toNaf(file.toString(), outfile);
     }
 
     public static void main(String[] args) {
+
         IO.loop(args[0], args[1],
-                throwingBiConsumerWrapper((x, y) -> convertFile(x, y)));
+                throwingBiConsumerWrapper((x, y) -> convertFile(x, y, args[2].length() > 0)));
     }
 
 

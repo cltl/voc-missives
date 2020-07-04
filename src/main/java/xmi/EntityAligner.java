@@ -1,13 +1,14 @@
 package xmi;
 
 import de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity;
+import missives.IO;
 import utils.*;
 
 import java.nio.file.Path;
 import java.util.Collections;
 import java.util.List;
 
-import static utils.ThrowingBiConsumer.throwingBiConsumerWrapper;
+import static missives.ThrowingBiConsumer.throwingBiConsumerWrapper;
 
 
 /**

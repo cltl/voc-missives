@@ -9,7 +9,7 @@ class NafConverterTest {
     @Test
     public void testRawTextLayerExtraction() throws AbnormalProcessException {
         String teiFile = "src/test/resources/tei-xml/index_persons.xml";
-        NafConverter nc = new NafConverter();
+        NafConverter nc = new NafConverter(false);
         String extracted = nc.extractText(teiFile);
         String toExtract = "245INDEX VAN PERSOONSNAMEN\nAchmad, Sayid, Koning van Kirman, 124,\n 211, 213\nAdipati, Pangéran (Palembang), 78, 136\n Adipati Anom, Pangéran (Cheribon), 218\n Adipati Anom, Pangéran (Djambi), 199,\n 200, 226\nAdipati Anom, Pangéran (Palembang), Pangéran\n Mangkubumi, 4, 14, 34, 35, 47, 60,\n 111, 122, 135, 137, 156, 182, 183, 226, 236\nAlber(t)s, Joannes Coenradus, 66\nAnom, Sultan, zie Adipati Anom, Pangéran\n (Palembang)\n246INDEX VAN PERSOONSNAMENBaning, Entjik, 46\n";
         assertEquals(extracted, toExtract);

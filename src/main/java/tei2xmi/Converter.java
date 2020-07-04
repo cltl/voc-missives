@@ -1,5 +1,6 @@
 package tei2xmi;
 
+import missives.IO;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utils.*;
@@ -12,7 +13,7 @@ import javax.xml.bind.Unmarshaller;
 import java.io.File;
 import java.nio.file.Path;
 
-import static utils.ThrowingBiConsumer.throwingBiConsumerWrapper;
+import static missives.ThrowingBiConsumer.throwingBiConsumerWrapper;
 
 public class Converter {
 

@@ -1,4 +1,6 @@
-package utils;
+package missives;
+
+import utils.AbnormalProcessException;
 
 import java.util.function.BiConsumer;
 

@@ -53,37 +53,13 @@
                         <configuration>
                             <schemaDirectory>src/main/resources/naf</schemaDirectory>
                             <schemaIncludes>
-                                <include>naf_v3_tunits.xsd</include>
+                                <include>naf_v3.1.b.xsd</include>
                             </schemaIncludes>
                             <generatePackage>xjc.naf</generatePackage>
                             <generateDirectory>${project.build.directory}/generated-sources/xjc2</generateDirectory>
                         </configuration>
                     </execution>
                 </executions>
-            <!--    <executions>
-                    <execution>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>-->
-                    <!-- replace tei_all by tei_lite and xjc.teiAll by xjc.tei to get old bindings (prior to June 2020) -->
-            <!--        <extension>true</extension>
-                    <schemaDirectory>src/main/resources/tei_all</schemaDirectory>
-                    <schemaIncludes>
-                        <include>tei_all.xsd</include>
-                        <include>naf_v3_tunits.xsd</include>
-                    </schemaIncludes>
-                    <bindingDirectory>src/main/resources/tei_all</bindingDirectory>
-                    <bindingIncludes>
-                        <include>bindings.xjb</include>
-                    </bindingIncludes>
-                    <generateDirectory>target/generated-sources</generateDirectory>
-                    <generatePackage>xjc.teiAll</generatePackage>
-                    <generatePackage>xjc.naf</generatePackage>
-                </configuration>
-            -->
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>

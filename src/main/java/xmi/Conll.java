@@ -7,7 +7,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utils.AbnormalProcessException;
 import utils.CasDoc;
-import utils.IO;
+import missives.IO;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.stream.Collectors;
 
-import static utils.ThrowingBiConsumer.throwingBiConsumerWrapper;
+import static missives.ThrowingBiConsumer.throwingBiConsumerWrapper;
 
 /**
  * Writes out entities in XMI doc to CoNLL 2002 format.

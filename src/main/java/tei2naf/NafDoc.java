@@ -15,6 +15,7 @@ import com.sun.org.apache.xml.internal.serialize.OutputFormat;
 import com.sun.org.apache.xml.internal.serialize.XMLSerializer;
 import tei2xmi.Document;
 import utils.Paragraph;
+import utils.Segment;
 import xjc.naf.*;
 
 public class NafDoc {
@@ -25,7 +26,7 @@ public class NafDoc {
     public NafDoc() {
         naf = new NAF();
         naf.setLang("nl");
-        naf.setVersion("v3.1");
+        naf.setVersion("v3.1.b");
     }
 
     public NafDoc(NAF naf) {
@@ -88,8 +89,8 @@ public class NafDoc {
         fileDesc.setTitle(document.getMetadata().getDocumentTitle());
         fileDesc.setFilename(document.getMetadata().getDocumentId());
         nafHeader.setFileDesc(fileDesc);
-
-        Raw raw = new Raw(document.getRawText());
+        String rawText = document.getRawText();
+        Raw raw = new Raw(rawText);
         nafHeader.getLinguisticProcessors().add(createLinguisticProcessors("raw"));
 
         Tunits tunits = new Tunits();
@@ -100,6 +101,38 @@ public class NafDoc {
         layers.add(nafHeader);
         layers.add(raw);
         layers.add(tunits);
+
+        if (! document.getTokens().getSegments().isEmpty()) {
+            Text text = getWfs(document, rawText);
+            nafHeader.getLinguisticProcessors().add(createLinguisticProcessors("text"));
+            layers.add(text);
+        }
+    }
+
+    private Text getWfs(Document document, String rawText) {
+        Text text = new Text();
+        List<Segment> sentences = document.getSentences().getSegments();
+        List<Segment> tokens = document.getTokens().getSegments();
+        int endIndex = sentences.remove(0).getEnd();
+        int sentID = 1;
+        for (Segment t: tokens) {
+            if (t.getEnd() > endIndex && ! sentences.isEmpty()) {
+                endIndex = sentences.remove(0).getEnd();
+                sentID++;
+            }
+            text.getWves().add(createWf(rawText, sentID, t));
+        }
+        return text;
+    }
+
+    private Wf createWf(String rawText, int sentID, Segment t) {
+        Wf wf = new Wf();
+        wf.setId(t.getIndex() + "");
+        wf.setSent(sentID + "");
+        wf.setContent(rawText.substring(t.getBegin(), t.getEnd()));
+        wf.setOffset(t.getBegin() + "");
+        wf.setLength("" + (t.getEnd() - t.getBegin()));
+        return wf;
     }
 
     public void write(String file) {

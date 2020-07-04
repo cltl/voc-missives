@@ -10,16 +10,20 @@ The code is compatible with Java 8+. The code was tested with maven 3.6.2.
 
 Besides, preprocessing relies on the ixa-pipe tokenizer `ixa-pipe-tok`, version 2.0.0. To install:
 
->   git clone https://github.com/ixa-ehu/ixa-pipe-tok.git
->   cd ixa-pipe-tok
->   mvn clean install
+```sh
+$ git clone https://github.com/ixa-ehu/ixa-pipe-tok.git
+$ cd ixa-pipe-tok
+$ mvn clean install
+```
 
 ### Installation
 You can now clone this repository:
 
->   git clone https://github.com/cltl/voc-missives.git
->   cd voc-missives
->   mvn clean package
+```sh
+$ git clone https://github.com/cltl/voc-missives.git
+$ cd voc-missives
+$ mvn clean package
+```
 
 This will compile the code and create an executable jar for TEI-to-NAF conversion. 
 
@@ -86,5 +90,5 @@ Binding was tested with `xjc` version 2.3.1 under Java 10, and `xjc` version 2.2
 We use the TEI *All* specifications: [tei_all.xsd](https://tei-c.org/release/xml/tei/custom/schema/xsd/tei_all.xsd) and the related files [tei_all_dcr.xsd](https://tei-c.org/release/xml/tei/custom/schema/xsd/tei_all_dcr.xsd), [tei_all_teix.xsd](https://tei-c.org/release/xml/tei/custom/schema/xsd/tei_all_teix.xsd) and [tei_all_xml.xsd](https://tei-c.org/release/xml/tei/custom/schema/xsd/tei_all_xml.xsd).
 
 ### NAF
-The NAF xsd schema was derived from a modified NAF DTD, converted to XSD with [trang](https://relaxng.org/jclark/trang.html). The modified NAF DTD is based on the [naf_v3.dtd](https://github.com/cltl/NAF-4-Development/blob/master/res/naf_development/naf_v3.dtd), and extended with a `tunits` specification.
+The NAF xsd schema, `naf_v3.1.b.xsd` was derived from a modified NAF DTD, converted to XSD with [trang](https://relaxng.org/jclark/trang.html). The modified NAF DTD, `naf_v3.1.b.dtd`, is based on the [naf_v3.dtd](https://github.com/cltl/NAF-4-Development/blob/master/res/naf_development/naf_v3.dtd), and extended with a `tunits` specification.
 

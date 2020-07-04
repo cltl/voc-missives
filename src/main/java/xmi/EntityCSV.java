@@ -2,6 +2,7 @@ package xmi;
 
 import de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Paragraph;
+import missives.IO;
 import tei2xmi.Converter;
 import utils.*;
 import xjc.teiAll.TEI;
@@ -13,7 +14,7 @@ import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static utils.ThrowingBiConsumer.throwingBiConsumerWrapper;
+import static missives.ThrowingBiConsumer.throwingBiConsumerWrapper;
 
 public class EntityCSV {
 

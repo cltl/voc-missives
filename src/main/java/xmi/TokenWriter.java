@@ -1,11 +1,10 @@
 package xmi;
 
-import de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import utils.AbnormalProcessException;
 import utils.CasDoc;
-import utils.IO;
+import missives.IO;
 
 
 import java.io.BufferedWriter;
@@ -14,7 +13,7 @@ import java.nio.file.Path;
 import java.util.List;
 import java.util.ListIterator;
 
-import static utils.ThrowingBiConsumer.throwingBiConsumerWrapper;
+import static missives.ThrowingBiConsumer.throwingBiConsumerWrapper;
 
 public class TokenWriter {
     /**
