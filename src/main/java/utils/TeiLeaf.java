@@ -49,4 +49,9 @@ public class TeiLeaf extends ATeiTree {
             return Collections.singletonList(this);
         return Collections.EMPTY_LIST;
     }
+
+    @Override
+    public String yield() {
+        return content;
+    }
 }

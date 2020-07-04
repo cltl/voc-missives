@@ -56,4 +56,11 @@ public class TeiDiv extends ATeiTree {
         list.addAll(children.stream().map(c -> c.getAllNodes(p)).flatMap(x -> x.stream()).collect(Collectors.toList()));
         return list;
     }
+
+    @Override
+    public String yield() {
+        StringBuilder sb = new StringBuilder();
+        children.forEach(c -> sb.append(c.yield()));
+        return sb.toString();
+    }
 }

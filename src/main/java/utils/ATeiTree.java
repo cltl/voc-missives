@@ -30,4 +30,6 @@ public abstract class ATeiTree {
     public abstract void accept(Consumer<ATeiTree> consumer);
 
     public abstract List<ATeiTree> getAllNodes(Predicate<ATeiTree> p);
+
+    public abstract String yield();
 }

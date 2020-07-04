@@ -13,7 +13,7 @@ public class BaseFormatter extends Formatter {
         super(PARAGRAPH_SEPARATOR, FILE_EXTENSION);
     }
 
-    List<ATeiTree> listHeadsAndParagraphs(ATeiTree tei) {
+    List<ATeiTree> selectSectionSubtrees(ATeiTree tei) {
         return tei.getTopNodes(t ->  t.getTeiType().equals(ATeiTree.TeiType.P)
                 || t.getTeiType().equals(ATeiTree.TeiType.HEAD)
                 || t.getTeiType().equals(ATeiTree.TeiType.NOTE)
@@ -22,7 +22,7 @@ public class BaseFormatter extends Formatter {
 
     @Override
     public List<TeiLeaf> format(ATeiTree tei) {
-        List<ATeiTree> headAndParagraphTrees = listHeadsAndParagraphs(tei);
+        List<ATeiTree> headAndParagraphTrees = selectSectionSubtrees(tei);
         return getContent(headAndParagraphTrees);
     }
 

@@ -13,9 +13,6 @@ import java.util.List;
 
 import com.sun.org.apache.xml.internal.serialize.OutputFormat;
 import com.sun.org.apache.xml.internal.serialize.XMLSerializer;
-import tei2xmi.Document;
-import utils.Paragraph;
-import utils.Segment;
 import xjc.naf.*;
 
 public class NafDoc {
@@ -48,11 +45,11 @@ public class NafDoc {
         }
     }
 
-    public static Tunit createTunit(Paragraph p) {
+    public static Tunit createTunit(Fragment p) {
         Tunit t = new Tunit();
-        t.setId(p.getTeiId());
+        t.setId(p.getId());
         t.setOffset(p.getOffset() + "");
-        t.setLength(p.getContent().length() + "");
+        t.setLength(p.getLength() + "");
         return t;
     }
 
@@ -82,7 +79,8 @@ public class NafDoc {
         return (Raw) naf.getNafHeadersAndRawsAndTopics().stream().filter(x -> x instanceof Raw).findFirst().orElse(null);
     }
 
-    public void read(Document document) {
+
+    public void read(BaseDoc document) {
 
         NafHeader nafHeader = new NafHeader();
         FileDesc fileDesc = new FileDesc();
@@ -94,7 +92,7 @@ public class NafDoc {
         nafHeader.getLinguisticProcessors().add(createLinguisticProcessors("raw"));
 
         Tunits tunits = new Tunits();
-        document.getParagraphs().forEach(p -> tunits.getTunits().add(createTunit(p)));
+        document.getSections().forEach(p -> tunits.getTunits().add(createTunit(p)));
         nafHeader.getLinguisticProcessors().add(createLinguisticProcessors("tunits"));
 
         List<Object> layers = naf.getNafHeadersAndRawsAndTopics();
@@ -102,36 +100,37 @@ public class NafDoc {
         layers.add(raw);
         layers.add(tunits);
 
-        if (! document.getTokens().getSegments().isEmpty()) {
-            Text text = getWfs(document, rawText);
+        if (! document.getTokens().isEmpty()) {
+            Text text = getWfs(document);
             nafHeader.getLinguisticProcessors().add(createLinguisticProcessors("text"));
             layers.add(text);
         }
     }
 
-    private Text getWfs(Document document, String rawText) {
+
+    private Text getWfs(BaseDoc document) {
         Text text = new Text();
-        List<Segment> sentences = document.getSentences().getSegments();
-        List<Segment> tokens = document.getTokens().getSegments();
-        int endIndex = sentences.remove(0).getEnd();
-        int sentID = 1;
-        for (Segment t: tokens) {
-            if (t.getEnd() > endIndex && ! sentences.isEmpty()) {
-                endIndex = sentences.remove(0).getEnd();
+        List<Fragment> sentences = document.getSentences();
+        List<Fragment> tokens = document.getTokens();
+        int endIndex = sentences.remove(0).getEndIndex();
+        int sentID = 0;
+        for (Fragment t: tokens) {
+            if (t.getEndIndex() > endIndex && ! sentences.isEmpty()) {
+                endIndex = sentences.remove(0).getEndIndex();
                 sentID++;
             }
-            text.getWves().add(createWf(rawText, sentID, t));
+            text.getWves().add(createWf(document.getString(t), sentID, t));
         }
         return text;
     }
 
-    private Wf createWf(String rawText, int sentID, Segment t) {
+    private Wf createWf(String wordForm, int sentID, Fragment t) {
         Wf wf = new Wf();
-        wf.setId(t.getIndex() + "");
+        wf.setId("w" + t.getId());
         wf.setSent(sentID + "");
-        wf.setContent(rawText.substring(t.getBegin(), t.getEnd()));
-        wf.setOffset(t.getBegin() + "");
-        wf.setLength("" + (t.getEnd() - t.getBegin()));
+        wf.setContent(wordForm);
+        wf.setOffset(t.getOffset() + "");
+        wf.setLength(t.getLength() + "");
         return wf;
     }
 

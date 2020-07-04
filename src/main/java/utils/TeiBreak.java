@@ -50,6 +50,11 @@ public class TeiBreak extends ATeiTree {
         return Collections.EMPTY_LIST;
     }
 
+    @Override
+    public String yield() {
+        return "";
+    }
+
     public String getPageNumber() {
         return number;
     }

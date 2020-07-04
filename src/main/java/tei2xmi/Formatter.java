@@ -1,6 +1,7 @@
 package tei2xmi;
 
 
+import tei2naf.Fragment;
 import utils.ATeiTree;
 import utils.Paragraph;
 import utils.TeiLeaf;
@@ -53,5 +54,7 @@ public abstract class Formatter {
         }
         return paragraphs;
     }
+
+
 
 }
