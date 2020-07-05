@@ -1,10 +1,11 @@
 package missives;
 
-import naf2conll.NAFConllReader;
-import naf2conll.Naf2Conll;
-import naf2conll.NafXmiReader;
+import entities.nafReference.NAFConllReader;
+import entities.nafReference.Naf2Conll;
+import entities.nafReference.NafXmiReader;
 import org.apache.commons.cli.*;
-import xmi.EntityAligner;
+import entities.xmiReference.EntityAligner;
+import utils.common.IO;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -13,19 +14,15 @@ import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.stream.Stream;
 
-import static missives.ThrowingBiConsumer.throwingBiConsumerWrapper;
-import static tei2naf.NafConverter.convertFile;
-import static xmi.Conll.run;
+import static utils.common.ThrowingBiConsumer.throwingBiConsumerWrapper;
+import static text.tei2naf.NafConverter.convertFile;
+import static entities.xmiReference.Conll.run;
 
 /**
  * Main class for missives processing.
  *
  */
 public class Handler {
-    public static final String NAF_SFX = "naf";
-    public static final String TEI_SFX = "xml";
-    public static final String XMI_SFX = "xmi";
-    public static final String CONLL_SFX = "conll";
 
 
     private static void usage(Options options) {
@@ -46,18 +43,18 @@ public class Handler {
             final String indir = cmd.getOptionValue('i');
             String inputType = cmd.hasOption("I") ? cmd.getOptionValue('I') : inferType(indir);
             if (! isKnownType(inputType))
-                throw new IllegalArgumentException("input type " + inputType + " is invalid. Select one type among xml (tei), naf, xmi or conll.");
+                throw new IllegalArgumentException("input type " + inputType + " is invalid. Select one type among xml (tei), naf, entities.xmi or conll.");
 
             final String outdir = cmd.hasOption('o') ? cmd.getOptionValue('o') : "";
-            String outputType = cmd.hasOption("O") ? cmd.getOptionValue('O') : NAF_SFX;
+            String outputType = cmd.hasOption("O") ? cmd.getOptionValue('O') : IO.NAF_SFX;
             String conllSeparator = cmd.hasOption("c") ? cmd.getOptionValue('c') : " ";
             String selectText = cmd.hasOption("s") ? cmd.getOptionValue("s") : "mixed";
             String source = cmd.hasOption("e") ? cmd.getOptionValue("e") : "voc-missives-naf-conll-reader";
             if (cmd.hasOption('r') || cmd.hasOption('R')) {
                 final String refdir = cmd.getOptionValue('r');
                 String refType = cmd.hasOption("R") ? cmd.getOptionValue('R') : inferType(refdir);
-                if (! (refType.equals(NAF_SFX) || refType.equals(XMI_SFX)))
-                    throw new IllegalArgumentException("Invalid reference type. Select one of xmi or naf.");
+                if (! (refType.equals(IO.NAF_SFX) || refType.equals(IO.XMI_SFX)))
+                    throw new IllegalArgumentException("Invalid reference type. Select one of entities.xmi or naf.");
                 runConfiguration(indir, inputType, outdir, outputType, refdir, refType, conllSeparator, selectText, source);
             } else
                 runConfiguration(indir, inputType, outdir, outputType, cmd.hasOption('t'), conllSeparator, selectText);
@@ -73,13 +70,13 @@ public class Handler {
                                          String conllSeparator,
                                          String selectText,
                                          String source) {
-        if (inputType.equals(XMI_SFX) && outputType.equals(XMI_SFX) && refType.equals(XMI_SFX))
+        if (inputType.equals(IO.XMI_SFX) && outputType.equals(IO.XMI_SFX) && refType.equals(IO.XMI_SFX))
             IO.loop(indir, Collections.singletonList(refDir), outdir,
                 throwingBiConsumerWrapper((x, y) -> EntityAligner.run(x, y)));
-        else if (inputType.equals(CONLL_SFX) && outputType.equals(NAF_SFX) && refType.equals(NAF_SFX))
+        else if (inputType.equals(IO.CONLL_SFX) && outputType.equals(IO.NAF_SFX) && refType.equals(IO.NAF_SFX))
             IO.loop(indir, Collections.singletonList(refDir), outdir,
                     throwingBiConsumerWrapper((x, y) -> NAFConllReader.run(x, y, selectText, conllSeparator, source)));
-        else if (inputType.equals(XMI_SFX) && outputType.equals(NAF_SFX) && refType.equals(NAF_SFX))
+        else if (inputType.equals(IO.XMI_SFX) && outputType.equals(IO.NAF_SFX) && refType.equals(IO.NAF_SFX))
             IO.loop(indir, Collections.singletonList(refDir), outdir,
                     throwingBiConsumerWrapper((x, y) -> NafXmiReader.run(x, y, selectText, source)));
         throw new IllegalArgumentException("annotations integration is currently only supported for CAS XMI and Conll2Naf");
@@ -92,23 +89,23 @@ public class Handler {
                                          boolean tokenize,
                                          String conllSeparator,
                                          String selectText) {
-        if (inputType.equals(TEI_SFX)) {
-            if (outputType.equals(NAF_SFX))
+        if (inputType.equals(IO.TEI_SFX)) {
+            if (outputType.equals(IO.NAF_SFX))
                 IO.loop(indir, outdir,
                         throwingBiConsumerWrapper((x, y) -> convertFile(x, y, tokenize)));
-            else if (outputType.equals(XMI_SFX))    // documents are always tokenized
+            else if (outputType.equals(IO.XMI_SFX))    // documents are always tokenized
                 IO.loop(indir, outdir,
-                        throwingBiConsumerWrapper((x, y) -> tei2xmi.Converter.convertFile(x, y)));
-        } else if (inputType.equals(XMI_SFX) && outputType.equals(CONLL_SFX))
+                        throwingBiConsumerWrapper((x, y) -> text.tei2xmi.Converter.convertFile(x, y)));
+        } else if (inputType.equals(IO.XMI_SFX) && outputType.equals(IO.CONLL_SFX))
                 IO.loop(indir, outdir, throwingBiConsumerWrapper((x, y) -> run(x, y, conllSeparator)));
-        else if (inputType.equals(NAF_SFX) && outputType.equals(CONLL_SFX))
+        else if (inputType.equals(IO.NAF_SFX) && outputType.equals(IO.CONLL_SFX))
             IO.loop(indir, outdir, throwingBiConsumerWrapper((x, y) -> Naf2Conll.run(x, y, conllSeparator, selectText)));
         else
             throw new IllegalArgumentException("conversion from " + inputType + " to " + outputType + " is not supported");
     }
 
     private static boolean isKnownType(String t) {
-        return t.equals(NAF_SFX) || t.equals(TEI_SFX) || t.equals(CONLL_SFX) || t.equals(XMI_SFX);
+        return t.equals(IO.NAF_SFX) || t.equals(IO.TEI_SFX) || t.equals(IO.CONLL_SFX) || t.equals(IO.XMI_SFX);
     }
 
     private static String inferType(String indir) {
@@ -127,9 +124,9 @@ public class Handler {
         options.addOption("i", true, "input file / directory");
         options.addOption("o", true, "output directory. Defaults to current directory");
         options.addOption("r", true, "reference directory (for NE annotations integration");
-        options.addOption("I", true, "input file type; defaults to the file type read from input files extension (xml|naf|xmi|conll), where xml is the extension for TEI files");
+        options.addOption("I", true, "input file type; defaults to the file type read from input files extension (xml|naf|entities.xmi|conll), where xml is the extension for TEI files");
         options.addOption("O", true, "output file type; default: NAF");
-        options.addOption("R", true, "reference file type; defaults to the file type read from reference files extension (naf|xmi)");
+        options.addOption("R", true, "reference file type; defaults to the file type read from reference files extension (naf|entities.xmi)");
         options.addOption("c", true, "conll separator for Conll output; defaults to single space");
         options.addOption("s", true, "selected text type for Conll output and entity integration: text|notes|mixed|all; default:mixed");
         options.addOption("e", true, "source of entity annotations");

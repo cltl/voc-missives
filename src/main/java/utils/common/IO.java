@@ -1,0 +1,111 @@
+package utils.common;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.BiConsumer;
+import java.util.stream.Stream;
+
+public class IO {
+
+    public static final String NAF_SFX = "naf";
+    public static final String TEI_SFX = "xml";
+    public static final String XMI_SFX = "xmi";
+    public static final String CONLL_SFX = "conll";
+    private static final Logger logger = LogManager.getLogger(IO.class);
+    /**
+     * Processes files in dir given a file consumer
+     * @param indir     input directory
+     * @param outdir    output directory
+     * @param fileConsumer a bi-consumer (input file path, output directory)
+     */
+    public static void loop(String indir, String outdir, BiConsumer<Path, String> fileConsumer) {
+        Path dirpath = Paths.get(outdir);
+        if (!Files.exists(dirpath)) {
+            try {
+                Files.createDirectories(Paths.get(outdir));
+            } catch (IOException e) {
+                logger.fatal("Error creating " + outdir, e);
+            }
+        }
+        try (Stream<Path> paths = Files.walk(Paths.get(indir))) {
+            paths.filter(p -> Files.isRegularFile(p)).filter(p -> {
+                try {
+                    return ! Files.isHidden(p);
+                } catch (IOException e) {
+                    logger.warn("Error testing " + p, e);
+                    return false;
+                }}).forEach(f -> fileConsumer.accept(f, outdir));
+        } catch (IOException e) {
+            logger.fatal("Error processing files in " + indir, e);
+        }
+    }
+    /**
+     * Processes files in dir given a file consumer
+     * @param indir1    input directory
+     * @param auxdirs   auxilliary input directories
+     * @param outdir    output directory
+     * @param fileConsumer a bi-consumer (input file from dir1, (indir2 , outdir))
+     */
+    public static void loop(String indir1, List<String> auxdirs, String outdir, BiConsumer<Path, List<String>> fileConsumer) {
+        Path dirpath = Paths.get(outdir);
+        if (!Files.exists(dirpath)) {
+            try {
+                Files.createDirectories(dirpath);
+            } catch (IOException e) {
+                logger.fatal("Error creating " + outdir, e);
+            }
+        }
+        List<String> dirs = new ArrayList<>();
+        dirs.addAll(auxdirs);
+        dirs.add(outdir);
+        try (Stream<Path> paths = Files.walk(Paths.get(indir1))) {
+            paths.filter(p -> Files.isRegularFile(p)).filter(p -> {
+                try {
+                    return ! Files.isHidden(p);
+                } catch (IOException e) {
+                    logger.warn("Error testing " + p, e);
+                    return false;
+                }}).forEach(f -> fileConsumer.accept(f, dirs));
+
+        } catch (IOException e) {
+            logger.fatal("Error processing files in " + indir1, e);
+        }
+
+    }
+
+    public static void loopToFile(String indir, String outFile, BiConsumer<Path,BufferedWriter> fileConsumer) {
+        try (Stream<Path> paths = Files.walk(Paths.get(indir));
+            BufferedWriter bw = new BufferedWriter(new FileWriter(outFile))) {
+            paths.filter(p -> Files.isRegularFile(p)).filter(p -> {
+                try {
+                    return ! Files.isHidden(p);
+                } catch (IOException e) {
+                    logger.warn("Error testing " + p, e);
+                    return false;
+                }}).forEach(f -> fileConsumer.accept(f, bw));
+
+        } catch (IOException e) {
+            logger.fatal("Error processing files in " + indir, e);
+        }
+    }
+
+    public static String replaceExtension(Path file, String oldExtension, String newExtension) {
+        return file.getFileName().toString().replaceAll(oldExtension, newExtension);
+    }
+
+    public static String append(String dirName, String fileName) {
+        if (dirName.endsWith("/"))
+            return dirName + fileName;
+        else
+            return dirName + "/" + fileName;
+    }
+}
