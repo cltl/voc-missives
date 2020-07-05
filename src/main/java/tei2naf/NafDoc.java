@@ -92,6 +92,14 @@ public class NafDoc {
         return getWfs().stream().filter(w -> targets.contains(w.getId())).collect(Collectors.toList());
     }
 
+    public List<Tunit> getTunits() {
+        Tunits tunits = (Tunits) naf.getNafHeadersAndRawsAndTopics().stream().filter(x -> x instanceof Tunits).findFirst().orElse(null);
+        if (tunits != null)
+            return tunits.getTunits();
+        else
+            return Collections.EMPTY_LIST;
+    }
+
     public void read(BaseDoc document) {
 
         NafHeader nafHeader = new NafHeader();

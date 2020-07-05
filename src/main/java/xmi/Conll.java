@@ -5,7 +5,7 @@ import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import utils.AbnormalProcessException;
+import missives.AbnormalProcessException;
 import utils.CasDoc;
 import missives.IO;
 

@@ -8,7 +8,7 @@ import eus.ixa.ixa.pipe.ml.tok.Token;
 import net.sourceforge.argparse4j.inf.ArgumentParserException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import utils.AbnormalProcessException;
+import missives.AbnormalProcessException;
 import utils.Paragraph;
 
 import java.util.List;

@@ -1,5 +1,6 @@
 package utils;
 
+import missives.AbnormalProcessException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import xjc.teiAll.Date;

@@ -55,7 +55,7 @@ public class IO {
         Path dirpath = Paths.get(outdir);
         if (!Files.exists(dirpath)) {
             try {
-                Files.createDirectories(Paths.get(outdir));
+                Files.createDirectories(dirpath);
             } catch (IOException e) {
                 logger.fatal("Error creating " + outdir, e);
             }

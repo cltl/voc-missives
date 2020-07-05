@@ -1,6 +1,7 @@
 package tei2xmi;
 
 import eus.ixa.ixa.pipe.ml.tok.Token;
+import missives.AbnormalProcessException;
 import org.junit.jupiter.api.Test;
 import utils.*;
 import xjc.teiAll.TEI;

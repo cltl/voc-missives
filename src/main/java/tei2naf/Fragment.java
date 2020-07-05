@@ -21,6 +21,12 @@ public class Fragment implements Comparable<Fragment> {
         this.length = length;
     }
 
+    public Fragment(String id, String offset, String length) {
+        this.id = id;
+        this.offset = Integer.parseInt(offset);
+        this.length = Integer.parseInt(length);
+    }
+
     public static void sort(List<Fragment> sections) {
         Collections.sort(sections, Fragment::compareTo);
     }
@@ -106,5 +112,13 @@ public class Fragment implements Comparable<Fragment> {
         if (i < fragments.size())
             result.add(fragments.get(i));
         return result;
+    }
+
+    public boolean precedes(Fragment f) {
+        return getEndIndex() <= f.getOffset();
+    }
+
+    public boolean contains(Fragment f) {
+        return offset <= f.getOffset() && getEndIndex() >= f.getEndIndex();
     }
 }

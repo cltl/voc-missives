@@ -49,7 +49,7 @@ public class Handler {
             final String outdir = cmd.hasOption('o') ? cmd.getOptionValue('o') : "";
             String outputType = cmd.hasOption("O") ? cmd.getOptionValue('O') : NAF_SFX;
             String conllSeparator = cmd.hasOption("c") ? cmd.getOptionValue('c') : " ";
-            String selectText = cmd.hasOption("s") ? cmd.getOptionValue("s") : "all";
+            String selectText = cmd.hasOption("s") ? cmd.getOptionValue("s") : "mixed";
             if (cmd.hasOption('r') || cmd.hasOption('R')) {
                 final String refdir = cmd.getOptionValue('r');
                 String refType = cmd.hasOption("R") ? cmd.getOptionValue('R') : inferType(refdir);
@@ -118,7 +118,7 @@ public class Handler {
         options.addOption("O", true, "output file type; default: NAF");
         options.addOption("R", true, "reference file type; defaults to the file type read from reference files extension (naf|xmi)");
         options.addOption("c", true, "conll separator for Conll output; defaults to single space");
-        options.addOption("s", true, "selected text type for Conll output and entity integration: text|notes|all; default:all");
+        options.addOption("s", true, "selected text type for Conll output and entity integration: text|notes|mixed|all; default:mixed");
         options.addOption("t", false, "segment and tokenize");
         process(options, args);
     }

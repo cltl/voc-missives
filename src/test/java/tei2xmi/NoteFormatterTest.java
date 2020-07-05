@@ -1,7 +1,7 @@
 package tei2xmi;
 
 import org.junit.jupiter.api.Test;
-import utils.AbnormalProcessException;
+import missives.AbnormalProcessException;
 import utils.TeiLeaf;
 import utils.TeiTreeFactory;
 import xjc.teiAll.TEI;

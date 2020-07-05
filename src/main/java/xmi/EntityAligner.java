@@ -1,6 +1,7 @@
 package xmi;
 
 import de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity;
+import missives.AbnormalProcessException;
 import missives.IO;
 import utils.*;
 

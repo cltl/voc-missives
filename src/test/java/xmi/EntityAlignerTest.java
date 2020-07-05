@@ -1,7 +1,7 @@
 package xmi;
 
 import org.junit.jupiter.api.Test;
-import utils.AbnormalProcessException;
+import missives.AbnormalProcessException;
 
 import static org.junit.jupiter.api.Assertions.*;
 

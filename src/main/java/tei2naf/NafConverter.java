@@ -1,5 +1,6 @@
 package tei2naf;
 
+import missives.AbnormalProcessException;
 import missives.Handler;
 import missives.IO;
 import org.apache.logging.log4j.LogManager;

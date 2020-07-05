@@ -1,4 +1,4 @@
-package utils;
+package missives;
 
 public class AbnormalProcessException extends Exception {
     public AbnormalProcessException() {

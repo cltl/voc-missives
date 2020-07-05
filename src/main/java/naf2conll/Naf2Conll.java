@@ -2,8 +2,9 @@ package naf2conll;
 
 import missives.Handler;
 import missives.IO;
+import tei2naf.Fragment;
 import tei2naf.NafDoc;
-import utils.AbnormalProcessException;
+import missives.AbnormalProcessException;
 import xjc.naf.Entity;
 import xjc.naf.Wf;
 
@@ -27,6 +28,13 @@ public class Naf2Conll {
     private static final String OUT = "." + Handler.CONLL_SFX;
 
     String conllSeparator;
+    /**
+     * used to select document sections:
+     * - 'text' -> selects 'p' and 'head' sections (excluding notes embedded in paragraphs)
+     * - 'notes' -> selects 'notes' sections
+     * - 'mixed' -> selects 'p', 'head' and 'notes' sections
+     * - 'all' -> selects all sections ('p', 'head', 'notes' and 'fw')
+     */
     String selectText;
     HashMap<Entity,List<Wf>> entities2wfs;
     HashMap<Wf,Entity> wfs2entities;
@@ -39,14 +47,6 @@ public class Naf2Conll {
         wfs2entities = new HashMap<>();
         this.naf = new NafDoc();
         naf.parse(nafFile);
-    }
-
-    public static void run(Path file, String outdir, String conllSeparator, String selectText) throws AbnormalProcessException {
-        String fileId = IO.replaceExtension(file, IN, OUT);
-        String outfile = outdir + "/" + fileId;
-        Naf2Conll converter = new Naf2Conll(conllSeparator, selectText, file.toString());
-        converter.readEntities();
-        converter.write(outfile);
     }
 
     private String line(String token) {
@@ -69,10 +69,22 @@ public class Naf2Conll {
         return sentence;
     }
 
-    private void write(String outfile) throws AbnormalProcessException {
+    /**
+     * Selects tokens belonging to text/notes/mixed/all depending on <code>selectText</code>
+     * @return
+     */
+    public List<Wf> selectedTokens() {
+        SectionSelector sectionSelector = new SectionSelector(selectText, disjointSections());
+        return sectionSelector.filter(naf.getWfs());
+    }
+
+    private List<Fragment> disjointSections() {
+        List<Fragment> sections = naf.getTunits().stream().map(t -> new Fragment(t.getId(), t.getOffset(), t.getLength())).collect(Collectors.toList());
+        return Fragment.flatten(sections);
+    }
+
+    private void write(String outfile, List<Wf> wfs) throws AbnormalProcessException {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(outfile))) {
-            // TODO use selectText here to select a subset of word forms
-            List<Wf> wfs = naf.getWfs();
             String sentence = wfs.get(0).getSent();
             if (entities2wfs.isEmpty()) {
                 for (Wf wf: wfs) {
@@ -110,5 +122,15 @@ public class Naf2Conll {
                 wfs2entities.put(span.get(0), e);
             }
         }
+    }
+
+    public static void run(Path file, String outdir, String conllSeparator, String selectText) throws AbnormalProcessException {
+        String fileId = IO.replaceExtension(file, IN, OUT);
+        String outfile = outdir + "/" + fileId;
+        Naf2Conll converter = new Naf2Conll(conllSeparator, selectText, file.toString());
+        converter.readEntities();
+        List<Wf> selectedTokens = converter.selectedTokens();
+        if (! selectedTokens.isEmpty())
+            converter.write(outfile, selectedTokens);
     }
 }

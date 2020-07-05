@@ -1,9 +1,8 @@
 package tei2xmi;
 
-import org.junit.Before;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import utils.AbnormalProcessException;
+import missives.AbnormalProcessException;
 import utils.Metadata;
 import utils.Segments;
 import utils.TeiTreeFactory;

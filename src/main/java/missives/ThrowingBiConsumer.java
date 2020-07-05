@@ -1,7 +1,5 @@
 package missives;
 
-import utils.AbnormalProcessException;
-
 import java.util.function.BiConsumer;
 
 @FunctionalInterface

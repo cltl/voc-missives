@@ -6,6 +6,7 @@ import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Paragraph;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity;
+import missives.AbnormalProcessException;
 import org.apache.uima.UIMAFramework;
 import org.apache.uima.cas.CASException;
 import org.apache.uima.cas.impl.XmiCasDeserializer;
