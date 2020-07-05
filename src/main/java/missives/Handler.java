@@ -1,5 +1,6 @@
 package missives;
 
+import naf2conll.NAFConllReader;
 import naf2conll.Naf2Conll;
 import org.apache.commons.cli.*;
 import xmi.EntityAligner;
@@ -55,7 +56,7 @@ public class Handler {
                 String refType = cmd.hasOption("R") ? cmd.getOptionValue('R') : inferType(refdir);
                 if (! (refType.equals(NAF_SFX) || refType.equals(XMI_EXT)))
                     throw new IllegalArgumentException("Invalid reference type. Select one of xmi or naf.");
-                runConfiguration(indir, inputType, outdir, outputType, refdir, refType);
+                runConfiguration(indir, inputType, outdir, outputType, refdir, refType, conllSeparator, selectText);
             } else
                 runConfiguration(indir, inputType, outdir, outputType, cmd.hasOption('t'), conllSeparator, selectText);
         } catch (ParseException e) {
@@ -64,12 +65,18 @@ public class Handler {
         }
     }
 
-    private static void runConfiguration(String indir, String inputType, String outdir, String outputType, String refDir, String refType) {
+    private static void runConfiguration(String indir, String inputType,
+                                         String outdir, String outputType,
+                                         String refDir, String refType,
+                                         String conllSeparator,
+                                         String selectText) {
         if (inputType.equals(XMI_EXT) && outputType.equals(XMI_EXT) && refType.equals(XMI_EXT))
             IO.loop(indir, Collections.singletonList(refDir), outdir,
                 throwingBiConsumerWrapper((x, y) -> EntityAligner.run(x, y)));
-        throw new IllegalArgumentException("annotations integration is currently only supported for CAS XMI");
-        // TODO implement XMI -> NAF
+        else if (inputType.equals(CONLL_SFX) && outputType.equals(NAF_SFX) && refType.equals(NAF_SFX))
+            IO.loop(indir, Collections.singletonList(refDir), outdir,
+                    throwingBiConsumerWrapper((x, y) -> NAFConllReader.run(x, y, selectText, conllSeparator)));
+        throw new IllegalArgumentException("annotations integration is currently only supported for CAS XMI and Conll2Naf");
     }
 
     private static void runConfiguration(String indir,

@@ -15,6 +15,8 @@ import java.util.stream.Collectors;
 
 import com.sun.org.apache.xml.internal.serialize.OutputFormat;
 import com.sun.org.apache.xml.internal.serialize.XMLSerializer;
+import naf2conll.BaseEntity;
+import naf2conll.SectionSelector;
 import xjc.naf.*;
 
 public class NafDoc {
@@ -28,15 +30,23 @@ public class NafDoc {
         naf.setVersion("v3.1.b");
     }
 
-    public NafDoc(NAF naf) {
-        this.naf = naf;
+    public static NafDoc create(BaseDoc doc) {
+        NafDoc naf = new NafDoc();
+        naf.read(doc);
+        return naf;
+    }
+
+    public static NafDoc create(String nafFile) {
+        NafDoc naf = new NafDoc();
+        naf.parse(nafFile);
+        return naf;
     }
 
     public NAF getNaf() {
         return naf;
     }
 
-    public void parse(String naf) {
+    private void parse(String naf) {
         File file = new File(naf);
         try {
             JAXBContext jaxbContext = JAXBContext.newInstance(NAF.class);
@@ -86,11 +96,30 @@ public class NafDoc {
             return Collections.EMPTY_LIST;
     }
 
+
+    public void setEntities(List<Entity> entities) {
+        Entities entitiesLayer = (Entities) naf.getNafHeadersAndRawsAndTopics().stream().filter(x -> x instanceof Entities).findFirst().orElse(null);
+        if (entitiesLayer != null)
+            entitiesLayer.getEntities().clear();
+        else
+            entitiesLayer = new Entities();
+        entitiesLayer.getEntities().addAll(entities);
+        naf.getNafHeadersAndRawsAndTopics().add(entitiesLayer);
+    }
+
+    public List<BaseEntity> getBaseEntities() {
+        return getEntities().stream().map(BaseEntity::create).collect(Collectors.toList());
+    }
+
     public List<Wf> entitySpan(Entity e) {
-        List<Span> spans = e.getReferencesAndExternalReferences().stream().filter(x -> x instanceof References).map(x -> ((References) x).getSpen()).findFirst().orElse(Collections.EMPTY_LIST);
+        List<Span> spans = e.getReferencesAndExternalReferences().stream()
+                .filter(x -> x instanceof References)
+                .map(x -> ((References) x).getSpen())
+                .findFirst().orElse(Collections.EMPTY_LIST);
         List<String> targets = spans.get(0).getTargets().stream().map(x -> (String) x.getId()).collect(Collectors.toList());
         return getWfs().stream().filter(w -> targets.contains(w.getId())).collect(Collectors.toList());
     }
+
 
     public List<Tunit> getTunits() {
         Tunits tunits = (Tunits) naf.getNafHeadersAndRawsAndTopics().stream().filter(x -> x instanceof Tunits).findFirst().orElse(null);
@@ -100,7 +129,7 @@ public class NafDoc {
             return Collections.EMPTY_LIST;
     }
 
-    public void read(BaseDoc document) {
+    private void read(BaseDoc document) {
 
         NafHeader nafHeader = new NafHeader();
         FileDesc fileDesc = new FileDesc();
@@ -127,7 +156,16 @@ public class NafDoc {
         }
     }
 
-
+    /**
+     * Selects tokens belonging to text/notes/mixed/all depending on <code>selectText</code>
+     * @return
+     */
+    public List<Wf> selectTokens(String selectText) {
+        List<Fragment> sections = getTunits().stream().map(t -> new Fragment(t.getId(), t.getOffset(), t.getLength())).collect(Collectors.toList());
+        List<Fragment> disjointSections = Fragment.flatten(sections);
+        SectionSelector sectionSelector = new SectionSelector(selectText, disjointSections);
+        return sectionSelector.filter(getWfs());
+    }
 
     private Text getWfs(BaseDoc document) {
         Text text = new Text();

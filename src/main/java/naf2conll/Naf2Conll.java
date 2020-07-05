@@ -45,8 +45,7 @@ public class Naf2Conll {
         this.selectText = selectText;
         entities2wfs = new HashMap<>();
         wfs2entities = new HashMap<>();
-        this.naf = new NafDoc();
-        naf.parse(nafFile);
+        this.naf = NafDoc.create(nafFile);
     }
 
     private String line(String token) {
@@ -74,13 +73,7 @@ public class Naf2Conll {
      * @return
      */
     public List<Wf> selectedTokens() {
-        SectionSelector sectionSelector = new SectionSelector(selectText, disjointSections());
-        return sectionSelector.filter(naf.getWfs());
-    }
-
-    private List<Fragment> disjointSections() {
-        List<Fragment> sections = naf.getTunits().stream().map(t -> new Fragment(t.getId(), t.getOffset(), t.getLength())).collect(Collectors.toList());
-        return Fragment.flatten(sections);
+        return naf.selectTokens(selectText);
     }
 
     private void write(String outfile, List<Wf> wfs) throws AbnormalProcessException {

@@ -3,6 +3,7 @@ package tei2naf;
 import missives.AbnormalProcessException;
 import missives.Handler;
 import missives.IO;
+import missives.NafProcessor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import tei2xmi.*;
@@ -22,7 +23,7 @@ import static missives.ThrowingBiConsumer.throwingBiConsumerWrapper;
  *
  * 01/07/20 Raw text layer extraction, and writing to XMI
  */
-public class NafConverter {
+public class NafConverter implements NafProcessor {
     private static final String IN = "." + Handler.TEI_SFX;
     private static final String OUT = "." + Handler.NAF_SFX;
     boolean tokenize;
@@ -120,8 +121,7 @@ public class NafConverter {
 
 
     public void toNaf(String nafFile) {
-        NafDoc naf = new NafDoc();
-        naf.read(doc);
+        NafDoc naf = NafDoc.create(doc);
         naf.write(nafFile);
     }
 
