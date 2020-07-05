@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * Reads entities from a Conll file and adds them to reference NAF
@@ -24,11 +23,13 @@ public class NAFConllReader implements NafProcessor {
     NafDoc naf;
     String textType;
     String conllSeparator;
-
-    public NAFConllReader(String nafFile, String textType, String conllSeparator) {
+    String source;
+    private final static String VERSION = "1.1";
+    public NAFConllReader(String nafFile, String textType, String conllSeparator, String source) {
         this.naf = NafDoc.create(nafFile);
         this.textType = textType;
         this.conllSeparator = conllSeparator;
+        this.source = source;
     }
 
     public NafDoc getNaf() {
@@ -92,13 +93,13 @@ public class NAFConllReader implements NafProcessor {
         naf.write(outFile);
     }
 
-    public static void run(Path file, List<String> dirs, String textType, String conllSeparator) throws AbnormalProcessException {
+    public static void run(Path file, List<String> dirs, String textType, String conllSeparator, String source) throws AbnormalProcessException {
         String fileName = file.getFileName().toString();
         if (fileName.endsWith(Handler.CONLL_SFX)) {
             String refFile = IO.append(dirs.get(0), fileName);
             String outFile = IO.append(dirs.get(1), fileName);
 
-            NAFConllReader nafConllReader = new NAFConllReader(refFile, textType, conllSeparator);
+            NAFConllReader nafConllReader = new NAFConllReader(refFile, textType, conllSeparator, source);
             nafConllReader.read(file.toString());
             nafConllReader.write(outFile);
         }
@@ -106,5 +107,15 @@ public class NAFConllReader implements NafProcessor {
 
     public List<BaseEntity> getBaseEntities() {
         return naf.getBaseEntities();
+    }
+
+    @Override
+    public String getName() {
+        return "naf-conll-reader-" + source;
+    }
+
+    @Override
+    public String getVersion() {
+        return VERSION;
     }
 }

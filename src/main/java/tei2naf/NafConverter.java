@@ -8,6 +8,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import tei2xmi.*;
 import utils.*;
+import xjc.naf.*;
 import xjc.teiAll.TEI;
 
 import java.nio.file.Path;
@@ -26,6 +27,8 @@ import static missives.ThrowingBiConsumer.throwingBiConsumerWrapper;
 public class NafConverter implements NafProcessor {
     private static final String IN = "." + Handler.TEI_SFX;
     private static final String OUT = "." + Handler.NAF_SFX;
+    private final static String NAME = "voc-missives-tei-naf-converter";
+    private final static String VERSION = "1.1";
     boolean tokenize;
     public static final Logger logger = LogManager.getLogger(NafConverter.class);
     BaseDoc doc;
@@ -47,6 +50,52 @@ public class NafConverter implements NafProcessor {
     public BaseDoc getBaseDoc(String teiFile) throws AbnormalProcessException {
         read(teiFile);
         return doc;
+    }
+
+
+    private NafDoc convertBaseDocToNafRepresentation() {
+
+        NafDoc naf = new NafDoc();
+        NafHeader nafHeader = new NafHeader();
+        FileDesc fileDesc = new FileDesc();
+        fileDesc.setTitle(doc.getMetadata().getDocumentTitle());
+        fileDesc.setFilename(doc.getMetadata().getDocumentId());
+        nafHeader.setFileDesc(fileDesc);
+        String rawText = doc.getRawText();
+        Raw raw = new Raw(rawText);
+        nafHeader.getLinguisticProcessors().add(createLinguisticProcessors("raw"));
+
+        Tunits tunits = new Tunits();
+        doc.getSections().forEach(p -> tunits.getTunits().add(naf.createTunit(p)));
+        nafHeader.getLinguisticProcessors().add(createLinguisticProcessors("tunits"));
+
+        List<Object> layers = naf.getLayers();
+        layers.add(nafHeader);
+        layers.add(raw);
+        layers.add(tunits);
+
+        if (! doc.getTokens().isEmpty()) {
+            Text text = getWfs();
+            nafHeader.getLinguisticProcessors().add(createLinguisticProcessors("text"));
+            layers.add(text);
+        }
+        return naf;
+    }
+
+    private Text getWfs() {
+        Text text = new Text();
+        List<Fragment> sentences = doc.getSentences();
+        List<Fragment> tokens = doc.getTokens();
+        int endIndex = sentences.remove(0).getEndIndex();
+        int sentID = 0;
+        for (Fragment t: tokens) {
+            if (t.getEndIndex() > endIndex && ! sentences.isEmpty()) {
+                endIndex = sentences.remove(0).getEndIndex();
+                sentID++;
+            }
+            text.getWves().add(NafDoc.createWf(doc.getString(t), sentID, t));
+        }
+        return text;
     }
 
     private void process(String teiFile) throws AbnormalProcessException {
@@ -121,7 +170,7 @@ public class NafConverter implements NafProcessor {
 
 
     public void toNaf(String nafFile) {
-        NafDoc naf = NafDoc.create(doc);
+        NafDoc naf = convertBaseDocToNafRepresentation();
         naf.write(nafFile);
     }
 
@@ -140,4 +189,13 @@ public class NafConverter implements NafProcessor {
     }
 
 
+    @Override
+    public String getName() {
+        return NAME;
+    }
+
+    @Override
+    public String getVersion() {
+        return VERSION;
+    }
 }

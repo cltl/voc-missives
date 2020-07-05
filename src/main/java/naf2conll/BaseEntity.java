@@ -1,5 +1,6 @@
 package naf2conll;
 
+import de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import tei2naf.CharPosition;
@@ -35,9 +36,17 @@ public class BaseEntity implements Comparable<BaseEntity> {
         return new BaseEntity(nafEntity.getType(), nafEntity.getId(), createPosition(nafEntity));
     }
 
-
     public static BaseEntity create(String type, String id, List<String> idSpan) {
         return new BaseEntity(type, id, createPosition(idSpan));
+    }
+
+    public static int xmiEntityLength(NamedEntity entity) {
+        //TODO verify
+        return entity.getEnd() - entity.getBegin() + 1;
+    }
+    public static BaseEntity create(NamedEntity xmiEntity) {
+        return new BaseEntity(xmiEntity.getValue(), xmiEntity.getIdentifier(),
+                new CharPosition(xmiEntity.getBegin(), xmiEntityLength(xmiEntity)));
     }
 
     private static CharPosition createPosition(List<String> targets) {

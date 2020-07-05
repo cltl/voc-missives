@@ -7,9 +7,7 @@ import javax.xml.bind.Unmarshaller;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.Collections;
-import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -20,20 +18,13 @@ import naf2conll.SectionSelector;
 import xjc.naf.*;
 
 public class NafDoc {
-    private final static String NAME = "voc-missives-tei-naf-converter";
-    private final static String VERSION = "1.1";
+
 
     NAF naf;
     public NafDoc() {
         naf = new NAF();
         naf.setLang("nl");
         naf.setVersion("v3.1.b");
-    }
-
-    public static NafDoc create(BaseDoc doc) {
-        NafDoc naf = new NafDoc();
-        naf.read(doc);
-        return naf;
     }
 
     public static NafDoc create(String nafFile) {
@@ -65,23 +56,6 @@ public class NafDoc {
         return t;
     }
 
-    static public String createTimestamp() {
-        Date date = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
-        String formattedDate = sdf.format(date);
-        return formattedDate;
-    }
-
-    private static LinguisticProcessors createLinguisticProcessors(String layer) {
-        LinguisticProcessors lps = new LinguisticProcessors();
-        Lp lp = new Lp();
-        lp.setName(NAME);
-        lp.setVersion(VERSION);
-        lp.setTimestamp(createTimestamp());
-        lps.getLps().add(lp);
-        lps.setLayer(layer);
-        return lps;
-    }
 
     public List<Wf> getWfs() {
         Text textLayer = (Text) naf.getNafHeadersAndRawsAndTopics().stream().filter(x -> x instanceof Text).findFirst().orElse(null);
@@ -129,32 +103,6 @@ public class NafDoc {
             return Collections.EMPTY_LIST;
     }
 
-    private void read(BaseDoc document) {
-
-        NafHeader nafHeader = new NafHeader();
-        FileDesc fileDesc = new FileDesc();
-        fileDesc.setTitle(document.getMetadata().getDocumentTitle());
-        fileDesc.setFilename(document.getMetadata().getDocumentId());
-        nafHeader.setFileDesc(fileDesc);
-        String rawText = document.getRawText();
-        Raw raw = new Raw(rawText);
-        nafHeader.getLinguisticProcessors().add(createLinguisticProcessors("raw"));
-
-        Tunits tunits = new Tunits();
-        document.getSections().forEach(p -> tunits.getTunits().add(createTunit(p)));
-        nafHeader.getLinguisticProcessors().add(createLinguisticProcessors("tunits"));
-
-        List<Object> layers = naf.getNafHeadersAndRawsAndTopics();
-        layers.add(nafHeader);
-        layers.add(raw);
-        layers.add(tunits);
-
-        if (! document.getTokens().isEmpty()) {
-            Text text = getWfs(document);
-            nafHeader.getLinguisticProcessors().add(createLinguisticProcessors("text"));
-            layers.add(text);
-        }
-    }
 
     /**
      * Selects tokens belonging to text/notes/mixed/all depending on <code>selectText</code>
@@ -167,23 +115,11 @@ public class NafDoc {
         return sectionSelector.filter(getWfs());
     }
 
-    private Text getWfs(BaseDoc document) {
-        Text text = new Text();
-        List<Fragment> sentences = document.getSentences();
-        List<Fragment> tokens = document.getTokens();
-        int endIndex = sentences.remove(0).getEndIndex();
-        int sentID = 0;
-        for (Fragment t: tokens) {
-            if (t.getEndIndex() > endIndex && ! sentences.isEmpty()) {
-                endIndex = sentences.remove(0).getEndIndex();
-                sentID++;
-            }
-            text.getWves().add(createWf(document.getString(t), sentID, t));
-        }
-        return text;
+    public List<Object> getLayers() {
+        return naf.getNafHeadersAndRawsAndTopics();
     }
 
-    private Wf createWf(String wordForm, int sentID, Fragment t) {
+    public static Wf createWf(String wordForm, int sentID, Fragment t) {
         Wf wf = new Wf();
         wf.setId("w" + t.getId());
         wf.setSent(sentID + "");

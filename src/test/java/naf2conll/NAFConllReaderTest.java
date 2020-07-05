@@ -1,19 +1,12 @@
 package naf2conll;
 
 import missives.AbnormalProcessException;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import tei2naf.NafConverter;
-import tei2naf.NafDoc;
 import xjc.naf.Entity;
 import xjc.naf.References;
 import xjc.naf.Target;
 import xjc.naf.Wf;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -24,7 +17,7 @@ class NAFConllReaderTest {
 
     @Test
     public void testNotesIntegrationDetailed() throws AbnormalProcessException {
-        NAFConllReader ncr = new NAFConllReader(notesNAF, "notes", " ");
+        NAFConllReader ncr = new NAFConllReader(notesNAF, "notes", " ", "manual annotations");
 
         List<String> conllTokens = ncr.conllTokens(notesConll);
         List<Wf> nafTokens = ncr.getNaf().selectTokens("notes");
@@ -38,10 +31,10 @@ class NAFConllReaderTest {
         List<Target> ts = ((References) e.getReferencesAndExternalReferences().get(0)).getSpen().get(0).getTargets();
         assertEquals(ts.size(), 1);
     }
-    
+
     @Test
     public void testNotesIntegration() throws AbnormalProcessException {
-        NAFConllReader ncr = new NAFConllReader(notesNAF, "notes", " ");
+        NAFConllReader ncr = new NAFConllReader(notesNAF, "notes", " ", "manual annotations");
         ncr.read(notesConll);
         List<BaseEntity> entities = ncr.getBaseEntities();
         assertEquals(entities.size(), 3);
