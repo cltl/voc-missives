@@ -11,8 +11,10 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.sun.istack.SAXException2;
 import com.sun.org.apache.xml.internal.serialize.OutputFormat;
 import com.sun.org.apache.xml.internal.serialize.XMLSerializer;
+import utils.common.AbnormalProcessException;
 import utils.common.BaseEntity;
 import xjc.naf.*;
 import xjc.naf.Span;
@@ -96,7 +98,7 @@ public class NafDoc {
         return naf.getNafHeadersAndRawsAndTopics();
     }
 
-    public void write(String file) {
+    public void write(String file) throws AbnormalProcessException {
         try {
             JAXBContext jaxbContext = JAXBContext.newInstance(NAF.class);
             Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
@@ -105,9 +107,9 @@ public class NafDoc {
             XMLSerializer serializer = getXMLSerializer(file);
             jaxbMarshaller.marshal(naf, serializer.asContentHandler());
         } catch (JAXBException e) {
-            e.printStackTrace();
+            throw new AbnormalProcessException("error processing " + file, e);
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new AbnormalProcessException("error processing " + file, e);
         }
     }
 

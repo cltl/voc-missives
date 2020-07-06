@@ -24,6 +24,8 @@ public class NAFConllReader implements NafEntityProcessor, NafSelector, NafCreat
     String textType;
     String conllSeparator;
     String source;
+    private static final String IN = "." + IO.CONLL_SFX;
+    private static final String OUT = "." + IO.NAF_SFX;
     private final static String VERSION = "1.1";
 
     public NAFConllReader(String nafFile, String textType, String conllSeparator, String source) {
@@ -101,8 +103,8 @@ public class NAFConllReader implements NafEntityProcessor, NafSelector, NafCreat
     public static void run(Path file, List<String> dirs, String textType, String conllSeparator, String source) throws AbnormalProcessException {
         String fileName = file.getFileName().toString();
         if (fileName.endsWith(IO.CONLL_SFX)) {
-            String refFile = IO.append(dirs.get(0), fileName);
-            String outFile = IO.append(dirs.get(1), fileName);
+            String refFile = IO.append(dirs.get(0), IO.replaceExtension(file, IN, OUT));
+            String outFile = IO.append(dirs.get(1), IO.replaceExtension(file, IN, OUT));
 
             NAFConllReader nafConllReader = new NAFConllReader(refFile, textType, conllSeparator, source);
             nafConllReader.process(file.toString(), outFile);

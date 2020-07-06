@@ -54,9 +54,7 @@ public class NafConverter implements NafCreator {
         return doc;
     }
 
-
     private NafDoc convertBaseDocToNafRepresentation() {
-
         NafDoc naf = new NafDoc();
         NafHeader nafHeader = new NafHeader();
         FileDesc fileDesc = new FileDesc();
@@ -117,10 +115,7 @@ public class NafConverter implements NafCreator {
     }
 
     List<ATeiTree> selectSectionSubtrees(ATeiTree tei) {
-        return tei.getTopNodes(t ->  t.getTeiType().equals(ATeiTree.TeiType.P)
-                || t.getTeiType().equals(ATeiTree.TeiType.HEAD)
-                || t.getTeiType().equals(ATeiTree.TeiType.NOTE)
-                || t.getTeiType().equals(ATeiTree.TeiType.FW));
+        return tei.getTopNodes(t ->  t.isForeword() || t.isNote() || t.isParagraph() || t.isHead());
     }
     private void read(String teiFile) throws AbnormalProcessException {
         TeiReader teiReader = new TeiReader(teiFile, x -> TeiRawTreeFactory.create(x));
@@ -135,7 +130,7 @@ public class NafConverter implements NafCreator {
         List<CharPosition> positions = mapPositions(subtreeYields, rawText);
         List<Fragment> sections = Fragment.zip(subtrees.stream().map(ATeiTree::getId).collect(Collectors.toList()), positions);
 
-        // add embedded notes and their positions
+        // add embedded notes and forewords and their positions
         sections.addAll(mapEmbeddedPositions(subtrees, subtreeYields, sections));
         Fragment.sort(sections);
 
@@ -143,22 +138,22 @@ public class NafConverter implements NafCreator {
     }
 
     private List<Fragment> mapEmbeddedPositions(List<ATeiTree> subtrees, List<String> yields, List<Fragment> sections) {
-        List<Fragment> embeddedNotes = new ArrayList<>();
+        List<Fragment> embeddedNodes = new ArrayList<>();
         for (int i = 0; i < subtrees.size(); i++) {
-            if (subtrees.get(i).getTeiType() == ATeiTree.TeiType.P) {
-                List<ATeiTree> notes = subtrees.get(i).getTopNodes(t -> t.getTeiType() == ATeiTree.TeiType.NOTE);
+            if (subtrees.get(i).isParagraph()) {
+                List<ATeiTree> notes = subtrees.get(i).getTopNodes(t -> t.isNote() || t.isForeword() || t.isTable());
                 if (! notes.isEmpty()) {
-                    int index = 0;      // just in case embedded notes could have the same string in a same paragraph...
+                    int index = 0;      // just in case embedded nodes could have the same string in a same paragraph...
                     for (ATeiTree n: notes) {
                         String y = n.yield();
                         int offset = yields.get(i).indexOf(y, index);
-                        embeddedNotes.add(new Fragment(n.getId(), offset+ sections.get(i).getOffset(), y.length()));
+                        embeddedNodes.add(new Fragment(n.getId(), offset+ sections.get(i).getOffset(), y.length()));
                         index = offset + y.length();
                     }
                 }
             }
         }
-        return embeddedNotes;
+        return embeddedNodes;
     }
 
     private List<CharPosition> mapPositions(List<String> sectionYields, String treeYield) {

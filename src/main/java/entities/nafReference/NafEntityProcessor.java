@@ -19,7 +19,11 @@ public interface NafEntityProcessor {
 
     default void process(String input, String output) throws AbnormalProcessException {
         addEntities(getNaf(), readEntities(input));
-        getNaf().write(output);
+        try {
+            getNaf().write(output);
+        } catch (AbnormalProcessException e) {
+            System.out.println("here");
+        }
     }
 
     NafDoc getNaf();

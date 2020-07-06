@@ -3,6 +3,7 @@ package utils.common;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class BaseTokenAligner {
     HashMap<Integer, Integer> firstIndexRef;
@@ -72,7 +73,7 @@ public class BaseTokenAligner {
         while (iExt < extTokens.size()) {
             BaseToken ref = refTokens.get(iRef);
             BaseToken ext = extTokens.get(iExt);
-            boolean aligned = extTokenMatchesRef(ext, ref)
+            boolean aligned = extTokenMatchesOneOrManyRef(ext, ref)
                     || extTokensMatchSingleRef(ext, ref)
                     || extTokenMatchesHyphenatedRef(ext, ref)
                     || manyToManyAlignment(ext, ref)
@@ -84,11 +85,11 @@ public class BaseTokenAligner {
                 message.append("Unable to match tokens (text @ char-offset) :\nExt: ")
                         .append(extTokens.get(iExt).getText())
                         .append(" @ ").append(extTokens.get(iExt).getFirstIndex())
-                        .append("; (last matched token): ").append(extTokens.get(iExt - 1).getText())
+                        .append("; (last matched token): ").append(iExt > 0 ? extTokens.get(iExt - 1).getText(): "none")
                         .append(" @ ").append(extTokens.get(iExt - 1).getLastIndex())
                         .append("\nRef: ").append(refTokens.get(iRef).getText())
                         .append(" @ ").append(refTokens.get(iRef).getFirstIndex())
-                        .append("; (last matched token): ").append(refTokens.get(iRef - 1).getText())
+                        .append("; (last matched token): ").append(iRef > 0 ? refTokens.get(iRef - 1).getText(): "none")
                         .append(" @ ").append(refTokens.get(iRef - 1).getLastIndex());
                 throw new IllegalArgumentException(message.toString());
             }
@@ -134,21 +135,39 @@ public class BaseTokenAligner {
     }
 
     private boolean extTokenMatchesHyphenatedRef(BaseToken ext, BaseToken ref) {
-        if (matchesSplitRef(ext, refTokens, iRef)) {
-            mapIndices(ext, ref.getFirstIndex(), refTokens.get(iRef + 1).getLastIndex());
-            iRef += 2;
-            iExt++;
-            return true;
-        } else if (matchesHyphenatedRef(ext, ref)) {
+//        if (matchesSplitRef(ext, refTokens, iRef)) {
+//            mapIndices(ext, ref.getFirstIndex(), refTokens.get(iRef + 1).getLastIndex());
+//            iRef += 2;
+//            iExt++;
+//            return true;
+//        } else
+        if (matchesHyphenatedRef(ext, ref)) {
             mapIndices(ext, ref);
             iRef++;
             iExt++;
             return true;
-        } else if (matches3SplitRef(ext, refTokens, iRef)) {
-            mapIndices(ext, ref.getFirstIndex(), refTokens.get(iRef + 2).getLastIndex());
-            iRef += 3;
-            iExt++;
-            return true;
+        }
+//        else if (matches3SplitRef(ext, refTokens, iRef)) {
+//            mapIndices(ext, ref.getFirstIndex(), refTokens.get(iRef + 2).getLastIndex());
+//            iRef += 3;
+//            iExt++;
+//            return true;
+//        }
+        return false;
+    }
+
+    private boolean extTokenMatchesOneOrManyRef(BaseToken ext, BaseToken ref) {
+        String refText = ref.getText();
+        int k = 0;
+        while (ext.getText().startsWith(refText)) {
+            if (ext.getText().equals(refText)) {
+                mapIndices(ext, ref.getFirstIndex(), refTokens.get(iRef + k).getLastIndex());
+                iRef += k + 1;
+                iExt++;
+                return true;
+            }
+            k++;
+            refText += refTokens.get(iRef + k);
         }
         return false;
     }
@@ -253,4 +272,9 @@ public class BaseTokenAligner {
         lastIndexRef.put(ext.getLastIndex(), ref.getLastIndex());
     }
 
+    public List<String> getReferenceTokenSpanIds(int firstIndex, int lastIndex) {
+        return refTokens.stream().filter(t -> t.getFirstIndex() >= firstIndex && t.getLastIndex() <= lastIndex)
+                .map(BaseToken::getId)
+                .collect(Collectors.toList());
+    }
 }

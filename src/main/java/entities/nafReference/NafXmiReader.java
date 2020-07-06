@@ -31,6 +31,8 @@ public class NafXmiReader implements NafEntityProcessor, NafSelector, NafCreator
     String textType;
     NafDoc naf;
     CasDoc xmi;
+    private static final String IN = "." + IO.XMI_SFX;
+    private static final String OUT = "." + IO.NAF_SFX;
     /**
      * Maps indices from external to reference character offsets.
      */
@@ -51,25 +53,38 @@ public class NafXmiReader implements NafEntityProcessor, NafSelector, NafCreator
 
     public static void run(Path file, List<String> dirs, String textType, String source) throws AbnormalProcessException {
         String fileName = file.getFileName().toString();
-        if (fileName.endsWith(IO.XMI_SFX)) {
-            String refFile = IO.append(dirs.get(0), fileName);
-            String outFile = IO.append(dirs.get(1), fileName);
+        String inNote = "_notes" + IN;
+
+        String extension = IN;
+        if (fileName.endsWith(inNote))
+            extension = inNote;
+
+        if (fileName.endsWith(IN)) {
+            String refFile = IO.append(dirs.get(0), IO.replaceExtension(file, extension, OUT));
+            String outFile = IO.append(dirs.get(1), IO.replaceExtension(file, extension, OUT));
 
             NafXmiReader nafXmiReader = new NafXmiReader(refFile, textType, source);
             nafXmiReader.process(file.toString(), outFile);
         }
     }
 
-    private void align() {
+    private void align() throws AbnormalProcessException {
         List<BaseToken> xmiTokens = xmi.getTokens().stream().map(Dkpro::asBaseToken).collect(Collectors.toList());
         List<BaseToken> nafTokens = selectedTokens(naf, textType).stream().map(NafUnits::asBaseToken).collect(Collectors.toList());
         aligner = BaseTokenAligner.create(xmiTokens, nafTokens, MAX_TOKEN_LOOK_AHEAD);
-        aligner.align();
+        try {
+            aligner.align();
+        } catch (IllegalArgumentException e) {
+            // FIXME
+            aligner = BaseTokenAligner.create(xmiTokens, nafTokens, MAX_TOKEN_LOOK_AHEAD);
+            aligner.align();
+            throw new AbnormalProcessException("Error processing file " + xmi.getId(), e);
+        }
     }
 
     @Override
     public String getName() {
-        return "naf-entities.xmi-reader-" + source;
+        return "naf-xmi-reader-" + source;
     }
 
     @Override
@@ -98,7 +113,8 @@ public class NafXmiReader implements NafEntityProcessor, NafSelector, NafCreator
             if (ref.getFirstIndex() == -1 || ref.getLastIndex() < ref.getFirstIndex())
                 throw new IllegalArgumentException("Found entity with invalid reference span " + ref.toString()
                         + "; " + e.getCoveredText() + "@ " + e.getBegin() + "-" + e.getEnd());
-            collected.add(Dkpro.asBaseEntity(e));
+            List<String> spannedTokenIds = aligner.getReferenceTokenSpanIds(ref.getFirstIndex(), ref.getLastIndex());
+            collected.add(BaseEntity.create(e.getValue(), e.getIdentifier(), spannedTokenIds));
         }
         return collected;
     }

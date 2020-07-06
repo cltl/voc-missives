@@ -1,6 +1,9 @@
 package text.tei2naf;
 
 import eus.ixa.ixa.pipe.ml.tok.Token;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import text.tei2xmi.Paragraph;
 import tokens.Tokenizer;
 import utils.common.CharPosition;
 
@@ -13,7 +16,7 @@ public class TokenizedSection {
     List<Integer> rawOffsets;
     List<CharPosition> sentencePositions;
     List<CharPosition> tokenPositions;
-
+    private static final Logger logger = LogManager.getLogger(TokenizedSection.class);
     private TokenizedSection(String fragmentText) {
         this.rawText = fragmentText;
         this.rawOffsets = new ArrayList<>();
@@ -40,12 +43,16 @@ public class TokenizedSection {
         String[] sentenceStrings = tokenizer.segment(compactText);
         List<List<Token>> tokenized = tokenizer.getTokens(compactText, sentenceStrings);
         for (List<Token> tokens: tokenized) {
-            int sentenceStart = rawOffsets.get(tokens.get(0).startOffset());
-            int sentenceEnd = rawOffsets.get(tokens.get(tokens.size() - 1).startOffset()
-                    + tokens.get(tokens.size() - 1).tokenLength() - 1) + 1;
-            sentencePositions.add(new CharPosition(sentenceStart + fragmentOffset, sentenceEnd - sentenceStart));
-            tokens.forEach(t -> tokenPositions.add(new CharPosition(rawOffsets.get(t.startOffset()) + fragmentOffset, t.tokenLength())));
-
+            if (tokens.isEmpty()) {
+                logger.info("Found empty sentence for fragment starting at " + fragmentOffset + " and containing " + tokenized.size() + "sentences.");
+            }
+            else {
+                int sentenceStart = rawOffsets.get(tokens.get(0).startOffset());
+                int sentenceEnd = rawOffsets.get(tokens.get(tokens.size() - 1).startOffset()
+                        + tokens.get(tokens.size() - 1).tokenLength() - 1) + 1;
+                sentencePositions.add(new CharPosition(sentenceStart + fragmentOffset, sentenceEnd - sentenceStart));
+                tokens.forEach(t -> tokenPositions.add(new CharPosition(rawOffsets.get(t.startOffset()) + fragmentOffset, t.tokenLength())));
+            }
         }
     }
 

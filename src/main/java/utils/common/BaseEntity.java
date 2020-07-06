@@ -65,14 +65,16 @@ public class BaseEntity implements Comparable<BaseEntity> {
     public static List<BaseEntity> overlap(List<BaseEntity> entities) {
         int i = 0;
         Set<BaseEntity> overlapping = new HashSet<>();
-
-        for (int j = 1; j < entities.size(); j++) {
+        int j = 1;
+        while (j < entities.size()) {
             if (entities.get(j).getFirstTokenIndex() <= entities.get(i).getLastTokenIndex()) {
                 overlapping.add(entities.get(i));
                 overlapping.add(entities.get(j));
-            }
-            if (entities.get(j).getLastTokenIndex() > entities.get(i).getLastTokenIndex())
-                i = j;
+                if (entities.get(j).getLastTokenIndex() > entities.get(i).getLastTokenIndex())
+                    i = j;
+            } else
+                i++;
+            j++;
         }
         List<BaseEntity> result = new LinkedList<>(overlapping);
         Collections.sort(result);

@@ -88,7 +88,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>text.tei2naf.NafConverter</mainClass>
+                            <mainClass>missives/Handler</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

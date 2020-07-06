@@ -123,13 +123,13 @@ public class Handler {
         Options options = new Options();
         options.addOption("i", true, "input file / directory");
         options.addOption("o", true, "output directory. Defaults to current directory");
-        options.addOption("r", true, "reference directory (for NE annotations integration");
-        options.addOption("I", true, "input file type; defaults to the file type read from input files extension (xml|naf|entities.xmi|conll), where xml is the extension for TEI files");
+        options.addOption("r", true, "reference directory for NE annotations integration");
+        options.addOption("I", true, "input file type (xml|naf|conll|xmi); inferred by default from input files extension: 'xml' (TEI files), 'naf', 'xmi' or 'conll'");
         options.addOption("O", true, "output file type; default: NAF");
-        options.addOption("R", true, "reference file type; defaults to the file type read from reference files extension (naf|entities.xmi)");
+        options.addOption("R", true, "reference file type (naf|xmi); inferred by default from reference files extension ");
         options.addOption("c", true, "conll separator for Conll output; defaults to single space");
         options.addOption("s", true, "selected text type for Conll output and entity integration: text|notes|mixed|all; default:mixed");
-        options.addOption("e", true, "source of entity annotations");
+        options.addOption("e", true, "source of entity annotations (for NAF header: linguistic processor info)");
         options.addOption("t", false, "segment and tokenize");
         process(options, args);
     }

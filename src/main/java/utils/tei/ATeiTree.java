@@ -4,9 +4,12 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 
+import static utils.tei.ATeiTree.TeiType.*;
+
 public abstract class ATeiTree {
 
     public enum TeiType {TEI, STR, TEXT, DIV, P, FW, LB, HEAD, NOTE, BODY, HI, TABLE, ROW, CELL, PB}
+
     TeiType teiType;
     String id;
 
@@ -32,4 +35,23 @@ public abstract class ATeiTree {
     public abstract List<ATeiTree> getAllNodes(Predicate<ATeiTree> p);
 
     public abstract String yield();
+
+    public boolean isParagraph() {
+        return teiType == P;
+    }
+
+    public boolean isNote() {
+        return teiType == NOTE;
+    }
+
+    public boolean isForeword() {
+        return teiType == FW;
+    }
+
+    public boolean isHead() {
+        return teiType == HEAD;
+    }
+
+    public boolean isTable() { return teiType == TABLE; }
+
 }
