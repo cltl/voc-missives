@@ -68,7 +68,8 @@ public class NafXmiReader implements NafEntityProcessor, NafSelector, NafCreator
         }
     }
 
-    private void align() throws AbnormalProcessException {
+    @Override
+    public void alignTokens() throws AbnormalProcessException {
         List<BaseToken> xmiTokens = xmi.getTokens().stream().map(Dkpro::asBaseToken).collect(Collectors.toList());
         List<BaseToken> nafTokens = selectedTokens(naf, textType).stream().map(NafUnits::asBaseToken).collect(Collectors.toList());
         aligner = BaseTokenAligner.create(xmiTokens, nafTokens, MAX_TOKEN_LOOK_AHEAD);
@@ -96,13 +97,18 @@ public class NafXmiReader implements NafEntityProcessor, NafSelector, NafCreator
     public List<BaseEntity> readEntities(String input) throws AbnormalProcessException {
         xmi = CasDoc.create();
         xmi.read(input);
-        align();
+        alignTokens();
         return collectEntities();
     }
 
     @Override
     public NafDoc getNaf() {
         return naf;
+    }
+
+    @Override
+    public void addLinguisticProcessor(String layer) {
+        naf.getNafHeader().getLinguisticProcessors().add(createLinguisticProcessors(layer));
     }
 
 

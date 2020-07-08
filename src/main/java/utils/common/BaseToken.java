@@ -31,6 +31,10 @@ public class BaseToken {
         return text;
     }
 
+    public String toString() {
+        return text + " (" + id + ", " + span.toString() + ")";
+    }
+
     public void setText(String text) {
         this.text = text;
     }

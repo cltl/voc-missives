@@ -81,7 +81,7 @@ public class EntityAligner {
             try {
                 entityAligner.run();
             } catch (IllegalArgumentException e) {
-                throw new AbnormalProcessException("Cannot align entities for file " + fileName, e);
+                throw new AbnormalProcessException("Cannot alignTokens entities for file " + fileName, e);
             }
             entityAligner.write(outFile);
 

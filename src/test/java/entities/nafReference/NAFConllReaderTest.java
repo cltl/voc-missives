@@ -29,7 +29,7 @@ class NAFConllReaderTest {
         assertEquals(baseEntities.get(0).getTokenSpan().getLength(), 1);
 
         // naf entity conversion
-        Entity e = NafUnits.asNafEntity(baseEntities.get(0).withId(0));
+        Entity e = NafUnits.asNafEntity(baseEntities.get(0).withId(0), false, ncr.getNaf());
         List<Target> ts = ((References) e.getReferencesAndExternalReferences().get(0)).getSpen().get(0).getTargets();
         assertEquals(ts.size(), 1);
     }
@@ -44,7 +44,10 @@ class NAFConllReaderTest {
         assertEquals(entities.get(0).getId(), "");
         BaseEntity entity0 = entities.get(0).withId(0);
         assertEquals(entity0.getId(), "e0");
+
     }
+
+
 
 
 

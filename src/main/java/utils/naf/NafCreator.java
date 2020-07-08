@@ -6,6 +6,7 @@ import xjc.naf.Lp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+
 public interface NafCreator {
     String getName();
     String getVersion();

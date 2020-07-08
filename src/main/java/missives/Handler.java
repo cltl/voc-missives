@@ -79,7 +79,8 @@ public class Handler {
         else if (inputType.equals(IO.XMI_SFX) && outputType.equals(IO.NAF_SFX) && refType.equals(IO.NAF_SFX))
             IO.loop(indir, Collections.singletonList(refDir), outdir,
                     throwingBiConsumerWrapper((x, y) -> NafXmiReader.run(x, y, selectText, source)));
-        throw new IllegalArgumentException("annotations integration is currently only supported for CAS XMI and Conll2Naf");
+        else
+            throw new IllegalArgumentException("annotations integration is currently only supported for CAS XMI and Conll2Naf");
     }
 
     private static void runConfiguration(String indir,

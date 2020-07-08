@@ -3,7 +3,7 @@
   jaxb:version="2.1" 
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc">
-    <jaxb:bindings schemaLocation="naf_v3_tunits.xsd">
+    <jaxb:bindings schemaLocation="naf_v3.1.b.xsd">
         <jaxb:bindings>
            <jaxb:globalBindings>
                <xjc:simple />

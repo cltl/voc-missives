@@ -115,7 +115,7 @@ public class NafConverter implements NafCreator {
     }
 
     List<ATeiTree> selectSectionSubtrees(ATeiTree tei) {
-        return tei.getTopNodes(t ->  t.isForeword() || t.isNote() || t.isParagraph() || t.isHead());
+        return tei.getTopNodes(t ->  t.isForeword() || t.isNote() || t.isParagraph() || t.isHead() || t.isTable());
     }
     private void read(String teiFile) throws AbnormalProcessException {
         TeiReader teiReader = new TeiReader(teiFile, x -> TeiRawTreeFactory.create(x));

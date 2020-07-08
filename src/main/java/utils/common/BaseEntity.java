@@ -2,6 +2,7 @@ package utils.common;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import xjc.naf.Entity;
 
 import java.util.*;
 
@@ -33,8 +34,11 @@ public class BaseEntity implements Comparable<BaseEntity> {
      * @return
      */
     public static BaseEntity create(String type, String id, List<String> tokenIds) {
-        Span tSpan = new Span(Integer.parseInt(tokenIds.get(0).substring(1)),
-                Integer.parseInt(tokenIds.get(tokenIds.size() - 1).substring(1)));
+        int index = 1;
+        while (! Character.isDigit(tokenIds.get(0).charAt(index)))
+            index++;
+        Span tSpan = new Span(Integer.parseInt(tokenIds.get(0).substring(index)),
+                Integer.parseInt(tokenIds.get(tokenIds.size() - 1).substring(index)));
         return new BaseEntity(type, id, tSpan);
     }
 
@@ -85,8 +89,29 @@ public class BaseEntity implements Comparable<BaseEntity> {
         return new BaseEntity(type, "e" + i, tokenSpan);
     }
 
+    public BaseEntity withSpan(List<String> termSpan) {
+        return BaseEntity.create(type, id, termSpan);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(type, id, getFirstTokenIndex(), getLastTokenIndex());
+    }
+
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null) return false;
+        if (this.getClass() != o.getClass()) return false;
+        BaseEntity x = (BaseEntity) o;
+        return (type.equals(x.getType())
+                && id.equals(x.getId())
+                && getLastTokenIndex() == x.getLastTokenIndex()
+                && getFirstTokenIndex() == x.getFirstTokenIndex());
+    }
+
     @Override
     public int compareTo(BaseEntity o) {
         return tokenSpan.compareTo(o.getTokenSpan());
     }
+
 }

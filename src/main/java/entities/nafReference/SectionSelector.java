@@ -37,7 +37,7 @@ public class SectionSelector {
     }
 
     private List<Fragment> select(List<Fragment> sections) {
-        return Fragment.flatten(sections).stream().filter(selector).collect(Collectors.toList());
+        return Fragment.flatten(sections).stream().filter(s -> s.getLength() > 0).filter(selector).collect(Collectors.toList());
     }
 
     private Predicate<Fragment> getSelector(String textType) {

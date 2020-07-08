@@ -6,21 +6,51 @@ import utils.common.Fragment;
 import xjc.naf.*;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class NafUnits {
 
-    public static Entity asNafEntity(BaseEntity baseEntity) {
+
+    /**
+     *
+     * @param terms
+     * @param entitiesMapToTerms    FIXME added for clarity's sake; can be inferred
+     * @return a map of wf indices to term indices
+     */
+    public static HashMap<String,String> wf2terms(List<Term> terms, boolean entitiesMapToTerms) {
+        HashMap<String,String> wf2ts = new HashMap<>();
+        terms.forEach(t -> {
+            Span s = (Span) (t.getSentimentsAndSpenAndExternalReferences()
+                    .stream().filter(x -> x instanceof Span)
+                    .collect(Collectors.toList())).get(0);
+
+            Target target = s.getTargets().get(0);
+            //if (target.getId() instanceof Term)
+            if (entitiesMapToTerms)
+                wf2ts.put(((Wf) target.getId()).getId(), t.getId());
+            else
+                wf2ts.put((String) target.getId(), t.getId());
+        });
+        return wf2ts;
+    }
+
+    public static Entity asNafEntity(BaseEntity baseEntity, boolean mapToTerms, NafDoc nafDoc) {
+        String pfx = mapToTerms ? "t_" : "w";
+
         Entity e = new Entity();
         e.setId(baseEntity.getId());
         e.setType(baseEntity.getType());
         References r = new References();
         Span s = new Span();
         List<Target> ts = s.getTargets();
+
         for (int i = baseEntity.getFirstTokenIndex(); i <= baseEntity.getLastTokenIndex(); i++) {
             Target t = new Target();
-            t.setId("w" + i);
+            Term term = nafDoc.getTerms().get(i);
+            t.setId(term);
             ts.add(t);
         }
         r.getSpen().add(s);
@@ -32,12 +62,18 @@ public class NafUnits {
         return BaseToken.create(token.getContent(), token.getId(), token.getOffset(), token.getLength());
     }
 
-    public static BaseEntity asBaseEntity(Entity nafEntity) {
+    public static BaseEntity asBaseEntity(Entity nafEntity, boolean entitiesMapToTerms) {
         List<Span> spans = nafEntity.getReferencesAndExternalReferences().stream()
                 .filter(x -> x instanceof References)
                 .map(x -> ((References) x).getSpen())
                 .findFirst().orElse(Collections.EMPTY_LIST);
-        List<String> targets = spans.get(0).getTargets().stream().map(x -> (String) x.getId()).collect(Collectors.toList());
+        Function<Target, String> mapId;
+        if (entitiesMapToTerms) {
+            mapId = x -> ((Term) x.getId()).getId();
+        } else
+            mapId = x -> (String) x.getId();
+
+        List<String> targets = spans.get(0).getTargets().stream().map(mapId).collect(Collectors.toList());
         return BaseEntity.create(nafEntity.getType(), nafEntity.getId(), targets);
     }
 
@@ -66,5 +102,16 @@ public class NafUnits {
         wf.setOffset(t.getOffset() + "");
         wf.setLength(t.getLength() + "");
         return wf;
+    }
+
+    public static Term getTerm(Wf w) {
+        Target t = new Target();
+        t.setId(w.getId());
+        Span s = new Span();
+        s.getTargets().add(t);
+        Term term = new Term();
+        term.setId("t" + w.getId().substring(1));
+        term.getSentimentsAndSpenAndExternalReferences().add(s);
+        return term;
     }
 }

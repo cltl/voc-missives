@@ -33,6 +33,10 @@ public class Span implements Comparable<Span> {
         return lastIndex;
     }
 
+    public void setLastIndex(int lastIndex) {
+        this.lastIndex = lastIndex;
+    }
+
     @Override
     public int compareTo(Span o) {
         // prefix order

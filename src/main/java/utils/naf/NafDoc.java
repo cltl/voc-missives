@@ -9,18 +9,19 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-import com.sun.istack.SAXException2;
 import com.sun.org.apache.xml.internal.serialize.OutputFormat;
 import com.sun.org.apache.xml.internal.serialize.XMLSerializer;
+import eu.kyotoproject.kaf.KafSaxParser;
 import utils.common.AbnormalProcessException;
 import utils.common.BaseEntity;
 import xjc.naf.*;
 import xjc.naf.Span;
+    //import java.util.function.Predicate;
 
 public class NafDoc {
-
 
     NAF naf;
     public NafDoc() {
@@ -50,31 +51,78 @@ public class NafDoc {
         }
     }
 
+    public Object getLayer(Predicate<Object> layerSelector) {
+        return naf.getNafHeadersAndRawsAndTopics().stream().filter(layerSelector).findFirst().orElse(null);
+    }
+
+    public NafHeader getNafHeader() {
+        return (NafHeader) getLayer(x -> x instanceof NafHeader);
+    }
+
+    public String getId() {
+        return getNafHeader().getFileDesc().getFilename();
+    }
+
     public List<Wf> getWfs() {
-        Text textLayer = (Text) naf.getNafHeadersAndRawsAndTopics().stream().filter(x -> x instanceof Text).findFirst().orElse(null);
+        Text textLayer = (Text) getLayer(x -> x instanceof Text);
         return textLayer.getWves();
     }
 
+    public List<Tunit> getTunits() {
+        Tunits tunits = (Tunits) getLayer(x -> x instanceof Tunits);
+        if (tunits != null)
+            return tunits.getTunits();
+        else
+            return Collections.EMPTY_LIST;
+    }
+
+    public List<Object> getLayers() {
+        return naf.getNafHeadersAndRawsAndTopics();
+    }
+
+    public List<LinguisticProcessors> getLinguisticProcessors() {
+        NafHeader header = getNafHeader();
+        return header.getLinguisticProcessors();
+    }
+
+    public List<Term> getTerms() {
+        Terms termLayer = (Terms) getLayer(x -> x instanceof Terms);
+        if (termLayer != null)
+            return termLayer.getTerms();
+        return Collections.EMPTY_LIST;
+    }
+
+    public void createTermsLayer() {
+        Terms termLayer = new Terms();
+        termLayer.getTerms().addAll(getWfs().stream().map(NafUnits::getTerm).collect(Collectors.toList()));
+        naf.getNafHeadersAndRawsAndTopics().add(termLayer);
+    }
+
     public List<Entity> getEntities() {
-        Entities entitiesLayer = (Entities) naf.getNafHeadersAndRawsAndTopics().stream().filter(x -> x instanceof Entities).findFirst().orElse(null);
+        Entities entitiesLayer = (Entities) getLayer(x -> x instanceof Entities);
         if (entitiesLayer != null)
             return entitiesLayer.getEntities();
         else
             return Collections.EMPTY_LIST;
     }
 
+    /**
+     * Replaces entities layer (or creates a new one) by input entities
+     * @param entities
+     */
     public void setEntities(List<Entity> entities) {
-        Entities entitiesLayer = (Entities) naf.getNafHeadersAndRawsAndTopics().stream().filter(x -> x instanceof Entities).findFirst().orElse(null);
-        if (entitiesLayer != null)
-            entitiesLayer.getEntities().clear();
-        else
-            entitiesLayer = new Entities();
+        Entities entitiesLayer = new Entities();
         entitiesLayer.getEntities().addAll(entities);
-        naf.getNafHeadersAndRawsAndTopics().add(entitiesLayer);
+        Entities existingLayer = (Entities) getLayer(x -> x instanceof Entities);
+        int i = naf.getNafHeadersAndRawsAndTopics().indexOf(existingLayer);
+        naf.getNafHeadersAndRawsAndTopics().remove(existingLayer);
+        naf.getNafHeadersAndRawsAndTopics().add(i, entitiesLayer);
+
+
     }
 
-    public List<BaseEntity> getBaseEntities() {
-        return getEntities().stream().map(NafUnits::asBaseEntity).collect(Collectors.toList());
+    public List<BaseEntity> getBaseEntities(boolean entitiesMapToTerms) {
+        return getEntities().stream().map(e -> NafUnits.asBaseEntity(e, entitiesMapToTerms)).collect(Collectors.toList());
     }
 
     public List<Wf> getTargetSpan(Entity e) {
@@ -86,16 +134,9 @@ public class NafDoc {
         return getWfs().stream().filter(w -> targets.contains(w.getId())).collect(Collectors.toList());
     }
 
-    public List<Tunit> getTunits() {
-        Tunits tunits = (Tunits) naf.getNafHeadersAndRawsAndTopics().stream().filter(x -> x instanceof Tunits).findFirst().orElse(null);
-        if (tunits != null)
-            return tunits.getTunits();
-        else
-            return Collections.EMPTY_LIST;
-    }
+    public void writeWithKafParser(String file) {
+        KafSaxParser parser = new KafSaxParser();
 
-    public List<Object> getLayers() {
-        return naf.getNafHeadersAndRawsAndTopics();
     }
 
     public void write(String file) throws AbnormalProcessException {
@@ -137,5 +178,6 @@ public class NafDoc {
 
         return serializer;
     }
+
 
 }
