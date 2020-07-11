@@ -76,7 +76,7 @@ public class NAFConllReader implements NafEntityProcessor, NafSelector, NafCreat
      * @return
      * @throws AbnormalProcessException
      */
-    private List<BaseToken> read(String conllFile) throws AbnormalProcessException {
+    public List<BaseToken> read(String conllFile) throws AbnormalProcessException {
         String line;
         List<BaseToken> tokens = new ArrayList<>();
         int offset = 0;
@@ -121,8 +121,8 @@ public class NAFConllReader implements NafEntityProcessor, NafSelector, NafCreat
                 List<String> spannedTokenIds = aligner.getReferenceTokenSpanIds(ref.getFirstIndex(), ref.getLastIndex());
                 BaseEntity e = BaseEntity.create(type, "", spannedTokenIds);
                 if (entities.contains(e)) {
-                    System.out.println("FIXME");
-//                    throw new IllegalArgumentException("Entity already collected: " + e.toString() + "\n Something must have gone wrong during token alignment.");
+                    //System.out.println("FIXME");
+                    throw new IllegalArgumentException("Entity already collected: " + e.toString() + "\n Something must have gone wrong during token alignment.");
 
                 }
                 entities.add(e);
@@ -134,62 +134,6 @@ public class NAFConllReader implements NafEntityProcessor, NafSelector, NafCreat
         return entities;
     }
 
-
-    /**
-     * @deprecated
-     * the nafTokens are only used to retrieve their id.
-     * @param nafTokens
-     * @param conllTokens
-     * @return
-     * @throws AbnormalProcessException
-     */
-    public List<BaseEntity> collectEntities(List<Wf> nafTokens, List<String> conllTokens) throws AbnormalProcessException {
-
-        int i = 0;
-        List<BaseEntity> collected = new ArrayList<>();
-        List<String> tokenSpan = new LinkedList<>();
-        String entityType = null;
-        while (i < nafTokens.size()) {
-            if (! conllTokens.get(i).endsWith("O")) {
-                String[] wordLabel = conllTokens.get(i).split(conllSeparator);
-                if (wordLabel[1].charAt(0) == 'I')
-                    tokenSpan.add(nafTokens.get(i).getId());
-                else if (wordLabel[1].charAt(0) == 'B') {
-                    entityType = wordLabel[1].substring(2);
-                    if (!tokenSpan.isEmpty()) {
-                        collected.add(BaseEntity.create(entityType, "", tokenSpan));
-                        tokenSpan.clear();
-                    }
-                    tokenSpan.add(nafTokens.get(i).getId());
-                }
-                else
-                    throw new AbnormalProcessException("Unexpected Conll Label: " + wordLabel, new IllegalArgumentException());
-            } else if (!tokenSpan.isEmpty()) {
-                collected.add(BaseEntity.create(entityType, "", tokenSpan));
-                tokenSpan.clear();
-            }
-            i++;
-        }
-        if (!tokenSpan.isEmpty())
-            collected.add(BaseEntity.create(entityType, "", tokenSpan));
-        return collected;
-    }
-
-    /**
-     * @deprecated Used for test
-     * @param conllFile
-     * @return
-     * @throws AbnormalProcessException
-     */
-    public List<String> conllTokens(String conllFile) throws AbnormalProcessException {
-        try (BufferedReader bfr = new BufferedReader(new FileReader(new File(conllFile)))) {
-            return bfr.lines().filter(x -> x.length() > 0).collect(Collectors.toList());
-        } catch (FileNotFoundException e) {
-            throw new AbnormalProcessException(conllFile, e);
-        } catch (IOException e) {
-            throw new AbnormalProcessException(conllFile, e);
-        }
-    }
 
     public static void run(Path file, List<String> dirs, String textType, String conllSeparator, String source) throws AbnormalProcessException {
         String fileName = file.getFileName().toString();

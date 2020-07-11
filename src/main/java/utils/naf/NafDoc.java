@@ -14,12 +14,10 @@ import java.util.stream.Collectors;
 
 import com.sun.org.apache.xml.internal.serialize.OutputFormat;
 import com.sun.org.apache.xml.internal.serialize.XMLSerializer;
-import eu.kyotoproject.kaf.KafSaxParser;
 import utils.common.AbnormalProcessException;
 import utils.common.BaseEntity;
 import xjc.naf.*;
 import xjc.naf.Span;
-    //import java.util.function.Predicate;
 
 public class NafDoc {
 
@@ -55,6 +53,10 @@ public class NafDoc {
         return naf.getNafHeadersAndRawsAndTopics().stream().filter(layerSelector).findFirst().orElse(null);
     }
 
+    public String getRawText() {
+        Raw raw = (Raw) getLayer(x -> x instanceof Raw);
+        return raw.getValue();
+    }
     public NafHeader getNafHeader() {
         return (NafHeader) getLayer(x -> x instanceof NafHeader);
     }
@@ -115,28 +117,27 @@ public class NafDoc {
         entitiesLayer.getEntities().addAll(entities);
         Entities existingLayer = (Entities) getLayer(x -> x instanceof Entities);
         int i = naf.getNafHeadersAndRawsAndTopics().indexOf(existingLayer);
-        naf.getNafHeadersAndRawsAndTopics().remove(existingLayer);
-        naf.getNafHeadersAndRawsAndTopics().add(i, entitiesLayer);
+        if (i != -1) {
+            naf.getNafHeadersAndRawsAndTopics().remove(existingLayer);
+            naf.getNafHeadersAndRawsAndTopics().add(i, entitiesLayer);
+        } else
+            naf.getNafHeadersAndRawsAndTopics().add(entitiesLayer);
 
 
     }
 
-    public List<BaseEntity> getBaseEntities(boolean entitiesMapToTerms) {
-        return getEntities().stream().map(e -> NafUnits.asBaseEntity(e, entitiesMapToTerms)).collect(Collectors.toList());
+    public List<BaseEntity> getBaseEntities() {
+        return getEntities().stream().map(e -> NafUnits.asBaseEntity(e)).collect(Collectors.toList());
     }
 
     public List<Wf> getTargetSpan(Entity e) {
+
         List<Span> spans = e.getReferencesAndExternalReferences().stream()
                 .filter(x -> x instanceof References)
                 .map(x -> ((References) x).getSpen())
                 .findFirst().orElse(Collections.EMPTY_LIST);
-        List<String> targets = spans.get(0).getTargets().stream().map(x -> (String) x.getId()).collect(Collectors.toList());
+        List<String> targets = spans.get(0).getTargets().stream().map(x -> ((Term) x.getId()).getId()).collect(Collectors.toList());
         return getWfs().stream().filter(w -> targets.contains(w.getId())).collect(Collectors.toList());
-    }
-
-    public void writeWithKafParser(String file) {
-        KafSaxParser parser = new KafSaxParser();
-
     }
 
     public void write(String file) throws AbnormalProcessException {

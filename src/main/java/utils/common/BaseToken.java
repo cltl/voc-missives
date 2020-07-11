@@ -54,4 +54,8 @@ public class BaseToken {
     public void setSpan(Span span) {
         this.span = span;
     }
+
+    public BaseToken withText(String text) {
+        return new BaseToken(text, this.id, this.span);
+    }
 }

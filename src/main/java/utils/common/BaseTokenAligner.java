@@ -1,6 +1,10 @@
 package utils.common;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -15,6 +19,7 @@ public class BaseTokenAligner {
     int maxTokenLookAhead;
     int iInput;
     int iRef;
+    public static final Logger logger = LogManager.getLogger(BaseTokenAligner.class);
 
     public BaseTokenAligner(int maxTokenLookAhead, List<BaseToken> inputTokens, List<BaseToken> refTokens) {
         this.maxTokenLookAhead = maxTokenLookAhead;
@@ -38,7 +43,14 @@ public class BaseTokenAligner {
     }
 
     public Span getReferenceSpan(int begin, int end) {
-        return new Span(beginReference(begin), endReference(end));
+        int first = firstIndexRef.containsKey(begin) ? firstIndexRef.get(begin) : -1;
+        int last = lastIndexRef.containsKey(end) ? lastIndexRef.get(end): -1;
+//        if (first >= 0 && last >= 0)
+            return new Span(first, last);
+//        else {
+//            return null;
+//        }
+//        return new Span(beginReference(begin), endReference(end));
     }
 
     private int beginReference(int index) {
@@ -73,50 +85,46 @@ public class BaseTokenAligner {
      *  - reference tokens are missing from external file;
      *  - external tokens are missing from reference file.
      */
-    public void align() throws IllegalArgumentException {
+    public void align() {
+        boolean recoveryMode = false;
         while (iInput < inputTokens.size()) {
             BaseToken ref = refTokens.get(iRef);
             BaseToken ext = inputTokens.get(iInput);
-            if (ext.getText().equals("Ceylon"))
-                System.out.println("FIXME");
-            int startE = iInput;
-            int startR = iRef;
             boolean aligned = extTokenMatchesOneOrManyRef(ext, ref);
             aligned = aligned || extTokensMatchSingleRef(ext, ref);
             aligned = aligned || extTokenMatchesHyphenatedRef(ext, ref);
             aligned = aligned || manyToManyAlignment(ext, ref);
+            aligned = aligned || inputTokenMatchesTwoRefsWithGap(ext, ref);
             aligned = aligned || lookAhead(ext, ref);
 
-
-            StringBuilder sb = new StringBuilder();
-            for (int i = startE; i < iInput; i++)
-                sb.append(inputTokens.get(i).getText()).append(" ");
-            sb.append("-> ");
-            for (int i = startR; i < iRef; i++)
-                sb.append(refTokens.get(i).getText()).append(" ");
-            sb.append(" (").append(refTokens.get(iRef - 1)).append(")");
-            String m = sb.toString();
-            System.out.println(m);
-
             if (! aligned) {
-                StringBuilder message = new StringBuilder();
-                message.append("Unable to match tokens (text @ char-offset) :\nExt: ")
-                        .append(inputTokens.get(iInput).getText())
-                        .append(" @ ").append(inputTokens.get(iInput).getFirstIndex())
-                        .append("; (last matched token): ").append(iInput > 0 ? inputTokens.get(iInput - 1).getText(): "none")
-                        .append(" @ ").append(inputTokens.get(iInput - 1).getLastIndex())
-                        .append("\nRef: ").append(refTokens.get(iRef).getText())
-                        .append(" @ ").append(refTokens.get(iRef).getFirstIndex())
-                        .append("; (last matched token): ").append(iRef > 0 ? refTokens.get(iRef - 1).getText(): "none")
-                        .append(" @ ").append(refTokens.get(iRef - 1).getLastIndex());
-                throw new IllegalArgumentException(message.toString());
+
+                StringBuilder sb = new StringBuilder();
+
+                sb.append(ext).append(" -> ").append(ref);
+
+                String m = sb.toString();
+                if (!recoveryMode) {
+                    logger.warn("Could not align tokens: " + m + "\n We will map them anyway, and try to align the next two tokens");
+                    recoveryMode = true;
+                    mapIndices(ext, ref);
+                    iRef++;
+                    iInput++;
+                } else
+                    throw new IllegalArgumentException("Recovery attempt failed. Could not align tokens: " + m);
+            } else {
+                recoveryMode = false;
             }
+
+
         }
         lastIndices.addAll(lastIndexRef.keySet());
         lastIndices.sort(Integer::compareTo);
         firstIndices.addAll(firstIndexRef.keySet());
         firstIndices.sort(Integer::compareTo);
     }
+
+
 
     /**
      * Look ahead. We want to decide in which direction to look first.
@@ -135,15 +143,22 @@ public class BaseTokenAligner {
      * @return
      */
     private boolean lookAhead(BaseToken input, BaseToken ref) {
-        List<String> nextRefTokens = refTokens.subList(iRef, iRef + 100).stream().map(BaseToken::getText).collect(Collectors.toList());
-        List<String> nextInputTokens = inputTokens.subList(iInput, iInput + 50).stream().map(BaseToken::getText).collect(Collectors.toList());
-        List<String> followingInputTokens = inputTokens.subList(iInput + 50, iInput + 100).stream().map(BaseToken::getText).collect(Collectors.toList());
+        List<String> nextRefTokens = nextTokens(refTokens, iRef, iRef + 100);
+        List<String> nextInputTokens = nextTokens(inputTokens, iInput, iInput + 50);
+        List<String> followingInputTokens = nextTokens(inputTokens,iInput + 50, iInput + 100);
         long nbMatchesNextSet = nextInputTokens.stream().filter(t -> nextRefTokens.contains(t)).count();
         long nbMatchesFollowingSet = followingInputTokens.stream().filter(t -> nextRefTokens.contains(t)).count();
         if (nbMatchesNextSet > nbMatchesFollowingSet)
             return refTokensNotInInput(input) || inputTokensNotInRef(ref);
         else
             return inputTokensNotInRef(ref) || refTokensNotInInput(input);
+    }
+
+    private List<String> nextTokens(List<BaseToken> list, int firstIndex, int lastIndex) {
+        if (firstIndex >= list.size())
+            return Collections.EMPTY_LIST;
+        int endIndex = Math.min(list.size(), lastIndex);
+        return list.subList(firstIndex, endIndex).stream().map(BaseToken::getText).collect(Collectors.toList());
     }
 
     private boolean manyToManyAlignment(BaseToken ext, BaseToken ref) {
@@ -170,12 +185,26 @@ public class BaseTokenAligner {
         }
     }
 
+
+    private boolean inputTokenMatchesTwoRefsWithGap(BaseToken ext, BaseToken ref) {
+        String extText = ext.getText();
+        if (extText.startsWith(ref.getText()) && extText.endsWith(refTokens.get(iRef + 1).getText())) {
+            mapIndices(ext.getFirstIndex(), ref.getFirstIndex(), inputTokens.get(iInput).getLastIndex(), refTokens.get(iRef + 1).getLastIndex());
+            iRef += 2;
+            iInput++;
+            return true;
+        }
+        return false;
+    }
+
     private boolean extTokenMatchesHyphenatedRef(BaseToken ext, BaseToken ref) {
         if (matchesHyphenatedRef(ext, ref)) {
             mapIndices(ext, ref);
             iRef++;
             iInput++;
             return true;
+        } else if (ref.getText().endsWith("-")) {
+            return manyToManyAlignment(ext, ref.withText(ref.getText().substring(0, ref.getText().length() - 1)));
         }
         return false;
     }
@@ -245,7 +274,7 @@ public class BaseTokenAligner {
     }
 
     private int findToken(BaseToken t, List<BaseToken> otherTokens, int iOther, int maxLookUp) {
-        for (int i = iOther; i < iOther + maxLookUp; i++) {
+        for (int i = iOther; i < Math.min(iOther + maxLookUp, otherTokens.size()); i++) {
             if (matchesText(t, otherTokens.get(i)))
                 return i;
         }
@@ -282,8 +311,33 @@ public class BaseTokenAligner {
     }
 
     public List<String> getReferenceTokenSpanIds(int firstIndex, int lastIndex) {
+
         return refTokens.stream().filter(t -> t.getFirstIndex() >= firstIndex && t.getLastIndex() <= lastIndex)
                 .map(BaseToken::getId)
                 .collect(Collectors.toList());
+    }
+
+    public BaseToken lastAlignedToken(int lastIndex) {
+        return refTokens.stream().filter(t -> t.getLastIndex() == lastIndex).findFirst().orElse(null);
+    }
+
+    public Span matchFromLastToken(String coveredText, Span ref) {
+        int lastAlignedWfId = Integer.parseInt(lastAlignedToken(ref.getLastIndex()).getId());
+        BaseToken lastMatched = refTokens.stream().filter(t -> t.getId().equals(lastAlignedWfId)).findFirst().orElse(null);
+        int btIndex = refTokens.indexOf(lastMatched);
+        while (coveredText.contains(refTokens.get(btIndex).getText())) {
+            btIndex--;
+        }
+        return new Span(btIndex + 1, ref.getLastIndex());
+    }
+
+    public Span matchFromFirstToken(String coveredText, Span ref) {
+        int lastAlignedWfId = Integer.parseInt(lastAlignedToken(ref.getFirstIndex()).getId());
+        BaseToken lastMatched = refTokens.stream().filter(t -> t.getId().equals(lastAlignedWfId)).findFirst().orElse(null);
+        int btIndex = refTokens.indexOf(lastMatched);
+        while (coveredText.contains(refTokens.get(btIndex).getText())) {
+            btIndex++;
+        }
+        return new Span(ref.getFirstIndex(), btIndex - 1);
     }
 }

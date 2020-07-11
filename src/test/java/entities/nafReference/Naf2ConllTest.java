@@ -70,4 +70,9 @@ class Naf2ConllTest {
         assertEquals(textAndNotesTokens.size(), textTokens.size());
         assertEquals(notesTokens.size(), 0);
     }
+
+    @Test
+    public void testFileWithEntities() {
+        // TODO
+    }
 }

@@ -66,14 +66,19 @@ public class BaseEntity implements Comparable<BaseEntity> {
         return tokenSpan.getLastIndex();
     }
 
-    public static List<BaseEntity> overlap(List<BaseEntity> entities) {
+    public static List<BaseEntity> overlap(List<BaseEntity> entities) throws AbnormalProcessException {
         int i = 0;
         Set<BaseEntity> overlapping = new HashSet<>();
         int j = 1;
         while (j < entities.size()) {
             if (entities.get(j).getFirstTokenIndex() <= entities.get(i).getLastTokenIndex()) {
                 overlapping.add(entities.get(i));
-                overlapping.add(entities.get(j));
+                try {
+                    overlapping.add(entities.get(j));
+                } catch (NullPointerException u) {
+                    System.out.println("FIXME");
+                    throw new AbnormalProcessException(u);
+                }
                 if (entities.get(j).getLastTokenIndex() > entities.get(i).getLastTokenIndex())
                     i = j;
             } else

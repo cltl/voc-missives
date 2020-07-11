@@ -1,6 +1,8 @@
 package entities.nafReference;
 
 import de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import utils.common.AbnormalProcessException;
 import utils.common.IO;
 import utils.common.Span;
@@ -12,6 +14,8 @@ import utils.common.BaseTokenAligner;
 import utils.naf.NafDoc;
 import utils.naf.NafUnits;
 import utils.xmi.Dkpro;
+import xjc.naf.LinguisticProcessors;
+import xjc.naf.Wf;
 
 import java.nio.file.Path;
 import java.util.LinkedList;
@@ -33,6 +37,8 @@ public class NafXmiReader implements NafEntityProcessor, NafSelector, NafCreator
     CasDoc xmi;
     private static final String IN = "." + IO.XMI_SFX;
     private static final String OUT = "." + IO.NAF_SFX;
+
+    public static final Logger logger = LogManager.getLogger(NafXmiReader.class);
     /**
      * Maps indices from external to reference character offsets.
      */
@@ -69,18 +75,11 @@ public class NafXmiReader implements NafEntityProcessor, NafSelector, NafCreator
     }
 
     @Override
-    public void alignTokens() throws AbnormalProcessException {
+    public void alignTokens() {
         List<BaseToken> xmiTokens = xmi.getTokens().stream().map(Dkpro::asBaseToken).collect(Collectors.toList());
         List<BaseToken> nafTokens = selectedTokens(naf, textType).stream().map(NafUnits::asBaseToken).collect(Collectors.toList());
         aligner = BaseTokenAligner.create(xmiTokens, nafTokens, MAX_TOKEN_LOOK_AHEAD);
-        try {
-            aligner.align();
-        } catch (IllegalArgumentException e) {
-            // FIXME
-            aligner = BaseTokenAligner.create(xmiTokens, nafTokens, MAX_TOKEN_LOOK_AHEAD);
-            aligner.align();
-            throw new AbnormalProcessException("Error processing file " + xmi.getId(), e);
-        }
+        aligner.align();
     }
 
     @Override
@@ -108,21 +107,51 @@ public class NafXmiReader implements NafEntityProcessor, NafSelector, NafCreator
 
     @Override
     public void addLinguisticProcessor(String layer) {
-        naf.getNafHeader().getLinguisticProcessors().add(createLinguisticProcessors(layer));
+        List<LinguisticProcessors> lps = naf.getLinguisticProcessors();
+        LinguisticProcessors lp = createLinguisticProcessors(layer);
+        List<LinguisticProcessors> existing = lps.stream().filter(x -> x.getLayer().equals(layer)).collect(Collectors.toList());
+        if (existing.isEmpty())
+            lps.add(lp);
+        else
+            existing.get(0).getLps().addAll(lp.getLps());
     }
 
 
-    private List<BaseEntity> collectEntities() throws IllegalArgumentException {
+    private List<BaseEntity> collectEntities() throws AbnormalProcessException {
         List<BaseEntity> collected = new LinkedList<>();
+
         for (NamedEntity e: xmi.getEntities()) {
             Span ref = aligner.getReferenceSpan(e.getBegin(), e.getEnd());
-            if (ref.getFirstIndex() == -1 || ref.getLastIndex() < ref.getFirstIndex())
-                throw new IllegalArgumentException("Found entity with invalid reference span " + ref.toString()
-                        + "; " + e.getCoveredText() + "@ " + e.getBegin() + "-" + e.getEnd());
+            if (ref.getFirstIndex() == -1) {
+                if (ref.getLastIndex() != -1) {
+                    ref = aligner.matchFromLastToken(e.getCoveredText(), ref);
+                } else {
+                    throw new AbnormalProcessException("null aligner span for " + e.toShortString());
+                }
+            } else if (ref.getLastIndex() == -1){
+                ref = aligner.matchFromFirstToken(e.getCoveredText(), ref);
+            }
+            // TODO test
+//            if (ref.getLength() > e.getEnd() - e.getBegin() + 10)
+//                logger.warn("lengths differ between: " + e.getCoveredText() + " (Xmi) and " +
+//                        naf.getRawText().substring(ref.getFirstIndex(), ref.getLastIndex() + 1) + " (NAF)");
             List<String> spannedTokenIds = aligner.getReferenceTokenSpanIds(ref.getFirstIndex(), ref.getLastIndex());
+
             collected.add(BaseEntity.create(e.getValue(), e.getIdentifier(), spannedTokenIds));
+//            checkLengthsCompare(e, spannedTokenIds, naf);
         }
         return collected;
+    }
+
+    private void checkLengthsCompare(NamedEntity e, List<String> spannedTokenIds, NafDoc naf) {
+        int length1 = e.getEnd() - e.getBegin() + 1;
+        Wf last = naf.getWfs().get(Integer.parseInt(spannedTokenIds.get(spannedTokenIds.size() - 1).substring(1)));
+        Wf first = naf.getWfs().get(Integer.parseInt(spannedTokenIds.get(0).substring(1)));
+        int length2 = Integer.parseInt(last.getOffset()) + Integer.parseInt(last.getLength()) - Integer.parseInt(first.getOffset());
+        if (Math.abs(length2 - length1) > 10)
+            logger.warn("lengths differ between: " + e.getCoveredText() + " (" + e.getIdentifier() + " Xmi) and " +
+                    naf.getRawText().substring(Integer.parseInt(first.getOffset()),
+                            Integer.parseInt(last.getLength()) + Integer.parseInt(last.getOffset())) + " (" + first.getId() + " NAF)");
     }
 
 }

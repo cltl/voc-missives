@@ -31,7 +31,7 @@ class NafDocTest {
         BaseEntity newEntity = BaseEntity.create("PER", "e0", tokenIds);
         List<BaseEntity> newEntities = Collections.singletonList(newEntity);
 
-        ncr.addEntities(ncr.getNaf(), newEntities, true);
+        ncr.addEntities(newEntities, true);
 
         List<Entity> list2 = ncr.getNaf().getEntities();
         assertEquals(list2.size(), 2);

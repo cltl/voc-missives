@@ -141,19 +141,43 @@ public class NafConverter implements NafCreator {
         List<Fragment> embeddedNodes = new ArrayList<>();
         for (int i = 0; i < subtrees.size(); i++) {
             if (subtrees.get(i).isParagraph()) {
-                List<ATeiTree> notes = subtrees.get(i).getTopNodes(t -> t.isNote() || t.isForeword() || t.isTable());
-                if (! notes.isEmpty()) {
-                    int index = 0;      // just in case embedded nodes could have the same string in a same paragraph...
-                    for (ATeiTree n: notes) {
-                        String y = n.yield();
-                        int offset = yields.get(i).indexOf(y, index);
-                        embeddedNodes.add(new Fragment(n.getId(), offset+ sections.get(i).getOffset(), y.length()));
-                        index = offset + y.length();
-                    }
+                List<ATeiTree> nodes = subtrees.get(i).getTopNodes(t -> t.isNote() || t.isForeword() || t.isTable());
+//                List<ATeiTree> nodes2 = new ArrayList<>();
+//                for (ATeiTree n: nodes) {
+//                    nodes2.add(n);
+//                    nodes2.addAll(n.getAllNodes(ATeiTree::isForeword));
+//                }
+                if (! nodes.isEmpty()) {
+                    addToEmbeddedNodes(yields, sections, embeddedNodes, i, nodes);
+                }
+            } else if (subtrees.get(i).isTable() || subtrees.get(i).isNote()) {
+                List<ATeiTree> forewords = subtrees.get(i).getTopNodes(t -> t.isForeword());
+                if (! forewords.isEmpty()) {
+                    addToEmbeddedNodes(yields, sections, embeddedNodes, i, forewords);
                 }
             }
+            //FIXME: 2-level embeddings P > note > Fw || P > Table > Fw
         }
+
         return embeddedNodes;
+    }
+
+    /**
+     * FIXME find a clearer way to map indices for level2 nodes
+     * @param yields
+     * @param sections
+     * @param embeddedNodes
+     * @param i
+     * @param notes
+     */
+    private void addToEmbeddedNodes(List<String> yields, List<Fragment> sections, List<Fragment> embeddedNodes, int i, List<ATeiTree> notes) {
+        int index = 0;      // just in case embedded nodes could have the same string in a same paragraph...
+        for (ATeiTree n: notes) {
+            String y = n.yield();
+            int offset = yields.get(i).indexOf(y, index);
+            embeddedNodes.add(new Fragment(n.getId(), offset+ sections.get(i).getOffset(), y.length()));
+            index = offset + y.length();
+        }
     }
 
     private List<CharPosition> mapPositions(List<String> sectionYields, String treeYield) {

@@ -8,7 +8,6 @@ import xjc.naf.*;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class NafUnits {
@@ -37,8 +36,7 @@ public class NafUnits {
         return wf2ts;
     }
 
-    public static Entity asNafEntity(BaseEntity baseEntity, boolean mapToTerms, NafDoc nafDoc) {
-        String pfx = mapToTerms ? "t_" : "w";
+    public static Entity asNafEntity(BaseEntity baseEntity, NafDoc nafDoc) {
 
         Entity e = new Entity();
         e.setId(baseEntity.getId());
@@ -49,8 +47,8 @@ public class NafUnits {
 
         for (int i = baseEntity.getFirstTokenIndex(); i <= baseEntity.getLastTokenIndex(); i++) {
             Target t = new Target();
-            Term term = nafDoc.getTerms().get(i);
-            t.setId(term);
+            //Term term = nafDoc.getTerms().get(i);
+            t.setId(nafDoc.getWfs().get(i));
             ts.add(t);
         }
         r.getSpen().add(s);
@@ -62,19 +60,16 @@ public class NafUnits {
         return BaseToken.create(token.getContent(), token.getId(), token.getOffset(), token.getLength());
     }
 
-    public static BaseEntity asBaseEntity(Entity nafEntity, boolean entitiesMapToTerms) {
-        List<Span> spans = nafEntity.getReferencesAndExternalReferences().stream()
+    public static List<String> getWfIdSpan(Entity e) {
+        List<Span> spans = e.getReferencesAndExternalReferences().stream()
                 .filter(x -> x instanceof References)
                 .map(x -> ((References) x).getSpen())
                 .findFirst().orElse(Collections.EMPTY_LIST);
-        Function<Target, String> mapId;
-        if (entitiesMapToTerms) {
-            mapId = x -> ((Term) x.getId()).getId();
-        } else
-            mapId = x -> (String) x.getId();
+        return spans.get(0).getTargets().stream().map(x -> ((Term) x.getId()).getId()).collect(Collectors.toList());
+    }
 
-        List<String> targets = spans.get(0).getTargets().stream().map(mapId).collect(Collectors.toList());
-        return BaseEntity.create(nafEntity.getType(), nafEntity.getId(), targets);
+    public static BaseEntity asBaseEntity(Entity nafEntity) {
+        return BaseEntity.create(nafEntity.getType(), nafEntity.getId(), getWfIdSpan(nafEntity));
     }
 
     public static Tunit asTunit(Fragment p) {
@@ -106,7 +101,7 @@ public class NafUnits {
 
     public static Term getTerm(Wf w) {
         Target t = new Target();
-        t.setId(w.getId());
+        t.setId(w);
         Span s = new Span();
         s.getTargets().add(t);
         Term term = new Term();

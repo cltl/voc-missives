@@ -3,6 +3,7 @@ package entities.nafReference;
 import utils.common.AbnormalProcessException;
 import org.junit.jupiter.api.Test;
 import utils.common.BaseEntity;
+import utils.common.BaseToken;
 import utils.naf.NafUnits;
 import xjc.naf.Entity;
 import xjc.naf.References;
@@ -21,15 +22,16 @@ class NAFConllReaderTest {
     public void testNotesIntegrationDetailed() throws AbnormalProcessException {
         NAFConllReader ncr = new NAFConllReader(notesNAF, "notes", " ", "manual annotations");
 
-        List<String> conllTokens = ncr.conllTokens(notesConll);
-        List<Wf> nafTokens = ncr.selectedTokens(ncr.getNaf(), "notes");
 
+        List<BaseToken> conllTokens = ncr.read(notesNAF);
+        List<Wf> nafTokens = ncr.selectedTokens(ncr.getNaf(), "notes");
         assertEquals(conllTokens.size(), nafTokens.size());
-        List<BaseEntity> baseEntities = ncr.collectEntities(nafTokens, conllTokens);
+
+        List<BaseEntity> baseEntities = ncr.readEntities(notesNAF);
         assertEquals(baseEntities.get(0).getTokenSpan().getLength(), 1);
 
         // naf entity conversion
-        Entity e = NafUnits.asNafEntity(baseEntities.get(0).withId(0), false, ncr.getNaf());
+        Entity e = NafUnits.asNafEntity(baseEntities.get(0).withId(0), ncr.getNaf());
         List<Target> ts = ((References) e.getReferencesAndExternalReferences().get(0)).getSpen().get(0).getTargets();
         assertEquals(ts.size(), 1);
     }

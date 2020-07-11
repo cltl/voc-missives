@@ -22,7 +22,7 @@ class NafXmiReaderTest {
         List<BaseEntity> entities = nafXmiReader.readEntities(xmiFile);
 
         NafDoc naf = nafXmiReader.getNaf();
-        List<BaseEntity> all = naf.getBaseEntities(true);
+        List<BaseEntity> all = naf.getBaseEntities();
         all.addAll(entities);
         assertEquals(all.size(), entities.size());
         List<Entity> sorted = nafXmiReader.sortAndRenameForNaf(all);

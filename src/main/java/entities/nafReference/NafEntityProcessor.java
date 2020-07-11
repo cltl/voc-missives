@@ -13,8 +13,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public interface NafEntityProcessor {
-    boolean remapEntitiesToTerms = true;    // this is necessary for NAF3
-    boolean termsMatchWfIndices = false;     // we make it happen
+    boolean remapEntitiesToTerms = false;
+    boolean termsMatchWfIndices = true;     // we make it happen
     void alignTokens() throws AbnormalProcessException;
 
     List<BaseEntity> readEntities(String input) throws AbnormalProcessException;
@@ -22,15 +22,13 @@ public interface NafEntityProcessor {
     default void process(String input, String output) throws AbnormalProcessException {
         List<BaseEntity> newEntities = readEntities(input);
         if (! newEntities.isEmpty())
-            addEntities(getNaf(), newEntities, remapEntitiesToTerms);
-
+            addEntities(newEntities, remapEntitiesToTerms);
         getNaf().write(output);
-
     }
 
     NafDoc getNaf();
 
-    default List<Entity> sortAndRenameForNaf(List<BaseEntity> entities) {
+    default List<Entity> sortAndRenameForNaf(List<BaseEntity> entities) throws AbnormalProcessException {
         Collections.sort(entities, BaseEntity::compareTo);
         List<BaseEntity> overlapping = BaseEntity.overlap(entities);
         if (! overlapping.isEmpty())
@@ -38,7 +36,7 @@ public interface NafEntityProcessor {
                     + overlapping.stream().map(BaseEntity::toString).collect(Collectors.joining(", ")));
         List<Entity> nafEntities = new ArrayList<>();
         for (int i = 0; i < entities.size(); i++)
-            nafEntities.add(NafUnits.asNafEntity(entities.get(i).withId(i), remapEntitiesToTerms, getNaf()));
+            nafEntities.add(NafUnits.asNafEntity(entities.get(i).withId(i), getNaf()));
         return nafEntities;
     }
 
@@ -50,7 +48,7 @@ public interface NafEntityProcessor {
      * @param entities
      * @return
      */
-    default void addEntities(NafDoc naf, List<BaseEntity> entities, boolean remapEntitiesToTerms) {
+    default void addEntities(List<BaseEntity> entities, boolean remapEntitiesToTerms) throws AbnormalProcessException {
 
         if (remapEntitiesToTerms) {
             if (getNaf().getTerms().isEmpty()) {
@@ -62,7 +60,7 @@ public interface NafEntityProcessor {
         }
 
         addLinguisticProcessor("entities");
-        List<BaseEntity> all = getNaf().getBaseEntities(remapEntitiesToTerms);
+        List<BaseEntity> all = getNaf().getBaseEntities();
         all.addAll(entities);
         getNaf().setEntities(sortAndRenameForNaf(all));
     }
