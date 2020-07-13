@@ -3,6 +3,7 @@ package missives;
 import entities.nafReference.NAFConllReader;
 import entities.nafReference.Naf2Conll;
 import entities.nafReference.NafXmiReader;
+import entities.rawTextAligner.EntityOffsetAligner;
 import org.apache.commons.cli.*;
 import entities.xmiReference.EntityAligner;
 import utils.common.IO;
@@ -79,6 +80,11 @@ public class Handler {
         else if (inputType.equals(IO.XMI_SFX) && outputType.equals(IO.NAF_SFX) && refType.equals(IO.NAF_SFX))
             IO.loop(indir, Collections.singletonList(refDir), outdir,
                     throwingBiConsumerWrapper((x, y) -> NafXmiReader.run(x, y, selectText, source)));
+        else if (inputType.equals(IO.XMI_SFX) && outputType.equals(IO.XMI_SFX) && refType.equals(IO.NAF_SFX)) {
+            IO.loop(indir, Collections.singletonList(refDir), outdir,
+                    throwingBiConsumerWrapper((x, y) -> EntityOffsetAligner.run(x, y)));
+            EntityOffsetAligner.finalStats();
+        }
         else
             throw new IllegalArgumentException("annotations integration is currently only supported for CAS XMI and Conll2Naf");
     }

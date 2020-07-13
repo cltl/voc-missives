@@ -72,6 +72,12 @@ public class CasDoc {
         }
     }
 
+    public static CasDoc create(String inXmi) throws AbnormalProcessException {
+        CasDoc doc = create();
+        doc.read(inXmi);
+        return doc;
+    }
+
     public void read(String xmi) throws AbnormalProcessException {
         try (FileInputStream fis = new FileInputStream(xmi)) {
             XmiCasDeserializer.deserialize(fis, jCas.getCas());

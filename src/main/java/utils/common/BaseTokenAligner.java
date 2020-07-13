@@ -135,7 +135,7 @@ public class BaseTokenAligner {
      * then the first set of input tokens will match more frequently.
      *
      * example.            Ref: a b c d e f
-     * missing tokens in input: c d e f g h  -> part 1 (c d e) has 3 matches; part 2 (f g h) has 1.
+     * missing tokens in input: c d e f g h  -> part 1 (c d e) has 3 coarseMatches; part 2 (f g h) has 1.
      * missing tokens in ref  : y z a b c d  -> (y z a) has 1 match, (b c d) has 2.
      *
      * @param input

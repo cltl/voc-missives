@@ -1,8 +1,6 @@
 package utils.common;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Fragment implements Comparable<Fragment> {
     String id;
@@ -47,6 +45,8 @@ public class Fragment implements Comparable<Fragment> {
         return offset + length;
     }
 
+    public Span getSpan() { return new Span(offset, offset + length - 1); }
+
     public static List<Fragment> zip(List<String> ids, List<CharPosition> positions) {
         if (ids.size() != positions.size())
             throw new IllegalArgumentException("cannot zip lists of different sizes");
@@ -72,6 +72,43 @@ public class Fragment implements Comparable<Fragment> {
             return 1;
     }
 
+    public static List<Fragment> flatten2(List<Fragment> fragments) {
+        List<Fragment> fs = new LinkedList<>();
+        if (fragments.size() < 2)
+            return fs;
+        int offset;
+        LinkedList<Fragment> queue = new LinkedList<>();
+        queue.add(fragments.get(0));
+        for (Fragment f: fragments) {
+            if (f.getLength() > 0) {
+                if (queue.peekLast().getOffset() == f.getOffset() && queue.peekLast().getLength() == f.getLength()) {
+                    queue.removeLast();
+                    queue.add(f);
+                } else if (queue.peekLast().contains(f)) {
+                    offset = queue.peekLast().getOffset();
+                    if (offset < f.getOffset())
+                        fs.add(new Fragment(queue.peekLast().getId(), offset, f.getOffset() - offset));
+                    queue.add(f);
+                } else {
+                    fs.add(queue.peekLast());
+                    offset = queue.removeLast().getEndIndex();
+                    if (offset < f.getOffset())
+                        fs.add(new Fragment(queue.peekLast().getId(), offset, f.getOffset() - offset));
+                    queue.add(f);
+                }
+            }
+        }
+        if (queue.size() > 1)
+            fs.add(queue.peekLast());
+
+        while (queue.size() > 1) {
+            offset = queue.removeLast().getEndIndex();
+            if (offset < queue.peekLast().getEndIndex()) {
+                fs.add(new Fragment(queue.peekLast().getId(), offset, queue.peekLast().getEndIndex() - offset));
+            }
+        }
+        return fs;
+    }
     /**
      * flattens embedding fragments into non-overlapping subfragments
      * @param fragments

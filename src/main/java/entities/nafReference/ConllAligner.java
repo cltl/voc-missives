@@ -21,7 +21,7 @@ import java.util.List;
  * Connl-to-Naf token aligment may take the following forms:
  *
  * - one-to-one         -- the ideal case
- * - one-to-many        -- one conll token matches a NAF token span
+ * - one-to-many        -- one conll token coarseMatches a NAF token span
  * - many-to-one        -- several conll tokens point to a same NAF token
  * - many-to-many       -- substrings match over a n-to-m sequence
  * - one/many-to-null   -- conll tokens absent from NAF

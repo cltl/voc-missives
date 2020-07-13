@@ -21,12 +21,12 @@ public class SectionSelector {
     static final Pattern HEAD = Pattern.compile(".*\\.head\\.\\d+$");
     static final Pattern TABLE = Pattern.compile(".*\\.table\\.\\d+$");
 
-    static final Predicate<Fragment> TEXT_SELECTOR = x -> TEXT.matcher(x.getId()).matches()
+    public static final Predicate<Fragment> TEXT_SELECTOR = x -> TEXT.matcher(x.getId()).matches()
             || HEAD.matcher(x.getId()).matches()
             || TABLE.matcher(x.getId()).matches() ;
-    static final Predicate<Fragment> NOTE_SELECTOR = x -> NOTE.matcher(x.getId()).matches();
-    static final Predicate<Fragment> ALL_SELECTOR = x -> true;
-    static final Predicate<Fragment> MIXED_SELECTOR = x -> ! FW.matcher(x.getId()).matches();
+    public static final Predicate<Fragment> NOTE_SELECTOR = x -> NOTE.matcher(x.getId()).matches();
+    public static final Predicate<Fragment> ALL_SELECTOR = x -> true;
+    public static final Predicate<Fragment> MIXED_SELECTOR = x -> ! FW.matcher(x.getId()).matches();
 
     Predicate<Fragment> selector;
     List<Fragment> selectedSections;

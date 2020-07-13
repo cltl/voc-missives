@@ -1,5 +1,7 @@
 package utils.common;
 
+import java.util.Objects;
+
 public class Span implements Comparable<Span> {
     int firstIndex;
     int lastIndex;
@@ -37,6 +39,9 @@ public class Span implements Comparable<Span> {
         this.lastIndex = lastIndex;
     }
 
+    public boolean contains (Span o) {
+        return firstIndex <= o.getFirstIndex() && lastIndex >= o.getLastIndex();
+    }
     @Override
     public int compareTo(Span o) {
         // prefix order
@@ -45,4 +50,20 @@ public class Span implements Comparable<Span> {
         else
             return 1;
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstIndex, lastIndex);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null) return false;
+        if (this.getClass() != o.getClass()) return false;
+        Span x = (Span) o;
+        return firstIndex == x.getFirstIndex()
+                && lastIndex == x.getLastIndex();
+    }
+
 }
