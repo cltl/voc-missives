@@ -8,11 +8,13 @@ import xjc.naf.*;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class NafUnits {
 
-
+    private static Pattern teiIdEndPattern = Pattern.compile("\\w+\\.\\d+$");
     /**
      *
      * @param terms
@@ -75,6 +77,11 @@ public class NafUnits {
     public static Tunit asTunit(Fragment p) {
         Tunit t = new Tunit();
         t.setId(p.getId());
+        Matcher matcher = teiIdEndPattern.matcher(p.getId());
+        if (matcher.find()) {
+            String idEnd = p.getId().substring(matcher.start());
+            t.setType(idEnd.substring(0, idEnd.indexOf(".")));
+        }
         t.setOffset(p.getOffset() + "");
         t.setLength(p.getLength() + "");
         return t;

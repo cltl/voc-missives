@@ -6,6 +6,8 @@ import entities.nafReference.NafXmiReader;
 import entities.rawTextAligner.EntityOffsetAligner;
 import org.apache.commons.cli.*;
 import entities.xmiReference.EntityAligner;
+import text.tei2inputNaf.InputNafConverter;
+import text.tei2naf.NafConverter;
 import utils.common.IO;
 
 import java.io.IOException;
@@ -97,10 +99,13 @@ public class Handler {
                                          String conllSeparator,
                                          String selectText) {
         if (inputType.equals(IO.TEI_SFX)) {
-            if (outputType.equals(IO.NAF_SFX))
-                IO.loop(indir, outdir,
-                        throwingBiConsumerWrapper((x, y) -> convertFile(x, y, tokenize)));
-            else if (outputType.equals(IO.XMI_SFX))    // documents are always tokenized
+            if (outputType.equals(IO.NAF_SFX)) {
+                if (tokenize)
+                    IO.loop(indir, outdir,
+                        throwingBiConsumerWrapper((x, y) -> NafConverter.convertFile(x, y, tokenize)));
+                else
+                    IO.loop(indir, outdir, throwingBiConsumerWrapper((x, y) -> InputNafConverter.convertFile(x, y)));
+            } else if (outputType.equals(IO.XMI_SFX))    // documents are always tokenized
                 IO.loop(indir, outdir,
                         throwingBiConsumerWrapper((x, y) -> text.tei2xmi.Converter.convertFile(x, y)));
         } else if (inputType.equals(IO.XMI_SFX) && outputType.equals(IO.CONLL_SFX))

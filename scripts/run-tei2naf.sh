@@ -7,7 +7,7 @@
 
 datadir=$1
 wdir=$(cd $(dirname "${BASH_SOURCE[0]}") && cd .. && pwd)
-jar=${wdir}/target/voc-missives-1.0-SNAPSHOT-jar-with-dependencies.jar
+jar=${wdir}/target/voc-missives-0.1-SNAPSHOT-jar-with-dependencies.jar
 
 for subdir in ${datadir}/tei/*; do
   volume=$(basename $subdir)
