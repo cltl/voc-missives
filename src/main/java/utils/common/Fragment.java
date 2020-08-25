@@ -25,6 +25,10 @@ public class Fragment implements Comparable<Fragment> {
         this.length = Integer.parseInt(length);
     }
 
+    public String toString() {
+        return "id: " + id + "; offset: " + offset + "; length: " + length;
+    }
+
     public static void sort(List<Fragment> sections) {
         Collections.sort(sections, Fragment::compareTo);
     }

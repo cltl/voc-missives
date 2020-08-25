@@ -25,7 +25,7 @@ public class TeiInputTreeFactory {
         else if (o instanceof String)
             return TeiLeaf.create(ATeiTree.TeiType.STR, null, (String) o);
         else if (o instanceof Lb)
-            return TeiLeaf.create(ATeiTree.TeiType.STR, ((Lb) o).getId(), "\n");
+            return TeiLeaf.create(ATeiTree.TeiType.LB, ((Lb) o).getId(), "");
         else if (o instanceof Head)
             return TeiDiv.create(ATeiTree.TeiType.HEAD, ((Head) o).getId(), createChildren(((Head) o).getContent()));
         else if (o instanceof Fw)
@@ -61,10 +61,9 @@ public class TeiInputTreeFactory {
 
     public static List<ATeiTree> createChildren(TEI t) {
         return createChildren(t.getFsdDeclsAndStandOfvesAndTexts().stream()
-                .filter(x -> x instanceof Text)
-                .map(x -> ((Text) x).getIndicesAndSpenAndSpanGrps())
-                .flatMap(x -> x.stream()).collect(Collectors.toList()));
+                .filter(x -> x instanceof Text).collect(Collectors.toList()));
     }
+
 
     public static List<ATeiTree> createChildren(Body t) {
         return createChildren(t.getIndicesAndSpenAndSpanGrps());

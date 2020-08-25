@@ -18,7 +18,6 @@ import java.util.Collections;
 import java.util.stream.Stream;
 
 import static utils.common.ThrowingBiConsumer.throwingBiConsumerWrapper;
-import static text.tei2naf.NafConverter.convertFile;
 import static entities.xmiReference.Conll.run;
 
 /**
@@ -102,9 +101,9 @@ public class Handler {
             if (outputType.equals(IO.NAF_SFX)) {
                 if (tokenize)
                     IO.loop(indir, outdir,
-                        throwingBiConsumerWrapper((x, y) -> NafConverter.convertFile(x, y, tokenize)));
+                        throwingBiConsumerWrapper((x, y) -> text.tei2naf.NafConverter.convertFile(x, y, tokenize)));
                 else
-                    IO.loop(indir, outdir, throwingBiConsumerWrapper((x, y) -> InputNafConverter.convertFile(x, y)));
+                    IO.loop(indir, outdir, throwingBiConsumerWrapper((x, y) -> text.tei2inputNaf.InputNafConverter.convertFile(x, y)));
             } else if (outputType.equals(IO.XMI_SFX))    // documents are always tokenized
                 IO.loop(indir, outdir,
                         throwingBiConsumerWrapper((x, y) -> text.tei2xmi.Converter.convertFile(x, y)));

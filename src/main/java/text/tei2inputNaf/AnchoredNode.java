@@ -1,6 +1,8 @@
 package text.tei2inputNaf;
 
 import utils.common.CharPosition;
+import utils.common.Fragment;
+import utils.common.Span;
 import utils.tei.ATeiTree;
 
 public class AnchoredNode {
@@ -18,14 +20,30 @@ public class AnchoredNode {
         return new AnchoredNode(tree, tree.yield(), 0);
     }
 
-    public static AnchoredNode create(ATeiTree node, AnchoredNode parent) {
+    public static AnchoredNode create(ATeiTree node, AnchoredNode parent, int relativeOffset) {
         String yield = node.yield();
-        int offset = parent.indexOf(yield);
-        if (offset == -1)
-            throw new IllegalArgumentException("cannot find yield of element " + node.getId() + " in " + parent.getId());
+//        int relativeOffset = 0;
+//        if (! lastAddedFragment.getSpan().equals(parent.getSpan()))
+//            relativeOffset = lastAddedFragment.getEndIndex() - parent.getOffset();   // will match from the end of the left sibling if present
 
+        int offset = relativeOffset;
+        if (yield.length() > 0) {
+            // elements of 0 length (page breaks) take the *next* char offset after the left sibling, or the parent char offset
+            offset = parent.indexOf(yield, relativeOffset);
+            if (offset == -1 )
+                offset = parent.indexOf(yield);
+            if (offset == -1)
+                throw new IllegalArgumentException("cannot find yield of element " + node.getId() + " in " + parent.getId());
+        }
         return new AnchoredNode(node, yield, parent.getOffset() + offset);
     }
+
+    private int indexOf(String y, int i) {
+        return yield.indexOf(y, i);
+    }
+
+
+    public Span getSpan() { return new Span(position.getOffset(), position.getOffset() + position.getLength() - 1); }
 
     public int indexOf(String y) {
         return yield.indexOf(y);

@@ -8,6 +8,7 @@ import static utils.tei.ATeiTree.TeiType.*;
 
 public abstract class ATeiTree {
 
+
     public enum TeiType {TEI, STR, TEXT, DIV, P, FW, LB, HEAD, NOTE, BODY, HI, TABLE, ROW, CELL, PB}
 
     TeiType teiType;
@@ -22,6 +23,9 @@ public abstract class ATeiTree {
         return teiType;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
     public String getId() {
         return id;
     }

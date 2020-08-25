@@ -71,7 +71,7 @@ public class Metadata {
                             if (date.equals("")) {
                                 date = formatDate(title);
                                 if (date.equals(""))
-                                    logger.warn("Found non-conform date: " + rawDate + " for file " + getId(ids, "pid") + ", " + getId(ids, "sourceID") + "\n" + title);
+                                    logger.info("Found non-conform date: " + rawDate + " for file " + getId(ids, "pid") + ", " + getId(ids, "sourceID") + "\n" + title);
                             }
                         }
                     } else
