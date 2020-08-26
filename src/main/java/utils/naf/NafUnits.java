@@ -82,6 +82,16 @@ public class NafUnits {
             String idEnd = p.getId().substring(matcher.start());
             t.setType(idEnd.substring(0, idEnd.indexOf(".")));
         }
+        String xpathStr;
+        if (p.getId().indexOf(".TEI.1") != -1) {
+            xpathStr = p.getId().substring(p.getId().indexOf(".TEI.1") + 6);
+            xpathStr = "/TEI" + xpathStr.replaceAll("\\.([a-zA-Z]+)\\.([0-9]+)", "/$1[$2]");
+            t.setXpath(xpathStr);
+        } else if (p.getId().indexOf(".TEI") != -1) {
+            xpathStr = p.getId().substring(p.getId().indexOf(".TEI"));
+            xpathStr = xpathStr.replaceAll("\\.([a-zA-Z]+)\\.([0-9]+)", "/$1[$2]");
+            t.setXpath(xpathStr);
+        }
         t.setOffset(p.getOffset() + "");
         t.setLength(p.getLength() + "");
         return t;

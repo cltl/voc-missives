@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- DTD NAF -->
+<!--
+  This DTD extends NAF v3.0 with a new specification of tunits.
+  This extension is independent from NAF v3.1 (subword units)
+  extension name: v3.1.b
+  Sophie Arnoult, 03/07/20
+-->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
-  <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="naf_xml.xsd"/>
+  <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
   <xs:element name="NAF">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
@@ -828,6 +834,7 @@
     <xs:complexType>
       <xs:attribute name="id" use="required" type="xs:ID"/>
       <xs:attribute name="type"/>
+      <xs:attribute name="xpath"/>
       <xs:attribute name="offset" use="required"/>
       <xs:attribute name="length" use="required"/>
     </xs:complexType>

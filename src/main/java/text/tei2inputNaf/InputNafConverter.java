@@ -43,6 +43,9 @@ public class InputNafConverter implements NafCreator {
         fileDesc.setTitle(doc.getMetadata().getDocumentTitle());
         fileDesc.setFilename(doc.getMetadata().getDocumentId());
         nafHeader.setFileDesc(fileDesc);
+        Public pub = new Public();
+        pub.setPublicId(doc.getMetadata().getDocumentId() + ".naf");
+        nafHeader.setPublic(pub);
         String rawText = doc.getRawText();
         Raw raw = new Raw(rawText);
         nafHeader.getLinguisticProcessors().add(createLinguisticProcessors("raw"));
@@ -98,6 +101,7 @@ public class InputNafConverter implements NafCreator {
         ArrayDeque<AnchoredNode> thread = new ArrayDeque<>();
         List<Fragment> fragments = new LinkedList<>();
         fragments = loopElementPositions(tree, thread, fragments, 0);
+        fragments.remove(0); // removes root element
         return fragments;
     }
 

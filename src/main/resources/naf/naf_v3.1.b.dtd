@@ -575,6 +575,7 @@
 <!ATTLIST tunit
           id ID #REQUIRED
           type CDATA #IMPLIED
+		  xpath CDATA #IMPLIED
           offset CDATA #REQUIRED
           length CDATA #REQUIRED>
 
