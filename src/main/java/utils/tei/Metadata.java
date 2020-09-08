@@ -3,9 +3,7 @@ package utils.tei;
 import utils.common.AbnormalProcessException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import xjc.teiAll.Date;
-import xjc.teiAll.Idno;
-import xjc.teiAll.TEI;
+import xjc.teiAll.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -81,11 +79,26 @@ public class Metadata {
                 }
             } else
                 logger.info("Found no date for file " + getId(ids, "pid") + ", " + getId(ids, "sourceID"));
-            return new Metadata(title, getId(ids, "sourceID"), getId(ids, "pid"), date);
+            return new Metadata(title, getId(ids, "sourceID"), getId(header), date);
         } catch (NullPointerException e) {
             throw new AbnormalProcessException("no FileDesc", e);
         }
 
+    }
+
+    private static String getId(xjc.teiAll.FileDesc header) {
+        List<Object> ids = header.getPublicationStmt().getPSAndAbs().get(0).getContent();
+        Idno idno = (Idno) ids.stream().filter(x -> x instanceof Idno && ((Idno) x).getType().equals("sourceID")).findFirst().orElse(null);
+        String volume = (String) idno.getContent().get(0);
+        idno = (Idno) ids.stream().filter(x -> x instanceof Idno && ((Idno) x).getType().equals("pid")).findFirst().orElse(null);
+        String id = (String) idno.getContent().get(0);
+        ListBibl bibls = (ListBibl) header.getSourceDescs().get(0).getBiblsAndBiblStructsAndListBibls().get(0);
+        Bibl bibl = (Bibl) bibls.getBiblsAndBiblStructsAndListBibls().get(0);
+        String page = (String) bibl.getContent().stream()
+                .filter(x -> x instanceof InterpGrp && ((InterpGrp) x).getType().equals("page"))
+                .map(x -> ((InterpGrp) x).getInterps().get(0))
+                .collect(Collectors.toList()).get(0).getContent().get(0);
+        return id + "_" + volume + "_p" + page;
     }
 
     private static String getId(List<Object> ids, String pid) {
