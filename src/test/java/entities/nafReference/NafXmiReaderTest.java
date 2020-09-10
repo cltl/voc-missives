@@ -30,7 +30,7 @@ class NafXmiReaderTest {
 
         naf.write(outFile);
         //nafXmiReader.process(xmiFile, outFile);
-//        NafDoc naf = NafDoc.create(testfile);
+//        NafDoc naf = NafDoc.createSpanned(testfile);
 //        List<Wf> allWfs = naf.getWfs();
 //        List<Fragment> fragments = NafUnits.asFragments(naf.getTunits());
 //        assertTrue(fragments.get(0).getId().contains("fw"));

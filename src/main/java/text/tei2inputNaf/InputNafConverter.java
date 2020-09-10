@@ -29,8 +29,8 @@ import static utils.common.ThrowingBiConsumer.throwingBiConsumerWrapper;
 public class InputNafConverter implements NafCreator {
     private static final String IN = "." + IO.TEI_SFX;
     private static final String OUT = "." + IO.NAF_SFX;
-    private final static String NAME = "tei2naf-vu";
-    private final static String VERSION = "0.1.1";
+    private final static String NAME = "tei2naf";
+    private final static String VERSION = "0.1.2";
     public static final Logger logger = LogManager.getLogger(InputNafConverter.class);
     BaseDoc doc;
 
@@ -46,6 +46,7 @@ public class InputNafConverter implements NafCreator {
         Public pub = new Public();
         pub.setPublicId(doc.getMetadata().getDocumentId() + ".naf");
         nafHeader.setPublic(pub);
+
         String rawText = doc.getRawText();
         Raw raw = new Raw(rawText);
         nafHeader.getLinguisticProcessors().add(createLinguisticProcessors("raw"));
@@ -62,10 +63,10 @@ public class InputNafConverter implements NafCreator {
         return naf;
     }
 
-    public void process(String teiFile, String nafFile) throws AbnormalProcessException {
+    public void process(String teiFile, String outdir) throws AbnormalProcessException {
         read(teiFile);
         NafDoc naf = convertBaseDocToNafRepresentation();
-        naf.write(nafFile);
+        naf.write(outdir + naf.getId() + OUT);
     }
 
     private void read(String teiFile) throws AbnormalProcessException {
@@ -157,10 +158,8 @@ public class InputNafConverter implements NafCreator {
     }
 
     public static void convertFile(Path file, String outdir) throws AbnormalProcessException {
-        String fileId = IO.replaceExtension(file, IN, OUT);
-        String outfile = outdir + "/" + fileId;
         InputNafConverter converter = new InputNafConverter();
-        converter.process(file.toString(), outfile);
+        converter.process(file.toString(), outdir + "/");
     }
 
     public static void main(String[] args) {

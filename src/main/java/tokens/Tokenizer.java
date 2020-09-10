@@ -31,6 +31,11 @@ public class Tokenizer {
         return tokenizer.tokenize(sentences);
     }
 
+    public List<List<Token>> tokenize(String text) {
+        String[] sentences = segment(text);
+        return getTokens(text, sentences);
+    }
+
 
     public static Tokenizer create() throws AbnormalProcessException {
         String[] args = {"tok", "-l", "nl"};

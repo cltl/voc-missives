@@ -74,6 +74,18 @@ public class NafUnits {
         return BaseEntity.create(nafEntity.getType(), nafEntity.getId(), getWfIdSpan(nafEntity));
     }
 
+
+    public static Tunit withOffset(Tunit tunit, int offset) {
+        Tunit t = new Tunit();
+        t.setXpath(tunit.getXpath());
+        t.setType(tunit.getType());
+        t.setId(tunit.getId());
+        t.setLength(tunit.getLength());
+        t.setOffset(offset + "");
+        return t;
+    }
+
+
     public static Tunit asTunit(Fragment p) {
         Tunit t = new Tunit();
         t.setId(p.getId());

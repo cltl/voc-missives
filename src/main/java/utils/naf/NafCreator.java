@@ -5,6 +5,8 @@ import xjc.naf.Lp;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
 
 
 public interface NafCreator {
@@ -19,6 +21,17 @@ public interface NafCreator {
         lps.getLps().add(lp);
         lps.setLayer(layer);
         return lps;
+    }
+
+
+    default void addLinguisticProcessor(NafDoc naf, String layer) {
+        List<LinguisticProcessors> lps = naf.getLinguisticProcessorsList();
+        LinguisticProcessors lp = createLinguisticProcessors(layer);
+        List<LinguisticProcessors> existing = lps.stream().filter(x -> x.getLayer().equals(layer)).collect(Collectors.toList());
+        if (existing.isEmpty())
+            lps.add(lp);
+        else
+            existing.get(0).getLps().addAll(lp.getLps());
     }
 
     static String createTimestamp() {

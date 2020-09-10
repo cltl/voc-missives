@@ -107,7 +107,7 @@ public class NafXmiReader implements NafEntityProcessor, NafSelector, NafCreator
 
     @Override
     public void addLinguisticProcessor(String layer) {
-        List<LinguisticProcessors> lps = naf.getLinguisticProcessors();
+        List<LinguisticProcessors> lps = naf.getLinguisticProcessorsList();
         LinguisticProcessors lp = createLinguisticProcessors(layer);
         List<LinguisticProcessors> existing = lps.stream().filter(x -> x.getLayer().equals(layer)).collect(Collectors.toList());
         if (existing.isEmpty())

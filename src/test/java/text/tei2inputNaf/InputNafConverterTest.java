@@ -8,6 +8,7 @@ import utils.tei.Metadata;
 import utils.tei.TeiReader;
 import xjc.naf.Tunit;
 
+import java.io.File;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -42,10 +43,23 @@ class InputNafConverterTest {
         TeiReader teiReader = new TeiReader(teiFile, x -> TeiInputTreeFactory.create(x));
         Metadata metadata = teiReader.getMetadata();
         String baseid = "INT_0aff566f-8c02-332d-971d-eb572c33f86b";
+        String volume = metadata.getCollectionId();
+
         StringBuilder sb = new StringBuilder();
-        sb.append(baseid).append("_");
-        sb.append(metadata.getCollectionId()).append("_");
-        sb.append("p583");
+        sb.append(volume.substring(volume.indexOf(":") + 1)).append("_");
+        sb.append("p0583");
+        sb.append("_").append(baseid);
         assertEquals(metadata.getDocumentId(), sb.toString());
+    }
+
+    @Test
+    public void testConversion() throws AbnormalProcessException {
+        String teiFile = "src/test/resources/tei-xml/text_and_notes.xml";
+        InputNafConverter converter = new InputNafConverter();
+        String outdir = "src/test/resources/naf/";
+        converter.process(teiFile, outdir);
+        String id = "vol2_p0583_INT_0aff566f-8c02-332d-971d-eb572c33f86b";
+        File out = new File(outdir + id + ".naf");
+        assertTrue(out.exists());
     }
 }

@@ -24,7 +24,7 @@ class NafDocTest {
         NAFConllReader ncr = new NAFConllReader(example, "all", " ", "test-naf-writing");
         List<Entity> existing = ncr.getNaf().getEntities();
         assertEquals(existing.size(), 1);
-        LinguisticProcessors entitiesLPs = ncr.getNaf().getLinguisticProcessors().stream().filter(x -> x.getLayer().equals("entities")).collect(Collectors.toList()).get(0);
+        LinguisticProcessors entitiesLPs = ncr.getNaf().getLinguisticProcessorsList().stream().filter(x -> x.getLayer().equals("entities")).collect(Collectors.toList()).get(0);
         assertEquals(entitiesLPs.getLps().size(), 2);
         // add entity
         List<String> tokenIds = Collections.singletonList(ncr.getNaf().getWfs().subList(10, 11).get(0).getId());

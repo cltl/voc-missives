@@ -98,7 +98,17 @@ public class Metadata {
                 .filter(x -> x instanceof InterpGrp && ((InterpGrp) x).getType().equals("page"))
                 .map(x -> ((InterpGrp) x).getInterps().get(0))
                 .collect(Collectors.toList()).get(0).getContent().get(0);
-        return id + "_" + volume + "_p" + page;
+        return volumeSfx(volume) + "_p" + buffered(page) + "_" + id;
+    }
+
+    private static String volumeSfx(String volume) {
+        return volume.substring(volume.indexOf(":") + 1);
+    }
+
+    private static String buffered(String page) {
+        while (page.length() < 4)
+            page = "0" + page;
+        return page;
     }
 
     private static String getId(List<Object> ids, String pid) {

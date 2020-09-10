@@ -5,9 +5,6 @@ import utils.naf.NafCreator;
 import utils.naf.NafDoc;
 import utils.naf.NafUnits;
 import xjc.naf.LinguisticProcessors;
-import xjc.naf.NafHeader;
-import xjc.naf.Predicate;
-import xjc.naf.Wf;
 
 import java.io.*;
 import java.nio.file.Path;
@@ -47,7 +44,7 @@ public class NAFConllReader implements NafEntityProcessor, NafSelector, NafCreat
 
     @Override
     public void addLinguisticProcessor(String layer) {
-        List<LinguisticProcessors> lps = naf.getLinguisticProcessors();
+        List<LinguisticProcessors> lps = naf.getLinguisticProcessorsList();
         LinguisticProcessors lp = createLinguisticProcessors(layer);
         List<LinguisticProcessors> existing = lps.stream().filter(x -> x.getLayer().equals(layer)).collect(Collectors.toList());
         if (existing.isEmpty())

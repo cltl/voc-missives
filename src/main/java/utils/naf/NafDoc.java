@@ -34,6 +34,13 @@ public class NafDoc {
         return naf;
     }
 
+    public static NafDoc create(NafHeader header) {
+        NafDoc naf = new NafDoc();
+        List<Object> layers = naf.getLayers();
+        layers.add(header);
+        return naf;
+    }
+
     public NAF getNaf() {
         return naf;
     }
@@ -57,6 +64,19 @@ public class NafDoc {
         Raw raw = (Raw) getLayer(x -> x instanceof Raw);
         return raw.getValue();
     }
+
+    public Raw getRaw() {
+        return (Raw) getLayer(x -> x instanceof Raw);
+    }
+
+    public void setRawText(String text) {
+        Raw raw = (Raw) getLayer(x -> x instanceof Raw);
+        if (raw == null) {
+            raw = new Raw();
+            naf.getNafHeadersAndRawsAndTopics().add(raw);
+        }
+        raw.setValue(text);
+    }
     public NafHeader getNafHeader() {
         return (NafHeader) getLayer(x -> x instanceof NafHeader);
     }
@@ -76,13 +96,14 @@ public class NafDoc {
             return tunits.getTunits();
         else
             return Collections.EMPTY_LIST;
+
     }
 
     public List<Object> getLayers() {
         return naf.getNafHeadersAndRawsAndTopics();
     }
 
-    public List<LinguisticProcessors> getLinguisticProcessors() {
+    public List<LinguisticProcessors> getLinguisticProcessorsList() {
         NafHeader header = getNafHeader();
         return header.getLinguisticProcessors();
     }
