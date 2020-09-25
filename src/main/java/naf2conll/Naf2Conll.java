@@ -1,11 +1,10 @@
 package naf2conll;
 
-import entities.nafReference.NafSelector;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utils.common.IO;
-import utils.naf.NafDoc;
 import utils.common.AbnormalProcessException;
+import utils.naf.NafDoc;
 import utils.naf.NafUnits;
 import xjc.naf.Entity;
 import xjc.naf.Wf;
@@ -23,7 +22,7 @@ import java.util.stream.Collectors;
  *  - every token set to O or read from entities if present
  *  - conll separator
  */
-public class Naf2Conll implements NafSelector {
+public class Naf2Conll {
     private static final String IN = "." + IO.NAF_SFX;
     private static final String OUT = "." + IO.CONLL_SFX;
 

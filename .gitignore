@@ -1,4 +1,3 @@
-todo.md
 local
 target
 *.iws
@@ -6,5 +5,4 @@ target
 *.ipr
 .idea
 logs
-src/test/resources/naf
-
+.DS_Store

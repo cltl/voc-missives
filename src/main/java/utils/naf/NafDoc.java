@@ -10,14 +10,11 @@ import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
 import com.sun.org.apache.xml.internal.serialize.OutputFormat;
 import com.sun.org.apache.xml.internal.serialize.XMLSerializer;
 import utils.common.AbnormalProcessException;
-import utils.common.BaseEntity;
 import xjc.naf.*;
-import xjc.naf.Span;
 
 public class NafDoc {
 
@@ -115,12 +112,6 @@ public class NafDoc {
         return Collections.EMPTY_LIST;
     }
 
-    public void createTermsLayer() {
-        Terms termLayer = new Terms();
-        termLayer.getTerms().addAll(getWfs().stream().map(NafUnits::getTerm).collect(Collectors.toList()));
-        naf.getNafHeadersAndRawsAndTopics().add(termLayer);
-    }
-
     public List<Entity> getEntities() {
         Entities entitiesLayer = (Entities) getLayer(x -> x instanceof Entities);
         if (entitiesLayer != null)
@@ -143,14 +134,7 @@ public class NafDoc {
             naf.getNafHeadersAndRawsAndTopics().add(i, entitiesLayer);
         } else
             naf.getNafHeadersAndRawsAndTopics().add(entitiesLayer);
-
-
     }
-
-    public List<BaseEntity> getBaseEntities() {
-        return getEntities().stream().map(e -> NafUnits.asBaseEntity(e)).collect(Collectors.toList());
-    }
-
 
     public void write(String file) throws AbnormalProcessException {
         try {

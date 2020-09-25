@@ -7,7 +7,7 @@
   Sophie Arnoult, 03/07/20
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
-  <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
+  <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="naf_xml.xsd"/>
   <xs:element name="NAF">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">

@@ -12,9 +12,9 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class NAFConllReaderTest {
-    static String refNAF = "src/test/resources/entityIntegration/ref.naf";
-    static String inConll = "src/test/resources/entityIntegration/train.conll";
-    static String fromConllNaf = "src/test/resources/entityIntegration/fromConll.naf";
+    static String refNAF = "src/test/resources/integration/ref.naf";
+    static String inConll = "src/test/resources/integration/train.conll";
+    static String fromConllNaf = "src/test/resources/integration/fromConll.naf";
 
     @Test
     public void testConllIn2Naf() throws AbnormalProcessException {

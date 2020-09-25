@@ -78,6 +78,10 @@ public class CasDoc {
         return doc;
     }
 
+    public JCas getjCas() {
+        return jCas;
+    }
+
     public void read(String xmi) throws AbnormalProcessException {
         try (FileInputStream fis = new FileInputStream(xmi)) {
             XmiCasDeserializer.deserialize(fis, jCas.getCas());
@@ -111,8 +115,8 @@ public class CasDoc {
         jCas.setDocumentText(rawText);
     }
 
-    public void addParagraphs(List<text.tei2xmi.Paragraph> paragraphs) {
-        for (text.tei2xmi.Paragraph p: paragraphs) {
+    public void addParagraphs(List<deprecated.tei2xmi.Paragraph> paragraphs) {
+        for (deprecated.tei2xmi.Paragraph p: paragraphs) {
             int end = p.getOffset() + p.getContent().length();
             Annotation a = AnnotationFactory.createAnnotation(jCas, p.getOffset(), end, Paragraph.class);
             ((Paragraph) a).setId(p.getTeiId());
@@ -120,21 +124,7 @@ public class CasDoc {
         }
     }
 
-    public void addSentences(Segments segmentedSentences) {
-        for (Segment s: segmentedSentences.getSegments()) {
-            Annotation a = AnnotationFactory.createAnnotation(jCas, s.getBegin(), s.getEnd(), Sentence.class);
-            ((Sentence) a).setId("" + s.getIndex());
-            a.addToIndexes(jCas);
-        }
-    }
 
-    public void addTokens(Segments tokens) {
-        for (Segment s: tokens.getSegments()) {
-            Annotation a = AnnotationFactory.createAnnotation(jCas, s.getBegin(), s.getEnd(), Token.class);
-            ((Token) a).setId("t" + s.getIndex());
-            a.addToIndexes(jCas);
-        }
-    }
 
     public void addMetadata(Metadata metadata) {
 

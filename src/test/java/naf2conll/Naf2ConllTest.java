@@ -1,6 +1,6 @@
 package naf2conll;
 
-import entities.entityIntegration.NafXmiReader;
+import xmiIn2naf.NafXmiReader;
 import utils.common.AbnormalProcessException;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -15,15 +15,15 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class Naf2ConllTest {
-    static String entitiesNaf = "src/test/resources/entityIntegration/ref-entities.naf";
-    static String refNaf = "src/test/resources/entityIntegration/ref.naf";
-    static String testConll = "src/test/resources/entityIntegration/test.conll";
-    static String trainConll = "src/test/resources/entityIntegration/train.conll";
+    static String entitiesNaf = "src/test/resources/integration/ref-entities.naf";
+    static String refNaf = "src/test/resources/integration/ref.naf";
+    static String testConll = "src/test/resources/integration/test.conll";
+    static String trainConll = "src/test/resources/integration/train.conll";
 
     @BeforeAll
     public static void verifyOrGenerateNAFfiles() throws AbnormalProcessException {
         if (! Files.exists(Paths.get(entitiesNaf))) {
-            String xmiFile = "src/test/resources/entityIntegration/in.xmi";
+            String xmiFile = "src/test/resources/integration/in.xmi";
             NafXmiReader nafXmiReader = new NafXmiReader(refNaf, xmiFile);
             nafXmiReader.transferEntitiesToNaf();
             nafXmiReader.write(entitiesNaf);
