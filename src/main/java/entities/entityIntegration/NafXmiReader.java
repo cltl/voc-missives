@@ -32,7 +32,7 @@ public class NafXmiReader implements NafCreator {
     public static final Logger logger = LogManager.getLogger(NafXmiReader.class);
     AlignedEntities alignedEntities;
 
-    protected NafXmiReader(String refNaf, String inputXmi) throws AbnormalProcessException {
+    public NafXmiReader(String refNaf, String inputXmi) throws AbnormalProcessException {
         logger.info(inputXmi);
         this.xmi = CasDoc.create(inputXmi);
         this.refNaf = NafDoc.create(refNaf);
@@ -128,7 +128,7 @@ public class NafXmiReader implements NafCreator {
 
     }
 
-    private void transferEntitiesToNaf() {
+    public void transferEntitiesToNaf() {
         List<AlignedEntity> entities = getEntities();
         List<List<Wf>> tokenSpans = findOverlappingTokens(entities);
         createEntitiesLayer(tokenSpans, entities);
@@ -143,6 +143,8 @@ public class NafXmiReader implements NafCreator {
         return refNaf.getRawText().substring(Integer.parseInt(wf0.getOffset()),
                 Integer.parseInt(wf1.getOffset()) + Integer.parseInt(wf1.getLength()));
     }
+
+
 
     public static void run(Path file, List<String> dirs) throws AbnormalProcessException {
         String fileName = file.getFileName().toString();
@@ -163,7 +165,7 @@ public class NafXmiReader implements NafCreator {
     }
 
 
-    protected void write(String outFile) throws AbnormalProcessException {
+    public void write(String outFile) throws AbnormalProcessException {
         refNaf.write(outFile);
     }
 

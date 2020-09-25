@@ -77,6 +77,12 @@ public class NafUnits {
         return e;
     }
 
+    public static List<Wf> wfSpan(Entity e) {
+        References r = (References) e.getReferencesAndExternalReferences().get(0);
+        List<Target> targets = r.getSpen().get(0).getTargets();
+        return targets.stream().map(t -> (Wf) t.getId()).collect(Collectors.toList());
+    }
+
     public static BaseToken asBaseToken(Wf token) {
         return BaseToken.create(token.getContent(), token.getId(), token.getOffset(), token.getLength());
     }

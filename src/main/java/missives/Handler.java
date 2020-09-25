@@ -2,7 +2,7 @@ package missives;
 
 import entities.entityIntegration.NafUnitSelector;
 import entities.nafReference.NAFConllReader;
-import entities.nafReference.Naf2Conll;
+import naf2conll.Naf2Conll;
 import entities.entityIntegration.NafXmiReader;
 import entities.rawTextAligner.EntityOffsetAligner;
 import org.apache.commons.cli.*;
@@ -48,7 +48,7 @@ public class Handler {
 
             final String outdir = cmd.hasOption('o') ? cmd.getOptionValue('o') : "";
             String outputType = cmd.hasOption("O") ? cmd.getOptionValue('O') : IO.NAF_SFX;
-            String conllSeparator = cmd.hasOption("c") ? cmd.getOptionValue('c') : " ";
+            String conllSeparator = cmd.hasOption("c") ? cmd.getOptionValue('c') : "\t";
             String documentType = cmd.hasOption("d") ? cmd.getOptionValue("d") : "all";
             boolean tokenize = ! cmd.hasOption('n');
             String source = cmd.hasOption("e") ? cmd.getOptionValue("e") : "voc-missives-naf-conll-reader";
@@ -102,7 +102,7 @@ public class Handler {
         else if (inputType.equals(IO.NAF_SFX) && outputType.equals(IO.NAF_SFX))
             IO.loop(indir, outdir, throwingBiConsumerWrapper((x, y) -> NafUnitSelector.run(x, y, tokenize, selectText)));
         else if (inputType.equals(IO.NAF_SFX) && outputType.equals(IO.CONLL_SFX))
-            IO.loop(indir, outdir, throwingBiConsumerWrapper((x, y) -> Naf2Conll.run(x, y, conllSeparator, selectText)));
+            IO.loop(indir, outdir, throwingBiConsumerWrapper((x, y) -> Naf2Conll.run(x, y, conllSeparator)));
         else if (inputType.equals(IO.XMI_SFX) && outputType.equals(IO.CONLL_SFX))
             IO.loop(indir, outdir, throwingBiConsumerWrapper((x, y) -> run(x, y, conllSeparator)));
         else

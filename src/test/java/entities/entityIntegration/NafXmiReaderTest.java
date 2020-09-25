@@ -13,8 +13,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class NafXmiReaderTest {
     @Test
     public void testIntegration() throws AbnormalProcessException {
-        String xmiFile = "src/test/resources/entityIntegration/INT_08c82040-752f-3fc2-ad50-0d3e7b37a945_notes.xmi";
-        String nafFile = "src/test/resources/entityIntegration/vol1_p0106_INT_08c82040-752f-3fc2-ad50-0d3e7b37a945_notes.naf";
+        String xmiFile = "src/test/resources/entityIntegration/in.xmi";
+        String nafFile = "src/test/resources/entityIntegration/ref.naf";
         NafXmiReader nafXmiReader = new NafXmiReader(nafFile, xmiFile);
         List<NamedEntity> xmiEntities = nafXmiReader.getXmi().getEntities();
         List<AlignedEntity> aligned = nafXmiReader.getEntities();
@@ -25,7 +25,7 @@ class NafXmiReaderTest {
         assertTrue(tokenSpans.stream().noneMatch(s -> s.isEmpty()));
 
         nafXmiReader.createEntitiesLayer(tokenSpans, aligned);
-        String outFile = "src/test/resources/entityIntegration/out.naf";
+        String outFile = "src/test/resources/entityIntegration/ref-entities.naf";
         nafXmiReader.write(outFile);
         File out = new File(outFile);
         assertTrue(out.exists());
