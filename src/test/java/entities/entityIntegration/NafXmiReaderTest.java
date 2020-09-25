@@ -25,7 +25,7 @@ class NafXmiReaderTest {
         assertTrue(tokenSpans.stream().noneMatch(s -> s.isEmpty()));
 
         nafXmiReader.createEntitiesLayer(tokenSpans, aligned);
-        String outFile = "src/test/resources/entityIntegration/ref-entities.naf";
+        String outFile = "src/test/resources/entityIntegration/fromXmi.naf";
         nafXmiReader.write(outFile);
         File out = new File(outFile);
         assertTrue(out.exists());

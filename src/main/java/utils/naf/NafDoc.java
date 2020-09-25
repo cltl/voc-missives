@@ -151,15 +151,6 @@ public class NafDoc {
         return getEntities().stream().map(e -> NafUnits.asBaseEntity(e)).collect(Collectors.toList());
     }
 
-    public List<Wf> getTargetSpan(Entity e) {
-
-        List<Span> spans = e.getReferencesAndExternalReferences().stream()
-                .filter(x -> x instanceof References)
-                .map(x -> ((References) x).getSpen())
-                .findFirst().orElse(Collections.EMPTY_LIST);
-        List<String> targets = spans.get(0).getTargets().stream().map(x -> ((Term) x.getId()).getId()).collect(Collectors.toList());
-        return getWfs().stream().filter(w -> targets.contains(w.getId())).collect(Collectors.toList());
-    }
 
     public void write(String file) throws AbnormalProcessException {
         try {

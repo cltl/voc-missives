@@ -120,12 +120,7 @@ public class NafXmiReader implements NafCreator {
             nafEntities.add(NafUnits.createEntity("e" + i, e.getEntity().getValue(), tokenSpan));
         }
 
-        Entities entitiesLayer = new Entities();
-        entitiesLayer.getEntities().addAll(nafEntities);
-        refNaf.getLayers().add(entitiesLayer);
-        LinguisticProcessors textLp = createLinguisticProcessors("entities");
-        refNaf.getLinguisticProcessorsList().add(textLp);
-
+        createEntitiesLayer(refNaf, nafEntities);
     }
 
     public void transferEntitiesToNaf() {

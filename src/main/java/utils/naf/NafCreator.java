@@ -1,5 +1,7 @@
 package utils.naf;
 
+import xjc.naf.Entities;
+import xjc.naf.Entity;
 import xjc.naf.LinguisticProcessors;
 import xjc.naf.Lp;
 
@@ -23,6 +25,14 @@ public interface NafCreator {
         return lps;
     }
 
+    default void createEntitiesLayer(NafDoc naf, List<Entity> entities) {
+        Entities entitiesLayer = new Entities();
+        entitiesLayer.getEntities().addAll(entities);
+        naf.getLayers().add(entitiesLayer);
+        LinguisticProcessors textLp = createLinguisticProcessors("entities");
+        naf.getLinguisticProcessorsList().add(textLp);
+
+    }
 
     default void addLinguisticProcessor(NafDoc naf, String layer) {
         List<LinguisticProcessors> lps = naf.getLinguisticProcessorsList();

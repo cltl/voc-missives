@@ -1,7 +1,7 @@
 package missives;
 
 import entities.entityIntegration.NafUnitSelector;
-import entities.nafReference.NAFConllReader;
+import conllin2naf.NAFConllReader;
 import naf2conll.Naf2Conll;
 import entities.entityIntegration.NafXmiReader;
 import entities.rawTextAligner.EntityOffsetAligner;
@@ -77,7 +77,7 @@ public class Handler {
                 throwingBiConsumerWrapper((x, y) -> EntityAligner.run(x, y)));
         else if (inputType.equals(IO.CONLL_SFX) && outputType.equals(IO.NAF_SFX) && refType.equals(IO.NAF_SFX))
             IO.loop(indir, Collections.singletonList(refDir), outdir,
-                    throwingBiConsumerWrapper((x, y) -> NAFConllReader.run(x, y, selectText, conllSeparator, source)));
+                    throwingBiConsumerWrapper((x, y) -> NAFConllReader.run(x, y)));
         else if (inputType.equals(IO.XMI_SFX) && outputType.equals(IO.NAF_SFX) && refType.equals(IO.NAF_SFX))
             IO.loop(indir, Collections.singletonList(refDir), outdir,
                     throwingBiConsumerWrapper((x, y) -> NafXmiReader.run(x, y)));

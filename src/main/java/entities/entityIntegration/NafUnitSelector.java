@@ -81,7 +81,6 @@ public class NafUnitSelector implements NafCreator {
         derived.getLayers().add(textLayer);
         LinguisticProcessors textLp = createLinguisticProcessors("text");
         derived.getLinguisticProcessorsList().add(textLp);
-
     }
 
     /**
