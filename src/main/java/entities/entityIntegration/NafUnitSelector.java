@@ -4,7 +4,6 @@ import eus.ixa.ixa.pipe.ml.tok.Token;
 import javafx.util.Pair;
 import tokens.Tokenizer;
 import utils.common.AbnormalProcessException;
-import utils.common.IO;
 import utils.naf.NafUnits;
 import utils.naf.TunitTree;
 import utils.naf.NafCreator;
@@ -69,10 +68,9 @@ public class NafUnitSelector implements NafCreator {
         int unitCounter = 0;
         for (Pair<Integer,String> t: joinCohesive(tunits, rawText)) {
             String unitText = t.getValue();
-            int offsetWithinUnit = 0;
             List<List<Token>> tokenizedSentences = tokenizer.tokenize(unitText);
             for (List<Token> sentence: tokenizedSentences) {
-                offsetWithinUnit = addTokens(sentence, wfs, t.getKey(), sentenceCounter, unitCounter, unitText, offsetWithinUnit);
+                addTokens(sentence, wfs, t.getKey(), sentenceCounter, unitCounter);
                 sentenceCounter++;
             }
             unitCounter++;
@@ -121,20 +119,17 @@ public class NafUnitSelector implements NafCreator {
         return rawText.substring(offset, offset + Integer.parseInt(previous.getLength()));
     }
 
-    private int addTokens(List<Token> tokens, List<Wf> wfs, int tunitOffset, int sentenceCounter, int unitCounter, String unitText, int offsetWithinUnit) {
+    private void addTokens(List<Token> tokens, List<Wf> wfs, int tunitOffset, int sentenceCounter, int unitCounter) {
         for (Token t: tokens) {
-            offsetWithinUnit = unitText.indexOf(t.getTokenValue(), offsetWithinUnit);
             Wf wf = new Wf();
             wf.setId("w" + wfs.size());
             wf.setSent(sentenceCounter + "");
             wf.setPara(unitCounter + "");
-            wf.setOffset(tunitOffset + offsetWithinUnit + "");
+            wf.setOffset(tunitOffset + t.startOffset() + "");
             wf.setLength(t.tokenLength() + "");
             wf.setContent(t.getTokenValue());
             wfs.add(wf);
-            offsetWithinUnit++;
         }
-        return offsetWithinUnit;
     }
 
 

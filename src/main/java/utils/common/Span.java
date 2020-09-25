@@ -4,6 +4,9 @@ import java.util.Objects;
 
 public class Span implements Comparable<Span> {
     int firstIndex;
+    /**
+     * last index (included in the span)
+     */
     int lastIndex;
 
     public Span(int firstIndex, int lastIndex) {
@@ -66,4 +69,9 @@ public class Span implements Comparable<Span> {
                 && lastIndex == x.getLastIndex();
     }
 
+    public boolean overlaps(Span o) {
+        return firstIndex <= o.getFirstIndex() && o.getFirstIndex() <= lastIndex
+                || firstIndex <= o.getLastIndex() && o.getLastIndex() <= lastIndex
+                || o.contains(this);
+    }
 }

@@ -3,12 +3,10 @@ package missives;
 import entities.entityIntegration.NafUnitSelector;
 import entities.nafReference.NAFConllReader;
 import entities.nafReference.Naf2Conll;
-import entities.nafReference.NafXmiReader;
+import entities.entityIntegration.NafXmiReader;
 import entities.rawTextAligner.EntityOffsetAligner;
 import org.apache.commons.cli.*;
 import entities.xmiReference.EntityAligner;
-import text.tei2inputNaf.InputNafConverter;
-import text.tei2naf.NafConverter;
 import utils.common.IO;
 
 import java.io.IOException;
@@ -82,7 +80,7 @@ public class Handler {
                     throwingBiConsumerWrapper((x, y) -> NAFConllReader.run(x, y, selectText, conllSeparator, source)));
         else if (inputType.equals(IO.XMI_SFX) && outputType.equals(IO.NAF_SFX) && refType.equals(IO.NAF_SFX))
             IO.loop(indir, Collections.singletonList(refDir), outdir,
-                    throwingBiConsumerWrapper((x, y) -> NafXmiReader.run(x, y, selectText, source)));
+                    throwingBiConsumerWrapper((x, y) -> NafXmiReader.run(x, y)));
         else if (inputType.equals(IO.XMI_SFX) && outputType.equals(IO.XMI_SFX) && refType.equals(IO.NAF_SFX)) {
             IO.loop(indir, Collections.singletonList(refDir), outdir,
                     throwingBiConsumerWrapper((x, y) -> EntityOffsetAligner.run(x, y)));

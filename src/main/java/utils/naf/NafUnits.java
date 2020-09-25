@@ -58,6 +58,25 @@ public class NafUnits {
         return e;
     }
 
+    public static Entity createEntity(String id, String type, List<Wf> tokenSpan) {
+
+        Entity e = new Entity();
+        e.setId(id);
+        e.setType(type);
+        References r = new References();
+        Span s = new Span();
+        List<Target> ts = s.getTargets();
+
+        for (Wf wf: tokenSpan) {
+            Target t = new Target();
+            t.setId(wf);
+            ts.add(t);
+        }
+        r.getSpen().add(s);
+        e.getReferencesAndExternalReferences().add(r);
+        return e;
+    }
+
     public static BaseToken asBaseToken(Wf token) {
         return BaseToken.create(token.getContent(), token.getId(), token.getOffset(), token.getLength());
     }
