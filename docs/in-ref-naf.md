@@ -85,6 +85,17 @@ Entities have the following attributes:
 * identifier;
 * span of covered tokens.
 
+Example:
+```xml
+<entity id="e0" type="PER">
+    <references>
+        <span>
+            <target id="w0"/>
+        </span>
+    </references>
+</entity>
+```
+
 ## Differences between input and reference NAF layers
 
 ### Header
