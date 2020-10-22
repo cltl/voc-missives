@@ -167,4 +167,19 @@ public class AlignedEntity implements Comparable<AlignedEntity> {
         boolean typeFits = hasType("LOC") || hasType("PER");
         return typeFits && (! tokenStart || ! tokenEnd);
     }
+
+    void fillMissingTypes() {
+        if (getEntity().getValue() == null) {
+            if (getEntity().getCoveredText().startsWith("Baukit"))
+                getEntity().setValue("PER");
+            else if (getEntity().getCoveredText().equals("Ongehoorsaamheyd"))
+                getEntity().setValue("SHP");
+            else if (getEntity().getCoveredText().equals("Makassar"))
+                getEntity().setValue("LOC");
+            else if (getEntity().getCoveredText().equals("Ramger"))
+                getEntity().setValue("PER");
+            else if (getEntity().getCoveredText().equals("Jaggernaykpoeram"))
+                getEntity().setValue("LOC");
+        }
+    }
 }

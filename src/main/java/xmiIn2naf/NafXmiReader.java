@@ -114,6 +114,7 @@ public class NafXmiReader implements NafCreator {
         for (int i = 0; i < tokenSpans.size(); i++) {
             List<Wf> tokenSpan = tokenSpans.get(i);
             AlignedEntity e = entities.get(i);
+            e.fillMissingTypes();
             nafEntities.add(NafUnits.createEntity("e" + i, e.getEntity().getValue(), tokenSpan));
         }
 
