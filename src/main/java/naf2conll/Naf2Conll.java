@@ -33,7 +33,7 @@ public class Naf2Conll {
     int embeddedEntityCount;
     public static final Logger logger = LogManager.getLogger(Naf2Conll.class);
 
-    public Naf2Conll(String conllSeparator, String nafFile) {
+    public Naf2Conll(String conllSeparator, String nafFile) throws AbnormalProcessException {
         this.conllSeparator = conllSeparator;
         this.wf2entity = new HashMap<>();
         this.naf = NafDoc.create(nafFile);

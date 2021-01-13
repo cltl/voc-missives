@@ -33,7 +33,7 @@ public class NAFConllReader implements NafCreator {
             throw new AbnormalProcessException("This NAF file already contains entities! Refusing to overwrite");
     }
 
-    protected List<String[]> conllTokens(String conllFile) throws AbnormalProcessException {
+    protected static List<String[]> conllTokens(String conllFile) throws AbnormalProcessException {
         String line;
         List<String[]> tokens = new ArrayList<>();
         try (BufferedReader bfr = new BufferedReader(new FileReader(conllFile))) {
@@ -52,11 +52,11 @@ public class NAFConllReader implements NafCreator {
     }
 
 
-    boolean startsEntity(String[] token) {
+    static boolean startsEntity(String[] token) {
         return token[1].startsWith("B");
     }
 
-    boolean isInEntity(String[] token) {
+    static boolean isInEntity(String[] token) {
         return token[1].startsWith("I");
     }
 

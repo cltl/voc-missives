@@ -15,6 +15,7 @@ class NafXmiReaderTest {
     public void testIntegration() throws AbnormalProcessException {
         String xmiFile = "src/test/resources/integration/in.xmi";
         String nafFile = "src/test/resources/integration/ref.naf";
+
         NafXmiReader nafXmiReader = new NafXmiReader(nafFile, xmiFile);
         List<NamedEntity> xmiEntities = nafXmiReader.getXmi().getEntities();
         List<AlignedEntity> aligned = nafXmiReader.getEntities();

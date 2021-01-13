@@ -25,7 +25,7 @@ public class NafDoc {
         naf.setVersion("v3.1.b");
     }
 
-    public static NafDoc create(String nafFile) {
+    public static NafDoc create(String nafFile) throws AbnormalProcessException {
         NafDoc naf = new NafDoc();
         naf.parse(nafFile);
         return naf;
@@ -42,8 +42,10 @@ public class NafDoc {
         return naf;
     }
 
-    private void parse(String naf) {
+    private void parse(String naf) throws AbnormalProcessException {
         File file = new File(naf);
+        if (! file.exists())
+            throw new AbnormalProcessException("File does not exist: " + naf);
         try {
             JAXBContext jaxbContext = JAXBContext.newInstance(NAF.class);
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();

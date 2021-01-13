@@ -7,6 +7,8 @@ import xjc.naf.Wf;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class AlignedEntity implements Comparable<AlignedEntity> {
@@ -107,7 +109,8 @@ public class AlignedEntity implements Comparable<AlignedEntity> {
     public boolean overrules(Span s, AlignedEntity e) {
         return hasReferenceMatchCovering(s) &&
                 (this.hasType("LOCderiv") && e.hasType("LOC")
-                || this.hasType("LOC") && e.hasType("SHP"))
+                        || this.hasType("LOC") && e.hasType("SHP")
+                        || this.hasType("LOC") && e.hasType("ORG"))
                 || hasReferenceMatchStrictlyCovering(s) && this.hasType(e.getEntity().getValue());
     }
 
@@ -130,11 +133,45 @@ public class AlignedEntity implements Comparable<AlignedEntity> {
         }
     }
 
-    public void findWhiteSpaceFreeMatch(String rawText, int index) {
-        String wsFree = entity.getCoveredText().replaceAll("\n", "");
+    private boolean tryAndMatchModifiedForm(Function<String, String> modifier, String rawText, int index) {
+        String wsFree = modifier.apply(entity.getCoveredText());
         List<Span> matches = match(wsFree, rawText).stream().filter(s -> s.getFirstIndex() >= index).collect(Collectors.toList());
         if (! matches.isEmpty()) {
             referenceMatches = Collections.singletonList(matches.get(0));
+            return true;
+        }
+        return false;
+    }
+
+    private Function<String, String> wsReplacer(int i) {
+        return x -> x.substring(0, i) + x.substring(i + 1);
+    }
+
+    private Function<String, String> wsReplacer(int i1, int i2) {
+        return x -> x.substring(0, i1) + x.substring(i1 + 1, i2) + x.substring(i2 + 1);
+    }
+
+    public void findWhiteSpaceFreeMatch(String rawText, int index) {
+        // early version of the text contained added linebreaks
+        boolean replacedLineBreaks = tryAndMatchModifiedForm(x -> x.replaceAll("\n", ""), rawText, index);
+        if (! replacedLineBreaks) {
+            boolean replacedWhiteSpace = false;
+            int wsIndex = entity.getCoveredText().indexOf(" ");
+            while (wsIndex != -1 && ! replacedWhiteSpace) {
+                // one of the XMI files was derived from a Conll-formatted file, and tokenization introduced whitespace, e.g. "'s Compagnies" appears as "' s Compagnies"
+                replacedWhiteSpace = tryAndMatchModifiedForm(wsReplacer(wsIndex), rawText, index);
+                wsIndex = entity.getCoveredText().indexOf(" ", wsIndex + 1);
+            }
+            if (! replacedWhiteSpace) {
+                wsIndex = entity.getCoveredText().indexOf(" ");
+                int wsIndex2 = entity.getCoveredText().indexOf(" ", wsIndex + 1);
+                while (wsIndex != -1 && wsIndex2 != -1 && ! replacedWhiteSpace) {
+                    // one of the XMI files was derived from a Conll-formatted file, and tokenization introduced whitespace, e.g. "'s Compagnies" appears as "' s Compagnies"
+                    replacedWhiteSpace = tryAndMatchModifiedForm(wsReplacer(wsIndex, wsIndex2), rawText, index);
+                    wsIndex = wsIndex2;
+                    wsIndex2 = entity.getCoveredText().indexOf(" ", wsIndex + 1);
+                }
+            }
         }
     }
 
@@ -149,7 +186,7 @@ public class AlignedEntity implements Comparable<AlignedEntity> {
         return referenceMatches.get(0).compareTo(o.getReferenceMatches().get(0));
     }
 
-    protected List<Wf> overlapping(List<Wf> wfs) {
+    public List<Wf> overlapping(List<Wf> wfs) {
         List<Wf> tokenSpan = wfs.stream().filter(wf -> overlaps(wf)).collect(Collectors.toList());
         if (tokenSpan.isEmpty())
             throw new IllegalArgumentException("found empty token span for " + this.toString());
@@ -162,13 +199,13 @@ public class AlignedEntity implements Comparable<AlignedEntity> {
     }
 
     protected boolean isEmbeddedInLargerNonEntityToken(Span s, String xmiRawText) {
-        boolean tokenStart = s.getFirstIndex() == 0 || Character.isWhitespace(xmiRawText.charAt(entity.getBegin() - 1));
+        boolean tokenStart = s.getFirstIndex() == 0 || entity.getBegin() == 0 || Character.isWhitespace(xmiRawText.charAt(entity.getBegin() - 1));
         boolean tokenEnd = s.getLastIndex() == xmiRawText.length() - 1 || Character.isWhitespace(xmiRawText.charAt(entity.getEnd()));
         boolean typeFits = hasType("LOC") || hasType("PER");
         return typeFits && (! tokenStart || ! tokenEnd);
     }
 
-    void fillMissingTypes() {
+    public void fillMissingTypes() {
         if (getEntity().getValue() == null) {
             if (getEntity().getCoveredText().startsWith("Baukit"))
                 getEntity().setValue("PER");
@@ -181,5 +218,18 @@ public class AlignedEntity implements Comparable<AlignedEntity> {
             else if (getEntity().getCoveredText().equals("Jaggernaykpoeram"))
                 getEntity().setValue("LOC");
         }
+    }
+
+    public boolean hasSingleMatchStrictlyCovering(AlignedEntity e) {
+        return hasSingleMatch() && getReferenceMatches().get(0).strictlyContains(e.getSpan());
+    }
+
+    public void filterReferences(Predicate<Span> filter) {
+        List<Span> toKeep = new LinkedList<>();
+        for (Span s: getReferenceMatches()) {
+            if (filter.test(s))
+                toKeep.add(s);
+        }
+        setReferenceMatches(toKeep);
     }
 }

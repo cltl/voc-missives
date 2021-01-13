@@ -52,7 +52,7 @@ public class NafXmiReader implements NafEntityProcessor, NafSelector, NafCreator
     static final int MAX_TOKEN_LOOK_AHEAD = 350;
     private final static String VERSION = "1.1";
 
-    public NafXmiReader(String nafFile, String textType, String source) {
+    public NafXmiReader(String nafFile, String textType, String source) throws AbnormalProcessException {
         this.naf = NafDoc.create(nafFile);
         this.textType = textType;
         this.source = source;

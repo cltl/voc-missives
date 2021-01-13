@@ -7,6 +7,7 @@ import utils.common.Span;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 import java.util.function.*;
 import java.util.stream.Collectors;
 
@@ -42,7 +43,7 @@ public class AlignedEntities {
      * that fall out of anchor boundaries
      * @param nafTextLength
      */
-    protected void reduceMultipleMatchesByAnchoring(int nafTextLength) {
+    public void reduceMultipleMatchesByAnchoring(int nafTextLength) {
         AlignedEntity anchor = null;
         AlignedEntity rightAnchor;
         for (int i = 0; i < alignedEntities.size(); i++) {
@@ -67,14 +68,14 @@ public class AlignedEntities {
             }
         }
     }
-    protected void removeAssignedMatches() {
+    public void removeAssignedMatches() {
         AlignedEntities mult = select(x -> x.hasMultipleMatches());
         mult.filterReferenceMatches((e, s) ->
                 alignedEntities.stream().noneMatch(x -> x.hasSingleMatchCoveringWithSameType(s, e)));
     }
 
 
-    protected void fillMultiLabelEntitiesBetweenAnchorsAndNormalize() {
+    public void fillMultiLabelEntitiesBetweenAnchorsAndNormalize() {
         int anchorLeft = indexOfAnchor(0);
         int anchorRight = -1;
         if (anchorLeft != -1)
@@ -122,7 +123,8 @@ public class AlignedEntities {
 
     private void normalizeMatches() {
         for (int i = 0; i < alignedEntities.size(); i++)
-            alignedEntities.get(i).setReferenceMatches(Collections.singletonList(alignedEntities.get(i).getReferenceMatches().get(i)));
+            alignedEntities.get(i).setReferenceMatches(
+                    Collections.singletonList(alignedEntities.get(i).getReferenceMatches().get(i)));
     }
 
     /**
@@ -134,7 +136,7 @@ public class AlignedEntities {
      * - or that are embedded in a larger non-entity token
      * @param xmiRawText
      */
-    protected void removeUnlikelySpans(String xmiRawText) {
+    public void removeUnlikelySpans(String xmiRawText) {
         AlignedEntities mult = select(x -> x.hasMultipleMatches());
         BiPredicate<AlignedEntity,Span> customSpanPredicate = (e, s) ->
                 alignedEntities.stream().noneMatch(x -> x.overrules(s, e))
@@ -159,11 +161,11 @@ public class AlignedEntities {
      * Covers a case of many-aligned entities with different types.
      * We regroup the entities per type before resolving them.
      */
-    protected void reduceMultipleMatchesWithSameNumberOfMentionsPerType() {
+    public void reduceMultipleMatchesWithSameNumberOfMentionsPerType() {
         groupByMention(g -> g.regroupEntitiesPerTypeAndReduce());
     }
 
-    protected void duplicateMultiLabelEntitiesAndNormalize() {
+    public void duplicateMultiLabelEntitiesAndNormalize() {
         groupByMention(g -> g.resolveEntityGroups());
     }
 
@@ -190,7 +192,7 @@ public class AlignedEntities {
      * For cases where entities were omitted during annotations, and have more
      * matches in the ref NAF than occurrences in the input XMI.
      */
-    protected void duplicateRemaining() {
+    public void duplicateRemaining() {
         List<AlignedEntity> addedEntities = new LinkedList<>();
         AlignedEntities mult = select(x -> x.hasMultipleMatches());
         for (String m: mult.mentions()) {
@@ -202,6 +204,75 @@ public class AlignedEntities {
 
     private void addAll(List<AlignedEntity> addedEntities) {
         alignedEntities.addAll(addedEntities);
+    }
+
+    public void duplicateRemaining(String rawText) {
+        List<AlignedEntity> addedEntities = new LinkedList<>();
+        AlignedEntities mult = select(x -> x.hasMultipleMatches());
+        for (String m: mult.mentions()) {
+            AlignedEntities withSameMention = mult.select(x -> x.getEntity().getCoveredText().equals(m));
+            List<AlignedEntity> toAdd;
+            if (m.equals("Compagnie"))
+                toAdd = filterCompagnieReferences(withSameMention, rawText);
+            else if (m.equals("bestuur"))
+                toAdd = filterBestuurReferences(withSameMention, rawText);
+            else
+                toAdd = withSameMention.resolveEntityGroupBySetOfReferences();
+
+            addedEntities.addAll(toAdd);
+        }
+        added.addAll(addedEntities);
+    }
+
+    /**
+     * for group of entities that share some reference spans
+     */
+    private List<AlignedEntity> resolveEntityGroupBySetOfReferences() {
+        List<Span> spanSet = alignedEntities.stream().map(e -> e.getReferenceMatches()).flatMap(x -> x.stream()).distinct().collect(Collectors.toList());
+        Collections.sort(spanSet);
+        List<AlignedEntity> toAdd = new LinkedList<>();
+        if (alignedEntities.size() == spanSet.size()) {
+            int i = 0;
+            for (AlignedEntity e: alignedEntities) {
+                e.setReferenceMatches(Collections.singletonList(spanSet.get(i)));
+                i++;
+            }
+
+        } else if (alignedEntities.size() < spanSet.size()) {
+            for (AlignedEntity e: alignedEntities) {
+                e.setReferenceMatches(spanSet);
+            }
+            toAdd = addEntitiesToMatchMentionCount();
+        }
+        return toAdd;
+    }
+
+    private List<AlignedEntity> filterBestuurReferences(AlignedEntities withSameMention, String rawText) {
+        // keeps matches to "Het/het bestuur"
+        Predicate<Span> filter = s -> {
+            String extended = rawText.substring(s.getFirstIndex() - 4, s.getLastIndex() + 1);
+            return extended.equals("het bestuur") || extended.equals("Het bestuur");
+        };
+
+        withSameMention.getAlignedEntities().forEach(e -> e.filterReferences(filter));
+        return resolveGroupedEntitiesWithSameReferences(withSameMention);
+    }
+
+    private List<AlignedEntity> filterCompagnieReferences(AlignedEntities withSameMention, String rawText) {
+        // removes matches to 'Compagnies'
+        withSameMention.getAlignedEntities().forEach(e -> e.filterReferences(s -> rawText.charAt(s.getLastIndex() + 1) != 's'));
+        return resolveGroupedEntitiesWithSameReferences(withSameMention);
+    }
+
+    private List<AlignedEntity> resolveGroupedEntitiesWithSameReferences(AlignedEntities entities) {
+        List<Span> firstMatches = entities.getAlignedEntities().stream().map(e -> e.getReferenceMatches().get(0)).collect(Collectors.toList());
+        List<AlignedEntity> resolved = new LinkedList<>();
+        for (Span m: firstMatches) {
+            AlignedEntities group = new AlignedEntities(entities.getAlignedEntities().stream()
+                    .filter(e -> e.getReferenceMatches().get(0).equals(m)).collect(Collectors.toList()));
+            resolved.addAll(group.addEntitiesToMatchMentionCount());
+        }
+        return resolved;
     }
 
     private List<AlignedEntity> addEntitiesToMatchMentionCount() {
@@ -236,11 +307,11 @@ public class AlignedEntities {
         return alignedEntities.stream().filter(x -> x.hasSingleMatch()).collect(Collectors.toList());
     }
 
-    protected int size() {
+    public int size() {
         return alignedEntities.size();
     }
 
-    protected long multipleAlignmentsCount() {
+    public long multipleAlignmentsCount() {
         return count(x -> x.hasMultipleMatches());
     }
 
@@ -286,12 +357,26 @@ public class AlignedEntities {
     }
 
     public void finalizeAlignment() {
+        postFilterAddedEntities();
         updateCounts();
         added.updateCounts();
 
         alignedEntities.addAll(added.getAlignedEntities());
         alignedEntities = filter(e -> e.hasSingleMatch());
         Collections.sort(alignedEntities);
+    }
+
+    /**
+     * removes added entities that are embedded in a larger entity.
+     * This can notably happen if the larger entity was unaligned when the entity was added.
+     */
+    private void postFilterAddedEntities() {
+        List<AlignedEntity> toKeep = new LinkedList<>();
+        for (AlignedEntity e: added.getAlignedEntities()) {
+            if (alignedEntities.stream().noneMatch(a -> a.hasSingleMatchStrictlyCovering(e)))
+                toKeep.add(e);
+        }
+        added = new AlignedEntities(toKeep);
     }
 
     public List<AlignedEntity> getAlignedEntities() {
@@ -311,4 +396,6 @@ public class AlignedEntities {
     public AlignedEntity get(int i) {
         return alignedEntities.get(i);
     }
+
+
 }

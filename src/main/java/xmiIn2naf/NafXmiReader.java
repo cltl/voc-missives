@@ -28,7 +28,7 @@ public class NafXmiReader implements NafCreator {
     private static final String IN = "." + IO.XMI_SFX;
     private static final String OUT = "." + IO.NAF_SFX;
     private final static String NAME = "xmi-in2naf";
-    private final static String VERSION = "0.1.2";
+    private final static String VERSION = "0.1.3";
     public static final Logger logger = LogManager.getLogger(NafXmiReader.class);
     AlignedEntities alignedEntities;
 
@@ -73,21 +73,25 @@ public class NafXmiReader implements NafCreator {
 
         alignedEntities.removeUnlikelySpans(xmi.getRawText());
         alignedEntities.reduceMultipleMatchesWithSameNumberOfMentionsPerType();
-        alignedEntities.duplicateRemaining();
+////        try {
+////            alignedEntities.duplicateRemaining();
+////        } catch (Exception e) {
+        alignedEntities.duplicateRemaining(refNaf.getRawText());
+//        }
 
     }
 
     protected void resolveUnalignedEntities() {
         for (int i = 0; i < alignedEntities.size(); i++) {
             if (alignedEntities.get(i).hasNoMatch()) {
-                AlignedEntity previous = i > 0 ? alignedEntities.get(i - 1) : null;
+                AlignedEntity previous = getPreviousAlignedEntity(i);
                 int index = previous == null ? 0 : previous.getReferenceMatches().get(0).getFirstIndex();
                 AlignedEntity current = alignedEntities.get(i);
                 current.findHyphenatedMatch(refNaf.getRawText(), index);
                 if (current.hasNoMatch())
                     current.findWhiteSpaceFreeMatch(refNaf.getRawText(), index);
                 if (current.hasNoMatch()) {
-                    AlignedEntity next = i < alignedEntities.size() - 1 ? alignedEntities.get(i + 1) : null;
+                    AlignedEntity next = getNextAlignedEntity(i);
                     int nextIndex = next == null ? refNaf.getRawText().length() : next.getReferenceMatches().get(0).getFirstIndex();
                     current.tryAgainSimpleMatch(refNaf.getRawText(), index, nextIndex);
                 }
@@ -96,6 +100,34 @@ public class NafXmiReader implements NafCreator {
                 }
             }
         }
+    }
+
+    private AlignedEntity getPreviousEntity(int i) {
+        return i > 0 ? alignedEntities.get(i - 1) : null;
+    }
+
+    private AlignedEntity getPreviousAlignedEntity(int from) {
+        int i = from;
+        AlignedEntity next = getPreviousEntity(i);
+        while (next != null && next.hasNoMatch()) {
+            i--;
+            next = getPreviousEntity(i);
+        }
+        return next;
+    }
+
+    private AlignedEntity getNextEntity(int i) {
+        return i < alignedEntities.size() - 1 ? alignedEntities.get(i + 1) : null;
+    }
+
+    private AlignedEntity getNextAlignedEntity(int from) {
+        int i = from;
+        AlignedEntity next = getNextEntity(i);
+        while (next != null && next.hasNoMatch()) {
+            i++;
+            next = getNextEntity(i);
+        }
+        return next;
     }
 
     /**

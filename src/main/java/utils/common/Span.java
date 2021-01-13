@@ -74,4 +74,8 @@ public class Span implements Comparable<Span> {
                 || firstIndex <= o.getLastIndex() && o.getLastIndex() <= lastIndex
                 || o.contains(this);
     }
+
+    public boolean strictlyContains(Span o) {
+        return contains(o) && ! equals(o);
+    }
 }
