@@ -208,8 +208,7 @@ public class NafConverter implements NafCreator {
     }
 
     public static void convertFile(Path file, String outdir, boolean tokenize) throws AbnormalProcessException {
-        String fileId = IO.replaceExtension(file, IN, OUT);
-        String outfile = outdir + "/" + fileId;
+        String outfile = IO.getTargetFile(outdir, file, IN, OUT);
         NafConverter converter = new NafConverter(tokenize);
         converter.process(file.toString(), outfile);
     }

@@ -62,9 +62,9 @@ public class EntityCSV {
         String fileName = file.getFileName().toString();
         if (fileName.endsWith(".entities.xmi")) {
             String pfx = fileName.replaceAll("\\.xmi", "");
-            String noteFile = IO.append(dirs.get(0), pfx + "_notes.entities.xmi");
-            String teiFile = IO.append(dirs.get(1), pfx + ".xml");
-            String outFile = IO.append(dirs.get(2), pfx + ".csv");
+            String noteFile = Paths.get(dirs.get(0), pfx + "_notes.entities.xmi").toString();
+            String teiFile = Paths.get(dirs.get(1), pfx + ".xml").toString();
+            String outFile = Paths.get(dirs.get(2), pfx + ".csv").toString();
 
             EntityCSV entityCSV = EntityCSV.create(teiFile);
             entityCSV.segmentPerLocation(file.toString());

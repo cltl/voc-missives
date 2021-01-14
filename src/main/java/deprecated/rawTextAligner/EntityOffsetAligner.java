@@ -317,8 +317,8 @@ public class EntityOffsetAligner {
             selection = "notes";
         }
         if (fileName.endsWith(IN)) {
-            String refFile = IO.append(dirs.get(0), IO.replaceExtension(file, extension, REF));
-            String outFile = IO.append(dirs.get(1), IO.replaceExtension(file, IN, OUT));
+            String refFile = IO.getTargetFile(dirs.get(0), file, extension, REF);
+            String outFile = IO.getTargetFile(dirs.get(1), file, IN, OUT);
 
             EntityOffsetAligner offsetAligner = new EntityOffsetAligner(file.toString(), refFile, outFile, selection);
             offsetAligner.writeOutputXmi();

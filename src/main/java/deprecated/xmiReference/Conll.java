@@ -138,8 +138,9 @@ public class Conll {
 
     public static void run(Path file, String outdir, String sep) throws AbnormalProcessException {
         String fileName = file.getFileName().toString();
-        if (fileName.endsWith(".entities.xmi")) {
-            String outFile = IO.append(outdir, fileName.replaceAll("\\.xmi", ".conll"));
+        if (fileName.endsWith(".xmi")) {
+            String outFile = IO.getTargetFile(outdir, file, "\\.xmi", ".conll");
+
             Conll conll = Conll.create(file.toString(), sep);
             conll.write(outFile);
         }

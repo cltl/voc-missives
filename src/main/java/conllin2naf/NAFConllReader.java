@@ -33,7 +33,7 @@ public class NAFConllReader implements NafCreator {
             throw new AbnormalProcessException("This NAF file already contains entities! Refusing to overwrite");
     }
 
-    protected static List<String[]> conllTokens(String conllFile) throws AbnormalProcessException {
+    public static List<String[]> conllTokens(String conllFile) throws AbnormalProcessException {
         String line;
         List<String[]> tokens = new ArrayList<>();
         try (BufferedReader bfr = new BufferedReader(new FileReader(conllFile))) {
@@ -103,8 +103,8 @@ public class NAFConllReader implements NafCreator {
         String fileName = file.getFileName().toString();
 
         if (fileName.endsWith(IN)) {
-            String refFile = IO.append(dirs.get(0), IO.replaceExtension(file, IN, OUT));
-            String outFile = IO.append(dirs.get(1), IO.replaceExtension(file, IN, OUT));
+            String refFile = IO.getTargetFile(dirs.get(0), file, IN, OUT);
+            String outFile = IO.getTargetFile(dirs.get(1), file, IN, OUT);
 
             NAFConllReader nafConllReader = new NAFConllReader(refFile);
             nafConllReader.process(file.toString(), outFile);

@@ -12,7 +12,6 @@ import deprecated.utils.BaseEntity;
 import deprecated.utils.BaseToken;
 import deprecated.utils.BaseTokenAligner;
 import utils.naf.NafDoc;
-import utils.naf.NafUnits;
 import deprecated.utils.Dkpro;
 import xjc.naf.LinguisticProcessors;
 import xjc.naf.Wf;
@@ -67,8 +66,8 @@ public class NafXmiReader implements NafEntityProcessor, NafSelector, NafCreator
             extension = inNote;
 
         if (fileName.endsWith(IN)) {
-            String refFile = IO.append(dirs.get(0), IO.replaceExtension(file, extension, OUT));
-            String outFile = IO.append(dirs.get(1), IO.replaceExtension(file, extension, OUT));
+            String refFile = IO.getTargetFile(dirs.get(0), file, extension, OUT);
+            String outFile = IO.getTargetFile(dirs.get(1), file, extension, OUT);
 
             NafXmiReader nafXmiReader = new NafXmiReader(refFile, textType, source);
             nafXmiReader.process(file.toString(), outFile);

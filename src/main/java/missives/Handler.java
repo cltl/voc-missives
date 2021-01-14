@@ -8,12 +8,7 @@ import tei2naf.Tei2Naf;
 import utils.common.IO;
 import xmiIn2naf.NafXmiReader;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Collections;
-import java.util.stream.Stream;
 
 import static utils.common.ThrowingBiConsumer.throwingBiConsumerWrapper;
 
@@ -40,21 +35,21 @@ public class Handler {
                 usage(options);
             }
             final String indir = cmd.getOptionValue('i');
-            String inputType = cmd.hasOption("I") ? cmd.getOptionValue('I') : inferType(indir);
+            String inputType = cmd.hasOption("I") ? cmd.getOptionValue('I') : IO.inferType(indir);
             if (! isKnownType(inputType))
                 throw new IllegalArgumentException("input type " + inputType + " is invalid. Select one type among xml (tei), naf, entities.xmi or conll.");
 
             final String outdir = cmd.hasOption('o') ? cmd.getOptionValue('o') : "";
             String outputType = cmd.hasOption("O") ? cmd.getOptionValue('O') : IO.NAF_SFX;
-            String conllSeparator = cmd.hasOption("c") ? cmd.getOptionValue('c') : "\t";
+            String conllSeparator = cmd.hasOption("c") ? cmd.getOptionValue('c') : " ";
             String documentType = cmd.hasOption("d") ? cmd.getOptionValue('d') : "all";
             boolean tokenize = ! cmd.hasOption('n');
             if (cmd.hasOption('r') || cmd.hasOption('R')) {
                 final String refdir = cmd.getOptionValue('r');
-                String refType = cmd.hasOption("R") ? cmd.getOptionValue('R') : inferType(refdir);
-                if (! (refType.equals(IO.NAF_SFX) || refType.equals(IO.XMI_SFX)))
-                    throw new IllegalArgumentException("Invalid reference type. Select one of entities.xmi or naf.");
-                runConfiguration(indir, inputType, outdir, outputType, refdir, refType);
+                String refType = cmd.hasOption("R") ? cmd.getOptionValue('R') : IO.inferType(refdir);
+                if (! (refType.equals(IO.NAF_SFX)))
+                    throw new IllegalArgumentException("Invalid reference type. Only 'naf' is allowed.");
+                runConfiguration(indir, inputType, outdir, outputType, refdir, refType, cmd.hasOption('m'));
             } else
                 runConfiguration(indir, inputType, outdir, outputType, tokenize, conllSeparator, documentType);
         } catch (ParseException e) {
@@ -65,15 +60,23 @@ public class Handler {
 
     private static void runConfiguration(String indir, String inputType,
                                          String outdir, String outputType,
-                                         String refDir, String refType) {
-        if (inputType.equals(IO.CONLL_SFX) && outputType.equals(IO.NAF_SFX) && refType.equals(IO.NAF_SFX))
-            IO.loop(indir, Collections.singletonList(refDir), outdir,
-                    throwingBiConsumerWrapper((x, y) -> NAFConllReader.run(x, y)));
-        else if (inputType.equals(IO.XMI_SFX) && outputType.equals(IO.NAF_SFX) && refType.equals(IO.NAF_SFX))
-            IO.loop(indir, Collections.singletonList(refDir), outdir,
-                    throwingBiConsumerWrapper((x, y) -> NafXmiReader.run(x, y)));
-        else
-            throw new IllegalArgumentException("annotations integration is currently only supported for CAS XMI and Conll2Naf");
+                                         String refDir, String refType,
+                                         boolean manualConll) {
+        if (outputType.equals(IO.NAF_SFX) && refType.equals(IO.NAF_SFX)) {
+            if (inputType.equals(IO.CONLL_SFX)) {
+                if (manualConll)
+                    IO.loop(indir, Collections.singletonList(refDir), outdir,
+                            throwingBiConsumerWrapper((x, y) -> NafXmiReader.runWithConnl2Xmi(x, y)));
+                else
+                    IO.loop(indir, Collections.singletonList(refDir), outdir,
+                            throwingBiConsumerWrapper((x, y) -> NAFConllReader.run(x, y)));
+            } else if (inputType.equals(IO.XMI_SFX))
+                IO.loop(indir, Collections.singletonList(refDir), outdir,
+                        throwingBiConsumerWrapper((x, y) -> NafXmiReader.run(x, y)));
+            else
+                throw new IllegalArgumentException("Annotations integration only supports Conll or XMI input");
+        } else
+            throw new IllegalArgumentException("Annotations integration only supports NAF reference and output");
     }
 
     private static void runConfiguration(String indir,
@@ -97,17 +100,6 @@ public class Handler {
         return t.equals(IO.NAF_SFX) || t.equals(IO.TEI_SFX) || t.equals(IO.CONLL_SFX) || t.equals(IO.XMI_SFX);
     }
 
-    private static String inferType(String indir) {
-        try (Stream<Path> paths = Files.walk(Paths.get(indir))) {
-            Path file = paths.filter(Files::isRegularFile).findAny().orElse(null);
-            String fileName = file.getFileName().toString();
-            return fileName.substring(fileName.lastIndexOf(".") + 1);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        throw new IllegalArgumentException("Cannot infer type from files in " + indir);
-    }
-
     public static void main(String[] args) {
         Options options = new Options();
         options.addOption("i", true, "input file / directory");
@@ -117,8 +109,9 @@ public class Handler {
         options.addOption("O", true, "output file type; default: NAF");
         options.addOption("R", true, "reference file type (naf|xmi); inferred by default from reference files extension ");
         options.addOption("d", true, "selected document type for reference NAF: text|notes|all; default:all");
-        options.addOption("c", true, "conll separator for Conll output; defaults to single tab");
+        options.addOption("c", true, "conll separator for Conll output; defaults to single space");
         options.addOption("n", false, "do not tokenize reference NAF");
+        options.addOption("m", false, "integrate manual Conll annotations");
         process(options, args);
     }
 }

@@ -98,14 +98,21 @@ public class IO {
         }
     }
 
-    public static String replaceExtension(Path file, String oldExtension, String newExtension) {
-        return file.getFileName().toString().replaceAll(oldExtension, newExtension);
+    public static String getTargetFile(String targetDir, Path file, String oldExtension, String newExtension) {
+        return Paths.get(targetDir, file.getFileName().toString().replaceAll(oldExtension, newExtension)).toString();
     }
 
-    public static String append(String dirName, String fileName) {
-        if (dirName.endsWith("/"))
-            return dirName + fileName;
-        else
-            return dirName + "/" + fileName;
+    public static String inferType(String indir) {
+        try (Stream<Path> paths = Files.walk(Paths.get(indir))) {
+            Path file = paths.filter(Files::isRegularFile).findAny().orElse(null);
+            return extension(file.getFileName().toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        throw new IllegalArgumentException("Cannot infer type from files in " + indir);
+    }
+
+    public static String extension(String fileName) {
+        return fileName.substring(fileName.lastIndexOf(".") + 1);
     }
 }

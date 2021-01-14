@@ -133,8 +133,7 @@ public class Naf2Conll {
     }
 
     public static void run(Path file, String outdir, String conllSeparator) throws AbnormalProcessException {
-        String fileId = IO.replaceExtension(file, IN, OUT);
-        String outfile = outdir + "/" + fileId;
+        String outfile = IO.getTargetFile(outdir, file, IN, OUT);
         Naf2Conll converter = new Naf2Conll(conllSeparator, file.toString());
         converter.filterEntities();
         converter.write(outfile);

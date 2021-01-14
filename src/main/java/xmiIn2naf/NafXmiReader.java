@@ -8,6 +8,7 @@ import utils.naf.NafCreator;
 import utils.naf.NafDoc;
 import utils.naf.NafUnits;
 import utils.xmi.CasDoc;
+import utils.xmi.Conll2Xmi;
 import xjc.naf.*;
 
 import java.nio.file.Path;
@@ -35,6 +36,12 @@ public class NafXmiReader implements NafCreator {
     public NafXmiReader(String refNaf, String inputXmi) throws AbnormalProcessException {
         logger.info(inputXmi);
         this.xmi = CasDoc.create(inputXmi);
+        this.refNaf = NafDoc.create(refNaf);
+    }
+
+    public NafXmiReader(String refNaf, CasDoc inputXmi) throws AbnormalProcessException {
+        logger.info(refNaf);
+        this.xmi = inputXmi;
         this.refNaf = NafDoc.create(refNaf);
     }
 
@@ -73,12 +80,8 @@ public class NafXmiReader implements NafCreator {
 
         alignedEntities.removeUnlikelySpans(xmi.getRawText());
         alignedEntities.reduceMultipleMatchesWithSameNumberOfMentionsPerType();
-////        try {
-////            alignedEntities.duplicateRemaining();
-////        } catch (Exception e) {
-        alignedEntities.duplicateRemaining(refNaf.getRawText());
-//        }
 
+        alignedEntities.duplicateRemaining(refNaf.getRawText());
     }
 
     protected void resolveUnalignedEntities() {
@@ -163,10 +166,26 @@ public class NafXmiReader implements NafCreator {
         String fileName = file.getFileName().toString();
 
         if (fileName.endsWith(IN)) {
-            String refFile = IO.append(dirs.get(0), IO.replaceExtension(file, IN, OUT));
-            String outFile = IO.append(dirs.get(1), IO.replaceExtension(file, IN, OUT));
+            String refFile = IO.getTargetFile(dirs.get(0), file, IN, OUT);
+            String outFile = IO.getTargetFile(dirs.get(1), file, IN, OUT);
 
             NafXmiReader nafXmiReader = new NafXmiReader(refFile, file.toString());
+            nafXmiReader.transferEntitiesToNaf();
+            nafXmiReader.write(outFile);
+            nafXmiReader.logStats();
+        }
+    }
+
+
+    public static void runWithConnl2Xmi(Path file, List<String> dirs) throws AbnormalProcessException {
+        String fileName = file.getFileName().toString();
+
+        if (fileName.endsWith(IO.CONLL_SFX)) {
+            String refFile = IO.getTargetFile(dirs.get(0), file, "." + IO.CONLL_SFX, OUT);
+            String outFile = IO.getTargetFile(dirs.get(1), file, "." + IO.CONLL_SFX, OUT);
+            Conll2Xmi conll2Xmi = new Conll2Xmi(file.toString());
+            conll2Xmi.convert();
+            NafXmiReader nafXmiReader = new NafXmiReader(refFile, conll2Xmi.getXmi());
             nafXmiReader.transferEntitiesToNaf();
             nafXmiReader.write(outFile);
             nafXmiReader.logStats();

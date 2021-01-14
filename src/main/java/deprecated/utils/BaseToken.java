@@ -4,9 +4,8 @@ package deprecated.utils;
 import utils.common.Span;
 
 /**
- * Token wrapper for entities.xmi-naf
+ * Token wrapper for Conll2Xmi
  */
-@Deprecated
 public class BaseToken {
     String text;
     String id;

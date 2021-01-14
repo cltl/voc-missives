@@ -7,6 +7,7 @@ import utils.xmi.CasDoc;
 import utils.common.Span;
 
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.List;
 
@@ -74,9 +75,9 @@ public class EntityAligner {
 
     public static void run(Path file, List<String> dirs) throws AbnormalProcessException {
         String fileName = file.getFileName().toString();
-        if (fileName.endsWith(".entities.xmi")) {
-            String refFile = IO.append(dirs.get(0), fileName);
-            String outFile = IO.append(dirs.get(1), fileName);
+        if (fileName.endsWith(".xmi")) {
+            String refFile = Paths.get(dirs.get(0), fileName).toString();
+            String outFile = Paths.get(dirs.get(1), fileName).toString();
 
             EntityAligner entityAligner = create(refFile, file.toString());
             try {
