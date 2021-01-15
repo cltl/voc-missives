@@ -17,11 +17,12 @@ Input and reference file types are inferred from file extensions, unless otherwi
 | Operation selection |   -i      | input file or directory |
 |  |   -r      | reference file or directory |
 |  |   -o      | output directory |
-| File type overriding (file type is inferred from file extensions by default) |  -I      | input file type |
-|  | -R      | reference file type |
-|  | -O      | output file type |
+| File type overriding (file type is inferred from file extensions by default) |  -I      | input file type (`tei`, `naf`, `xmi` or `conll`) |
+|  | -R      | reference file type (`naf`) |
+|  | -O      | output file type (`naf` or `conll`)|
 | Other options | -d | document-type selection for `naf-selector`: 'text', 'note', or 'all' (default: 'all') |
 | | -c | conll column separator for `naf2conll` (default: `\t`)| 
+| | -m | integration of manually-annotated Conll files |
 
 The scripts and command-line arguments for the different operations are presented below. See [Functions](functions.md)
 for more information on the different operations.
@@ -29,7 +30,7 @@ for more information on the different operations.
 ### tei2naf
 
 ```jshelllanguage
-java -jar voc-missives*.jar -i INPUT -I tei -o OUTPUT_DIR
+java -jar gm-processor-*-with-dependencies.jar -i INPUT -I tei -o OUTPUT_DIR
 ```
 
 * `-i INPUT`: this can be a file or an input directory 
@@ -42,7 +43,7 @@ see `./scripts/tei2naf.sh`
 ### naf-selector
 
 ```jshelllanguage
-java -jar voc-missives*.jar -i INPUT -O naf -d DOCUMENT_TYPE -o OUTPUT_DIR
+java -jar gm-processor-*-with-dependencies.jar -i INPUT -O naf -d DOCUMENT_TYPE -o OUTPUT_DIR
 ```
 
 * `-i INPUT`: input file or directory with NAF files
@@ -52,22 +53,24 @@ java -jar voc-missives*.jar -i INPUT -O naf -d DOCUMENT_TYPE -o OUTPUT_DIR
 
 see `./scripts/naf-selector.sh`
 
-### xmi-in2naf
+### man-in2naf
  
 ```jshelllanguage
-java -jar voc-missives*.jar -i INPUT -r REFERENCE -o OUTPUT_DIR
+java -jar gm-processor-*-with-dependencies.jar -i INPUT -r REFERENCE -o OUTPUT_DIR
 ```
 
-* `-i INPUT`: input file or directory with XMI files (`.xmi` extension)
-* `-r REFERENCE`: reference NAF files. XMI and NAF files names should match (`.xmi`/`.naf` extension excepted)
+* `-i INPUT`: input file or directory with XMI/Conll files (`.xmi` or `.conll` extension)
+* `-r REFERENCE`: directory with reference NAF files. Input files are matched to reference NAF files by the INT identifier 
+ in their file name (pattern `INT_[0-9a-z-]+`). 
 * `-o OUTPUT_DIR`: output directory. Output files are in NAF format with the same name as the reference.
+* `-m`: flag for manual annotations (only needed for Conll input)
 
-see `./scripts/in2naf.sh`
+see `./scripts/man-in2naf.sh`
 
 ### naf2conll
 
 ```jshelllanguage
-java -jar voc-missives*.jar -i INPUT -O conll -o OUTPUT_DIR
+java -jar gm-processor-*-with-dependencies.jar -i INPUT -O conll -o OUTPUT_DIR
 ```
 
 * `-i INPUT`: input file or directory with NAF files (`.naf` extension)
@@ -76,14 +79,15 @@ java -jar voc-missives*.jar -i INPUT -O conll -o OUTPUT_DIR
 
 see `./scripts/naf2conll.sh`
 
-### conll-in2naf
+### sys-in2naf
 
 ```jshelllanguage
-java -jar voc-missives*.jar -i INPUT -r REFERENCE -o OUTPUT_DIR
+java -jar gm-processor-*-with-dependencies.jar -i INPUT -r REFERENCE -o OUTPUT_DIR
 ```
 
-* `-i INPUT`: input file or directory with CONLL files (`.conll` extension)
-* `-r REFERENCE`: reference NAF files. CONLL and NAF files names should match (`.conll`/`.naf` extension excepted)
+* `-i INPUT`: input file or directory with system CONLL files (`.conll` extension)
+* `-r REFERENCE`: reference NAF files. Input files are matched to reference NAF files by the INT identifier in their
+filename (pattern `INT_[0-9a-z-]+`). 
 * `-o OUTPUT_DIR`: output directory. Output files are in NAF format with the same name as the reference.
 
-see `./scripts/in2naf.sh`
+see `./scripts/sys-in2naf.sh`

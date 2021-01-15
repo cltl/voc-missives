@@ -13,10 +13,10 @@ if [ $# -ne 2 ]; then
   exit 1
 fi
 
-[[ ! -d $outdir ]] && mkdir $outdir
+[[ ! -d $outdir ]] && mkdir -p $outdir
 
 wdir=$(cd $(dirname "${BASH_SOURCE[0]}") && cd .. && pwd)
-jar=${wdir}/target/voc-missives-*-SNAPSHOT-jar-with-dependencies.jar
+jar=${wdir}/target/gm-processor-*-jar-with-dependencies.jar
 
-java -jar $jar -i ${indir} -o ${outdir} -O conll -c " "
+java -jar $jar -i ${indir} -o ${outdir} -O conll
 

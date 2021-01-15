@@ -10,6 +10,7 @@ import xjc.naf.LinguisticProcessors;
 import xjc.naf.Tunit;
 
 import java.io.File;
+import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -18,7 +19,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class NafUnitSelectorTest {
     static List<Tunit> elts;
-
+    private final String testdirIn = "src/test/resources/tei2naf";
+    private final String testdirOut = "src/test/resources/naf-selector";
+    private final String filePfx = "vol2_p0583_INT_0aff566f-8c02-332d-971d-eb572c33f86b";
 
     public static Tunit createTunit(String id, String type, int offset, int length) {
         Tunit tunit = new Tunit();
@@ -141,9 +144,8 @@ class NafUnitSelectorTest {
     public void testDerivedNafCreationNotes() throws AbnormalProcessException {
         NafUnitSelector nus = new NafUnitSelector("notes");
         NafDoc outNaf = nus.getDerivedNaf(NafDoc.create(getTestInputNaf()));
-        String outFile = "src/test/resources/naf/text_and_notes-notes.naf";
-        outNaf.write("src/test/resources/naf/text_and_notes-notes.naf");
-        File out = new File(outFile);
+        outNaf.write(Paths.get(testdirOut, outNaf.getFileName()).toString());
+        File out = Paths.get(testdirOut, filePfx + "_notes.naf").toFile();
         assertTrue(out.exists());
     }
 
@@ -151,9 +153,8 @@ class NafUnitSelectorTest {
     public void testDerivedNafCreationText() throws AbnormalProcessException {
         NafUnitSelector nus = new NafUnitSelector("text");
         NafDoc outNaf = nus.getDerivedNaf(NafDoc.create(getTestInputNaf()));
-        String outFile = "src/test/resources/naf/text_and_notes-text.naf";
-        outNaf.write("src/test/resources/naf/text_and_notes-text.naf");
-        File out = new File(outFile);
+        outNaf.write(Paths.get(testdirOut, outNaf.getFileName()).toString());
+        File out = Paths.get(testdirOut, filePfx + "_text.naf").toFile();
         assertTrue(out.exists());
     }
 
@@ -163,19 +164,18 @@ class NafUnitSelectorTest {
         NafUnitSelector nus = new NafUnitSelector("all");
         NafDoc outNaf = nus.getDerivedNaf(inputNaf);
         assertEquals(inputNaf.getRawText(), outNaf.getRawText());
-        String outFile = "src/test/resources/naf/text_and_notes-all.naf";
-        outNaf.write("src/test/resources/naf/text_and_notes-all.naf");
-        File out = new File(outFile);
+        outNaf.write(Paths.get(testdirOut, outNaf.getFileName()).toString());
+        File out = Paths.get(testdirOut, filePfx + "_all.naf").toFile();
         assertTrue(out.exists());
     }
 
     private String getTestInputNaf() throws AbnormalProcessException {
-        String inNaf = "src/test/resources/naf/vol2_p0583_INT_0aff566f-8c02-332d-971d-eb572c33f86b.naf";
+        String inNaf = "src/test/resources/tei2naf/vol2_p0583_INT_0aff566f-8c02-332d-971d-eb572c33f86b.naf";
         File inFile = new File(inNaf);
         if (! inFile.exists()) {
             String teiFile = "src/test/resources/tei2naf/text_and_notes.xml";
             Tei2Naf converter = new Tei2Naf();
-            String outdir = "src/test/resources/naf/";
+            String outdir = "src/test/resources/tei2naf/";
             converter.process(teiFile, outdir);
         }
         assertTrue(inFile.exists());

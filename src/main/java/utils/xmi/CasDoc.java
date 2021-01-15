@@ -115,17 +115,6 @@ public class CasDoc {
         jCas.setDocumentText(rawText);
     }
 
-    public void addParagraphs(List<deprecated.tei2xmi.Paragraph> paragraphs) {
-        for (deprecated.tei2xmi.Paragraph p: paragraphs) {
-            int end = p.getOffset() + p.getContent().length();
-            Annotation a = AnnotationFactory.createAnnotation(jCas, p.getOffset(), end, Paragraph.class);
-            ((Paragraph) a).setId(p.getTeiId());
-            a.addToIndexes(jCas);
-        }
-    }
-
-
-
     public void addMetadata(Metadata metadata) {
 
         DocumentMetaData a = DocumentMetaData.create(jCas);
@@ -139,7 +128,6 @@ public class CasDoc {
         dateStringField.setValue(metadata.getDate());
         dateStringField.addToIndexes(jCas);
     }
-
 
     public List<Token> getTokens() {
         return (List) JCasUtil.select(jCas, Token.class);

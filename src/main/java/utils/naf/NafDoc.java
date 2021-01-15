@@ -22,7 +22,7 @@ public class NafDoc {
     public NafDoc() {
         naf = new NAF();
         naf.setLang("nl");
-        naf.setVersion("v3.1.b");
+        naf.setVersion("3.2");
     }
 
     public static NafDoc create(String nafFile) throws AbnormalProcessException {
@@ -179,4 +179,7 @@ public class NafDoc {
     }
 
 
+    public String getFileName() {
+        return getNafHeader().getFileDesc().getFilename();
+    }
 }

@@ -1,5 +1,6 @@
 package utils.naf;
 
+import missives.Handler;
 import xjc.naf.Entities;
 import xjc.naf.Entity;
 import xjc.naf.LinguisticProcessors;
@@ -13,7 +14,11 @@ import java.util.stream.Collectors;
 
 public interface NafCreator {
     String getName();
-    String getVersion();
+
+    default String getVersion() {
+        return Handler.VERSION;
+    }
+
     default LinguisticProcessors createLinguisticProcessors(String layer) {
         LinguisticProcessors lps = new LinguisticProcessors();
         Lp lp = new Lp();

@@ -4,22 +4,28 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.function.BiConsumer;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class IO {
 
     public static final String NAF_SFX = "naf";
-    public static final String TEI_SFX = "xml";
+    public static final String TEI_SFX = "tei";
     public static final String XMI_SFX = "xmi";
     public static final String CONLL_SFX = "conll";
+    private static final Pattern INT_ID = Pattern.compile("INT_[a-z0-9-]+");
     private static final Logger logger = LogManager.getLogger(IO.class);
     /**
      * Processes files in dir given a file consumer
@@ -114,5 +120,35 @@ public class IO {
 
     public static String extension(String fileName) {
         return fileName.substring(fileName.lastIndexOf(".") + 1);
+    }
+
+    private static String getId(String fileName) throws AbnormalProcessException {
+        Matcher matcher = INT_ID.matcher(fileName);
+        if (matcher.find())
+            return matcher.group();
+        else
+            throw new AbnormalProcessException("File name does not match INT id pattern.");
+    }
+
+    /**
+     * matches the file id of <code>path</code> against that of files in <code>path</code>
+     * @param path
+     * @param dir
+     * @return  the matching file
+     * @throws AbnormalProcessException
+     */
+    public static File findFileWithSameId(Path path, File dir) throws AbnormalProcessException {
+        String id = getId(path.getFileName().toString());
+        List<File> matching = new LinkedList<>();
+        for (File f: dir.listFiles()) {
+            if (id.equals(getId(f.getName())))
+                matching.add(f);
+        }
+        if (matching.isEmpty())
+            throw new AbnormalProcessException("Directory " + dir.getPath() + " does not contain any file with id: " + id);
+        if (matching.size() > 1)
+            throw new AbnormalProcessException("Directory " + dir.getPath() + " contains several files with id: " + id
+                    + "\n" + matching.stream().map(f -> f.getName()).collect(Collectors.joining(",")));
+        return matching.get(0);
     }
 }

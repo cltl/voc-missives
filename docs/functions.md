@@ -14,9 +14,10 @@ NAF file containing the following layers:
 The text units follow the hierarchical structure of the TEI elements. 
 
 ## naf-selector
-The derivation of *reference* NAF files from *input* NAF files produces NER-ready files:
+The derivation of *reference* NAF files from *input* NAF files produces NER-ready files, corresponding to either 
+the original text or to editor notes. Empty NAF files are created for files that do not contain matching units.  
 
-* the raw text is selected based on text units to provide *cohesive* and *homogeneous* pieces of text for NER.
+* the raw text is selected based on text units (text-like, notes or all) to provide *cohesive* and *homogeneous* pieces of text for NER.
 * text units are reshaped to provide a non-overlapping sequence of (sub-)units
 * the resulting text units are tokenized piece-wise
 
@@ -57,13 +58,17 @@ always match: the tokenizer may see a given tokenization unit as containing seve
 tokenization units may correspond to several text units. 
 
 
-## xmi-in2naf
-This function inputs manual named-entity annotations in XMI format, matches them to reference NAF files, and 
+## man-in2naf
+This function inputs manual named-entity annotations in XMI or Conll format, matches them to reference NAF files, and 
 enriches the NAF files with an entities layer.
 
+Conll input files are internally converted to UIMA CAS to be processed like XMI files. The raw text is built by joining 
+all Conll tokens by a single space, disregarding sentence separation.
+
 The function performs the following operations:
-* the raw text in the XMI and the NAF are compared. If they do not match, the character offsets of the input entities are
-remapped to the reference raw text.
+* the raw text in the UIMA CAS and the NAF are compared. If they do not match, 
+a heuristic search is performed to align input entity mentions with NAF tokens. 
+The character offsets of the input entities are then mapped to those of their aligned mention in the reference raw text.
 * entities are mapped to the reference tokens that overlap with their character offsets.
 * the reference NAF is enriched with an *entities* layer, which receives the mapped entities.
 
@@ -78,7 +83,7 @@ The conversion of reference NAF files to Conll simply:
 As for *Conll2002*, only tokens and entities are output. The NE labelling scheme and separating field can be specified
 as options (see [Usage](usage.md)).
 
-## conll-in2naf
+## sys-in2naf
 The integration of NER entities in Conll format into reference NAF files performs the following operations:
 
 * tokens in the Conll and NAF files are matched to retrieve token identifiers

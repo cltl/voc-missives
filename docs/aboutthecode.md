@@ -15,7 +15,7 @@ Binding was tested with `xjc` version 2.3.1 under Java 10, and `xjc` version 2.2
 We use the TEI *All* specifications: [tei_all.xsd](https://tei-c.org/release/xml/tei/custom/schema/xsd/tei_all.xsd) and the related files [tei_all_dcr.xsd](https://tei-c.org/release/xml/tei/custom/schema/xsd/tei_all_dcr.xsd), [tei_all_teix.xsd](https://tei-c.org/release/xml/tei/custom/schema/xsd/tei_all_teix.xsd) and [tei_all_xml.xsd](https://tei-c.org/release/xml/tei/custom/schema/xsd/tei_all_xml.xsd).
 
 ### NAF
-The NAF xsd schema `naf_v3.1.b.xsd` is derived from a modified NAF DTD `naf_v3.1.b.dtd`, 
-which extends the base [naf_v3.dtd](https://github.com/cltl/NAF-4-Development/blob/master/res/naf_development/naf_v3.dtd) with a `tunits` specification.
+The NAF xsd schema `naf_v3.2.xsd` is derived from a modified NAF DTD `naf_v3.2.dtd`, 
+which extends [naf_v3.1.dtd](https://github.com/cltl/NAF-4-Development/blob/master/res/naf_development/naf_v3.1.dtd) with a `tunits` specification.
 
 DTD-to-XSD conversion was performed with [trang](https://relaxng.org/jclark/trang.html). 

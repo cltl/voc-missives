@@ -16,10 +16,10 @@ fi
 [[ ! -d $outdir ]] && mkdir $outdir
 
 wdir=$(cd $(dirname "${BASH_SOURCE[0]}") && cd .. && pwd)
-jar=${wdir}/target/voc-missives-*-SNAPSHOT-jar-with-dependencies.jar
+jar=${wdir}/target/gm-processor*-jar-with-dependencies.jar
 
 for subdir in ${indir}/*; do
   volume=$(basename $subdir)
-  echo "converting from ${indir}/${volume} to ${outdir}/${volume}"
-  java -jar $jar -i ${indir}/${volume} -I tei -o ${outdir}/${volume}
+  echo "converting from ${indir}/${volume} to ${outdir}"
+  java -jar $jar -i ${indir}/${volume} -I tei -o ${outdir}
 done

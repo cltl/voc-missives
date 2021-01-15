@@ -15,7 +15,7 @@ public class NafUnits {
         Entity e = new Entity();
         e.setId(id);
         e.setType(type);
-        References r = new References();
+//        References r = new References();
         Span s = new Span();
         List<Target> ts = s.getTargets();
 
@@ -24,15 +24,21 @@ public class NafUnits {
             t.setId(wf);
             ts.add(t);
         }
-        r.getSpen().add(s);
-        e.getReferencesAndExternalReferences().add(r);
+        e.getSpenAndExternalReferences().add(s);
+//        r.getSpen().add(s);
+//        e.getReferencesAndExternalReferences().add(r);
         return e;
     }
 
     public static List<Wf> wfSpan(Entity e) {
-        References r = (References) e.getReferencesAndExternalReferences().get(0);
-        List<Target> targets = r.getSpen().get(0).getTargets();
+//        References r = (References) e.getReferencesAndExternalReferences().get(0);
+        Span s = (Span) e.getSpenAndExternalReferences().stream().filter(x -> x instanceof Span).findFirst().orElse(null);
+        List<Target> targets = s.getTargets();
         return targets.stream().map(t -> (Wf) t.getId()).collect(Collectors.toList());
+    }
+
+    public static String getContent(Wf wf) {
+        return (String) wf.getContent().stream().filter(x -> x instanceof String).findFirst().orElse(null);
     }
 
     public static Tunit withOffset(Tunit tunit, int offset) {

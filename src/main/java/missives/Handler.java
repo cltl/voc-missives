@@ -1,12 +1,12 @@
 package missives;
 
-import conllin2naf.NAFConllReader;
+import sysIn2naf.NAFConllReader;
 import naf2conll.Naf2Conll;
 import nafSelector.NafUnitSelector;
 import org.apache.commons.cli.*;
 import tei2naf.Tei2Naf;
 import utils.common.IO;
-import xmiIn2naf.NafXmiReader;
+import manIn2naf.NafXmiReader;
 
 import java.util.Collections;
 
@@ -17,7 +17,8 @@ import static utils.common.ThrowingBiConsumer.throwingBiConsumerWrapper;
  *
  */
 public class Handler {
-
+    public final static String NAME = "gm-processor";
+    public final static String VERSION = "1.0";
 
     private static void usage(Options options) {
         HelpFormatter formatter = new HelpFormatter();
@@ -74,9 +75,9 @@ public class Handler {
                 IO.loop(indir, Collections.singletonList(refDir), outdir,
                         throwingBiConsumerWrapper((x, y) -> NafXmiReader.run(x, y)));
             else
-                throw new IllegalArgumentException("Annotations integration only supports Conll or XMI input");
+                throw new IllegalArgumentException("Annotations entity-integration only supports Conll or XMI input");
         } else
-            throw new IllegalArgumentException("Annotations integration only supports NAF reference and output");
+            throw new IllegalArgumentException("Annotations entity-integration only supports NAF reference and output");
     }
 
     private static void runConfiguration(String indir,
@@ -104,11 +105,11 @@ public class Handler {
         Options options = new Options();
         options.addOption("i", true, "input file / directory");
         options.addOption("o", true, "output directory. Defaults to current directory");
-        options.addOption("r", true, "reference directory for NE annotations integration");
-        options.addOption("I", true, "input file type (xml|naf|conll|xmi); inferred by default from input files extension: 'tei', 'naf', 'xmi' or 'conll'");
-        options.addOption("O", true, "output file type; default: NAF");
-        options.addOption("R", true, "reference file type (naf|xmi); inferred by default from reference files extension ");
-        options.addOption("d", true, "selected document type for reference NAF: text|notes|all; default:all");
+        options.addOption("r", true, "reference directory for NE annotations entity-integration");
+        options.addOption("I", true, "input file type (tei|naf|conll|xmi); inferred by default from input files extension: 'tei', 'naf', 'xmi' or 'conll'");
+        options.addOption("O", true, "output file type (naf|conll); default: naf");
+        options.addOption("R", true, "reference file type (naf); inferred by default from reference files extension ");
+        options.addOption("d", true, "selected document type for reference NAF: text|notes|all; default: all");
         options.addOption("c", true, "conll separator for Conll output; defaults to single space");
         options.addOption("n", false, "do not tokenize reference NAF");
         options.addOption("m", false, "integrate manual Conll annotations");

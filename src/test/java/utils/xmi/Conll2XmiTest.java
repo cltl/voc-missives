@@ -3,6 +3,7 @@ package utils.xmi;
 import de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity;
 import org.junit.jupiter.api.Test;
 import utils.common.AbnormalProcessException;
+import manIn2naf.Conll2Xmi;
 
 import java.util.LinkedList;
 import java.util.List;

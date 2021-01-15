@@ -9,6 +9,7 @@ import utils.tei.TeiReader;
 import xjc.naf.Tunit;
 
 import java.io.File;
+import java.nio.file.Paths;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -59,7 +60,7 @@ class Tei2NafTest {
         String outdir = "src/test/resources/tei2naf/";
         converter.process(teiFile, outdir);
         String id = "vol2_p0583_INT_0aff566f-8c02-332d-971d-eb572c33f86b";
-        File out = new File(outdir + id + ".naf");
+        File out = Paths.get(outdir, id + ".naf").toFile();
         assertTrue(out.exists());
     }
 }

@@ -1,5 +1,6 @@
 package tei2naf;
 
+import missives.Handler;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utils.common.AbnormalProcessException;
@@ -15,6 +16,7 @@ import utils.tei.TeiReader;
 import xjc.naf.*;
 
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayDeque;
 import java.util.LinkedList;
 import java.util.List;
@@ -26,10 +28,8 @@ import static utils.common.ThrowingBiConsumer.throwingBiConsumerWrapper;
  *
  */
 public class Tei2Naf implements NafCreator {
-    private static final String IN = "." + IO.TEI_SFX;
     private static final String OUT = "." + IO.NAF_SFX;
     private final static String NAME = "tei2naf";
-    private final static String VERSION = "0.1.2";
     public static final Logger logger = LogManager.getLogger(Tei2Naf.class);
     BaseDoc doc;
 
@@ -40,10 +40,10 @@ public class Tei2Naf implements NafCreator {
         NafHeader nafHeader = new NafHeader();
         FileDesc fileDesc = new FileDesc();
         fileDesc.setTitle(doc.getMetadata().getDocumentTitle());
-        fileDesc.setFilename(doc.getMetadata().getDocumentId());
+        fileDesc.setFilename(doc.getMetadata().getDocumentId() + ".naf");
         nafHeader.setFileDesc(fileDesc);
         Public pub = new Public();
-        pub.setPublicId(doc.getMetadata().getDocumentId() + ".naf");
+        pub.setPublicId(doc.getMetadata().getDocumentId());
         nafHeader.setPublic(pub);
 
         String rawText = doc.getRawText();
@@ -65,7 +65,7 @@ public class Tei2Naf implements NafCreator {
     public void process(String teiFile, String outdir) throws AbnormalProcessException {
         read(teiFile);
         NafDoc naf = convertBaseDocToNafRepresentation();
-        naf.write(outdir + naf.getId() + OUT);
+        naf.write(Paths.get(outdir, naf.getFileName()).toString());
     }
 
     private void read(String teiFile) throws AbnormalProcessException {
@@ -158,7 +158,7 @@ public class Tei2Naf implements NafCreator {
 
     public static void convertFile(Path file, String outdir) throws AbnormalProcessException {
         Tei2Naf converter = new Tei2Naf();
-        converter.process(file.toString(), outdir + "/");
+        converter.process(file.toString(), outdir);
     }
 
     public static void main(String[] args) {
@@ -168,11 +168,7 @@ public class Tei2Naf implements NafCreator {
 
     @Override
     public String getName() {
-        return NAME;
+        return Handler.NAME + "-" + NAME;
     }
 
-    @Override
-    public String getVersion() {
-        return VERSION;
-    }
 }

@@ -2,6 +2,7 @@ package nafSelector;
 
 import eus.ixa.ixa.pipe.ml.tok.Token;
 import javafx.util.Pair;
+import missives.Handler;
 import utils.common.AbnormalProcessException;
 import utils.naf.NafUnits;
 import utils.naf.NafCreator;
@@ -9,6 +10,7 @@ import utils.naf.NafDoc;
 import xjc.naf.*;
 
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.function.Predicate;
@@ -20,9 +22,7 @@ import java.util.stream.Collectors;
 public class NafUnitSelector implements NafCreator {
     String type;
     boolean tokenize;
-    private final static String NAME = "naf-selector";
-    private final static String VERSION = "0.1.2";
-
+    private final static String NAME = "selector";
 
     public NafUnitSelector(String type, boolean tokenize) {
         this.type = checkType(type);
@@ -53,7 +53,7 @@ public class NafUnitSelector implements NafCreator {
         tunitLayer.getTunits().addAll(tunits);
         derived.getLayers().add(tunitLayer);
 
-        if (tokenize)
+        if (tokenize && ! tunits.isEmpty())
             createTextLayer(derived, rawText, tunits);
 
         return derived;
@@ -108,7 +108,7 @@ public class NafUnitSelector implements NafCreator {
     }
 
     private static Pair<Integer, String> getUnitOffsetAndText(String rawText, Tunit previous) {
-        return new Pair<Integer,String>(Integer.parseInt(previous.getOffset()), coveredText(previous, rawText));
+        return new Pair<>(Integer.parseInt(previous.getOffset()), coveredText(previous, rawText));
     }
 
     private static String coveredText(Tunit previous, String rawText) {
@@ -124,7 +124,7 @@ public class NafUnitSelector implements NafCreator {
             wf.setPara(unitCounter + "");
             wf.setOffset(tunitOffset + t.startOffset() + "");
             wf.setLength(t.tokenLength() + "");
-            wf.setContent(t.getTokenValue());
+            wf.getContent().add(t.getTokenValue());
             wfs.add(wf);
         }
     }
@@ -201,13 +201,12 @@ public class NafUnitSelector implements NafCreator {
 
     protected NafDoc transferHeader(NafDoc inputNaf) {
         NafHeader header = new NafHeader();
-        String derivedFileName = inputNaf.getNafHeader().getFileDesc().getFilename() + "_" + type;
-        String publicID = derivedFileName + ".naf";
+        String derivedId = inputNaf.getNafHeader().getPublic().getPublicId() + "_" + type;
         FileDesc fd = new FileDesc();
-        fd.setFilename(derivedFileName);
+        fd.setFilename(derivedId + ".naf");
         header.setFileDesc(fd);
         Public pub = new Public();
-        pub.setPublicId(publicID);
+        pub.setPublicId(derivedId);
         header.setPublic(pub);
         List<LinguisticProcessors> lps = new LinkedList<>();
         for (LinguisticProcessors inputLPs: inputNaf.getLinguisticProcessorsList()) {
@@ -225,17 +224,12 @@ public class NafUnitSelector implements NafCreator {
     public static void run(Path file, String outdir, boolean tokenize, String documentType) throws AbnormalProcessException {
         NafUnitSelector converter = new NafUnitSelector(documentType, tokenize);
         NafDoc outNAF = converter.getDerivedNaf(NafDoc.create(file.toString()));
-        String outfile = outdir + "/" + outNAF.getNafHeader().getPublic().getPublicId();
-        outNAF.write(outfile);
+        outNAF.write(Paths.get(outdir, outNAF.getFileName()).toString());
     }
 
     @Override
     public String getName() {
-        return NAME + "-" + type;
+        return Handler.NAME + "-" + type + "-" + NAME;
     }
 
-    @Override
-    public String getVersion() {
-        return VERSION;
-    }
 }

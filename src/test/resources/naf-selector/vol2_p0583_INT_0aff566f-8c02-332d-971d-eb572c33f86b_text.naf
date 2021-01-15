@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NAF version="v3.2" xml:lang="nl">
+    <nafHeader>
+        <fileDesc filename="vol2_p0583_INT_0aff566f-8c02-332d-971d-eb572c33f86b_text.naf"/>
+        <public publicId="vol2_p0583_INT_0aff566f-8c02-332d-971d-eb572c33f86b_text"/>
+        <linguisticProcessors layer="raw">
+            <lp name="gm-processor-tei2naf" version="1.0" timestamp="2021-01-15T16:04:35+0100"/>
+            <lp name="gm-processor-text-selector" version="1.0" timestamp="2021-01-15T16:04:48+0100"/>
+        </linguisticProcessors>
+        <linguisticProcessors layer="tunits">
+            <lp name="gm-processor-tei2naf" version="1.0" timestamp="2021-01-15T16:04:35+0100"/>
+            <lp name="gm-processor-text-selector" version="1.0" timestamp="2021-01-15T16:04:48+0100"/>
+        </linguisticProcessors>
+        <linguisticProcessors layer="text">
+            <lp name="gm-processor-text-selector" version="1.0" timestamp="2021-01-15T16:04:48+0100"/>
+        </linguisticProcessors>
+    </nafHeader>
+    <raw><![CDATA[VI. CAREL RENIERS, JOAN MAETSUYKER, GERARD DEMMER, CAREL HARTZINCK, AERNOUT DE VLAMING VAN OUDTSHOORN, CORNELIS CAESAR EN WILLEM VERSTEGHEN, BATAVIA 5 febr. 1652.1079, fol. 167-172. Daer wort gepresumeert ende heeft groote waerschijnelijcheyt, dat den Coningh voorgehat heeft het jacht1) af te loopen ende het volck doot te slaen, deselve priserende 2) ende betalende na sijn welgevallen, daer sij apparent noch1) Geheten Jacob Discordt.]]></raw>
+    <tunits>
+        <tunit
+            id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.head.1.co84-162"
+            type="head" xpath="/TEI/text[1]/body[1]/div[1]/head[1]"
+            offset="0" length="162"/>
+        <tunit
+            id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.p.1.co246-19"
+            type="p" xpath="/TEI/text[1]/body[1]/div[1]/p[1]"
+            offset="162" length="19"/>
+        <tunit
+            id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.p.2.co419-230"
+            type="p" xpath="/TEI/text[1]/body[1]/div[1]/p[2]"
+            offset="181" length="230"/>
+        <tunit
+            id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.p.2.co1233-26"
+            type="p" xpath="/TEI/text[1]/body[1]/div[1]/p[2]"
+            offset="411" length="26"/>
+    </tunits>
+    <text>
+        <wf id="w0" sent="0" para="0" offset="0" length="2">VI</wf>
+        <wf id="w1" sent="0" para="0" offset="2" length="1">.</wf>
+        <wf id="w2" sent="1" para="0" offset="4" length="5">CAREL</wf>
+        <wf id="w3" sent="1" para="0" offset="10" length="7">RENIERS</wf>
+        <wf id="w4" sent="1" para="0" offset="17" length="1">,</wf>
+        <wf id="w5" sent="1" para="0" offset="19" length="4">JOAN</wf>
+        <wf id="w6" sent="1" para="0" offset="24" length="10">MAETSUYKER</wf>
+        <wf id="w7" sent="1" para="0" offset="34" length="1">,</wf>
+        <wf id="w8" sent="1" para="0" offset="36" length="6">GERARD</wf>
+        <wf id="w9" sent="1" para="0" offset="43" length="6">DEMMER</wf>
+        <wf id="w10" sent="1" para="0" offset="49" length="1">,</wf>
+        <wf id="w11" sent="1" para="0" offset="51" length="5">CAREL</wf>
+        <wf id="w12" sent="1" para="0" offset="57" length="9">HARTZINCK</wf>
+        <wf id="w13" sent="1" para="0" offset="66" length="1">,</wf>
+        <wf id="w14" sent="1" para="0" offset="68" length="7">AERNOUT</wf>
+        <wf id="w15" sent="1" para="0" offset="76" length="2">DE</wf>
+        <wf id="w16" sent="1" para="0" offset="79" length="7">VLAMING</wf>
+        <wf id="w17" sent="1" para="0" offset="87" length="3">VAN</wf>
+        <wf id="w18" sent="1" para="0" offset="91" length="10">OUDTSHOORN</wf>
+        <wf id="w19" sent="1" para="0" offset="101" length="1">,</wf>
+        <wf id="w20" sent="1" para="0" offset="103" length="8">CORNELIS</wf>
+        <wf id="w21" sent="1" para="0" offset="112" length="6">CAESAR</wf>
+        <wf id="w22" sent="1" para="0" offset="119" length="2">EN</wf>
+        <wf id="w23" sent="1" para="0" offset="122" length="6">WILLEM</wf>
+        <wf id="w24" sent="1" para="0" offset="129" length="10">VERSTEGHEN</wf>
+        <wf id="w25" sent="1" para="0" offset="139" length="1">,</wf>
+        <wf id="w26" sent="1" para="0" offset="141" length="7">BATAVIA</wf>
+        <wf id="w27" sent="1" para="0" offset="149" length="1">5</wf>
+        <wf id="w28" sent="1" para="0" offset="151" length="4">febr</wf>
+        <wf id="w29" sent="1" para="0" offset="155" length="1">.</wf>
+        <wf id="w30" sent="2" para="0" offset="157" length="4">1652</wf>
+        <wf id="w31" sent="2" para="0" offset="161" length="1">.</wf>
+        <wf id="w32" sent="3" para="1" offset="162" length="4">1079</wf>
+        <wf id="w33" sent="3" para="1" offset="166" length="1">,</wf>
+        <wf id="w34" sent="3" para="1" offset="168" length="3">fol</wf>
+        <wf id="w35" sent="3" para="1" offset="171" length="1">.</wf>
+        <wf id="w36" sent="4" para="1" offset="173" length="7">167-172</wf>
+        <wf id="w37" sent="4" para="1" offset="180" length="1">.</wf>
+        <wf id="w38" sent="5" para="2" offset="182" length="4">Daer</wf>
+        <wf id="w39" sent="5" para="2" offset="187" length="4">wort</wf>
+        <wf id="w40" sent="5" para="2" offset="192" length="12">gepresumeert</wf>
+        <wf id="w41" sent="5" para="2" offset="205" length="4">ende</wf>
+        <wf id="w42" sent="5" para="2" offset="210" length="5">heeft</wf>
+        <wf id="w43" sent="5" para="2" offset="216" length="6">groote</wf>
+        <wf id="w44" sent="5" para="2" offset="223" length="19">waerschijnelijcheyt</wf>
+        <wf id="w45" sent="5" para="2" offset="242" length="1">,</wf>
+        <wf id="w46" sent="5" para="2" offset="244" length="3">dat</wf>
+        <wf id="w47" sent="5" para="2" offset="248" length="3">den</wf>
+        <wf id="w48" sent="5" para="2" offset="252" length="7">Coningh</wf>
+        <wf id="w49" sent="5" para="2" offset="260" length="9">voorgehat</wf>
+        <wf id="w50" sent="5" para="2" offset="270" length="5">heeft</wf>
+        <wf id="w51" sent="5" para="2" offset="276" length="3">het</wf>
+        <wf id="w52" sent="5" para="2" offset="280" length="6">jacht1</wf>
+        <wf id="w53" sent="5" para="2" offset="286" length="1">)</wf>
+        <wf id="w54" sent="5" para="2" offset="288" length="2">af</wf>
+        <wf id="w55" sent="5" para="2" offset="291" length="2">te</wf>
+        <wf id="w56" sent="5" para="2" offset="294" length="6">loopen</wf>
+        <wf id="w57" sent="5" para="2" offset="301" length="4">ende</wf>
+        <wf id="w58" sent="5" para="2" offset="306" length="3">het</wf>
+        <wf id="w59" sent="5" para="2" offset="310" length="5">volck</wf>
+        <wf id="w60" sent="5" para="2" offset="316" length="4">doot</wf>
+        <wf id="w61" sent="5" para="2" offset="321" length="2">te</wf>
+        <wf id="w62" sent="5" para="2" offset="324" length="5">slaen</wf>
+        <wf id="w63" sent="5" para="2" offset="329" length="1">,</wf>
+        <wf id="w64" sent="5" para="2" offset="331" length="7">deselve</wf>
+        <wf id="w65" sent="5" para="2" offset="339" length="10">priserende</wf>
+        <wf id="w66" sent="5" para="2" offset="350" length="1">2</wf>
+        <wf id="w67" sent="5" para="2" offset="351" length="1">)</wf>
+        <wf id="w68" sent="5" para="2" offset="353" length="4">ende</wf>
+        <wf id="w69" sent="5" para="2" offset="358" length="9">betalende</wf>
+        <wf id="w70" sent="5" para="2" offset="368" length="2">na</wf>
+        <wf id="w71" sent="5" para="2" offset="371" length="4">sijn</wf>
+        <wf id="w72" sent="5" para="2" offset="376" length="11">welgevallen</wf>
+        <wf id="w73" sent="5" para="2" offset="387" length="1">,</wf>
+        <wf id="w74" sent="5" para="2" offset="389" length="4">daer</wf>
+        <wf id="w75" sent="5" para="2" offset="394" length="3">sij</wf>
+        <wf id="w76" sent="5" para="2" offset="398" length="8">apparent</wf>
+        <wf id="w77" sent="5" para="2" offset="407" length="5">noch1</wf>
+        <wf id="w78" sent="5" para="2" offset="412" length="1">)</wf>
+        <wf id="w79" sent="5" para="2" offset="414" length="7">Geheten</wf>
+        <wf id="w80" sent="5" para="2" offset="422" length="5">Jacob</wf>
+        <wf id="w81" sent="5" para="2" offset="428" length="8">Discordt</wf>
+        <wf id="w82" sent="5" para="2" offset="436" length="1">.</wf>
+    </text>
+</NAF>

@@ -19,8 +19,8 @@ import java.util.stream.Collectors;
 
 /**
  * Converts NAF files to Conll
- *  - every token set to O or read from entities if present
- *  - conll separator
+ *  - BIO scheme
+ *  - conll separator is a single space by default
  */
 public class Naf2Conll {
     private static final String IN = "." + IO.NAF_SFX;
@@ -68,7 +68,7 @@ public class Naf2Conll {
             if (wf2entity.isEmpty()) {
                 for (Wf wf: wfs) {
                     sentence = update(sentence, wf, bw);
-                    bw.write(line(wf.getContent()));
+                    bw.write(line(NafUnits.getContent(wf)));
                 }
             } else {
                 int i = 0;
@@ -77,11 +77,11 @@ public class Naf2Conll {
                     sentence = update(sentence, wfs.get(i), bw);
                     if (wf2entity.containsKey(wfs.get(i))) {
                         Entity e = wf2entity.get(wfs.get(i));
-                        List<String> span = NafUnits.wfSpan(e).stream().map(Wf::getContent).collect(Collectors.toList());
+                        List<String> span = NafUnits.wfSpan(e).stream().map(wf -> NafUnits.getContent(wf)).collect(Collectors.toList());
                         bw.write(lines(span, e.getType()));
                         i += span.size();
                     } else {
-                        bw.write(line(wfs.get(i).getContent()));
+                        bw.write(line(NafUnits.getContent(wfs.get(i))));
                         i++;
                     }
                 }
