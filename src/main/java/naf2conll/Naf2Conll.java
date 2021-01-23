@@ -4,10 +4,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utils.common.IO;
 import utils.common.AbnormalProcessException;
-import utils.naf.NafDoc;
+import utils.naf.NafHandler;
 import utils.naf.NafUnits;
 import xjc.naf.Entity;
-import xjc.naf.Wf;
+import utils.naf.Wf;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -18,7 +18,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * Converts NAF files to Conll
+ * Converts NAF files to Conll. Entities in the NAF are assumed to come from
+ * manual annotations and may overlap.
  *  - BIO scheme
  *  - conll separator is a single space by default
  */
@@ -28,7 +29,7 @@ public class Naf2Conll {
 
     String conllSeparator;
     HashMap<Wf,Entity> wf2entity;
-    NafDoc naf;
+    NafHandler naf;
     int gpeCount;
     int embeddedEntityCount;
     public static final Logger logger = LogManager.getLogger(Naf2Conll.class);
@@ -36,7 +37,7 @@ public class Naf2Conll {
     public Naf2Conll(String conllSeparator, String nafFile) throws AbnormalProcessException {
         this.conllSeparator = conllSeparator;
         this.wf2entity = new HashMap<>();
-        this.naf = NafDoc.create(nafFile);
+        this.naf = NafHandler.create(nafFile);
         this.gpeCount = 0;
         this.embeddedEntityCount = 0;
     }
@@ -53,6 +54,14 @@ public class Naf2Conll {
         return str.toString();
     }
 
+    /**
+     * adds new line and returns the new sentence index
+     * @param sentence
+     * @param wf
+     * @param bw
+     * @return
+     * @throws IOException
+     */
     private String update(String sentence, Wf wf, BufferedWriter bw) throws IOException {
         if (! wf.getSent().equals(sentence)) {
             bw.write("\n");
@@ -61,6 +70,11 @@ public class Naf2Conll {
         return sentence;
     }
 
+    /**
+     * writes tokens and their labels out to Conll
+     * @param outfile
+     * @throws AbnormalProcessException
+     */
     protected void write(String outfile) throws AbnormalProcessException {
         List<Wf> wfs = naf.getWfs();
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(outfile))) {

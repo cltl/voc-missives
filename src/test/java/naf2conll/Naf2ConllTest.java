@@ -4,7 +4,7 @@ import manIn2naf.NafXmiReader;
 import utils.common.AbnormalProcessException;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import utils.naf.NafDoc;
+import utils.naf.NafHandler;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -25,7 +25,7 @@ class Naf2ConllTest {
         if (! Files.exists(Paths.get(entitiesNaf))) {
             String xmiFile = "src/test/resources/entity-integration/in.xmi";
             NafXmiReader nafXmiReader = new NafXmiReader(refNaf, xmiFile);
-            nafXmiReader.transferEntitiesToNaf();
+            nafXmiReader.transferEntities();
             nafXmiReader.write(entitiesNaf);
         }
     }
@@ -49,7 +49,7 @@ class Naf2ConllTest {
 
         converter.filterEntities();
         assertFalse(converter.getEntities().isEmpty());
-        int nafEntities = NafDoc.create(entitiesNaf).getEntities().size();
+        int nafEntities = NafHandler.create(entitiesNaf).getEntities().size();
         assertEquals(nafEntities, converter.getGpeCount() + converter.getEmbeddedEntityCount() + converter.getEntityCount());
 
         converter.write(trainConll);

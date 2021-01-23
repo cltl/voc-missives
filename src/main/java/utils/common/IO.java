@@ -25,6 +25,7 @@ public class IO {
     public static final String TEI_SFX = "tei";
     public static final String XMI_SFX = "xmi";
     public static final String CONLL_SFX = "conll";
+    public static final String TSV_SFX = "tsv";
     private static final Pattern INT_ID = Pattern.compile("INT_[a-z0-9-]+");
     private static final Logger logger = LogManager.getLogger(IO.class);
     /**
@@ -108,26 +109,34 @@ public class IO {
         return Paths.get(targetDir, file.getFileName().toString().replaceAll(oldExtension, newExtension)).toString();
     }
 
-    public static String inferType(String indir) {
+    public static String inferType(String indir) throws AbnormalProcessException {
+        if (! Files.exists(Paths.get(indir)))
+            throw new AbnormalProcessException("Directory " + indir + " does not exist.");
         try (Stream<Path> paths = Files.walk(Paths.get(indir))) {
             Path file = paths.filter(Files::isRegularFile).findAny().orElse(null);
             return extension(file.getFileName().toString());
         } catch (IOException e) {
             e.printStackTrace();
         }
-        throw new IllegalArgumentException("Cannot infer type from files in " + indir);
+        throw new AbnormalProcessException("Cannot infer type from files in " + indir);
     }
 
     public static String extension(String fileName) {
         return fileName.substring(fileName.lastIndexOf(".") + 1);
     }
 
+    /**
+     * extracts INT id from file name or return file name without extension
+     * @param fileName
+     * @return
+     * @throws AbnormalProcessException
+     */
     private static String getId(String fileName) throws AbnormalProcessException {
         Matcher matcher = INT_ID.matcher(fileName);
         if (matcher.find())
             return matcher.group();
         else
-            throw new AbnormalProcessException("File name does not match INT id pattern.");
+            return fileName.substring(0, fileName.indexOf('.'));
     }
 
     /**

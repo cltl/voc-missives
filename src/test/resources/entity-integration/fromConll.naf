@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<NAF version="v3.1.b" xml:lang="nl">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<NAF version="3.2" xml:lang="nl">
     <nafHeader>
         <fileDesc filename="vol1_p0106_INT_08c82040-752f-3fc2-ad50-0d3e7b37a945_notes"/>
         <public publicId="vol1_p0106_INT_08c82040-752f-3fc2-ad50-0d3e7b37a945_notes.naf"/>
@@ -15,200 +15,54 @@
             <lp name="naf-selector-notes" version="0.1.2" timestamp="2020-09-22T12:07:50+0200"/>
         </linguisticProcessors>
         <linguisticProcessors layer="entities">
-            <lp name="gm-processor-sys-in2naf" version="1.0" timestamp="2021-01-15T16:05:13+0100"/>
+            <lp name="gm-processor-sys-in2naf" version="1.0" timestamp="2021-01-23T16:16:38+0100"/>
         </linguisticProcessors>
     </nafHeader>
     <raw><![CDATA[(Aankomst en vertrek van schepen).1) Tsiap, Maleis tjap, merk, handelsvergunning. Bedoeld is die van den vorst van Atjeh.2) Onjuist bericht. Hij stierf eerst 27 dec. 1636.3) De Montmorency kwam onder de Beaulieu (vgl. p. 99 noot 7) in januari 1621 voor Atjeh, vanwaar hij, omdat hij geen peper kon verkrijgen, doorvoer naar het Maleise schiereiland. Toen ook daar geen peper verhandeld werd, ging hij 12 augustus terug naar Atjeh, waar hij nu vergunning kreeg voor peperopkoop ter Westkust van Sumatra. Van Tiku repatrieerde hij 1 jan. 1622.4) Zittingen van deze gemeenschappelijke Raad van Nederlanders en Engelsen werden sinds 21 april 1620 gehouden. Vgl. voor de hier bedoelde Resolutie van 24 juni 1621, Coen IV, p. 46.(Meded. omtrent Perzië uit Engelse bron , niets nieuws bevattende).1) Adriaen Willemsz. Goeree, opperkoopman, die van zijn aankomst te Bantam, 14 november 1616, tot zijn dood te Masulipatam, 30 mei 1625, grotendeels in India diende, eerst te Suratte, vanwaar hij landreizen naar Agra maakte, later ter Kust van Coromandel.2) Mandu(garh), vroeger hoofdstad van de Moslimse staat Malwa, was reeds achteruitgaande; de merkwaardige ruines, in de latere Mahrattenstaat Dhar liggen nabij de Narmada op 76° O.L.3) Kafilah, Arabisch: karavaan.4) Wouter Heuten, in 1616 als onderkoopman uitgekomen en o.a. te Sjihir werkzaam, was als opperkoopman (rang 17 dec. 1618 verworven) sinds dec. 1620 secunde te Suratte. Hij vertoefde als zodanig veelal te Agra, waar hij 1623 stierf.5) Giroffelnagelen = kruidnagelen.6) Vgl. zijn brief van 2 april 1621, afgedrukt in W esterkwartieren als bijlage XI.7) Sjah Abbas de Grote van Perzië, 1587-1629.8) Cambay, stad, geheel achter aan de gelijknamige golf gelegen, hoofdstad van de gelijknamige staat, was destijds nog zeer bloeiend, hoewel door de opkomst van Suratte reeds achteruitgaande, 72° O.L., 22° N.B.(Aangekomen schepen , berichten uit de W ester kwartier en, reeds bekend uitWesterkwartieren en Coen ) .1) Benjuin en gommelacco = benzoë en schellak.2) Sultan Chron. De latere Grootmogol Sjah Jahan (1627-1658) heette als prins sultan Khurram, onder welke naam hij in de Compagniesstukken ook na 1627 nog wel voorkomt. Hij bestuurde als onderkoning in 1621 o.a. Guzeratte met inbegrip van Suratte.3) Adriaen Jacobsz. van der Dussen, die de Compagnie tussen 1607 en 1624 diende op( A anlcomst van het schip Gallosse uit Cambodja ) .(Over de met de Engelsen weer naar Oost- Azië te zenden vloot van defensie, vgl. Coen o.a. V, p. 606 vlg., p. 693).(Voornemen van Coen forten in de Molukken te doen raseren. Vgl. Coen, o.a. III, 128 , 777 en VII , 806 vlg.).verschillende plaatsen, was van juli 1619 tot eind 1623 opperkoopman te Djambi. Vgl. Buysero,p. 192 vlg. en Woordenboek II, p. 415.1) Augustus Spalding was in dienst der Engelse O.I.C. van 1607 tot 1613 te Bantam werkzaam, sinds april 1620 weer in West-Java. Herhaaldelijk verdacht van particuliere handel en daarover 1623 met £ 1000, — beboet, repatrieerde hij in 1624.2) Coen.3) Frederik de Houtman, die reeds in 1596 voor de eerste maal in de Indische Archipel kwam, thans eerste raad van Indië, was juist benoemd tot gouverneur van de Molukken (30 juni 1621-25 maart 1623).Willem van Antzen, raad van Indië, was 10 april 1621 afgetreden als gouverneur van Banda. Zie verder voor hem Coen VII, p. 885 en 895.( Gebrekkige medewerking der Engelsen bij de vloot van defensie ) .1) D. i. Kimelaha Daja, vgl. p. 87 noot 2. Vgl. voor deze landdag Coen I, p. 634 en 646 vlg.2) Versta: voor Nederland geschikte waren.1 ) D.i. loge.(Ondernemingen van vrijburgers tegen vaartuigen van Malakka , klachten over de Eng eisen, 'poging te doen tot de verwerving van de handel op China).1) Sangora, Ligor en Bordelong liggen aan de oostkust van het Maleise schiereiland, noordelijk van Patani en staan onder Siam. Weldra, 4 aug. 1621, werd besloten tot opheffing dezer kantoren. Vgl. Bezuinigingsmaatregelen.2) Zie brief XI p. 99-101, waar evenwel niets blijkt over een geschil met de Fransen over de peperprijs. Vgl. Coen IV, p. 38-48. Men zie voor de afloop van deze aangelegenheidBeschrijvinge I, II, p. 612—615.1) Zie hiervoor Goen I, Register i.v. St. Michel. De aanhouding van dit schip werd in Europa met een zeer hoge vordering van Franse zijde tegen de Compagnie beantwoord. Vgl.Beschrijvinge I, II, p. 608 vlg.2) De Custe is hier en elders de Kust van Coromandel.3) De Tji Angké, rivier, die westelijk van Batavia in de gelijknamige baai uitmondt.1) Adriaen Adriaensz. Verhee werd sept. 1621 als opperkoopman op de Noord-Holland onder Dedel met de vloot van defensie naar de westkust van Indië gezonden.2) Antony Caen had in het oosten van november 1614 tot december 1643 en van oktober 1645 tot zijn dood op 11 augustus 1648 (te Batavia) een zeer bewogen loopbaan, waarin hij het tot raad van Indië en superintendent van Amboina en de Molukken bracht. Zie voor die loopbaan register sub voce Caen.3) Deze André Jocet de Limoney kocht voor de Compagnie van St. Malo te Bantam peper op óf reeds vóór zijn landgenoten uit Dieppe kwamen óf hij kwam met hen mee.4) Richard Fursland kwam eind dec. 1617 als koopman in dienst van de Engelse Compagnie uit, werd febr. 1619 hoofd van het kantoor in Atjeh en in juli 1620 president van dat te Batavia, waar hij vóór 16 okt. 1623 stierf.5) Thomas Brockedon kwam in 1611 als koopman in dienst van de Engelse Compagnie uit, in 1619 voor de tweede maal, sinds mei 1620 lid, sinds okt. 1623 president van de factorij te Batavia, waar hij dec. 1623 stierf.(Diverse goederen en personen naar pair ia gezonden. Aangekomen schepen).1) Gravé bereikte met deze bark Atjeh, maar vond de Beaulieu daar niet meer, een Engels schip bracht hem weer naar Batavia, vanwaar hij repatrieerde. Vgl. Europeer s IX, 3e hoofdstuk.]]></raw>
     <tunits>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.note.1.co193-34"
-            type="note" xpath="/TEI/text[1]/body[1]/div[1]/note[1]"
-            offset="0" length="34"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.3.note.1.co2873-87"
-            type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[3]/note[1]"
-            offset="34" length="87"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.3.note.2.co2960-50"
-            type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[3]/note[2]"
-            offset="121" length="50"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.3.note.3.co3010-370"
-            type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[3]/note[3]"
-            offset="171" length="370"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.3.note.4.co3380-182"
-            type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[3]/note[4]"
-            offset="541" length="182"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.note.2.co4012-67"
-            type="note" xpath="/TEI/text[1]/body[1]/div[1]/note[2]"
-            offset="723" length="67"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.5.note.1.co6106-255"
-            type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[5]/note[1]"
-            offset="790" length="255"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.5.note.2.co6361-182"
-            type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[5]/note[2]"
-            offset="1045" length="182"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.5.note.3.co6543-31"
-            type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[5]/note[3]"
-            offset="1227" length="31"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.5.note.4.co6574-232"
-            type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[5]/note[4]"
-            offset="1258" length="232"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.5.note.5.co6806-34"
-            type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[5]/note[5]"
-            offset="1490" length="34"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.5.note.6.co6840-83"
-            type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[5]/note[6]"
-            offset="1524" length="83"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.5.note.7.co6923-45"
-            type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[5]/note[7]"
-            offset="1607" length="45"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.5.note.8.co6968-210"
-            type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[5]/note[8]"
-            offset="1652" length="210"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.note.3.co8533-104"
-            type="note" xpath="/TEI/text[1]/body[1]/div[1]/note[3]"
-            offset="1862" length="104"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.7.note.1.co10371-46"
-            type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[7]/note[1]"
-            offset="1966" length="46"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.7.note.2.co10417-247"
-            type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[7]/note[2]"
-            offset="2012" length="247"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.7.note.3.co10664-82"
-            type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[7]/note[3]"
-            offset="2259" length="82"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.note.4.co11605-52"
-            type="note" xpath="/TEI/text[1]/body[1]/div[1]/note[4]"
-            offset="2341" length="52"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.note.5.co12184-115"
-            type="note" xpath="/TEI/text[1]/body[1]/div[1]/note[5]"
-            offset="2393" length="115"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.note.6.co12876-109"
-            type="note" xpath="/TEI/text[1]/body[1]/div[1]/note[6]"
-            offset="2508" length="109"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.10.note.1.co13146-131"
-            type="note"
-            xpath="/TEI/text[1]/body[1]/div[1]/p[10]/note[1]"
-            offset="2617" length="131"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.10.note.2.co13277-239"
-            type="note"
-            xpath="/TEI/text[1]/body[1]/div[1]/p[10]/note[2]"
-            offset="2748" length="239"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.10.note.3.co13516-8"
-            type="note"
-            xpath="/TEI/text[1]/body[1]/div[1]/p[10]/note[3]"
-            offset="2987" length="8"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.10.note.4.co13524-199"
-            type="note"
-            xpath="/TEI/text[1]/body[1]/div[1]/p[10]/note[4]"
-            offset="2995" length="199"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.10.note.5.co13723-134"
-            type="note"
-            xpath="/TEI/text[1]/body[1]/div[1]/p[10]/note[5]"
-            offset="3194" length="134"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.note.7.co16279-67"
-            type="note" xpath="/TEI/text[1]/body[1]/div[1]/note[7]"
-            offset="3328" length="67"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.13.note.1.co17284-92"
-            type="note"
-            xpath="/TEI/text[1]/body[1]/div[1]/p[13]/note[1]"
-            offset="3395" length="92"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.13.note.2.co17376-42"
-            type="note"
-            xpath="/TEI/text[1]/body[1]/div[1]/p[13]/note[2]"
-            offset="3487" length="42"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.note.8.co20780-14"
-            type="note" xpath="/TEI/text[1]/body[1]/div[1]/note[8]"
-            offset="3529" length="14"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.note.9.co21831-148"
-            type="note" xpath="/TEI/text[1]/body[1]/div[1]/note[9]"
-            offset="3543" length="148"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.25.note.1.co23799-221"
-            type="note"
-            xpath="/TEI/text[1]/body[1]/div[1]/p[25]/note[1]"
-            offset="3691" length="221"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.25.note.2.co24020-207"
-            type="note"
-            xpath="/TEI/text[1]/body[1]/div[1]/p[25]/note[2]"
-            offset="3912" length="207"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.36.note.1.co31197-205"
-            type="note"
-            xpath="/TEI/text[1]/body[1]/div[1]/p[36]/note[1]"
-            offset="4119" length="205"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.36.note.2.co31402-53"
-            type="note"
-            xpath="/TEI/text[1]/body[1]/div[1]/p[36]/note[2]"
-            offset="4324" length="53"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.36.note.3.co31455-84"
-            type="note"
-            xpath="/TEI/text[1]/body[1]/div[1]/p[36]/note[3]"
-            offset="4377" length="84"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.43.note.1.co38084-156"
-            type="note"
-            xpath="/TEI/text[1]/body[1]/div[1]/p[43]/note[1]"
-            offset="4461" length="156"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.43.note.2.co38240-295"
-            type="note"
-            xpath="/TEI/text[1]/body[1]/div[1]/p[43]/note[2]"
-            offset="4617" length="295"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.43.note.3.co38535-160"
-            type="note"
-            xpath="/TEI/text[1]/body[1]/div[1]/p[43]/note[3]"
-            offset="4912" length="160"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.43.note.4.co38695-219"
-            type="note"
-            xpath="/TEI/text[1]/body[1]/div[1]/p[43]/note[4]"
-            offset="5072" length="219"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.43.note.5.co38914-214"
-            type="note"
-            xpath="/TEI/text[1]/body[1]/div[1]/p[43]/note[5]"
-            offset="5291" length="214"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.note.10.co39943-73"
-            type="note" xpath="/TEI/text[1]/body[1]/div[1]/note[10]"
-            offset="5505" length="73"/>
-        <tunit
-            id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.note.11.co40016-183"
-            type="note" xpath="/TEI/text[1]/body[1]/div[1]/note[11]"
-            offset="5578" length="183"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.note.1.co193-34" type="note" xpath="/TEI/text[1]/body[1]/div[1]/note[1]" offset="0" length="34"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.3.note.1.co2873-87" type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[3]/note[1]" offset="34" length="87"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.3.note.2.co2960-50" type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[3]/note[2]" offset="121" length="50"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.3.note.3.co3010-370" type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[3]/note[3]" offset="171" length="370"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.3.note.4.co3380-182" type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[3]/note[4]" offset="541" length="182"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.note.2.co4012-67" type="note" xpath="/TEI/text[1]/body[1]/div[1]/note[2]" offset="723" length="67"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.5.note.1.co6106-255" type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[5]/note[1]" offset="790" length="255"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.5.note.2.co6361-182" type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[5]/note[2]" offset="1045" length="182"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.5.note.3.co6543-31" type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[5]/note[3]" offset="1227" length="31"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.5.note.4.co6574-232" type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[5]/note[4]" offset="1258" length="232"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.5.note.5.co6806-34" type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[5]/note[5]" offset="1490" length="34"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.5.note.6.co6840-83" type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[5]/note[6]" offset="1524" length="83"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.5.note.7.co6923-45" type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[5]/note[7]" offset="1607" length="45"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.5.note.8.co6968-210" type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[5]/note[8]" offset="1652" length="210"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.note.3.co8533-104" type="note" xpath="/TEI/text[1]/body[1]/div[1]/note[3]" offset="1862" length="104"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.7.note.1.co10371-46" type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[7]/note[1]" offset="1966" length="46"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.7.note.2.co10417-247" type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[7]/note[2]" offset="2012" length="247"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.7.note.3.co10664-82" type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[7]/note[3]" offset="2259" length="82"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.note.4.co11605-52" type="note" xpath="/TEI/text[1]/body[1]/div[1]/note[4]" offset="2341" length="52"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.note.5.co12184-115" type="note" xpath="/TEI/text[1]/body[1]/div[1]/note[5]" offset="2393" length="115"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.note.6.co12876-109" type="note" xpath="/TEI/text[1]/body[1]/div[1]/note[6]" offset="2508" length="109"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.10.note.1.co13146-131" type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[10]/note[1]" offset="2617" length="131"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.10.note.2.co13277-239" type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[10]/note[2]" offset="2748" length="239"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.10.note.3.co13516-8" type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[10]/note[3]" offset="2987" length="8"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.10.note.4.co13524-199" type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[10]/note[4]" offset="2995" length="199"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.10.note.5.co13723-134" type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[10]/note[5]" offset="3194" length="134"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.note.7.co16279-67" type="note" xpath="/TEI/text[1]/body[1]/div[1]/note[7]" offset="3328" length="67"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.13.note.1.co17284-92" type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[13]/note[1]" offset="3395" length="92"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.13.note.2.co17376-42" type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[13]/note[2]" offset="3487" length="42"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.note.8.co20780-14" type="note" xpath="/TEI/text[1]/body[1]/div[1]/note[8]" offset="3529" length="14"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.note.9.co21831-148" type="note" xpath="/TEI/text[1]/body[1]/div[1]/note[9]" offset="3543" length="148"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.25.note.1.co23799-221" type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[25]/note[1]" offset="3691" length="221"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.25.note.2.co24020-207" type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[25]/note[2]" offset="3912" length="207"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.36.note.1.co31197-205" type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[36]/note[1]" offset="4119" length="205"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.36.note.2.co31402-53" type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[36]/note[2]" offset="4324" length="53"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.36.note.3.co31455-84" type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[36]/note[3]" offset="4377" length="84"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.43.note.1.co38084-156" type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[43]/note[1]" offset="4461" length="156"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.43.note.2.co38240-295" type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[43]/note[2]" offset="4617" length="295"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.43.note.3.co38535-160" type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[43]/note[3]" offset="4912" length="160"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.43.note.4.co38695-219" type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[43]/note[4]" offset="5072" length="219"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.p.43.note.5.co38914-214" type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[43]/note[5]" offset="5291" length="214"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.note.10.co39943-73" type="note" xpath="/TEI/text[1]/body[1]/div[1]/note[10]" offset="5505" length="73"/>
+        <tunit id="INT_08c82040-752f-3fc2-ad50-0d3e7b37a945.TEI.1.text.1.body.1.div.1.note.11.co40016-183" type="note" xpath="/TEI/text[1]/body[1]/div[1]/note[11]" offset="5578" length="183"/>
     </tunits>
     <text>
         <wf id="w0" sent="0" para="0" offset="0" length="1">(</wf>

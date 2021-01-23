@@ -5,9 +5,12 @@ import javafx.util.Pair;
 import missives.Handler;
 import utils.common.AbnormalProcessException;
 import utils.naf.NafUnits;
-import utils.naf.NafCreator;
-import utils.naf.NafDoc;
-import xjc.naf.*;
+import utils.naf.NafHandler;
+import xjc.naf.Tunit;
+import xjc.naf.NafHeader;
+import xjc.naf.FileDesc;
+import xjc.naf.Public;
+import utils.naf.Wf;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -16,50 +19,64 @@ import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+import static utils.naf.NafUnits.createWf;
+
 /**
  * Selects tunits from an input NAF to derive text/notes NAF
  */
-public class NafUnitSelector implements NafCreator {
+public class NafUnitSelector  {
     String type;
     boolean tokenize;
+    NafHandler inputNaf;
+    NafHandler derivedNaf;
     private final static String NAME = "selector";
 
-    public NafUnitSelector(String type, boolean tokenize) {
+    public NafUnitSelector(String inputNaf, String type, boolean tokenize) throws AbnormalProcessException {
         this.type = checkType(type);
         this.tokenize = tokenize;
+        this.inputNaf = NafHandler.create(inputNaf);
+        this.derivedNaf = transferHeader();
     }
 
-    public NafUnitSelector(String type) {
+    public NafUnitSelector(String inputNaf, String type) throws AbnormalProcessException {
         this.type = checkType(type);
         this.tokenize = true;
+        this.inputNaf = NafHandler.create(inputNaf);
+        this.derivedNaf = transferHeader();
+    }
+
+    public NafHandler getDerivedNaf() {
+        return derivedNaf;
     }
 
     private String checkType(String type) {
-        if (! (type.equals("text") || type.equals("notes") || type.equals("all")))
-            throw new IllegalArgumentException("Invalid type: " + type + "; type should be either 'text', 'notes' or 'all'");
+        // with 'tf' all units are selected, and directly tokenized
+        if (! (type.equals("text") || type.equals("notes") || type.equals("all") || type.equals("tf")))
+            throw new IllegalArgumentException("Invalid type: " + type + "; type should be either 'text', 'notes', 'all' or 'tf'");
         return type;
     }
 
-    public NafDoc getDerivedNaf(NafDoc inputNaf) throws AbnormalProcessException {
-        NafDoc derived = transferHeader(inputNaf);
-        List<Tunit> tunits = filter(inputNaf);
+    public void extractTextTunitsAndTokens() throws AbnormalProcessException {
+        if (type.equals("tf")) {
+            String rawText = inputNaf.getRawText();
+            List<Tunit> tunits = inputNaf.getTunits();
+            derivedNaf.createRawLayer(rawText, getName());
+            derivedNaf.createTunitsLayer(tunits, getName());
+            if (!tunits.isEmpty())
+                createTextLayer(derivedNaf, rawText, tunits);
+        } else {
+            List<Tunit> tunits = filter(inputNaf);
 
-        String rawText = deriveRawText(tunits, inputNaf.getRawText());
-        Raw raw = new Raw(rawText);
-        derived.getLayers().add(raw);
-        derived.setRawText(rawText);
+            String rawText = deriveRawText(tunits, inputNaf.getRawText());
+            derivedNaf.createRawLayer(rawText, getName());
+            derivedNaf.createTunitsLayer(tunits, getName());
 
-        Tunits tunitLayer = new Tunits();
-        tunitLayer.getTunits().addAll(tunits);
-        derived.getLayers().add(tunitLayer);
-
-        if (tokenize && ! tunits.isEmpty())
-            createTextLayer(derived, rawText, tunits);
-
-        return derived;
+            if (tokenize && !tunits.isEmpty())
+                createTextLayer(derivedNaf, rawText, tunits);
+        }
     }
 
-    private void createTextLayer(NafDoc derived, String rawText, List<Tunit> tunits) throws AbnormalProcessException {
+    private void createTextLayer(NafHandler derivedNaf, String rawText, List<Tunit> tunits) throws AbnormalProcessException {
         Tokenizer tokenizer = Tokenizer.create();
         List<Wf> wfs = new LinkedList<>();
         int sentenceCounter = 0;
@@ -73,12 +90,7 @@ public class NafUnitSelector implements NafCreator {
             }
             unitCounter++;
         }
-
-        Text textLayer = new Text();
-        textLayer.getWves().addAll(wfs);
-        derived.getLayers().add(textLayer);
-        LinguisticProcessors textLp = createLinguisticProcessors("text");
-        derived.getLinguisticProcessorsList().add(textLp);
+        derivedNaf.createTextLayer(wfs, getName());
     }
 
     /**
@@ -117,18 +129,9 @@ public class NafUnitSelector implements NafCreator {
     }
 
     private void addTokens(List<Token> tokens, List<Wf> wfs, int tunitOffset, int sentenceCounter, int unitCounter) {
-        for (Token t: tokens) {
-            Wf wf = new Wf();
-            wf.setId("w" + wfs.size());
-            wf.setSent(sentenceCounter + "");
-            wf.setPara(unitCounter + "");
-            wf.setOffset(tunitOffset + t.startOffset() + "");
-            wf.setLength(t.tokenLength() + "");
-            wf.getContent().add(t.getTokenValue());
-            wfs.add(wf);
-        }
+        for (Token t: tokens)
+            wfs.add(createWf(t.getTokenValue(), wfs.size(), tunitOffset + t.startOffset(), sentenceCounter, unitCounter));
     }
-
 
     protected static String deriveRawText(List<Tunit> tunits, String rawText) {
         StringBuilder sb = new StringBuilder();
@@ -145,7 +148,7 @@ public class NafUnitSelector implements NafCreator {
     /**
      * Filters textual tunits matching <code>type</code>
      */
-    private List<Tunit> filter(NafDoc inputNaf) {
+    private List<Tunit> filter(NafHandler inputNaf) {
         List<Tunit> tunits = inputNaf.getTunits();
         // removes hi, lb, pb
         tunits = filterNonDisruptiveTextualElements(tunits);
@@ -199,35 +202,33 @@ public class NafUnitSelector implements NafCreator {
         return tunits.stream().filter(t -> isNonDisruptive.test(t.getType())).collect(Collectors.toList());
     }
 
-    protected NafDoc transferHeader(NafDoc inputNaf) {
+    protected NafHandler transferHeader() {
         NafHeader header = new NafHeader();
-        String derivedId = inputNaf.getNafHeader().getPublic().getPublicId() + "_" + type;
+        String derivedId;
+        if (! type.equals("tf"))
+            derivedId = inputNaf.getNafHeader().getPublic().getPublicId() + "_" + type;
+        else
+            derivedId = inputNaf.getNafHeader().getPublic().getPublicId();
         FileDesc fd = new FileDesc();
         fd.setFilename(derivedId + ".naf");
         header.setFileDesc(fd);
         Public pub = new Public();
         pub.setPublicId(derivedId);
         header.setPublic(pub);
-        List<LinguisticProcessors> lps = new LinkedList<>();
-        for (LinguisticProcessors inputLPs: inputNaf.getLinguisticProcessorsList()) {
-            Lp newLp = new Lp();
-            newLp.setVersion(getVersion());
-            newLp.setName(getName());
-            newLp.setTimestamp(NafCreator.createTimestamp());
-            inputLPs.getLps().add(newLp);
-            lps.add(inputLPs);
-        }
-        header.getLinguisticProcessors().addAll(lps);
-        return NafDoc.create(header);
+        header.getLinguisticProcessors().addAll(inputNaf.getLinguisticProcessorsList());
+        return NafHandler.create(header);
+    }
+
+    protected void writeDerivedNaf(String outdir) throws AbnormalProcessException {
+        derivedNaf.write(Paths.get(outdir, derivedNaf.getFileName()).toString());
     }
 
     public static void run(Path file, String outdir, boolean tokenize, String documentType) throws AbnormalProcessException {
-        NafUnitSelector converter = new NafUnitSelector(documentType, tokenize);
-        NafDoc outNAF = converter.getDerivedNaf(NafDoc.create(file.toString()));
-        outNAF.write(Paths.get(outdir, outNAF.getFileName()).toString());
+        NafUnitSelector converter = new NafUnitSelector(file.toString(), documentType, tokenize);
+        converter.extractTextTunitsAndTokens();
+        converter.writeDerivedNaf(outdir);
     }
 
-    @Override
     public String getName() {
         return Handler.NAME + "-" + type + "-" + NAME;
     }

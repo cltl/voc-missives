@@ -1,120 +1,42 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<NAF version="v3.2" xml:lang="nl">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<NAF version="3.2" xml:lang="nl">
     <nafHeader>
-        <fileDesc
-            title="Reniers, Maetsuycker, Demmer, Hartzinck, De Vlaming van Oudtshoorn, Caesar en Versteghen, 5 febr. 1652" filename="vol2_p0583_INT_0aff566f-8c02-332d-971d-eb572c33f86b.naf"/>
+        <fileDesc title="Reniers, Maetsuycker, Demmer, Hartzinck, De Vlaming van Oudtshoorn, Caesar en Versteghen, 5 febr. 1652" filename="vol2_p0583_INT_0aff566f-8c02-332d-971d-eb572c33f86b.naf"/>
         <public publicId="vol2_p0583_INT_0aff566f-8c02-332d-971d-eb572c33f86b"/>
         <linguisticProcessors layer="raw">
-            <lp name="gm-processor-tei2naf" version="1.0" timestamp="2021-01-15T16:04:35+0100"/>
+            <lp name="gm-processor-tei2naf" version="1.0" timestamp="2021-01-23T15:58:58+0100"/>
         </linguisticProcessors>
         <linguisticProcessors layer="tunits">
-            <lp name="gm-processor-tei2naf" version="1.0" timestamp="2021-01-15T16:04:35+0100"/>
+            <lp name="gm-processor-tei2naf" version="1.0" timestamp="2021-01-23T15:58:58+0100"/>
         </linguisticProcessors>
     </nafHeader>
     <raw><![CDATA[Reniers, Maetsuyker, Demmer, Hartzinck, Van Oudtshoorn, enz. VI, 5 februari 1652 583VI. CAREL RENIERS, JOAN MAETSUYKER, GERARD DEMMER, CAREL HARTZINCK, AERNOUT DE VLAMING VAN OUDTSHOORN, CORNELIS CAESAR EN WILLEM VERSTEGHEN, BATAVIA 5 febr. 1652.1079, fol. 167-172.(Afsluiting contract met den Koning van Ternate, af gedrukt Corpus II, nr. CGIV; zending van 3 fluitschepen met cargasoen van f. 73809.15.5 naar Makassar; Daer wort gepresumeert ende heeft groote waerschijnelijcheyt, dat den Coningh voorgehat heeft het jacht1) af te loopen ende het volck doot te slaen, deselve priserende 2) ende betalende na sijn welgevallen, daer sij apparent noch1) NI. dat van Verstegen.2) Priserende, schattende, de waarde bepalende.584 Reniers, Maetsuyker, Demmer, Hartzinck, Van Oudtshoorn, snz. VI, 5 februari 1652al moedich ende stout op sijn. De mestice barbier 1)J aldaer voor desen gevangen,is daer alsnu weder verbleven, niet afgecomen sijnde, als d’andere vertrocken, diewij dan vresen, beswaerlijck uyt hare handen sal geraecken, te meer dewijl wij deQuinammers alhier, die op de getroffen vrede rede waren vrijgelaten, weder inslavernij e hebben doen nemen.( Verwachting , dat de schepen 7 of 8 febr. naar Amboina kunnen vertrekken) .1) Geheten Jacob Discordt.]]></raw>
     <tunits>
-        <tunit
-            id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1"
-            type="text" xpath="/TEI/text[1]" offset="0" length="1259"/>
-        <tunit
-            id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1"
-            type="body" xpath="/TEI/text[1]/body[1]" offset="0" length="1259"/>
-        <tunit
-            id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1"
-            type="div" xpath="/TEI/text[1]/body[1]/div[1]" offset="0" length="1259"/>
-        <tunit
-            id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.pb.1"
-            type="pb" xpath="/TEI/text[1]/body[1]/div[1]/pb[1]"
-            offset="0" length="0"/>
-        <tunit
-            id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.fw.1"
-            type="fw" xpath="/TEI/text[1]/body[1]/div[1]/fw[1]"
-            offset="0" length="84"/>
-        <tunit
-            id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.head.1"
-            type="head" xpath="/TEI/text[1]/body[1]/div[1]/head[1]"
-            offset="84" length="162"/>
-        <tunit
-            id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.head.1.lb.1"
-            type="lb" xpath="/TEI/text[1]/body[1]/div[1]/head[1]/lb[1]"
-            offset="134" length="0"/>
-        <tunit
-            id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.head.1.lb.2"
-            type="lb" xpath="/TEI/text[1]/body[1]/div[1]/head[1]/lb[2]"
-            offset="186" length="0"/>
-        <tunit
-            id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.head.1.lb.3"
-            type="lb" xpath="/TEI/text[1]/body[1]/div[1]/head[1]/lb[3]"
-            offset="246" length="0"/>
-        <tunit
-            id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.p.1"
-            type="p" xpath="/TEI/text[1]/body[1]/div[1]/p[1]"
-            offset="246" length="19"/>
-        <tunit
-            id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.p.1.lb.1"
-            type="lb" xpath="/TEI/text[1]/body[1]/div[1]/p[1]/lb[1]"
-            offset="265" length="0"/>
-        <tunit
-            id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.note.1"
-            type="note" xpath="/TEI/text[1]/body[1]/div[1]/note[1]"
-            offset="265" length="154"/>
-        <tunit
-            id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.note.1.hi.1"
-            type="hi" xpath="/TEI/text[1]/body[1]/div[1]/note[1]/hi[1]"
-            offset="325" length="6"/>
-        <tunit
-            id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.note.1.lb.1"
-            type="lb" xpath="/TEI/text[1]/body[1]/div[1]/note[1]/lb[1]"
-            offset="339" length="0"/>
-        <tunit
-            id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.note.1.lb.2"
-            type="lb" xpath="/TEI/text[1]/body[1]/div[1]/note[1]/lb[2]"
-            offset="419" length="0"/>
-        <tunit
-            id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.p.2"
-            type="p" xpath="/TEI/text[1]/body[1]/div[1]/p[2]"
-            offset="419" length="840"/>
-        <tunit
-            id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.p.2.lb.1"
-            type="lb" xpath="/TEI/text[1]/body[1]/div[1]/p[2]/lb[1]"
-            offset="489" length="0"/>
-        <tunit
-            id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.p.2.hi.1"
-            type="hi" xpath="/TEI/text[1]/body[1]/div[1]/p[2]/hi[1]"
-            offset="588" length="2"/>
-        <tunit
-            id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.p.2.lb.2"
-            type="lb" xpath="/TEI/text[1]/body[1]/div[1]/p[2]/lb[2]"
-            offset="649" length="0"/>
-        <tunit
-            id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.p.2.note.1"
-            type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[2]/note[1]"
-            offset="649" length="25"/>
-        <tunit
-            id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.p.2.note.1.lb.1"
-            type="lb"
-            xpath="/TEI/text[1]/body[1]/div[1]/p[2]/note[1]/lb[1]"
-            offset="674" length="0"/>
-        <tunit
-            id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.p.2.note.2"
-            type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[2]/note[2]"
-            offset="674" length="47"/>
-        <tunit
-            id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.p.2.note.2.lb.1"
-            type="lb"
-            xpath="/TEI/text[1]/body[1]/div[1]/p[2]/note[2]/lb[1]"
-            offset="721" length="0"/>
-        <tunit
-            id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.p.2.pb.1"
-            type="pb" xpath="/TEI/text[1]/body[1]/div[1]/p[2]/pb[1]"
-            offset="721" length="0"/>
-        <tunit
-            id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.p.2.fw.1"
-            type="fw" xpath="/TEI/text[1]/body[1]/div[1]/p[2]/fw[1]"
-            offset="721" length="512"/>
-        <tunit
-            id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.p.2.lb.3"
-            type="lb" xpath="/TEI/text[1]/body[1]/div[1]/p[2]/lb[3]"
-            offset="1259" length="0"/>
+        <tunit id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1" type="text" xpath="/TEI/text[1]" offset="0" length="1259"/>
+        <tunit id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1" type="body" xpath="/TEI/text[1]/body[1]" offset="0" length="1259"/>
+        <tunit id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1" type="div" xpath="/TEI/text[1]/body[1]/div[1]" offset="0" length="1259"/>
+        <tunit id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.pb.1" type="pb" xpath="/TEI/text[1]/body[1]/div[1]/pb[1]" offset="0" length="0"/>
+        <tunit id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.fw.1" type="fw" xpath="/TEI/text[1]/body[1]/div[1]/fw[1]" offset="0" length="84"/>
+        <tunit id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.head.1" type="head" xpath="/TEI/text[1]/body[1]/div[1]/head[1]" offset="84" length="162"/>
+        <tunit id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.head.1.lb.1" type="lb" xpath="/TEI/text[1]/body[1]/div[1]/head[1]/lb[1]" offset="134" length="0"/>
+        <tunit id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.head.1.lb.2" type="lb" xpath="/TEI/text[1]/body[1]/div[1]/head[1]/lb[2]" offset="186" length="0"/>
+        <tunit id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.head.1.lb.3" type="lb" xpath="/TEI/text[1]/body[1]/div[1]/head[1]/lb[3]" offset="246" length="0"/>
+        <tunit id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.p.1" type="p" xpath="/TEI/text[1]/body[1]/div[1]/p[1]" offset="246" length="19"/>
+        <tunit id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.p.1.lb.1" type="lb" xpath="/TEI/text[1]/body[1]/div[1]/p[1]/lb[1]" offset="265" length="0"/>
+        <tunit id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.note.1" type="note" xpath="/TEI/text[1]/body[1]/div[1]/note[1]" offset="265" length="154"/>
+        <tunit id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.note.1.hi.1" type="hi" xpath="/TEI/text[1]/body[1]/div[1]/note[1]/hi[1]" offset="325" length="6"/>
+        <tunit id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.note.1.lb.1" type="lb" xpath="/TEI/text[1]/body[1]/div[1]/note[1]/lb[1]" offset="339" length="0"/>
+        <tunit id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.note.1.lb.2" type="lb" xpath="/TEI/text[1]/body[1]/div[1]/note[1]/lb[2]" offset="419" length="0"/>
+        <tunit id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.p.2" type="p" xpath="/TEI/text[1]/body[1]/div[1]/p[2]" offset="419" length="840"/>
+        <tunit id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.p.2.lb.1" type="lb" xpath="/TEI/text[1]/body[1]/div[1]/p[2]/lb[1]" offset="489" length="0"/>
+        <tunit id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.p.2.hi.1" type="hi" xpath="/TEI/text[1]/body[1]/div[1]/p[2]/hi[1]" offset="588" length="2"/>
+        <tunit id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.p.2.lb.2" type="lb" xpath="/TEI/text[1]/body[1]/div[1]/p[2]/lb[2]" offset="649" length="0"/>
+        <tunit id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.p.2.note.1" type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[2]/note[1]" offset="649" length="25"/>
+        <tunit id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.p.2.note.1.lb.1" type="lb" xpath="/TEI/text[1]/body[1]/div[1]/p[2]/note[1]/lb[1]" offset="674" length="0"/>
+        <tunit id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.p.2.note.2" type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[2]/note[2]" offset="674" length="47"/>
+        <tunit id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.p.2.note.2.lb.1" type="lb" xpath="/TEI/text[1]/body[1]/div[1]/p[2]/note[2]/lb[1]" offset="721" length="0"/>
+        <tunit id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.p.2.pb.1" type="pb" xpath="/TEI/text[1]/body[1]/div[1]/p[2]/pb[1]" offset="721" length="0"/>
+        <tunit id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.p.2.fw.1" type="fw" xpath="/TEI/text[1]/body[1]/div[1]/p[2]/fw[1]" offset="721" length="512"/>
+        <tunit id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.p.2.lb.3" type="lb" xpath="/TEI/text[1]/body[1]/div[1]/p[2]/lb[3]" offset="1259" length="0"/>
     </tunits>
 </NAF>

@@ -5,7 +5,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import tei2naf.Tei2Naf;
 import utils.common.AbnormalProcessException;
-import utils.naf.NafDoc;
+import utils.naf.NafHandler;
 import xjc.naf.LinguisticProcessors;
 import xjc.naf.Tunit;
 
@@ -19,8 +19,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class NafUnitSelectorTest {
     static List<Tunit> elts;
-    private final String testdirIn = "src/test/resources/tei2naf";
-    private final String testdirOut = "src/test/resources/naf-selector";
+    private final String testdirOut = "src/test/resources/out";
     private final String filePfx = "vol2_p0583_INT_0aff566f-8c02-332d-971d-eb572c33f86b";
 
     public static Tunit createTunit(String id, String type, int offset, int length) {
@@ -77,7 +76,6 @@ class NafUnitSelectorTest {
         assertEquals(text.size(), 2);
         assertEquals(text.get(0).getId(), "B.co0-1");
         assertEquals(text.get(1).getId(), "B.co7-1");
-
     }
 
     @Test
@@ -127,7 +125,6 @@ class NafUnitSelectorTest {
         assertEquals(derivedRawText, "nnnpnnp");
     }
 
-
     @Test
     public void testFullTextDerivation() {
         String rawText = "dfnnnpndnpf";
@@ -138,33 +135,32 @@ class NafUnitSelectorTest {
         assertEquals(unitsText, rawText);
     }
 
-
-
     @Test
     public void testDerivedNafCreationNotes() throws AbnormalProcessException {
-        NafUnitSelector nus = new NafUnitSelector("notes");
-        NafDoc outNaf = nus.getDerivedNaf(NafDoc.create(getTestInputNaf()));
-        outNaf.write(Paths.get(testdirOut, outNaf.getFileName()).toString());
+        NafUnitSelector nus = new NafUnitSelector(getTestInputNaf(), "notes");
+        nus.extractTextTunitsAndTokens();
+        nus.writeDerivedNaf(testdirOut);
         File out = Paths.get(testdirOut, filePfx + "_notes.naf").toFile();
         assertTrue(out.exists());
     }
 
     @Test
     public void testDerivedNafCreationText() throws AbnormalProcessException {
-        NafUnitSelector nus = new NafUnitSelector("text");
-        NafDoc outNaf = nus.getDerivedNaf(NafDoc.create(getTestInputNaf()));
-        outNaf.write(Paths.get(testdirOut, outNaf.getFileName()).toString());
+        NafUnitSelector nus = new NafUnitSelector(getTestInputNaf(), "text");
+        nus.extractTextTunitsAndTokens();
+        nus.writeDerivedNaf(testdirOut);
         File out = Paths.get(testdirOut, filePfx + "_text.naf").toFile();
         assertTrue(out.exists());
     }
 
     @Test
     public void testDerivedNafCreationAll() throws AbnormalProcessException {
-        NafDoc inputNaf = NafDoc.create(getTestInputNaf());
-        NafUnitSelector nus = new NafUnitSelector("all");
-        NafDoc outNaf = nus.getDerivedNaf(inputNaf);
-        assertEquals(inputNaf.getRawText(), outNaf.getRawText());
-        outNaf.write(Paths.get(testdirOut, outNaf.getFileName()).toString());
+        NafHandler inputNaf = NafHandler.create(getTestInputNaf());
+        NafUnitSelector nus = new NafUnitSelector(getTestInputNaf(), "all");
+        nus.extractTextTunitsAndTokens();
+        assertEquals(inputNaf.getRawText(), nus.getDerivedNaf().getRawText());
+
+        nus.writeDerivedNaf(testdirOut);
         File out = Paths.get(testdirOut, filePfx + "_all.naf").toFile();
         assertTrue(out.exists());
     }
@@ -181,6 +177,7 @@ class NafUnitSelectorTest {
         assertTrue(inFile.exists());
         return inNaf;
     }
+
     @Test
     public void testCohesiveTextUnits() {
         String rawText = "dfnnnpndnpf";
@@ -194,15 +191,30 @@ class NafUnitSelectorTest {
 
     @Test
     public void testTransferHeader() throws AbnormalProcessException {
-        NafDoc inputNaf = NafDoc.create(getTestInputNaf());
-        List<LinguisticProcessors> inputLps = inputNaf.getLinguisticProcessorsList();
-        assertEquals(inputLps.size(), 2);
-        assertEquals(inputLps.get(0).getLps().size(), 1);
+        NafHandler inputNaf = NafHandler.create(getTestInputNaf());
+        LinguisticProcessors rawLps = inputNaf.getLinguisticProcessors("raw");
+        LinguisticProcessors tunitLps = inputNaf.getLinguisticProcessors("tunits");
+        assertTrue(rawLps != null && tunitLps != null);
+        assertEquals(rawLps.getLps().size(), 1);
 
-        NafUnitSelector nus = new NafUnitSelector("all");
-        NafDoc outNaf = nus.transferHeader(inputNaf);
-        List<LinguisticProcessors> lps = outNaf.getLinguisticProcessorsList();
-        assertEquals(lps.size(), 2);
-        assertEquals(lps.get(0).getLps().size(), 2);
+        NafUnitSelector nus = new NafUnitSelector(getTestInputNaf(), "all");
+        rawLps = nus.getDerivedNaf().getLinguisticProcessors("raw");
+        assertEquals(rawLps.getLps().size(), 1);
     }
+
+    @Test
+    public void testLayerExtraction() throws AbnormalProcessException {
+        NafUnitSelector nus = new NafUnitSelector(getTestInputNaf(), "tf");
+        nus.extractTextTunitsAndTokens();
+        NafHandler outNaf = nus.getDerivedNaf();
+        LinguisticProcessors rawLps = outNaf.getLinguisticProcessors("raw");
+        LinguisticProcessors tunitLps = outNaf.getLinguisticProcessors("tunits");
+        LinguisticProcessors textLps = outNaf.getLinguisticProcessors("text");
+        assertTrue(rawLps != null && tunitLps != null);
+        assertEquals(rawLps.getLps().size(), 2);
+        assertTrue(textLps != null);
+        assertEquals(textLps.getLps().size(), 1);
+    }
+
+
 }

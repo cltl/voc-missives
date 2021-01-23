@@ -2,7 +2,7 @@ package manIn2naf;
 
 import de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity;
 import utils.common.Span;
-import xjc.naf.Wf;
+import utils.naf.Wf;
 
 import java.util.Collections;
 import java.util.LinkedList;
@@ -21,7 +21,7 @@ public class AlignedEntity implements Comparable<AlignedEntity> {
     }
 
     public static AlignedEntity create(NamedEntity entity, String rawText) {
-        return new AlignedEntity(entity, match(entity.getCoveredText(), rawText));
+        return new AlignedEntity(entity, EntityAligner.match(entity.getCoveredText(), rawText));
     }
 
     public static AlignedEntity create(NamedEntity entity) {
@@ -36,16 +36,6 @@ public class AlignedEntity implements Comparable<AlignedEntity> {
     public static AlignedEntity copy(AlignedEntity e) {
         List<Span> references = e.getReferenceMatches().stream().collect(Collectors.toList());
         return new AlignedEntity(e.getEntity(), references);
-    }
-
-    private static List<Span> match(String substring, String compactRawText) {
-        List<Span> matches = new LinkedList<>();
-        int index = compactRawText.indexOf(substring);
-        while (index != -1) {
-            matches.add(new Span(index, index + substring.length() - 1));
-            index = compactRawText.indexOf(substring, index + 1);
-        }
-        return matches;
     }
 
     protected List<Span> referencesBetween(int startIndex, int endIndex) {
@@ -125,7 +115,7 @@ public class AlignedEntity implements Comparable<AlignedEntity> {
     public void findHyphenatedMatch(String rawText, int index) {
         for (int i = 1; i < entity.getCoveredText().length() - 1; i++) {
             String hyphenated = entity.getCoveredText().substring(0, i) + "-" + entity.getCoveredText().substring(i);
-            List<Span> matches = match(hyphenated, rawText).stream().filter(s -> s.getFirstIndex() >= index).collect(Collectors.toList());
+            List<Span> matches = EntityAligner.match(hyphenated, rawText).stream().filter(s -> s.getFirstIndex() >= index).collect(Collectors.toList());
             if (! matches.isEmpty()) {
                 referenceMatches = Collections.singletonList(matches.get(0));
                 break;
@@ -135,7 +125,7 @@ public class AlignedEntity implements Comparable<AlignedEntity> {
 
     private boolean tryAndMatchModifiedForm(Function<String, String> modifier, String rawText, int index) {
         String wsFree = modifier.apply(entity.getCoveredText());
-        List<Span> matches = match(wsFree, rawText).stream().filter(s -> s.getFirstIndex() >= index).collect(Collectors.toList());
+        List<Span> matches = EntityAligner.match(wsFree, rawText).stream().filter(s -> s.getFirstIndex() >= index).collect(Collectors.toList());
         if (! matches.isEmpty()) {
             referenceMatches = Collections.singletonList(matches.get(0));
             return true;
@@ -176,7 +166,7 @@ public class AlignedEntity implements Comparable<AlignedEntity> {
     }
 
     public void tryAgainSimpleMatch(String rawText, int index, int nextIndex) {
-        List<Span> matches = match(entity.getCoveredText(), rawText).stream().filter(s -> s.getFirstIndex() >= index && s.getLastIndex() <= nextIndex).collect(Collectors.toList());
+        List<Span> matches = EntityAligner.match(entity.getCoveredText(), rawText).stream().filter(s -> s.getFirstIndex() >= index && s.getLastIndex() <= nextIndex).collect(Collectors.toList());
         if (! matches.isEmpty())
             referenceMatches = Collections.singletonList(matches.get(0));
     }
@@ -231,5 +221,10 @@ public class AlignedEntity implements Comparable<AlignedEntity> {
                 toKeep.add(s);
         }
         setReferenceMatches(toKeep);
+    }
+
+    public void findInRawTextWithLineBreaks(String rawText, int index, int nextIndex) {
+        String text = rawText.replaceAll("\n", " ");
+        tryAgainSimpleMatch(text, index, nextIndex);
     }
 }

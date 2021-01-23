@@ -123,7 +123,7 @@ public class AlignedEntities {
     private void normalizeMatches() {
         for (int i = 0; i < alignedEntities.size(); i++)
             alignedEntities.get(i).setReferenceMatches(
-                    Collections.singletonList(alignedEntities.get(i).getReferenceMatches().get(i)));
+                        Collections.singletonList(alignedEntities.get(i).getReferenceMatches().get(i)));
     }
 
     /**
@@ -284,16 +284,22 @@ public class AlignedEntities {
         return addedEntities;
     }
 
+    boolean shareReferences() {
+        List<Span> references = alignedEntities.get(0).getReferenceMatches();
+        return alignedEntities.stream().allMatch(a -> (a.getReferenceMatches().size() == references.size())
+                && a.getReferenceMatches().stream().allMatch(r -> references.contains(r)));
+    }
+
     boolean haveLessEntitiesThanMentions() {
-        return alignedEntities.size() < alignedEntities.get(0).getReferenceMatches().size();
+        return shareReferences() && alignedEntities.size() < alignedEntities.get(0).getReferenceMatches().size();
     }
 
     private boolean haveLessMatchesThanEntities() {
-        return alignedEntities.get(0).getReferenceMatches().size() < alignedEntities.size();
+        return shareReferences() && alignedEntities.get(0).getReferenceMatches().size() < alignedEntities.size();
     }
 
     private boolean areEquicardinal() {
-        return alignedEntities.get(0).getReferenceMatches().size() == alignedEntities.size();
+        return shareReferences() && alignedEntities.get(0).getReferenceMatches().size() == alignedEntities.size();
     }
 
     AlignedEntity duplicateFirst() {

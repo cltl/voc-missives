@@ -2,11 +2,10 @@ package sysIn2naf;
 
 import missives.Handler;
 import utils.common.*;
-import utils.naf.NafCreator;
-import utils.naf.NafDoc;
+import utils.naf.NafHandler;
 import utils.naf.NafUnits;
 import xjc.naf.Entity;
-import xjc.naf.Wf;
+import utils.naf.Wf;
 
 import java.io.*;
 import java.nio.file.Path;
@@ -17,18 +16,14 @@ import java.util.*;
  * Reads entities from a Conll file and adds them to reference NAF
  * The NAF and Conll tokens should be aligned.
  */
-public class NAFConllReader implements NafCreator {
+public class NAFConllReader {
 
-    NafDoc naf;
+    NafHandler naf;
     private final static String NAME = "sys-in2naf";
 
     public NAFConllReader(String nafFile) throws AbnormalProcessException {
-        this.naf = NafDoc.create(nafFile);
-        checkNafHasNoEntities();
-    }
-
-    private void checkNafHasNoEntities() throws AbnormalProcessException {
-        if (! naf.getEntities().isEmpty())
+        this.naf = NafHandler.create(nafFile);
+        if (naf.hasEntitiesLayer())
             throw new AbnormalProcessException("This NAF file already contains entities! Refusing to overwrite");
     }
 
@@ -88,7 +83,7 @@ public class NAFConllReader implements NafCreator {
     }
 
     protected void write(List<Entity> entities, String outFile) throws AbnormalProcessException {
-        createEntitiesLayer(naf, entities);
+        naf.createEntitiesLayer(entities, getName());
         naf.write(outFile);
     }
 
@@ -99,14 +94,12 @@ public class NAFConllReader implements NafCreator {
     }
 
     public static void run(Path file, List<String> dirs) throws AbnormalProcessException {
-
             File refFile = IO.findFileWithSameId(file, new File(dirs.get(0)));
             File outFile = Paths.get(dirs.get(1), refFile.getName()).toFile();
             NAFConllReader nafConllReader = new NAFConllReader(refFile.getPath());
             nafConllReader.process(file.toString(), outFile.toString());
     }
 
-    @Override
     public String getName() {
         return Handler.NAME + "-" + NAME;
     }

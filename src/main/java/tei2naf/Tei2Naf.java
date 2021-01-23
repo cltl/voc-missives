@@ -6,8 +6,7 @@ import org.apache.logging.log4j.Logger;
 import utils.common.AbnormalProcessException;
 import utils.common.IO;
 import utils.naf.Fragment;
-import utils.naf.NafCreator;
-import utils.naf.NafDoc;
+import utils.naf.NafHandler;
 import utils.naf.NafUnits;
 import utils.tei.ATeiTree;
 import utils.tei.Metadata;
@@ -20,6 +19,7 @@ import java.nio.file.Paths;
 import java.util.ArrayDeque;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static utils.common.ThrowingBiConsumer.throwingBiConsumerWrapper;
 
@@ -27,7 +27,7 @@ import static utils.common.ThrowingBiConsumer.throwingBiConsumerWrapper;
  * Converts TEI document to input NAF: raw text and all text units
  *
  */
-public class Tei2Naf implements NafCreator {
+public class Tei2Naf {
     private static final String OUT = "." + IO.NAF_SFX;
     private final static String NAME = "tei2naf";
     public static final Logger logger = LogManager.getLogger(Tei2Naf.class);
@@ -35,37 +35,19 @@ public class Tei2Naf implements NafCreator {
 
     public Tei2Naf() { }
 
-    private NafDoc convertBaseDocToNafRepresentation() {
-        NafDoc naf = new NafDoc();
-        NafHeader nafHeader = new NafHeader();
-        FileDesc fileDesc = new FileDesc();
-        fileDesc.setTitle(doc.getMetadata().getDocumentTitle());
-        fileDesc.setFilename(doc.getMetadata().getDocumentId() + ".naf");
-        nafHeader.setFileDesc(fileDesc);
-        Public pub = new Public();
-        pub.setPublicId(doc.getMetadata().getDocumentId());
-        nafHeader.setPublic(pub);
-
-        String rawText = doc.getRawText();
-        Raw raw = new Raw(rawText);
-        nafHeader.getLinguisticProcessors().add(createLinguisticProcessors("raw"));
-
-        Tunits tunits = new Tunits();
-        doc.getSections().forEach(p -> tunits.getTunits().add(NafUnits.asTunit(p)));
-        nafHeader.getLinguisticProcessors().add(createLinguisticProcessors("tunits"));
-
-        List<Object> layers = naf.getLayers();
-        layers.add(nafHeader);
-        layers.add(raw);
-        layers.add(tunits);
-
-        return naf;
+    private NafHandler convertBaseDocToNafRepresentation() {
+        NafHandler nafHandler = NafHandler.create(doc.getMetadata().getDocumentTitle(),
+                doc.getMetadata().getDocumentId() + ".naf",
+                doc.getMetadata().getDocumentId());
+        nafHandler.createRawLayer(doc.getRawText(), getName());
+        nafHandler.createTunitsLayer(doc.getSections().stream().map(p -> NafUnits.asTunit(p)).collect(Collectors.toList()), getName());
+        return nafHandler;
     }
 
     public void process(String teiFile, String outdir) throws AbnormalProcessException {
         read(teiFile);
-        NafDoc naf = convertBaseDocToNafRepresentation();
-        naf.write(Paths.get(outdir, naf.getFileName()).toString());
+        NafHandler naf = convertBaseDocToNafRepresentation();
+        naf.writeToDir(outdir);
     }
 
     private void read(String teiFile) throws AbnormalProcessException {
@@ -166,7 +148,6 @@ public class Tei2Naf implements NafCreator {
                 throwingBiConsumerWrapper((x, y) -> convertFile(x, y)));
     }
 
-    @Override
     public String getName() {
         return Handler.NAME + "-" + NAME;
     }

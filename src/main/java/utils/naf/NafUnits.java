@@ -1,6 +1,9 @@
 package utils.naf;
 
-import xjc.naf.*;
+import xjc.naf.Entity;
+import xjc.naf.Tunit;
+import xjc.naf.Span;
+import xjc.naf.Target;
 
 import java.util.List;
 import java.util.regex.Matcher;
@@ -15,7 +18,6 @@ public class NafUnits {
         Entity e = new Entity();
         e.setId(id);
         e.setType(type);
-//        References r = new References();
         Span s = new Span();
         List<Target> ts = s.getTargets();
 
@@ -25,20 +27,41 @@ public class NafUnits {
             ts.add(t);
         }
         e.getSpenAndExternalReferences().add(s);
-//        r.getSpen().add(s);
-//        e.getReferencesAndExternalReferences().add(r);
         return e;
     }
 
     public static List<Wf> wfSpan(Entity e) {
-//        References r = (References) e.getReferencesAndExternalReferences().get(0);
         Span s = (Span) e.getSpenAndExternalReferences().stream().filter(x -> x instanceof Span).findFirst().orElse(null);
         List<Target> targets = s.getTargets();
         return targets.stream().map(t -> (Wf) t.getId()).collect(Collectors.toList());
     }
 
     public static String getContent(Wf wf) {
-        return (String) wf.getContent().stream().filter(x -> x instanceof String).findFirst().orElse(null);
+        return wf.getContent();
+       // return (String) wf.getContent().stream().filter(x -> x instanceof String).findFirst().orElse(null);
+    }
+
+    public static Wf createWf(String token, int id, int offset, int sentenceId, int paragraphId) {
+        Wf wf = createWf(token, id, offset);
+        wf.setSent(sentenceId + "");
+        wf.setPara(paragraphId + "");
+        return wf;
+    }
+
+    public static Wf createWf(String token, int id, int offset, int sentenceId) {
+        Wf wf = createWf(token, id, offset);
+        wf.setSent(sentenceId + "");
+        return wf;
+    }
+
+    public static Wf createWf(String token, int id, int offset) {
+        Wf wf = new Wf();
+        wf.setId("w" + id);
+        wf.setOffset(offset + "");
+        wf.setLength(token.length() + "");
+        //wf.getContent().add(token);
+        wf.setContent(token);
+        return wf;
     }
 
     public static Tunit withOffset(Tunit tunit, int offset) {

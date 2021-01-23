@@ -1,34 +1,25 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<NAF version="v3.2" xml:lang="nl">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<NAF version="3.2" xml:lang="nl">
     <nafHeader>
         <fileDesc filename="vol2_p0583_INT_0aff566f-8c02-332d-971d-eb572c33f86b_notes.naf"/>
         <public publicId="vol2_p0583_INT_0aff566f-8c02-332d-971d-eb572c33f86b_notes"/>
         <linguisticProcessors layer="raw">
-            <lp name="gm-processor-tei2naf" version="1.0" timestamp="2021-01-15T16:04:35+0100"/>
-            <lp name="gm-processor-notes-selector" version="1.0" timestamp="2021-01-15T16:04:47+0100"/>
+            <lp name="gm-processor-tei2naf" version="1.0" timestamp="2021-01-23T15:58:58+0100"/>
+            <lp name="gm-processor-notes-selector" version="1.0" timestamp="2021-01-23T16:10:50+0100"/>
         </linguisticProcessors>
         <linguisticProcessors layer="tunits">
-            <lp name="gm-processor-tei2naf" version="1.0" timestamp="2021-01-15T16:04:35+0100"/>
-            <lp name="gm-processor-notes-selector" version="1.0" timestamp="2021-01-15T16:04:47+0100"/>
+            <lp name="gm-processor-tei2naf" version="1.0" timestamp="2021-01-23T15:58:58+0100"/>
+            <lp name="gm-processor-notes-selector" version="1.0" timestamp="2021-01-23T16:10:50+0100"/>
         </linguisticProcessors>
         <linguisticProcessors layer="text">
-            <lp name="gm-processor-notes-selector" version="1.0" timestamp="2021-01-15T16:04:48+0100"/>
+            <lp name="gm-processor-notes-selector" version="1.0" timestamp="2021-01-23T16:10:50+0100"/>
         </linguisticProcessors>
     </nafHeader>
     <raw><![CDATA[(Afsluiting contract met den Koning van Ternate, af gedrukt Corpus II, nr. CGIV; zending van 3 fluitschepen met cargasoen van f. 73809.15.5 naar Makassar;1) NI. dat van Verstegen.2) Priserende, schattende, de waarde bepalende.]]></raw>
     <tunits>
-        <tunit
-            id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.note.1.co265-154"
-            type="note" xpath="/TEI/text[1]/body[1]/div[1]/note[1]"
-            offset="0" length="154"/>
-        <tunit
-            id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.p.2.note.1.co649-25"
-            type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[2]/note[1]"
-            offset="154" length="25"/>
-        <tunit
-            id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.p.2.note.2.co674-47"
-            type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[2]/note[2]"
-            offset="179" length="47"/>
+        <tunit id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.note.1.co265-154" type="note" xpath="/TEI/text[1]/body[1]/div[1]/note[1]" offset="0" length="154"/>
+        <tunit id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.p.2.note.1.co649-25" type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[2]/note[1]" offset="154" length="25"/>
+        <tunit id="INT_0aff566f-8c02-332d-971d-eb572c33f86b.TEI.1.text.1.body.1.div.1.p.2.note.2.co674-47" type="note" xpath="/TEI/text[1]/body[1]/div[1]/p[2]/note[2]" offset="179" length="47"/>
     </tunits>
     <text>
         <wf id="w0" sent="0" para="0" offset="0" length="1">(</wf>
