@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utils.common.IO;
 import utils.common.AbnormalProcessException;
+import utils.naf.BaseEntity;
 import utils.naf.NafHandler;
 import utils.naf.NafUnits;
 import xjc.naf.Entity;
@@ -13,6 +14,8 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Path;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -26,7 +29,6 @@ import java.util.stream.Collectors;
 public class Naf2Conll {
     private static final String IN = "." + IO.NAF_SFX;
     private static final String OUT = "." + IO.CONLL_SFX;
-
     String conllSeparator;
     HashMap<Wf,Entity> wf2entity;
     NafHandler naf;
@@ -118,15 +120,16 @@ public class Naf2Conll {
                 if (isGPE(wf2entity.get(firstWf), e)) {
                     wf2entity.get(firstWf).setType("GPE");
                     gpeCount++;
-                } else {
-                    // else the first entered entity naturally precedes and contains the new one
+                } else {    // the first token of this entity is part of a previously recorded entity
                     embeddedEntityCount++;
                 }
-            } else {
+            } else {        // record all the tokens spanned by that entity
                 NafUnits.wfSpan(e).forEach(w -> wf2entity.put(w, e));
             }
         }
-        return wf2entity.values().stream().distinct().collect(Collectors.toList());
+        List<Entity> filtered = wf2entity.values().stream().distinct().collect(Collectors.toList());
+        Collections.sort(filtered, Comparator.comparing(NafUnits::indexSpan));
+        return filtered;
     }
 
     protected int getEntityCount() {
@@ -156,6 +159,7 @@ public class Naf2Conll {
 
     private void log() {
         StringBuilder sb = new StringBuilder();
+        sb.append(naf.getPublicId()).append(": ");
         sb.append("wrote ").append(getEntityCount()).append(" entities; ");
         sb.append("merged ").append(getGpeCount()).append(" GPE entities; ");
         sb.append("left ").append(getEmbeddedEntityCount()).append(" embedded entities");

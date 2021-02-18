@@ -54,7 +54,7 @@ public class Handler {
                     throw new IllegalArgumentException("Invalid reference type. Only 'naf' is allowed.");
                 runConfiguration(indir, inputType, outdir, outputType, refdir, refType, cmd.hasOption('m'));
             } else
-                runConfiguration(indir, inputType, outdir, outputType, tokenize, conllSeparator, documentType);
+                runConfiguration(indir, inputType, outdir, outputType, tokenize, conllSeparator, documentType, cmd.hasOption('t'));
         } catch (ParseException e) {
             System.out.println(e.getMessage());
             usage(options);
@@ -88,7 +88,8 @@ public class Handler {
                                          String outputType,
                                          boolean tokenize,
                                          String conllSeparator,
-                                         String selectText) throws AbnormalProcessException {
+                                         String selectText,
+                                         boolean tsvForTF) throws AbnormalProcessException {
         if (inputType.equals(IO.TEI_SFX) && outputType.equals(IO.NAF_SFX))
             IO.loop(indir, outdir, throwingBiConsumerWrapper((x, y) -> Tei2Naf.convertFile(x, y)));
         else if (inputType.equals(IO.NAF_SFX) && outputType.equals(IO.NAF_SFX))
@@ -96,7 +97,7 @@ public class Handler {
         else if (inputType.equals(IO.NAF_SFX) && outputType.equals(IO.CONLL_SFX))
             IO.loop(indir, outdir, throwingBiConsumerWrapper((x, y) -> Naf2Conll.run(x, y, conllSeparator)));
         else if (inputType.equals(IO.NAF_SFX) && outputType.equals(IO.TSV_SFX))
-            IO.loop(indir, outdir, throwingBiConsumerWrapper((x, y) -> Naf2Tsv.run(x, y)));
+            IO.loop(indir, outdir, throwingBiConsumerWrapper((x, y) -> Naf2Tsv.run(x, y, tsvForTF)));
         else
             throw new IllegalArgumentException("conversion from " + inputType + " to " + outputType + " is not supported");
     }
@@ -117,6 +118,7 @@ public class Handler {
         options.addOption("c", true, "conll separator for Conll output; defaults to single space");
         options.addOption("n", false, "do not tokenize reference NAF");
         options.addOption("m", false, "integrate manual Conll annotations");
+        options.addOption("t", false, "format TSV for TextFabric");
         process(options, args);
     }
 }

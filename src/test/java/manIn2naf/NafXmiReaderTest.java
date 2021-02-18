@@ -8,7 +8,6 @@ import xjc.naf.Entity;
 import utils.naf.Wf;
 
 import java.io.File;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
@@ -30,7 +29,7 @@ class NafXmiReaderTest {
         assertEquals(tokenSpans.size(), aligned.size());
         assertTrue(tokenSpans.stream().noneMatch(s -> s.isEmpty()));
 
-        List<Entity> entities = entityAlignerTei.createNafEntities(tokenSpans, aligned);
+        List<Entity> entities = entityAlignerTei.createNafEntities(tokenSpans, aligned, "e");
         nafXmiReader.createEntitiesLayer(entities);
         String outFile = "src/test/resources/entity-integration/fromXmi.naf";
         nafXmiReader.write(outFile);
@@ -55,7 +54,7 @@ class NafXmiReaderTest {
         assertEquals(tokenSpans.size(), aligned.size());
         assertTrue(tokenSpans.stream().noneMatch(s -> s.isEmpty()));
 
-        List<Entity> entities = entityAlignerTei.createNafEntities(tokenSpans, aligned);
+        List<Entity> entities = entityAlignerTei.createNafEntities(tokenSpans, aligned, "e_t_9_9_");
         nafXmiReader.createEntitiesLayer(entities);
         String outFile = "src/test/resources/tf/missive_" + v + "_" + l + "_text_man.naf";
         nafXmiReader.write(outFile);

@@ -38,8 +38,8 @@ public class Span implements Comparable<Span> {
         return lastIndex;
     }
 
-    public void setLastIndex(int lastIndex) {
-        this.lastIndex = lastIndex;
+    public int getEnd() {
+        return lastIndex + 1;
     }
 
     public boolean contains (Span o) {

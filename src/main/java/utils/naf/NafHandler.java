@@ -10,6 +10,9 @@ import java.text.SimpleDateFormat;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import com.sun.xml.bind.marshaller.CharacterEscapeHandler;
 import missives.Handler;
 import org.apache.logging.log4j.LogManager;
@@ -23,6 +26,7 @@ public class NafHandler {
     public NafHandler() {
         naf = new NAF2();
     }
+    private static final Pattern XPATH = Pattern.compile("volume\\[(\\d+)\\]/missive\\[(\\d+)\\]");
 
     public static NafHandler create(String nafFile) throws AbnormalProcessException {
         NafHandler nafHandler = new NafHandler();
@@ -72,9 +76,6 @@ public class NafHandler {
         if (! file.exists())
             throw new AbnormalProcessException("File does not exist: " + naf);
         try {
-//            JAXBContext jaxbContext = JAXBContext.newInstance(NAF.class);
-////            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-////            this.naf = NAF2.create((NAF) jaxbUnmarshaller.unmarshal(file));
             JAXBContext jaxbContext = JAXBContext.newInstance(NAF2.class);
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
             this.naf = (NAF2) jaxbUnmarshaller.unmarshal(file);
@@ -153,10 +154,6 @@ public class NafHandler {
         return naf.getRaw();
     }
 
-    public void setRawText(String text) {
-        naf.setRaw(text);
-    }
-
     public void createRawLayer(String rawText, String processorName) {
         naf.setRaw(rawText);
         addToHeader("raw", processorName);
@@ -207,8 +204,31 @@ public class NafHandler {
         addToHeader("entities", processorName);
     }
 
+    public String entityPfx() throws AbnormalProcessException {
+        if (! getTunits().isEmpty()) {
+            Tunit tunit = getTunits().get(0);
+            Matcher m = XPATH.matcher(tunit.getXpath());
+            if (m.find()) {
+                String volume = m.group(1);
+                String missive = m.group(2);
+                return "e_" + getTextType(tunit.getType()) + volume + "_" + missive + "_";
+            }
+        }
+        return "e_";
+    }
+
+    private String getTextType(String tunitType) throws AbnormalProcessException {
+        if (tunitType.equals("remark") || tunitType.equals("footnote"))
+            return "n";     // notes
+        else if (tunitType.equals("header") || tunitType.equals("paragraph"))
+            return "t";     // text
+        else throw new AbnormalProcessException("unrecognized tunit type: " + tunitType);
+    }
+
     public String coveredText(int begin, int end) {
-        return naf.getRaw().substring(begin, end);
+        int i = Math.max(begin, 0);
+        int j = Math.min(end, naf.getRaw().length() - 1);
+        return naf.getRaw().substring(i, j);
     }
 
     public String coveredText(Wf wf) {

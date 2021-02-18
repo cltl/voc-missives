@@ -36,6 +36,14 @@ public class NafUnits {
         return targets.stream().map(t -> (Wf) t.getId()).collect(Collectors.toList());
     }
 
+    public static utils.common.Span indexSpan(Entity e) {
+        List<Wf> wfs = wfSpan(e);
+        Wf last = wfs.get(wfs.size() - 1);
+        int end = Integer.parseInt(last.getOffset()) + Integer.parseInt(last.getLength());
+        int length = end - Integer.parseInt(wfs.get(0).getOffset());
+        return utils.common.Span.fromCharPosition(wfs.get(0).getOffset(), "" + length);
+    }
+
     public static String getContent(Wf wf) {
         return wf.getContent();
        // return (String) wf.getContent().stream().filter(x -> x instanceof String).findFirst().orElse(null);

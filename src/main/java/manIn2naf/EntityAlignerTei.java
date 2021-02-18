@@ -15,19 +15,21 @@ import java.util.stream.Collectors;
 public class EntityAlignerTei implements EntityAligner {
     AlignedEntities alignedEntities;
     NafHandler refNaf;
-    //String rawNafText;
     CasDoc xmi;
+    String entityPfx;
+
     public static final Logger logger = LogManager.getLogger(EntityAlignerTei.class);
 
-    public EntityAlignerTei(NafHandler naf, CasDoc xmi) {
+    public EntityAlignerTei(NafHandler naf, CasDoc xmi, String entityPfx) {
         this.refNaf = naf;
         this.xmi = xmi;
+        this.entityPfx = entityPfx;
     }
 
     public List<Entity> align() {
         List<AlignedEntity> entities = getEntities(refNaf.getRawText());
         List<List<Wf>> tokenSpans = findOverlappingTokens(entities);
-        return createNafEntities(tokenSpans, entities);
+        return createNafEntities(tokenSpans, entities, entityPfx);
     }
 
     public List<AlignedEntity> getEntities(String rawNafText) {
@@ -48,13 +50,13 @@ public class EntityAlignerTei implements EntityAligner {
     }
 
 
-    public List<Entity> createNafEntities(List<List<Wf>> tokenSpans, List<AlignedEntity> entities) {
+    public List<Entity> createNafEntities(List<List<Wf>> tokenSpans, List<AlignedEntity> entities, String entityPfx) {
         List<Entity> nafEntities = new LinkedList<>();
         for (int i = 0; i < tokenSpans.size(); i++) {
             List<Wf> tokenSpan = tokenSpans.get(i);
             AlignedEntity e = entities.get(i);
             e.fillMissingTypes();
-            nafEntities.add(NafUnits.createEntity("e" + i, e.getEntity().getValue(), tokenSpan));
+            nafEntities.add(NafUnits.createEntity(entityPfx + i, e.getEntity().getValue(), tokenSpan));
         }
         return nafEntities;
     }
