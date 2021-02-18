@@ -35,7 +35,6 @@ public class CasDoc {
     JCas jCas;
     TypeSystemDescription tsd;
     private static final String TSD_FILE = "src/main/resources/dkproTypeSystem.xml";
-    public static final String FILE_EXT = ".entities.xmi";
     private static final String VOL_ID_PFX = "missiven:vol";
     private static final int VOL_FORMAT_INDEX = VOL_ID_PFX.length();
 

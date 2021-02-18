@@ -64,7 +64,7 @@ public class Handler {
     private static void runConfiguration(String indir, String inputType,
                                          String outdir, String outputType,
                                          String refDir, String refType,
-                                         boolean manualConll) {
+                                         boolean manualConll) throws AbnormalProcessException {
         if (outputType.equals(IO.NAF_SFX) && refType.equals(IO.NAF_SFX)) {
             if (inputType.equals(IO.CONLL_SFX)) {
                 if (manualConll)
@@ -88,7 +88,7 @@ public class Handler {
                                          String outputType,
                                          boolean tokenize,
                                          String conllSeparator,
-                                         String selectText) {
+                                         String selectText) throws AbnormalProcessException {
         if (inputType.equals(IO.TEI_SFX) && outputType.equals(IO.NAF_SFX))
             IO.loop(indir, outdir, throwingBiConsumerWrapper((x, y) -> Tei2Naf.convertFile(x, y)));
         else if (inputType.equals(IO.NAF_SFX) && outputType.equals(IO.NAF_SFX))

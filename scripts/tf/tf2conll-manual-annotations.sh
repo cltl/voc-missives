@@ -24,24 +24,34 @@ wdir=$(cd $(dirname "${BASH_SOURCE[0]}") && cd ../.. && pwd)
 # -- functions --
 
 tf2naf() {
+  echo "exporting missives from TextFabric..."
   cd ${wdir}/tf
   python tf2naf.py $idmap $ddir
 }
 
 tokenize() {
+  echo "tokenizing base Naf files"
   sh ${sdir}/naf-selector.sh ${ddir}/basenaf ${ddir}/toknaf tf
 }
 
 manin2naf() {
+  cd $wdir
   if [ -d ${mandir}/xmi ]; then
+    echo "aligning manual Xmi annotations"
     sh ${sdir}/man-in2naf.sh ${mandir}/xmi ${ddir}/toknaf ${ddir}/mannaf
+  else
+    echo "found no manual Xmi annotations to align"
   fi
   if [ -d ${mandir}/conll ]; then
+    echo "aligning manual Conll annotations"
     sh ${sdir}/man-in2naf.sh ${mandir}/conll ${ddir}/toknaf ${ddir}/mannaf
+  else
+    echo "found no manual Conll annotations to align"
   fi
 }
 
 naf2conll() {
+  echo "converting Naf entities to Conll"
   sh ${sdir}/naf2conll.sh ${ddir}/mannaf ${ddir}/manconll
 }
 

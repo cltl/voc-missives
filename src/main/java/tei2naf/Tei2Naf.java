@@ -143,7 +143,7 @@ public class Tei2Naf {
         converter.process(file.toString(), outdir);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws AbnormalProcessException {
         IO.loop(args[0], args[1],
                 throwingBiConsumerWrapper((x, y) -> convertFile(x, y)));
     }

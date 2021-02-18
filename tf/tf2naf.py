@@ -21,7 +21,7 @@ def export_letters_fromTF(workdir, text_type, max_letters=0, ml=None):
         pubids_titles_and_tunits = ml.extract_letters_text(tfdir, max_letters=max_letters)
     else:
         pubids_titles_and_tunits = ml.extract_letters_notes(tfdir, max_letters=max_letters)
-    convert(pubids_titles_and_tunits, tfdir, ml.version(), refnafdir)
+    convert(pubids_titles_and_tunits, tfdir, refnafdir, ml.version())
 
 
 def export_letter(workdir, v, l, text_type, ml=None):
@@ -29,10 +29,10 @@ def export_letter(workdir, v, l, text_type, ml=None):
         ml = MissivesLoader()
     tfdir, refnafdir = create_outdirs(workdir)
     pubids_titles_and_tunits = ml.extract_letter(v, l, text_type, tfdir)
-    convert(pubids_titles_and_tunits, tfdir, ml.version(), refnafdir)
+    convert(pubids_titles_and_tunits, tfdir, refnafdir, ml.version())
 
 
-def convert(pubids_titles_and_tunits, tfdir, tfversion, refnafdir):
+def convert(pubids_titles_and_tunits, tfdir, refnafdir, tfversion):
     for pubid, title, paragraphs in pubids_titles_and_tunits:
         create_naf(pubid, title, tfversion, paragraphs, os.path.join(tfdir, pubid), refnafdir)
 
@@ -65,7 +65,7 @@ def export_letters(letters_json, outdir, ml=None):
     letter_ids = [x['tf_id'] for x in json_ids]
     tfdir, refnafdir = create_outdirs(outdir)
     pubids_titles_and_tunits = ml.write_text_and_pos_files(letter_ids, tfdir)
-    convert(pubids_titles_and_tunits, tfdir, ml.version(), refnafdir)
+    convert(pubids_titles_and_tunits, tfdir, refnafdir, ml.version())
 
 
 def read_tf_files(file):

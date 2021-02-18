@@ -43,31 +43,6 @@ public class NAF2 {
     @XmlSchemaType(name = "anySimpleType")
     protected String lang;
 
-    /**
-     * @deprecated
-     * @param naf
-     * @return
-     */
-    public static NAF2 create(NAF naf) {
-        NAF2 naf2 = new NAF2();
-        Object raw = getLayer(naf, o -> o instanceof Raw);
-        naf2.setNafHeader((NafHeader) getLayer(naf, o -> o instanceof NafHeader));
-        if (raw != null)
-            naf2.setRaw(((Raw) raw).getValue());
-        naf2.setTunits((Tunits) getLayer(naf, o -> o instanceof Tunits));
-        naf2.setText((Text) getLayer(naf, o -> o instanceof Text));
-        naf2.setEntities((Entities) getLayer(naf, o -> o instanceof Entities));
-        return naf2;
-    }
-
-    private static Object getLayer(NAF naf, java.util.function.Predicate layer) {
-        return naf.getNafHeadersAndRawsAndTopics().stream().filter(layer).findFirst().orElse(null);
-    }
-
-    private Raw getRawLayer(NAF naf) {
-        return (Raw) naf.getNafHeadersAndRawsAndTopics().stream().filter(o -> o instanceof Raw).findFirst().orElse(null);
-    }
-
     public NafHeader getNafHeader() {
         return nafHeader;
     }

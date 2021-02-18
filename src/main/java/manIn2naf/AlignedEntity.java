@@ -112,9 +112,15 @@ public class AlignedEntity implements Comparable<AlignedEntity> {
         return referenceMatches.stream().anyMatch(x -> x.contains(s));
     }
 
-    public void findHyphenatedMatch(String rawText, int index) {
+    /**
+     * find match in raw text that only differs by an added hyphen or other separator
+     * @param rawText
+     * @param index
+     * @param sep
+     */
+    public void findHyphenatedMatch(String rawText, int index, String sep) {
         for (int i = 1; i < entity.getCoveredText().length() - 1; i++) {
-            String hyphenated = entity.getCoveredText().substring(0, i) + "-" + entity.getCoveredText().substring(i);
+            String hyphenated = entity.getCoveredText().substring(0, i) + sep + entity.getCoveredText().substring(i);
             List<Span> matches = EntityAligner.match(hyphenated, rawText).stream().filter(s -> s.getFirstIndex() >= index).collect(Collectors.toList());
             if (! matches.isEmpty()) {
                 referenceMatches = Collections.singletonList(matches.get(0));

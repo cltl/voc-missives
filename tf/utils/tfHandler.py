@@ -5,10 +5,19 @@ from tf.app import use
 from tf.core.api import Locality as L
 from tf.core.api import NodeFeatures as F
 from tf.convert.recorder import Recorder
-from tf.fabric import Fabric as TF, Fabric
+from tf.fabric import Fabric as TF
 
-
+# retrieve volume, letter id and text/notes text type
 TFP = re.compile(r"missive_(\d+)_(\d+)_(\w+)")
+
+# handling punctation and spacing for raw text
+WORD = re.compile(r"\w+")
+DIGITS = re.compile(r"\d+")
+COMP_ENDS = ['e', '8', 's', '®', '6', 'en', 'Ie', 'le', 'ie', 'a', 'as', '35', '88', 'c']
+S_ENDS = ['1', '1*', '‘', 'ta']
+N_STARTS = ['Jansz']
+RA_STARTS = ['S', 'Senh']
+R_STARTS = ['gouv', 'gouvern', 'Compt']
 
 
 class MissivesLoader:
@@ -75,7 +84,7 @@ class MissivesLoader:
 
     def get_letter(self, v, l):
         letters = self.get_letters_for_volume(v)
-        return letters[l - 1]   # letter ids are indexed from 1
+        return letters[l - 1]  # letter ids are indexed from 1
 
     def write_text_and_pos_files(self, letter_ids, outdir):
         for_naf = []
@@ -136,7 +145,7 @@ def default_tf_loc():
 def make_features(textdir, tsvdir):
     features = {'entityId': {}, 'entityKind': {}}
     for file in glob.iglob("{}/**".format(textdir)):
-        if '.' not in file:     # looking for text file without extension
+        if '.' not in file:  # looking for text file without extension
             filename = os.path.basename(file)
             tsv_file = os.path.join(tsvdir, "{}.tsv".format(filename))
             file_feats = get_file_features(file, tsv_file)
@@ -178,20 +187,54 @@ def record_section(rec, section, offset):
     if pnode is not None:
         rec.start(pnode)
     for w in section:
-        rec.start(w)
         tok = F.trans.v(w)
         punct = F.punc.v(w)
-        rec.add("{}{}".format(F.trans.v(w), punct))
-        offset += len(tok) + len(punct)
-        rec.end(w)
-        if not punct:       # concerns most end of line words
-            rec.add(" ")
-            offset += 1
-    rec.add("\n")           # end of title
+        wordform = "{}{}".format(tok, punct)
+        if wordform.strip():
+            rec.start(w)
+            rec.add(wordform)
+            offset += len(tok) + len(punct)
+            rec.end(w)
+            offset = pad(offset, tok, punct, rec, w)
+    rec.add("\n")  # end of title
     offset += 1
     if pnode is not None:
         rec.end(pnode)
     return offset
+
+
+def pad(offset, token, punct, rec, w):
+    """add padding whitespace if necessary:
+    - after commas
+    - after periods following on letters (not digits), and with a few exceptions
+    - after empty punctuation"""
+    punct_ends_word = is_end_of_word_punct(punct, token, w)
+    word_ends_at_eol = punct == '' and token[-1] != '¬'  # token can be empty but never together with punct
+    if word_ends_at_eol or punct == ',' or punct_ends_word:
+        rec.add(" ")
+        offset += 1
+    return offset
+
+
+def is_end_of_word_punct(punct, token, w):
+    return punct == '.' \
+           and WORD.match(token) and not DIGITS.match(token) \
+           and not inword_period(token, w)
+
+
+def inword_period(token, w):
+    next_token = F.trans.v(L.n(w, otype='word')[0])
+    return token == 'Comp' and next_token in COMP_ENDS \
+           or token == 'S' and next_token in S_ENDS \
+           or token in R_STARTS and next_token == 'r' \
+           or token == 'R' and next_token == '1' \
+           or token in RA_STARTS and next_token == 'ra' \
+           or token == 'V' and next_token == 'O' \
+           or token == 'O' and next_token in ['C', 'G', 'I'] \
+           or token == 'I' and next_token == 'C' \
+           or token == 'Eng' and next_token == '8e' \
+           or token == 'Gomp' and next_token == 'es' \
+           or token in N_STARTS and next_token == 'n'
 
 
 def xpath_title(volume_id, letter_id):
@@ -281,7 +324,7 @@ def text_sequences(letter):
     while i < len(all_words):
         if F.isorig.v(all_words[i]):
             paragraph = L.u(all_words[i], otype='para')
-            if paragraph:    # append all paragraph
+            if paragraph:  # append all paragraph
                 pwords = L.d(paragraph[0], otype='word')
                 if seq:
                     seqs.append(seq)

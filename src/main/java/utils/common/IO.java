@@ -2,6 +2,7 @@ package utils.common;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import xjc.teiAll.Ab;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -34,15 +35,8 @@ public class IO {
      * @param outdir    output directory
      * @param fileConsumer a bi-consumer (input file path, output directory)
      */
-    public static void loop(String indir, String outdir, BiConsumer<Path, String> fileConsumer) {
-        Path dirpath = Paths.get(outdir);
-        if (!Files.exists(dirpath)) {
-            try {
-                Files.createDirectories(Paths.get(outdir));
-            } catch (IOException e) {
-                logger.fatal("Error creating " + outdir, e);
-            }
-        }
+    public static void loop(String indir, String outdir, BiConsumer<Path, String> fileConsumer) throws AbnormalProcessException {
+        createPath(outdir);
         try (Stream<Path> paths = Files.walk(Paths.get(indir))) {
             paths.filter(p -> Files.isRegularFile(p)).filter(p -> {
                 try {
@@ -52,9 +46,21 @@ public class IO {
                     return false;
                 }}).forEach(f -> fileConsumer.accept(f, outdir));
         } catch (IOException e) {
-            logger.fatal("Error processing files in " + indir, e);
+            throw new AbnormalProcessException("Error processing files in " + indir, e);
         }
     }
+
+    public static void createPath(String outdir) throws AbnormalProcessException {
+        Path dirpath = Paths.get(outdir);
+        if (!Files.exists(dirpath)) {
+            try {
+                Files.createDirectories(Paths.get(outdir));
+            } catch (IOException e) {
+                throw new AbnormalProcessException("Error creating " + outdir, e);
+            }
+        }
+    }
+
     /**
      * Processes files in dir given a file consumer
      * @param indir1    input directory
@@ -62,15 +68,8 @@ public class IO {
      * @param outdir    output directory
      * @param fileConsumer a bi-consumer (input file from dir1, (indir2 , outdir))
      */
-    public static void loop(String indir1, List<String> auxdirs, String outdir, BiConsumer<Path, List<String>> fileConsumer) {
-        Path dirpath = Paths.get(outdir);
-        if (!Files.exists(dirpath)) {
-            try {
-                Files.createDirectories(dirpath);
-            } catch (IOException e) {
-                logger.fatal("Error creating " + outdir, e);
-            }
-        }
+    public static void loop(String indir1, List<String> auxdirs, String outdir, BiConsumer<Path, List<String>> fileConsumer) throws AbnormalProcessException {
+        createPath(outdir);
         List<String> dirs = new ArrayList<>();
         dirs.addAll(auxdirs);
         dirs.add(outdir);
@@ -84,25 +83,9 @@ public class IO {
                 }}).forEach(f -> fileConsumer.accept(f, dirs));
 
         } catch (IOException e) {
-            logger.fatal("Error processing files in " + indir1, e);
+            throw new AbnormalProcessException("Error processing files in " + indir1, e);
         }
 
-    }
-
-    public static void loopToFile(String indir, String outFile, BiConsumer<Path,BufferedWriter> fileConsumer) {
-        try (Stream<Path> paths = Files.walk(Paths.get(indir));
-            BufferedWriter bw = new BufferedWriter(new FileWriter(outFile))) {
-            paths.filter(p -> Files.isRegularFile(p)).filter(p -> {
-                try {
-                    return ! Files.isHidden(p);
-                } catch (IOException e) {
-                    logger.warn("Error testing " + p, e);
-                    return false;
-                }}).forEach(f -> fileConsumer.accept(f, bw));
-
-        } catch (IOException e) {
-            logger.fatal("Error processing files in " + indir, e);
-        }
     }
 
     public static String getTargetFile(String targetDir, Path file, String oldExtension, String newExtension) {
@@ -117,8 +100,8 @@ public class IO {
             return extension(file.getFileName().toString());
         } catch (IOException e) {
             e.printStackTrace();
+            throw new AbnormalProcessException("Cannot infer type from files in " + indir);
         }
-        throw new AbnormalProcessException("Cannot infer type from files in " + indir);
     }
 
     public static String extension(String fileName) {

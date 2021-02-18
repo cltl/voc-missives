@@ -7,43 +7,38 @@ from utils.tfHandler import MissivesLoader
 ml = MissivesLoader()
 
 
-def test_conversion():
-    workdir = 'tests/data'
-    letter_ids = ['missive_1_3_text', 'missive_1_4_text']
-    titles = ['missive 3 from volume 1', 'missive 4 from volume 1']
-    paragraphs = [[("volume[1]/missive[3]/paragraph[1]", 0, 100, 'paragraph'),
-                   ("volume[1]/missive[3]/paragraph[2]", 101, 200, 'paragraph')], []]
-    tfdir, refnafdir = t2n.create_outdirs(workdir)
-    t2n.convert(zip(letter_ids, titles, paragraphs), tfdir, refnafdir)
-    nafs = [f for f in glob.glob('{}/**'.format(refnafdir))]
-    assert len(nafs) == 2
-    assert os.path.isfile(os.path.join(refnafdir, "{}.naf".format(letter_ids[0])))
-
-
 def test_letter_extraction():
-    workdir = 'tests/data/'
+    workdir = 'tests/data/text_1_5'
     t2n.export_letters_fromTF(workdir, "text", 5, ml=ml)
     naf_doc = naf.parse(os.path.join(workdir, 'basenaf', 'missive_1_5_text.naf'))
     tunits = naf_doc.get_tunits()
-    assert tunits[0].get('xpath') == '//volume[1]/missive[5]/title'
+    assert tunits[0].get('xpath') == '//volume[1]/missive[5]/header[1]'
     assert int(tunits[1].get('offset')) > 0
     assert int(tunits[1].get('offset')) == int(tunits[0].get('offset')) + int(tunits[0].get('length'))
 
 
 def test_notes_extraction():
-    workdir = 'tests/data'
+    workdir = 'tests/data/notes_1_5'
     t2n.export_letters_fromTF(workdir, 'notes', 5, ml=ml)
     naf_file = os.path.join(workdir, 'basenaf', 'missive_1_5_notes.naf')
     assert os.path.exists(naf_file)
     naf_doc = naf.parse(naf_file)
     tunits = naf_doc.get_tunits()
-    assert tunits[0].get('xpath') == '//volume[1]/missive[5]/remark[1]'
+    assert tunits[0].get('xpath') == '//volume[1]/missive[5]/footnote[1]'
     assert int(tunits[1].get('offset')) > 0
     assert int(tunits[1].get('offset')) == int(tunits[0].get('offset')) + int(tunits[0].get('length'))
 
 
+def test_extract_letter_v_l_text():
+    v = 5
+    l = 7
+    workdir = 'tests/data/letter_{}_{}'.format(v, l)
+    t2n.export_letter(workdir, v, l, 'text', ml=ml)
+    assert os.path.exists(os.path.join(workdir, 'tf', 'missive_{}_{}_textf'.format(v, l)))
+
+
 def test_extract_letter_9_9_text():
-    workdir = 'tests/data'
+    workdir = 'tests/data/letter_9_9'
     t2n.export_letter(workdir, 9, 9, 'text', ml=ml)
     naf_file = os.path.join(workdir, 'basenaf', 'missive_9_9_text.naf')
     assert os.path.exists(naf_file)

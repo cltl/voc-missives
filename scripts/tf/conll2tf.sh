@@ -14,15 +14,16 @@
 set -e
 
 ddir=$1         # data directory, should contain the following folders:
-                # conll, tf (text and pos), toknaf
+                # tf (text and pos), toknaf
+conlldir=$2
 
 sdir=$(cd $(dirname "${BASH_SOURCE[0]}") && cd .. && pwd)
 wdir=$(cd $(dirname "${BASH_SOURCE[0]}") && cd ../.. && pwd)
 
 # -- functions --
 
-conllin2naf() {
-  sh ${sdir}/sys-in2naf.sh ${ddir}/conll ${ddir}/toknaf ${ddir}/sysnaf
+sysin2naf() {
+  sh ${sdir}/sys-in2naf.sh ${conlldir} ${ddir}/toknaf ${ddir}/sysnaf
 }
 
 naf2tsv() {

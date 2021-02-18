@@ -3,10 +3,13 @@ package manIn2naf;
 import de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity;
 import org.junit.jupiter.api.Test;
 import utils.common.AbnormalProcessException;
+import utils.common.IO;
 import xjc.naf.Entity;
 import utils.naf.Wf;
 
 import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -37,8 +40,11 @@ class NafXmiReaderTest {
 
     @Test
     public void testTFentityMapping() throws AbnormalProcessException {
-        String xmiFile = "src/test/resources/tf/missive_9_9_text.xmi";
-        String nafFile = "src/test/resources/tf/missive_9_9_text.naf";
+        int v = 9;
+        int l = 9;
+        String datadir = "src/test/resources/tf";
+        String xmiFile = Paths.get(datadir, "missive_" + v + "_" + l + "_text.xmi").toString();
+        String nafFile = Paths.get(datadir, "missive_" + v + "_" + l + "_text.naf").toString();
         NafXmiReader nafXmiReader = NafXmiReader.createTeiTextReader(nafFile, xmiFile);
         List<NamedEntity> xmiEntities = nafXmiReader.getXmi().getEntities();
         EntityAlignerTei entityAlignerTei = (EntityAlignerTei) nafXmiReader.getEntityAligner();
@@ -51,7 +57,7 @@ class NafXmiReaderTest {
 
         List<Entity> entities = entityAlignerTei.createNafEntities(tokenSpans, aligned);
         nafXmiReader.createEntitiesLayer(entities);
-        String outFile = "src/test/resources/out/missive_9_9_text_man.naf";
+        String outFile = "src/test/resources/tf/missive_" + v + "_" + l + "_text_man.naf";
         nafXmiReader.write(outFile);
         File out = new File(outFile);
         assertTrue(out.exists());

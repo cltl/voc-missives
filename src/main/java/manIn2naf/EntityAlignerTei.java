@@ -95,7 +95,9 @@ public class EntityAlignerTei implements EntityAligner {
                 AlignedEntity previous = getPreviousAlignedEntity(i);
                 int index = previous == null ? 0 : previous.getReferenceMatches().get(0).getFirstIndex();
                 AlignedEntity current = alignedEntities.get(i);
-                current.findHyphenatedMatch(rawNafText, index);
+                current.findHyphenatedMatch(rawNafText, index, "-");
+                if (current.hasNoMatch())
+                    current.findHyphenatedMatch(rawNafText, index, " ");
                 if (current.hasNoMatch())
                     current.findWhiteSpaceFreeMatch(rawNafText, index);
                 if (current.hasNoMatch()) {
