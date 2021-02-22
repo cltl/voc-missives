@@ -17,12 +17,12 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * Reads entities from a Conll file and adds them to a reference NAF.
- * NAF and Conll tokens should be aligned.
- * This class is intended to be used to integrate system annotations
- * into a bare reference NAF, or to replace existing entities by a new
- * set of entities.
- * If an entities layer already exists, the differences between
+ * Enriches NAF file based on Conll file.
+ * Tokens in both files may differ as long as their string content
+ * aligns overall.
+ * The enriched NAF may keep its existing tokens or have them replaced
+ * by the Conll tokens.
+ * Entities can be added or replaced. In this last case, the differences between
  * both sets of entities are logged.
  */
 public class NAFConllReader {
@@ -32,20 +32,21 @@ public class NAFConllReader {
     public static final Logger logger = LogManager.getLogger(NAFConllReader.class);
     NafHandler naf;
     boolean replaceEntities;
+    boolean replaceTokens;
     String entityPfx;
 
-    public NAFConllReader(String nafFile) throws AbnormalProcessException {
+    public NAFConllReader(String nafFile, boolean replaceTokens, boolean replaceEntities) throws AbnormalProcessException {
         this.naf = NafHandler.create(nafFile);
-        this.replaceEntities = naf.hasEntitiesLayer();
+        this.replaceEntities = replaceEntities;
+        this.replaceTokens = replaceTokens;
         this.entityPfx = naf.entityPfx();
     }
-
 
     public NafHandler getNaf() {
         return naf;
     }
 
-    public static List<String[]> conllTokens(String conllFile) throws AbnormalProcessException {
+    public static List<String[]> conllLines(String conllFile) throws AbnormalProcessException {
         String line;
         List<String[]> tokens = new ArrayList<>();
         try (BufferedReader bfr = new BufferedReader(new FileReader(conllFile))) {
@@ -63,66 +64,170 @@ public class NAFConllReader {
         return tokens;
     }
 
-
-    static boolean startsEntity(String[] token) {
-        return token[1].startsWith("B");
+    static List<String> conllTokens(List<String[]> conllLines) {
+        return conllLines.stream().map(x -> x[0]).collect(Collectors.toList());
     }
 
-    static boolean isInEntity(String[] token) {
-        return token[1].startsWith("I");
+    static List<String> conllLabels(List<String[]> conllLines) {
+        return conllLines.stream().map(x -> x[1]).collect(Collectors.toList());
     }
 
-    String label(String[] token) {
-        return token[1].split("-")[1];
-    }
-
-    protected List<Entity> readEntities(List<String[]> tokens) {
-        List<Wf> wfs = naf.getWfs();
-        int eIndex = 0;
-        List<Entity> entities = new LinkedList<>();
-        int i = 0;
-        while (i < tokens.size()) {
-            int j = 1;
-            if (startsEntity(tokens.get(i))) {
-                List<Wf> wfSpan = new LinkedList<>();
-                wfSpan.add(wfs.get(i));
-                while (i + j < tokens.size() && isInEntity(tokens.get(i + j))) {
-                    wfSpan.add(wfs.get(i + j));
-                    j++;
-                }
-                entities.add(NafUnits.createEntity(entityPfx + eIndex, label(tokens.get(i)), wfSpan));
-                eIndex++;
+    static List<BaseEntity> entitiesWithIdSpans(List<String> conllLabels) {
+        List<BaseEntity> entities = new LinkedList<>();
+        int first = -1;
+        int last = -1;
+        String type = "";
+        for (int i = 0; i < conllLabels.size(); i++) {
+            String label = conllLabels.get(i);
+            if (label.startsWith("B")) {
+                if (last != -1)
+                    entities.add(new BaseEntity(new Span(first, last), type));
+                first = i;
+                last = i;
+                type = label.split("-")[1];
+            } else if (label.startsWith("I"))
+                last = i;
+            else {
+                if (last != -1)
+                    entities.add(new BaseEntity(new Span(first, last), type));
+                first = -1;
+                last = -1;
+                type = "";
             }
-            i += j;
+        }
+        if (last != -1)
+            entities.add(new BaseEntity(new Span(first, last), type));
+        return entities;
+    }
+
+    protected void writeNaf(String outFile) throws AbnormalProcessException {
+        naf.write(outFile);
+    }
+
+    void process(String conllFile, String outFile) throws AbnormalProcessException {
+        List<String[]> lines = conllLines(conllFile);
+        List<String> conllTokens = conllTokens(lines);
+        List<BaseEntity> entitiesWithIdSpans = entitiesWithIdSpans(conllLabels(lines));
+        List<BaseEntity> conllEntities;
+        List<Wf> tokens;
+        List<Entity> nafEntities;
+        if (replaceTokens) {
+            tokens = createWfs(conllTokens);
+            writeTokensToNaf(tokens);
+            nafEntities = realignNafEntities(tokens);
+        } else {
+            entitiesWithIdSpans = mapEntitiesToNafWfIds(entitiesWithIdSpans, mapConllTokensToNafWfs(conllTokens));
+            tokens = naf.getWfs();
+            nafEntities = naf.getEntities();
+        }
+        conllEntities = createEntitiesWithOffsets(entitiesWithIdSpans, tokens);
+
+        if (replaceEntities) {
+            compareToExisting(nafEntities, conllEntities);
+            writeEntitiesToNaf(asNafEntities(entitiesWithIdSpans, tokens, false), "-mod");
+        } else {
+            logger.info("adding " + conllEntities.size() + " new entities to NAF...");
+            if (nafEntities.isEmpty())
+                writeEntitiesToNaf(asNafEntities(entitiesWithIdSpans, tokens, false), "");
+            else {
+                conllEntities.addAll(asBaseEntities(nafEntities));
+                conllEntities = conllEntities.stream().distinct().collect(Collectors.toList());
+                Collections.sort(conllEntities);
+                writeEntitiesToNaf(asNafEntities(conllEntities, tokens, true), "-add");
+            }
+        }
+        writeNaf(outFile);
+    }
+
+    private List<Entity> realignNafEntities(List<Wf> tokens) {
+        return asNafEntities(asBaseEntities(naf.getEntities()), tokens, true);
+    }
+
+    List<BaseEntity> createEntitiesWithOffsets(List<BaseEntity> entitiesWithIdSpans, List<Wf> wfs) {
+        List<BaseEntity> offsetEntities = new LinkedList<>();
+        for (BaseEntity eWithIdSpan: entitiesWithIdSpans) {
+            int first = Integer.parseInt(wfs.get(eWithIdSpan.begin()).getOffset());
+            Wf lastWf = wfs.get(eWithIdSpan.end() - 1);
+            int end = Integer.parseInt(lastWf.getOffset()) + Integer.parseInt(lastWf.getLength());
+            offsetEntities.add(new BaseEntity(new Span(first, end - 1), eWithIdSpan.getType()));
+        }
+        return offsetEntities;
+    }
+
+    List<BaseEntity> mapEntitiesToNafWfIds(List<BaseEntity> entitiesWithIdSpans, List<List<Integer>> indexMap) {
+        List<BaseEntity> reindexed = new LinkedList<>();
+        for (BaseEntity entity: entitiesWithIdSpans) {
+            Set<Integer> wfidset = new HashSet<>();
+            for (int i = entity.begin(); i < entity.end(); i++)
+                wfidset.addAll(indexMap.get(i));
+            List<Integer> wfids = new LinkedList<>(wfidset);
+            Collections.sort(wfids);
+            reindexed.add(new BaseEntity(new Span(wfids.get(0), wfids.get(wfids.size() - 1)), entity.getType()));
+        }
+        return reindexed;
+    }
+
+    List<List<Integer>> mapConllTokensToNafWfs(List<String> conllTokens) throws AbnormalProcessException {
+        WfAligner wfAligner = new WfAligner(naf.getWfs(), conllTokens);
+        return wfAligner.indexMap();
+    }
+
+    /**
+     * align conll tokens to naf wfs
+     * @param conllTokens
+     * @return
+     */
+    private List<Wf> createWfs(List<String> conllTokens) throws AbnormalProcessException {
+        WfAligner wfAligner = new WfAligner(naf.getWfs(), conllTokens);
+        return wfAligner.getAlignedWfs();
+    }
+
+    List<Entity> asNafEntities(List<BaseEntity> entitiesWithWfIds, List<Wf> wfs, boolean charOffsets) {
+        List<Entity> entities = new LinkedList<>();
+        for (int i = 0; i < entitiesWithWfIds.size(); i++) {
+            BaseEntity entityWithWfId = entitiesWithWfIds.get(i);
+            int firstWfIndex = charOffsets ? getWfWithOffset(entityWithWfId.begin(), wfs) : entityWithWfId.begin();
+            int lastWfIndex = charOffsets ? getWfEndingAt(entityWithWfId.end(), wfs) : entityWithWfId.end() - 1;
+            List<Wf> wfSpan = new LinkedList<>();
+            for (int j = firstWfIndex; j <= lastWfIndex; j++)
+                wfSpan.add(wfs.get(j));
+            entities.add(NafUnits.createEntity(entityPfx + i, entityWithWfId.getType(), wfSpan));
         }
         return entities;
     }
 
-    protected void write(List<Entity> entities, String outFile) throws AbnormalProcessException {
-        naf.createEntitiesLayer(entities, getName());
-        naf.write(outFile);
+    private int getWfEndingAt(int end, List<Wf> wfs) {
+        for (int i = 0; i < wfs.size(); i++)
+            if (end == Integer.parseInt(wfs.get(i).getOffset()) + Integer.parseInt(wfs.get(i).getLength()))
+                return i;
+        return -1;
     }
 
-    private void process(String conllFile, String outFile) throws AbnormalProcessException {
-        List<String[]> tokens = conllTokens(conllFile);
-        List<Entity> entities = readEntities(tokens);
-        if (tokens.size() != naf.getWfs().size())
-            throw new AbnormalProcessException("tokens do not match: NAF has " + naf.getWfs().size() + ", input Conll has " + tokens.size());
-        if (replaceEntities)
-            compareToExisting(entities);
-        else
-            logger.info("adding new entities to NAF...");
-        write(entities, outFile);
+    private int getWfWithOffset(int offset, List<Wf> wfs) {
+        for (int i = 0; i < wfs.size(); i++)
+            if (offset == Integer.parseInt(wfs.get(i).getOffset()))
+                return i;
+        return -1;
     }
 
-    List<BaseEntity> compareToExisting(List<Entity> entities) {
-        List<BaseEntity> newEntities = entities.stream().map(e -> BaseEntity.create(e)).collect(Collectors.toList());
-        List<BaseEntity> currentEntities = naf.getEntities().stream().map(e -> BaseEntity.create(e)).collect(Collectors.toList());
+    List<BaseEntity> asBaseEntities(List<Entity> entities) {
+        return entities.stream().map(e -> BaseEntity.create(e)).collect(Collectors.toList());
+    }
 
+    void writeEntitiesToNaf(List<Entity> conllEntities, String mod) {
+        naf.createEntitiesLayer(conllEntities, getName() + mod);
+    }
+
+    private void writeTokensToNaf(List<Wf> conllWfs) {
+        naf.createTextLayer(conllWfs, getName() + "-mod");
+    }
+
+    List<BaseEntity> compareToExisting(List<Entity> nafEntities, List<BaseEntity> entities) {
+        List<BaseEntity> currentEntities = asBaseEntities(nafEntities);
         List<BaseEntity> removed = new LinkedList<>(currentEntities);
-        removed.removeAll(newEntities);
+        removed.removeAll(entities);
 
-        List<BaseEntity> added = new LinkedList<>(newEntities);
+        List<BaseEntity> added = new LinkedList<>(entities);
         added.removeAll(currentEntities);
 
         List<BaseEntity> diff = new LinkedList<>(removed);
@@ -137,7 +242,8 @@ public class NAFConllReader {
         StringBuilder sb = new StringBuilder();
         sb.append(naf.getPublicId()).append("\n");
         sb.append("found ").append(diff.size()).append(" differences between current and new entities:\n");
-
+        int countRemoved = (int) diff.stream().filter(e -> removed.contains(e)).count();
+        sb.append("removed ").append(countRemoved).append("; added ").append(diff.size() - countRemoved).append("\n");
         for (BaseEntity e: diff) {
             if (removed.contains(e))
                 sb.append("removed\t");
@@ -153,18 +259,15 @@ public class NAFConllReader {
         logger.info(sb.toString());
     }
 
-    public static void run(Path file, List<String> dirs) throws AbnormalProcessException {
+    public static void run(Path file, List<String> dirs, boolean replaceTokens, boolean replaceEntities) throws AbnormalProcessException {
             File refFile = IO.findFileWithSameId(file, new File(dirs.get(0)));
             File outFile = Paths.get(dirs.get(1), refFile.getName()).toFile();
-            NAFConllReader nafConllReader = new NAFConllReader(refFile.getPath());
+            NAFConllReader nafConllReader = new NAFConllReader(refFile.getPath(), replaceTokens, replaceEntities);
             nafConllReader.process(file.toString(), outFile.toString());
     }
 
     public String getName() {
         String name = Handler.NAME + "-" + NAME;
-        if (replaceEntities)
-            name += "-mod";
         return name;
     }
-
 }

@@ -22,7 +22,7 @@ public class Conll2Xmi {
 
     public Conll2Xmi(String inputConll) throws AbnormalProcessException {
         this.xmi = CasDoc.create();
-        this.conllTokens = NAFConllReader.conllTokens(inputConll);
+        this.conllTokens = NAFConllReader.conllLines(inputConll);
     }
 
     public Conll2Xmi(List<String[]> conllTokens) throws AbnormalProcessException {

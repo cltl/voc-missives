@@ -229,4 +229,7 @@ public class Wf {
         this.xpath = value;
     }
 
+    public String toString() {
+        return content + " (" + offset + ", " + length + ")";
+    }
 }

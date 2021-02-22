@@ -20,7 +20,7 @@ import static utils.common.ThrowingBiConsumer.throwingBiConsumerWrapper;
  */
 public class Handler {
     public final static String NAME = "gm-processor";
-    public final static String VERSION = "1.0";
+    public final static String VERSION = "1.1";
 
     private static void usage(Options options) {
         HelpFormatter formatter = new HelpFormatter();
@@ -52,9 +52,9 @@ public class Handler {
                 String refType = cmd.hasOption("R") ? cmd.getOptionValue('R') : IO.inferType(refdir);
                 if (! (refType.equals(IO.NAF_SFX)))
                     throw new IllegalArgumentException("Invalid reference type. Only 'naf' is allowed.");
-                runConfiguration(indir, inputType, outdir, outputType, refdir, refType, cmd.hasOption('m'));
+                runConfiguration(indir, inputType, outdir, outputType, refdir, refType, cmd.hasOption('m'), cmd.hasOption('t'), cmd.hasOption('e'));
             } else
-                runConfiguration(indir, inputType, outdir, outputType, tokenize, conllSeparator, documentType, cmd.hasOption('t'));
+                runConfiguration(indir, inputType, outdir, outputType, tokenize, conllSeparator, documentType, cmd.hasOption('f'));
         } catch (ParseException e) {
             System.out.println(e.getMessage());
             usage(options);
@@ -64,7 +64,9 @@ public class Handler {
     private static void runConfiguration(String indir, String inputType,
                                          String outdir, String outputType,
                                          String refDir, String refType,
-                                         boolean manualConll) throws AbnormalProcessException {
+                                         boolean manualConll,
+                                         boolean replaceTokens,
+                                         boolean replaceEntities) throws AbnormalProcessException {
         if (outputType.equals(IO.NAF_SFX) && refType.equals(IO.NAF_SFX)) {
             if (inputType.equals(IO.CONLL_SFX)) {
                 if (manualConll)
@@ -72,7 +74,7 @@ public class Handler {
                             throwingBiConsumerWrapper((x, y) -> NafXmiReader.runWithConnl2Xmi(x, y)));
                 else
                     IO.loop(indir, Collections.singletonList(refDir), outdir,
-                            throwingBiConsumerWrapper((x, y) -> NAFConllReader.run(x, y)));
+                            throwingBiConsumerWrapper((x, y) -> NAFConllReader.run(x, y, replaceTokens, replaceEntities)));
             } else if (inputType.equals(IO.XMI_SFX))
                 IO.loop(indir, Collections.singletonList(refDir), outdir,
                         throwingBiConsumerWrapper((x, y) -> NafXmiReader.run(x, y)));
@@ -118,7 +120,9 @@ public class Handler {
         options.addOption("c", true, "conll separator for Conll output; defaults to single space");
         options.addOption("n", false, "do not tokenize reference NAF");
         options.addOption("m", false, "integrate manual Conll annotations");
-        options.addOption("t", false, "format TSV for TextFabric");
+        options.addOption("f", false, "format TSV for TextFabric");
+        options.addOption("t", false, "replace tokens for NafConllReader");
+        options.addOption("e", false, "replace entities for NafConllReader");
         process(options, args);
     }
 }

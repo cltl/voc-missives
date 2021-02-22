@@ -7,6 +7,9 @@ target
 logs
 .DS_Store
 
+**/*.log
+**/out
+
 # python
 **/__pycache__
 tf/tests/data
