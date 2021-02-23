@@ -1,4 +1,4 @@
-package sysIn2naf;
+package conllIn2naf;
 
 import org.junit.jupiter.api.Test;
 import utils.common.AbnormalProcessException;

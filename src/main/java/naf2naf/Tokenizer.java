@@ -1,15 +1,20 @@
-package nafSelector;
+package naf2naf;
 
 import eus.ixa.ixa.pipe.cli.CLIArgumentsParser;
 import eus.ixa.ixa.pipe.cli.Parameters;
 import eus.ixa.ixa.pipe.ml.tok.RuleBasedSegmenter;
 import eus.ixa.ixa.pipe.ml.tok.RuleBasedTokenizer;
 import eus.ixa.ixa.pipe.ml.tok.Token;
+import javafx.util.Pair;
 import net.sourceforge.argparse4j.inf.ArgumentParserException;
 import utils.common.AbnormalProcessException;
+import utils.naf.Wf;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Properties;
+
+import static utils.naf.NafUnits.createWf;
 
 
 public class Tokenizer {
@@ -51,5 +56,26 @@ public class Tokenizer {
         return new Tokenizer(properties);
     }
 
+    public List<Wf> getWfs(List<Pair<Integer, String>> textFragments) {
+        List<Wf> wfs = new LinkedList<>();
+        int sentenceCounter = 0;
+        int unitCounter = 0;
+        for (Pair<Integer,String> t: textFragments) {
+            String unitText = t.getValue();
+            List<List<Token>> tokenizedSentences = tokenize(unitText);
+            for (List<Token> sentence: tokenizedSentences) {
+                addTokens(sentence, wfs, t.getKey(), sentenceCounter, unitCounter);
+                sentenceCounter++;
+            }
+            unitCounter++;
+        }
+        return wfs;
+    }
+
+
+    private void addTokens(List<Token> tokens, List<Wf> wfs, int tunitOffset, int sentenceCounter, int unitCounter) {
+        for (Token t: tokens)
+            wfs.add(createWf(t.getTokenValue(), wfs.size(), tunitOffset + t.startOffset(), sentenceCounter, unitCounter));
+    }
 
 }

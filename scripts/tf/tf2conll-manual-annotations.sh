@@ -31,7 +31,7 @@ tf2naf() {
 
 tokenize() {
   echo "tokenizing base Naf files"
-  sh ${sdir}/naf-selector.sh ${ddir}/basenaf ${ddir}/toknaf tf
+  sh ${sdir}/naf-tokenizer.sh ${ddir}/basenaf ${ddir}/toknaf
 }
 
 manin2naf() {

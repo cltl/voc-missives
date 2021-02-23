@@ -1,4 +1,4 @@
-package nafSelector;
+package naf2naf;
 
 import javafx.util.Pair;
 import org.junit.jupiter.api.BeforeAll;

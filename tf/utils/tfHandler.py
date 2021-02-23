@@ -111,7 +111,7 @@ class MissivesLoader:
 
 def extract_letter(letter, v, l, recorder, outdir):
     rec, tunits, pub_id = recorder(letter, v, l)
-    titre = L.d(letter, otype='title')
+    titre = F.title.v(letter)
     outfile = os.path.join(outdir, pub_id)
     rec.write(outfile)
     return pub_id, titre, tunits
@@ -204,7 +204,7 @@ def record_section(rec, section, offset):
 
 
 def pad(offset, token, punct, rec, w):
-    """add padding whitespace if necessary:
+    """add whitespace:
     - after commas
     - after periods following on letters (not digits), and with a few exceptions
     - after empty punctuation"""
@@ -324,12 +324,13 @@ def text_sequences(letter):
     while i < len(all_words):
         if F.isorig.v(all_words[i]):
             paragraph = L.u(all_words[i], otype='para')
-            if paragraph:  # append all paragraph
+            if paragraph:  # append all paragraph, excluding footnotes
                 pwords = L.d(paragraph[0], otype='word')
+                opwords = [w for w in pwords if F.isorig.v(w)]  # excludes footnotes
                 if seq:
                     seqs.append(seq)
                     types.append('header')
-                seqs.append(pwords)
+                seqs.append(opwords)
                 types.append('paragraph')
                 seq = []
                 starts_new_text_unit = True

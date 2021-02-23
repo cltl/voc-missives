@@ -225,16 +225,16 @@ public class NafHandler {
         else throw new AbnormalProcessException("unrecognized tunit type: " + tunitType);
     }
 
+    public String coveredText(String offset, String length) {
+        int begin = Integer.parseInt(offset);
+        int end = begin + Integer.parseInt(length);
+        return coveredText(begin, end);
+    }
+
     public String coveredText(int begin, int end) {
         int i = Math.max(begin, 0);
         int j = Math.min(end, naf.getRaw().length() - 1);
         return naf.getRaw().substring(i, j);
-    }
-
-    public String coveredText(Wf wf) {
-        int begin = Integer.parseInt(wf.getOffset());
-        int end = begin + Integer.parseInt(wf.getLength());
-        return coveredText(begin, end);
     }
 
     public void writeToDir(String outdir) throws AbnormalProcessException {

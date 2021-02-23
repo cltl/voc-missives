@@ -4,7 +4,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utils.common.IO;
 import utils.common.AbnormalProcessException;
-import utils.naf.BaseEntity;
 import utils.naf.NafHandler;
 import utils.naf.NafUnits;
 import xjc.naf.Entity;
@@ -29,15 +28,14 @@ import java.util.stream.Collectors;
 public class Naf2Conll {
     private static final String IN = "." + IO.NAF_SFX;
     private static final String OUT = "." + IO.CONLL_SFX;
-    String conllSeparator;
+    private static final String CONLL_SEP = " ";
     HashMap<Wf,Entity> wf2entity;
     NafHandler naf;
     int gpeCount;
     int embeddedEntityCount;
     public static final Logger logger = LogManager.getLogger(Naf2Conll.class);
 
-    public Naf2Conll(String conllSeparator, String nafFile) throws AbnormalProcessException {
-        this.conllSeparator = conllSeparator;
+    public Naf2Conll(String nafFile) throws AbnormalProcessException {
         this.wf2entity = new HashMap<>();
         this.naf = NafHandler.create(nafFile);
         this.gpeCount = 0;
@@ -45,14 +43,14 @@ public class Naf2Conll {
     }
 
     private String line(String token) {
-        return token + conllSeparator + "O\n";
+        return token + CONLL_SEP + "O\n";
     }
 
     private String lines(List<String> tokens, String type) {
         StringBuilder str = new StringBuilder();
-        str.append(tokens.get(0)).append(conllSeparator).append("B-").append(type).append("\n");
+        str.append(tokens.get(0)).append(CONLL_SEP).append("B-").append(type).append("\n");
         for (int i = 1; i < tokens.size(); i++)
-            str.append(tokens.get(i)).append(conllSeparator).append("I-").append(type).append("\n");
+            str.append(tokens.get(i)).append(CONLL_SEP).append("I-").append(type).append("\n");
         return str.toString();
     }
 
@@ -149,9 +147,9 @@ public class Naf2Conll {
                 || e1.getType().equals("ORG") && e2.getType().equals("LOC");
     }
 
-    public static void run(Path file, String outdir, String conllSeparator) throws AbnormalProcessException {
+    public static void run(Path file, String outdir) throws AbnormalProcessException {
         String outfile = IO.getTargetFile(outdir, file, IN, OUT);
-        Naf2Conll converter = new Naf2Conll(conllSeparator, file.toString());
+        Naf2Conll converter = new Naf2Conll(file.toString());
         converter.filterEntities();
         converter.write(outfile);
         converter.log();

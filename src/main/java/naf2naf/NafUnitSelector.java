@@ -1,4 +1,4 @@
-package nafSelector;
+package naf2naf;
 
 import eus.ixa.ixa.pipe.ml.tok.Token;
 import javafx.util.Pair;
@@ -26,21 +26,13 @@ import static utils.naf.NafUnits.createWf;
  */
 public class NafUnitSelector  {
     String type;
-    boolean tokenize;
+    private static final boolean TOKENIZE = true;
     NafHandler inputNaf;
     NafHandler derivedNaf;
     private final static String NAME = "selector";
 
-    public NafUnitSelector(String inputNaf, String type, boolean tokenize) throws AbnormalProcessException {
-        this.type = checkType(type);
-        this.tokenize = tokenize;
-        this.inputNaf = NafHandler.create(inputNaf);
-        this.derivedNaf = transferHeader();
-    }
-
     public NafUnitSelector(String inputNaf, String type) throws AbnormalProcessException {
         this.type = checkType(type);
-        this.tokenize = true;
         this.inputNaf = NafHandler.create(inputNaf);
         this.derivedNaf = transferHeader();
     }
@@ -50,38 +42,35 @@ public class NafUnitSelector  {
     }
 
     private String checkType(String type) {
-        // with 'tf' all units are selected, and directly tokenized
-        if (! (type.equals("text") || type.equals("notes") || type.equals("all") || type.equals("tf")))
-            throw new IllegalArgumentException("Invalid type: " + type + "; type should be either 'text', 'notes', 'all' or 'tf'");
+        if (! (type.equals("text") || type.equals("notes") || type.equals("all")))
+            throw new IllegalArgumentException("Invalid type: " + type + "; type should be either 'text', 'notes' or 'all'");
         return type;
     }
 
     public void extractTextTunitsAndTokens() throws AbnormalProcessException {
-        if (type.equals("tf")) {
-            String rawText = inputNaf.getRawText();
-            List<Tunit> tunits = inputNaf.getTunits();
-            derivedNaf.createRawLayer(rawText, getName());
-            derivedNaf.createTunitsLayer(tunits, getName());
-            if (!tunits.isEmpty())
-                createTextLayer(derivedNaf, rawText, tunits);
-        } else {
-            List<Tunit> tunits = filter(inputNaf);
 
-            String rawText = deriveRawText(tunits, inputNaf.getRawText());
-            derivedNaf.createRawLayer(rawText, getName());
-            derivedNaf.createTunitsLayer(tunits, getName());
+        List<Tunit> tunits = filter(inputNaf);
 
-            if (tokenize && !tunits.isEmpty())
-                createTextLayer(derivedNaf, rawText, tunits);
-        }
+        String rawText = deriveRawText(tunits, inputNaf.getRawText());
+        derivedNaf.createRawLayer(rawText, getName());
+        derivedNaf.createTunitsLayer(tunits, getName());
+
+        if (TOKENIZE && !tunits.isEmpty())
+            createTextLayer(derivedNaf, rawText, tunits);
     }
 
     private void createTextLayer(NafHandler derivedNaf, String rawText, List<Tunit> tunits) throws AbnormalProcessException {
         Tokenizer tokenizer = Tokenizer.create();
+        List<Pair<Integer,String>> textFragments = joinCohesive(tunits, rawText);
+        List<Wf> wfs = getWfs(tokenizer, textFragments);
+        derivedNaf.createTextLayer(wfs, getName());
+    }
+
+    private List<Wf> getWfs(Tokenizer tokenizer, List<Pair<Integer, String>> textFragments) {
         List<Wf> wfs = new LinkedList<>();
         int sentenceCounter = 0;
         int unitCounter = 0;
-        for (Pair<Integer,String> t: joinCohesive(tunits, rawText)) {
+        for (Pair<Integer,String> t: textFragments) {
             String unitText = t.getValue();
             List<List<Token>> tokenizedSentences = tokenizer.tokenize(unitText);
             for (List<Token> sentence: tokenizedSentences) {
@@ -90,7 +79,7 @@ public class NafUnitSelector  {
             }
             unitCounter++;
         }
-        derivedNaf.createTextLayer(wfs, getName());
+        return wfs;
     }
 
     /**
@@ -119,8 +108,8 @@ public class NafUnitSelector  {
         return cohesive;
     }
 
-    private static Pair<Integer, String> getUnitOffsetAndText(String rawText, Tunit previous) {
-        return new Pair<>(Integer.parseInt(previous.getOffset()), coveredText(previous, rawText));
+    private static Pair<Integer, String> getUnitOffsetAndText(String rawText, Tunit tunit) {
+        return new Pair<>(Integer.parseInt(tunit.getOffset()), coveredText(tunit, rawText));
     }
 
     private static String coveredText(Tunit previous, String rawText) {
@@ -205,10 +194,7 @@ public class NafUnitSelector  {
     protected NafHandler transferHeader() {
         NafHeader header = new NafHeader();
         String derivedId;
-        if (! type.equals("tf"))
-            derivedId = inputNaf.getNafHeader().getPublic().getPublicId() + "_" + type;
-        else
-            derivedId = inputNaf.getNafHeader().getPublic().getPublicId();
+        derivedId = inputNaf.getNafHeader().getPublic().getPublicId() + "_" + type;
         FileDesc fd = new FileDesc();
         fd.setFilename(derivedId + ".naf");
         header.setFileDesc(fd);
@@ -223,8 +209,8 @@ public class NafUnitSelector  {
         derivedNaf.write(Paths.get(outdir, derivedNaf.getFileName()).toString());
     }
 
-    public static void run(Path file, String outdir, boolean tokenize, String documentType) throws AbnormalProcessException {
-        NafUnitSelector converter = new NafUnitSelector(file.toString(), documentType, tokenize);
+    public static void run(Path file, String outdir, String documentType) throws AbnormalProcessException {
+        NafUnitSelector converter = new NafUnitSelector(file.toString(), documentType);
         converter.extractTextTunitsAndTokens();
         converter.writeDerivedNaf(outdir);
     }

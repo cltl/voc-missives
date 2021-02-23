@@ -27,7 +27,7 @@ sysin2naf() {
 }
 
 naf2tsv() {
-  sh ${sdir}/naf2tsv.sh ${ddir}/sysnaf ${ddir}/tsv
+  sh ${sdir}/naf2tsv.sh ${ddir}/sysnaf ${ddir}/tsv tf
 }
 
 tsv2tf() {

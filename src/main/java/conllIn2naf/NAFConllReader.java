@@ -1,4 +1,4 @@
-package sysIn2naf;
+package conllIn2naf;
 
 import missives.Handler;
 import org.apache.logging.log4j.LogManager;

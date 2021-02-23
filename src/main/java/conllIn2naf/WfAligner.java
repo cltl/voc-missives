@@ -1,4 +1,4 @@
-package sysIn2naf;
+package conllIn2naf;
 
 import utils.common.AbnormalProcessException;
 import utils.common.Span;

@@ -33,7 +33,7 @@ class Naf2ConllTest {
 
     @Test
     public void testEmptySelection() throws AbnormalProcessException {
-        Naf2Conll converter = new Naf2Conll(" ", refNaf);
+        Naf2Conll converter = new Naf2Conll(refNaf);
 
         converter.filterEntities();
         assertTrue(converter.getEntities().isEmpty());
@@ -45,7 +45,7 @@ class Naf2ConllTest {
 
     @Test
     public void testEntitiesNaf2Conlll() throws AbnormalProcessException {
-        Naf2Conll converter = new Naf2Conll(" ", entitiesNaf);
+        Naf2Conll converter = new Naf2Conll(entitiesNaf);
 
         converter.filterEntities();
         assertFalse(converter.getEntities().isEmpty());

@@ -18,7 +18,7 @@ fi
 [[ ! -d $outdir ]] && mkdir $outdir
 
 wdir=$(cd $(dirname "${BASH_SOURCE[0]}") && cd .. && pwd)
-jar=${wdir}/target/gm-processor-*-jar-with-dependencies.jar
+jar=${wdir}/target/voc-missives-*-jar-with-dependencies.jar
 
 java -jar $jar -i ${indir} -r ${refdir} -o ${outdir}
 

@@ -1,4 +1,4 @@
-package nafSelector;
+package naf2naf;
 
 import utils.common.Span;
 import xjc.naf.Tunit;

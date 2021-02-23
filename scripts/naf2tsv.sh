@@ -17,10 +17,10 @@ fi
 [[ ! -d $outdir ]] && mkdir -p $outdir
 
 wdir=$(cd $(dirname "${BASH_SOURCE[0]}") && cd .. && pwd)
-jar=${wdir}/target/gm-processor-*-jar-with-dependencies.jar
+jar=${wdir}/target/voc-missives-*-jar-with-dependencies.jar
 
 if [ "$format" == "tf" ]; then
-  java -jar $jar -i ${indir} -o ${outdir} -O tsv -t
+  java -jar $jar -i ${indir} -o ${outdir} -O tsv -f
 else
   java -jar $jar -i ${indir} -o ${outdir} -O tsv
 fi

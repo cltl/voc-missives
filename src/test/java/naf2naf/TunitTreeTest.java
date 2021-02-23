@@ -1,4 +1,4 @@
-package nafSelector;
+package naf2naf;
 
 import org.junit.jupiter.api.Test;
 import xjc.naf.Tunit;

@@ -43,6 +43,8 @@ def test_extract_letter_9_9_text():
     naf_file = os.path.join(workdir, 'basenaf', 'missive_9_9_text.naf')
     assert os.path.exists(naf_file)
     naf_doc = naf.parse(naf_file)
+    assert naf_doc.get_title() == "Durven, Hasselaar, Blom, Van der Schuer, Westpalm, Van Baerle, De Witte, Van Schooten, Van Heyningen, Van Bayen, Oostwalt; Batavia, 23 maart 1730"
+    assert naf_doc.get_file_name() == 'missive_9_9_text.naf'
     tunits = naf_doc.get_tunits()
     titles = [t for t in tunits if t.get('type') == 'header']
     assert len(titles) == 18

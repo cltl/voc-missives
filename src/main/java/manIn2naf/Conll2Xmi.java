@@ -1,6 +1,6 @@
 package manIn2naf;
 
-import sysIn2naf.NAFConllReader;
+import conllIn2naf.NAFConllReader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utils.common.AbnormalProcessException;

@@ -1,4 +1,4 @@
-package sysIn2naf;
+package conllIn2naf;
 
 import utils.common.AbnormalProcessException;
 import org.junit.jupiter.api.Test;
@@ -16,7 +16,7 @@ import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static sysIn2naf.NAFConllReader.entitiesWithIdSpans;
+import static conllIn2naf.NAFConllReader.entitiesWithIdSpans;
 
 class NAFConllReaderTest {
     static String refNAF = "src/test/resources/entity-integration/ref.naf";
