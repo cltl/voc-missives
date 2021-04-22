@@ -37,7 +37,7 @@ class Naf2ConllTest {
 
         converter.filterEntities();
         assertTrue(converter.getEntities().isEmpty());
-        converter.write(testConll);
+        converter.write(converter.segmentTokensBySentences(), testConll);
         Path p = Paths.get(testConll);
         assertTrue(Files.exists(p));
 
@@ -52,7 +52,7 @@ class Naf2ConllTest {
         int nafEntities = NafHandler.create(entitiesNaf).getEntities().size();
         assertEquals(nafEntities, converter.getGpeCount() + converter.getEmbeddedEntityCount() + converter.getEntityCount());
 
-        converter.write(trainConll);
+        converter.write(converter.segmentTokensByTUnits(),  trainConll);
         Path p = Paths.get(trainConll);
         assertTrue(Files.exists(p));
     }

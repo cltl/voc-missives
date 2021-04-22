@@ -54,7 +54,7 @@ public class Handler {
                     throw new IllegalArgumentException("Invalid reference type. Only 'naf' is allowed.");
                 runConfiguration(indir, inputType, outdir, outputType, refdir, refType, cmd.hasOption('m'), cmd.hasOption('w'), cmd.hasOption('e'));
             } else
-                runConfiguration(indir, inputType, outdir, outputType, tokenize, documentType, cmd.hasOption('f'));
+                runConfiguration(indir, inputType, outdir, outputType, tokenize, documentType, cmd.hasOption('f'), cmd.hasOption('u'));
         } catch (ParseException e) {
             System.out.println(e.getMessage());
             usage(options);
@@ -90,7 +90,8 @@ public class Handler {
                                          String outputType,
                                          boolean tokenize,
                                          String selectText,
-                                         boolean tsvForTF) throws AbnormalProcessException {
+                                         boolean tsvForTF,
+                                         boolean segmentConllByTUnits) throws AbnormalProcessException {
         if (inputType.equals(IO.TEI_SFX) && outputType.equals(IO.NAF_SFX))
             IO.loop(indir, outdir, throwingBiConsumerWrapper((x, y) -> Tei2Naf.convertFile(x, y)));
         else if (inputType.equals(IO.NAF_SFX) && outputType.equals(IO.NAF_SFX)) {
@@ -99,7 +100,7 @@ public class Handler {
             else
                 IO.loop(indir, outdir, throwingBiConsumerWrapper((x, y) -> NafUnitSelector.run(x, y, selectText)));
         } else if (inputType.equals(IO.NAF_SFX) && outputType.equals(IO.CONLL_SFX))
-            IO.loop(indir, outdir, throwingBiConsumerWrapper((x, y) -> Naf2Conll.run(x, y)));
+            IO.loop(indir, outdir, throwingBiConsumerWrapper((x, y) -> Naf2Conll.run(x, y, segmentConllByTUnits)));
         else if (inputType.equals(IO.NAF_SFX) && outputType.equals(IO.TSV_SFX))
             IO.loop(indir, outdir, throwingBiConsumerWrapper((x, y) -> Naf2Tsv.run(x, y, tsvForTF)));
         else
@@ -124,6 +125,7 @@ public class Handler {
         options.addOption("f", false, "format TSV for TextFabric");
         options.addOption("w", false, "replace tokens for NafConllReader");
         options.addOption("e", false, "replace entities for NafConllReader");
+        options.addOption("u", false, "segment conll by text units (instead of sentences)");
         process(options, args);
     }
 }

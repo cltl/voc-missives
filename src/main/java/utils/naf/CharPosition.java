@@ -9,6 +9,10 @@ public class CharPosition implements Comparable<CharPosition> {
         this.length = length;
     }
 
+    public static CharPosition create(String offset, String length) {
+        return new CharPosition(Integer.parseInt(offset), Integer.parseInt(length));
+    }
+
     public int getLength() {
         return length;
     }

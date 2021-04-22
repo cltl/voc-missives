@@ -18,5 +18,6 @@ fi
 wdir=$(cd $(dirname "${BASH_SOURCE[0]}") && cd .. && pwd)
 jar=${wdir}/target/voc-missives-*-jar-with-dependencies.jar
 
-java -jar $jar -i ${indir} -o ${outdir} -O conll
+# remove -u to segment by sentences
+java -jar $jar -i ${indir} -o ${outdir} -O conll -u
 

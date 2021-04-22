@@ -4,19 +4,18 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utils.common.IO;
 import utils.common.AbnormalProcessException;
+import utils.naf.CharPosition;
 import utils.naf.NafHandler;
 import utils.naf.NafUnits;
 import xjc.naf.Entity;
 import utils.naf.Wf;
+import xjc.naf.Tunit;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Path;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -70,34 +69,75 @@ public class Naf2Conll {
         return sentence;
     }
 
+    protected List<List<Wf>> segmentTokensBySentences() {
+        List<List<Wf>> segments = new LinkedList<>();
+        String sentence = naf.getWfs().get(0).getSent();
+        List<Wf> segment = new LinkedList<>();
+        for (Wf wf: naf.getWfs()) {
+            if (! wf.getSent().equals(sentence)) {
+                sentence = wf.getSent();
+                if (! segment.isEmpty()) {
+                    segments.add(segment);
+                    segment = new LinkedList<>();
+                }
+            }
+            segment.add(wf);
+        }
+        if (! segment.isEmpty())
+            segments.add(segment);
+        return segments;
+    }
+
+    protected List<List<Wf>> segmentTokensByTUnits() {
+        List<List<Wf>> segments = new LinkedList<>();
+        List<Tunit> tunits = naf.getTunits();
+        int nextUnitOffset = CharPosition.create(tunits.get(0).getOffset(), tunits.get(0).getLength()).getEndIndex();
+        List<Wf> segment = new LinkedList<>();
+        for (Wf wf: naf.getWfs()) {
+            if (Integer.parseInt(wf.getOffset()) >= nextUnitOffset) {
+                tunits.remove(0);
+                if (! tunits.isEmpty())
+                    nextUnitOffset = CharPosition.create(tunits.get(0).getOffset(), tunits.get(0).getLength()).getEndIndex();
+                if (! segment.isEmpty()) {
+                    segments.add(segment);
+                    segment = new LinkedList<>();
+                }
+            }
+            segment.add(wf);
+        }
+        if (! segment.isEmpty())
+            segments.add(segment);
+        return segments;
+    }
+
     /**
      * writes tokens and their labels out to Conll
      * @param outfile
      * @throws AbnormalProcessException
      */
-    protected void write(String outfile) throws AbnormalProcessException {
-        List<Wf> wfs = naf.getWfs();
+    protected void write(List<List<Wf>> segments, String outfile) throws AbnormalProcessException {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(outfile))) {
-            String sentence = wfs.get(0).getSent();
             if (wf2entity.isEmpty()) {
-                for (Wf wf: wfs) {
-                    sentence = update(sentence, wf, bw);
-                    bw.write(line(NafUnits.getContent(wf)));
+                for (List<Wf> segment: segments) {
+                    for (Wf wf: segment)
+                        bw.write(line(NafUnits.getContent(wf)));
+                    bw.write("\n");
                 }
             } else {
-                int i = 0;
-                while (i < wfs.size()) {
-                    // we assume here than entities do not cross sentence boundaries
-                    sentence = update(sentence, wfs.get(i), bw);
-                    if (wf2entity.containsKey(wfs.get(i))) {
-                        Entity e = wf2entity.get(wfs.get(i));
-                        List<String> span = NafUnits.wfSpan(e).stream().map(wf -> NafUnits.getContent(wf)).collect(Collectors.toList());
-                        bw.write(lines(span, e.getType()));
-                        i += span.size();
-                    } else {
-                        bw.write(line(NafUnits.getContent(wfs.get(i))));
-                        i++;
+                for (List<Wf> wfs: segments) {
+                    int i = 0;
+                    while (i < wfs.size()) {
+                        if (wf2entity.containsKey(wfs.get(i))) {
+                            Entity e = wf2entity.get(wfs.get(i));
+                            List<String> span = NafUnits.wfSpan(e).stream().map(wf -> NafUnits.getContent(wf)).collect(Collectors.toList());
+                            bw.write(lines(span, e.getType()));
+                            i += span.size();
+                        } else {
+                            bw.write(line(NafUnits.getContent(wfs.get(i))));
+                            i++;
+                        }
                     }
+                    bw.write("\n");
                 }
             }
         } catch (IOException e) {
@@ -147,11 +187,14 @@ public class Naf2Conll {
                 || e1.getType().equals("ORG") && e2.getType().equals("LOC");
     }
 
-    public static void run(Path file, String outdir) throws AbnormalProcessException {
+    public static void run(Path file, String outdir, boolean segmentByTUnits) throws AbnormalProcessException {
         String outfile = IO.getTargetFile(outdir, file, IN, OUT);
         Naf2Conll converter = new Naf2Conll(file.toString());
         converter.filterEntities();
-        converter.write(outfile);
+        if (segmentByTUnits)
+            converter.write(converter.segmentTokensByTUnits(), outfile);
+        else
+            converter.write(converter.segmentTokensBySentences(), outfile);
         converter.log();
     }
 

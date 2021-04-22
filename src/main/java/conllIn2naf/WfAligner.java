@@ -130,7 +130,9 @@ public class WfAligner {
                 alignedWfs.add(wfs.get(i));
                 i++;
                 wfStr += wfs.get(i).getContent();
-            }
+            } else
+                throw new AbnormalProcessException("cannot align tokens \"" + wfStr + "\" and \"" + tokStr );
+
         }
         return alignments;
     }

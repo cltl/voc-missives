@@ -72,7 +72,7 @@ public class NAFConllReader {
         return conllLines.stream().map(x -> x[1]).collect(Collectors.toList());
     }
 
-    static List<BaseEntity> entitiesWithIdSpans(List<String> conllLabels) {
+    static List<BaseEntity> entitiesWithIdSpans(List<String> conllLabels) throws AbnormalProcessException {
         List<BaseEntity> entities = new LinkedList<>();
         int first = -1;
         int last = -1;
@@ -80,14 +80,18 @@ public class NAFConllReader {
         for (int i = 0; i < conllLabels.size(); i++) {
             String label = conllLabels.get(i);
             if (label.startsWith("B")) {
-                if (last != -1)
+                if (last != -1)     // in case B- directly follows on I-
                     entities.add(new BaseEntity(new Span(first, last), type));
                 first = i;
                 last = i;
+                if (label.split("-").length != 2)
+                    throw new AbnormalProcessException("invalid label for token " + i + ": " + label);
                 type = label.split("-")[1];
-            } else if (label.startsWith("I"))
+            } else if (label.startsWith("I")) {
                 last = i;
-            else {
+                if (first == -1)
+                    throw new AbnormalProcessException("entity at index " + i + " starts with I- label");
+            } else {
                 if (last != -1)
                     entities.add(new BaseEntity(new Span(first, last), type));
                 first = -1;
@@ -100,6 +104,7 @@ public class NAFConllReader {
         return entities;
     }
 
+
     protected void writeNaf(String outFile) throws AbnormalProcessException {
         naf.write(outFile);
     }
@@ -107,7 +112,14 @@ public class NAFConllReader {
     void process(String conllFile, String outFile) throws AbnormalProcessException {
         List<String[]> lines = conllLines(conllFile);
         List<String> conllTokens = conllTokens(lines);
-        List<BaseEntity> entitiesWithIdSpans = entitiesWithIdSpans(conllLabels(lines));
+        List<BaseEntity> entitiesWithIdSpans;
+        try {
+            entitiesWithIdSpans = entitiesWithIdSpans(conllLabels(lines));
+        } catch (AbnormalProcessException e) {
+            logger.error("Error while processing " + conllFile);
+            throw e;
+        }
+
         List<BaseEntity> conllEntities;
         List<Wf> tokens;
         List<Entity> nafEntities;
