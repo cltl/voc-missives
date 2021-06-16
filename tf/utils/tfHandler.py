@@ -108,6 +108,21 @@ class MissivesLoader:
                     break
         return ids
 
+    def record_punct_topad(self):
+        rec = Recorder()
+        for _, _, letter in self.get_letters():
+            for w in L.d(letter, otype='word'):
+                if needs_padding(w):
+                    rec.start(w)
+                    rec.add("{}{}\n".format(F.trans.v(w), F.punc.v(w)))
+                    #line = L.u(w, otype='line')
+                    #if line:
+                    #    linestr = ''.join("{}{}".format(F.trans.v(x), F.punc.v(x)) for x in L.d(line[0], otype='word'))
+                    #    if (DIGITS.match(F.trans.v(w))):
+                    #        print("{}{}\t{}".format(F.trans.v(w), F.punc.v(w), linestr))
+                    rec.end(w)
+        return rec
+
 
 def extract_letter(letter, v, l, recorder, outdir):
     rec, tunits, pub_id = recorder(letter, v, l)
@@ -195,7 +210,7 @@ def record_section(rec, section, offset):
             rec.add(wordform)
             offset += len(tok) + len(punct)
             rec.end(w)
-            offset = pad(offset, tok, punct, rec, w)
+            offset = pad(offset, rec, w)
     rec.add("\n")  # end of title
     offset += 1
     if pnode is not None:
@@ -203,38 +218,49 @@ def record_section(rec, section, offset):
     return offset
 
 
-def pad(offset, token, punct, rec, w):
-    """add whitespace:
+def needs_padding(w):
+    """needs padding if:
     - after commas
     - after periods following on letters (not digits), and with a few exceptions
     - after empty punctuation"""
-    punct_ends_word = is_end_of_word_punct(punct, token, w)
-    word_ends_at_eol = punct == '' and token[-1] != '¬'  # token can be empty but never together with punct
-    if word_ends_at_eol or punct == ',' or punct_ends_word:
+    punct = F.punc.v(w)
+    token = F.trans.v(w)
+    punct_ends_word = punct == '.' and WORD.match(token) and not DIGITS.match(token) and not inword_period(w)
+    word_ends_at_eol = punct == '' and token and token[-1] != '¬'  # token can be empty but never together with punct
+    text_comma = punct == ','
+    if L.n(w, otype='word'):
+        next_word = F.trans.v(L.n(w, otype='word')[0])
+        text_comma = text_comma and not (DIGITS.match(next_word) or next_word == '—')
+
+    return word_ends_at_eol or text_comma or punct_ends_word
+
+
+def pad(offset, rec, w):
+    """add whitespace if needed"""
+    if needs_padding(w):
         rec.add(" ")
         offset += 1
     return offset
 
 
-def is_end_of_word_punct(punct, token, w):
-    return punct == '.' \
-           and WORD.match(token) and not DIGITS.match(token) \
-           and not inword_period(token, w)
-
-
-def inword_period(token, w):
+def inword_period(w):
+    token = F.trans.v(w)
     next_token = F.trans.v(L.n(w, otype='word')[0])
     return token == 'Comp' and next_token in COMP_ENDS \
-           or token == 'S' and next_token in S_ENDS \
-           or token in R_STARTS and next_token == 'r' \
-           or token == 'R' and next_token == '1' \
-           or token in RA_STARTS and next_token == 'ra' \
-           or token == 'V' and next_token == 'O' \
-           or token == 'O' and next_token in ['C', 'G', 'I'] \
-           or token == 'I' and next_token == 'C' \
-           or token == 'Eng' and next_token == '8e' \
-           or token == 'Gomp' and next_token == 'es' \
-           or token in N_STARTS and next_token == 'n'
+        or token == 'S' and next_token in S_ENDS \
+        or token in R_STARTS and next_token == 'r' \
+        or token == 'R' and next_token == '1' \
+        or token in RA_STARTS and next_token == 'ra' \
+        or token == 'V' and next_token == 'O' \
+        or token == 'O' and next_token in ['C', 'G', 'I'] \
+        or token == 'I' and next_token == 'C' \
+        or token == 'Eng' and next_token == '8e' \
+        or token == 'Gomp' and next_token == 'es' \
+        or token in N_STARTS and next_token == 'n' \
+        or token == 'i' and next_token == 'p' \
+        or token == 'p' and next_token == 'v' \
+        or token == 't' and next_token == 'w' \
+        or token == 'w' and next_token == 'v'
 
 
 def xpath_title(volume_id, letter_id):

@@ -105,6 +105,11 @@
     "int_id_file": "vol9_p0097_INT_977a2db6-8410-3d7c-9188-38af7392cccc_notes.naf"
   },
   {
+    "int_id": "INT_fa840fc6-9b64-3966-b53d-8a4c79bbec9b",
+    "tf_id": "missive_6_3_text",
+    "int_id_file": "vol6_p0017_INT_fa840fc6-9b64-3966-b53d-8a4c79bbec9b_text.naf"
+  },
+  {
     "int_id": "INT_cfc55d36-d0bc-39cb-ad5a-6bac357d04ca",
     "tf_id": "missive_11_9_text",
     "int_id_file": "vol11_p0131_INT_cfc55d36-d0bc-39cb-ad5a-6bac357d04ca_text.naf"
