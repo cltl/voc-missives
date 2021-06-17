@@ -1,5 +1,9 @@
 package manIn2naf;
 
+import utils.common.Span;
+
+import java.util.stream.DoubleStream;
+
 public class IndexedEntity {
     String token;
     String type;
@@ -27,6 +31,18 @@ public class IndexedEntity {
                 offset + labelledToken[0].length());
     }
 
+    public static IndexedEntity create(String mention, String type, int begin, int end) {
+        return new IndexedEntity(mention, type, begin, end);
+    }
+
+    public static IndexedEntity create(String mention, String type, Span span) {
+        return new IndexedEntity(mention, type, span.getFirstIndex(), span.getEnd());
+    }
+
+    public String getToken() {
+        return token;
+    }
+
     public String getType() {
         return type;
     }
@@ -37,5 +53,13 @@ public class IndexedEntity {
 
     public int getEndIndex() {
         return endIndex;
+    }
+
+    public boolean hasSameSpan(IndexedEntity o) {
+        return this.beginIndex == o.getBeginIndex() && this.endIndex == o.getEndIndex();
+    }
+
+    public boolean isEmbeddedIn(IndexedEntity o) {
+        return ! hasSameSpan(o) && this.beginIndex >= o.getBeginIndex() && this.endIndex <= o.getEndIndex();
     }
 }

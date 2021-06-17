@@ -57,7 +57,7 @@ naf2conll() {
 
 # -- main --
 
-tf2naf
+# tf2naf
 tokenize
 manin2naf
 naf2conll

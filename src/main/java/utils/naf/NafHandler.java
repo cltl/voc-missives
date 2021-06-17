@@ -18,6 +18,7 @@ import missives.Handler;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utils.common.AbnormalProcessException;
+import utils.common.Span;
 import xjc.naf.*;
 
 public class NafHandler {
@@ -223,6 +224,11 @@ public class NafHandler {
         else if (tunitType.equals("header") || tunitType.equals("paragraph"))
             return "t";     // text
         else throw new AbnormalProcessException("unrecognized tunit type: " + tunitType);
+    }
+
+    public String coveredText(Entity e) {
+        Span span = NafUnits.indexSpan(e);
+        return coveredText(span.getFirstIndex(), span.getEnd());
     }
 
     public String coveredText(String offset, String length) {

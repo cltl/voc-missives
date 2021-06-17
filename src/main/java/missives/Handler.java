@@ -1,5 +1,6 @@
 package missives;
 
+import analysis.ManualAnnotations;
 import naf2tsv.Naf2Tsv;
 import naf2naf.NafTokenizer;
 import conllIn2naf.NAFConllReader;
@@ -38,27 +39,39 @@ public class Handler {
                 System.out.println("Please specify an input file or directory");
                 usage(options);
             }
-            final String indir = cmd.getOptionValue('i');
-            String inputType = cmd.hasOption("I") ? cmd.getOptionValue('I') : IO.inferType(indir);
-            if (! isKnownInputType(inputType))
-                throw new IllegalArgumentException("input type " + inputType + " is invalid. Select one type among xml (tei), naf, entities.xmi or conll.");
 
-            final String outdir = cmd.hasOption('o') ? cmd.getOptionValue('o') : "";
-            String outputType = cmd.hasOption("O") ? cmd.getOptionValue('O') : IO.NAF_SFX;
-            String documentType = cmd.hasOption("d") ? cmd.getOptionValue('d') : "all";
-            boolean tokenize = cmd.hasOption('t');
-            if (cmd.hasOption('r') || cmd.hasOption('R')) {
-                final String refdir = cmd.getOptionValue('r');
-                String refType = cmd.hasOption("R") ? cmd.getOptionValue('R') : IO.inferType(refdir);
-                if (! (refType.equals(IO.NAF_SFX)))
-                    throw new IllegalArgumentException("Invalid reference type. Only 'naf' is allowed.");
-                runConfiguration(indir, inputType, outdir, outputType, refdir, refType, cmd.hasOption('m'), cmd.hasOption('w'), cmd.hasOption('e'));
-            } else
-                runConfiguration(indir, inputType, outdir, outputType, tokenize, documentType, cmd.hasOption('f'), cmd.hasOption('u'));
+            if (cmd.hasOption('a'))
+                analyse(cmd.getOptionValue('a'), cmd.getOptionValue('i'));
+            else {
+                final String indir = cmd.getOptionValue('i');
+                String inputType = cmd.hasOption("I") ? cmd.getOptionValue('I') : IO.inferType(indir);
+                if (!isKnownInputType(inputType))
+                    throw new IllegalArgumentException("input type " + inputType + " is invalid. Select one type among xml (tei), naf, entities.xmi or conll.");
+
+                final String outdir = cmd.hasOption('o') ? cmd.getOptionValue('o') : "";
+                String outputType = cmd.hasOption("O") ? cmd.getOptionValue('O') : IO.NAF_SFX;
+                String documentType = cmd.hasOption("d") ? cmd.getOptionValue('d') : "all";
+                boolean tokenize = cmd.hasOption('t');
+                if (cmd.hasOption('r') || cmd.hasOption('R')) {
+                    final String refdir = cmd.getOptionValue('r');
+                    String refType = cmd.hasOption("R") ? cmd.getOptionValue('R') : IO.inferType(refdir);
+                    if (!(refType.equals(IO.NAF_SFX)))
+                        throw new IllegalArgumentException("Invalid reference type. Only 'naf' is allowed.");
+                    runConfiguration(indir, inputType, outdir, outputType, refdir, refType, cmd.hasOption('m'), cmd.hasOption('w'), cmd.hasOption('e'));
+                } else
+                    runConfiguration(indir, inputType, outdir, outputType, tokenize, documentType, cmd.hasOption('f'), cmd.hasOption('u'));
+            }
         } catch (ParseException e) {
             System.out.println(e.getMessage());
             usage(options);
         }
+    }
+
+    private static void analyse(String analysis, String inputdir) throws AbnormalProcessException {
+        if (analysis.equals("manual"))
+            ManualAnnotations.collectStats(inputdir);
+        else
+            throw new IllegalArgumentException("Unknown analysis mode: " + analysis);
     }
 
     private static void runConfiguration(String indir, String inputType,
@@ -126,6 +139,7 @@ public class Handler {
         options.addOption("w", false, "replace tokens for NafConllReader");
         options.addOption("e", false, "replace entities for NafConllReader");
         options.addOption("u", false, "segment conll by text units (instead of sentences)");
+        options.addOption("a", true, "analysis mode (manual) -- manual: entity statistics");
         process(options, args);
     }
 }
