@@ -2,7 +2,7 @@ package manIn2naf;
 
 import utils.common.Span;
 
-import java.util.stream.DoubleStream;
+import java.util.Objects;
 
 public class IndexedEntity {
     String token;
@@ -39,6 +39,10 @@ public class IndexedEntity {
         return new IndexedEntity(mention, type, span.getFirstIndex(), span.getEnd());
     }
 
+    public String getLabelledMention() {
+        return token + " [" + type + "]";
+    }
+
     public String getToken() {
         return token;
     }
@@ -61,5 +65,26 @@ public class IndexedEntity {
 
     public boolean isEmbeddedIn(IndexedEntity o) {
         return ! hasSameSpan(o) && this.beginIndex >= o.getBeginIndex() && this.endIndex <= o.getEndIndex();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(token, type, beginIndex, endIndex);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null) return false;
+        if (this.getClass() != o.getClass()) return false;
+        IndexedEntity x = (IndexedEntity) o;
+        return token.equals(x.getToken())
+                && type.equals(x.getType())
+                && beginIndex == x.getBeginIndex()
+                && endIndex == x.getEndIndex();
+    }
+
+    public boolean overlapsWith(IndexedEntity e) {
+        return isEmbeddedIn(e) || e.isEmbeddedIn(this);
     }
 }

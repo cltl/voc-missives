@@ -1,5 +1,6 @@
 package missives;
 
+import analysis.Agreement;
 import analysis.ManualAnnotations;
 import naf2tsv.Naf2Tsv;
 import naf2naf.NafTokenizer;
@@ -12,6 +13,7 @@ import utils.common.AbnormalProcessException;
 import utils.common.IO;
 import manIn2naf.NafXmiReader;
 
+import java.io.IOException;
 import java.util.Collections;
 
 import static utils.common.ThrowingBiConsumer.throwingBiConsumerWrapper;
@@ -70,6 +72,8 @@ public class Handler {
     private static void analyse(String analysis, String inputdir) throws AbnormalProcessException {
         if (analysis.equals("manual"))
             ManualAnnotations.collectStats(inputdir);
+        else if (analysis.equals("agreement"))
+            Agreement.agreement(inputdir);
         else
             throw new IllegalArgumentException("Unknown analysis mode: " + analysis);
     }
@@ -139,7 +143,7 @@ public class Handler {
         options.addOption("w", false, "replace tokens for NafConllReader");
         options.addOption("e", false, "replace entities for NafConllReader");
         options.addOption("u", false, "segment conll by text units (instead of sentences)");
-        options.addOption("a", true, "analysis mode (manual) -- manual: entity statistics");
+        options.addOption("a", true, "analysis mode (manual|agreement) -- manual: entity statistics");
         process(options, args);
     }
 }
