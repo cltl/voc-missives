@@ -43,7 +43,10 @@ public class ManualAnnotations {
 
     private String report() {
         StringBuilder sb = new StringBuilder();
-        sb.append("---- Entity-count report ----\n---------------------------\nHistorical Texts:\n--------------\n")
+        sb.append("---- Entity-count report ----\n)")
+                .append("Entity type counts are label counts, that are computed regardless of span overlap;")
+                .append("double labels should be discounted to get entity counts)\n")
+                .append("---------------------------\nHistorical Texts:\n--------------\n")
                 .append(textCounts.report())
                 .append("\n\nEditorial Notes:\n--------------\n")
                 .append(notesCounts.report())
@@ -51,6 +54,9 @@ public class ManualAnnotations {
                 .append(totalCounts.report())
                 .append("\n\nMentions for rare types:\n--------------\n")
                 .append(totalCounts.rareTypeMentions())
+                .append("\n---------------------------")
+                .append("\n\nEmbedded mentions:\n--------------\n")
+                .append(totalCounts.embeddedMentions())
                 .append("\n---------------------------");
 
         return sb.toString();

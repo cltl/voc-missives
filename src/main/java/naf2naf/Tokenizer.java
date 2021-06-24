@@ -20,6 +20,7 @@ import static utils.naf.NafUnits.createWf;
 public class Tokenizer {
 
     private Properties properties;
+    private final static String VERSION = "2.0.0";
 
     private Tokenizer(Properties properties) {
         this.properties = properties;
@@ -44,8 +45,7 @@ public class Tokenizer {
 
     public static Tokenizer create() throws AbnormalProcessException {
         String[] args = {"tok", "-l", "nl"};
-        String version = "2.0.0";
-        CLIArgumentsParser argumentsParser = new CLIArgumentsParser(version);
+        CLIArgumentsParser argumentsParser = new CLIArgumentsParser(VERSION);
         Parameters parameters;
         try {
             parameters = argumentsParser.parse(args);
@@ -78,4 +78,7 @@ public class Tokenizer {
             wfs.add(createWf(t.getTokenValue(), wfs.size(), tunitOffset + t.startOffset(), sentenceCounter, unitCounter));
     }
 
+    public String version() {
+        return VERSION;
+    }
 }

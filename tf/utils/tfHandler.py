@@ -21,9 +21,12 @@ R_STARTS = ['gouv', 'gouvern', 'Compt']
 
 
 class MissivesLoader:
-    def __init__(self, mod=None):
+    def __init__(self, latest=False, mod=None):
         if mod is None:
-            self.A = use('missieven', hoist=globals())
+            if latest:
+                self.A = use('missieven:clone', checkout='clone', hoist=globals())
+            else:
+                self.A = use('missieven', hoist=globals())
         else:
             self.A = use('missieven', mod=mod, hoist=globals())
         self.DEFAULT_LOC = default_tf_loc()

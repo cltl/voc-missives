@@ -20,6 +20,7 @@ public class AnnotationCounts {
     List<IndexedEntity> entities;
     List<Path> paths;
     Map<String,List<String>> mentions;
+    Map<String,List<String>> embeddedMentions;
     final static List<String> detailMentionTypes = new ArrayList<>(Arrays.asList(new String[]{"null", "SHPderiv", "LOCpart", "ORGpart", "OTH"}));
 
 
@@ -28,6 +29,7 @@ public class AnnotationCounts {
         this.doubleAnnotations = new HashMap<>();
         this.entities = new ArrayList<>();
         this.mentions = new HashMap<>();
+        this.embeddedMentions = new HashMap<>();
         this.paths = paths;
     }
 
@@ -43,24 +45,22 @@ public class AnnotationCounts {
         this.mentions = new HashMap<>();
         this.mentions.putAll(textCounts.getMentions());
         updateMentions(this.mentions, notesCounts.getMentions());
+        this.embeddedMentions = new HashMap<>();
+        this.embeddedMentions.putAll(textCounts.getEmbeddedMentions());
+        updateMentions(this.embeddedMentions, notesCounts.getEmbeddedMentions());
     }
-
 
     public String report() {
         int entityCounts = entityTypes.values().stream().reduce(0, Integer::sum);
         int doubleCounts = doubleAnnotations.values().stream().reduce(0, Integer::sum);
-
         StringBuilder sb = new StringBuilder();
         sb.append("\ntoken and entity counts\n")
-                .append(tokenCount).append(" tokens; ").append(entityCounts).append(" entities; ")
+                .append(tokenCount).append(" tokens; ").append(entityCounts - doubleCounts).append(" entity labels; ")
                 .append(doubleCounts).append(" double-label; ").append(embedded).append(" embedded")
                 .append("\ndouble labels\n")
                 .append(doubleAnnotations.entrySet().stream().map(e -> formatDouble(e)).collect(Collectors.joining(" ")))
                 .append("\nentity types\n")
                 .append(entityTypes.entrySet().stream().map(e -> format(e)).collect(Collectors.joining(" ")));
-
-
-
         return sb.toString();
     }
 
@@ -78,6 +78,10 @@ public class AnnotationCounts {
 
     public int getEmbedded() {
         return embedded;
+    }
+
+    public Map<String, List<String>> getEmbeddedMentions() {
+        return embeddedMentions;
     }
 
     public Map<String, List<String>> getMentions() {
@@ -144,12 +148,12 @@ public class AnnotationCounts {
                     ArrayList<String> labels = new ArrayList<>(Arrays.asList(new String[]{entities.get(i).getType(), previous.getType()}));
                     Collections.sort(labels);
                     increment(doubleAnnotations, labels);
+                    increment(entityTypes, entities.get(i).getType());
                 } else if (entities.get(i).isEmbeddedIn(previous)) {
                     embedded += 1;
-                    //entityCount += 1; // TODO remove, count later from entities map
+                    addToEmbeddedMentions(previous, entities.get(i));
                     increment(entityTypes, entities.get(i).getType());
                 } else {
-                    // entityCount += 1;
                     increment(entityTypes, entities.get(i).getType());
                 }
                 addToRareMentions(entities.get(i));
@@ -158,26 +162,29 @@ public class AnnotationCounts {
         }
     }
 
+    private void addToEmbeddedMentions(IndexedEntity entity, IndexedEntity embedded) {
+        addTo(embeddedMentions, entity.getType() + "-" + embedded.getType(), entity.getToken());
+    }
+
     private void addToRareMentions(IndexedEntity e) {
         if (e.getType() == null)
-            addToMentions("null", e.getToken());
+            addTo(mentions, "null", e.getToken());
         else if (detailMentionTypes.contains(e.getType())) {
-            addToMentions(e.getType(), e.getToken());
+            addTo(mentions, e.getType(), e.getToken());
         }
     }
 
-    private void addToMentions(String type, String mention) {
-        if (mentions.containsKey(type)) {
-            List<String> v = mentions.get(type);
+    private void addTo(Map<String,List<String>> map, String type, String mention) {
+        if (map.containsKey(type)) {
+            List<String> v = map.get(type);
             v.add(mention);
-            mentions.put(type, v);
+            map.put(type, v);
         } else {
             List<String> v = new LinkedList<>();
             v.add(mention);
-            mentions.put(type, v);
+            map.put(type, v);
         }
     }
-
 
     private void updateMentions(Map<String,List<String>> map1, Map<String,List<String>> map2) {
         for (String key: map2.keySet()) {
@@ -204,6 +211,15 @@ public class AnnotationCounts {
             map.put(k, map.get(k) + 1);
         else
             map.put(k, 1);
+    }
+
+    public String embeddedMentions() {
+        StringBuilder sb = new StringBuilder();
+        for (Map.Entry<String, List<String>> entry: embeddedMentions.entrySet()) {
+            sb.append(" -- ").append(entry.getKey()).append(": ").append(entry.getValue().size()).append(" -- \n");
+            entry.getValue().forEach(v -> sb.append(v).append("\n"));
+        }
+        return sb.toString();
     }
 
     public String rareTypeMentions() {

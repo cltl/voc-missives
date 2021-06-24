@@ -85,16 +85,11 @@ public class NafHandler {
         }
     }
 
-    public static LinguisticProcessors createLinguisticProcessors(String layer, String name) {
-        LinguisticProcessors lps = initLinguisticProcessors(layer);
-        lps.getLps().add(getLp(name));
-        return lps;
-    }
 
-    private static Lp getLp(String name) {
+    private static Lp getLp(String name, String version) {
         Lp lp = new Lp();
         lp.setName(name);
-        lp.setVersion(Handler.VERSION);
+        lp.setVersion(version);
         lp.setTimestamp(createTimestamp());
         return lp;
     }
@@ -127,12 +122,16 @@ public class NafHandler {
      * @param processorName
      */
     private void addToHeader(String layer, String processorName) {
+        addToHeader(layer, processorName, Handler.VERSION);
+    }
+
+    private void addToHeader(String layer, String processorName, String version) {
         LinguisticProcessors lps = getLinguisticProcessors(layer);
         if (lps == null) {
             lps = initLinguisticProcessors(layer);
             naf.getNafHeader().getLinguisticProcessors().add(lps);
         }
-        lps.getLps().add(getLp(processorName));
+        lps.getLps().add(getLp(processorName, version));
     }
 
     public void setNafHeader(NafHeader header) {
@@ -165,10 +164,14 @@ public class NafHandler {
     }
 
     public void createTextLayer(List<Wf> wfs, String processorName) {
+        createTextLayer(wfs, processorName, Handler.VERSION);
+    }
+
+    public void createTextLayer(List<Wf> wfs, String processorName, String version) {
         Text textLayer = new Text();
         textLayer.getWves().addAll(wfs);
         naf.setText(textLayer);
-        addToHeader("text", processorName);
+        addToHeader("text", processorName, version);
     }
 
     public List<Tunit> getTunits() {

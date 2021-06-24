@@ -238,8 +238,8 @@ public class Agreement {
 
     private void fscoreReport() {
         StringBuilder sb = new StringBuilder();
-        sb.append("--- F score ---\nprecision: ").append(precision())
-                .append("\nrecall: ").append(recall())
+        sb.append("--- F score ---\nprecision: ").append(precision()).append("\ttp: ").append(shared.size()).append("; ref").append(counts1())
+                .append("\nrecall: ").append(recall()).append("\ttp: ").append(shared.size()).append("; ref").append(counts2())
                 .append("\nF score: ").append(fscore())
                 .append("\n------------------\n");
         System.out.println(sb.toString());

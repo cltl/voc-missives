@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 
 public class NafTokenizer {
     NafHandler naf;
-    private final static String NAME = "tokenizer";
+    private final static String NAME = "ixa-pipe-tok";
 
     public NafTokenizer(String nafFile) throws AbnormalProcessException {
         this.naf = NafHandler.create(nafFile);
@@ -35,7 +35,7 @@ public class NafTokenizer {
             nafUnits = flatten(nafUnits);
         Tokenizer tokenizer = Tokenizer.create();
         List<Wf> wfs = tokenizer.getWfs(getUnitsOffsetAndText(nafUnits));
-        naf.createTextLayer(wfs, getName());
+        naf.createTextLayer(wfs, getName(), tokenizer.version());
     }
 
     private List<Pair<Integer, String>> getUnitsOffsetAndText(List<Tunit> tunits) {

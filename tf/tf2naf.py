@@ -6,8 +6,8 @@ from utils.tfHandler import MissivesLoader
 from utils.nafHandler import Naf
 import utils.tfHandler as tfh
 
-MODEL_NAME = "voc-missives-tf2naf"
-VERSION = 1.1
+MODEL_NAME = "tf-clariah-gm"
+LATEST = True
 
 
 def export_letters_fromTF(workdir, text_type, max_letters=0, ml=None):
@@ -18,26 +18,26 @@ def export_letters_fromTF(workdir, text_type, max_letters=0, ml=None):
     :param max_letters: for test, limits the number of exported letters
     """
     if ml is None:
-        ml = MissivesLoader()
+        ml = MissivesLoader(latest=LATEST)
     tfdir, refnafdir = create_outdirs(workdir)
     if text_type == 'text':
         pubids_titles_and_tunits = ml.extract_letters_text(tfdir, max_letters=max_letters)
     else:
         pubids_titles_and_tunits = ml.extract_letters_notes(tfdir, max_letters=max_letters)
-    convert(pubids_titles_and_tunits, tfdir, refnafdir)
+    convert(pubids_titles_and_tunits, tfdir, refnafdir, ml.version())
 
 
 def export_letter(workdir, v, l, text_type, ml=None):
     if ml is None:
-        ml = MissivesLoader()
+        ml = MissivesLoader(latest=LATEST)
     tfdir, refnafdir = create_outdirs(workdir)
     pubids_titles_and_tunits = ml.extract_letter(v, l, text_type, tfdir)
-    convert(pubids_titles_and_tunits, tfdir, refnafdir)
+    convert(pubids_titles_and_tunits, tfdir, refnafdir, ml.version())
 
 
-def convert(pubids_titles_and_tunits, tfdir, refnafdir):
+def convert(pubids_titles_and_tunits, tfdir, refnafdir, version):
     for pubid, title, paragraphs in pubids_titles_and_tunits:
-        create_naf(pubid, title, paragraphs, os.path.join(tfdir, pubid), refnafdir)
+        create_naf(pubid, title, paragraphs, os.path.join(tfdir, pubid), refnafdir, version)
 
 
 def create_outdirs(workdir):
@@ -48,26 +48,26 @@ def create_outdirs(workdir):
     return tfdir, refnafdir
 
 
-def create_naf(pub_id, titre, tunits, tf_text_file, nafdir):
+def create_naf(pub_id, titre, tunits, tf_text_file, nafdir, version):
     naf = Naf()
     naf.create_header(pub_id, titre)
     with open(tf_text_file) as f:
         raw = "".join(f.readlines())
-        naf.add_raw_layer(raw, MODEL_NAME, VERSION)
-    naf.add_tunits(tunits, MODEL_NAME, VERSION)
+        naf.add_raw_layer(raw, MODEL_NAME, version)
+    naf.add_tunits(tunits, MODEL_NAME, version)
     naf.write(nafdir)
 
 
 def export_letters(letters_json, outdir, ml=None):
     """exports letters specified in letters_json to outdir -- text, pos and naf files"""
     if ml is None:
-        ml = MissivesLoader()
+        ml = MissivesLoader(latest=LATEST)
     with open(letters_json) as f:
         json_ids = json.load(f)
     letter_ids = [x['tf_id'] for x in json_ids]
     tfdir, refnafdir = create_outdirs(outdir)
     pubids_titles_and_tunits = ml.write_text_and_pos_files(letter_ids, tfdir)
-    convert(pubids_titles_and_tunits, tfdir, refnafdir)
+    convert(pubids_titles_and_tunits, tfdir, refnafdir, ml.version())
 
 
 def read_tf_files(file):
