@@ -29,6 +29,7 @@ public class Naf2Conll {
     private static final String OUT = "." + IO.CONLL_SFX;
     private static final String CONLL_SEP = " ";
     HashMap<Wf,Entity> wf2entity;
+    Map<Wf,String> wf2label;
     NafHandler naf;
     int gpeCount;
     int embeddedEntityCount;
@@ -37,6 +38,7 @@ public class Naf2Conll {
     public Naf2Conll(String nafFile) throws AbnormalProcessException {
         this.wf2entity = new HashMap<>();
         this.naf = NafHandler.create(nafFile);
+        this.wf2label = new HashMap<>();
         this.gpeCount = 0;
         this.embeddedEntityCount = 0;
     }
@@ -45,28 +47,8 @@ public class Naf2Conll {
         return token + CONLL_SEP + "O\n";
     }
 
-    private String lines(List<String> tokens, String type) {
-        StringBuilder str = new StringBuilder();
-        str.append(tokens.get(0)).append(CONLL_SEP).append("B-").append(type).append("\n");
-        for (int i = 1; i < tokens.size(); i++)
-            str.append(tokens.get(i)).append(CONLL_SEP).append("I-").append(type).append("\n");
-        return str.toString();
-    }
-
-    /**
-     * adds new line and returns the new sentence index
-     * @param sentence
-     * @param wf
-     * @param bw
-     * @return
-     * @throws IOException
-     */
-    private String update(String sentence, Wf wf, BufferedWriter bw) throws IOException {
-        if (! wf.getSent().equals(sentence)) {
-            bw.write("\n");
-            return wf.getSent();
-        }
-        return sentence;
+    private String line(String token, String label) {
+        return token + CONLL_SEP + label + "\n";
     }
 
     protected List<List<Wf>> segmentTokensBySentences() {
@@ -125,17 +107,11 @@ public class Naf2Conll {
                 }
             } else {
                 for (List<Wf> wfs: segments) {
-                    int i = 0;
-                    while (i < wfs.size()) {
-                        if (wf2entity.containsKey(wfs.get(i))) {
-                            Entity e = wf2entity.get(wfs.get(i));
-                            List<String> span = NafUnits.wfSpan(e).stream().map(wf -> NafUnits.getContent(wf)).collect(Collectors.toList());
-                            bw.write(lines(span, e.getType()));
-                            i += span.size();
-                        } else {
-                            bw.write(line(NafUnits.getContent(wfs.get(i))));
-                            i++;
-                        }
+                    for (Wf wf: wfs) {
+                        if (wf2label.containsKey(wf))
+                            bw.write(line(NafUnits.getContent(wf), wf2label.get(wf)));
+                        else
+                            bw.write(line(NafUnits.getContent(wf)));
                     }
                     bw.write("\n");
                 }
@@ -153,7 +129,8 @@ public class Naf2Conll {
      */
     protected List<Entity> filterEntities() {
         for (Entity e: naf.getEntities()) {
-            Wf firstWf = NafUnits.wfSpan(e).get(0);
+            List<Wf> eWfs = NafUnits.wfSpan(e);
+            Wf firstWf = eWfs.get(0);
             if (wf2entity.containsKey(firstWf)) {
                 if (isGPE(wf2entity.get(firstWf), e)) {
                     wf2entity.get(firstWf).setType("GPE");
@@ -163,6 +140,10 @@ public class Naf2Conll {
                 }
             } else {        // record all the tokens spanned by that entity
                 NafUnits.wfSpan(e).forEach(w -> wf2entity.put(w, e));
+                // and map each token to its BIO label
+                wf2label.put(firstWf, "B-" + e.getType());
+                for (int i = 1; i < eWfs.size(); i++)
+                    wf2label.put(eWfs.get(i), "I-" + e.getType());
             }
         }
         List<Entity> filtered = wf2entity.values().stream().distinct().collect(Collectors.toList());
