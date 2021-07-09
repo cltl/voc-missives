@@ -14,7 +14,7 @@
         </linguisticProcessors>
         <linguisticProcessors layer="entities">
             <lp name="voc-missives-man-in2naf" version="1.1" timestamp="2021-06-23T19:23:16+0200"/>
-            <lp name="voc-missives-sys-in2naf-mod" version="1.1" timestamp="2021-07-08T16:24:55+0200"/>
+            <lp name="voc-missives-corr-conllIn2naf" version="1.1.1" timestamp="2021-07-09T17:31:41+0200"/>
         </linguisticProcessors>
     </nafHeader>
     <raw><![CDATA[De theeschepen Pallas en Schuitwijk zijn op 13 en 27 februari verzonden met 395.542 Ib thee kostende ƒ 597.784. De Herstelling brengt eveneens thee , de Nagelboom is naar Amboina gezonden met een lading t.w.v. ƒ 10.411, de Noordbeek, Ondank, Zijdeteelt en de Tienhoven naar Ternate met lading t.w.v. ƒ 208.534; naar Makassar is vertrokken de Vaderland Getrouw met een lading t. w. v. ƒ 83.669. Met het op 14 december derwaarts verzondene met de Amsterdam bedraagt de waarde van de bezending ƒ 171.745. Tevens zijn vertrokken het aangestelde hoofd van Bima, de assistent Gerrit Jan Heijmans, de opperchirurgijn Nicolaas Brands, twee pennisten, tien matrozen en enkele ambachtsgezellen. 

@@ -27,19 +27,23 @@ import java.util.stream.Collectors;
  */
 public class NAFConllReader {
 
-    private final static String NAME = "sys-in2naf";
+    private final static String NAME = "conllIn2naf";
     private final static int CHAR_WINDOW = 25;
     public static final Logger logger = LogManager.getLogger(NAFConllReader.class);
     NafHandler naf;
     boolean replaceEntities;
     boolean replaceTokens;
     String entityPfx;
+    String entitySource;
+    String dataRevisionVersion;
 
-    public NAFConllReader(String nafFile, boolean replaceTokens, boolean replaceEntities) throws AbnormalProcessException {
+    public NAFConllReader(String nafFile, String entitySource, String dataRevisionVersion, boolean replaceTokens, boolean addEntities) throws AbnormalProcessException {
         this.naf = NafHandler.create(nafFile);
-        this.replaceEntities = replaceEntities;
+        this.replaceEntities = ! addEntities;
         this.replaceTokens = replaceTokens;
         this.entityPfx = naf.entityPfx();
+        this.entitySource = entitySource;
+        this.dataRevisionVersion = dataRevisionVersion;
     }
 
     public NafHandler getNaf() {
@@ -134,20 +138,25 @@ public class NAFConllReader {
         }
         conllEntities = createEntitiesWithOffsets(entitiesWithIdSpans, tokens);
 
-        if (replaceEntities) {
-            compareToExisting(nafEntities, conllEntities);
-            writeEntitiesToNaf(asNafEntities(entitiesWithIdSpans, tokens, false), "-mod");
+        if (nafEntities.isEmpty()) {
+            logger.warn("Adding entities to an empty entity layer");
+            writeEntitiesToNaf(asNafEntities(entitiesWithIdSpans, tokens, false), "", dataRevisionVersion);
         } else {
-            logger.info("adding " + conllEntities.size() + " new entities to NAF...");
-            if (nafEntities.isEmpty())
-                writeEntitiesToNaf(asNafEntities(entitiesWithIdSpans, tokens, false), "");
-            else {
+            String version = naf.getLinguisticProcessors("entities").getLps().get(0).getVersion()
+                    + "." + dataRevisionVersion;
+            if (replaceEntities) {
+                compareToExisting(nafEntities, conllEntities);
+                writeEntitiesToNaf(asNafEntities(entitiesWithIdSpans, tokens, false), "", version);
+            } else {
+                logger.info("adding " + conllEntities.size() + " new entities to NAF...");
+
                 conllEntities.addAll(asBaseEntities(nafEntities));
                 conllEntities = conllEntities.stream().distinct().collect(Collectors.toList());
                 Collections.sort(conllEntities);
-                writeEntitiesToNaf(asNafEntities(conllEntities, tokens, true), "-add");
+                writeEntitiesToNaf(asNafEntities(conllEntities, tokens, true), "-add", version);
             }
         }
+
         writeNaf(outFile);
     }
 
@@ -226,12 +235,12 @@ public class NAFConllReader {
         return entities.stream().map(e -> BaseEntity.create(e)).collect(Collectors.toList());
     }
 
-    void writeEntitiesToNaf(List<Entity> conllEntities, String mod) {
-        naf.createEntitiesLayer(conllEntities, getName() + mod);
+    void writeEntitiesToNaf(List<Entity> conllEntities, String mod, String version) {
+        naf.createEntitiesLayer(conllEntities, getName() + mod, version);
     }
 
     private void writeTokensToNaf(List<Wf> conllWfs) {
-        naf.createTextLayer(conllWfs, getName() + "-mod");
+        naf.createTextLayer(conllWfs, getName());
     }
 
     List<BaseEntity> compareToExisting(List<Entity> nafEntities, List<BaseEntity> entities) {
@@ -271,15 +280,14 @@ public class NAFConllReader {
         logger.info(sb.toString());
     }
 
-    public static void run(Path file, List<String> dirs, boolean replaceTokens, boolean replaceEntities) throws AbnormalProcessException {
+    public static void run(Path file, List<String> dirs, String entitySource, String dataVersion, boolean replaceTokens, boolean addEntities) throws AbnormalProcessException {
             File refFile = IO.findFileWithSameId(file, new File(dirs.get(0)));
             File outFile = Paths.get(dirs.get(1), refFile.getName()).toFile();
-            NAFConllReader nafConllReader = new NAFConllReader(refFile.getPath(), replaceTokens, replaceEntities);
+            NAFConllReader nafConllReader = new NAFConllReader(refFile.getPath(), entitySource, dataVersion, replaceTokens, addEntities);
             nafConllReader.process(file.toString(), outFile.toString());
     }
 
     public String getName() {
-        String name = Handler.NAME + "-" + NAME;
-        return name;
+        return Handler.NAME + "-" + entitySource + "-" + NAME;
     }
 }

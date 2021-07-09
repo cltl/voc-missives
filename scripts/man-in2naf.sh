@@ -21,6 +21,6 @@ fi
 wdir=$(cd $(dirname "${BASH_SOURCE[0]}") && cd .. && pwd)
 jar=${wdir}/target/voc-missives-*-jar-with-dependencies.jar
 
-java -jar $jar -i ${indir} -r ${refdir} -o ${outdir} -m
+java -jar $jar -i ${indir} -r ${refdir} -o ${outdir} -e man
 
 

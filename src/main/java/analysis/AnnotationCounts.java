@@ -111,8 +111,7 @@ public class AnnotationCounts {
         if (extension.equals("conll")) {
             Conll2Xmi conll2Xmi = new Conll2Xmi(p.toString());
             conll2Xmi.convert();
-            CasDoc xmi = conll2Xmi.getXmi();
-            getTokensAndEntities(xmi);
+            getTokensAndEntities(conll2Xmi);
         } else if (extension.equals("xmi"))
             getTokensAndEntities(CasDoc.create(p.toString()));
         else if (extension.equals("naf"))
@@ -125,7 +124,12 @@ public class AnnotationCounts {
                 .map(e -> IndexedEntity.create(naf.coveredText(e), e.getType(), NafUnits.indexSpan(e)))
                 .collect(Collectors.toList()));
     }
-
+    private void getTokensAndEntities(Conll2Xmi conll2Xmi) {
+        this.tokenCount += conll2Xmi.getTokens().size();
+        this.entities.addAll(conll2Xmi.getXmi().getEntities().stream()
+                .map(e -> IndexedEntity.create(e.getCoveredText(), e.getValue(), e.getBegin(), e.getEnd() + 1))
+                .collect(Collectors.toList()));
+    }
     private void getTokensAndEntities(CasDoc xmi) {
         this.tokenCount += xmi.getTokens().size();
         this.entities.addAll(xmi.getEntities().stream()

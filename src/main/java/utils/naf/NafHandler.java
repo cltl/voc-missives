@@ -208,6 +208,13 @@ public class NafHandler {
         addToHeader("entities", processorName);
     }
 
+    public void createEntitiesLayer(List<Entity> entities, String processorName, String revisionVersion) {
+        Entities entitiesLayer = new Entities();
+        entitiesLayer.getEntities().addAll(entities);
+        naf.setEntities(entitiesLayer);
+        addToHeader("entities", processorName, revisionVersion);
+    }
+
     public String entityPfx() throws AbnormalProcessException {
         if (! getTunits().isEmpty()) {
             Tunit tunit = getTunits().get(0);

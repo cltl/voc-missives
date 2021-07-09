@@ -34,6 +34,10 @@ public class Conll2Xmi {
         return new Conll2Xmi(conllTokens);
     }
 
+    public List<String[]> getTokens() {
+        return conllTokens;
+    }
+
     public void convert() {
         int i = 0;
         StringBuilder sb = new StringBuilder();

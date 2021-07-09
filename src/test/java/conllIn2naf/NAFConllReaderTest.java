@@ -27,17 +27,17 @@ class NAFConllReaderTest {
 
     @Test
     public void testConllIn2Naf() throws AbnormalProcessException {
-        NAFConllReader ncr = new NAFConllReader(refNAF, false, false);
+        NAFConllReader ncr = new NAFConllReader(refNAF, "test", "0", false, false);
         List<String[]> lines = ncr.conllLines(inConll);
         List<BaseEntity> entitiesWithIdSpans = entitiesWithIdSpans(NAFConllReader.conllLabels(lines));
-        ncr.writeEntitiesToNaf(ncr.asNafEntities(entitiesWithIdSpans, ncr.getNaf().getWfs(), false), fromConllNaf);
+        ncr.writeEntitiesToNaf(ncr.asNafEntities(entitiesWithIdSpans, ncr.getNaf().getWfs(), false), fromConllNaf, "0");
         Path p = Paths.get(fromConllNaf);
         assertTrue(Files.exists(p));
     }
 
     @Test
     public void testDifferences() throws AbnormalProcessException {
-        NAFConllReader ncr = new NAFConllReader(fromConllNaf, false, true);
+        NAFConllReader ncr = new NAFConllReader(fromConllNaf, "test", "0", false, true);
         List<String[]> newlines = ncr.conllLines(bareConll);
         List<BaseEntity> newentitiesWithIdSpans = entitiesWithIdSpans(NAFConllReader.conllLabels(newlines));
         assertTrue(newentitiesWithIdSpans.isEmpty());
@@ -50,7 +50,7 @@ class NAFConllReaderTest {
 
     @Test
     public void testDifferencesInTokensWithNewEntities() throws AbnormalProcessException, IOException {
-        NAFConllReader ncr = new NAFConllReader(fromConllNaf, false, false);
+        NAFConllReader ncr = new NAFConllReader(fromConllNaf, "test", "0", false, false);
         List<String[]> lines = ncr.conllLines(modConll);
         List<String> conllTokens = NAFConllReader.conllTokens(lines);
         List<BaseEntity> entitiesWithIdSpans = entitiesWithIdSpans(NAFConllReader.conllLabels(lines));
@@ -71,7 +71,7 @@ class NAFConllReaderTest {
         int before = ncr.getNaf().getEntities().size();
         conllEntities.addAll(ncr.asBaseEntities(ncr.getNaf().getEntities()));
         Collections.sort(conllEntities);
-        ncr.writeEntitiesToNaf(ncr.asNafEntities(conllEntities, tokens, true), "-add");
+        ncr.writeEntitiesToNaf(ncr.asNafEntities(conllEntities, tokens, true), "-add", "0");
         assertEquals(ncr.getNaf().getEntities().size(), before + 1);
         Files.createDirectories(Paths.get("src/test/resources/out"));
         ncr.writeNaf("src/test/resources/out/conll-in2naf-keep-tokens-add-entities.naf");
@@ -79,7 +79,7 @@ class NAFConllReaderTest {
 
     @Test
     public void testReplaceTokensAddEntities() throws AbnormalProcessException, IOException {
-        NAFConllReader ncr = new NAFConllReader(fromConllNaf, true, false);
+        NAFConllReader ncr = new NAFConllReader(fromConllNaf, "test", "0", true, false);
         String outdir = "src/test/resources/out";
         String outNaf = Paths.get(outdir, "replace-tokens-add-entities.naf").toString();
         Files.createDirectories(Paths.get(outdir));

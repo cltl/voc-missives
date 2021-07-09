@@ -14,7 +14,7 @@
         </linguisticProcessors>
         <linguisticProcessors layer="entities">
             <lp name="voc-missives-man-in2naf" version="1.1" timestamp="2021-06-23T19:23:15+0200"/>
-            <lp name="voc-missives-sys-in2naf-mod" version="1.1" timestamp="2021-07-08T16:25:00+0200"/>
+            <lp name="voc-missives-corr-conllIn2naf" version="1.1.1" timestamp="2021-07-09T17:31:45+0200"/>
         </linguisticProcessors>
     </nafHeader>
     <raw><![CDATA[Naar patria gaan de Oostersteyn, Unie, Brandenburg, Vosmeer, Reigersdaal, Hof van Ilpendam , Drechterland en nog 2 andere; uit patria kwamen de Moercappel 16, Coneordia 24 maart, Vegt 8 april, Leeuiuerik 30 mei, Bambeek 28 juli, Unie 4 aug. met 951 van de 1151 personen, waarmee men uitvoer en brieven van 12 sept. tot 9 oct. en 1 sept. de Soldaat met een brief van 15 dec. 1697 ; de Geelvink, Nierop, Voetboog en Schelde brachten aan uit Amboina brieven van 15 mei tot 1 oct. 1698 en carg. van ƒ 303456, vnl. 983114 kruidnagelen; de vrede met Frankrijk is er bekend gemaakt, zo ook de sterke equipage van interlopers uit Engeland 

@@ -14,7 +14,7 @@
         </linguisticProcessors>
         <linguisticProcessors layer="entities">
             <lp name="voc-missives-man-in2naf" version="1.1" timestamp="2021-06-23T19:23:18+0200"/>
-            <lp name="voc-missives-sys-in2naf-mod" version="1.1" timestamp="2021-07-08T16:24:56+0200"/>
+            <lp name="voc-missives-corr-conllIn2naf" version="1.1.1" timestamp="2021-07-09T17:31:42+0200"/>
         </linguisticProcessors>
     </nafHeader>
     <raw><![CDATA[Naar pair ia worden gezonden de Moercappel en de ingehuurde fluit Rad van Avontuur, heide voor de Kamer Amsterdam; de eerste vijf schepen van de retourvloot kwamen 15 jan. buiten Straat Sunda; het Rad van Avontuur kwam 17 jan. te Batavia met een brief van 1 mei en 28 febr., de Eemland (Kamer Middelburg) met een brief van 9 mei, 25 febr. het jachtje Djambi ( Amsterdam) via Madagascar en de Westkust;wegens klachten van Heren XVII over de onderwichten op kruidnagelen zijn maatregelen genomen; sluiken is nog slechts mogelijk door die van Buton en Keffing; sinds het contract van 1667, Corpus II nr. CGCXV, mag uit Buton alleen de Koning bezendingen naar Amboina en Ternate doen, maar men 
@@ -8950,7 +8950,7 @@ De verplichting der Ambonnezen een bepaald aantal dagen voor de V.O.C. te werken
                 <target id="w4118"/>
             </span>
         </entity>
-        <entity id="e_n5_7_387" type="LOC">
+        <entity id="e_n5_7_387" type="GPE">
             <span>
                 <target id="w4120"/>
             </span>

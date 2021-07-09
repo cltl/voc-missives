@@ -24,6 +24,7 @@ public class NafXmiReader {
     NafHandler refNaf;
     CasDoc xmi;
     private final static String NAME = "man-in2naf";
+    private final static String DATA_VERSION = "1.0";
     public static final Logger logger = LogManager.getLogger(NafXmiReader.class);
     EntityAligner entityAligner;
     String entityPfx;
@@ -74,7 +75,7 @@ public class NafXmiReader {
     }
 
     public void createEntitiesLayer(List<Entity> nafEntities) {
-        refNaf.createEntitiesLayer(nafEntities, getName());
+        refNaf.createEntitiesLayer(nafEntities, getName(), getDataVersion());
     }
 
     public void transferEntities() {
@@ -117,4 +118,7 @@ public class NafXmiReader {
         return Handler.NAME + "-" + NAME;
     }
 
+    public static String getDataVersion() {
+        return DATA_VERSION;
+    }
 }

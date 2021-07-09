@@ -1,6 +1,6 @@
-# Input and Reference NAF files
+# Input and Reference NAF files 
 
-The code generates and manipulates two kinds of NAF files for the VOC use case:
+The code generates and manipulates two kinds of NAF files for the VOC use case (for TEI input):
 
 * Input NAF files: these are obtained by conversion from TEI files. These files contain a `raw` text layer, and a `tunits` text-unit layer.
 * Derived ('reference') NAF files: these are derived from the input NAF files for further NLP processing. These files contain a 

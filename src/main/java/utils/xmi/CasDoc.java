@@ -172,5 +172,7 @@ public class CasDoc {
     public List<Paragraph> getParagraphs() {
         return (List) JCasUtil.select(jCas, Paragraph.class);
     }
+
+
 }
 

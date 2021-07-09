@@ -13,7 +13,6 @@ import utils.common.AbnormalProcessException;
 import utils.common.IO;
 import manIn2naf.NafXmiReader;
 
-import java.io.IOException;
 import java.util.Collections;
 
 import static utils.common.ThrowingBiConsumer.throwingBiConsumerWrapper;
@@ -57,9 +56,11 @@ public class Handler {
                 if (cmd.hasOption('r') || cmd.hasOption('R')) {
                     final String refdir = cmd.getOptionValue('r');
                     String refType = cmd.hasOption("R") ? cmd.getOptionValue('R') : IO.inferType(refdir);
+                    String entitySource = cmd.hasOption("e") ? cmd.getOptionValue('e') : "man";
+                    String dataVersion = cmd.hasOption("v") ? cmd.getOptionValue('v') : "0";
                     if (!(refType.equals(IO.NAF_SFX)))
                         throw new IllegalArgumentException("Invalid reference type. Only 'naf' is allowed.");
-                    runConfiguration(indir, inputType, outdir, outputType, refdir, refType, cmd.hasOption('m'), cmd.hasOption('w'), cmd.hasOption('e'));
+                    runConfiguration(indir, inputType, outdir, outputType, refdir, refType, entitySource, dataVersion, cmd.hasOption('w'), cmd.hasOption('n'));
                 } else
                     runConfiguration(indir, inputType, outdir, outputType, tokenize, documentType, cmd.hasOption('f'), cmd.hasOption('u'));
             }
@@ -81,17 +82,17 @@ public class Handler {
     private static void runConfiguration(String indir, String inputType,
                                          String outdir, String outputType,
                                          String refDir, String refType,
-                                         boolean manualConll,
-                                         boolean replaceTokens,
-                                         boolean replaceEntities) throws AbnormalProcessException {
+                                         String entitySource,
+                                         String dataVersion, boolean replaceTokens,
+                                         boolean addEntities) throws AbnormalProcessException {
         if (outputType.equals(IO.NAF_SFX) && refType.equals(IO.NAF_SFX)) {
             if (inputType.equals(IO.CONLL_SFX)) {
-                if (manualConll)
+                if (entitySource.equals("man"))
                     IO.loop(indir, Collections.singletonList(refDir), outdir,
                             throwingBiConsumerWrapper((x, y) -> NafXmiReader.runWithConnl2Xmi(x, y)));
                 else
                     IO.loop(indir, Collections.singletonList(refDir), outdir,
-                            throwingBiConsumerWrapper((x, y) -> NAFConllReader.run(x, y, replaceTokens, replaceEntities)));
+                            throwingBiConsumerWrapper((x, y) -> NAFConllReader.run(x, y, entitySource, dataVersion, replaceTokens, addEntities)));
             } else if (inputType.equals(IO.XMI_SFX))
                 IO.loop(indir, Collections.singletonList(refDir), outdir,
                         throwingBiConsumerWrapper((x, y) -> NafXmiReader.run(x, y)));
@@ -138,11 +139,12 @@ public class Handler {
         options.addOption("R", true, "reference file type (naf); inferred by default from reference files extension ");
         options.addOption("d", true, "select units corresponding to: text|notes|all; default: all");
         options.addOption("t", false, "tokenize NAF");
-        options.addOption("m", false, "integrate manual Conll annotations");
+        options.addOption("e", true, "source of input entities (man|corr|sys)");
+        options.addOption("v", true, "version input data for NafConllReader");
+        options.addOption("w", false, "replace tokens with those of Conll input for NafConllReader");
+        options.addOption("n", false, "add new entities to existing entities for NafConllReader");
         options.addOption("f", false, "format TSV for TextFabric");
-        options.addOption("w", false, "replace tokens for NafConllReader");
-        options.addOption("e", false, "replace entities for NafConllReader");
-        options.addOption("u", false, "segment conll by text units (instead of sentences)");
+        options.addOption("u", false, "segment output conll by text units (instead of sentences)");
         options.addOption("a", true, "analysis mode (manual|agreement) -- manual: entity statistics");
         process(options, args);
     }

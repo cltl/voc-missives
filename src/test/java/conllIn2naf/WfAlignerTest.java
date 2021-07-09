@@ -13,7 +13,7 @@ class WfAlignerTest {
 
     @Test
     public void testAlignment() throws AbnormalProcessException {
-        NAFConllReader ncr = new NAFConllReader(fromConllNaf, false, false);
+        NAFConllReader ncr = new NAFConllReader(fromConllNaf, "test", "0", false, false);
         List<String[]> conllLines = NAFConllReader.conllLines(modConll);
         WfAligner wfAligner = new WfAligner(ncr.getNaf().getWfs(), NAFConllReader.conllTokens(conllLines));
         assertTrue(wfAligner.getAlignments().stream().noneMatch(a -> a.wfCount() == 0 || a.tokenCount() == 0));
