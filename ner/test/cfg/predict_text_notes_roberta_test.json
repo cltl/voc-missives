@@ -1,0 +1,12 @@
+{
+    "train_file": "data/notes/xlm-roberta-base_64/train.json",
+    "validation_file": "data/notes/xlm-roberta-base_64/dev.json",
+    "test_file": "data/text/xlm-roberta-base_64/test.json",
+    "model_name_or_path": "experiments/notes/xlm-roberta-base_64",
+    "output_dir": "experiments/notes/xlm-roberta-base_64/text",
+    "do_train": false,
+    "do_eval": false,
+    "do_predict": true,
+    "max_predict_samples": 20,
+    "return_entity_level_metrics": true
+}

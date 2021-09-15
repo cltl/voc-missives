@@ -1,0 +1,17 @@
+{
+    "train_file": "data/notes/xlm-roberta-base_64/train.json",
+    "validation_file": "data/notes/xlm-roberta-base_64/dev.json",
+    "test_file": "data/notes/xlm-roberta-base_64/test.json",
+    "model_name_or_path": "xlm-roberta-base",
+    "output_dir": "experiments/notes/xlm-roberta-base_64",
+    "do_train": true,
+    "seed": 1,
+    "num_train_epochs": 1,
+    "per_device_train_batch_size": 8,
+    "do_eval": true,
+    "do_predict": true,
+    "max_train_samples": 400,
+    "max_eval_samples": 40,
+    "max_predict_samples": 40,
+    "return_entity_level_metrics": true
+}
