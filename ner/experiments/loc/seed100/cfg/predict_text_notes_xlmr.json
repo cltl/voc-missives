@@ -1,0 +1,11 @@
+{
+    "train_file": "data/notes/xlm-roberta-base_256/train.json",
+    "validation_file": "data/notes/xlm-roberta-base_256/dev.json",
+    "test_file": "data/text/xlm-roberta-base_256/test.json",
+    "model_name_or_path": "seed100/models/notes/xlm-roberta-base_256",
+    "output_dir": "seed100/models/notes/xlm-roberta-base_256/text",
+    "do_train": false,
+    "do_eval": false,
+    "do_predict": true,
+    "return_entity_level_metrics": true
+}

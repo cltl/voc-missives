@@ -6,9 +6,12 @@ particular missives for which we have NE annotations.
 Scripts allow to   
 * extract missives from TextFabric and format them to NAF (`tf2naf.py`). The file `./resources/annotated.json` specifies 
 which missives to extract. Missives are identified by their volume number, their list index in the volume, and the type of 
-text of the missive (historical *text* or editorial *notes*). The `tf2naf.py` script is called by `voc-missives` scripts 
-(see `./voc-missives/scripts/tf`)
+text of the missive (historical *text* or editorial *notes*). 
 * prepare annotations in tsv format for import back into TextFabric (`tsv2tf.py`)
+
+Pipeline scripts are also provided in 
+`./voc-missives/scripts/tf`. You will need to [compile the java code](../docs/install.md) to use them (see 
+[Formats and conversion functions](../docs/formats.md) for more information).
 
 ## Prerequisites
 

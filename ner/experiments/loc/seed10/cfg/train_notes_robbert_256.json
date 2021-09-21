@@ -1,0 +1,17 @@
+{
+    "train_file": "data/notes/pdelobelle/robbert-v2-dutch-base_256/train.json",
+    "validation_file": "data/notes/pdelobelle/robbert-v2-dutch-base_256/dev.json",
+    "test_file": "data/notes/pdelobelle/robbert-v2-dutch-base_256/test.json",
+    "model_name_or_path": "pdelobelle/robbert-v2-dutch-base",
+    "output_dir": "seed10/models/notes/pdelobelle/robbert-v2-dutch-base_256",
+    "do_train": true,
+    "seed": 10,
+    "num_train_epochs": 4,
+    "per_device_train_batch_size": 16,
+    "do_eval": true,
+    "eval_steps": 100,
+    "load_best_model_at_end": true,
+    "evaluation_strategy": "steps",
+    "return_entity_level_metrics": true,
+    "do_predict": true
+}

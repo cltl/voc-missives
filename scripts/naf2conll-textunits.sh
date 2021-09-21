@@ -1,8 +1,8 @@
 #!/bin/bash
 #
-# naf2conll.sh
+# naf2conll-textunits.sh
 #
-# converts reference NAF to Conll
+# extract NAF entities to Conll, segmenting by text units
 #---------------------------------------------------------------------------
 
 indir=$1

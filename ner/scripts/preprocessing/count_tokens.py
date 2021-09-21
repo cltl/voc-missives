@@ -2,8 +2,10 @@ import sys
 import os
 
 
+CORPUS = 'corpus'
 TEXTTYPES = ['text', 'notes', 'all']
 DATASETS = ['train', 'dev', 'test']
+MODELS = ['bert-base-multilingual-cased', 'GroNLP/bert-base-dutch-cased', 'xlm-roberta-base', 'pdelobelle/robbert-v2-dutch-base']
 
 
 def read_conll_sequences(file):

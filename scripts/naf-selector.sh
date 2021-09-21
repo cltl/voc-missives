@@ -2,7 +2,7 @@
 #
 # naf-selector.sh
 #
-# converts inputNAF to referenceNAF based on document type
+# extracts text, notes or both from TEI files for TEI to NAF conversion
 # sh naf-selector.sh INPUT_NAF_DIR REF_NAF_DIR DOC_TYPE
 #---------------------------------------------------------------------------
 

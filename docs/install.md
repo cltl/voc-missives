@@ -1,4 +1,7 @@
 # Installation
+These are installation instructions for the java code. See the [tf documentation](../tf/README.md) for instructions 
+concerning the python wrappers for TextFabric.
+
 ### Requirements
 The code is compatible with Java 8+. You will need maven and `xjc` to compile it.
 

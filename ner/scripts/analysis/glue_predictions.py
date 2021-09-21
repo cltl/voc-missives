@@ -3,7 +3,7 @@ import os
 import json
 
 TEXTTYPES = ['text', 'notes', 'all']
-MODELS = ['mbert', 'bertje', 'roberta', 'robbert']
+MODELS = ['mbert', 'bertje', 'xlmr', 'robbert']
 
 
 def json2conll(injson, outconll):

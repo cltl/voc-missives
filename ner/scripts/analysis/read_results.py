@@ -4,7 +4,7 @@ import os
 
 TEXTTYPES = ['text', 'notes', 'all']
 DATASETS = ['train', 'dev', 'test']
-MODELS = ['mbert', 'bertje', 'roberta', 'robbert']
+MODELS = ['mbert', 'bertje', 'xlmr', 'robbert']
 
 
 def read_predictions(predictions):

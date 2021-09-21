@@ -2,12 +2,12 @@
 #
 # naf2tsv.sh
 #
-# converts reference NAF to Tsv for TextFabric
+# converts reference NAF to TSV for TextFabric
 #---------------------------------------------------------------------------
 
 indir=$1
 outdir=$2
-format=$3   # 'tf' or 'context'
+format=$3   # 'tf' (for TextFabric) or 'context' (additionally prints string window for analysis)
 
 if [ $# -ne 3 ]; then
   echo "Usage: sh naf2tsv.sh INPUT_NAF_DIR OUT_TSV_DIR FORMAT"

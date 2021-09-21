@@ -1,15 +1,15 @@
 #!/bin/bash
 #
-# sys-in2naf.sh
+# corr-in2naf.sh
 #
-# Transfers entities from system CONLL file to reference NAF.
-# The input file type is inferred from file extensions (.conll)
+# Adds entities from CONLL file to reference NAF
+# (Existing entities are rewritten)
 #---------------------------------------------------------------------------
 
-indir=$1
-refdir=$2
-outdir=$3
-version=1
+indir=$1    # input conll files
+refdir=$2   # reference naf files
+outdir=$3   # output naf directory
+version=1   # revision version for entities linguistic processor in NAF header
 
 if [ $# -ne 3 ]; then
   echo "Usage: sh corr-in2naf.sh INPUT_DIR REF_NAF_DIR OUT_NAF_DIR"

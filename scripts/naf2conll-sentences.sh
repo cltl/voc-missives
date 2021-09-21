@@ -2,7 +2,7 @@
 #
 # naf2conll.sh
 #
-# converts reference NAF to Conll
+# extract NAF entities to Conll, segmenting by sentences
 #---------------------------------------------------------------------------
 
 indir=$1

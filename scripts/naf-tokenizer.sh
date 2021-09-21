@@ -3,8 +3,8 @@
 # naf-tokenizer.sh
 #
 # tokenizes input Naf files with tunits. The tunits may be sequential
-# or tree-like
-# sh naf-tokenizer.sh INPUT_NAF_DIR OUT_NAF_DIR
+# or tree-like (for TEI to NAF conversion)
+#
 #---------------------------------------------------------------------------
 
 indir=$1

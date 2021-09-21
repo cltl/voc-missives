@@ -1,12 +1,10 @@
 #!/bin/bash
 #
 # runs tei2naf conversion over a directory of tei files with subdirectories.
-# this is useful for the missives, which are subdivided by volume
-# the assumed structure is input: $1/volume; output: $2/volume
 #---------------------------------------------------------------------------
 
-indir=$1
-outdir=$2
+indir=$1        # input directory, with volume subdirectories
+outdir=$2       # output naf directory
 
 if [ $# -ne 2 ]; then
   echo "Usage: sh tei2naf.sh TEI_DIR OUT_NAF_DIR"
