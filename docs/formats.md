@@ -1,7 +1,7 @@
 # Formats and conversion functions
 The code offers a variety of conversion scripts for different stages of processing in the missives. 
 We use [NAF](https://github.com/newsreader/NAF) as a central format, as it allows to record annotation layers and their processing.  
-See [NAF letters](naf-letters.md) for information on letter formatting in NAF and examples.
+See [NAF layers](naf-layers.md) for information on letter formatting in NAF and examples.
 
 ## Prerequisites 
 Most functions are implemented in Java, see the [Installation](install.md) instructions to compile the code 
