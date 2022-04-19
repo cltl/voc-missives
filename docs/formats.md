@@ -4,9 +4,9 @@ We use [NAF](https://github.com/newsreader/NAF) as a central format, as it allow
 See [NAF layers](naf-layers.md) for information on letter formatting in NAF and examples.
 
 ## Prerequisites 
-Most functions are implemented in Java, see the [Installation](install.md) instructions to compile the code 
+Most functions are implemented in Java, see the [Installation](../INSTALL.md#java-source-code) instructions to compile the code 
 and build an *executable jar* for the project.
-For the TextFabric related functions, you will also need to install TextFabric (see [tf/README.md](../tf/README.md)).
+For the TextFabric related functions, you will also need to [install TextFabric](../INSTALL.md#installing-textfabric)).
 
 ## Usage
 With the executable jar, you can use the scripts located in `./scripts` to run the functions presented below.

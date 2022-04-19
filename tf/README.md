@@ -10,28 +10,11 @@ text of the missive (historical *text* or editorial *notes*).
 * prepare annotations in tsv format for import back into TextFabric (`tsv2tf.py`)
 
 Pipeline scripts are also provided in 
-`./voc-missives/scripts/tf`. You will need to [compile the java code](../docs/install.md) to use them (see 
+`./voc-missives/scripts/tf`. You will need to [compile the java code](../INSTALL.md#java-source-code) to use them (see 
 [Formats and conversion functions](../docs/formats.md) for more information).
 
 ## Prerequisites
-
-Clone the TextFabric [clariah-gm](https://github.com/Dans-labs/clariah-gm) repository and the [missieven app](https://github.com/annotation/app-missieven):
-```
-git clone https://github.com/Dans-labs/clariah-gm
-git clone https://github.com/annotation/app-missieven
-```
-And place both the `Dans-labs` and `annotation` folder under a folder `github` in your home directory:
-```
-mkdir -p ~/github/Dans-labs
-mkdir -p ~/github/annotation
-mv clariah-gm ~/github/Dans-labs
-mv app-missieven ~/github/annotation
-```
-
-Install lxml and text-fabric:
-```
-pip install -r requirements.txt
-```
+See [INSTALL.md](../INSTALL.md#installing-textfabric) for instructions on installing TextFabric.
 
 ## Resources
 TextFabric comes with extensive [tutorials](https://nbviewer.jupyter.org/github/annotation/tutorials/tree/master/missieven/) for the missives.

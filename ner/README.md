@@ -1,17 +1,7 @@
 # NER with pretrained language models
 
 ## Prerequisites
-Install the HuggingFace Transformers library (git checkout 626a0a0 was used for experiments)
-
-```bash
-mkdir local
-cd local
-git clone https://github.com/huggingface/transformers
-cd transformers
-pip install
-cd examples/pytorch/token-classification
-pip install -r requirements.txt
-```
+See [INSTALL.md](../INSTALL.md#installing-transformers) for installation instructions.
 
 ## Data preparation
 The corpus is provided under `voc-missives/data/ner/corpus`. 
