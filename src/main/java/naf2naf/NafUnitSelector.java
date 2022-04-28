@@ -1,8 +1,8 @@
 package naf2naf;
 
 import eus.ixa.ixa.pipe.ml.tok.Token;
-import javafx.util.Pair;
 import missives.Handler;
+import utils.common.Pair;
 import utils.common.AbnormalProcessException;
 import utils.naf.NafUnits;
 import utils.naf.NafHandler;
@@ -71,10 +71,10 @@ public class NafUnitSelector  {
         int sentenceCounter = 0;
         int unitCounter = 0;
         for (Pair<Integer,String> t: textFragments) {
-            String unitText = t.getValue();
+            String unitText = t.getSecond();
             List<List<Token>> tokenizedSentences = tokenizer.tokenize(unitText);
             for (List<Token> sentence: tokenizedSentences) {
-                addTokens(sentence, wfs, t.getKey(), sentenceCounter, unitCounter);
+                addTokens(sentence, wfs, t.getFirst(), sentenceCounter, unitCounter);
                 sentenceCounter++;
             }
             unitCounter++;
@@ -97,7 +97,7 @@ public class NafUnitSelector  {
         Pair<Integer,String> pair = getUnitOffsetAndText(rawText, tunits.get(0));
         for (Tunit current: tunits.subList(1, tunits.size())) {
             if (current.getXpath().equals(xpath)) {
-                pair = new Pair<>(pair.getKey(), pair.getValue() + coveredText(current, rawText));
+                pair = new Pair<>(pair.getFirst(), pair.getSecond() + coveredText(current, rawText));
             } else {
                 cohesive.add(pair);
                 pair = getUnitOffsetAndText(rawText, current);

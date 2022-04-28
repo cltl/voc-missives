@@ -1,8 +1,8 @@
 package naf2naf;
 
-import javafx.util.Pair;
 import missives.Handler;
 import utils.common.AbnormalProcessException;
+import utils.common.Pair;
 import utils.common.Span;
 import utils.naf.NafHandler;
 import utils.naf.Wf;

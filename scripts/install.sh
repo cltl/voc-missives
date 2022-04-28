@@ -7,11 +7,14 @@ usage() {
 }
 
 clean=0
-while getopts "jft-" opt; do
-  if [ "$opt" = "-" ]; then
+interactive=1
+while getopts "ajft-:" opt; do
+  if [ "$opt" == "-" ]; then
     opt="${OPTARG%%=*}"
   fi
   case "$opt" in
+    a)
+      interactive=0 ;;
     j | java )
       java_flag=1 ;;
     f | textfabric ) 
@@ -30,43 +33,49 @@ workdir=$(cd $(dirname "${BASH_SOURCE[0]}") && cd .. && pwd)
 install_dir=${workdir}/dependencies
 [[ ! -d ${install_dir} ]] && mkdir ${install_dir}
 
+confirm_install() {
+  echo "Dependencies will be installed in your current python environment:"
+  read -p "Ready (y/n)? " confirm
+
+  if [ "${confirm}" != "y" ]; then
+    exit 0
+  fi
+}
+
 compile_java_code() {
-  # install the tokenizer
+  echo "installing the tokenizer"
   cd ${install_dir}
-  git clone https://github.com/ixa-ehu/ixa-pipe-tok.git
+  [[ ! -d ixa-pipe-tok ]] && git clone https://github.com/ixa-ehu/ixa-pipe-tok.git
   cd ixa-pipe-tok
   git checkout 1ac83fe
   mvn clean install
-  # compile and package the voc-missives code
+  echo "compiling and packaging the voc-missives code"
+  cd $workdir
   mvn clean package
 }
 
 install_textfabric() {
-  # clone TextFabric repositories
+  echo "cloning the TextFabric repositories"
   [[ ! -d ~/github/Dans-labs ]] && mkdir -p ~/github/Dans-labs
   [[ ! -d ~/github/annotation ]] && mkdir -p ~/github/annotation
   git clone https://github.com/Dans-labs/clariah-gm ~/github/Dans-labs
   git clone https://github.com/annotation/app-missieven ~/github/annotation
-  # install python dependencies
+  echo "installing python dependencies"
   pip install -r ${workdir}/tf/requirements.txt
 }
 
 install_transformers() {
+  echo "installing Transformers"
   cd ${install_dir}
-  git clone https://github.com/huggingface/transformers
+  [[ ! -d transformers ]] && git clone https://github.com/huggingface/transformers
   cd transformers
   git checkout 626a0a0
-  pip install
+  pip install -e .
   cd examples/pytorch/token-classification
   pip install -r requirements.txt
 }
 
-if [ ${java_flag} -eq 1 ]; then
-  compile_java_code
-fi
-if [ ${tf_flag} -eq 1 ]; then
-  install_textfabric
-fi
-if [ ${transformers_flag} -eq 1 ]; then
-  install_transformers
-fi
+[[ ${interactive} -eq 1 ]] && [[ ${transformers_flag} -eq 1 || ${tf_flag} -eq 1 ]] && confirm_install
+[[ ${java_flag} -eq 1 ]] && compile_java_code
+[[ ${tf_flag} -eq 1 ]] && install_textfabric
+[[ ${transformers_flag} -eq 1 ]] && install_transformers

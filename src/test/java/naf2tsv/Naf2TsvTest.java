@@ -41,7 +41,7 @@ class Naf2TsvTest {
         List<String> lines = converter.getLines();
 
         String e0Line = lines.get(1) ;
-        assertEquals(e0Line, converter.getTFLine("0", "17", "e_t9_9_0", "PER"));
+        assertEquals(e0Line, converter.getTFLine("0", "17", "e_t_9_9_0", "PER"));
     }
 
     @Test

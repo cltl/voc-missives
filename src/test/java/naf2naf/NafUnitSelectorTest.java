@@ -1,10 +1,10 @@
 package naf2naf;
 
-import javafx.util.Pair;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import tei2naf.Tei2Naf;
 import utils.common.AbnormalProcessException;
+import utils.common.Pair;
 import utils.naf.NafHandler;
 import xjc.naf.LinguisticProcessors;
 import xjc.naf.Tunit;
@@ -204,7 +204,7 @@ class NafUnitSelectorTest {
 
     @Test
     public void testLayerExtraction() throws AbnormalProcessException {
-        NafUnitSelector nus = new NafUnitSelector(getTestInputNaf(), "tf");
+        NafUnitSelector nus = new NafUnitSelector(getTestInputNaf(), "all");
         nus.extractTextTunitsAndTokens();
         NafHandler outNaf = nus.getDerivedNaf();
         LinguisticProcessors rawLps = outNaf.getLinguisticProcessors("raw");

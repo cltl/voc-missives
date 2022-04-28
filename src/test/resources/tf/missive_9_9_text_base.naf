@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <NAF xml:lang="en" version="3.2">
   <nafHeader>
-    <fileDesc creationtime="2021-02-23T14:21:42CET" title="" fileName="missive_9_9_text.naf"/>
+    <fileDesc creationtime="2021-02-23T14:21:42CET" title="" filename="missive_9_9_text.naf"/>
     <public publicId="missive_9_9_text"/>
     <linguisticProcessors layer="raw">
       <lp timestamp="2021-02-23T14:21:42CET" name="voc-missives-tf2naf" version="1.1"/>

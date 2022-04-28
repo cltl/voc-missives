@@ -5,9 +5,9 @@ import eus.ixa.ixa.pipe.cli.Parameters;
 import eus.ixa.ixa.pipe.ml.tok.RuleBasedSegmenter;
 import eus.ixa.ixa.pipe.ml.tok.RuleBasedTokenizer;
 import eus.ixa.ixa.pipe.ml.tok.Token;
-import javafx.util.Pair;
 import net.sourceforge.argparse4j.inf.ArgumentParserException;
 import utils.common.AbnormalProcessException;
+import utils.common.Pair;
 import utils.naf.Wf;
 
 import java.util.LinkedList;
@@ -61,10 +61,10 @@ public class Tokenizer {
         int sentenceCounter = 0;
         int unitCounter = 0;
         for (Pair<Integer,String> t: textFragments) {
-            String unitText = t.getValue();
+            String unitText = t.getSecond();
             List<List<Token>> tokenizedSentences = tokenize(unitText);
             for (List<Token> sentence: tokenizedSentences) {
-                addTokens(sentence, wfs, t.getKey(), sentenceCounter, unitCounter);
+                addTokens(sentence, wfs, t.getFirst(), sentenceCounter, unitCounter);
                 sentenceCounter++;
             }
             unitCounter++;

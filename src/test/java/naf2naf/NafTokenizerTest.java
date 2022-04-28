@@ -16,7 +16,7 @@ class NafTokenizerTest {
     public void testTokenize() throws AbnormalProcessException {
         NafTokenizer tokenizer = new NafTokenizer(Paths.get(testDir, fileName).toString());
         tokenizer.tokenize();
-        assertEquals(tokenizer.getNaf().getFileName(), fileName);
+        assertEquals(tokenizer.getNaf().getFileName(), "missive_9_9_text.naf");
         assertFalse(tokenizer.getNaf().getWfs().isEmpty());
     }
 
