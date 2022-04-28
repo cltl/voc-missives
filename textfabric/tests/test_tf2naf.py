@@ -34,7 +34,7 @@ def test_extract_letter_v_l_text():
     l = 7
     workdir = 'tests/data/letter_{}_{}'.format(v, l)
     t2n.export_letter(workdir, v, l, 'text', ml=ml)
-    assert os.path.exists(os.path.join(workdir, 'tf', 'missive_{}_{}_textf'.format(v, l)))
+    assert os.path.exists(os.path.join(workdir, 'tf', 'missive_{}_{}_text'.format(v, l)))
 
 
 def test_extract_letter_9_9_text():

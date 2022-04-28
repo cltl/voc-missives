@@ -18,7 +18,7 @@ def export_letters_fromTF(workdir, text_type, max_letters=0, ml=None):
     :param max_letters: for test, limits the number of exported letters
     """
     if ml is None:
-        ml = MissivesLoader(latest=LATEST)
+        ml = MissivesLoader()
     tfdir, refnafdir = create_outdirs(workdir)
     if text_type == 'text':
         pubids_titles_and_tunits = ml.extract_letters_text(tfdir, max_letters=max_letters)
@@ -61,7 +61,7 @@ def create_naf(pub_id, titre, tunits, tf_text_file, nafdir, version):
 def export_letters(letters_json, outdir, ml=None):
     """exports letters specified in letters_json to outdir -- text, pos and naf files"""
     if ml is None:
-        ml = MissivesLoader(latest=LATEST)
+        ml = MissivesLoader()
     with open(letters_json) as f:
         json_ids = json.load(f)
     letter_ids = [x['tf_id'] for x in json_ids]

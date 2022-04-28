@@ -1,0 +1,3 @@
+lxml >= 4.6.2
+text-fabric == 8.4.12
+pytest >= 7.1.2

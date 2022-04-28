@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-04-28T17:23:51CEST" title="Both; Kasteel Nassau op Banda-Neira, 18 juli 1611" filename="missive_1_4_notes.naf"/>
+    <public publicId="missive_1_4_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-04-28T17:23:51CEST" name="tf-clariah-gm" version="0.8.1"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-04-28T17:23:51CEST" name="tf-clariah-gm" version="0.8.1"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Hiermee is bedoeld het kasteel Belgica, op de heuvel, die het kasteel Nassau bestreek. Vgl. Oudheden, p. 24.
+Labetaka, dorp aan de noordkust van Banda-Neira. 
+Lonto(i)r, het grootste der Banda-eilanden. 
+Broeien van kruidnagelen in een niet genoemd schip Dat evenwel de Middelburg was, waarop de in de volgende noot genoemde persoon schipper en koopman was. 
+Cornelis Leendertsz. Crackeell was schipper en koopman op de Middelburg, behorende tot de vloot van Verhoeff. Daar alle oudere hoofden van die vloot waren gestorven, was hij tijdelijk president daarvan, toen ze voor Ternate lag. 
+Menado, destijds als onderhorigheid van Ternate tot de Molukken gerekend. 
+Vleugels, windwij zers of kleine gesplitste vlaggen op een mast. Zeemanswoordenboek ) .
+Secuideerden, waarschijnlijk : seduceerden, in verleiding brachten. 
+Wouter Symonsz., mij verder niet bekend. 
+Nicolaes Prins kwam als kapitein in maart 1611 op Banda en werd 25 mei tot gouverneur van deze eilanden benoemd. Hij stierf er 26 februari 1612.
+Houding der Bandanezen, vgl. Europeërs VIII, p. 258-259 klacht over particuliere handel 
+Orangkaja, hier aanduiding voor een Bandanees hoofd of aanzienlijke. 
+Bosschaede, bedoeld* ambuscade, hinderlaag. 
+Sjahbandar, uit het Perzisch overgenomen woord, in Zuidoost-Azië gebruikt voor havenmeester, tot wiens plichten ook het maken van contact met vreemde kooplieden behoorde. 
+Admiraal Pieter Willemsz. Verhoeff kwam 23 november 1608 met zijn vloot voor Malaka, waar hij enige maanden bleef liggen, vervolgens voer hij via Bantam naar Banda, waar hij 8 april 1609 aankwam. Hij werd met zijn raadsleden gedurende onderhandelingen op 22 mei door Bandanezen op Neira vermoord. Vgl. Zeemogendheid, I, p. 73 vlg., Banda, p. 35-44, 
+Geschiedenis III, p. 63-65, 67-71.
+Diverse mededelingen, meest klachten over het personeel. B. gébruikt de term „generaele brief f” in tegenstelling tot „carteb ellen” aan repatriërenden als attestatie over hun gedrag meegegeven 
+Van Caerden maakte zich in juni 1608 met behulp van de Ternatanen van het Spaanse kasteel op Makéan meester, welk eiland op de hier voor Banda voorgeslagen wijze aan den Koning van Ternate werd gegeven. Met Banda heeft iets dergelijks niet plaats gevonden. 
+Berri-berri, de ziekte met verlammingsverschijnselen in de benen, die door de onderzoekingen vanEijkman aanleiding werd tot de kennismaking met de vitaminen en de avitaminosen. 
+Mededelingen over verschillende personen 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[1]/missive[4]/footnote[1]" type="footnote" id="t1" offset="0" length="109"/>
+    <tunit xpath="//volume[1]/missive[4]/footnote[2]" type="footnote" id="t2" offset="109" length="50"/>
+    <tunit xpath="//volume[1]/missive[4]/footnote[3]" type="footnote" id="t3" offset="159" length="45"/>
+    <tunit xpath="//volume[1]/missive[4]/remark[4]" type="remark" id="t4" offset="204" length="155"/>
+    <tunit xpath="//volume[1]/missive[4]/footnote[5]" type="footnote" id="t5" offset="359" length="230"/>
+    <tunit xpath="//volume[1]/missive[4]/footnote[6]" type="footnote" id="t6" offset="589" length="75"/>
+    <tunit xpath="//volume[1]/missive[4]/footnote[7]" type="footnote" id="t7" offset="664" length="88"/>
+    <tunit xpath="//volume[1]/missive[4]/footnote[8]" type="footnote" id="t8" offset="752" length="69"/>
+    <tunit xpath="//volume[1]/missive[4]/footnote[9]" type="footnote" id="t9" offset="821" length="42"/>
+    <tunit xpath="//volume[1]/missive[4]/footnote[10]" type="footnote" id="t10" offset="863" length="145"/>
+    <tunit xpath="//volume[1]/missive[4]/remark[11]" type="remark" id="t11" offset="1008" length="89"/>
+    <tunit xpath="//volume[1]/missive[4]/footnote[12]" type="footnote" id="t12" offset="1097" length="70"/>
+    <tunit xpath="//volume[1]/missive[4]/footnote[13]" type="footnote" id="t13" offset="1167" length="45"/>
+    <tunit xpath="//volume[1]/missive[4]/footnote[14]" type="footnote" id="t14" offset="1212" length="172"/>
+    <tunit xpath="//volume[1]/missive[4]/footnote[15]" type="footnote" id="t15" offset="1384" length="350"/>
+    <tunit xpath="//volume[1]/missive[4]/footnote[16]" type="footnote" id="t16" offset="1734" length="35"/>
+    <tunit xpath="//volume[1]/missive[4]/remark[17]" type="remark" id="t17" offset="1769" length="195"/>
+    <tunit xpath="//volume[1]/missive[4]/footnote[18]" type="footnote" id="t18" offset="1964" length="258"/>
+    <tunit xpath="//volume[1]/missive[4]/footnote[19]" type="footnote" id="t19" offset="2222" length="178"/>
+    <tunit xpath="//volume[1]/missive[4]/remark[20]" type="remark" id="t20" offset="2400" length="42"/>
+  </tunits>
+</NAF>

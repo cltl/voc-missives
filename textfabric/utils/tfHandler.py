@@ -118,11 +118,6 @@ class MissivesLoader:
                 if needs_padding(w):
                     rec.start(w)
                     rec.add("{}{}\n".format(F.trans.v(w), F.punc.v(w)))
-                    #line = L.u(w, otype='line')
-                    #if line:
-                    #    linestr = ''.join("{}{}".format(F.trans.v(x), F.punc.v(x)) for x in L.d(line[0], otype='word'))
-                    #    if (DIGITS.match(F.trans.v(w))):
-                    #        print("{}{}\t{}".format(F.trans.v(w), F.punc.v(w), linestr))
                     rec.end(w)
         return rec
 

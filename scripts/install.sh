@@ -56,12 +56,16 @@ compile_java_code() {
 
 install_textfabric() {
   echo "cloning the TextFabric repositories"
-  [[ ! -d ~/github/Dans-labs ]] && mkdir -p ~/github/Dans-labs
-  [[ ! -d ~/github/annotation ]] && mkdir -p ~/github/annotation
+  [[ ! -d ~/github ]] && mkdir ~/github
+  # app-missieven not needed anymore
+  #git clone https://github.com/annotation/app-missieven ~/github/annotation
+  #cd ~/github/annotation/
+  #git checkout v0.8.1
   git clone https://github.com/Dans-labs/clariah-gm ~/github/Dans-labs
-  git clone https://github.com/annotation/app-missieven ~/github/annotation
+  cd ~/github/Dans-labs
+  git checkout fc67e0b
   echo "installing python dependencies"
-  pip install -r ${workdir}/tf/requirements.txt
+  pip install -r ${workdir}/textfabric/requirements.txt
 }
 
 install_transformers() {
@@ -73,6 +77,7 @@ install_transformers() {
   pip install -e .
   cd examples/pytorch/token-classification
   pip install -r requirements.txt
+  pip install pytest
 }
 
 [[ ${interactive} -eq 1 ]] && [[ ${transformers_flag} -eq 1 || ${tf_flag} -eq 1 ]] && confirm_install

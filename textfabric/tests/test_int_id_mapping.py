@@ -1,4 +1,4 @@
-import map_INTids_to_TF_file_ids as int_map
+import utils.map_INTids_to_TF_file_ids as int_map
 
 
 def test_intid_mapping_for_json_creation():

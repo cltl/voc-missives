@@ -16,7 +16,7 @@ The repository is structured as follows:
 * `./ner`: (Python) code and config files for [NER](ner/README.md) model training and experiments 
 * `./src`: (Java) code for the conversion of the missives between different [formats](docs/formats.md), but also for manual annotation analysis
 * `./scripts`: (shell) conversion, analysis and utility scripts both for Java and Python functions. 
-* `./tf`: (Python) code for letter extraction from [Text-Fabric](tf/README.md)
+* `./textfabric`: (Python) code for letter extraction from [Text-Fabric](textfabric/README.md)
 
 
 ### Citation

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-04-28T17:23:51CEST" title="Both; aan boord van het Wapen van Amsterdam liggende in de Tafelbaai, 6 augustus 1610" filename="missive_1_2_notes.naf"/>
+    <public publicId="missive_1_2_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-04-28T17:23:51CEST" name="tf-clariah-gm" version="0.8.1"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-04-28T17:23:51CEST" name="tf-clariah-gm" version="0.8.1"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[„Journaelsgewijse" reisbeschrijving 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[1]/missive[2]/remark[1]" type="remark" id="t1" offset="0" length="37"/>
+  </tunits>
+</NAF>

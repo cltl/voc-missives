@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-04-28T17:23:51CEST" title="Both; aan boord van de Vere voor Maleyo, 31 maart 1612" filename="missive_1_5_notes.naf"/>
+    <public publicId="missive_1_5_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-04-28T17:23:51CEST" name="tf-clariah-gm" version="0.8.1"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-04-28T17:23:51CEST" name="tf-clariah-gm" version="0.8.1"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Maleyo, plaats waar de koning van Ternate onder bescherming van het Nederlandse kasteel Oranje woonde. 
+Klachten over het gedrag van diverse schippers en anderen 
+Both zag dus heil in huwelijken tussen de Nederlanders en de dochters des lands. 
+Nog enige gelijksoortige klachten 
+Takome, plaats op het eiland Ternate, ter westkust en in handen van den Koning van het eiland, evenals de gehele noordhelft, terwijl de Spanjaarden het zuiden in handen hadden. 
+Hier vermeldt Both de bouw van deze reduite, noordelijk van het kasteel Oranje, waarover men zie Oudheden, p. 253. P. (26) noemt Both in een brief van 1 jan. 1614 (nr. XV)het evenwel onder de veroverde forteressen. Ik houd de oudere opgave voor de juiste. 
+Het duurde nog tot 9 febr. 1613 eer het hiertoe kwam. Marieko ligt aan de westkust van Tidore. 
+Slot 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[1]/missive[5]/footnote[1]" type="footnote" id="t1" offset="0" length="104"/>
+    <tunit xpath="//volume[1]/missive[5]/remark[2]" type="remark" id="t2" offset="104" length="59"/>
+    <tunit xpath="//volume[1]/missive[5]/footnote[3]" type="footnote" id="t3" offset="163" length="82"/>
+    <tunit xpath="//volume[1]/missive[5]/remark[4]" type="remark" id="t4" offset="245" length="35"/>
+    <tunit xpath="//volume[1]/missive[5]/footnote[5]" type="footnote" id="t5" offset="280" length="178"/>
+    <tunit xpath="//volume[1]/missive[5]/footnote[6]" type="footnote" id="t6" offset="458" length="257"/>
+    <tunit xpath="//volume[1]/missive[5]/footnote[7]" type="footnote" id="t7" offset="715" length="96"/>
+    <tunit xpath="//volume[1]/missive[5]/remark[8]" type="remark" id="t8" offset="811" length="6"/>
+  </tunits>
+</NAF>

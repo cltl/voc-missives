@@ -19,7 +19,7 @@ def test_original_text_extraction():
     assert tfh.trans(title) == "V. PIETER BOTH, AAN BOORD VAN DE VERE, VOOR MALEYO 31 maart 1612."
     paras = tfh.list_paragraphs(letters[4])
     assert len(paras) == 4
-    typed_paras = tfh.text_sequences(letters[4])
+    typed_paras = list(tfh.text_sequences(letters[4]))
     assert len(typed_paras) == 4
 
 
