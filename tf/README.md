@@ -15,17 +15,14 @@ Pipeline scripts are also provided in
 
 ## Prerequisites
 
-Clone the TextFabric [clariah-gm](https://github.com/Dans-labs/clariah-gm) repository and the [missieven app](https://github.com/annotation/app-missieven):
+Clone the TextFabric [wp6-missieven](https://github.com/CLARIAH/wp6-missieven) repository:
 ```
-git clone https://github.com/Dans-labs/clariah-gm
-git clone https://github.com/annotation/app-missieven
+git clone https://github.com/CLARIAH/wp6-missieven
 ```
-And place both the `Dans-labs` and `annotation` folder under a folder `github` in your home directory:
+And place it in a folder `CLARIAH` in folder `github` in your home directory:
 ```
-mkdir -p ~/github/Dans-labs
-mkdir -p ~/github/annotation
-mv clariah-gm ~/github/Dans-labs
-mv app-missieven ~/github/annotation
+mkdir -p ~/github/CLARIAH
+mv wp6-missieven ~/github/CLARIAH
 ```
 
 Install lxml and text-fabric:
@@ -34,5 +31,5 @@ pip install -r requirements.txt
 ```
 
 ## Resources
-TextFabric comes with extensive [tutorials](https://nbviewer.jupyter.org/github/annotation/tutorials/tree/master/missieven/) for the missives.
-See also the TextFabric documentation on the structure and features of the [missives in TextFabric](https://github.com/Dans-labs/clariah-gm/blob/master/docs/transcription.md)
+TextFabric comes with extensive [tutorials](https://nbviewer.jupyter.org/github/CLARIAH/wp6-missieven/tree/master/tutorials/) for the missives.
+See also the TextFabric documentation on the structure and features of the [missives in TextFabric](https://github.com/CLARIAH/wp6-missieven/blob/master/docs/transcription.md)

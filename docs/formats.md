@@ -16,7 +16,7 @@ The scripts and command-line arguments to the jar are documented in [Usage](usag
  ![](img/clariah-doc-functionality.png)
  
 We used two kinds of sources for the *letters*: we started working with the TEI output of the OCRed letters, and then with their 
-adaptation into [TextFabric](https://github.com/Dans-labs/clariah-gm).
+adaptation into [TextFabric](https://github.com/CLARIAH/wp6-missieven).
 Besides, the code allows for the integration of manual entity annotations and their preparation for NER system training. 
 
 ### From TEI to NAF (legacy)
