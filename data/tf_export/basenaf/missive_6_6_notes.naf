@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Van Outhoorn, Van Hoorn, Pijl, De Haas, Van Riebeeck, Valckenier, Cops, Bornezee, Lycochthon, Van Rhee, Van Dam; Batavia, 2 maart 1699" filename="missive_6_6_notes.naf"/>
+    <public publicId="missive_6_6_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[De Bekestein vertrok met de Swaag 11 febr. en passeerde de 13e Bantam ; Valckenier en Lycochthon vroegen in november te mogen repatriëren , zo ook Van Hoorn , eventueel een jaar later , dan wel om te Batavia in ruste te mogen blijven, nu vroeg ook Pijl ontslag ; allen werd verzocht nog enige jaren door te dienen, maar men kan hen niet dwingen aan te blijven; van de Spaarne is niets meer vernomen; de Vrijburg meldde 3 febr., » 
+De Mauritsbaai aan de zuidkust van Java op ongeveer 108°42' O. L. 
+Deze brief wordt verzonden met het Engelse schip Toscany-Gaüey » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[6]/missive[6]/remark[1]" type="remark" id="t1" offset="0" length="431"/>
+    <tunit xpath="//volume[6]/missive[6]/footnote[2]" type="footnote" id="t2" offset="431" length="67"/>
+    <tunit xpath="//volume[6]/missive[6]/remark[3]" type="remark" id="t3" offset="498" length="66"/>
+  </tunits>
+</NAF>

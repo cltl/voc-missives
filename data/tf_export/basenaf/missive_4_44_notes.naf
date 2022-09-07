@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Hurdt, Camphuys, Pit, Schaghen, Van Hoorn; Batavia, 3 januari 1684" filename="missive_4_44_notes.naf"/>
+    <public publicId="missive_4_44_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[De raden vonden in de voorafgaande Gen. Miss. niets over het door hen de 2e dec. aan den Gouv. Gen. verzochte; zij zonden daarom den secretaris Van Dam weer met een brief naar Zijn Edele, » 
+De Gouv. Gen. verklaarde het door hen ingediende geschrift bij het vorige te zullen leggen; de secretaris moest hun zeggen, dat » 
+Zij deden hem geenszins tekort aan respect » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[4]/missive[44]/remark[1]" type="remark" id="t1" offset="0" length="191"/>
+    <tunit xpath="//volume[4]/missive[44]/remark[2]" type="remark" id="t2" offset="191" length="131"/>
+    <tunit xpath="//volume[4]/missive[44]/remark[3]" type="remark" id="t3" offset="322" length="46"/>
+  </tunits>
+</NAF>

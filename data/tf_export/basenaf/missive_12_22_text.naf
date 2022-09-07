@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:39CEST" title="Mossel, Van der Waeyen, Van der Parra, Van der Spar, Van de Velde, Van Rheede, De Nijs, Van Bazel, Hooreman, Van Hohendorf, Van Riemsdijk; Batavia, 31 december 1754" filename="missive_12_22_text.naf"/>
+    <public publicId="missive_12_22_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:39CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:39CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XXII. JACOB MOSSEL, JACOB VAN DER WAEYEN, PETRUS ALBERTUS VANDER PARRA, JURGEN VAN DER SPAR, PIETER VAN DE VELDE, DITHARD VANRHEEDE, ADRIAAN DE NIJS, HUIJBERT WILLEM VAN BAZEL, LIBRECHTHOOREMAN, JOAN ANDREAS VAN HOHENDORF en JEREMIAS VANRIEMSDIJK, BATAVIA 31 december 1754. 
+Van Banjermassing heeft ons den resident gecommuniceerd, dat buyten hem aldaar niemand te vinden was die niet volgens den inhoude des placcaats van de liberale gifte g’excuseerd was, uytwijzens het nevensleggend extract uyt desselfs brief sub La A dezen bijgevoegd. 
+Het comtoirtje te Jambij in den beginne dezes jaars door den gewezen resident aldaar geabandonneert zijnde, is vandaar niets te wagten. 
+Van Siam hebben wij tot dusverre geen narigt gekreegen hoedanig den resident ten dien comptoire onze ordre ter executie heeft gesteld. 
+In Bengale is de heffing der liberale gifte insgelijks afgelopen, gelijk zulx consteerd bij een extract missive der ministers in die directie hiernevens leggende en gecoteerd Lra B. 
+Zomede ter kuste Cormandel, na hetgeene U Wel Edele Hoogagtb. zal consteren bij een extract uyt het schrijvens der ministers ten dien gouvememente gedistingueerd met La C. 
+In zelver voegen is het gelegen met Ceylon, Mallabaar, Souratta en Java’s Oostkust, na hetgene de extracten gemerkt L1S D, E, F en G zullen doen zien. Dan dewijl wij nog blijven tegemoet zien het van Bassoura verwagt werdende schip, zo zijn wij daardoor buyten staad gesteld bij dezen verslag te doen hoe den ontfangst van den 50s, en penning daaf afgelopen is. 
+Des onaangezien en uyt consideratie dat alles genoegzaam het behoren hadde erlangd, hebben wij ter sessie van den 27e augustus passato raadsaam geoordeeld, zonder nadere advisen in te wagten, de generale reekening der liberale gifte onder uit. october daaraan te doen sluyten, ’tgeen ook effect gesorteerd heeft, gelijk U Wel Edele Hoogagtb. des believende zal blijken bij onze resolutie van den 19e november daaraanvolgende, ten welken dage eene derwegens geformeerde samentrekking ter onzer vergadering geproduceert zijnde, is daarvan niet alleen notitie gehouden, maar ook dat het generale provenue bedraagt een aanzienlijke somma van ƒ 891. 063, 1, welk schriftuur wij de eere hebben U Wel Edele Hoogagtbaare als een bijlaag dezes aan te bieden onder Lra H, geaccompagneerd van een daartoe relative berigt van onzen visitateur-generaal geëndosseert met La I. 
+Indien er na dezen nog eenige penningen ten dezen opzigte mogte binnenkomen, zullen wij dezelve ten faveure van ’t comptoir-generaal van d’ Unie doen inneemen. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[12]/missive[22]/header[1]" type="header" id="t1" offset="0" length="275"/>
+    <tunit xpath="//volume[12]/missive[22]/paragraph[2]" type="paragraph" id="t2" offset="275" length="267"/>
+    <tunit xpath="//volume[12]/missive[22]/paragraph[3]" type="paragraph" id="t3" offset="542" length="137"/>
+    <tunit xpath="//volume[12]/missive[22]/paragraph[4]" type="paragraph" id="t4" offset="679" length="136"/>
+    <tunit xpath="//volume[12]/missive[22]/paragraph[5]" type="paragraph" id="t5" offset="815" length="183"/>
+    <tunit xpath="//volume[12]/missive[22]/paragraph[6]" type="paragraph" id="t6" offset="998" length="173"/>
+    <tunit xpath="//volume[12]/missive[22]/paragraph[7]" type="paragraph" id="t7" offset="1171" length="363"/>
+    <tunit xpath="//volume[12]/missive[22]/paragraph[8]" type="paragraph" id="t8" offset="1534" length="864"/>
+    <tunit xpath="//volume[12]/missive[22]/paragraph[9]" type="paragraph" id="t9" offset="2398" length="161"/>
+  </tunits>
+</NAF>

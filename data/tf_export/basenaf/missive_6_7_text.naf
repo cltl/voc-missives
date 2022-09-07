@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:38CEST" title="Van Outhoorn, Van Hoorn, Pijl, De Haas, Van Riebeeck, Valckenier, Cops, Bornezee, Lycochthon, Van Rhee; Batavia, 20 april 1699" filename="missive_6_7_text.naf"/>
+    <public publicId="missive_6_7_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XXII. WILLEM VAN OUTHOORN, JOAN VAN HOORN, LAURENS PIJL, DIRK DE HAAS, ABRAHAM VAN RIEBEECK, WOUTER VALCKENIER, JOANNES COPS, MANUEL BORNEZEE, WYBRAND LYCOCHTHON EN THOMAS VAN RHEE, BATAVIA 20 april 1699. 
+Den Francen gesant Père Tachard ter oorsake van eenige ontstane contestatiën over het ceremonieel ter audiëntie nog niet geadmitteerd was, hoewel van sijne eerste hoge pretentiën aff stand gedaen en sig de dispositie des Coninx verclaert hadde te zullen onderwerpen. 
+een der suffisanste Moorse schepen, dat, sig op eygen defentie vertrouwende, van het convoy was aff gelopen, van een groot contant capitael beroofd hebben. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[6]/missive[7]/header[1]" type="header" id="t1" offset="0" length="206"/>
+    <tunit xpath="//volume[6]/missive[7]/paragraph[2]" type="paragraph" id="t2" offset="206" length="268"/>
+    <tunit xpath="//volume[6]/missive[7]/paragraph[3]" type="paragraph" id="t3" offset="474" length="157"/>
+  </tunits>
+</NAF>

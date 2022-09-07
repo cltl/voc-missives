@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Van Goens, Speelman, Bort, Van Outhoorn, Camphuys; Batavia, 23 februari 1679" filename="missive_4_20_notes.naf"/>
+    <public publicId="missive_4_20_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Vgl. Daghregisters 1679 p. 56-68 van de 13 febr. vertrokken retourschepen zijn de Jonas en de Juffrouw Maria huur schepen; 1000 kisten koper , 19 febr. door een jonk uit Japan aangebracht , werden opgekocht d 18 rsd. het picol; de taxatie der goederen te Nagasaki door den gouverneur gehandhaafd ; salarisverhoging der tolken aldaar , vgl. Beschrijvinge II, I, p. 463 » 
+Uit China kwamen maar 2 jonken te Nagasaki; in oct. zijn 3 Engelse schepen mei 8 ton aan contanten voor Suratte gekomen, bovendien goederen; het Franse schip Valtour verging daar; uit Ceylon zijn 50 soldaten naar Malabar gezonden tot tegengang van de peper smokkelarij; er wordt daar half febr. 500000 ® peper verwacht, die de V. O. C. hoopt te verkopen in Perzië en India; oplopende verkoopsmarkt in Malabar » 
+In Cochin is het vredig; men wil er tegen Calicoylang optreden; rust op Ceylon » 
+Kurunegal, korale aan de bovenloop van de rivier van Chilau benoorden Kandi. 
+De vrede met hem te bewaren; hij is echter onbetrouwbaar; onderzoek door Daniël Parvé naar knoeierijen in Suratte; de handelaar Kissendas is bereid er veel rompen te kopen » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[4]/missive[20]/remark[1]" type="remark" id="t1" offset="0" length="371"/>
+    <tunit xpath="//volume[4]/missive[20]/remark[2]" type="remark" id="t2" offset="371" length="412"/>
+    <tunit xpath="//volume[4]/missive[20]/remark[3]" type="remark" id="t3" offset="783" length="82"/>
+    <tunit xpath="//volume[4]/missive[20]/footnote[4]" type="footnote" id="t4" offset="865" length="78"/>
+    <tunit xpath="//volume[4]/missive[20]/remark[5]" type="remark" id="t5" offset="943" length="175"/>
+  </tunits>
+</NAF>

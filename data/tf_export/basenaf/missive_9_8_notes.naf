@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Durven, Hasselaar, Blom, Van der Schuer, Westpalm, Van Baerle, De Witte, Van Schooten, Van Heyningen, Van Bayen, Oostwalt; Batavia, 27 februari 1730" filename="missive_9_8_notes.naf"/>
+    <public publicId="missive_9_8_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[De op 31 januari vertrokken retourschepen deJacoba , Huis de Vlotter, Slot Aldegonde, Kasteel van Woerden en Wapen van Hoorn, met retouren t. w. v. ƒ 1 . 173. 160, zijn op 15 februari in open zee gekomen. De Coxhoorn is Straat Sunda eveneens gepasseerd op de terugreis van China naar Nederland. Van de Kaap zijn aangekomen de Johanna, Meerlust, Midloo, Barbestein, Westfriesland en de Strijkebolle » 
+Van Ceylon is gearriveerd de Boekenrode met aan boord mr. Petrus Vuyst en zijn familie. De lading bestond uit 1730 balen kaneel en andere goederen t. w. v. ƒ 65. 315. Van Ceylon naar patria verzonden vijf retourschepen met retourlading t. w. v. ƒ 935. 180, o. a. 2000 balen kaneel. De retourvloot is pas op 19 december vertrokken uit Galle, een maand later dan gewoon, als gevolg van de verwarde toestand aldaar. Uit de rapporten blijkt dat van verraad geen sprake is geweest. Alles was te wijten aan » 
+Op grond van deze berichten is besloten Vuyst te arresteren op de beschuldiging 19 mensen te hebben vermoord. Op zijn goederen is beslag gelegd. Het theeschip de Schuitwijk vervoert 197. 756 Ib thee t. w. v. ƒ 288. 094. Over enkele dagen zal de Herstelling volgen met nieuws over Vuyst » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[9]/missive[8]/remark[1]" type="remark" id="t1" offset="0" length="401"/>
+    <tunit xpath="//volume[9]/missive[8]/remark[2]" type="remark" id="t2" offset="401" length="504"/>
+    <tunit xpath="//volume[9]/missive[8]/remark[3]" type="remark" id="t3" offset="905" length="289"/>
+  </tunits>
+</NAF>

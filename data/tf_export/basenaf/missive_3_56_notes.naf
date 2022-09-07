@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Maetsuycker, Verburch, Pit, Overtwater, Speelman, Van Hoorn; Batavia, 22 september 1672" filename="missive_3_56_notes.naf"/>
+    <public publicId="missive_3_56_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Het origineel is verzonden met de Engelse Suratte, vgl. Daghregister 1672, p. 227-250 het f luitje Waterhoen strandde door „ < ongemaniertheyt' * op Manipa » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[3]/missive[56]/remark[1]" type="remark" id="t1" offset="0" length="159"/>
+  </tunits>
+</NAF>

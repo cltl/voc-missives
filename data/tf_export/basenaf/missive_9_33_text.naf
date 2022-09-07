@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:39CEST" title="Van Cloon, Blom, Van Bayen, Valckenier, Schaghen, Patras, Thedens, Coyett, Van Imhoff, De Haeze, Van Schinne, Van Suchtelen; Batavia, 1 januari 1735" filename="missive_9_33_text.naf"/>
+    <public publicId="missive_9_33_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:39CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:39CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XIV. DIRK VAN CLOON, WIJBRANT BLOM, HERMAN VAN BAYEN, ADRIAAN VALCKENIER, JOAN PAUL SCHAGHEN, ABRAHAM PATRAS, JOHANNES THEDENS, FREDERIK JULIUS COYETT, GUSTAAF WILLEM VAN IMHOFF, ELIAS DE HAEZE, ISAAC VAN SCHINNE, EN HERMAN VAN SUCHTELEN, BATAVIA 1 januari 1735. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[9]/missive[33]/header[1]" type="header" id="t1" offset="0" length="264"/>
+  </tunits>
+</NAF>

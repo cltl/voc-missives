@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:38CEST" title="Zwaardecroon, De Haan, Faes, Huysman, Hasselaar, Crudop, Tolling, Bergman, Durven, Blom; Batavia, 25 september 1722" filename="missive_7_33_text.naf"/>
+    <public publicId="missive_7_33_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XVI. HENDRIK ZWAARDECROON, MATTHEUS DE HAAN, JACOB FAES, ANTHONY HUYSMAN, CORNELIS HASSELAAR, JOAN ADRIAAN CRUDOP, LAURENS TOLLING, HANS FREDERIK BERGMAN, DIDERIK DURVEN EN WIJBRANT BLOM, BATAVIA 25 sept. 1722. 
+op den 15e april Stadwijk, 19c d. ° Heynkenszand, 21c may Theodora, 30c junij Astrea, 2C julij Steenhoven, 1 lc julij Elisabeth en Leyden, 20° d. ° Johanna en Lugtenburg, 21c d. ° Commerrust en Schonenberg, 23c d. ° Prattenburg, Groenswaard en Valckenisse, 30c d. ° Noordbeek, 6C aug. ° Loenderveen, 9C d. ° het Stadhuys van Delft, llc d. ° Barneveldt 
+Het versinken der schepen Amstelveen en Samson uyt de retourvloot van anno 1721 in volle zee ter zuyderbreedte van 25 graden en 40 minuten op de gegiste lengte van 86 graden en 30 minuten. 
+Den aparten brief, waarmede het van Haren goedgunstigen wille geweest is den Gouvemeur-Generael op een weergadelose wijse in sijn gereïtereerd versoek tot aflossing te begiftigen, te overcleden en te overreden, word tegenwoordig door hem in allen ootmoed apartelijk beantwoord. 
+binnen het rijk en ook langs den zoom en de stranden sig hadden vertoond diverse sortementen van inlandse rebellen en rovers, die alomme in het land sonder weynig of genoegsaem gene resistentie uyt het hof alles wegvoerden, wat dragelijk en voordeeligh was onder het moorden, doodslaan en branden van menschen, huysen en effecten, dog door de onse na behoren schijnen afgewesen te zijn. 
+het salveren van ’s Compagnies contanten en effecten, die met malkanderen nog een sware somma bedragen en daarom oock geen coopmanschappen voor ditmaal sijn derwaard gesonden, maar wel twee schepen van oorloge of defensie, namentl. Neptunis en Heesburg, die extraordinair med militie en zeevarende benevens de nodige ammunitie en provisiën zijn versterkt. 
+dewelke - zijn derwaard gesonden geweest tot ruïne van den sooge- naemden Sultan Anoem, maar dese vogel is de onse ontsnapt en houd sig op med weynig menschen tot Tandjong Jaty in den bovenweg na Bancahouloe, oversulx door Sultan Ratoe eenige manschap is uytgesonden tot sijner verdelginge. 
+De formele ruïne van dien verjaagden pretendent sal wel de veyligste weg zijn, opdat men aan den binnenboesem van Sumatra den handel van peper, deden en thin al soo wel med gerustheyd moge voortsetten, als aan de buyten- of zoogenaamde westzijde van dat eyland altans geschied door den verkoop van lijwaten, ijser en zout med den insaam van goud. 
+Middelerwijlen heefd men hier niet stilgeseten in het voortsetten der proceduuren tegens de gedetineerde landverraders, item specerij- en buscruyddieven voor beyde de regt- banken van desen casteele en de stad - en naderhand bevonden, dat aan het eene en het andere spel al veele menschen zijn schuldig geweest, die med de dood op verscheyde manieren gestraft sijn geworden. 
+hoe circumspectelijk en nietmin rigoreus med de executie der resp. vc sententiën soo tegens den een als den ander is doorgegaan en ook eenige aanmercking gevallen op de confiscatie van alle dan wel van de helfte der goederen van bovengem. landverraders med een besluyt om voor het aanstaande niet al te nauw met verdere enquesten door te gaan, teneynde niet alle hoven van Java tegelijk mogten gebragt werden tot een formelen opstand. 
+Het is bijgekomen, men desen jare geen nieuwe campagne heefd geopend, ter saké de Javanen om wat uyt te rusten sulx studieuselijlk schijnen te hebben verschoven en daarom ook aan den Vorst ten antwoord is gegeven, men in het naaste goed zaysoen dientwegen nader sal handelen. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[7]/missive[33]/header[1]" type="header" id="t1" offset="0" length="212"/>
+    <tunit xpath="//volume[7]/missive[33]/paragraph[2]" type="paragraph" id="t2" offset="212" length="353"/>
+    <tunit xpath="//volume[7]/missive[33]/paragraph[3]" type="paragraph" id="t3" offset="565" length="190"/>
+    <tunit xpath="//volume[7]/missive[33]/paragraph[4]" type="paragraph" id="t4" offset="755" length="279"/>
+    <tunit xpath="//volume[7]/missive[33]/paragraph[5]" type="paragraph" id="t5" offset="1034" length="388"/>
+    <tunit xpath="//volume[7]/missive[33]/paragraph[6]" type="paragraph" id="t6" offset="1422" length="357"/>
+    <tunit xpath="//volume[7]/missive[33]/paragraph[7]" type="paragraph" id="t7" offset="1779" length="292"/>
+    <tunit xpath="//volume[7]/missive[33]/paragraph[8]" type="paragraph" id="t8" offset="2071" length="348"/>
+    <tunit xpath="//volume[7]/missive[33]/paragraph[9]" type="paragraph" id="t9" offset="2419" length="376"/>
+    <tunit xpath="//volume[7]/missive[33]/paragraph[10]" type="paragraph" id="t10" offset="2795" length="436"/>
+    <tunit xpath="//volume[7]/missive[33]/paragraph[11]" type="paragraph" id="t11" offset="3231" length="277"/>
+  </tunits>
+</NAF>

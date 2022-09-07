@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Maetsuycker, Hartsinck, Cunaeus, Caesar, Steur; Batavia, 31 januari 1653" filename="missive_2_44_notes.naf"/>
+    <public publicId="missive_2_44_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Coucheren, concipiëren, opstellen. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[2]/missive[44]/footnote[1]" type="footnote" id="t1" offset="0" length="36"/>
+  </tunits>
+</NAF>

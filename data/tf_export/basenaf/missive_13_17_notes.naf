@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Bijlage ladinglijst van twaalf retourschepen vertrokken op 15 en 30 oktober, 6 november 1760, 19 januari en 25 april 1761" filename="missive_13_17_notes.naf"/>
+    <public publicId="missive_13_17_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[ii n n 
+ii ii ii n n n n n ii 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[13]/missive[17]/remark[1]" type="remark" id="t1" offset="0" length="8"/>
+    <tunit xpath="//volume[13]/missive[17]/remark[2]" type="remark" id="t2" offset="8" length="23"/>
+  </tunits>
+</NAF>

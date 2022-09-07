@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Van Hoorn, Van Riebeeck, Van Swoll, Douglas, De Vos, Van Rijn, Phoonsen, Zwaardecroon; Batavia, 17 maart 1708" filename="missive_6_54_notes.naf"/>
+    <public publicId="missive_6_54_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Hier is ruimte opengelaten voor nog een naam, alleen die van Comelis Chastelein komt in aanmerking, hij kwam blijkbaar niet tijdig opdagen. 
+Uit Engeland kwam de Anne , waarmee Cuningham naar Bandjarmasin vertrekt, hij zendt de Blenheim Tiaar Engeland, waarmee deze brief gaat; 29 febr. kwam de Zuydorp uit Zeeland met een brief van 21 febr. 1707, ze vertrok 9 dec. met de Westhoven van de Kaap, waar toen de in mei uit patria onder van Assenburgh vertrokken schepen nog niet waren aangekomen ; 18 febr. kwamen uit Bengalen 6 schepen; men zal er de kantoren Kasimbazar en Patna weer herstellen; de schepen uit Siam en van de Westkust bleven nog uit; 27 febr. kwam van Malakka via Palembang de Zoden » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[6]/missive[54]/footnote[1]" type="footnote" id="t1" offset="0" length="141"/>
+    <tunit xpath="//volume[6]/missive[54]/remark[2]" type="remark" id="t2" offset="141" length="561"/>
+  </tunits>
+</NAF>

@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:39CEST" title="Mossel, Cluysenaar, Van Broyel, Van der Waeyen, Van der Parra, Van der Spar, Van Gollenesse, Van de Velde, Van Rheede, De Nijs, Van Bazel; Batavia, 31 december 1752" filename="missive_12_15_text.naf"/>
+    <public publicId="missive_12_15_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:39CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:39CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XV. JACOB MOSSEL, JOHANNES MATTHEUS CLUYSENAAR, AREND VANBROYEL, JACOB VAN DER WAEYEN, PETRUS ALBERTUS VAN DER PARRA, JURGEN VAN DER SPAR, JULIUS VALENTIJN STEIJN VAN GOLLENESSE, PIE-TER VAN DE VELDE, DITHARD VAN RHEEDE, ADRIAAN DE NIJS en HUIJBERTWILLEM VAN BAZEL, BATAVIA 31 december 1752. 
+Eene instructie voor de commissarissen tot de heffing van de voorschreve liberale gifte aldaar g’arresteerd die gemerkt is La N no. 3. 
+Eene specificatie van hetgeene door de Bandase weeskamer voor reekening van haare pupillen is gefoumeert gemerkt Lra N no. 4. 
+Een origineel transport off acte van cessie van een obligatie ten voordeele van Stephanus van der Loeff en ten lasten van de provintie van Holland getekend Ltra N no. 5. 
+Twee extract brieven door de Bataviase weeskamer aan die in Banda over de voorsz. obligatie geschreven gemerkt Ltra N no. 6. 
+Eene resolutie genomen in Politicquen Rade te Neira (Banda’s hoofdplaats) op den 27e may deses jaars, concernerende de voorsz. obligatie gemerkt Ltra N no. 7. 
+Eene notitie der gedane foumissementen in het eerste, tweede en derde termijn, gecoteerd Lra N no. 8. 
+Uyt Amboina berigt den gouverneur Cluijsenaer bij sijne onder de bijlagen deses te vindene missive van den 26e september laastleeden, gemerkt Ltra O no. 2, dat de heffing van dien b’hoorlijk is geabsol veert, zijnde daarnevens onder anderen ontfangen: 
+Eene notitie van het g’foumeerde, gecoteerd Lra O no. 3, die mede hiernevens gaat in geselschap van: Een extract uyt onse resolutiën van den 27e october jongstleden concerneerende de van Amboina ontfangene juweelen. 
+In de Molucco’s is mede de contributie behoorlijk geschied, uytwijsens nevensgaande missive van den gouverneur en raad in Tematen van den 8e september laastleden, getekent Lra Q no. 1 - . 
+Ook heeft hetselve behoorlijk gevolg genomen op Macasser volgens een ontfangen briefje van den tegenwoordigen gouverneur Van Clootwijk van den 8e october laastleden, waarvan een extract in dorso gecoteerd Lra R no. 1, desen accompagneert met en benevens een copia rapport van de aldaar gestelde commissarissen, gemerkt Lra R no. 2, waarbij men nog gevoegt heeft drie extracten uyt onse resolutiën van den 14e november, 8e en 29e december deses jaars, gemerkt Lra R no. 3, 4 en 5, waarbij blijkt het alhier ont- waarde minwigt op het goud en silver in dit gouvernement en ten comptoire Timor voor den 50 pennink ontfangen en dat hetselve aldaar sekerlijk moet gewoogen sijn met balancen off gewigt, daar iets aan haperde, dewijl de balancen en gewigten te deser hoofdplaatse gebruykt werdende, zijn g’ examineert en wel bevonden en er geene mogelijkheyd is dat daaraan eenige mindering zoude gekomen zijn, maar men integendeel vast moet stellen, dat de aldaar gecontribueerde quantiteyt goud en silver alhier wesentlijk aangebragt is. 
+In hoeverre de contributie deser gifte ter custe Chormandel mede reets heeft effect g’sorteerd, zal U Ed. Hoogagtb. des gelievende omstandig consteeren bij een brieff van den heere gouverneur en raad te Nagapatnam gedateerd den 15e october jongstleeden, getekent Lra S no. 1, vier extracten uyt haare resolutiën van den 9e en 16e junij, lle aug. en 15e october jongstleden, gemerkt Lra S no. 2, 3, 4 en 5, een brieff van de bediendens ten comptoire Palliacatta, getekent Lra S no. 6, en eene tot dese laaste gehorende memoriën der aldaar gedaane foumissementen, gemerkt Lra S no. 7. 
+Zijnde voor ’t overige op Palembang het nodige daaromtrend préparatoir gereguleerd, blijkens een extract resolutie der bediendens aldaar van den 22e aug. laastleeden, gecoteerd Lra T no. 1 . 
+En van Bengale tot nog toe maar eenlijk ontfangen eene notitie van eenige zeevarende, die herwaarts sijn vertrocken sonder de liberale gifte te doen, dewelke de te deser hoofdplaatse nog vaceerende twee commissarissen is in handen gesteld om daaromtrend het nodige te besorgen. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[12]/missive[15]/header[1]" type="header" id="t1" offset="0" length="293"/>
+    <tunit xpath="//volume[12]/missive[15]/paragraph[2]" type="paragraph" id="t2" offset="293" length="136"/>
+    <tunit xpath="//volume[12]/missive[15]/paragraph[3]" type="paragraph" id="t3" offset="429" length="127"/>
+    <tunit xpath="//volume[12]/missive[15]/paragraph[4]" type="paragraph" id="t4" offset="556" length="171"/>
+    <tunit xpath="//volume[12]/missive[15]/paragraph[5]" type="paragraph" id="t5" offset="727" length="126"/>
+    <tunit xpath="//volume[12]/missive[15]/paragraph[6]" type="paragraph" id="t6" offset="853" length="160"/>
+    <tunit xpath="//volume[12]/missive[15]/paragraph[7]" type="paragraph" id="t7" offset="1013" length="103"/>
+    <tunit xpath="//volume[12]/missive[15]/paragraph[8]" type="paragraph" id="t8" offset="1116" length="253"/>
+    <tunit xpath="//volume[12]/missive[15]/paragraph[9]" type="paragraph" id="t9" offset="1369" length="217"/>
+    <tunit xpath="//volume[12]/missive[15]/paragraph[10]" type="paragraph" id="t10" offset="1586" length="189"/>
+    <tunit xpath="//volume[12]/missive[15]/paragraph[11]" type="paragraph" id="t11" offset="1775" length="1035"/>
+    <tunit xpath="//volume[12]/missive[15]/paragraph[12]" type="paragraph" id="t12" offset="2810" length="584"/>
+    <tunit xpath="//volume[12]/missive[15]/paragraph[13]" type="paragraph" id="t13" offset="3394" length="192"/>
+    <tunit xpath="//volume[12]/missive[15]/paragraph[14]" type="paragraph" id="t14" offset="3586" length="279"/>
+  </tunits>
+</NAF>

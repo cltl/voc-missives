@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Van Goens, Speelman, Bort, Hurdt, Van Outhoorn, Camphuys, Bent; Batavia, 25 juli 1681" filename="missive_4_31_notes.naf"/>
+    <public publicId="missive_4_31_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Vgl. Daghregisters 1681, p. 262-450 met 11 schepen is in 4 bezendingen cargasoen van f. 4 662 546. 16. 1 naar patria gezonden, bovendien met de Hendrick Maurits en de Oostenburg f. 448 350 van Ceylon; Padtbrugge was 13 mei op Obi; het doden van Aru Vacqua door Aru Palakka te Makassar » 
+Niemand durft zich tegen Aru Palakka verzetten; aan het uitwijken van Daëng Cicila naar Bantam is niet veel gelegen ; te Batavia is geen peper meer in voorraad; het Johorse leger is van Djambi naar huis teruggekeerd ; het jacht Japan is op Onrust gerepareerd, waar steeds veel werk is, zodat er onvoldoende schepen beschikbaar zijn, » 
+De handel in Siam niet geheel aan concurrenten over te laten; de naar Frankrijk en Rome bestemde Siamese gezanten te Bantam zien zeer tegen de reis op; voor Japan ook te vgl. Beschrijvinge II, I, p. 469, r 1-7; bij de waren, naar China gezonden, vgl. Daghregisters p. 442, was voor /. 53 383. 10. 8 aan wollen stoffen; het mede gezonden reeds lang onverkochte barnsteen en bloedkoraal mag desnoods met 25 a 30 % verlies verkocht worden; de Chinezen te Batavia vinden de samenstelling van het cargasoen zeer goed; bij Malakka was » 
+Hoop, dat ter Westkust » 
+Stijgende zijdeprijs in Bengalen; de waarde van de lading van het nieuwe jacht Naaldwijk wordt hier als f. 244 984 vermeld tegen f. 344 984 in Daghregisters p. 276 
+die van de Palau Run als 211 512 tegen /. 106 512 in Daghregisters p. 293, die van de Veluwe als /. 348 960 tegen f. 335 376 in Daghregisters p. 385 Coromandel leverde te weinig Guinees linnen; Portonovo wordt geacht jaarlijks 3000 pak textiel te kunnen leveren; de concurrentie neemt in Coromandel steeds toe; de handel in Malabar gaat redelijk ; gunstige verkoop in Suratte; de voorafgaande retouren van daar bedroegen f. 1 075 317; de Engelsen vergroten hun handel in Azië alom, zowel hun Compagnie als particulieren, » 
+De wegen in de Suratse bovenlanden zijn door de oorlog onveilig; herhaald moei worden, » 
+Teer dient meer geleverd te worden; de talrijkheid der Molukse eilanden maakt de pacificatie moeilijk » 
+De Koning van Tidore blijft trouw; met de handel in Arakan staat het slecht; het Wapen van Goes bracht voor f. 115 251, vnl. suiker, uit Bengalen in Perziè » 
+In Perzië. 
+Aftreden, beëindigen, opzeggen. 
+De Zweedse en Deense gezanten in Perzië, vgl. Daghregisters p. 434, zullen wel niet veel succes hebben; vrij gunstige handel in Basra; goede rijstoogst in Mataram verwacht; Bantam is rustig, maar er blijven slaven en deserteurs heen trekken; Speelman is door Heren XVII eenparig tot Gouverneur -Generaal verkozen » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[4]/missive[31]/remark[1]" type="remark" id="t1" offset="0" length="288"/>
+    <tunit xpath="//volume[4]/missive[31]/remark[2]" type="remark" id="t2" offset="288" length="336"/>
+    <tunit xpath="//volume[4]/missive[31]/remark[3]" type="remark" id="t3" offset="624" length="532"/>
+    <tunit xpath="//volume[4]/missive[31]/remark[4]" type="remark" id="t4" offset="1156" length="26"/>
+    <tunit xpath="//volume[4]/missive[31]/remark[5]" type="remark" id="t5" offset="1182" length="165"/>
+    <tunit xpath="//volume[4]/missive[31]/remark[6]" type="remark" id="t6" offset="1347" length="524"/>
+    <tunit xpath="//volume[4]/missive[31]/remark[7]" type="remark" id="t7" offset="1871" length="90"/>
+    <tunit xpath="//volume[4]/missive[31]/remark[8]" type="remark" id="t8" offset="1961" length="105"/>
+    <tunit xpath="//volume[4]/missive[31]/remark[9]" type="remark" id="t9" offset="2066" length="159"/>
+    <tunit xpath="//volume[4]/missive[31]/footnote[10]" type="footnote" id="t10" offset="2225" length="12"/>
+    <tunit xpath="//volume[4]/missive[31]/footnote[11]" type="footnote" id="t11" offset="2237" length="33"/>
+    <tunit xpath="//volume[4]/missive[31]/remark[12]" type="remark" id="t12" offset="2270" length="316"/>
+  </tunits>
+</NAF>

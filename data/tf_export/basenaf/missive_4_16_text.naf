@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:38CEST" title="Van Goens, Speelman, Van Outhoorn, Camphuys, Pits; Batavia, 3 augustus 1678" filename="missive_4_16_text.naf"/>
+    <public publicId="missive_4_16_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[IV. RYCKLOFF VAN GOENS, CORNELIS SPEELMAN, WILLEM VAN OUTHOORN, JOANNES CAMPHUYS EN JACOB PITS, BATAVIA 3 augustus 1678. 
+waervan hen veele menschen tot het gereformeerde Christendom hadden begeven, sommige de Machometaense ende heydense en andere de Moorse religiën verworpen hebbende. 
+Echter hebben wij soodanige ordre bij geschrifte derwaerts gestelt, dat ’t wel voor een seer goede visite sal moogen passeren. Sijnde de onkosten niet alleen seer merckelijck besnoeyt, maer sullen daerenbooven ontrent J part van de pennisten, die daer te veel zijn, moeten opkoomen, ’twelck de lasten van de Chormandelse comptoiren seer sal verminderen. 
+haar gagie ten minsten soo lange sal stilstaan, totdat de Comp. e haar dienst weder mogt nodigh hebben, namentl. uyt diegene, die bequaam zijn en anders geen. 
+Soo hebben wij oock de burgervaart al soodanigh besnoeyt, dat deselve U Ed. 8 staat niet sullen beschadigen in soodanigen handel, daar se U Ed. e beschadigen kan. 
+De passé van Portonovo op Malacca en Atchin hebben wij reets verbooden, soomede van de burgervaart van Malacca na de ooster- en andere quartieren. 
+Nu sitten wij alhier belast met de vier huurschepen S. 1 Andries, Jonas, Juff. r Maria en Geele Beer, die wij alleen met salpeter, sappanhout en peper sullen konnen oversenden en off dit nu soo swaare vragtgelden sal konnen opbrengen, konnen wij geensints geloven en soo ons (onder U Ed. e goedertieren correctie) geoorloft is eenige vrijheyt te gebruycken, soo souden wij oordeelen, dat de huurschepen seer schadelijck zijn ende datter aan het overblijven van U Ed. e kostelijke retourschepen merckelijcke intrest geleden wert en dienvolgens de huurschepen liever konde werden geëxcuseert, al waart, datter aan de eysch in de groote waaren als masten, smeekoolen, provisie en andere al te minder soude overkomen. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[4]/missive[16]/header[1]" type="header" id="t1" offset="0" length="122"/>
+    <tunit xpath="//volume[4]/missive[16]/paragraph[2]" type="paragraph" id="t2" offset="122" length="166"/>
+    <tunit xpath="//volume[4]/missive[16]/paragraph[3]" type="paragraph" id="t3" offset="288" length="355"/>
+    <tunit xpath="//volume[4]/missive[16]/paragraph[4]" type="paragraph" id="t4" offset="643" length="160"/>
+    <tunit xpath="//volume[4]/missive[16]/paragraph[5]" type="paragraph" id="t5" offset="803" length="164"/>
+    <tunit xpath="//volume[4]/missive[16]/paragraph[6]" type="paragraph" id="t6" offset="967" length="148"/>
+    <tunit xpath="//volume[4]/missive[16]/paragraph[7]" type="paragraph" id="t7" offset="1115" length="715"/>
+  </tunits>
+</NAF>

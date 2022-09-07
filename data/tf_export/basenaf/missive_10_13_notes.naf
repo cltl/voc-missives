@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Valckenier, Schaghen, Thedens, Van Imhoff, De Haeze, Van Schinne, Van Suchtelen, Pasques de Chavonnes, Duquesne, Guillot, Van Berendregt, Crul, Macaré, Nolthenius, Van Aerden; Batavia, 1 december 1740" filename="missive_10_13_notes.naf"/>
+    <public publicId="missive_10_13_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Sinds 3 oktober is er weinig te vermelden over de opstandige Chinezen. » 
+Twee Chinese brieven van hun aanvoerder Tay Wangsoey gaan in vertaling over Op 23 november is een boet- dank- en bededag gehouden. De opstand was ook de oorzaak van de vertraging van het schrijfwerk omdat de pennisten wegens gebrek aan militairen het kasteel hadden moeten bewaken. Van de vijf retourschepen zal de Adrichem met voorrang worden beladen en met de beschikbare papieren uiterlijk op de 20e december vertrekken. » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[10]/missive[13]/remark[1]" type="remark" id="t1" offset="0" length="74"/>
+    <tunit xpath="//volume[10]/missive[13]/remark[2]" type="remark" id="t2" offset="74" length="427"/>
+  </tunits>
+</NAF>

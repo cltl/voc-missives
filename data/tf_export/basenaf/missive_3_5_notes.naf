@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Maetsuycker, Hartsinck, Cunaeus, Verburch, Steur; Batavia, 31 juli 1656" filename="missive_3_5_notes.naf"/>
+    <public publicId="missive_3_5_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Brief met de Three Brothers verzonden; 28 juli is bericht ontvangen van de inneming van Colombo op 12 mei; houding van Radja Singa , vgl. Rijcklof, p. 56-57 » 
+Het schip was bij een aanval op het kasteel onklaar geworden en aan de wal gedreven, zie Rijcklof, p. 50. 
+Aankomst van schepen van diverse streken; De Vlaming heeft voor Amarasi op Timor échec geleden, verliezende 36 man » 
+A I gezonden schepen » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[3]/missive[5]/remark[1]" type="remark" id="t1" offset="0" length="160"/>
+    <tunit xpath="//volume[3]/missive[5]/footnote[2]" type="footnote" id="t2" offset="160" length="107"/>
+    <tunit xpath="//volume[3]/missive[5]/remark[3]" type="remark" id="t3" offset="267" length="118"/>
+    <tunit xpath="//volume[3]/missive[5]/remark[4]" type="remark" id="t4" offset="385" length="24"/>
+  </tunits>
+</NAF>

@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Van Goens, Speelman, Bort, Hurdt, Blom, Van Outhoorn, Camphuys; Batavia, 1 augustus 1679" filename="missive_4_21_notes.naf"/>
+    <public publicId="missive_4_21_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Vgl. Daghregisters 1679 , p. 68-351 de 2 juni uit patria aangekomen Romeyn was 8\ maand onderweg; twee grote moeilijkheden op Java: » 
+Tegen Bantam zal thans alleen , indien noodzakelijk , worden opgetreden, maar het loopt de spuigaten uit; moord door hen in Indragiri bedreven » 
+Voor patria zijn geen kruidnagelen beschikbaar; in Coromandel zal men het opgenomen geld kunnen terugbetalen; 64 slaven, in Madagascar gekocht, zijn naar de Westkust gebracht, 51 andere stierven aan boord » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[4]/missive[21]/remark[1]" type="remark" id="t1" offset="0" length="135"/>
+    <tunit xpath="//volume[4]/missive[21]/remark[2]" type="remark" id="t2" offset="135" length="146"/>
+    <tunit xpath="//volume[4]/missive[21]/remark[3]" type="remark" id="t3" offset="281" length="208"/>
+  </tunits>
+</NAF>

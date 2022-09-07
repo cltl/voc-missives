@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Van der Lijn, Caron, Reniers, Demmer; Batavia, 18 januari 1650" filename="missive_2_35_notes.naf"/>
+    <public publicId="missive_2_35_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Gedeeltelijk onleesbaar door vocht. . 
+De fluit Lastdrager , bestemd voor patria, heeft voor het innemen van peper enige dagen moeten wachten; 4 jan. is van daar de Tijger aangekomen, die door stormschade Siërra] Leone heeft moeten aandoen; waarde van de lading is fl. 63940. 8. 8; 5 jan. komt de Wolf uit Bengalen met 80 last rijst en 40 tarwe; er is jaarlijks 60 a 70. 000 & zijde verkrijgbaar; bericht . . . » 
+Joan Sonneschijn kwam 1638 als assistent uit, 1643 onderkoopman in Bengalen, 1646 koopman, 1649 opperkoopman. 
+Slechts de halve eis aan suiker is naar Perzië gezonden; twee schepen komen 8 en 14 jan. uit Siam met 419 last rijst, kostende fl. 15084, bestemd voor de Molukken en Banda; uit J apan is vernomen, » 
+Andries Frisius, lid van de Raad van Justitie en secretaris van de Regering, was 1649 als medegezant naar Japan gezonden. Hij repatrieerde in 1653 en kwam 1656 als vrijburger terug; 1657 weer secretaris van de Regering, tevens president van huwelijkse zaken, kapitein der schutterij enz. In 1660 repatrieerde hij als commandeur van de retourvloot. 
+Hoop op gunstiger verhoudingen in Japan; de reële effecten in Azië bedragen fl. 12737084. 1. 5 » 
+Slot » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[2]/missive[35]/footnote[1]" type="footnote" id="t1" offset="0" length="39"/>
+    <tunit xpath="//volume[2]/missive[35]/remark[2]" type="remark" id="t2" offset="39" length="375"/>
+    <tunit xpath="//volume[2]/missive[35]/footnote[3]" type="footnote" id="t3" offset="414" length="111"/>
+    <tunit xpath="//volume[2]/missive[35]/remark[4]" type="remark" id="t4" offset="525" length="200"/>
+    <tunit xpath="//volume[2]/missive[35]/footnote[5]" type="footnote" id="t5" offset="725" length="349"/>
+    <tunit xpath="//volume[2]/missive[35]/remark[6]" type="remark" id="t6" offset="1074" length="98"/>
+    <tunit xpath="//volume[2]/missive[35]/remark[7]" type="remark" id="t7" offset="1172" length="8"/>
+  </tunits>
+</NAF>

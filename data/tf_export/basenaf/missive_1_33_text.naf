@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:38CEST" title="Reael; Jakatra, 6 januari 1618" filename="missive_1_33_text.naf"/>
+    <public publicId="missive_1_33_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[VIII. LAURENS REAEL, JAKATRA 6 januari 1618. 
+Het ware te wenschen, dat de groote contanten, met de Goede Fortune ende Zirckze gesonden ter handt gecomen waren ; bij avonture souden mette Chinesen yets verricht cunnen wordden, want wij staen in vrese, ingevalle de Chinesen, die wij, in de Manillos sijnde, naer ons comptoiren wijsen, van dit jaer ons met eenich goet overcomen, dat wij wederomme varen sullen als voor desen ende per faulte van contant haer niet en sullen cunnen aenhouden. Soo U E. dese goede occasie niet willen laten verbijgaen, soo moet er voor eerst geit zijn, daermede men vele meer sal uytrechten als met alle de machten, die wij gebruycken omme haer tot ons te diverteren 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[1]/missive[33]/header[1]" type="header" id="t1" offset="0" length="46"/>
+    <tunit xpath="//volume[1]/missive[33]/paragraph[2]" type="paragraph" id="t2" offset="46" length="652"/>
+  </tunits>
+</NAF>

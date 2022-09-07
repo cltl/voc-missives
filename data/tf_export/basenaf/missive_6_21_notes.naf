@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Van Outhoorn, Van Hoorn, Pijl, Van Riebeeck, Cops, Bornezee, Van Dam, Van Swoll; Batavia, 4 augustus 1702" filename="missive_6_21_notes.naf"/>
+    <public publicId="missive_6_21_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Uit patria werden brieven van 23 juli en 20 sept. ontvangen met » 
+Deze brie} werd met het Engelse schip Bomeo verzonden » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[6]/missive[21]/remark[1]" type="remark" id="t1" offset="0" length="67"/>
+    <tunit xpath="//volume[6]/missive[21]/remark[2]" type="remark" id="t2" offset="67" length="57"/>
+  </tunits>
+</NAF>

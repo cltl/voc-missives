@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Mossel, Cluysenaar, Overbeek, Van Broyel, Van der Waeyen, Van der Parra, Van der Spar, Huyghens, Loten; Batavia, 21 januari 1751" filename="missive_12_3_notes.naf"/>
+    <public publicId="missive_12_3_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Volgt De Jonge Opkomst X, p. 178 r. 25 - p. 180 r. 27. » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[12]/missive[3]/remark[1]" type="remark" id="t1" offset="0" length="58"/>
+  </tunits>
+</NAF>

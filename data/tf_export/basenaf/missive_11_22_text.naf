@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:39CEST" title="Van Imhoff, Crul, Nolthenius, Cluysenaar, Overbeek, Van den Bosch, Mossel, Van Broyel, Verijssel, Theling; Batavia, 31 maart 1747" filename="missive_11_22_text.naf"/>
+    <public publicId="missive_11_22_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:39CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:39CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XXII. GUSTAAF WILLEM VAN IMHOFF, NICOLAAS CRUL, DANIËL NOLTHENIUS, JOHANNES MATTHEUS CLUYSENAAR, DANIËL OVERBEEK, JACOB VAN DEN BOSCH, JACOB MOSSEL, AREND VAN BROYEL, HUGO VERIJSSEL en JOHAN HERMAN THELING, BATAVIA 3 1 maart 1747, geheim. 
+nopens de bewuste prijsen der Engelschen natie in den aenvang van het jaer 1745 op die der Franschen in de Straet Banca gemaekt, herwaerts opgebragt, hier verkogt, en twee daarvan, in name Le Jason en Le Hercules, als andere retourscheepen van de Compagnie na Europa versonden, daerop uytkomende dat buyten eene importante somme van eenendertig maal hondertduyzent livres, en de restitutie der twee casques der bovengemelde scheepen, die in Europa geschieden zoude om daarmede af te maken de pretensiën der Franschen ontstaan uyt het voor aangehaelde opbrengen der voorsz. drie Fransche scheepen in deze haven, ook nog zoude moeten gerestitueert werden het casque van het schip de Dauphin, of den derden dier bodems, dog alleen ingevallen hetzelve schip daar te lande gekomen zoude zijn, belovende de Nederlandsche Compagnie ordre te stellen dat hetselve bij eerste gelegentheyd derwaarts werde gesonden, tenware het door de Regering alhier onbequaem tot het doen van deze reyse wierd g’oordeelt, waeruyt bij voorsz. U Ed. Hoogagtb. zeer gerespecteerde missive volgt die ordre tot nakominge van dit geconvenieerde om het voorsz. schip te laten examineeren en bijaldien hetselve g’oordeelt werd niet in staat te zijn om met volkomen gerustheyd met ’s Compagnies waren en koopmanschappen beladen die reyse te doen, U Ed. Hoogagtb. daarvan een schriftelijk geteykent raport in forma te laten toekomen, andersints het schip, zoveel de equipagie aengaat, in gereedheyd te brengen etc. 
+en wij bidden U Ed. Hoogagtb. onse moderatie, bij de secrete en gemene resolutie van den 28ste februarij blijkende, omtrent dezer verregaande uytdrukkinge die in hare thans aen U Ed. Hoogagtb. afgaende missive g’influeert zijn, zonder dat zij zig eens verwaerdigt hebben op onse successive resolutiën ons eens een antwoord te laten toekomen, voor geen swakheyd te willen opnemen, maar alleen, gelijk ook de grond daarvan is voor eene postpositie van andere consideratiën aan die eene, waarbij het publicq zozeer is g’interesseert, namentlijk aan den voortgang der justitie, hoewel het te besien zoude staan of die wel veel verliesen soude aen subjecten, die, om hare inbeeldingen en passiën te voldoen, geen swarigheyd maken sulke stappen te doen, die al niet veel verder zoude kunnen gaan zonder van groot gevolg te wesen. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[11]/missive[22]/header[1]" type="header" id="t1" offset="0" length="240"/>
+    <tunit xpath="//volume[11]/missive[22]/paragraph[2]" type="paragraph" id="t2" offset="240" length="1481"/>
+    <tunit xpath="//volume[11]/missive[22]/paragraph[3]" type="paragraph" id="t3" offset="1721" length="825"/>
+  </tunits>
+</NAF>

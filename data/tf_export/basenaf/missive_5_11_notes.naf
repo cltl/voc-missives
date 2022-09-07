@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Camphuys, Van Outhoorn, Pit, Van Hoorn, De Saint-martin, De Beveren, Valckenier; Batavia, 30 november 1689" filename="missive_5_11_notes.naf"/>
+    <public publicId="missive_5_11_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Na van Heren XVII ontvangen last om gehuurde galjoots spoedig naar patria terug te zenden stuurt men de Vergulde Vlaming terug, die 27 aug. te Malakka en 31 oct. te Batavia kwam; het fluitje Eemnes vertrok 6 april en kwam de 8e buiten Straat Sunda; 20 mei kwam uit patria het Wapen van Alkmaar, 3 juni de galjoot Jonge Snobber, 1 aug. de Nederland, 16 aug. Sion, 19 sept. de Schieland, 5 oct. het Land van Schouwen en de Voetboog, 25 oct. de Dregterland, 26 nov. de Bantam; uit Ceylon zullen 5 schepen naar patria varen, waar uit patria de scheepjes Tuymelaer, Handboog en Elisabeth kwamen; de eerste schepen van de vorige retourvloot vertrokken 15 april van de Kaap, de latere, die er pas 24 tot 26 mei kwamen, 30 juni, waarbij resp. Waterland, Maas en Honsholredijk en later de Nierop en de Spierdijk uit Ceylon met twee Franse prijzen; de Eemnes was van 18 juli tot 5 aug. aan de Kaap en lag door slecht weer 6 weken voor de wal van Afrika » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[5]/missive[11]/remark[1]" type="remark" id="t1" offset="0" length="946"/>
+  </tunits>
+</NAF>

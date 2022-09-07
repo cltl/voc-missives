@@ -73,6 +73,8 @@ public class Naf2Conll {
     protected List<List<Wf>> segmentTokensByTUnits() {
         List<List<Wf>> segments = new LinkedList<>();
         List<Tunit> tunits = naf.getTunits();
+        if (tunits.isEmpty())
+            return segments;
         int nextUnitOffset = CharPosition.create(tunits.get(0).getOffset(), tunits.get(0).getLength()).getEndIndex();
         List<Wf> segment = new LinkedList<>();
         for (Wf wf: naf.getWfs()) {

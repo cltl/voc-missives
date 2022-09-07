@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="De Carpentier; Batavia, 29 juli 1627" filename="missive_1_71_notes.naf"/>
+    <public publicId="missive_1_71_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Deze brief is alleen door de Carpentier getekend. Door Coen en de raden van Indië wordt er in de hierna volgende Generale Missive van 9 november 1627 — zie Coen V, p. 16 — naar verwezen als naar „onsen jongsten”. Ik beschouw hem daarom als Generale Missive en neem hem, voor zover gewenst, in deze uitgave op. . 
+Aankomst en vertrek van schepen , vgl. Daghregisters 13 maart-24 juli 1627 » 
+Van de kust van China. 
+Volgens Formosa, p. 67 bestond deze expeditie, die evenwel eerst deels 26 juli en deels 17 augustus 1627 vertrok, uit drie galjoenen, een kleiner schip, twee pataches (vrachtvaartuigen) en twee galeien. 
+In de Indische correspondentie vindt men aanvankelijk Ki-Lung met het westelijker gelegen Tan-Sui gewoonlijk op deze wijze als één plaats aangegeven. 
+Schepen naar China en Japan gezonden » 
+Marinho, van het Portugese „tot de zee behorend”. Misschien oorspronkelijk een waterschout, op de Specerij eilanden een ondergeschikt hoofd, weldra slechts een oppasser of bode. 
+Waaromtrent men raadplege Coen VII, p. 1382 vlg. en Valentijn, Beschrijvinge der Moluccos, p. 117-118. 
+Produkten uit de Specerij eilanden ontvangen » 
+Naar patria te zenden schepen » 
+Natuurlijk Socotra, het eiland tegenover Kaap Gardafui. 
+Als ’t halsen mach; als met inspanning van alle krachten te doen valt. 
+Zierikzee. 
+Opgedaagd. Van dit schip werd niets meer vernomen. 
+Enkele regels over hoop op handelsvoorspoed uitgelaten » 
+Ook voor het slot van de zaak Moretti zie men Daghregisters 1624-1629, in voce Moretti. . 
+Wachtschepen voor Malakka vgl. Daghregisters, 11 april 1627; ambassade naar Perzië , zie Perzië, p. LX XI V en bijhorende stukken » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[1]/missive[71]/footnote[1]" type="footnote" id="t1" offset="0" length="313"/>
+    <tunit xpath="//volume[1]/missive[71]/remark[2]" type="remark" id="t2" offset="313" length="78"/>
+    <tunit xpath="//volume[1]/missive[71]/footnote[3]" type="footnote" id="t3" offset="391" length="24"/>
+    <tunit xpath="//volume[1]/missive[71]/footnote[4]" type="footnote" id="t4" offset="415" length="204"/>
+    <tunit xpath="//volume[1]/missive[71]/footnote[5]" type="footnote" id="t5" offset="619" length="151"/>
+    <tunit xpath="//volume[1]/missive[71]/remark[6]" type="remark" id="t6" offset="770" length="40"/>
+    <tunit xpath="//volume[1]/missive[71]/footnote[7]" type="footnote" id="t7" offset="810" length="179"/>
+    <tunit xpath="//volume[1]/missive[71]/footnote[8]" type="footnote" id="t8" offset="989" length="104"/>
+    <tunit xpath="//volume[1]/missive[71]/remark[9]" type="remark" id="t9" offset="1093" length="48"/>
+    <tunit xpath="//volume[1]/missive[71]/remark[10]" type="remark" id="t10" offset="1141" length="33"/>
+    <tunit xpath="//volume[1]/missive[71]/footnote[11]" type="footnote" id="t11" offset="1174" length="57"/>
+    <tunit xpath="//volume[1]/missive[71]/footnote[12]" type="footnote" id="t12" offset="1231" length="72"/>
+    <tunit xpath="//volume[1]/missive[71]/footnote[13]" type="footnote" id="t13" offset="1303" length="12"/>
+    <tunit xpath="//volume[1]/missive[71]/footnote[14]" type="footnote" id="t14" offset="1315" length="52"/>
+    <tunit xpath="//volume[1]/missive[71]/remark[15]" type="remark" id="t15" offset="1367" length="58"/>
+    <tunit xpath="//volume[1]/missive[71]/footnote[16]" type="footnote" id="t16" offset="1425" length="91"/>
+    <tunit xpath="//volume[1]/missive[71]/remark[17]" type="remark" id="t17" offset="1516" length="133"/>
+  </tunits>
+</NAF>

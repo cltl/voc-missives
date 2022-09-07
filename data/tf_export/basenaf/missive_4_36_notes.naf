@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Speelman, Bort, Hurdt, Van Outhoorn, Camphuys, Bent; Batavia, 31 december 1681" filename="missive_4_36_notes.naf"/>
+    <public publicId="missive_4_36_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Vgl. Daghregistere 1681 , p. 783-789 » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[4]/missive[36]/remark[1]" type="remark" id="t1" offset="0" length="40"/>
+  </tunits>
+</NAF>

@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:38CEST" title="Van Hoorn, Van Riebeeck, Van Swoll, De Wilde, Douglas, De Vos, Phoonsen, Van Rijn, Zwaardecroon, Becker, Chasteleyn; Batavia, 16 december 1706" filename="missive_6_46_text.naf"/>
+    <public publicId="missive_6_46_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XVII. JOAN VAN HOORN, ABRAHAM VAN RIEBEECK, CHRISTOFFEL VAN SWOLL, HERMAN DE WILDE, ABRAHAM DOUGLAS, PIETER DE VOS, BERNARD PHOONSEN, ADAM VAN RIJN, HENDRIK ZWAARDECROON, HENRICK BECKER EN CORNELIS CHASTELEIN, BATAVIA 16 dec. 1706. 
+Wij hebben dees dagen te deser steede ontdeckt en in arrest doen nemen seeckere vijff Roomse geestelijcke, als 3 Jesuïten en 2 Franciscaners, den 4e november mettet Engelse schip Charliton uyt Engeland hier overgekomen en die na ’t vertreck van dien bodem op den 12en daaraan na Banjer vervolgens clandestin bij eenige onser borgers zig opgehouden hebben en voorgeven na China gedestineert te zijn. 
+Twee derselver, met namen Michiel Pernet uyt Bourgogne en Jacob de Premille van Poictou, altans per desen bodem overgaan. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[6]/missive[46]/header[1]" type="header" id="t1" offset="0" length="233"/>
+    <tunit xpath="//volume[6]/missive[46]/paragraph[2]" type="paragraph" id="t2" offset="233" length="400"/>
+    <tunit xpath="//volume[6]/missive[46]/paragraph[3]" type="paragraph" id="t3" offset="633" length="123"/>
+  </tunits>
+</NAF>

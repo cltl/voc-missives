@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:38CEST" title="Coen, De Carpentier, Dedel, De Houtman, Jansz; Kasteel Jakatra, 22 januari 1620" filename="missive_1_40_text.naf"/>
+    <public publicId="missive_1_40_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[IV. JAN PIETERSZ. COEN, PIETER DE CARPENTIER, JACOB DEDEL, FREDERICK DE HOUTMAN EN WILLEM JANSZ 
+KASTEEL JAKATRA 22 januari 1620. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[1]/missive[40]/header[1]" type="header" id="t1" offset="0" length="97"/>
+    <tunit xpath="//volume[1]/missive[40]/header[2]" type="header" id="t2" offset="97" length="34"/>
+  </tunits>
+</NAF>

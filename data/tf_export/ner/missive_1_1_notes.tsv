@@ -1,0 +1,7 @@
+begin	end	entityId	entityKind
+29	33	e_n_1_1_0	PER
+47	52	e_n_1_1_1	LOC
+123	133	e_n_1_1_2	ORG
+231	242	e_n_1_1_3	LOC
+254	258	e_n_1_1_4	LOCderiv
+258	268	e_n_1_1_5	LOC

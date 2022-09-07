@@ -8,7 +8,7 @@ from tf.convert.recorder import Recorder
 from tf.fabric import Fabric as TF
 
 # The version of the text=fabric data in CLARIAH/wp6-missieven
-TF_DATA_VERSION = "0.8.1"
+TF_DATA_VERSION = "1.0"
 
 
 # retrieve volume, letter id and text/notes text type
@@ -208,8 +208,9 @@ def make_features(textdir, tsvdir):
             filename = os.path.basename(file)
             tsv_file = os.path.join(tsvdir, "{}.tsv".format(filename))
             file_feats = get_file_features(file, tsv_file)
-            features["entityKind"].update(file_feats["entityKind"])
-            features["entityId"].update(file_feats["entityId"])
+            if file_feats:
+                features["entityKind"].update(file_feats["entityKind"])
+                features["entityId"].update(file_feats["entityId"])
     return features
 
 

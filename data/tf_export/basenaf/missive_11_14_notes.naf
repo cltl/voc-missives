@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Van Imhoff, Pasques de Chavonnes, Crul, Nolthenius, Van Aerden, Cluysenaar, Overbeek, Van den Bosch, Schuylenburg, Mossel, Van Broyel; Batavia, 28 januari 1746" filename="missive_11_14_notes.naf"/>
+    <public publicId="missive_11_14_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[De Engelse compagniesschepen Hartwick en Northampton hebben op hun reis van China naar huis Batavia aangedaan in de hoop op konvooi Toen dat er niet bleek te zijn hebben zij hun reis voortgezet. Batavia heeft de gelegenheid aangegrepen deze missive te sturen. Op 24 januari is de Kleverskerke teruggekeerd, op 28 december uit Japan vertrokken. De Vrijheid en Hofwegen zijn kort daarop gevolgd. De schepen zijn lang opgehouden door ‘haspelingeri met de Japanse regering in Nagasaki over de handel en m. n. het koper. Pas in december werd een akkoord bereikt. Van het koper werden net als de vorige keer 1 0. 000 kisten geleverd De schepen zijn behouden in China aangekomen. De handel is redelijk succesvol,) 
+Volgens de brief van 12 november 1 745 die Batavia met de Nieuwvliet heeft ontvangen, kunnen Heren XVII uit Bengalen de Diemen en Huis ter Duine verwachten voor de kamers Amsterdam en Rotterdam met een goede lading textiel en met minder dan de gevraagde zijde. De Rijnhuizen uit Hoorn is gearriveerd, het 1 7 schip van de 32 die in het najaar van 1 744 voor Azië aangelegd zijn. 80 bemanningsleden hebben de reis niet overleefd, 50 zijn ziek in Batavia aangekomen. I. p. v. Batavia van volk te voorzien heeft de Rijnhuizen zelf versterking nodig. Volgens een brief uit Kaap de Goede Hoop heeft men van de Goidschalxoord evenmin wat te verwachten omdat dat schip tijdens de reis van vijfmaanden van Nederland naar de Kaap bijna de helft van de bemanning heeft verloren. Dit geldt ook voor het Delftse schip lda dat bij het vertrek van de Goidschalxoord nog niet aan de Kaap was gearriveerd. De toestand is al zover verslechterd dat men met de bemanning van het ene schip dat in Batavia aankomt, het andere dat gereed is om te vertrekken moet bemannen. Dit heeft tot het besluit geleid alleen de Kleverskerke als naschip aan te leggen. Men is niet in staat twee schepen voor Europa te bemannen. Van Imhoffis zo ziek geweest dat hij zelfs de missive van 31 december 1 745 niet kon tekenen. Hij is inmiddels zover hersteld dat hij weer aan het werk is gegaan. » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[11]/missive[14]/remark[1]" type="remark" id="t1" offset="0" length="708"/>
+    <tunit xpath="//volume[11]/missive[14]/remark[2]" type="remark" id="t2" offset="708" length="1359"/>
+  </tunits>
+</NAF>

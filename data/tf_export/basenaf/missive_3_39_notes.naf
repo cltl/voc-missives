@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Maetsuycker, Verburch, Pit, Overtwater, Van den Brouck, Van Hoorn, Ranst; Batavia, 31 januari 1669" filename="missive_3_39_notes.naf"/>
+    <public publicId="missive_3_39_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Vgl. Daghregisters 1668-1669, p. 226-247 de vorige drie retourschepen hadden bemanning van 308 koppen; in januari zijn 106 soldaten naar Makassar, 75 naar Amboina en Banda elk, 50 naar Ternate gezonden; de Pangerans van Djambi . . . . » 
+De Engelsen betalen te Djambi 9 d 10 realen voor slechte peper; de V. O. C. zal er nu voor de helft met geld moeten betalen » 
+Petak, maleis: afgescheiden gedeelte, bijv. van een huis of een schip, vaak: winkelpand. 
+Scheepsverkeer mei Malakka; naar Coromandel is van daar voor 15, naar Bengalen voor 12 ton gezonden , 3000 picol koper naar Suratte, 1500 naar Coromandel, 600 naar Bengalen, 414 naar Malabar; de kamfer uit Japan is verdeeld over Perzië, Suratte en Coromandel; 151 stuks olifantstanden van Siam gaan naar Suratte, de Vorst van Perak liet weten , dat, . . . . » 
+Voeg in: wij. 
+De gezanten uit Deli zijn 17 oct. van Malakka vertrokken; aan de hen geleidende schepen is gelast hun . . . . » 
+Peta, gestreepte katoenen doek, hier van de soort, die de Maleiers plachten te kopen. 
+Daarbij verging het jacht Fortuyn met 10 man » 
+Edward Lock, Engelse vrijburger, reeds in 1663 in Atjeh vermeld; hij was in deze tijd enige jaren te Kedah gevestigd, van waar hij op Masulipatam handelde, in 1673 werd hij door de Djambiërs weggevoerd. 
+Vgl. Corpus I, nr. CXLIII. 
+Lock is particulier koopman » 
+Twee olifanten waren dood; er zijn te weinig schepen voor het werk nabij Malakka; 20 nov. is daar een schip met 300 bahar tin, waard f. 42000, van Ligor gekomen » 
+In een jaar was er gewonnen f. 7035 en uitgegeven /. 2207; de Engelsen konden voor hun scheepje te Djambi geen voldoende peper verwerven; suiker uit Bengalen komt te laat voor de retourvloot; in Japan is bruine suiker meer gewild dan untte; er is in Bengalen nog onvoldoende kapitaal; er is gekocht . . . . » 
+Hei zal met grove waren 31 jan. naar Batavia vertrekken; lood wordt in Bengalen aan den nawab verkocht » 
+Cazy ofte Moorse priester. De Islam kent geen priesters, hier is bedoeld een Moslims wetgeleerde, die als kadhi, rechter, optrad. 
+Bedoeld: waarover wij met de Engelsen in kwestie waren. 
+Parwanna, bevelschrift, gunstbrief, door een gouverneur uitgegeven. 
+Door de Engelsen is hiertegen geprotesteerd; kaart van Bengalen naar patria gezonden; een deel van de Gangesloop werd daarvoor echter nog niet opgenomen; veel zieken in Palembang; er is daar 2200 picol peper in hei pakhuis, tegen mei 6000 verwacht » 
+De resident van de Compagnie te Palembang. 
+Er is in Tonkin in een jaar gewonnen /. 127854. 10. 9 en uitgegeven f. 17855. 11. 14; er is f. 267841 aan kapitaal , w. o. f. 82477 aan desperate schulden » 
+Men heeft dit geëxcuseerd » 
+Personalia Cornelis Valckenier; ds. Jacobus Montanus gaat Tiaar Amboina, ds. Carolus Manteau en ds. Jacobus Rijnsdijck naar Banda , ds. Albertus Struys naar Temate; J acob Cops wordt gouverneur van Amboina , Anthony Hurdt van Banda , Abraham Verspreet president van de Molukken; naar Makassar zijn o. a. 100 mardijkers of ,, volontaire inlanders” gezonden , wat 499 rsd. per maand kost » 
+Hei invoerrecht van tin is van 10 op 5% verlaagd om verplaatsing van de markt naar Oost- Java te voorkomen; 40 ondienstige paarden verkocht voor 508 rsd.; de uitgaven te Batavia waren 31 aug. over een jaar: » 
+Wissels op patria voor 7922 rsd. getrokken; winsten over een jaar op 31 dec. I. I.; » 
+Kleinere ontvangsten f. 123052. 19. 14, w. o. f. 107789. 17 . 6 aan kaneel, korting op de schuld van den Koning van Kandi; verliezen: » 
+Andere uitgaven f. 346673. 8. 7, w. o. /. 270731. 9. 4 aan interest; uit patria is ontvangen: » 
+De retouren bedroegen f. 3244157 . 4. 3; het kapitaal f. 17856325. 74.-; afgelegde schepen; nieuwe schepen nodig, ook meer volk; de 6 oct. 1667 vertrokken retourschepen kwamen mei 1668 bij het Vlie » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[3]/missive[39]/remark[1]" type="remark" id="t1" offset="0" length="238"/>
+    <tunit xpath="//volume[3]/missive[39]/remark[2]" type="remark" id="t2" offset="238" length="127"/>
+    <tunit xpath="//volume[3]/missive[39]/footnote[3]" type="footnote" id="t3" offset="365" length="90"/>
+    <tunit xpath="//volume[3]/missive[39]/remark[4]" type="remark" id="t4" offset="455" length="361"/>
+    <tunit xpath="//volume[3]/missive[39]/footnote[5]" type="footnote" id="t5" offset="816" length="15"/>
+    <tunit xpath="//volume[3]/missive[39]/remark[6]" type="remark" id="t6" offset="831" length="113"/>
+    <tunit xpath="//volume[3]/missive[39]/footnote[7]" type="footnote" id="t7" offset="944" length="87"/>
+    <tunit xpath="//volume[3]/missive[39]/remark[8]" type="remark" id="t8" offset="1031" length="48"/>
+    <tunit xpath="//volume[3]/missive[39]/footnote[9]" type="footnote" id="t9" offset="1079" length="204"/>
+    <tunit xpath="//volume[3]/missive[39]/footnote[10]" type="footnote" id="t10" offset="1283" length="28"/>
+    <tunit xpath="//volume[3]/missive[39]/remark[11]" type="remark" id="t11" offset="1311" length="31"/>
+    <tunit xpath="//volume[3]/missive[39]/remark[12]" type="remark" id="t12" offset="1342" length="164"/>
+    <tunit xpath="//volume[3]/missive[39]/remark[13]" type="remark" id="t13" offset="1506" length="310"/>
+    <tunit xpath="//volume[3]/missive[39]/remark[14]" type="remark" id="t14" offset="1816" length="106"/>
+    <tunit xpath="//volume[3]/missive[39]/footnote[15]" type="footnote" id="t15" offset="1922" length="131"/>
+    <tunit xpath="//volume[3]/missive[39]/footnote[16]" type="footnote" id="t16" offset="2053" length="57"/>
+    <tunit xpath="//volume[3]/missive[39]/footnote[17]" type="footnote" id="t17" offset="2110" length="69"/>
+    <tunit xpath="//volume[3]/missive[39]/remark[18]" type="remark" id="t18" offset="2179" length="251"/>
+    <tunit xpath="//volume[3]/missive[39]/footnote[19]" type="footnote" id="t19" offset="2430" length="44"/>
+    <tunit xpath="//volume[3]/missive[39]/remark[20]" type="remark" id="t20" offset="2474" length="158"/>
+    <tunit xpath="//volume[3]/missive[39]/remark[21]" type="remark" id="t21" offset="2632" length="29"/>
+    <tunit xpath="//volume[3]/missive[39]/remark[22]" type="remark" id="t22" offset="2661" length="389"/>
+    <tunit xpath="//volume[3]/missive[39]/remark[23]" type="remark" id="t23" offset="3050" length="210"/>
+    <tunit xpath="//volume[3]/missive[39]/remark[24]" type="remark" id="t24" offset="3260" length="87"/>
+    <tunit xpath="//volume[3]/missive[39]/remark[25]" type="remark" id="t25" offset="3347" length="137"/>
+    <tunit xpath="//volume[3]/missive[39]/remark[26]" type="remark" id="t26" offset="3484" length="97"/>
+    <tunit xpath="//volume[3]/missive[39]/remark[27]" type="remark" id="t27" offset="3581" length="201"/>
+  </tunits>
+</NAF>

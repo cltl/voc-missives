@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Van Diemen, Van der Lijn, Maetsuycker, Schouten, Sweers; Batavia, 4 januari 1644" filename="missive_2_19_notes.naf"/>
+    <public publicId="missive_2_19_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Mei de reeds vertrokken 5 schepen gingen 711 personen; thans vertrekt de Salamander met goederen , waard fl. 147346. 2. 7 » 
+Het was o. a. verboden bij de Artikelbrief van 25 febr. 1634, art. 73, afgedrukt Pia- kaatboek, I, p. 332. , 
+De vrijburger Andries Cramer werd dec. 1636 bode van schepenen. , 
+Op de Guzeraise en Eindustaanse kantoren is van 1 juni 1642 tot 31 mei 1643 fl 38129. 16. 10 gewonnen; weinig, omdat de schenkage aan den Groot-Mogol fl 14000 bedragen heeft; hei geschil over hei schatten der goederen voor de uitvoertol van Compagnies koopmanschappen gunstig beëindigd, vgl. Daghregisters 1643-44, p. 187188; gegevens over Masulipaiam, ibid. p. 282 » 
+Hier is sprake van een schip, geheten het Spaanse Gallioen; het was van Masulipatam naar Arakan gezonden. 
+Die van Arakan. 
+Padi, rijst in de aar, dus zoals ze te velde staat. 
+Naar handel in caurischelpen op de Malediven zal worden geïnformeerd » . . . . 
+Weinig nieuws uit Thaiwan .... 
+Jan van Crieckenbeeck was 1644-1646 provisioneel luitenant op Formosa. 
+Kimory, plaats aan de noordkust van Formosa, juist bezuiden het eiland Ki-Lung. 
+Van Thaiwan de Waterhont naar Suratte gezonden met fl. 450. 000 aan schuitzilver, Lillo naar Coromandel met ruim 6 ton, Oranjeboom naar Cambodja met 10. 000 taël, de Saeyer naar Tonkin met 100. 000 taël zilver; blijft in Thaiwan fl 1885000 aan waarde, waarvan fl 300. 000 bestemd voor Coromandel » 
+President Le Maire heeft een eis naar China gezonden van goederen ter waarde van fl 4000000, daaronder 2000 schuiten goud » 
+Aan reële effecten is in Indiè aanwezig fl 10014928. 4. 5. Winsten op diverse kantoren: » 
+Met het oog op onverwachte scheepsrampen en andere verliezen wordt toch de gedane eis van contanten gehandhaafd; in allen gevalle 100. 000 realen in specie te zenden; moeilijkheid de Kamers naar rato van hun kapitaal in retourvrachten te voorzien » 
+Tochten van Maerten de Vries vgl. Reize Vries, Zeemogendheid II p. 332-333, Daghregisters 1643-44, p. 1-4 voornemen Tasman en Visscher weer uit te zenden, vgl. Tasman p. LXXIV v lg. » 
+In het octrooi van 1602 voor de V. O. C. werd haar terrein begrensd door: beooste de Cabo de bonne Esperance en door de Straet van Magellanes. In de overeenkomst met de Engelsen van juli 1619 werd dit gebied -wat nader omschreven; die omschrijving werd opgenomen in de inleiding tot het octrooi, zoals het 1 jan. 1623 inging. Daarin wordt als begrenzing o. a. genoemd de Straet van Anian, de veronderstelde doorgang tussen Noord- Amerika en Azië, dus daar waar men later de Behring-straat vond. Dit bleef zo in het octrooi van 1647. Vgl. Beschrijvinge I, I, p. 76. 
+Teruggezonden ongewenst personeel; wijlen gouverneur Traudenius had abuizen gepleegd; op patria getrokken wissels » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[2]/missive[19]/remark[1]" type="remark" id="t1" offset="0" length="125"/>
+    <tunit xpath="//volume[2]/missive[19]/footnote[2]" type="footnote" id="t2" offset="125" length="110"/>
+    <tunit xpath="//volume[2]/missive[19]/footnote[3]" type="footnote" id="t3" offset="235" length="67"/>
+    <tunit xpath="//volume[2]/missive[19]/remark[4]" type="remark" id="t4" offset="302" length="369"/>
+    <tunit xpath="//volume[2]/missive[19]/footnote[5]" type="footnote" id="t5" offset="671" length="107"/>
+    <tunit xpath="//volume[2]/missive[19]/footnote[6]" type="footnote" id="t6" offset="778" length="17"/>
+    <tunit xpath="//volume[2]/missive[19]/footnote[7]" type="footnote" id="t7" offset="795" length="53"/>
+    <tunit xpath="//volume[2]/missive[19]/remark[8]" type="remark" id="t8" offset="848" length="80"/>
+    <tunit xpath="//volume[2]/missive[19]/footnote[9]" type="footnote" id="t9" offset="928" length="32"/>
+    <tunit xpath="//volume[2]/missive[19]/footnote[10]" type="footnote" id="t10" offset="960" length="72"/>
+    <tunit xpath="//volume[2]/missive[19]/footnote[11]" type="footnote" id="t11" offset="1032" length="81"/>
+    <tunit xpath="//volume[2]/missive[19]/remark[12]" type="remark" id="t12" offset="1113" length="299"/>
+    <tunit xpath="//volume[2]/missive[19]/remark[13]" type="remark" id="t13" offset="1412" length="125"/>
+    <tunit xpath="//volume[2]/missive[19]/remark[14]" type="remark" id="t14" offset="1537" length="91"/>
+    <tunit xpath="//volume[2]/missive[19]/remark[15]" type="remark" id="t15" offset="1628" length="250"/>
+    <tunit xpath="//volume[2]/missive[19]/remark[16]" type="remark" id="t16" offset="1878" length="185"/>
+    <tunit xpath="//volume[2]/missive[19]/footnote[17]" type="footnote" id="t17" offset="2063" length="566"/>
+    <tunit xpath="//volume[2]/missive[19]/remark[18]" type="remark" id="t18" offset="2629" length="117"/>
+  </tunits>
+</NAF>

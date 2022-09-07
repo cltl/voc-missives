@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:38CEST" title="Both; zonder plaats, zonder datum" filename="missive_1_10_text.naf"/>
+    <public publicId="missive_1_10_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[X. PIETER BOTH, ZONDER PLAATS EN DATUM. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[1]/missive[10]/header[1]" type="header" id="t1" offset="0" length="41"/>
+  </tunits>
+</NAF>

@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Maetsuycker, Hartsinck, De Vlaming van Oudtshoorn, Verburch, Steur; Batavia, 29 juli 1661" filename="missive_3_17_notes.naf"/>
+    <public publicId="missive_3_17_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Verzonden met de Engelse Newcastle; de retourvloten bereikten reep. 13 maart en 5 mei de Kaap; aankomst uit patria van de Olifa?it en de Loosduynen, Daglireg. 13 en 14 febr., p. 34 — 35; Anckeveen 30 mei, p. 143 — 144; Vogelsangh en Erasmus, 13 en 14 juli, p. 220, 224, Dordrecht, 18 juli, p. 226; zending van de Leeuwin naar Amboina, 15 febr., p. 35 — 36, met twee predikanten; schepen en berichten van daar ontvangen op 25 mei , p. 130 — 137 en 2 juni, p. 164 — 165, vgl. ook Corpus II, nr. CCXLVII; 249717 nagelen is ontvangen; zending van schepen naar Banda, Daghregisters 28 jan., p. 19 en 15 febr., p. 38; schip en berichten van daar, 31 mei, p. 147 — 149; zending van een schip naar Ternate op 15 febr., p. 37 — 38, schip en berichten van daar, 1 juni, p. 159 — 164; Portugezen uit Makassar gezet; berichten van daar, Daghregisters, Register en o. a. p. 170 — 171; zending naar Timor op 12 ebr., p. 33 » 
+De hier volgende passus is in geheimschrift, in Nederland is de betekenis er boven geschreven. 
+Onjuist, Larantuka ligt op Flores. , 
+Zending naar Palembang, vgl. Daghregisters 26 april, p. 91 — 92: berichten uit Djambi » 
+Zending naar Martapura op 3 maart, Daghregisters, p. 49, schip en berichten vandaar, ibid., 28 mei, p. 140 — 143; van Malakka, ibid., Register i. v. Malakka; van Siam, ibid. 12 april, p. 73 — 75 en 13 juni, p. 181, 183 — 184; zending derwaarts, ibid. 26 april, p. 91, 18 juni, p. 190, 22 juni, p. 196; gegevens over Cambodja, schip 
+en berichten van Tonkin , ibid. 7 maart t p. 49 — 55; bezending derwaarts , ibid. 25 april, p. 89 — 91; en naar Japan, ibid., Register i. v. Japan; berichten uit en bezending naar Thaiwan, id.; bericht van de aanval van Coxinga op Formosa, ibid. 24 juni, p. 197 — 200; zending van Cau met een vloot derwaarts, ibid. 5 juli, p. 207—208 » 
+Vervolg gegevens aanval van Coxinga » 
+De volgende passus is weer in geheimschrift, de betekenis is er in Nederland boven geschreven. 
+Verkeerd geïnterpreteerd, hier staat in geheimschrift : sij. 
+De betekenis is niet boven dit getal geschreven ; ze is : Uw. 
+Schepen en berichten uit Arakan , Daghregisters 9 maart , p. 55 — 57, 16 mei, p. 114 — 116; verder van Bengalen , Coromandel, Ceylon, Ooa, Suratte, Perzië, Mataramen Bantam, alles in Daghregisters, met behulp van het register te vinden » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[3]/missive[17]/remark[1]" type="remark" id="t1" offset="0" length="912"/>
+    <tunit xpath="//volume[3]/missive[17]/footnote[2]" type="footnote" id="t2" offset="912" length="96"/>
+    <tunit xpath="//volume[3]/missive[17]/footnote[3]" type="footnote" id="t3" offset="1008" length="38"/>
+    <tunit xpath="//volume[3]/missive[17]/remark[4]" type="remark" id="t4" offset="1046" length="89"/>
+    <tunit xpath="//volume[3]/missive[17]/remark[5]" type="remark" id="t5" offset="1135" length="333"/>
+    <tunit xpath="//volume[3]/missive[17]/remark[6]" type="remark" id="t6" offset="1468" length="338"/>
+    <tunit xpath="//volume[3]/missive[17]/remark[7]" type="remark" id="t7" offset="1806" length="39"/>
+    <tunit xpath="//volume[3]/missive[17]/footnote[8]" type="footnote" id="t8" offset="1845" length="96"/>
+    <tunit xpath="//volume[3]/missive[17]/footnote[9]" type="footnote" id="t9" offset="1941" length="62"/>
+    <tunit xpath="//volume[3]/missive[17]/footnote[10]" type="footnote" id="t10" offset="2003" length="63"/>
+    <tunit xpath="//volume[3]/missive[17]/remark[11]" type="remark" id="t11" offset="2066" length="239"/>
+  </tunits>
+</NAF>

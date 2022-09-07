@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Van Goens, Speelman, Bort, Hurdt, Van Outhoorn, Camphuys, Bent; Batavia, 4 november 1681" filename="missive_4_33_notes.naf"/>
+    <public publicId="missive_4_33_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Vgl. Daghregisters 1681, p. 529-650; de gevangen genomen Koning Amsterdam » 
+In het gouvernement Amboina is het rustig; het sandelhout, t. a. p. p. 617 vermeld, was gekocht van Anthonio de Hornaya 8 rsd. het picol; op Roti zijn, vgl. t. a. p. p. 616 enige honderden inwoners omgebracht; in Mataram » 
+Namrud, Balisch avonturier, die in de oorlogen in Mataram opkwam en door huwelijk verwant raakte met Pangeran Puger, met wien hij een tijd samenwerkte. Nadat dit in vijandschap was veranderd en Puger zich met den Susuhunan had verzoend, sneuvelde Namrud in dec. 1681 in een bloedige slag tegen Couper. 
+Tekort aan zware touwen; de lading van de Pulau Run, vgl. t. a. p. p. 627 , wordt hier als f. 230 126. 8. 3 opgegeven; in Malakka is niet genoeg textiel voor de handel; de goudinkoop ter Westkust ligt weer stil; Pit, vgl. t. a. p. p. 627, bracht slechts voor /. 15 000 aan goud mee; de lichamelijk zwakke berghopman Olits wil na inspectie van de mijn bij Salida weer naar patria terugkeren » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[4]/missive[33]/remark[1]" type="remark" id="t1" offset="0" length="77"/>
+    <tunit xpath="//volume[4]/missive[33]/remark[2]" type="remark" id="t2" offset="77" length="224"/>
+    <tunit xpath="//volume[4]/missive[33]/footnote[3]" type="footnote" id="t3" offset="301" length="303"/>
+    <tunit xpath="//volume[4]/missive[33]/remark[4]" type="remark" id="t4" offset="604" length="393"/>
+  </tunits>
+</NAF>

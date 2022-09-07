@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Van Diemen, Van der Lijn; Batavia, 8 januari 1641" filename="missive_2_7_notes.naf"/>
+    <public publicId="missive_2_7_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Schepen van patria gekomen; schip van Goromandel gekomen, vgl. Daghregisters 27 nov. 1640, p. 86-92 en 29 nov. 1640 p. 102-104 ; schepen naar de Specerij eilanden vertrokken » 
+Van Masulipatam. 
+Thony, klein vaartuigje, vaak van één boomstam gemaakt, gebruikt voor het lossen van schepen ter Kust van Coromandel. 
+Zie voor dit prijsgemaakte schip Daghregisters, 29 nov. 1640, p. 103. 
+Bericht van Suratte » 
+Patan, stad in Guzeratte op 22°50/ N. B. en 72° 16' O. L. 
+Financiële resultaten in Suratte , winst fl. 155139. 10. 5; handel der Engelsen aldaar; Icomst van een schip van voor Malakka, vgl. Daghregisters 11 dec. 1640, p. 121-123, en Malakka, passim » 
+Joao da Silva Tello de Menezes, conde de Aveiras, Onderkoning van Port. Indië van 1640 tot 1645, verklaarde zich na korte aarzeling voor den Braganza-Koning. In 1651 weer tot Onderkoning benoemd, stierf hij op reis naar Goa. 
+Pedro de Almeida Cabral is mij verder niet bekend. 
+Podeer, port. poder, macht. 
+Hier te verstaan : wij . 
+Berichten uit Ceylon, vgl. Ceilon p. 67 en af gedrukt Bijlage IX, vgl. Zeemogend¬ heid II p. 131 uit Siam, vgl. Daghregisters 3 dec. 1640, p. 103-109 Portugees schip in Nagasaki, Zeemogendheid II p. 302, Christian Century p. 385 berichten over Cambodja Daghregisters 21 dec. 1640, p. 124-129 idem van Djambi, Daghregisters 4 dec. 1640, p. 109 en Zeemogendheid II p. 239 aankomst van de fluit Schagen van Palembang, vgl. Daghregisters 26 dec. 1640, p. 130 » 
+Men vgl. hiervoor Corpus , I, p. 348. 
+Schepen naar Thaiwan en Japan gezonden; berichten van daar, vgl. Daghregisters 6 dec. 1640, p. 110-120; contract met I-Jcican gesloten, vgl. Zeemogendheid//, p. 308 Daghregisters 31 dec. 1640, p. 130-159, Zeemogendheid II p. 302-303 en Japan, S. 273-284 » 
+G’evertueert, ons best gedaan, ons toegelegd op. 
+Uytseggen, aanzeggen te moeten vertrekken. 
+De Heren dienen op de Japanse eis te letten » 
+Voortzetting berichten Thaiwan en Japan , vgl. Daghregisters 31 dec. 1640 , p. 158-159 opzending negotieboeken; te Batavia fl. 158023. 2- meer uitgegeven dan ontvangen » 
+Oyt diergelycke, zoals nooit te voren. 
+Opzending berichten van overledenen naar patria ; wissels op patria getrokken; lading der schepen » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[2]/missive[7]/remark[1]" type="remark" id="t1" offset="0" length="177"/>
+    <tunit xpath="//volume[2]/missive[7]/footnote[2]" type="footnote" id="t2" offset="177" length="18"/>
+    <tunit xpath="//volume[2]/missive[7]/footnote[3]" type="footnote" id="t3" offset="195" length="119"/>
+    <tunit xpath="//volume[2]/missive[7]/footnote[4]" type="footnote" id="t4" offset="314" length="71"/>
+    <tunit xpath="//volume[2]/missive[7]/remark[5]" type="remark" id="t5" offset="385" length="23"/>
+    <tunit xpath="//volume[2]/missive[7]/footnote[6]" type="footnote" id="t6" offset="408" length="59"/>
+    <tunit xpath="//volume[2]/missive[7]/remark[7]" type="remark" id="t7" offset="467" length="194"/>
+    <tunit xpath="//volume[2]/missive[7]/footnote[8]" type="footnote" id="t8" offset="661" length="226"/>
+    <tunit xpath="//volume[2]/missive[7]/footnote[9]" type="footnote" id="t9" offset="887" length="52"/>
+    <tunit xpath="//volume[2]/missive[7]/footnote[10]" type="footnote" id="t10" offset="939" length="29"/>
+    <tunit xpath="//volume[2]/missive[7]/footnote[11]" type="footnote" id="t11" offset="968" length="26"/>
+    <tunit xpath="//volume[2]/missive[7]/remark[12]" type="remark" id="t12" offset="994" length="458"/>
+    <tunit xpath="//volume[2]/missive[7]/footnote[13]" type="footnote" id="t13" offset="1452" length="39"/>
+    <tunit xpath="//volume[2]/missive[7]/remark[14]" type="remark" id="t14" offset="1491" length="257"/>
+    <tunit xpath="//volume[2]/missive[7]/footnote[15]" type="footnote" id="t15" offset="1748" length="50"/>
+    <tunit xpath="//volume[2]/missive[7]/footnote[16]" type="footnote" id="t16" offset="1798" length="44"/>
+    <tunit xpath="//volume[2]/missive[7]/remark[17]" type="remark" id="t17" offset="1842" length="47"/>
+    <tunit xpath="//volume[2]/missive[7]/remark[18]" type="remark" id="t18" offset="1889" length="171"/>
+    <tunit xpath="//volume[2]/missive[7]/footnote[19]" type="footnote" id="t19" offset="2060" length="40"/>
+    <tunit xpath="//volume[2]/missive[7]/remark[20]" type="remark" id="t20" offset="2100" length="101"/>
+  </tunits>
+</NAF>

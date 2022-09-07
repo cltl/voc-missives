@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:38CEST" title="Gouverneur-generaal, Raden; Batavia, 12 november 1682" filename="missive_4_39_text.naf"/>
+    <public publicId="missive_4_39_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[VI. GOUVERNEUR-GENERAAL EN RADEN, BATAVIA 12 nov. 1682. 
+Zijnde de sterkte der rebellen in de lantstreeke van Tangaran daar sij haar al vrij wat vastgemaakt hebben, onder de e. capiteyn Hartsink rondsomme beset, soodat se naar alle apparentie niet boven nog een dag off twee sullen connen houden. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[4]/missive[39]/header[1]" type="header" id="t1" offset="0" length="57"/>
+    <tunit xpath="//volume[4]/missive[39]/paragraph[2]" type="paragraph" id="t2" offset="57" length="241"/>
+  </tunits>
+</NAF>

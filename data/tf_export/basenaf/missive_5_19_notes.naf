@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Van Outhoorn, Van Hoorn, Pijl, De Haas, Valckenier, Van Riebeeck, Bornezee, Lycochthon; Batavia, 26 maart 1692" filename="missive_5_19_notes.naf"/>
+    <public publicId="missive_5_19_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Zo juist verneemt men uit Cheribon, dat ook de Zaamslag in de Dirk de Vriesbaai ligt » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[5]/missive[19]/remark[1]" type="remark" id="t1" offset="0" length="88"/>
+  </tunits>
+</NAF>

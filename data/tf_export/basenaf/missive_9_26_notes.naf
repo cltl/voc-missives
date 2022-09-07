@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Van Cloon, Blom, Van der Schuer, Westpalm, De Witte, Van Schooten, Van Bayen, Oostwalt, Valckenier, Schaghen, Patras, Thedens, Coyett; Batavia, 31 maart 1733" filename="missive_9_26_notes.naf"/>
+    <public publicId="missive_9_26_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Na het bericht van Heren XVII d. d. 5 juni 1732, dat de Spanjaarden in strijd met het verdrag van Munster, directe handel tussen Cadix en de Philippijnen zouden hebben opgezet, zijn op 23 en 24 februari plannen beraamd om deze mogelijke concurrentie in de specerijge bieden tegen te gaan. Josua van Arrewijne werd aangesteld tot commissaris voor de Mo lukken tot bij legging van de geschillen met Tidore en de » 
+Het lijkt raadzaam » 
+Hier is een pilaar opgericht met het wapenbord van de Compagnie erop. Er zijn onvoldoende soldaten aanwezig om alle posten te bezetten. Ternate wordt versterkt met 100 Baliërs. Door regelmatige patrouillering ter zee zal men de indringers kunnen weren. Het jacht de Spieringshoek en de sloep Langerak zullen tussen Ternate en Mindanao kruisen; voor noodgevallen zijn het jacht Binnen wijzend, de Middelwoud en de Anna Maria aangewezen. Specerijschepen uit Amboina dienen de terugreis twee aan twee te ondernemen. Om het binnendringen van Spanjaarden in Bandjarmasin te voorkomen, zal bij de sultan worden aangedrongen op een exclusief contract. Straat Malakka en Straat Sunda zullen tevens worden bezet, » 
+De Berbices, de Kommerrust, het jacht Arend en de pantjalang Noodhulp zijn op 22 maart vertrokken naar Straat Sunda; op 26 maart 1732 zijn de galjoot Snip en de dubbele torenschuit Bode vertrokken om in Straat Singapore te kruisen tot de komst van de Mijnden, Linschoten en Ridderkerk. Malakka zal worden versterkt met twee weerbare schepen, de Susanna en de Goudriaan, voor het kruisen in Straat Malakka tegen Spanjaarden, Oostendenaren, Hamburgers, Koningsbergers en anderen. De Susanna en de Goudriaan zullen in december 6 ton goud naar Bengalen en 250 last rijst naar Malakka brengen. Alle schepen worden van geheime orders voorzien voor het geval zij Spanjaarden ontmoeten voorbij de Kaap. De westerse kantoren zijn minder in gevaar, maar worden wel op de hoogte gebracht » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[9]/missive[26]/remark[1]" type="remark" id="t1" offset="0" length="413"/>
+    <tunit xpath="//volume[9]/missive[26]/remark[2]" type="remark" id="t2" offset="413" length="22"/>
+    <tunit xpath="//volume[9]/missive[26]/remark[3]" type="remark" id="t3" offset="435" length="707"/>
+    <tunit xpath="//volume[9]/missive[26]/remark[4]" type="remark" id="t4" offset="1142" length="780"/>
+  </tunits>
+</NAF>

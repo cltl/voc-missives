@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Maetsuycker, Van Goens, Pit, Overtwater, Speelman, Ranst, Van Hoorn, Abbema; Batavia, 15 februari 1676" filename="missive_4_7_notes.naf"/>
+    <public publicId="missive_4_7_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Vgl. Daghregisters 1676 , p. 27-36 op zijn lading , daardoor geleden verlies; hoop op handelsmogelijkheden in China , » 
+Moscovisch glas of Mariaglas, een soort gipsspaath, die gebruikt wordt voor vensters. 
+NI. Japan. 
+Grotere cargasoenen voor Japan overwogen » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[4]/missive[7]/remark[1]" type="remark" id="t1" offset="0" length="121"/>
+    <tunit xpath="//volume[4]/missive[7]/footnote[2]" type="footnote" id="t2" offset="121" length="87"/>
+    <tunit xpath="//volume[4]/missive[7]/footnote[3]" type="footnote" id="t3" offset="208" length="12"/>
+    <tunit xpath="//volume[4]/missive[7]/remark[4]" type="remark" id="t4" offset="220" length="44"/>
+  </tunits>
+</NAF>

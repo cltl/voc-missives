@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Van Diemen, Van der Lijn, Maetsuycker, Schouten, Sweers; Batavia, 9 januari 1644" filename="missive_2_20_notes.naf"/>
+    <public publicId="missive_2_20_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Van Sumatra’s Westkust is in het afgelopen seizoen 808 last peper ontvangen » 
+Lamanjuta, Mandjuta, plaats aan de gelijknamige rivier in het noorden van de residentie Benkulen op 2£° Z. B. Thans van geen belang, doch destijds uitvoerplaats van peper. 
+Manacq, Manna of Manak, kustplaats in Benkulen op 4£° Z. B. 
+Schip uit Siam verwacht; een schip van daar , bestemd naar Malakka, te Batavia aangekomen » 
+Reynier van Tzum kwam 1629 als assistent uit en werd al spoedig in Siam geplaatst; 1637 onderkoopman, later koopman, van 1641 tot 1643 als opperkoopman opperhoofd aldaar. In 1644 maakte hij als commissaris nogmaals een reis van Batavia derwaarts; 1645-1646 opperhoofd in Japan, waarna hij repatrieerde als vice-commandeur van de retourvloot. 
+De thans naar patria vertrekkende Leeuwarden heeft een last , waard fl 257747. 8. 14; het Indische fonds blijft fl 9762041. 3. 15; het retour over 1643 is in totaal waard fl 207066610. 5, w. v. aan peper fl 677280. 12. 13, aan kruidnagelen fl 236374. 4.-, aan indigo Biana fl 270677. 8-, aan poedersuiker fl 158852. 5-, aan diamanten 100708 » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[2]/missive[20]/remark[1]" type="remark" id="t1" offset="0" length="79"/>
+    <tunit xpath="//volume[2]/missive[20]/footnote[2]" type="footnote" id="t2" offset="79" length="173"/>
+    <tunit xpath="//volume[2]/missive[20]/footnote[3]" type="footnote" id="t3" offset="252" length="61"/>
+    <tunit xpath="//volume[2]/missive[20]/remark[4]" type="remark" id="t4" offset="313" length="93"/>
+    <tunit xpath="//volume[2]/missive[20]/footnote[5]" type="footnote" id="t5" offset="406" length="343"/>
+    <tunit xpath="//volume[2]/missive[20]/remark[6]" type="remark" id="t6" offset="749" length="344"/>
+  </tunits>
+</NAF>

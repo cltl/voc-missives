@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Van Hoorn, Van Riebeeck, Van Swoll, De Wilde, Douglas, De Vos, Comans, Phoonsen, Van Rijn, Zwaardecroon, Becker, Chasteleyn, De Haan; Batavia, 25 januari 1706" filename="missive_6_40_notes.naf"/>
+    <public publicId="missive_6_40_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Beernink is onwaardig verklaard de V. O. C. langer te dienen , zowel om zijn oneerbiedig schrijven aan de Hoge Regering in oct. 1702 als om zijn beledigend optreden tegen de bondgenoten, speciaal den Koning van Boni, wal slechts geen nasleep gaf door het aanstellen van een anderen gouverneur en de bestraffing van Marcus Santbeek, Umar Ali en anderen, een recueil hieromtrent gaat naar pairia, Beernink repatrieert met de Vrijburg, men behandelde zijn zaak niet in rechte om lang slepen daarvan té voorkomen en het de bondgenoten niet lastig te maken, hoewel te verwachten viel, dat hij dan veroordeeld zou zijn, zijn vrouw Geertruida zal pas in het najaar volgen om de verdeling van de boedel van wijlen haar vader, Laurens Pijl, mede te kunnen regelen » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[6]/missive[40]/remark[1]" type="remark" id="t1" offset="0" length="758"/>
+  </tunits>
+</NAF>

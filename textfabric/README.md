@@ -40,7 +40,6 @@ Install lxml and text-fabric:
 ```
 pip install -r requirements.txt
 ```
->>>>>>> 7bdc75d2a195a40a6cbeb842cd67ce3aa3c853a7:tf/README.md
 
 ## Resources
 TextFabric comes with an extensive [tutorial](https://nbviewer.jupyter.org/github/CLARIAH/wp6-missieven/tree/master/tutorial/) for the missives.

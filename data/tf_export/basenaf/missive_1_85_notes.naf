@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Brouwer, Vlack, Ysbrantsz, Van der Burch; Batavia, 7 februari 1633" filename="missive_1_85_notes.naf"/>
+    <public publicId="missive_1_85_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Zending van enige schepen naar patria , concurrentie der Engelsen in Djambi » 
+Karimata, eilandengroep in de gelijknamige straat tussen Borneo en Billiton op ongeveer 11/^ Z. B. en 109° O. L. 
+Eskader onder Coster in de Straat van Malalcka , vgl. Zeemogendheid II, p. 3, zending van Ds. Heurnius naar Ceram, Kerk, p. 174 zending van de Brouwershaven naar Bima, Daghregisters 24 jan. 1633, p. 140; volgt: Opkomst V, nr. XX VIII, volgt Daghregisters, 31 jan. 1633, p. 144-146, vanaf Den president Davidt Pietersen, het hiaat op p. 146 kan worden ingevuld met: „3 Sept” » 
+de Portugezen . 
+Enkele regels uitgelaten » 
+Untung Djawa of Tandjong Pasir, de kaap ten noordwesten van Batavia. 
+Tayolen, slaven van de kust van Malabar. 
+Aangevraagd materiaal » 
+Steenstucken, klein geschut, met stenen kogels schietende. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[1]/missive[85]/remark[1]" type="remark" id="t1" offset="0" length="79"/>
+    <tunit xpath="//volume[1]/missive[85]/footnote[2]" type="footnote" id="t2" offset="79" length="114"/>
+    <tunit xpath="//volume[1]/missive[85]/remark[3]" type="remark" id="t3" offset="193" length="377"/>
+    <tunit xpath="//volume[1]/missive[85]/footnote[4]" type="footnote" id="t4" offset="570" length="17"/>
+    <tunit xpath="//volume[1]/missive[85]/remark[5]" type="remark" id="t5" offset="587" length="28"/>
+    <tunit xpath="//volume[1]/missive[85]/footnote[6]" type="footnote" id="t6" offset="615" length="70"/>
+    <tunit xpath="//volume[1]/missive[85]/footnote[7]" type="footnote" id="t7" offset="685" length="42"/>
+    <tunit xpath="//volume[1]/missive[85]/remark[8]" type="remark" id="t8" offset="727" length="25"/>
+    <tunit xpath="//volume[1]/missive[85]/footnote[9]" type="footnote" id="t9" offset="752" length="60"/>
+  </tunits>
+</NAF>

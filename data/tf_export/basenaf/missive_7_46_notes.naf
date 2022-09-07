@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Zwaardecroon, De Haan, Huysman, Hasselaar, Tolling, Durven, Blom, Sipman; Batavia, 14 december 1724" filename="missive_7_46_notes.naf"/>
+    <public publicId="missive_7_46_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[De schepen liggen door tegenwind nog oostelijk van Bantam; schipper Jacob Bernards van de Kasteel van Woerden meldde » 
+De ramp geschiedde dicht bij de kust van China » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[7]/missive[46]/remark[1]" type="remark" id="t1" offset="0" length="120"/>
+    <tunit xpath="//volume[7]/missive[46]/remark[2]" type="remark" id="t2" offset="120" length="50"/>
+  </tunits>
+</NAF>

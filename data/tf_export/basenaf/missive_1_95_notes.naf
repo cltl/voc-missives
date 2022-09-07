@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Brouwer, Van Diemen, Van der Burch; Batavia, 31 december 1635" filename="missive_1_95_notes.naf"/>
+    <public publicId="missive_1_95_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Strikt genomen is deze brief geen generale missive, maar een schriftelijke verantwoording van maatregelen, waarover Hei*en XVII in een brief van 3 sept. 1634 hun ongenoegen hadden betuigd, door de betrokken leden van de Hoge Regering. . 
+Het zenden van de Buren naar Suratte en Perzië buiten de gewone tijd , nl. op 4 november 1633, strekt „tot onster ffelycke loff . . . van die het gepractiseert hebben ” » 
+Prinseneiland, het eiland in Straat Sunda ten noordwesten van de zuidwesthoek van Java. Mogelijk zijn hier meer in het algemeen de eilanden in die straat bedoeld. 
+Infalibelyclcen, zonder falen, zonder mankeren. 
+Zie Zeemogendheid II, p. 84. 
+Baliboang = Balambangan. 
+Redijten, herhalingen. 
+Volgt de last , gegeven bij brief van 28 aug. 1629 , af gedrukt Coen V, p. 853 , midden » 
+Jan Carstens voer in 1616 als onderkoopman uit en diende vooral in de Banda- archipel, sinds 1620 als opperkoopman; 1621 vrijburger te Amboina. In 1623 maakte hij een onderzoekingstocht langs de zuidkust van Nieuw-Guinea, waar hij de sneeuwbergen als eerste van zee uit zag. Na terugkomst op Amboina werd hij weer opperkoopman. In 1626 vertrok hij naar patria en werd op reis na het sterven van Van Speult commandeur van de retourvloot. In januari 1631 kwam hij weer uit via Perzië als commandeur van een vloot en maakte ver¬ volgens in die rang reizen naar Formosa, Perzië, Suratte en Mozambique. In 1634 repatrieerde hij als vice-commandeur op de retourvloot van Vlack. : 
+Majo, eiland tussen Temate en de Minahassa, noordoostelijk van Tifore. 
+De Obieilanden, zuidelijk van de Bat janarchipel, op P/20 Z. B. en 1271/2° O. L. 
+Gapi, naam voor de Banggaieilanden ter oostkust van midden-Celebes, 11/2° Z. B. en 123° O. L. 
+Tabouco, Tombuku, Bungku, landsehap ter oostkust van Celebes aan de golf van Tolo op 21/2° tot 4*1 2 ° Z. B. 
+Camboino, Kabaena, het westelijkste eiland van de Butonarchipel op 122° O. L. 
+Pangasane is het eiland van de Butonarchipel, dat thans als Muna bekend staat, op 1221/2° O. L. 
+Verdediging van de zending van de Middelburg naar de kust van China en van kapitalen naar Quinam » 
+Defidentie, oud-Frans diffidence, thans défiance, wantrouwen. 
+Sarafi, Temataanse grote, ging 1625-1626 als gezant naar Batavia, april 1627 naar Tidore, waar hij tot midden juli werd vastgehouden, vervolgens aug. 1630 naar het Ambonse. Na terugkeer in de Molukken werd hij sengadji van Ngofakiaha op Makóan. 
+Daniël Isacksz. Robol, vrijburger, verongelukte 1632 met zijn jachtje, naar Amboina 
+Tuak, sap van onrijpe bloemkolven van verschillende palmsoorten, óf zo gedronken, óf gedistilleerd, óf op suiker verwerkt. 
+Convenibel, in rechte aansprakelijk. 
+Gerecoleerde depositie. Opnieuw aan een getuige voorgelegde door hem af gelegde verklaring. 
+Niet altoos, versta: in het geheel niet. 
+Wouter ten Haeff kwam juli 1629 uit patria als opperkoopman, maakte een tocht naar Perzië en was daarna lid van de Raad van Justitie te Batavia. Van nov. 1630 tot 1633 diende hij op Temate, waarna hij gesuspendeerd werd wegens particuliere handel en zonder rang en gage naar patria gezonden. Hij stond in contact met de Deense O. I. C., maar het lukte hem niet in haar dienst te worden uitgezonden. 
+Vgl. Borneo, p. 16. Het contract is niet meer voorhanden, ook niet in Corpus afgedrukt. Wel vindt men daar onder nr. CXII een contract van 4 sept. 1635. 
+Cavilatie, chicane, zaak van weinig belang, opgeblazen om dwars te zitten. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[1]/missive[95]/footnote[1]" type="footnote" id="t1" offset="0" length="238"/>
+    <tunit xpath="//volume[1]/missive[95]/remark[2]" type="remark" id="t2" offset="238" length="172"/>
+    <tunit xpath="//volume[1]/missive[95]/footnote[3]" type="footnote" id="t3" offset="410" length="164"/>
+    <tunit xpath="//volume[1]/missive[95]/footnote[4]" type="footnote" id="t4" offset="574" length="49"/>
+    <tunit xpath="//volume[1]/missive[95]/footnote[5]" type="footnote" id="t5" offset="623" length="30"/>
+    <tunit xpath="//volume[1]/missive[95]/footnote[6]" type="footnote" id="t6" offset="653" length="26"/>
+    <tunit xpath="//volume[1]/missive[95]/footnote[7]" type="footnote" id="t7" offset="679" length="24"/>
+    <tunit xpath="//volume[1]/missive[95]/remark[8]" type="remark" id="t8" offset="703" length="91"/>
+    <tunit xpath="//volume[1]/missive[95]/footnote[9]" type="footnote" id="t9" offset="794" length="675"/>
+    <tunit xpath="//volume[1]/missive[95]/footnote[10]" type="footnote" id="t10" offset="1469" length="72"/>
+    <tunit xpath="//volume[1]/missive[95]/footnote[11]" type="footnote" id="t11" offset="1541" length="82"/>
+    <tunit xpath="//volume[1]/missive[95]/footnote[12]" type="footnote" id="t12" offset="1623" length="95"/>
+    <tunit xpath="//volume[1]/missive[95]/footnote[13]" type="footnote" id="t13" offset="1718" length="110"/>
+    <tunit xpath="//volume[1]/missive[95]/footnote[14]" type="footnote" id="t14" offset="1828" length="79"/>
+    <tunit xpath="//volume[1]/missive[95]/footnote[15]" type="footnote" id="t15" offset="1907" length="97"/>
+    <tunit xpath="//volume[1]/missive[95]/remark[16]" type="remark" id="t16" offset="2004" length="100"/>
+    <tunit xpath="//volume[1]/missive[95]/footnote[17]" type="footnote" id="t17" offset="2104" length="63"/>
+    <tunit xpath="//volume[1]/missive[95]/footnote[18]" type="footnote" id="t18" offset="2167" length="246"/>
+    <tunit xpath="//volume[1]/missive[95]/footnote[19]" type="footnote" id="t19" offset="2413" length="85"/>
+    <tunit xpath="//volume[1]/missive[95]/footnote[20]" type="footnote" id="t20" offset="2498" length="124"/>
+    <tunit xpath="//volume[1]/missive[95]/footnote[21]" type="footnote" id="t21" offset="2622" length="38"/>
+    <tunit xpath="//volume[1]/missive[95]/footnote[22]" type="footnote" id="t22" offset="2660" length="93"/>
+    <tunit xpath="//volume[1]/missive[95]/footnote[23]" type="footnote" id="t23" offset="2753" length="42"/>
+    <tunit xpath="//volume[1]/missive[95]/footnote[24]" type="footnote" id="t24" offset="2795" length="400"/>
+    <tunit xpath="//volume[1]/missive[95]/footnote[25]" type="footnote" id="t25" offset="3195" length="154"/>
+    <tunit xpath="//volume[1]/missive[95]/footnote[26]" type="footnote" id="t26" offset="3349" length="76"/>
+  </tunits>
+</NAF>

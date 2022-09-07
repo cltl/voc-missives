@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Mossel, Cluysenaar, Van Broyel, Van der Waeyen, Van der Parra, Van der Spar, Van Gollenesse, Van de Velde, Van Rheede, De Nijs, Van Bazel; Batavia, 5 oktober 1752" filename="missive_12_12_notes.naf"/>
+    <public publicId="missive_12_12_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Het doet Batavia deugd dat men 1. 490. 000 Ib kruidnagels van Amboina ontvangen heeft. » 
+Batavia heeft niets anders vernomen van Timor » 
+Raad extraordinaris Joan Gideon Loten is op 13 juni tot gouverneur van Ceylon verkozen. Op 22 augustus is hij met de Giessenburg daarheen vertrokken. » 
+Met Warm Bad wordt bedoeld Tjipanas, een warmwaterbron dicht bij Sindanglaja. 
+Java is versterkt met 1400 militairen , » 
+Batavia verzekert Heren XVII dat men zal proberen door zuinigheid en weglaten van uiterlijkheden de lasten te verlagen, » 
+Batavia vraagt om » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[12]/missive[12]/remark[1]" type="remark" id="t1" offset="0" length="90"/>
+    <tunit xpath="//volume[12]/missive[12]/remark[2]" type="remark" id="t2" offset="90" length="49"/>
+    <tunit xpath="//volume[12]/missive[12]/remark[3]" type="remark" id="t3" offset="139" length="153"/>
+    <tunit xpath="//volume[12]/missive[12]/footnote[4]" type="footnote" id="t4" offset="292" length="79"/>
+    <tunit xpath="//volume[12]/missive[12]/remark[5]" type="remark" id="t5" offset="371" length="43"/>
+    <tunit xpath="//volume[12]/missive[12]/remark[6]" type="remark" id="t6" offset="414" length="123"/>
+    <tunit xpath="//volume[12]/missive[12]/remark[7]" type="remark" id="t7" offset="537" length="21"/>
+  </tunits>
+</NAF>

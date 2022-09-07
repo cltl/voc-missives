@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:38CEST" title="Coen, De Houtman, De Carpentier, Dedel, Sonck; Kasteel Jakatra, 8 januari 1621" filename="missive_1_46_text.naf"/>
+    <public publicId="missive_1_46_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[X. JAN PIETERSZ. COEN, FREDERICK DE HOUTMAN, PIETER DE CARPENTIER, JACOB DEDEL EN DR. MARTINUS SONCK, KASTEEL JAKATRA 8 januari 1621. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[1]/missive[46]/header[1]" type="header" id="t1" offset="0" length="135"/>
+  </tunits>
+</NAF>

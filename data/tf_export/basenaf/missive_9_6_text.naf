@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:38CEST" title="Durven, Hasselaar, Blom, Van der Schuer, Westpalm, Van Baerle, De Witte, Van Schooten, Van Heyningen, Van Bayen, Oostwalt; Batavia, " filename="missive_9_6_text.naf"/>
+    <public publicId="missive_9_6_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[VI. DIDERIK DURVEN, CORNELIS HASSELAAR, WIJBRANT BLOM, JOAN EVERARD VAN DER SCHUER, MICHIEL WESTPALM, HENDRIK VAN BAERLE, JOAN FRANgOIS DE WITTE VAN SCHOOTEN, ROGIER THOMAS VAN HEYNINGEN, HERMAN VAN BAYEN EN ADRIAAN OOSTWALT, BATAVIA zonder datum 1729 (vermoedelijk 30 november). 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[9]/missive[6]/header[1]" type="header" id="t1" offset="0" length="281"/>
+  </tunits>
+</NAF>

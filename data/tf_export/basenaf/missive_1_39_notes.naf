@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Coen; Kasteel Jakatra, 15 oktober 1619" filename="missive_1_39_notes.naf"/>
+    <public publicId="missive_1_39_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Afgedrukt Coen I, p. 506-507 » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[1]/missive[39]/remark[1]" type="remark" id="t1" offset="0" length="32"/>
+  </tunits>
+</NAF>

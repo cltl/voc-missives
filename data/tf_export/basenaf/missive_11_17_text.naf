@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:39CEST" title="Van Imhoff, Pasques de Chavonnes, Crul, Nolthenius, Van Aerden, Cluysenaar, Overbeek, Van den Bosch, Mossel, Van Broyel, Verijssel, Theling; Batavia, 12 oktober 1746" filename="missive_11_17_text.naf"/>
+    <public publicId="missive_11_17_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:39CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:39CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XVII. GUSTAAF WILLEM VAN IMHOFF, PIETER ROCHUS PASQUES DE CHAVONNES, NICOLAAS CRUL, DANIËL NOLTHENIUS, MAURITS VAN AERDEN, JOHANNES MATTHEUS CLUYSENAAR, DANIËL OVERBEEK, JACOB VAN DEN BOSCH, JACOB MOSSEL, AREND VAN BROYEL, HUGO VERIJSSEL en JOHAN HERMAN THELING, BATAVIA 12 oktober 1746. 
+voor de praesidiale kamer Amsterdam, te weten het uyt Souratte alhier gere- verteerde schip Huygerwaard, nevens de fluyt Eyndhoef en ’t Fortuyn, de twee eerste met thee op vragt en de derde met coffij, want meer scheepen hadde men niet aan de hand tot diep in sept. die in staat waren die reyse te doen, en tot die selfs konde men het volk niet eens berekenen, hebbende alle de overige gedient om so als zij aanquamen te lossen, te laden en weder na de resp. Indiase comptoiren te vertrecken, en daaronder de volgende om vandaar te repatrieeren. Namentlijk na China 150 voet Lekkerland voor Amsterdam 150 voet ’t Hof d’ Uno voor ’t Noorderquartier aan Hoorn geconsigneerd. 
+Na Bengale 136 voet Hercules en 136 voet Arnesteyn met qualificatie om 136 voet Wiltrijk, uyt Persien daar te wagten, tot een derde schip daarbij te voegen. 
+Na Ceylon 145 voet Diemermeer 145 voet Scheybeek en 1 30 voet Duynenburg, waarbij misschien kan komen het schip dat d’ anno passato na Mocha is gesonden, 150 voet den Eendragt. 
+En alschoon men in het laaste van de gemelde maand september nog heeft sien opdagen Knappenhof en ’t Slot van Capelle in Sunda’s Engte, met tijding dat de scheepen Zeelandia, de Getrouwigheyt, Tolsduyn en [andere] aan de Caab reeds g’arriveert en vandaar ten deele ook al vertrocken waren, waarvan onder ’t schrijven deses Rust en Werk en Tolsduyn komt opdagen, en men ten eersten daarop bij resolutie van den 27e sept. getreden is tot den formeelen aanleg der scheepen voor Nederland die geprojecteert zijn tot elf in getal en verdeelt over de resp. kameren als volgt. 
+Voor Amsterdam 150 ’t Slot van Capelle 145 ’t Huys te Rijnsburg 145 Tolsduyn 136 Huyge waard 136 Eyndhoef 125 ’t Fortuyn 
+Voor Zeeland 150 Zeelandia 136 de Getrouwigheyt Delft 130 Rust en Werk Rotterdam 136 de Standvastigheyt Enkhuysen 136 de Geregtigheyt, zijnde de kamer Hoorn in desen gepraeterieert, omdat een kloek schip uyt China krijgt. 
+of onse precautie omtrent de lijwaat gevende comptoiren van effect zal zijn geweest met illico een expresse daarmede af te vaardigen naar Malacca, niet alleen ter bestellinge van dien naar Bengale en Chormandel, maar ook om Uw Edele Hoogagtb. op den onverwagten eysch van Malax thin is het mogelijk nog te voorsien van een mineraal, dat hier duurder dan in Europa doorgaans vallende, ook zoveel men kan maar van de hand werd geset, en waaraf wij om die reden maar een seer gering restant hier bij de packhuysen hadden. 
+dewijl Indiën ’tsedert eenige jaren wel een geheele equipagie van dertig scheepen en meer is ten agteren geraakt door voorgaande incompleete voldoeninge, ongesuppleerde verongelukkingen en de so finaal geconsumeerde restanten hier ter plaatse, sowel door de quade gevolgen van den jare 1740 als de voorgaande behandelinge der saken. 
+ƒ200,-, ƒ130,- en ƒ90,- voor lste, 2de en 3de zoort, de swaarste tanden de beste en de ordinaire zoorten van vijff, tien en vijfftien lb. ieder tant en daarboven. 
+dat dit sware canon dienen moet voor de nieuwe batterijen of het waterpas op de bank voor de revier, tot defensie van onse rheede, en dat men bij ondervinding hier in Indiën heeft dat op veele plaatsen daar het ijser canon aan het slag van ’t zoute water onderworpen is, door den tijdt geheele kuylen daarin komen door de roest, soals te sien is onder anderen en vermeit staat omtrend het fort op Manaar aan Ceylons noordwestzijde bij het dagregister van des eerst getekenden gouverneur-generaals eerste visite van het Jaffenapatnamse commandement van den jare 1737, en ook op Colombo, tot Gale en op meer andere plaatsen kort aan zee leggende ondervonden werd, anders souden ons gewisselijk eenige stukken ijsere canon van 36 lb. en ook van 48 lb. bals wel te passé komen, al was het ook maar voor Onrust en dese of geene batterijen aan land. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[11]/missive[17]/header[1]" type="header" id="t1" offset="0" length="289"/>
+    <tunit xpath="//volume[11]/missive[17]/paragraph[2]" type="paragraph" id="t2" offset="289" length="674"/>
+    <tunit xpath="//volume[11]/missive[17]/paragraph[3]" type="paragraph" id="t3" offset="963" length="158"/>
+    <tunit xpath="//volume[11]/missive[17]/paragraph[4]" type="paragraph" id="t4" offset="1121" length="178"/>
+    <tunit xpath="//volume[11]/missive[17]/paragraph[5]" type="paragraph" id="t5" offset="1299" length="571"/>
+    <tunit xpath="//volume[11]/missive[17]/paragraph[6]" type="paragraph" id="t6" offset="1870" length="122"/>
+    <tunit xpath="//volume[11]/missive[17]/paragraph[7]" type="paragraph" id="t7" offset="1992" length="223"/>
+    <tunit xpath="//volume[11]/missive[17]/paragraph[8]" type="paragraph" id="t8" offset="2215" length="520"/>
+    <tunit xpath="//volume[11]/missive[17]/paragraph[9]" type="paragraph" id="t9" offset="2735" length="334"/>
+    <tunit xpath="//volume[11]/missive[17]/paragraph[10]" type="paragraph" id="t10" offset="3069" length="164"/>
+    <tunit xpath="//volume[11]/missive[17]/paragraph[11]" type="paragraph" id="t11" offset="3233" length="845"/>
+  </tunits>
+</NAF>

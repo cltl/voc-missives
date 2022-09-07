@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Reael; Kasteel Mauritius nabij Ngofakiaha op Makéan, 20 augustus 1618" filename="missive_1_36_notes.naf"/>
+    <public publicId="missive_1_36_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Ook deze brief is evenals nr. X aan de Kamer Amsterdam gericht, misschien echter voor Heren XVII bestemd. . 
+ReaeVs reis van Banda via Hitu naar de Molukken » 
+Kimelaha Daja, vermoedelijk ten rechte Hidajat, was van 1606 tot 1610 regent van den minderjarigen vorst van Ternate; in 1613 werd hij belast met het bestuur over Makéan namens dien vorst; eind 1617 tot zijn dood in het begin van 1623, landvoogd van Ternate op Ceram. 
+Kajoa, onder Ternate staand eiland op 127° O. L. onder de evenaar gelegen. 
+Luti-luti is in het Molukkenmaleis inderdaad het woord voor pokken. 
+Bedoeld is zowel in het bestuur van het rijk als in de regeling van het privé-leven. 
+Republyque hier in de zin van res publica, dus gemeenschap, maatschappij. 
+Die ze aan kunnen. , 
+Hier: de helft. 
+Kojang, gewicht van wisselende zwaarte; vaak = 30 picol van ongeveer 61, 75 kg. 
+Sula (-besi) en Taliabu, eilanden op 2° Z. B. en respectivelijk 126 en 125° O. L. Met Halmaheira waren zij de sagoleveranciers van Ternate en de andere Molukkeneilanden. Ook Bat jan levert sago. 
+Het verschil in gewicht is: de Molukkenbahar bedraagt 625, die van het Ambonse 550 pond. 
+Versta: krissen. 
+Upeti; Maleis: tribuut, cijns van landelijke opbrengsten. 
+Bea; Maleis: tolrecht, uit- en invoerrecht. 
+Sengadji en kimelaha, titels van hoofden in de Molukse rijken. Zie p. 21, noot 5. 
+Bobula zal wel samenhangen met Ternataans bula, dat aandeel betekent. Het woord callodi is mij niet bekend. 
+Djuru, Maleis, deskundige, datjing id. gewicht, dus djuru datjing = weger, tulis id. schrijven, dus djuru tulis = schrijver. 
+Het Maleise woord pertanda ken ik slechts als beul, scherprechter; letterlijk betekent het echter ook evenals hier : persoon, die aantekent. 
+Bebilian, van Maleis beli = kopen. Het betekent hier koopdwang, verplichting tot aankoop van zekere goederen tegen door den verkoper vastgestelde prijs. 
+Verperckt, in perken verdeeld, verkaveld. 
+Inganno, zie p. 73 noot 3. 
+Minutien, kleinigheden, dagelijkse behoeften. 
+Groot mouson, van tijd tot tijd is de opbrengst der kruidnagelbomen veel groter dan gewoonlijk. 
+Jacques de Velaer. Uit Antwerpen afkomstig reder en koopman te Amsterdam, aandeelhouder in de vloot van Mahu en de Cordes, medeoprichter van de Nieuwe Brabantse Compagnie en bewindhebber van de V. O. I. C. Hij stierf 28 okt. 1613. 
+Lenard Raye, koopman te Amsterdam, bewindhebber van de Nieuwe Brabantse en van de V. O. I. C. 
+Er kan ook Volt staan, de man is mij niet bekend. 
+Tafasoho en Bobawa zijn plaatsen aan de westkust van Makéan, Ngofagita ligt aan de noordkust. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[1]/missive[36]/footnote[1]" type="footnote" id="t1" offset="0" length="109"/>
+    <tunit xpath="//volume[1]/missive[36]/remark[2]" type="remark" id="t2" offset="109" length="51"/>
+    <tunit xpath="//volume[1]/missive[36]/footnote[3]" type="footnote" id="t3" offset="160" length="269"/>
+    <tunit xpath="//volume[1]/missive[36]/footnote[4]" type="footnote" id="t4" offset="429" length="76"/>
+    <tunit xpath="//volume[1]/missive[36]/footnote[5]" type="footnote" id="t5" offset="505" length="69"/>
+    <tunit xpath="//volume[1]/missive[36]/footnote[6]" type="footnote" id="t6" offset="574" length="86"/>
+    <tunit xpath="//volume[1]/missive[36]/footnote[7]" type="footnote" id="t7" offset="660" length="75"/>
+    <tunit xpath="//volume[1]/missive[36]/footnote[8]" type="footnote" id="t8" offset="735" length="22"/>
+    <tunit xpath="//volume[1]/missive[36]/footnote[9]" type="footnote" id="t9" offset="757" length="17"/>
+    <tunit xpath="//volume[1]/missive[36]/footnote[10]" type="footnote" id="t10" offset="774" length="81"/>
+    <tunit xpath="//volume[1]/missive[36]/footnote[11]" type="footnote" id="t11" offset="855" length="196"/>
+    <tunit xpath="//volume[1]/missive[36]/footnote[12]" type="footnote" id="t12" offset="1051" length="90"/>
+    <tunit xpath="//volume[1]/missive[36]/footnote[13]" type="footnote" id="t13" offset="1141" length="18"/>
+    <tunit xpath="//volume[1]/missive[36]/footnote[14]" type="footnote" id="t14" offset="1159" length="59"/>
+    <tunit xpath="//volume[1]/missive[36]/footnote[15]" type="footnote" id="t15" offset="1218" length="45"/>
+    <tunit xpath="//volume[1]/missive[36]/footnote[16]" type="footnote" id="t16" offset="1263" length="83"/>
+    <tunit xpath="//volume[1]/missive[36]/footnote[17]" type="footnote" id="t17" offset="1346" length="109"/>
+    <tunit xpath="//volume[1]/missive[36]/footnote[18]" type="footnote" id="t18" offset="1455" length="126"/>
+    <tunit xpath="//volume[1]/missive[36]/footnote[19]" type="footnote" id="t19" offset="1581" length="142"/>
+    <tunit xpath="//volume[1]/missive[36]/footnote[20]" type="footnote" id="t20" offset="1723" length="154"/>
+    <tunit xpath="//volume[1]/missive[36]/footnote[21]" type="footnote" id="t21" offset="1877" length="43"/>
+    <tunit xpath="//volume[1]/missive[36]/footnote[22]" type="footnote" id="t22" offset="1920" length="28"/>
+    <tunit xpath="//volume[1]/missive[36]/footnote[23]" type="footnote" id="t23" offset="1948" length="47"/>
+    <tunit xpath="//volume[1]/missive[36]/footnote[24]" type="footnote" id="t24" offset="1995" length="97"/>
+    <tunit xpath="//volume[1]/missive[36]/footnote[25]" type="footnote" id="t25" offset="2092" length="232"/>
+    <tunit xpath="//volume[1]/missive[36]/footnote[26]" type="footnote" id="t26" offset="2324" length="95"/>
+    <tunit xpath="//volume[1]/missive[36]/footnote[27]" type="footnote" id="t27" offset="2419" length="51"/>
+    <tunit xpath="//volume[1]/missive[36]/footnote[28]" type="footnote" id="t28" offset="2470" length="95"/>
+  </tunits>
+</NAF>

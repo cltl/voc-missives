@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:38CEST" title="Van Outhoorn, Van Hoorn, Van Riebeeck, Pijl, Cops, Bornezee, Van Swoll, De Wilde, Douglas, Van Rijn, Van der Stel; Batavia, 14 maart 1704" filename="missive_6_28_text.naf"/>
+    <public publicId="missive_6_28_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XLIH. WILLEM VAN OUTHOORN, JOAN VAN HOORN, ABRAHAM VAN RIEBEECK, LAURENS PIJL, JOANNES COPS, MANUEL BORNEZEE, CHRISTOFFEL VAN SWOLL, HERMAN DE WILDE, ABRAHAM DOUGLAS, ADAM VAN RIJN EN ADRIAAN VAN DER STEL, BATAVIA 14 maart 1704. 
+Men wel soude mogen prognosticeren, de zoon van den Pangeran Poegar met sijn opstand tegen den nieuwen Soesoehoenang sijn intentie beswaarlijk sal bereiken, de wij le hij reets met sijn bij hebbende macht na het district van Ceribon soude sijn geweken, tenware dat die van Bagaleen en Madion aan de andere kant, over het reets aangedaan quaad tractement aan de hare misnoegt en de laatste reets op de been geraakt zijnde, hem incommodeerden en de handen vol werk geven. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[6]/missive[28]/header[1]" type="header" id="t1" offset="0" length="230"/>
+    <tunit xpath="//volume[6]/missive[28]/paragraph[2]" type="paragraph" id="t2" offset="230" length="471"/>
+  </tunits>
+</NAF>

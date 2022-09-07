@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:38CEST" title="Van Hoorn, Van Riebeeck, Van Swoll, De Wilde, Douglas, De Vos, Comans, Phoonsen, Van Rijn, Zwaardecroon, Becker, Chasteleyn, De Haan; Batavia, 25 januari 1706" filename="missive_6_40_text.naf"/>
+    <public publicId="missive_6_40_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XI. JOAN VAN HOORN, ABRAHAM VAN RIEBEECK, CHRISTOFFEL VAN SWOLL, HERMAN DE WILDE, ABRAHAM DOUGLAS, PIETER DE VOS, DIRK COMANS, BERNARD PHOONSEN, ADAM VAN RIJN, HENDRIK ZWAARDECROON, HENRIK BECKER, CORNELIS CHASTELEYN EN MATTHEUS DE HAAN, BATAVIA 25 januari 1706. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[6]/missive[40]/header[1]" type="header" id="t1" offset="0" length="264"/>
+  </tunits>
+</NAF>

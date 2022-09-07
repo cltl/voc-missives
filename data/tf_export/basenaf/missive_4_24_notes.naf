@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Van Goens, Speelman, Bort, Hurdt, Blom, Camphuys; Batavia, 14 december 1679" filename="missive_4_24_notes.naf"/>
+    <public publicId="missive_4_24_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Vgl. Daghregisters 1679, p. 567-568 gegevens over Dirck Thijmensz. deJon-ge » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[4]/missive[24]/remark[1]" type="remark" id="t1" offset="0" length="79"/>
+  </tunits>
+</NAF>

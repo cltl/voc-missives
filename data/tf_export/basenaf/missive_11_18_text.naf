@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:39CEST" title="Van Imhoff, Pasques de Chavonnes, Crul, Nolthenius, Cluysenaar, Overbeek, Van den Bosch, Mossel, Van Broyel, Verijssel, Theling; Batavia, 25 november 1746" filename="missive_11_18_text.naf"/>
+    <public publicId="missive_11_18_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:39CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:39CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XVIII. GUSTAAF WILLEM VAN IMHOFF, PIETER ROCHUS PASQUES DE CHAVONNES, NICOLAAS CRUL, DANIËL NOLTHENIUS, JOHANNES MATTHEUS CLUYSENAAR, DANIËL OVERBEEK, JACOB VAN DEN BOSCH, JACOB MOSSEL, AREND VAN BROYEL, HUGO VERIJSSEL en JOHAN HERMAN THELING, BATAVIA 25 november 1746. 
+dog naderhand heeft men omtrent Tolsduyn op den 4e en omtrent de twee overige scheepen, ook op den 14e dier maand, nog eenige dagen moeten toegeven, omdat er met geen mogelijkheid meer haast konde werden gemaekt met die scheepen, waarvan Zelandia eerst den 30e october g’arriveerd is, en men dus nauwelijks tijt heeft gehad om Tolsduyn nog te kielen, dat egter noodsakelijk was omdat denselven met een gebroken onderste vingerling van zijn roer hier was aangekomen, waarvan de breuke niet nieuw was. 
+Buyten voormelte bodem Zelandia zijn op den 8e, 10e, 13e en 22e november nog alhier aan de Caab opgedaagt de scheepen de Getrouwigheyt van Hoorn, ’t Huys te Rijnsburg met de Standvastigheit en Akerendam van Amsterdam, en Dishoek van Rotterdam, werdende nog verwagt Padmos die in de Baay Fals was blijven leggen, sodat ter accompleteering van onse retourbezending onder uit. december aanstaende nog maar ontbreekt het Enkhuyser schip de Geregtigheyt, waarvoor men soo het niet intijds komt opdagen een ander schip sal moeten soeken uyt degeene die verder nog te wagten zijn. 
+nopens de timmerlieden en den roergang de nodige ordre gestelt dat die aan deese kant [van] de Caeb de Goede Hoop komen te overlijden maar voor twee vijfde off sestien guldens, die van de Caeb na Nederland overgaan en onder die roergang volgens gewoonte begrepen zijn voor drie vijfde of vierentwintig guldens en die van hier aan geene zijde [van] de Caab stervende voor de volle veertig guldens belast sullen werden opdat men Uw Ed. Hoogagtb. daarover in Nederland niet verder lastig valle. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[11]/missive[18]/header[1]" type="header" id="t1" offset="0" length="271"/>
+    <tunit xpath="//volume[11]/missive[18]/paragraph[2]" type="paragraph" id="t2" offset="271" length="501"/>
+    <tunit xpath="//volume[11]/missive[18]/paragraph[3]" type="paragraph" id="t3" offset="772" length="575"/>
+    <tunit xpath="//volume[11]/missive[18]/paragraph[4]" type="paragraph" id="t4" offset="1347" length="493"/>
+  </tunits>
+</NAF>

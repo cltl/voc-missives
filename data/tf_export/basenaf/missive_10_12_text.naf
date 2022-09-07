@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:39CEST" title="Valckenier, Schaghen, Thedens, Van Imhoff, De Haeze, Van Schinne, Van Suchtelen, Pasques de Chavonnes, Duquesne, Guillot, Van Berendregt, Crul, Macaré, Nolthenius, Van Aerden, Lakeman; Batavia, 31 oktober 1740" filename="missive_10_12_text.naf"/>
+    <public publicId="missive_10_12_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:39CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:39CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[X. ADRIAAN VALCKENIER, JOAN PAUL SCHAGHEN, JOHANNES THEDENS, GUSTAAF WILLEM VAN IMHOFF, ELIAS DE HAEZE, ISAAC VAN SCHINNE, HERMAN VAN SUCHTELEN, PIETER ROCHUS PASQUES DE CHAVONNES, PIETER DUQUESNE, ELIAS GUILLOT, NICOLAAS VAN BERENDREGT, NICOLAAS CRUL, JOHANNES MACARE, DANIËL NOLTHENIUS, MAURITS VAN AERDEN en JACOB LAKEMAN, BATAVIA 31 oktober 1740. 
+een ongehoorde rebellie en stoutmoedige ondememinge der Chineesen tegens de Compagnie. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[10]/missive[12]/header[1]" type="header" id="t1" offset="0" length="352"/>
+    <tunit xpath="//volume[10]/missive[12]/paragraph[2]" type="paragraph" id="t2" offset="352" length="88"/>
+  </tunits>
+</NAF>

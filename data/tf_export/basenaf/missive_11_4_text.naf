@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:39CEST" title="Van Imhoff, Pasques de Chavonnes, Crul, Nolthenius, Van Aerden, Lakeman; Batavia, 5 november 1743" filename="missive_11_4_text.naf"/>
+    <public publicId="missive_11_4_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:39CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:39CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[IV. GUSTAAF WILLEM VAN IMHOFF, PIETER ROCHUS PASQUES DE CHAVONNES, NICOLAAS CRUL, DANIËL NOLTHENIUS, MAURITS VAN AERDEN en JACOB LAKEMAN, BATAVIA 5 november 1743, geheim. 
+eensdeels om der swarigheitshalven, die daarinne voor de tegenwoordige tijdsomstandigheit opgesloten legt, en ten anderen om het nadeel dat dezelve voor het vervolg geven kan. 
+gebreckige methode in het transport der goederen na Europa gehouden, en de permissie aan particuliere gegeven, om daarinne voor zeker gedeelte nevens de Compagnie te participeeren, buyten de ontstentenisse van eenige andere wettige wegen om zig van de thee, dat het voornaamste articul is, te ontdoen. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[11]/missive[4]/header[1]" type="header" id="t1" offset="0" length="172"/>
+    <tunit xpath="//volume[11]/missive[4]/paragraph[2]" type="paragraph" id="t2" offset="172" length="177"/>
+    <tunit xpath="//volume[11]/missive[4]/paragraph[3]" type="paragraph" id="t3" offset="349" length="303"/>
+  </tunits>
+</NAF>

@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Reael; Wapen van Amsterdam voor Banda-Neira, 11 juli 1618" filename="missive_1_35_notes.naf"/>
+    <public publicId="missive_1_35_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[De brief is gericht aan de Kamer Amsterdam, evenwel tezamen met een copie van IX aan Heren XVII gericht, verzonden. Het stuk is in journaalvorm en hier en daar in de derde persoon gesteld. 
+Meded. Banda. Vgl. Bandag. 
+Een mislukte aanslag op Lonthoir onder leiding van Lam, vgl. Bouwstoffen I, p. XXXIII. 
+27 juni 1618. 
+De oosthelft van het eiland Lonthoir of Groot-Banda behoorde tot de ene der uit de Grote Oost bekende partijen, nl. die der Ulilima, de westhelft met de plaats Lonthoir tot de haar vijandige partij der Ulisiwa. 
+Overbodich = bereid. 
+Garen, rooftochten ondernemen; hoofden halen = koppensnellen. 
+Enkele regels over het slechte weer » 
+Op 4 juli 1618. 
+Delen van Lonthoir, die tot de groep der Ulilima behoorden. 
+Corpus I geeft onder nr. LVTI een contract, gedateerd 25 juli 1618, waarbij de Ulilimagroep vrede zou hebben gesloten. Daar Reael evenwel reeds 14 juli van Banda op Hitu aankwam, vanwaar hij naar de Molukken doorreisde, kan de datum niet juist zijn. Ofschoon Europeërs IX, p. 201 aanneemt, dat de vrede werd gesloten, is m. i. hier reden voor twijfel. De door Heeres in zijn inleiding tot nr. LVII voorgeslagen datum 25 juni 1618 kan blijkens onze tekst niet juist zijn. Heeft men misschien te doen met een ontwerp tijdens de besprekingen opgemaakt ? . 
+Meded. betr. Banda , reeds van elders bekend of van weinig belang » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[1]/missive[35]/footnote[1]" type="footnote" id="t1" offset="0" length="190"/>
+    <tunit xpath="//volume[1]/missive[35]/remark[2]" type="remark" id="t2" offset="190" length="28"/>
+    <tunit xpath="//volume[1]/missive[35]/footnote[3]" type="footnote" id="t3" offset="218" length="88"/>
+    <tunit xpath="//volume[1]/missive[35]/footnote[4]" type="footnote" id="t4" offset="306" length="15"/>
+    <tunit xpath="//volume[1]/missive[35]/footnote[5]" type="footnote" id="t5" offset="321" length="212"/>
+    <tunit xpath="//volume[1]/missive[35]/footnote[6]" type="footnote" id="t6" offset="533" length="22"/>
+    <tunit xpath="//volume[1]/missive[35]/footnote[7]" type="footnote" id="t7" offset="555" length="63"/>
+    <tunit xpath="//volume[1]/missive[35]/remark[8]" type="remark" id="t8" offset="618" length="39"/>
+    <tunit xpath="//volume[1]/missive[35]/footnote[9]" type="footnote" id="t9" offset="657" length="17"/>
+    <tunit xpath="//volume[1]/missive[35]/footnote[10]" type="footnote" id="t10" offset="674" length="61"/>
+    <tunit xpath="//volume[1]/missive[35]/footnote[11]" type="footnote" id="t11" offset="735" length="554"/>
+    <tunit xpath="//volume[1]/missive[35]/remark[12]" type="remark" id="t12" offset="1289" length="69"/>
+  </tunits>
+</NAF>

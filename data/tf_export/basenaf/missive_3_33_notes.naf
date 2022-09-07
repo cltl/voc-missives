@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Maetsuycker, Verburch, Pit, Overtwater, Van den Brouck, Thijsz; Batavia, 23 december 1667" filename="missive_3_33_notes.naf"/>
+    <public publicId="missive_3_33_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Vgl. Daghregisters 1667, p. 398-403 thans gaan 3 retourschepen, een vierde zal volgen; in Tonkin is kapitaal van f. 248000 en aan dubieuse vorderingen f. 80000; er is f. 110000 gewonnen en f. 17000 uitgegeven, Risemon is er gestorven » 
+De Koning betaalde zijn schuld af, de prins , nog schuldig f. 23000, niet » 
+Cao-bang, plaats nabij de Chinese grens, op 22°4ö' N. B. en 106o10' O. L. 
+In Tonkin kwamen 1 jonk van Cambodja, 1 van Bantam , 2 van Batavia, meest met peper » 
+Pieter van Hoorn. 
+De Onderkoning van Fu-Tsjou is beboet wegens het niet ophanden der Nederlandse schepen; vgl. Beschrijvinge II, I, p. 738, . . . . » 
+Verbod voor Chinezen overzee te varen, vgl. ïbid., p. 738-739; te Ki-Lung volgt Dideloff van der Beeck den gestorven Jan de Meyer als commandant op » 
+Gegevens Ki-Lung, vgl. Beschrijvinge II, I, p. 740-741 » 
+Een Compagnies’ schip 
+Vermoeddijk zijn de moeste Nederlanders , op Thaiioan gevangen , gestorven ; gering nut van de vestiging op Ki-Lung, Beschrijvinge II, I, p. 741 het stenen wachthuis aan de Antjolse vaart kostte 1610 rsd.; het huis voor de logeboeken enz. en van de schrijvers is hersteld » 
+Coupan, koban, Japanse gouden munt ter waarde van 6 taël. 
+Masten en rondhout niet onder smeekolen te laden, daar ze dan gaan broeien » 
+Tamelijk, voldoende. 
+31 augustus ivas te Batavia in een jaar uitgegeven . . . . » 
+Aan wissels op patria is getrokken voor 89061 rsd.; w. o. 49083 van de gestorven weduwe van Anthonio Caen; winsten op 22 dec. 1667: » 
+Diverse kleine winsten ad. f. 198480. 13. 10 , w. o. f. 153001. 14. 11 aan kaneel voor de schuld van den Keizer van Kandi; verliezen: » 
+Aan interesten te Batavia f. 195241. 14. 8; te Suratte f. 58464. 7. 4 ; kleine uitgaven f. 23727. 13. 12 zodat zuiver is gewonnen f. 2192200. 15. 5\; uit pairia is ontvangen f. 348388. 17 aan goud , f. 832702 aan contanten , f. 392944. 14. 2 aan warent f. 392338. 6. 2 aan victualie en ammunitie; verzonden uit Ceylon naar pairia f. 462853. 1. 15, uit Batavia f. 2752945.-. 15; na verrekening van kleine posten blijven de reële effecten f. 13964066 . 3 . 14\; thans gaat met de drie retourschepen voor f. 852433. 4. 14 , vnl. peper, Perzische zijde, textiel; nog geen schepen uit patria kwamen 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[3]/missive[33]/remark[1]" type="remark" id="t1" offset="0" length="237"/>
+    <tunit xpath="//volume[3]/missive[33]/remark[2]" type="remark" id="t2" offset="237" length="77"/>
+    <tunit xpath="//volume[3]/missive[33]/footnote[3]" type="footnote" id="t3" offset="314" length="75"/>
+    <tunit xpath="//volume[3]/missive[33]/remark[4]" type="remark" id="t4" offset="389" length="87"/>
+    <tunit xpath="//volume[3]/missive[33]/footnote[5]" type="footnote" id="t5" offset="476" length="19"/>
+    <tunit xpath="//volume[3]/missive[33]/remark[6]" type="remark" id="t6" offset="495" length="133"/>
+    <tunit xpath="//volume[3]/missive[33]/remark[7]" type="remark" id="t7" offset="628" length="151"/>
+    <tunit xpath="//volume[3]/missive[33]/remark[8]" type="remark" id="t8" offset="779" length="58"/>
+    <tunit xpath="//volume[3]/missive[33]/footnote[9]" type="footnote" id="t9" offset="837" length="23"/>
+    <tunit xpath="//volume[3]/missive[33]/remark[10]" type="remark" id="t10" offset="860" length="275"/>
+    <tunit xpath="//volume[3]/missive[33]/footnote[11]" type="footnote" id="t11" offset="1135" length="59"/>
+    <tunit xpath="//volume[3]/missive[33]/remark[12]" type="remark" id="t12" offset="1194" length="78"/>
+    <tunit xpath="//volume[3]/missive[33]/footnote[13]" type="footnote" id="t13" offset="1272" length="22"/>
+    <tunit xpath="//volume[3]/missive[33]/remark[14]" type="remark" id="t14" offset="1294" length="62"/>
+    <tunit xpath="//volume[3]/missive[33]/remark[15]" type="remark" id="t15" offset="1356" length="135"/>
+    <tunit xpath="//volume[3]/missive[33]/remark[16]" type="remark" id="t16" offset="1491" length="137"/>
+    <tunit xpath="//volume[3]/missive[33]/remark[17]" type="remark" id="t17" offset="1628" length="595"/>
+  </tunits>
+</NAF>

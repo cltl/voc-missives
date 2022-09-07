@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Van Diemen, Caen, Van der Lijn; Batavia, 31 januari 1640" filename="missive_2_4_notes.naf"/>
+    <public publicId="missive_2_4_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Vertrek der retourschepen; berichten omtrent Malakka, vgl. Zeemogendheid II p. 211 schepen uit Arakan gekomen » 
+Satigan = Chittagong, vgl. dl. I, p. 185. 
+De Nassau komt uit patria; schepen naar diverse kwartieren vertrokken » 
+Atal, Javaans woord voor gele kleiaarde, die als verfstof werd gebruikt. 
+Waarde der Indische effecten fl. 9514329. 1. IS » 
+Het cargasoen der 10 thuisvarende schepen is fl. 2823114. 5. 1 waard » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[2]/missive[4]/remark[1]" type="remark" id="t1" offset="0" length="113"/>
+    <tunit xpath="//volume[2]/missive[4]/footnote[2]" type="footnote" id="t2" offset="113" length="43"/>
+    <tunit xpath="//volume[2]/missive[4]/remark[3]" type="remark" id="t3" offset="156" length="73"/>
+    <tunit xpath="//volume[2]/missive[4]/footnote[4]" type="footnote" id="t4" offset="229" length="74"/>
+    <tunit xpath="//volume[2]/missive[4]/remark[5]" type="remark" id="t5" offset="303" length="51"/>
+    <tunit xpath="//volume[2]/missive[4]/remark[6]" type="remark" id="t6" offset="354" length="72"/>
+  </tunits>
+</NAF>

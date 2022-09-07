@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:38CEST" title="Speelman, Bort, Hurdt, Van Outhoorn, Camphuys, Schaghen, Van Hoorn; Batavia, 1 en 9 maart 1683" filename="missive_4_40_text.naf"/>
+    <public publicId="missive_4_40_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[VII. CORNELIS SPEELMAN, BALTHASAR BORT, ANTHONIO HURDT, WILLEM VAN OUTHOORN, JOANNES CAMPHUYS, NICOLAAS SCHAGHEN EN JOAN VAN HOORN, BATAVIA 1 en 9 maart 1683. 
+des Conings dood en dat den oudsten zoone al vrij gemackelijcker, als men gemeent hadde, tot de successie was geraeckt, vallende over de negotie niet veel te roemen. 
+de vader eyndelinge tot diglite bij Bantam op verkregen pardon afgekomen en onder genoegsame verseeckering, resterende nogh eenige van de broeders en oomen, waervan men geen reghte notitie heeft, dogh wij zijn aan dese kant in het district van Tangaran met eenige inlanders onder den capiteyn Ruys op de been om de vlughtelingen de wegh om de oost over Craoan naar de naburige lantschappen af te snijden en, waar ’t mogelijck, den Maccassaarsen hooftpriesteroff anders Siëch Isoff5 * daer de Bantammers bijnaar een afgodt vangemaeckt hebben, met zijn aanhangh te attrapperen. 
+Den capiteyn Robbert Knox, die sig allesints seer dankbaar toont over de genotene weldaden, soo op Ceylon als hier zedert zijne verlossinge uyt de Candise gevanckenisse, den Gouv. r Generaal verseeckert heeft, dat hij directelijk naer Engelant vertreckt en de brief, die Zijn E. hem belieft aan te bevelen, getrouwelijk zoude bestellen. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[4]/missive[40]/header[1]" type="header" id="t1" offset="0" length="160"/>
+    <tunit xpath="//volume[4]/missive[40]/paragraph[2]" type="paragraph" id="t2" offset="160" length="167"/>
+    <tunit xpath="//volume[4]/missive[40]/paragraph[3]" type="paragraph" id="t3" offset="327" length="577"/>
+    <tunit xpath="//volume[4]/missive[40]/paragraph[4]" type="paragraph" id="t4" offset="904" length="338"/>
+  </tunits>
+</NAF>

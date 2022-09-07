@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="De Carpentier, Specx, Vlack, Van Diemen, Schram; Batavia, 15 december 1626" filename="missive_1_68_notes.naf"/>
+    <public publicId="missive_1_68_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Aankomst van commandeur Schram met de Hollandia als eerste schip van een vloot uit patria op 14 december Men zie voor deze reis Schram. » 
+NI. van het eiland Wight. 
+Siërra Leone, ter westkust van Afrika, op 8° N. B. 
+Voor den beruchten zeerover Claes Gerritsz. Compaen, uit Oostzaan, zie men Kaapvaart, p. 238 vlg., voor het hier bedoelde gevecht in het bijzonder, p. 243 vlg. 
+Brieven uit patria ontvangen » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[1]/missive[68]/remark[1]" type="remark" id="t1" offset="0" length="139"/>
+    <tunit xpath="//volume[1]/missive[68]/footnote[2]" type="footnote" id="t2" offset="139" length="27"/>
+    <tunit xpath="//volume[1]/missive[68]/footnote[3]" type="footnote" id="t3" offset="166" length="52"/>
+    <tunit xpath="//volume[1]/missive[68]/footnote[4]" type="footnote" id="t4" offset="218" length="161"/>
+    <tunit xpath="//volume[1]/missive[68]/remark[5]" type="remark" id="t5" offset="379" length="32"/>
+  </tunits>
+</NAF>

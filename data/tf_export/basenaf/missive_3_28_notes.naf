@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Maetsuycker, Hartsinck, Verburch, Pit, Overtwater, Van den Brouck, Thijsz, Hustaert, Van Hoorn; Batavia, 26 februari 1665" filename="missive_3_28_notes.naf"/>
+    <public publicId="missive_3_28_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Inhoud grotendeels in Daghregisters 1665 , p. 18-34 verder te vermelden: verzonden met bet Engelse schip Constantinopel Merchant, welk schip -meldde, dat de geschillen met Engeland waren bijgelegd; Nobel heeft in China maar 50 picol zijde kunnen kopen; uit pairia werden 23 febr. met de Zandlooper berichten ontvangen » 
+Men is op zijn hoede; voornemen der Fransen zich op Madagascar te vestigen; zij maken zich gehaat door hun zeeroof in de Rode Zee; de Eendracht is 28 nov. de Kaap op weg naar Batavia gepasseerd » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[3]/missive[28]/remark[1]" type="remark" id="t1" offset="0" length="321"/>
+    <tunit xpath="//volume[3]/missive[28]/remark[2]" type="remark" id="t2" offset="321" length="197"/>
+  </tunits>
+</NAF>

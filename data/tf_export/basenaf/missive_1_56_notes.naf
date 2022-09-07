@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="De Carpentier, Jansz, Specx; Batavia, 1 februari 1623" filename="missive_1_56_notes.naf"/>
+    <public publicId="missive_1_56_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Aangekomen schepen. Berichten uit China , geen nieuws gevend , na China » 
+De gemeenschappelijk Engels -Nederlandse vloot tegen de Spanjaarden op de Philippijnen werd dus niet gecontinueerd. Vgl. Coen’s bericht: Coen I, p. 770. . 
+Vgl. Coen III, p. 122, VII, p. 1052, 1077. . 
+Vgl. Coen IV, p. 102-103. . 
+Vgl. Coen I, p. 780. 
+Coen III, p. 288-307, in het bijzonder p. 293-295. 
+Vgl. Coen’s Vertooch van 21 sept. 1623, Goen IV, p. 577-601. . Berichten uit de W ester kwartieren; bekend uit Westerkwartieren en Coen » 
+Vgl. Goen I, p. 791, antwoord op de brief van Heren XVII van 14 april 1622, Goen IV, p. 536-551. Zie ook Bezuinigingsmaatregelen. 
+Mardijkers, vrije Aziatische onderdanen van de Compagnie, met name personen die in hun woonplaats niet tot de van ouds gevestigde bevolking behoren. Het woord m. komt van merdéka, vrij. 
+Berichten over Siam, over lichting van Patani en andere kantoren , over Sumatra. Japan , alle uit Coen bekend » 
+Vgl. Coen III, p. 876-879. 
+Pangeran Ingalaga, toenmalige titel van den vorst van Mataram, die het best als Sultan Ageng bekend is. 
+NI. de vijandelijkheden van weerszijden te Japara gepleegd in 1618 en ’19. 
+Bericht iets afwijkend van dat van Coen, Coen I, p. 772. . 
+Onveiligheid der Bovenlanden , schepen in verschillende streken aanwezig, specerij envoorraad. Grotendeels uit Coen bekend » 
+Vgl. Coen I, p. 733, brief van 6 sept. 1622. Voorts Coen I, p. 781, brief van 20 juni 1623. De Engelsen hadden eind mei 1622 uit een Chinese jonk, bestemd voor Batavia, in Straat Palembang goederen gehaald. 
+Bedoeld is natuurlijk het accoord tussen de Nederlandse en de Engelse Compagnieën, getekend 17 juli 1619. 
+Prolix, wijdlopig. 
+Vgl. Plakaatboek I, p. 109. 
+Niet in Plakaatboek. . 
+Verhouding tot Bantam , zie Coen I, p. 746, 793 ondernemingen ter kust van China, zie China p. 442 v lg ., naar patria gezonden hoeken en stukken', id. waren’, conspiratie op Banda, zie Coen I, p. 782 benodigde waren » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[1]/missive[56]/remark[1]" type="remark" id="t1" offset="0" length="75"/>
+    <tunit xpath="//volume[1]/missive[56]/footnote[2]" type="footnote" id="t2" offset="75" length="156"/>
+    <tunit xpath="//volume[1]/missive[56]/footnote[3]" type="footnote" id="t3" offset="231" length="46"/>
+    <tunit xpath="//volume[1]/missive[56]/footnote[4]" type="footnote" id="t4" offset="277" length="29"/>
+    <tunit xpath="//volume[1]/missive[56]/footnote[5]" type="footnote" id="t5" offset="306" length="22"/>
+    <tunit xpath="//volume[1]/missive[56]/footnote[6]" type="footnote" id="t6" offset="328" length="52"/>
+    <tunit xpath="//volume[1]/missive[56]/footnote[7]" type="footnote" id="t7" offset="380" length="139"/>
+    <tunit xpath="//volume[1]/missive[56]/footnote[8]" type="footnote" id="t8" offset="519" length="131"/>
+    <tunit xpath="//volume[1]/missive[56]/footnote[9]" type="footnote" id="t9" offset="650" length="187"/>
+    <tunit xpath="//volume[1]/missive[56]/remark[10]" type="remark" id="t10" offset="837" length="113"/>
+    <tunit xpath="//volume[1]/missive[56]/footnote[11]" type="footnote" id="t11" offset="950" length="28"/>
+    <tunit xpath="//volume[1]/missive[56]/footnote[12]" type="footnote" id="t12" offset="978" length="105"/>
+    <tunit xpath="//volume[1]/missive[56]/footnote[13]" type="footnote" id="t13" offset="1083" length="76"/>
+    <tunit xpath="//volume[1]/missive[56]/footnote[14]" type="footnote" id="t14" offset="1159" length="60"/>
+    <tunit xpath="//volume[1]/missive[56]/remark[15]" type="remark" id="t15" offset="1219" length="126"/>
+    <tunit xpath="//volume[1]/missive[56]/footnote[16]" type="footnote" id="t16" offset="1345" length="208"/>
+    <tunit xpath="//volume[1]/missive[56]/footnote[17]" type="footnote" id="t17" offset="1553" length="107"/>
+    <tunit xpath="//volume[1]/missive[56]/footnote[18]" type="footnote" id="t18" offset="1660" length="20"/>
+    <tunit xpath="//volume[1]/missive[56]/footnote[19]" type="footnote" id="t19" offset="1680" length="29"/>
+    <tunit xpath="//volume[1]/missive[56]/footnote[20]" type="footnote" id="t20" offset="1709" length="24"/>
+    <tunit xpath="//volume[1]/missive[56]/remark[21]" type="remark" id="t21" offset="1733" length="220"/>
+  </tunits>
+</NAF>

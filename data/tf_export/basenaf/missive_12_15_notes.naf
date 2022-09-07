@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Mossel, Cluysenaar, Van Broyel, Van der Waeyen, Van der Parra, Van der Spar, Van Gollenesse, Van de Velde, Van Rheede, De Nijs, Van Bazel; Batavia, 31 december 1752" filename="missive_12_15_notes.naf"/>
+    <public publicId="missive_12_15_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[De bijlagen (fol. 796-851) zijn aan Hunne Hoogmogenden gegeven en bevinden zich niet meer in VOC 2793. 
+Batavia meldt wat men sinds de laatste brief over de vijftigste penning van 10 oktober 1752 aan berichten hierover van diverse kantoren heeft ontvangen. Van Lampong heeft Batavia een brief d. d. 30 september 1752 ontvangen waarin vermeld staat dat het personeel aan zijn verplichtingen heeft voldaan. Van Banda heeft men een brief van gouverneur Reynier de Klerk en raad d. d. 5 juni 1752 gekregen met de volgende bijlagen : » 
+Vervolgens heeft Batavia een brief van het bestuur van 5 september ontvangen met bijlagen waarvan de volgende bij deze missive gevoegd zijn: » 
+Wat betreft Batavia verwijst men naar de bij gevoegde resoluties van 29 september over 1 gouden en 2 zilveren horloges en van 1 7 oktober over de juwelen ‘ alhier voor den 5 (fn pennink ontfangen ’. » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[12]/missive[15]/footnote[1]" type="footnote" id="t1" offset="0" length="104"/>
+    <tunit xpath="//volume[12]/missive[15]/remark[2]" type="remark" id="t2" offset="104" length="428"/>
+    <tunit xpath="//volume[12]/missive[15]/remark[3]" type="remark" id="t3" offset="532" length="144"/>
+    <tunit xpath="//volume[12]/missive[15]/remark[4]" type="remark" id="t4" offset="676" length="202"/>
+  </tunits>
+</NAF>

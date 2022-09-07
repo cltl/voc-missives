@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Maetsuycker, Verburch, Pit, Overtwater, Van den Brouck, Van Hoorn, Ranst; Batavia, 16 februari 1669" filename="missive_3_40_notes.naf"/>
+    <public publicId="missive_3_40_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Verzonden met het Engelse schip Madras Merchant; vgl. voor de inhoud Daghregisters 1665, p. 247-252 ter Westkust is vnl. goud en peper voor f. 173725 ingekocht; half april zal derwaarts een {link schip vertrekken; meer goud te Padang verwacht , » 
+De landraad bestond uit de hoofden van de met de V. O. C. gelieerde dorpen ter Westkust. 
+Zie hiervoor o. a. Corpus, II, nr. CCCXIX en Westkust, hoofdstuk VI en VII. 
+Moeilijkheden ter Westkust , vgl. Westkust, p. 140-142 » 
+Panglima Radja was de titel van de door den Keizer van Minangkabau benoemden en door de Compagnie bevestigden gouverneur van Padang, die als adviseur bij de ingewikkelde verhoudingen bij den Nederlandsen commandeur grote invloed had. 
+Malafarsjah was de vader van den Vorst van Indrapura, waar de opvolging langs do vrouwelijke lijn ging. Herhaaldelijk trachtte hij voor zijn zoon in de plaats te komen. 
+Mohammadsjah, zeker sinds 1660 Vorst, met de titel Sultan, van Indrapura. Zie voor hem o. a. Westkust, p. 105 en 123. In 1684 liet hij de Engelsen in zijn land toe, in 1693 was hij niet meer aan het bewind. 
+Radja Adil was een verwant van den vorige, die te Mandjuta (vgl. dl. II, p. 230, noot 1) door de Atjehse Koningin als bestuurder was erkend. Nog in 1680 wordt hij daar als stadhouder van Mohammadsjah vermeld. 
+Van 27 juli 1663, Corpus II, nr. CCLXXV. 
+Zijde, katoenen kousen en koperwerk mogen uit Japan weer worden uitgevoerd » 
+Bedoeld: koperen munt. 
+Fulp, pluisfluweel. 
+Brocados, zijden stoffen, met gouddraad doorweven. 
+Portdesoyen, mij niet nader bekend. 
+Vgl. Beschrijvinge H, I, p. 437 en Plakaatboék II, p. 509-512, waar nog vele andere waren worden opgesomd, waarvan de invoer in Japan verboden was. . 
+Ook de secunde mag maar één jaar in J apan blijven; de goudprijs blijft er laag; de Duynvliet brengt 516800 1È suiker van Bengalen naar Perzië; de Engelsen hebben de Greyhound, die al drie jaar te Bellasore ligt , voor de afvaart gereed gemaakt; te Masulipatam zijn 1600 pak kleden in voorraad, meest voor Pegu en Batavia; Dirck de Hart, opperhoofd aldaar, is 12 dec. gestorven; gebleken is, ... . » 
+Vgl. Coromandel, p. 61. 
+Lading der Engelse schepen hij Madras; toename van de Nederlandse handel te Nagelwanse; de koers van de oude pagoden is opgelopen tot 180 nieuwe voor de 100 » 
+De handel zal nu weer herleven; getracht wordt ropias in betaling te krijgen , dienstig in Bengalen en geen oude pagoden; op Japanse gouden munten wordl in Coromandel 33 a 34% gewonnen » 
+Mark, niet overal gelijk goudgewicht, vaak 230, 4 gram. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[3]/missive[40]/remark[1]" type="remark" id="t1" offset="0" length="248"/>
+    <tunit xpath="//volume[3]/missive[40]/footnote[2]" type="footnote" id="t2" offset="248" length="90"/>
+    <tunit xpath="//volume[3]/missive[40]/footnote[3]" type="footnote" id="t3" offset="338" length="77"/>
+    <tunit xpath="//volume[3]/missive[40]/remark[4]" type="remark" id="t4" offset="415" length="58"/>
+    <tunit xpath="//volume[3]/missive[40]/footnote[5]" type="footnote" id="t5" offset="473" length="235"/>
+    <tunit xpath="//volume[3]/missive[40]/footnote[6]" type="footnote" id="t6" offset="708" length="170"/>
+    <tunit xpath="//volume[3]/missive[40]/footnote[7]" type="footnote" id="t7" offset="878" length="208"/>
+    <tunit xpath="//volume[3]/missive[40]/footnote[8]" type="footnote" id="t8" offset="1086" length="210"/>
+    <tunit xpath="//volume[3]/missive[40]/footnote[9]" type="footnote" id="t9" offset="1296" length="42"/>
+    <tunit xpath="//volume[3]/missive[40]/remark[10]" type="remark" id="t10" offset="1338" length="78"/>
+    <tunit xpath="//volume[3]/missive[40]/footnote[11]" type="footnote" id="t11" offset="1416" length="24"/>
+    <tunit xpath="//volume[3]/missive[40]/footnote[12]" type="footnote" id="t12" offset="1440" length="21"/>
+    <tunit xpath="//volume[3]/missive[40]/footnote[13]" type="footnote" id="t13" offset="1461" length="52"/>
+    <tunit xpath="//volume[3]/missive[40]/footnote[14]" type="footnote" id="t14" offset="1513" length="37"/>
+    <tunit xpath="//volume[3]/missive[40]/footnote[15]" type="footnote" id="t15" offset="1550" length="151"/>
+    <tunit xpath="//volume[3]/missive[40]/remark[16]" type="remark" id="t16" offset="1701" length="401"/>
+    <tunit xpath="//volume[3]/missive[40]/footnote[17]" type="footnote" id="t17" offset="2102" length="25"/>
+    <tunit xpath="//volume[3]/missive[40]/remark[18]" type="remark" id="t18" offset="2127" length="160"/>
+    <tunit xpath="//volume[3]/missive[40]/remark[19]" type="remark" id="t19" offset="2287" length="188"/>
+    <tunit xpath="//volume[3]/missive[40]/footnote[20]" type="footnote" id="t20" offset="2475" length="57"/>
+  </tunits>
+</NAF>

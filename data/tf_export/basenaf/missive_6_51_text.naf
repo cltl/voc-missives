@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:38CEST" title="Van Hoorn, Van Riebeeck, Van Swoll, Van Rijn, Phoonsen, Zwaardecroon; Batavia, 18 december 1707" filename="missive_6_51_text.naf"/>
+    <public publicId="missive_6_51_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XXII. JOAN VAN HOORN, ABRAHAM VAN RIEBEECK, CHRISTOFFEL VAN SWOLL, ADAM VAN RIJN, BERNARD PHOONSEN EN HENDRICK ZWAARDECROON, BATAVIA 18 december 1707. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[6]/missive[51]/header[1]" type="header" id="t1" offset="0" length="152"/>
+  </tunits>
+</NAF>
