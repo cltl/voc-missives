@@ -20,10 +20,14 @@ def export_letters_fromTF(workdir, text_type, max_letters=0, ml=None):
     if ml is None:
         ml = MissivesLoader()
     tfdir, refnafdir = create_outdirs(workdir)
-    if text_type == 'text':
-        pubids_titles_and_tunits = ml.extract_letters_text(tfdir, max_letters=max_letters)
+    if text_type == "text":
+        pubids_titles_and_tunits = ml.extract_letters_text(
+            tfdir, max_letters=max_letters
+        )
     else:
-        pubids_titles_and_tunits = ml.extract_letters_notes(tfdir, max_letters=max_letters)
+        pubids_titles_and_tunits = ml.extract_letters_notes(
+            tfdir, max_letters=max_letters
+        )
     convert(pubids_titles_and_tunits, tfdir, refnafdir, ml.version())
 
 
@@ -37,13 +41,15 @@ def export_letter(workdir, v, l, text_type, ml=None):
 
 def convert(pubids_titles_and_tunits, tfdir, refnafdir, version):
     for pubid, title, paragraphs in pubids_titles_and_tunits:
-        create_naf(pubid, title, paragraphs, os.path.join(tfdir, pubid), refnafdir, version)
+        create_naf(
+            pubid, title, paragraphs, os.path.join(tfdir, pubid), refnafdir, version
+        )
 
 
 def create_outdirs(workdir):
-    tfdir = os.path.join(workdir, 'tf')
+    tfdir = os.path.join(workdir, "tf")
     os.makedirs(tfdir, exist_ok=True)
-    refnafdir = os.path.join(workdir, 'basenaf')
+    refnafdir = os.path.join(workdir, "basenaf")
     os.makedirs(refnafdir, exist_ok=True)
     return tfdir, refnafdir
 
@@ -64,7 +70,7 @@ def export_letters(letters_json, outdir, ml=None):
         ml = MissivesLoader()
     with open(letters_json) as f:
         json_ids = json.load(f)
-    letter_ids = [x['tf_id'] for x in json_ids]
+    letter_ids = [x["tf_id"] for x in json_ids]
     tfdir, refnafdir = create_outdirs(outdir)
     pubids_titles_and_tunits = ml.write_text_and_pos_files(letter_ids, tfdir)
     convert(pubids_titles_and_tunits, tfdir, refnafdir, ml.version())

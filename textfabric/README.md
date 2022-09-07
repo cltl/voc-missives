@@ -16,6 +16,22 @@ Pipeline scripts are also provided in
 ## Prerequisites
 See [INSTALL.md](../INSTALL.md#installing-textfabric) for instructions on installing TextFabric.
 
+Clone the TextFabric [wp6-missieven](https://github.com/CLARIAH/wp6-missieven) repository:
+```
+git clone https://github.com/CLARIAH/wp6-missieven
+```
+And place it in a folder `CLARIAH` in folder `github` in your home directory:
+```
+mkdir -p ~/github/CLARIAH
+mv wp6-missieven ~/github/CLARIAH
+```
+
+Install lxml and text-fabric:
+```
+pip install -r requirements.txt
+```
+>>>>>>> 7bdc75d2a195a40a6cbeb842cd67ce3aa3c853a7:tf/README.md
+
 ## Resources
-TextFabric comes with extensive [tutorials](https://nbviewer.jupyter.org/github/annotation/tutorials/tree/master/missieven/) for the missives.
-See also the TextFabric documentation on the structure and features of the [missives in TextFabric](https://github.com/Dans-labs/clariah-gm/blob/master/docs/transcription.md)
+TextFabric comes with an extensive [tutorial](https://nbviewer.jupyter.org/github/CLARIAH/wp6-missieven/tree/master/tutorial/) for the missives.
+See also the TextFabric documentation on the structure and features of the [missives in TextFabric](https://github.com/CLARIAH/wp6-missieven/blob/master/docs/transcription.md)

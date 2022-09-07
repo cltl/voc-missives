@@ -148,8 +148,8 @@ def mixed_notes_recorder(letter, v, l):
 
 def default_tf_loc():
     GITHUB = os.path.expanduser('~/text-fabric-data')
-    ORG = 'Dans-labs'
-    REPO = 'clariah-gm'
+    ORG = 'CLARIAH'
+    REPO = 'wp6-missieven'
     PATH = 'tf'
     location = f'{GITHUB}/{ORG}/{REPO}/{PATH}'
     return location
