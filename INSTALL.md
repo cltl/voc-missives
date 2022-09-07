@@ -68,7 +68,7 @@ pip install -r tf/requirements.txt
 ## Installing Transformers
 This step can be performed with the installation script:
 ```sh
-bash ./scripts --transformers
+bash ./scripts/install.sh --transformers
 ```
 NOTE: you may want to activate a *dedicated Python environment* for this
 

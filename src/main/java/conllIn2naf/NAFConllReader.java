@@ -139,7 +139,6 @@ public class NAFConllReader {
         conllEntities = createEntitiesWithOffsets(entitiesWithIdSpans, tokens);
 
         if (nafEntities.isEmpty()) {
-            logger.warn("Adding entities to an empty entity layer");
             writeEntitiesToNaf(asNafEntities(entitiesWithIdSpans, tokens, false), "", dataRevisionVersion);
         } else {
             String version = naf.getLinguisticProcessors("entities").getLps().get(0).getVersion()

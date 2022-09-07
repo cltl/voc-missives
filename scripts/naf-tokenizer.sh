@@ -11,7 +11,7 @@ indir=$1
 outdir=$2
 
 if [ $# -ne 2 ]; then
-  echo "Usage: sh naf-selector.sh INPUT_NAF_DIR REF_NAF_DIR"
+  echo "Usage: sh naf-tokenizer.sh INPUT_NAF_DIR REF_NAF_DIR"
   exit 1
 fi
 

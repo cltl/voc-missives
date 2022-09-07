@@ -1,3 +1,4 @@
+import argparse
 import json
 import os
 import sys
@@ -81,6 +82,16 @@ def read_tf_files(file):
 
 
 if __name__ == "__main__":
-    jsonfile = sys.argv[1]
-    workdir = sys.argv[2]
-    export_letters(jsonfile, workdir)
+    parser = argparse.ArgumentParser(description='Extract letters from TextFabric.')
+    parser.add_argument('-o', '--outdir', type=str, help='output directory')
+    parser.add_argument('-s', '--selection', type=str, help='json file for with letters to extract')
+    parser.add_argument('-n', '--max_letters', type=int, help='max number of letters to extract')
+    args = parser.parse_args()
+    if args.selection is not None:
+        export_letters(args.selection, args.outdir)
+    else:
+        max_letters = 0
+        if args.max_letters:
+            max_letters = args.max_letters
+        export_letters_fromTF(args.outdir, 'text', max_letters=max_letters)
+        export_letters_fromTF(args.outdir, 'notes', max_letters=max_letters)
