@@ -31,5 +31,5 @@ pip install -r requirements.txt
 ```
 
 ## Resources
-TextFabric comes with extensive [tutorials](https://nbviewer.jupyter.org/github/CLARIAH/wp6-missieven/tree/master/tutorials/) for the missives.
+TextFabric comes with an extensive [tutorial](https://nbviewer.jupyter.org/github/CLARIAH/wp6-missieven/tree/master/tutorial/) for the missives.
 See also the TextFabric documentation on the structure and features of the [missives in TextFabric](https://github.com/CLARIAH/wp6-missieven/blob/master/docs/transcription.md)

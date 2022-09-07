@@ -29,7 +29,7 @@ See [From TEI to NAF](tei2naf.md)
 TEI files can be downloaded from [this link](https://github.com/cltl/voc-missives-data/tree/master/generale-missiven/tei).
   
 ### From TextFabric to NAF
-The TextFabric app [app-missieven](https://github.com/annotation/app-missieven) provides a cleaned up version of the TEI files, with notably a better separation of text and notes; 
+The TextFabric app [wp6-missieven](https://github.com/CLARIAH/wp6-missieven) provides a cleaned up version of the TEI files, with notably a better separation of text and notes; 
 the app also allows to keep track of corrections to the data.
 We provide two functions to work with the app
   * `tf2naf`: extraction of letters (raw text and text units) from TextFabric into NAF, where *text* and *notes* are extracted 
