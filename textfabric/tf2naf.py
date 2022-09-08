@@ -31,11 +31,11 @@ def export_letters_fromTF(workdir, text_type, max_letters=0, ml=None):
     convert(pubids_titles_and_tunits, tfdir, refnafdir, ml.version())
 
 
-def export_letter(workdir, v, l, text_type, ml=None):
+def export_letter(workdir, v, let, text_type, ml=None):
     if ml is None:
         ml = MissivesLoader(latest=LATEST)
     tfdir, refnafdir = create_outdirs(workdir)
-    pubids_titles_and_tunits = ml.extract_letter(v, l, text_type, tfdir)
+    pubids_titles_and_tunits = ml.extract_letter(v, let, text_type, tfdir)
     convert(pubids_titles_and_tunits, tfdir, refnafdir, ml.version())
 
 
