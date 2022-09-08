@@ -38,7 +38,7 @@ tsv2tf() {
 
 # -- main --
 
-# sysin2naf
-# naf2tsv
+sysin2naf
+naf2tsv
 tsv2tf
 
