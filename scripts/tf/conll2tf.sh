@@ -31,8 +31,8 @@ naf2tsv() {
 }
 
 tsv2tf() {
-  cd ${wdir}/tf
-  python tsv2tf.py ${ddir}/tf ${ddir}/tsv
+  cd ${wdir}/textfabric
+  python tsv2tf.py ${ddir}/tf ${ddir}/tsv ${wdir}/export/tf
 }
 
 
