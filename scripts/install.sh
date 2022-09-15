@@ -57,10 +57,6 @@ compile_java_code() {
 install_textfabric() {
   echo "cloning the TextFabric repositories"
   [[ ! -d ~/github ]] && mkdir ~/github
-  # app-missieven not needed anymore
-  #git clone https://github.com/annotation/app-missieven ~/github/annotation
-  #cd ~/github/annotation/
-  #git checkout v0.8.1
   git clone https://github.com/Dans-labs/clariah-gm ~/github/Dans-labs
   cd ~/github/Dans-labs
   git checkout fc67e0b

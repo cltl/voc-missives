@@ -5,7 +5,7 @@ import os
 import argparse
 import shutil
 
-from utils.tfHandler import MissivesLoader
+from textfabric.utils.tfHandler import MissivesLoader
 # ex. vol1_p0106_INT_08c82040-752f-3fc2-ad50-0d3e7b37a945_text.naf
 VPINT = re.compile(r"vol(\d+)_p(\d+)_(INT_.*)_(\w+)\.naf")
 INT1 = re.compile(r"(.*)(INT_.*)_notes\.(.*)")

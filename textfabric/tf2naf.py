@@ -1,7 +1,6 @@
 import argparse
 import json
 import os
-import sys
 
 from utils.tfHandler import MissivesLoader
 from utils.nafHandler import Naf
