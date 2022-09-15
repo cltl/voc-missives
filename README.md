@@ -6,17 +6,18 @@ This project is part of [Clariah WP6/Text](https://www.clariah.nl/wp6-text).
 We are currently revising the documentation and tests in view of a release. The code is not being developed anymore but issues or questions can be posted on the [Issues page](https://github.com/cltl/voc-missives/issues). 
 
 ### Background 
-For this project, we used OCR texts that were first set to TEI by the [Instituut van de Nederlandse Taal](https://ivdnt.org/) and then made available through [TextFabric](https://github.com/CLARIAH/wp6-missieven). A number of missives were manually annotated by the [Huygens Institute for the History of the Netherlands](https://www.knaw.nl/en/institutes/huygens-ing), using the text extracted from the TEI set of letters; these annotations were later realigned to the TextFabric text variant. These manual annotations were then used for training a NER model with the [HuggingFace Transformers](https://huggingface.co/docs/transformers/index) library.
+For this project, we used OCR texts that were first set to TEI by the [Instituut van de Nederlandse Taal](https://ivdnt.org/) and then made available through [Text-Fabric](https://github.com/CLARIAH/wp6-missieven). A number of missives were manually annotated by the [Huygens Institute for the History of the Netherlands](https://www.knaw.nl/en/institutes/huygens-ing), using the text extracted from the TEI set of letters; these annotations were later realigned to the Text-Fabric text variant. These manual annotations were then used for training a NER model with the [HuggingFace Transformers](https://huggingface.co/docs/transformers/index) library.
 
 ### Project structure
-Most of the code is written in Java. We used Python to interact with TextFabric or to prepare data for NER experiments.
+Most of the code is written in Java. We used Python to interact with Text-Fabric or to prepare data for NER experiments.
 
 The repository is structured as follows:
 * `./data`: manual annotations, intermediary files and NER training corpus (see [NER data](data/README.md))
 * `./ner`: (Python) code and config files for [NER](ner/README.md) model training and experiments 
 * `./src`: (Java) code for the conversion of the missives between different [formats](docs/formats.md), but also for manual annotation analysis
 * `./scripts`: (shell) conversion, analysis and utility scripts both for Java and Python functions. 
-* `./textfabric`: (Python) code for letter extraction from [Text-Fabric](textfabric/README.md)
+* `./textfabric`: (Python) code for letter extraction from [Text-Fabric](textfabric/README.md).
+* `./export/tf`: results of the NER as Text-Fabric features (more info in [Text-Fabric](textfabric/README.md)).
 
 
 ### Citation
