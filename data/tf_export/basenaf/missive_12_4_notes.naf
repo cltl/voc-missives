@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Mossel, Cluysenaar, Overbeek, Van Broyel, Van der Waeyen, Van der Parra, Van der Spar, Loten; Batavia, 8 april 1751" filename="missive_12_4_notes.naf"/>
+    <public publicId="missive_12_4_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[De Brouwer heeft spoedig Straat Sunda achter zich gelaten , de drie andere schepen begin maart, » 
+De Batavier sluit het retour van 1750 af als na- of the eschip, omdat de Fortuin, eveneens daartoe bestemd, nog niet uit Bengalen was aangekomen » 
+De winsten bedroegen in 1750 f 712. 057. » 
+Volgt De Jonge Opkomst X, p. 180 r. 36 - p. 182 r. 16. » 
+Volgt De Jonge Opkomst X, p. 182 r. 16 - r. 30. » 
+Paravicini vraagt Heren XVII de zaak onder de aandacht van Hunne Hoogmogenden te brengen om zo genoegdoening te verkrijgen. De Hoge Regering ondersteunt het verzoek omdat dergelijke gebeurtenissen grote schade toebrengen aan de handel van Batavia, ‘die buy tendes niet veel opgang maakt'. » 
+Dit bedrag bestaat uit 20 wissels t. w. v. f 343. 872 en uit overgeschreven kapitaal t. w. v. f 188. 025. W. b. de wissels: o. a. f 210. 498 door de weesmeesters aan de weeskamer in Middelburg, f 18. 500 door Libreght Augustus Behmer, leraar van de Portugese gemeente in Batavia aan Hendrik van der Graaff de Vapour in Gorkum, f 18. 298 door de burgerschepen Jan Harris aan koopman Jacob Roeters te Amsterdam, en f 16. 615 door koopman Pieter van Jongstal aan jonkheer Willem van Haren, lid van de Staten-Generaal voor Friesland, en aan Onno Zwier van Haren, lid van de Raad van State voor Friesland, beiden verblijf houdende te ’s-Gravenhage. De lading van de Batavier bestaat uit » 
+Van de lading van de Batavier is f 189. 474, voor het grootste deel bestaande uit bovengenoemde koopwaar, bestemd voor Zeeland. Het restant, bestaande uit Japanse zijden rokken en Japanse soja, is bestemd voor de andere kamers. » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[12]/missive[4]/remark[1]" type="remark" id="t1" offset="0" length="99"/>
+    <tunit xpath="//volume[12]/missive[4]/remark[2]" type="remark" id="t2" offset="99" length="148"/>
+    <tunit xpath="//volume[12]/missive[4]/remark[3]" type="remark" id="t3" offset="247" length="44"/>
+    <tunit xpath="//volume[12]/missive[4]/remark[4]" type="remark" id="t4" offset="291" length="58"/>
+    <tunit xpath="//volume[12]/missive[4]/remark[5]" type="remark" id="t5" offset="349" length="51"/>
+    <tunit xpath="//volume[12]/missive[4]/remark[6]" type="remark" id="t6" offset="400" length="292"/>
+    <tunit xpath="//volume[12]/missive[4]/remark[7]" type="remark" id="t7" offset="692" length="685"/>
+    <tunit xpath="//volume[12]/missive[4]/remark[8]" type="remark" id="t8" offset="1377" length="231"/>
+  </tunits>
+</NAF>

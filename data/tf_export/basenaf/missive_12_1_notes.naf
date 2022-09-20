@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Mossel, Cluysenaar, Overbeek, Van Broyel, Van der Waeyen, Van der Parra, Van der Spar, Huyghens, Loten; Batavia, 1 december 1750" filename="missive_12_1_notes.naf"/>
+    <public publicId="missive_12_1_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Gouverneur- generaal Gustaaf Willem van Imhoff is na een ziekte van twee maanden op 1 november overleden. Diezelfde dag is een vergadering belegd waarin de zeven aanwezige raden unaniem Jacob Mossel tot nieuwe gouverneur- generaal hebben gekozen , in afwachting van de goedkeuring van Heren XVII. Twee dagen later, toen inmiddels ook raad extraordinaris Joan Gideon Loten uit Makassar was aangekomen, is de scheidende gouverneur van Ceylon, Julius Valentijn Steijn van Gollenesse, tot directeur- generaal gekozen. Tot zijn komst neemt Jacob Mossel de generale directie waar. Om Heren XVII hierover te informeren heeft men speciaal de Admiraal Tromp van Java 's Oostkust terug laten komen en voor Kaap de Goede Hoop aangelegd. De oktoberschepen waren namelijk al vertrokken. Batavia verwacht dat de post Heren XVII langs deze weg nog vroegtijdig met de oktoberschepen zal bereiken. » 
+Fol. 101 komt tweemaal voor. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[12]/missive[1]/remark[1]" type="remark" id="t1" offset="0" length="884"/>
+    <tunit xpath="//volume[12]/missive[1]/footnote[2]" type="footnote" id="t2" offset="884" length="30"/>
+  </tunits>
+</NAF>

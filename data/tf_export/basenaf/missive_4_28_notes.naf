@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Van Goens, Speelman, Bort, Hurdt, Van Outhoorn, Camphuys, Bent; Batavia, 31 december 1680" filename="missive_4_28_notes.naf"/>
+    <public publicId="missive_4_28_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Bij de datum en de ondertekeningen staat bijgeschreven : doch wij zijn heden 4 januari 1681. 
+Vgl. Daghregisters 1680, p. 782-856 ter kust van Malabar is een jacht tegen het stuiken nodig; de Koning van Cochin is weinig genegen het bestand met den Samorijn voor 3 jaar te verlengen; er is daar 700 000 peper in voorraad; men moest in Perzic, vgl. ibid. p. 809, voor f. 608 132 zijde afnemen; de kwaliteit is zeer goed » 
+De waren van de Compagnie zijn er goed verkocht; de jonge Sultan van Bantam heeft het laten kruisen van zijn vaartuigen weer gestaakt ; vgl. voor Japan Beschrijvinge 11, 1, p. 467-468 betreurd, dat er niet meer Bengaalse zijde beschikbaar was; men kon kóbans van de gouverneurs van Nagasaki lenen » 
+Hij wordt Beschrijvinge II, I, p. 659 onder de naam Kauwkoets Ginschymondonne nog in 1684 als gouverneur genoemd. 
+In Beschrijvinge II, I, p. 652 wordt hij vermeld als nieuw optredend gouverneur onder de naam Matsendeiro Jojeimonsamma. 
+Op de door Heren XVII gewenste kwaliteit van het ingekochte porcelein is goed gelet; gegevens Java's Oostkust, af gedrukt Opkomst VII, p. 58-60 » 
+Bedoeld is Krawang, dus de Tjitarum. 
+Drie schepen en een jachtje voor verder gebruik af gekeurd; de rondhouten zullen weer gebruikt worden, » 
+Dringend om dgl. materiaal verzocht , zo ook om boter en andere proviand » 
+Inderdaad werd zuidelijk van het oude Sultansverblijf in 1680/81 het nieuwe, geheten Pakuwonan, ook fort Diamant of Kota Intan, gebouwd in de gedaante van een Compagnies* vesting voor den jongen Sultan. 
+Er is daar overvloed aan textiel , o. a. omdat de Compagnie verbood dat naar Mataram te vervoeren, zulks op grond van het contract met den Susuhunan; voordeel verwacht van de rust, uxmrin China nu onder de Tataren staat; in Bengalen konden alle opgenomen géiden worden terugbetaald, daar er weinig te verkopen valt, heeft de V. O. C. er steeds contanten nodig; de amfioenprijs is zeer hoog; de Aardenburg en de Berkmeer vertrokken met lading van f. 55 456, vnl. salpeter en amfioen, van Bengalen naar Ceylon, ze moeten o. a. areca, chancos en - voor schenkages - vier olifanten terugbrengen; de retourschepen brengen vnl. Perzische zijde , /. 524 178, kruidnagelen, f. 115 500, en peper, f. 114 188, over » 
+Na veel moeite kwam 2 244 000 ® salpeter in 25 vaartuigen van Patna te Hugly » 
+Bedoeld: groten, die de V. O. C. begunstigden. 
+Men zal gewapend moeten optreden; satisfactie » 
+Voor 18 352 rsd. wissels te Batavia op patria getrokken; twee rijk geladen jonken vertrokken uit Tonkin naar Japan » 
+Hij is een Portugees, aanbevolen door ds. Ferreira; gegevens over Java's Oostkust, afgedr. Opkomst VII, p. 60-61 » 
+Joannes Verhaven en Bernard Craeyvanger waren halfbroers, zoons van Speelman’s zuster Maria; de vader van den tweede was Remonstrants predikant, waarom de naam van een plechtig ,, us’' is voorzien. Verhaven werd in onderkoopmansrang jan. 1681 tweede en jan. 1683 eerste dispencier. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[4]/missive[28]/footnote[1]" type="footnote" id="t1" offset="0" length="94"/>
+    <tunit xpath="//volume[4]/missive[28]/remark[2]" type="remark" id="t2" offset="94" length="327"/>
+    <tunit xpath="//volume[4]/missive[28]/remark[3]" type="remark" id="t3" offset="421" length="300"/>
+    <tunit xpath="//volume[4]/missive[28]/footnote[4]" type="footnote" id="t4" offset="721" length="115"/>
+    <tunit xpath="//volume[4]/missive[28]/footnote[5]" type="footnote" id="t5" offset="836" length="122"/>
+    <tunit xpath="//volume[4]/missive[28]/remark[6]" type="remark" id="t6" offset="958" length="147"/>
+    <tunit xpath="//volume[4]/missive[28]/footnote[7]" type="footnote" id="t7" offset="1105" length="38"/>
+    <tunit xpath="//volume[4]/missive[28]/remark[8]" type="remark" id="t8" offset="1143" length="106"/>
+    <tunit xpath="//volume[4]/missive[28]/remark[9]" type="remark" id="t9" offset="1249" length="76"/>
+    <tunit xpath="//volume[4]/missive[28]/footnote[10]" type="footnote" id="t10" offset="1325" length="204"/>
+    <tunit xpath="//volume[4]/missive[28]/remark[11]" type="remark" id="t11" offset="1529" length="708"/>
+    <tunit xpath="//volume[4]/missive[28]/remark[12]" type="remark" id="t12" offset="2237" length="80"/>
+    <tunit xpath="//volume[4]/missive[28]/footnote[13]" type="footnote" id="t13" offset="2317" length="48"/>
+    <tunit xpath="//volume[4]/missive[28]/remark[14]" type="remark" id="t14" offset="2365" length="49"/>
+    <tunit xpath="//volume[4]/missive[28]/remark[15]" type="remark" id="t15" offset="2414" length="118"/>
+    <tunit xpath="//volume[4]/missive[28]/remark[16]" type="remark" id="t16" offset="2532" length="116"/>
+    <tunit xpath="//volume[4]/missive[28]/footnote[17]" type="footnote" id="t17" offset="2648" length="283"/>
+  </tunits>
+</NAF>

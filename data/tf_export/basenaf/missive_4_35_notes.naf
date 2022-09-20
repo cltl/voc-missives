@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Speelman, Bort, Hurdt, Van Outhoorn, Camphuys, Bent; Batavia, 28 december 1681" filename="missive_4_35_notes.naf"/>
+    <public publicId="missive_4_35_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Vgl. Daghregisters 1681, p. 716-783 de loaterfiskaal, vgl. ibid. p. 762, bereikt eerst 15 dec. de vloot van Van Goens; Speelman s ziekte, vgl. ibid. p. 723, bracht mee » 
+Malayalam kattil: bedstede, ledikant, rustbed. 
+Van de versterking te Tjenrana; dit wordt gezegd als bewijs van de onbelangrijkheid er van. 
+De t. a. p. p. 727 genoemde Aru Marmvangi is de broeder van Am Kajo, Aru Mampu en Aru Teko; vermoedelijk waren vele Boeginese groten tegen het doden van Aru Vacqua; noodzaak den weer tot raad-extraordinair bevorderden Cops van Makassar te verwijderen wegens zijn ongenoegen mei Radja Palakka; te Makassar — » 
+Derma Juda, vgl. ibid. p. 749, had » 
+De Hoge Regering is niet genegen de handel te Bandjarmasin met eigen schepen te hervatten, Van Goens zag daar wel voordeel in; in de winst te Palembang van f. 100 299. 3, ibid. p. 717, is f. 13 126. 4. 9 ontstaan door de lage waardebepaling van Spaans geld, dus fictief; in J apan kwamen 5 jonken uit Taiwan met lading waard 119 150 taël, 2 uit Cambodja, waard 20 765 taël en één uit Siam, waard 7841 taël, vgl. Beschrijvinge II, I, p. 469-470, deels letterlijk gelijk; voor de cabessazijde werd 2\, voor de bariga 12 en voor de pee 15 taël minder betaald dan in 1680; Van Schinne geeft op, dat » 
+Japans otona, wijk- of straatmeester, hier van het deel van Nagasaki, waartoe Desjima behoorde. 
+Mogelijk valt hieraan niet te voldoen , het zou echter zeer gewaardeerd worden. » 
+Vgl. Daghregisters 1681, p. 731-732, waarop het hier vermelde een aanvulling is. 
+Fadjidjio Sjima, eiland op ruim 33° N. B. en 139°40' O. L. 
+De Daghregisters 1681, p. 732, genoemde nieuwe gouverneur van Nagasaki heet Miaky Kimoetsamma; tegen de aldaar genoemde voorschriften hij brand » 
+De maand ibid. p. 746 r. 5 v. o. is niet juli, maar augustus; vgl. ook Beschrij- vinge 11, I, p. 749-750 bij de handel bij Macao, Daghregisters p. 747 v ermeld, werden de volgende prijzen gemaakt: » 
+Taël. . 
+Kroonrassen, de beste soort rassen, d. z. gekeperde wollen of zijden stoffen, zo glad geschoren, dat men geen haar ziet. 
+De kopers waren geringe kramers; 207 ffi barnsteen kon , zij het met 30% verlies, worden verkocht; bij de handel bleek het Nederlandse laken minder te meten, dan was opgegeven » 
+Het betrof een zending uit Zeeland » 
+Omtrent den t. a. p. p. 7 47 r. 3 v. o. genoemden Simia, van wien Beschrijvinge II, I, p. 750 r 12 v. o. abusievelijk wordt opgegeven, dat hij de tweede zoon van Pinglamon zou zijn, hetgeen ten rechte is tweede persoon, wordt nog vermeld: » 
+Laukokin was Kimsia’s vlootbevelhebber. 
+Laxia was met Kimsia in onmin. 
+De Nederlanders, gevangen op Formosa, kunnen mogelijk vrijgekocht worden » 
+De thee, vermeld Daghregisters p. 756, kostte 40 taël het picol; de zending van contanten uit patria is verhoogd met f. 400 000 in Mexicaanse realen of in haren; in Tonkin wordt niets meer voor Japan, maar voor patria muscus en zijde ingekocht; Heren XVII hebben 23 jan. j. l. gelast, » 
+Orkaan. 
+Bovendien is hei moeilijk een goede verdeling over de diverse Kamers tot stand te brengen en het risico te verdelen; de diepgaandste schepen -23 a 24 voet - kunnen bij Texel niet binnenvallen; het Huis te Spyck is op Onrust geheel vernieuwd; Heren XVII gelastten ook met de laatste retourschepen enkel „groove en volumineuse waeren te remitteren"; aan de eis aan equipagegoederen dient vooral te worden voldaan; door tekort aan scheepstimmerlieden moeten de schepen lang op reparaties wachten; een gedeelte van fol. 85v is op folio 189 als extract uit deze brief nogmaals te vinden; het bedrag aan wissels, op patria getrokken, is nu opgelopen tot 109 839 rsd » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[4]/missive[35]/remark[1]" type="remark" id="t1" offset="0" length="171"/>
+    <tunit xpath="//volume[4]/missive[35]/footnote[2]" type="footnote" id="t2" offset="171" length="48"/>
+    <tunit xpath="//volume[4]/missive[35]/footnote[3]" type="footnote" id="t3" offset="219" length="93"/>
+    <tunit xpath="//volume[4]/missive[35]/remark[4]" type="remark" id="t4" offset="312" length="310"/>
+    <tunit xpath="//volume[4]/missive[35]/remark[5]" type="remark" id="t5" offset="622" length="38"/>
+    <tunit xpath="//volume[4]/missive[35]/remark[6]" type="remark" id="t6" offset="660" length="598"/>
+    <tunit xpath="//volume[4]/missive[35]/footnote[7]" type="footnote" id="t7" offset="1258" length="97"/>
+    <tunit xpath="//volume[4]/missive[35]/remark[8]" type="remark" id="t8" offset="1355" length="83"/>
+    <tunit xpath="//volume[4]/missive[35]/footnote[9]" type="footnote" id="t9" offset="1438" length="82"/>
+    <tunit xpath="//volume[4]/missive[35]/footnote[10]" type="footnote" id="t10" offset="1520" length="60"/>
+    <tunit xpath="//volume[4]/missive[35]/remark[11]" type="remark" id="t11" offset="1580" length="147"/>
+    <tunit xpath="//volume[4]/missive[35]/remark[12]" type="remark" id="t12" offset="1727" length="200"/>
+    <tunit xpath="//volume[4]/missive[35]/footnote[13]" type="footnote" id="t13" offset="1927" length="9"/>
+    <tunit xpath="//volume[4]/missive[35]/footnote[14]" type="footnote" id="t14" offset="1936" length="122"/>
+    <tunit xpath="//volume[4]/missive[35]/remark[15]" type="remark" id="t15" offset="2058" length="179"/>
+    <tunit xpath="//volume[4]/missive[35]/remark[16]" type="remark" id="t16" offset="2237" length="38"/>
+    <tunit xpath="//volume[4]/missive[35]/remark[17]" type="remark" id="t17" offset="2275" length="242"/>
+    <tunit xpath="//volume[4]/missive[35]/footnote[18]" type="footnote" id="t18" offset="2517" length="41"/>
+    <tunit xpath="//volume[4]/missive[35]/footnote[19]" type="footnote" id="t19" offset="2558" length="32"/>
+    <tunit xpath="//volume[4]/missive[35]/remark[20]" type="remark" id="t20" offset="2590" length="76"/>
+    <tunit xpath="//volume[4]/missive[35]/remark[21]" type="remark" id="t21" offset="2666" length="288"/>
+    <tunit xpath="//volume[4]/missive[35]/footnote[22]" type="footnote" id="t22" offset="2954" length="9"/>
+    <tunit xpath="//volume[4]/missive[35]/remark[23]" type="remark" id="t23" offset="2963" length="663"/>
+  </tunits>
+</NAF>

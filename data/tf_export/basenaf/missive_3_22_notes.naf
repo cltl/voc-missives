@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Maetsuycker, Hartsinck, Verburch, Steur, Thijsz; Batavia, 29 januari 1663" filename="missive_3_22_notes.naf"/>
+    <public publicId="missive_3_22_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[De inhoud komt grotendeels overeen mei die van Daghregisters 1-29 jan. 1663 , p. 1-25; verder valt te vermelden: de voorafgaande retourschepen vertrokken laat door de late aankomst van schepen uit allerlei delen van Azië te Batavia; door tegenwind is de vloot pas 15 jan. Straat Sunda gepasseerd; er is groter bemanning dan is toegestaan, omdat vele uitgedienden moesten worden teruggezonden; tegen verwachting kwam geen schip uit Banda met muskaatnoten; er is geen rijst naar de Molukken gezonden, daar er nog voor twee jaar voorraad is » 
+NI. met de op dat ogenblik aanwezige schepen. , 
+Het aantal te Batavia voor pairia aangevraagde wissels neemt af, .. . . » 
+Op 31 dec. 1662 bedroeg het Compagnieskapitaal in het Oosten in reële effecten f. 9956715. 7. 10; na 26 dec. is nog voor 7404 rsd. aan wissels op patria getrokken » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[3]/missive[22]/remark[1]" type="remark" id="t1" offset="0" length="541"/>
+    <tunit xpath="//volume[3]/missive[22]/footnote[2]" type="footnote" id="t2" offset="541" length="49"/>
+    <tunit xpath="//volume[3]/missive[22]/remark[3]" type="remark" id="t3" offset="590" length="75"/>
+    <tunit xpath="//volume[3]/missive[22]/remark[4]" type="remark" id="t4" offset="665" length="166"/>
+  </tunits>
+</NAF>

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Maetsuycker, Verburch, Van Goens, Pit, Overtwater, Speelman, Ranst, Van Hoorn, Abbema; Batavia, 25 september 1675" filename="missive_4_4_notes.naf"/>
+    <public publicId="missive_4_4_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Vgl. Daghregisters p. 237-251; deze brief gaat met de Cesar, die 2 sept. uitEngeland te Bantam kwam; geringe rijstaanvoer te Batavia» 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[4]/missive[4]/remark[1]" type="remark" id="t1" offset="0" length="135"/>
+  </tunits>
+</NAF>

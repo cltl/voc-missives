@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Maetsuycker, Hartsinck, Cunaeus, Verburch, Steur, Van den Bogaerde; Batavia, 6 februari 1654" filename="missive_2_46_notes.naf"/>
+    <public publicId="missive_2_46_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[De 6 retourschepen zijn 24 jan. buiten Straat Sunda geraakt; berichten over Kaap de Goede Hoop , afgedr. Daghregisters, 8 mei 1653 , p. 48-50, 20 juni, p. 85-86; het garnizoen is er op 150 koppen gebracht » 
+Vervolg van de gegevens, afgedr. Daghregisters, t. a. p .; mededelingen van den Jezuiet Martinus Martini aan Van Riebeeck omtrent het voorkomen van goud aan Afrika’ s oostkust; vgl. Resoluties I , p. 15 en 37 » 
+Vervolg van de gegevens, afgedr. Daghregisters, t. a. p.; van robbeveüen . . . » 
+Zeekoe, dujong, aan welks tanden medicinale kracht werd toegekend. 
+Cadjangh, maleis katjang, naam voor verschillende boonsoorten. 
+Daar de retourschepen de Kaap niet aandoen, zal een fluit derwaarts via Mauritius gaan; de Engelsen hebben, naar Europa varend, de Kaap niet aangedaan; er zijn slechts 7 Engelse jachten in het oosten; de Morgensterre met 304 pak zijde uit Perzië blijft nog uit; de reis van de Westvriesland, vgl. Daghregisters, 20 juni 1653 , p. 86-88 het jacht Erasmus kwam uit patria met 168 koppen, w. o. 53 soldaten; het had maar 2 sterfgevallen; alle schepen samen hebben maar 1851 man aangebracht, terwijl er 4000 nodig waren; met de retourvloot repatriëren 877 gagetrekkenden, 34 vrouwen enz.; er is dus gebrek aan volk; af gelegde schepen; daar ds. Gravius vertrekt, zijn er nog maar 19 predikanten; Appeldoorn en Panterus naar patria gezonden; 27 jan. heeft de kerkeraad een geschrift ingediend over het overplaatsen van predikanten,). 
+Zie voor deze aangelegenheid Protestantsche Kerk p. 70. 
+Van der Lijn had 24 aug. 1648 vergund , dat 4 predikanten steeds te Batavia zouden blijven zonder naar elders te kunnen worden gezonden en dat nieuw aankomende predikanten geen stem in de kerker aad zouden hebben; dit strijdt met Compagniesvoor schriften en was niet in Rade besproken; aan Heren XVII wordt gevraagd, waarom Dirck Schouten ongeacht een onterend vonnis van 1630 steeds in dienst is gehouden , nu als generaal-boekhouder » 
+Dermayo, Indramaju, plaats ter noordkust van Java op 108°20' O. L. , 
+De schulden van de Chinezen te Batavia komen langzaam binnen, daar ze meest arm zijn; ze bedroegen op 1 jan. nog f. 253204; kapitein Jan Willemsz. zal van Malakka worden opgeroepen, daar hij Engelsman is » 
+Hartzinck voorlopig op fl. 500. — salaris en 100 realen kostgeld p. m. gesteld; 11 jan. is Verburch uit Thaiwan via Malakka gekomen met cargasoen van f. 18147. 3. 5; te Malakka zijn 11000 taël Japans zilver, waard f. 31365. 13. 8, gelost voor Ligor; uit Thaiwan is 4 dec. in 4 schepen voor f. 2425925. 15. 15 gezonden; voor Coromandel aan goud plus schuitzilver voor f. 1481468. 5. 1, voor Suratte meest koper voor f. 23014. 5. 6, voor Perzië meest suiker en koper voor f. 139945. 10. 14, voor Bengalen vnl. schuitzilver voor /. 781497 . 14. 1, voorts iets voor Malakka » 
+Congia, blijkbaar een woord uit een taal van Formosa voor arbeider, koeli. 
+Gommeslach, bekkenslag. Gom = gong. 
+Ds. Bacherius volgt in Favorlang wijlen ds. Happart op; de gouverneur van Formosa zal de bevolking van de Tickeranse velden de bebouwing aanbevelen; zo zij niet wil, zal Compagniespersoneel ze mogen beplanten met tarwe voor Batavia; het garnizoen van Ki-Lung lijdt aan pestilentiale koortsen; er woedde een sprinkhanenplaag evenals in Zuid- Formosa; de sterfte onder de bevolking neemt toe; aan Goxinga zal satisfactie worden gedaan voor de goederen, door Wagenaar uit zijn jonk genomen; hij heeft geschreven, » 
+In Japan is van 1 nov. 1652 tot 10 nov. 1653 gewonnen f. 955925. 8. 14; de onkosten waren er f. 64826. 1. 9 ; de nu gaande retourschepen hebben cargasoen van f. 536156. 1-; te Batavia blijft 56756 picol peper, 11714 picol suiker en veel kaneel; in jan. en febr. zijn te Batavia 3 Chinese jonken gekomen, nog 4 of 5 zullen volgen; de te zenden peper wordt voortaan te Batavia beter gezuiverd, de prijs gesteld op 8 realen tegen 6 de ongezuiverde » 
+Nog voor f. 9097. 15. 4 aan wissels op patria af gegeven » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[2]/missive[46]/remark[1]" type="remark" id="t1" offset="0" length="208"/>
+    <tunit xpath="//volume[2]/missive[46]/remark[2]" type="remark" id="t2" offset="208" length="212"/>
+    <tunit xpath="//volume[2]/missive[46]/remark[3]" type="remark" id="t3" offset="420" length="82"/>
+    <tunit xpath="//volume[2]/missive[46]/footnote[4]" type="footnote" id="t4" offset="502" length="68"/>
+    <tunit xpath="//volume[2]/missive[46]/footnote[5]" type="footnote" id="t5" offset="570" length="64"/>
+    <tunit xpath="//volume[2]/missive[46]/remark[6]" type="remark" id="t6" offset="634" length="830"/>
+    <tunit xpath="//volume[2]/missive[46]/footnote[7]" type="footnote" id="t7" offset="1464" length="57"/>
+    <tunit xpath="//volume[2]/missive[46]/remark[8]" type="remark" id="t8" offset="1521" length="438"/>
+    <tunit xpath="//volume[2]/missive[46]/footnote[9]" type="footnote" id="t9" offset="1959" length="70"/>
+    <tunit xpath="//volume[2]/missive[46]/remark[10]" type="remark" id="t10" offset="2029" length="207"/>
+    <tunit xpath="//volume[2]/missive[46]/remark[11]" type="remark" id="t11" offset="2236" length="573"/>
+    <tunit xpath="//volume[2]/missive[46]/footnote[12]" type="footnote" id="t12" offset="2809" length="76"/>
+    <tunit xpath="//volume[2]/missive[46]/footnote[13]" type="footnote" id="t13" offset="2885" length="37"/>
+    <tunit xpath="//volume[2]/missive[46]/remark[14]" type="remark" id="t14" offset="2922" length="513"/>
+    <tunit xpath="//volume[2]/missive[46]/remark[15]" type="remark" id="t15" offset="3435" length="448"/>
+    <tunit xpath="//volume[2]/missive[46]/remark[16]" type="remark" id="t16" offset="3883" length="60"/>
+  </tunits>
+</NAF>

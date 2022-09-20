@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:39CEST" title="Van Imhoff, Pasques de Chavonnes, Crul, Nolthenius, Van Aerden, Lakeman, Cluysenaar, Overbeek, Van den Bosch, Schuylenburg, Mossel; Batavia, 3 november 1744" filename="missive_11_8_text.naf"/>
+    <public publicId="missive_11_8_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:39CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:39CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[VIII. GUSTAAF WILLEM VAN IMHOFF, PIETER ROCHUS PASQUES DE CHAVONNES, NICOLAAS CRUL, DANIËL NOLTHENIUS, MAURITS VAN AERDEN, JACOB LAKEMAN, JOHANNES MATTHEUS CLUYSENAAR, DANIËL OVERBEEK, JACOB VAN DEN BOSCH, GIJSBERTUS SCHUYLENBURG en JACOB MOSSEL, BATAVIA 3 november 1744. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[11]/missive[8]/header[1]" type="header" id="t1" offset="0" length="273"/>
+  </tunits>
+</NAF>

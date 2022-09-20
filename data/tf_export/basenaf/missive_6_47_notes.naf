@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Van Hoorn, Van Riebeeck, Van Swoll, De Wilde, Douglas, De Vos, Phoonsen, Van Rijn, Zwaardecroon, Becker, Chasteleyn; Batavia, 15 januari 1707" filename="missive_6_47_notes.naf"/>
+    <public publicId="missive_6_47_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Verzonden met de Steltenberg voor Rotterdam en de Bon voor Enkhuizen; de Berg haalde de in nov. vertrokken schepen, die in Straat Sunda tegenwind hadden, in; 21 dec. kwamen uit Japan de Sloten en de Belvliet met het opperhoofd Herman Mensing de zijde bleef er tot een waarde van ƒ. 271944 onverkocht, zodat er netto maar f. 294832 of 58% werd gewonnen; in Djambi verscheen Pangéran Pringabaja niet voor een bespreking met Rooselaar, Pangéran Kjahi Oedé maakte daardoor nog een betere indruk, hij ivas bereid afstand te doen, als zijn broeder wilde overkomen, het is er evenwel rustig; in Palembang stierf de oude Sultan, oud 90 a 100 jaar, het bleef er rustig; de jonge Vorst zal vaartuigen met peper Tiaar Batavia zenden; 9 jan. vertrok de Driebergen naar Negapatam met carg. van f. 371126, w. o. 2\ ton aan goud » 
+Vrijgelaten, vluchtte hij; er kwamen ook enige Portugese vaartuigen aan, van wie men thee kocht, daar nog geen jonken arriveerden; de gouverneur van Macaa verzocht een pakket aan den Generaal der Jezuieten in Rome over te maken; een Chinese jonk uit Manilla gaf voor naar Canton te hebben willen varen, wat » 
+Twee der vroeger aangekomen priesters varen nu mee naar patria , één » 
+Opgave der lasten te Batavia: » 
+terwijl werd ontvangen f. 1624209, w. o. f. 1009635 aan handelswinst en f. 5589351 aan inkomsten van het Koninkrijk Jakatra; de inkomsten te Batavia bedroegen: » 
+De inkomsten van de pacht op de hanenvechterijen ad 125 rds. p. m. werden voor de bouw van het stadhuis bestemd; de verdere verpachtingen hadden 31 dec. plaats voor 12230 rsd. per maand , vnl. de groentekramen 3190, het hoofdgeld der Chinezen 2240, de rijstaanvoer 1410; de Overrijp vertrekt naar de Kaap met cargasoen vanf. 37205, mede onder commando van den commanderenden schipper Adriaen Palensteyn; wegens salpetertekort werd ook suiker en koper als ballast gebruikt; het cargasoen der twee retourschepen bedraagt f. 213113, w. o. 10136 CD thee en 748678 CD peper; voor 8911 rsd. werd aan wissels op patria getrokken; na het sluiten van de brief arriveren 2 jonken uit Amoy, waar maar één Engels schip kwam » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[6]/missive[47]/remark[1]" type="remark" id="t1" offset="0" length="817"/>
+    <tunit xpath="//volume[6]/missive[47]/remark[2]" type="remark" id="t2" offset="817" length="310"/>
+    <tunit xpath="//volume[6]/missive[47]/remark[3]" type="remark" id="t3" offset="1127" length="72"/>
+    <tunit xpath="//volume[6]/missive[47]/remark[4]" type="remark" id="t4" offset="1199" length="33"/>
+    <tunit xpath="//volume[6]/missive[47]/remark[5]" type="remark" id="t5" offset="1232" length="163"/>
+    <tunit xpath="//volume[6]/missive[47]/remark[6]" type="remark" id="t6" offset="1395" length="715"/>
+  </tunits>
+</NAF>

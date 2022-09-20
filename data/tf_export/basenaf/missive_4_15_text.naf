@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:38CEST" title="Van Goens, Speelman, Van Outhoorn, Camphuys, Pits, Nobel; Batavia, 8 mei 1678" filename="missive_4_15_text.naf"/>
+    <public publicId="missive_4_15_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[III. RYCKLOFF VAN GOENS, CORNELIS SPEELMAN, WILLEM VAN OUTHOORN, JOANNES CAMPHUYS, JACOB PITS EN CONSTANT! JN NOBEL, BATAVIA 8 mei 1678 
+U Ed. e ordre ontrent het licentieeren van d’oude heeren Pit, Overtwater, Van Hoorn ende Pavillioen met eerbiedige gehoorsaamhevt, doch niet zonder onse innerlijcke beweegingh, volbracht 
+hebben met consenante ad vijsen geresol veert alle perticuliere vaarth van daar te weeren, niet alleen van vreemde, maar ook van de Bataviase ende Malaxe burgeryen, die doch Compagnijs handel alom niet alleen schadelijck z\jn, maar bederven. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[4]/missive[15]/header[1]" type="header" id="t1" offset="0" length="137"/>
+    <tunit xpath="//volume[4]/missive[15]/paragraph[2]" type="paragraph" id="t2" offset="137" length="188"/>
+    <tunit xpath="//volume[4]/missive[15]/paragraph[3]" type="paragraph" id="t3" offset="325" length="243"/>
+  </tunits>
+</NAF>

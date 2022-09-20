@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:38CEST" title="Maetsuycker, Hartsinck, Verburch, Van Goens, Pit, Overtwater, Van den Brouck, Thijsz, Van Hoorn, Cops; Batavia, 4 augustus 1664" filename="missive_3_25_text.naf"/>
+    <public publicId="missive_3_25_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XXXI. JOAN MAETSUYKER, CAREL HARTSINCK, NICOLAES VERBURCH, RYCKLOFF VAN GOENS, LAURENS PIT, PIETER OVERTWATER, MATTHEUS VAN DEN BROUCK, JOAN THIJSZ., PIETER VAN HOORN EN JACOB COPS, BATAVIA 4 aug. 1664. 
+Den Temaatsen vrijburger Craan Leendertsen was van voorneemen met sijn jacht in juny een voyage naa de Manillias te ondernemen; warende te wenschen, hij aldaar door de Spangniaarden in handel wierden geadmitteert om alsoo in tijden en wijlen tot het stabilieren van een proffitable negotie met die vrunden te konnen geraaken. 
+weesende eene sijner schoepen groot 130 & 140 lasten, van Maccau met speauter, muscus, goudt, gouddraad, zijdestoffen, cooper en radix China soo voor eygen als andere coopluyden reeckeninge op Maccassar gearri veert, over welcke handel den commissaris Cauw wel ernstigh ontrent den Coninck heeft gedoleert, maar echter niet konnen verwerven, haar den handel voor dat maal ontseght is geworden. 
+Den ouden Pangeran Ratou is aldaar van sijnen staat affgeset en in sijn plaats weder ingelaaten den Pangeran Souria Nata, welcke veranderinge d’ E. Comp. e schaadelijk zijn 
+Dat Nagapatam d’E. Comp. e tot noch maar voor een extraordinaren last is geweest en noch voor een tij t blijven zal, is notoir, maar, soo lange wij die stadt blijven in besit houden, sullen haar de Mooren wel wachten d’ E. Comp. e om ’t besit van ’t casteel Geldria tot Palliacatta eenigh gewelt aan te doen, beginnende tselve over ’t eygen besit van fortresse bij de Christenen in des Conings landen hoe lange hoe meer jaloers te werden. wordende de stadt S. 1 Thomé tot noch toe van den Koninck van Golconda ingehouden, schoon de Portugeesen haar wacker laaten hooren bij vorder weygeringe van wederinruyminge derselver stadt haar op de scheepen, welcke uyt des Koninghs landen naar Persia en Mocha etc. a werden uytgerust, te willen guaranderen, zijnde het wel sulcx, dat gemelten Portugesen uyt hare gefortificeerde steden op de Cust zijn verdreven, maar deselve voornaamste inwoonders hebben haar ten meerendeele onder ’t gebied van d’Engelse in de stadt Madrespatam, weynige op Tranckebare en een redelijck gedeelte op Porte Novo ternedergeset, de welcke nu met den vreede ontwijffelijck almede in de Cormandelsche kledenhandel sullen beginnen te woelen; hebbende de Deenen dit jaar met haar jacht Fredericus met een matelijk kleedencargasoen soo voor eygen reeckeningen als op vracht weder op Japara en Macassar geweest, sulcx dat het blijck zij, haar met die smalle negotie en overwinste nochal weeten te redden, sonderdat se tzedert weder op den rooff zijn ujdgeweest, waartoe haar oock een goet zeecapit. n gebreeckt, alsoo schipper Simon Jansz. eyndel. van haar is affgeraackt en sich onder Comp. 8 jurisdictie heeft begeven. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[3]/missive[25]/header[1]" type="header" id="t1" offset="0" length="204"/>
+    <tunit xpath="//volume[3]/missive[25]/paragraph[2]" type="paragraph" id="t2" offset="204" length="327"/>
+    <tunit xpath="//volume[3]/missive[25]/paragraph[3]" type="paragraph" id="t3" offset="531" length="395"/>
+    <tunit xpath="//volume[3]/missive[25]/paragraph[4]" type="paragraph" id="t4" offset="926" length="174"/>
+    <tunit xpath="//volume[3]/missive[25]/paragraph[5]" type="paragraph" id="t5" offset="1100" length="1638"/>
+  </tunits>
+</NAF>

@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:38CEST" title="Van Goens, Pit, Overtwater, Van Hoorn, Paviljoen; Batavia, 16 januari 1678" filename="missive_4_13_text.naf"/>
+    <public publicId="missive_4_13_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[I RIJCKLOFF VAN GOENS, LAURENS PIT, PIETER OVERTWATER, PIETER VAN HOORN EN ANTHONIO PAVILJOEN, BATAVIA 16 januari 1678 
+met ’t Huys te Spijk, Wimmenum en Marken na Cormandel 813000 gis , met de Beemster na Bengale 135000 gis.; met ’t Wapen van Middelburg, Schielant en Odijk naar Cheylon 65000 gis. en met deselve drie schepen na Mallabar 396000 gis., na Souratta 68000 gis. en Persia 61000 gis., alle van ’t Japanse retour en 500000 thin, etc., tot Malacca daarbij ge voegt. 
+Weynige daagen naar het vertrek van de 6 retourscheepen is den Heere Generaall Joan Maatsuyker, nadat bevorens langen tijt seer siekel. k en pijnelijk gegaan hadde, van de Heere onse Godt besogt en in ’t siekbedde gaan nederleggen. Zijnde naar 22 dagen bedlegers van een seer pijnelijk accident Christelijck in den Heere gerust ende tot het uytterste toe volcomen bij sijn verstant geweest. Hebbende 3 daagen voor sijn overlijden ons de bestieringh der saaken in ’t geheel overgegeven. 
+bijsonderlijck om tot troost der participanten den verdruckten in- landschen handel te doen floreren en weder herstellen, 
+Waaren wij met de stadt Batavia rontsomme (except aan de zee in ’t noorden) onder sijn magt beslooten ende alle de Batavische landeryen in sijn gewelt, sonderdatter te lande sonder zijn believen yets naar de stadt konde gebragt werden. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[4]/missive[13]/header[1]" type="header" id="t1" offset="0" length="120"/>
+    <tunit xpath="//volume[4]/missive[13]/paragraph[2]" type="paragraph" id="t2" offset="120" length="357"/>
+    <tunit xpath="//volume[4]/missive[13]/paragraph[3]" type="paragraph" id="t3" offset="477" length="487"/>
+    <tunit xpath="//volume[4]/missive[13]/paragraph[4]" type="paragraph" id="t4" offset="964" length="123"/>
+    <tunit xpath="//volume[4]/missive[13]/paragraph[5]" type="paragraph" id="t5" offset="1087" length="237"/>
+  </tunits>
+</NAF>

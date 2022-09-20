@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:38CEST" title="Maetsuycker, Hulft, Hartsinck, Cunaeus, Verburch, Steur, Van den Bogaerde; Batavia, 12 juli 1655" filename="missive_3_1_text.naf"/>
+    <public publicId="missive_3_1_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[VII. JOAN MAETSUYKER, GEKARD HULFT, CAREL HARTZINCK, JOAN CUNAEUS, NICOLAES VERBURCH, DIRCK STEUR EN GASPAR VAN DEN BOGAERDE, BATAVIA 12 juli 1655. 
+Het Deens jachje de Fredericus is op 7 april schielijck ende, sooder geseckt wort, sonder verlof van den Sulthan genomen te hebben, na Cormandel vertrocken, hebbende haeren coopman ofte schrijver met 11 000 realen aen uytstaende schulden onder de Sulthan ende de grooten tot Bantam laeten staen, soodat haer cargasoen niet seer groot en can sijn. 
+vermits den mandorijn Cocxinja lietselve overal liet opcoopen om tot sijn eygen negotie na andere plaetsen te gebruycken ende de winsten, soo hij self schrijft, te dienen tot betalinge van sijn crijgsvolck, daer hij al veel toe van doen sal hebben. Bovendien soo wierden de wegen door de Tartaren op veele plaetsen in China onveyl ende geslooten gehouden tot veracliteringe van den coophandel, waerom den . . . gouverneur sijnen eysch van peper ende eenige andere coopmanschappen al vrij heeft vermindert. 
+De landtocht om de zuyd .... was door den drost Frederick Schedel ende cap. tn Thomas Pedel gedaen ende de oproerige dorpen met straffe van eenige quaetdoenders in vrede gestelt. De suyckerplantagie stond op Formosa seer schoon, die men meende, dat tegen julio aenstaende niet min dan 12 of 13 000 picol soude uytle veren boven de 7457 p. 1, van het voorige jaer overgebleven ende was wederom 15 000 t. 1 aen coopmanschappen aen de Chinesen hoofden op leverantie van suycker geadvanceert. Ende vermits het gesay door de plage der sprinckhanen op eenige plaetsen veel bedorven was, waerdoor in ettelijcke dorpen hongersnoot was ontstaen, soo had den gouverneur ende raedt om de arme menschen de mondt open te houden uyt Comp. 8 packhuys 28 lasten rijs tot een aelmoesse uytgereyckt. I 
+De Vice-Rey in Goa heeft de chaloup de Maecht van Dordrecht, voorleden jaer in Sualys Chom genomen, eyndelijck op 6e decemb. r weder gelargeert ende vrijgegeven met 12 gevangens, daeronder oock de luytenant Christoffel Egger ende vendrich Harmen Broer over 2 jaaren op Zeylon aen Angruatotte gecregen, waerjegens den e. van Gendt, .... en passant op Wingurla sijnde, haer weder vrijgestelt hadde eenige papen ende andere, van Zeylon medegenomen. 
+sijn 2 october verleden jaers voor Goa uyt Poortugael aengecomen twee galloens ende een hurke met 12 of 13 hondert coppen ende gelaaden met weynich coopmansz. als corael, eliphantstanden, snuyf toeback, wijn, olye, papier ende partij e comtanten, maer het grootste van desel ve galloens was 5 daagen daemae door storm van ancker gesmeten ende vergaen, doch het volck ende de meeste coopmanschappen geberght, het tweede galloen bleef onder het casteel d’Aguada ten ancker leggen, sonderdat van desselfs versendinge gewaecht wierd ende de hurke was de rivier opgecort tot voor het cruythuys, weynich beneden de stadt. Maer in february verleden had de Vice-Rey een carveel particuliere coopluyden toebehoorende, na Portugael afgeveerdicht, doch hetselve was, nadat 5 dagen in zee was geweest, vermits quade afladinge onbequaem geoordeelt de reyse te volbrengen ende weder binnengecomen .... Die van gen. stadt waren eyndelijck mette Coninck van Visiapour verdragen ende desselfs veldleger ingetrocken De Sivapaneyck .... heeft d’fortresse Onor ten lesten geëmporteert ende den Portugeesen gouverneur gedwongen sich mettet guamisoen ende den ommeslach te waater naer Goa te salveeren. Na Zeylon wierd gerucht, dat 500 man tot secours soude worden gesonden, maer dewijl de Vice-Rey en de andere grooten seer oneenich tegen malkander waaren ende het mousson ten eynde liep, soo twijffelde men, of de besendinge al zoude voortgaen. 
+hebbende in de maendt decembr. bij occasie van de aencomste van den e. Van Gendt .... mette jachten Naerden, Sluys, Zirckzee ende Avenhorn 
+den vijandt sijn fortificatie aen de rivier van Alican na een hevigh gevecht stormenderhandt ingenomen ende 54 Portugesen afgeslaagen. 
+Tusschen de Portugesen ende ons en is in ketselve quartier dit jaer niet sonders voorgevallen, maer deselve is in de maendt april jongstleeden een grooten afbreuck geschiet door het af vallen van den Sonnebayer op Timor met sijne adherenten, sijnde voor desen een van haere getrouste ende vermogenste bondtgenoten geweest, hebbende alle de Portugesen, die in sijn landt gevonden wierden, dootgeslaagen, haere goederen gerooft ende de kercken ende huysen in den brandt gesteken ende vernielt, mitsgaders ons voort tot sijn adsistentie ende bescherminge versocht, die haer na vermogen soude worden verleent, tot welcken eynde het jacht Hoorn daer noch overgebleven is. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[3]/missive[1]/header[1]" type="header" id="t1" offset="0" length="149"/>
+    <tunit xpath="//volume[3]/missive[1]/paragraph[2]" type="paragraph" id="t2" offset="149" length="348"/>
+    <tunit xpath="//volume[3]/missive[1]/paragraph[3]" type="paragraph" id="t3" offset="497" length="507"/>
+    <tunit xpath="//volume[3]/missive[1]/paragraph[4]" type="paragraph" id="t4" offset="1004" length="785"/>
+    <tunit xpath="//volume[3]/missive[1]/paragraph[5]" type="paragraph" id="t5" offset="1789" length="447"/>
+    <tunit xpath="//volume[3]/missive[1]/paragraph[6]" type="paragraph" id="t6" offset="2236" length="1426"/>
+    <tunit xpath="//volume[3]/missive[1]/paragraph[7]" type="paragraph" id="t7" offset="3662" length="140"/>
+    <tunit xpath="//volume[3]/missive[1]/paragraph[8]" type="paragraph" id="t8" offset="3802" length="136"/>
+    <tunit xpath="//volume[3]/missive[1]/paragraph[9]" type="paragraph" id="t9" offset="3938" length="668"/>
+  </tunits>
+</NAF>

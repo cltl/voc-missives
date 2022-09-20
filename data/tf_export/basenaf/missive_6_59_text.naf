@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:38CEST" title="Van Hoorn, Van Riebeeck, Van Swoll, Douglas, De Vos, Van Rijn, Chasteleyn, Zwaardecroon, De Haan, De Haeze, Tolling, Castelyn; Batavia, 29 oktober 1709" filename="missive_6_59_text.naf"/>
+    <public publicId="missive_6_59_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XXX. JOAN VAN HOORN, ABRAHAM VAN RIEBEECK, CHRISTOFFEL VAN SWOLL, ABRAHAM DOUGLAS, PIETER DE VOS, ADAM VAN RIJN, CORNELIS CHASTELEIN, HENDRICK ZWAARDECROON, MATTHEUS DE HAAN, THEODORUS DE HAEZE, LAURENS TOLLING EN FRANS CASTELIJN, BATAVIA 29 october 1709. 
+Invoegen het gebrek van schepen en volck nog al blijft contïnueeren en soo is het ook in opsigte van de contanten, equipagiegoederen en veele victualiën. 
+Zijnde den nieuwen Mogolsen Keyser Sja-alem of Badursjah desen jare na ’t slaan van sijn broeder Cambax omtrent Golconda, evenals des jaars bevorens Assem Terra, ten eersten na Dilly opgetogen. 
+Dese successen en vaststellinge van den Mogol hebben ons aanleydinge en oorsaeke gegeven om de geprojecteerde ambassade aan desen Vorst tot renovatie der previlegiën voor Comp. 8 handel etc. a nader vast te stellen en ten eersten te laten voortgaan en daartoe te verkiesen den Surats directeur Cornelis Besuyen 
+’t afsterven van den Coninck van Goa en de successie van Radja Bones oudste soon Sampualy dog dat zulx egter al met vrij wat ombra- gie was verselt geweest in opsigt van Radja Bone’s tweede soon Arou Palacca, die door een groot dégout met zijn eygen vader uyt Bone na Goa ge vlug t en al veel beweginge tusschen de Macassaren en Bouginesen over geweest was, dog den gouverneur Erbervelt door een voorsigtige conduite tot nog alles buyten ontroeringe hadde konnen houden. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[6]/missive[59]/header[1]" type="header" id="t1" offset="0" length="257"/>
+    <tunit xpath="//volume[6]/missive[59]/paragraph[2]" type="paragraph" id="t2" offset="257" length="155"/>
+    <tunit xpath="//volume[6]/missive[59]/paragraph[3]" type="paragraph" id="t3" offset="412" length="195"/>
+    <tunit xpath="//volume[6]/missive[59]/paragraph[4]" type="paragraph" id="t4" offset="607" length="312"/>
+    <tunit xpath="//volume[6]/missive[59]/paragraph[5]" type="paragraph" id="t5" offset="919" length="472"/>
+  </tunits>
+</NAF>

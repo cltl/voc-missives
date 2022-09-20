@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Maetsuycker, Verburch, Pit, Overtwater, Van Hoorn; Batavia, 30 november 1669" filename="missive_3_44_notes.naf"/>
+    <public publicId="missive_3_44_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Vgl. Daghregisters 1669, p. 456-460 deze brief gaat mee mei het Engelse schip Jane Margaret; de tradalen, in Zuid-Celebes gesloten, gaan in druk mee » 
+Zuid-Celebes. 
+Goede handel in J apan » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[3]/missive[44]/remark[1]" type="remark" id="t1" offset="0" length="152"/>
+    <tunit xpath="//volume[3]/missive[44]/footnote[2]" type="footnote" id="t2" offset="152" length="15"/>
+    <tunit xpath="//volume[3]/missive[44]/remark[3]" type="remark" id="t3" offset="167" length="26"/>
+  </tunits>
+</NAF>

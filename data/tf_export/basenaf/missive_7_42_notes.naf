@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Zwaardecroon, De Haan, Huysman, Hasselaar, Tolling, Durven, Van Dishoeck, Blom; Batavia, 2 april 1724" filename="missive_7_42_notes.naf"/>
+    <public publicId="missive_7_42_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[De Anna Maria van de Kamer Zeeland kwam 31 maart aan met een brief van Heren XVII van 21 juli 1723; De Haan betuigt dank voor zjjn definitieve benoeming tot Directeur-Generaal, h (j heeft bijna 43 jaar dienst; er werd in de middag van 28 maart een secrete resolutie over Crudop genomen » 
+Crudop, van wien Zwaardecroon en de raden van Indië meenden, dat hij aan lepra leed, hij ontkende het, maar was bereid uit de Raad weg te blijven. 
+De Astrea kwam zo juist van Ceylon met een brief van Herten berg en raad van 23 febr. en een lading peper van 588500 ® , waard f 96776 » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[7]/missive[42]/remark[1]" type="remark" id="t1" offset="0" length="289"/>
+    <tunit xpath="//volume[7]/missive[42]/footnote[2]" type="footnote" id="t2" offset="289" length="148"/>
+    <tunit xpath="//volume[7]/missive[42]/remark[3]" type="remark" id="t3" offset="437" length="138"/>
+  </tunits>
+</NAF>

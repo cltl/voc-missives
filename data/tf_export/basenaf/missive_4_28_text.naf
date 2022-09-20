@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:38CEST" title="Van Goens, Speelman, Bort, Hurdt, Van Outhoorn, Camphuys, Bent; Batavia, 31 december 1680" filename="missive_4_28_text.naf"/>
+    <public publicId="missive_4_28_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XVI. RYCKLOFF VAN GOENS, CORNELIS SPEELMAN, BALTHASAR BORT, ANTHONIO HURDT, WILLEM VAN OUTHOORN, JOANNES CAMPHUYS EN FREDERIK BENT, BATAVIA 31 dec. 1680 
+Meynende den directeur en raadt, geen redres tot herstellinge in dat rijck scheen off ware te verwaghten dan door wapenen off andere violente middelen om de Persianen tot redelijckheyt te constringeren, ’twelck als veel voeten in d’aarde hebbende, zoo zullen wij ons nader daerop beraden. 
+Den eenen Nangasackisen gouvern. r Mangocrodonne was van dat gouvernement op eygen versoeck ontslagen en een ander kaal edelman, gen. 1 2 3 4 Ginsemon Cauwagoets dogh van veel hoger extractie en hoogmoediger inborst als den anderen gouverneur Tsjouzeymondonne hem gesuccedeert. 
+Aan de revier van Carwangh dagen onse Javaanse hooffden alweder over de Balyers, die daar nu zedert 2 & 3 jaren hebben huysgehouden en zig al twee malen voor de Comp. ie gesubmitteert en zullen wij daerin t’zijner tijt moeten voorsien. 
+want wij moeten door gebreck van masten als andere ronthouten verscheyde schepen te deser rheede onvaerbaar laten leggen en, als’er een sal t’zeyl gaan, de materialen van de andere af f nemen, dat bij continuatie voor den dienst van de Comp. le niet zoodanigh dan tot haar grootste schade sal te stellen zijn. 
+Den jongen Bantamsen Coninck schijnt alsnoch zeer te ijveren in het maken van een nieuwe fortres zoo men voorgeeft tot zijn eygen versekeringe, leggende een goet stuck weegs agter zijn palleys na de landtzijde. 
+Het silver blijft in Bengala noch al op een hooge merckt en in de meeste valuatie en daerentegen het gout in een slegte demande, zoodat de Japanse coubangs daer thans niet meer als 16J ropia off 8J rds. konden halen. 
+Schijnende de Moorse regenten nu alle hare offitiën voor geit te koopen en, zoo haast maer een ander comt, die meerder daervoor geeft, weder gedeschargeert wert, dienvolgens, staande haar gesagh, weynigh respect aan de Conincklijke firmans en bevelschriften, in faveure van de Comp. e verleent, dragen. 
+Wegen de gewelden en vexatiën, daermede de Comp. e in Bengala wierde geplaagt, en was aan ’t Mogolse hoff tegenwoordigh geen gehoor te erlangen, dewijl den Coninck weynig aght op zijn rijxbestier gaff dan alleene om zijn driften uyt te voeren en de Comp. e nu geen bijsondere gunstelingen onder de hoffsgrooten hadde. 
+mettet aanhalen der jaarlijxe rijcke Mochase Moorse schepen zoude te erlangen en ’s Comp. es respect alsoo meteenen best te restabileren wezen. 
+Met het schip Silversteyn hebben wij op zijn versoek toegestaan naer ’t vaderlant te mogen overvaren Thomas Francees van der Capucijnenordre, voorgevende zigh tot onse religie geheelijck te willen begeven. 
+Dewijle het van U Ed. le Achtb. ® gonstige goetheyt is geweest de twee susterssoone van den Directeur- Generael Cornelis Speelman, met namen Joannes Verhaven en Barnardus Crayvangerus, op zijn versoeck den eenen tot ondercoopman en den anderen tot adsistent in dienst van de Comp. e aan te nemen, hoedanigh zij onlangs hier te lande zijn overgekomen, zoo bekent Zijn E. ten alderhoogsten schuldig en verbonden te wesen U Ed. le Achtb. e op ’t aldernedrigste te bedancken. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[4]/missive[28]/header[1]" type="header" id="t1" offset="0" length="154"/>
+    <tunit xpath="//volume[4]/missive[28]/paragraph[2]" type="paragraph" id="t2" offset="154" length="290"/>
+    <tunit xpath="//volume[4]/missive[28]/paragraph[3]" type="paragraph" id="t3" offset="444" length="279"/>
+    <tunit xpath="//volume[4]/missive[28]/paragraph[4]" type="paragraph" id="t4" offset="723" length="237"/>
+    <tunit xpath="//volume[4]/missive[28]/paragraph[5]" type="paragraph" id="t5" offset="960" length="311"/>
+    <tunit xpath="//volume[4]/missive[28]/paragraph[6]" type="paragraph" id="t6" offset="1271" length="212"/>
+    <tunit xpath="//volume[4]/missive[28]/paragraph[7]" type="paragraph" id="t7" offset="1483" length="218"/>
+    <tunit xpath="//volume[4]/missive[28]/paragraph[8]" type="paragraph" id="t8" offset="1701" length="304"/>
+    <tunit xpath="//volume[4]/missive[28]/paragraph[9]" type="paragraph" id="t9" offset="2005" length="319"/>
+    <tunit xpath="//volume[4]/missive[28]/paragraph[10]" type="paragraph" id="t10" offset="2324" length="145"/>
+    <tunit xpath="//volume[4]/missive[28]/paragraph[11]" type="paragraph" id="t11" offset="2469" length="207"/>
+    <tunit xpath="//volume[4]/missive[28]/paragraph[12]" type="paragraph" id="t12" offset="2676" length="473"/>
+  </tunits>
+</NAF>

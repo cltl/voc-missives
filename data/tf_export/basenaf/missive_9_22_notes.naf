@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Van Cloon, Blom, Van der Schuer, Westpalm, De Witte, Van Schooten, Van Bayen, Oostwalt, Valckenier, Schaghen, Patras, Thedens, Coyett; Batavia, 8 december 1732" filename="missive_9_22_notes.naf"/>
+    <public publicId="missive_9_22_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Tekst af gedrukt in De Jonge, Opkomst, dl. 6, p. 196-201 » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[9]/missive[22]/remark[1]" type="remark" id="t1" offset="0" length="60"/>
+  </tunits>
+</NAF>

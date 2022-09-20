@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Van Diemen, Lucasz, Caen; Batavia, 26 december 1637" filename="missive_1_100_notes.naf"/>
+    <public publicId="missive_1_100_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Schip Middelburch aan de retourvloot nagezonden; fluit Huisduinen 10 dec. uit Martapura gekomen » 
+De jonk Amsterdam komt 11 dec. uit Thaiwan » 
+Die van Formosa, nl. Van der Burch. 
+De Ruttem 11 dec. uit Arakan gekomen » 
+De Galiasse komt 13 dec. uit Japan » 
+Eén thael (thail) = 10 mas = 100 condrin (coudrin). 
+De Portugezen waren van dezelfde mening, vgl. Fidalgos, p. 118. 
+Gezet. 
+Japanse plannen tegen Manilla , af gedrukt Bouwstoffen II, p. 334 » 
+Dit is in strijd met wat Christian Century p. 373 gezegd wordt over de aanmoediging door de Nederlanders aan de Japanners om Manilla aan te vallen. 
+Waren, uit Nederland in Japan gekomen, waren slecht verpakt; het schip Bommel kamt 20 dec. van Tiku; schepen bestemd voor Amboina; gegevens over Bantam, afgedr. Bouwstoffen II, p. 334-335 » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[1]/missive[100]/remark[1]" type="remark" id="t1" offset="0" length="99"/>
+    <tunit xpath="//volume[1]/missive[100]/remark[2]" type="remark" id="t2" offset="99" length="46"/>
+    <tunit xpath="//volume[1]/missive[100]/footnote[3]" type="footnote" id="t3" offset="145" length="37"/>
+    <tunit xpath="//volume[1]/missive[100]/remark[4]" type="remark" id="t4" offset="182" length="40"/>
+    <tunit xpath="//volume[1]/missive[100]/remark[5]" type="remark" id="t5" offset="222" length="38"/>
+    <tunit xpath="//volume[1]/missive[100]/footnote[6]" type="footnote" id="t6" offset="260" length="53"/>
+    <tunit xpath="//volume[1]/missive[100]/footnote[7]" type="footnote" id="t7" offset="313" length="65"/>
+    <tunit xpath="//volume[1]/missive[100]/footnote[8]" type="footnote" id="t8" offset="378" length="8"/>
+    <tunit xpath="//volume[1]/missive[100]/remark[9]" type="remark" id="t9" offset="386" length="69"/>
+    <tunit xpath="//volume[1]/missive[100]/footnote[10]" type="footnote" id="t10" offset="455" length="149"/>
+    <tunit xpath="//volume[1]/missive[100]/remark[11]" type="remark" id="t11" offset="604" length="191"/>
+  </tunits>
+</NAF>

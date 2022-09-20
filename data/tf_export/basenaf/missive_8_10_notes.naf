@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="De Haan, Huysman, Hasselaar, Blom, Durven, Gabry, Dubbeldekop, Van der Schuer, Versluys, Westpalm, Van Baerle, De Witte, Van Schooten, Van Heyningen; Batavia, 27 oktober 1727" filename="missive_8_10_notes.naf"/>
+    <public publicId="missive_8_10_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Sergeant Warnar van Stade en helpers extirpeerden in 1726 op Tidore 13. 189 vruchtdragende en 4914 „telbare” notebomen , tussen 8 juli en 27 aug. op Makéan en Moti 2456 specerijbomen , vendrig Constant extirpeerde op Halmaheira 6528 specerijbomen waaronder maar 11 notebomen , sergeant Abraham van Roon op de Obieilanden 8874 notebomen , 20 vruchtgevende en 86 telbare nagelbomen , in Bat jan 4469 nagelbomen ; het » 
+Sergeant Jacob Engels werd 29 aug. voor dgl. werk naar Meau en Taf ure gezonden hij is nog niet terug » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[8]/missive[10]/remark[1]" type="remark" id="t1" offset="0" length="418"/>
+    <tunit xpath="//volume[8]/missive[10]/remark[2]" type="remark" id="t2" offset="418" length="105"/>
+  </tunits>
+</NAF>

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:38CEST" title="Van Diemen, Van der Lijn, Maetsuycker, Caron, Schouten; Batavia, 14 september 1641" filename="missive_2_9_text.naf"/>
+    <public publicId="missive_2_9_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XV. ANTONIO VAX DIEMEN, CORNELIS VAN DER LIJN, JOAN MAETSUYCKER, FRANQOIS CARON EN JUSTUS SCHOUTEN, BATAVIA 14 september 1641. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[2]/missive[9]/header[1]" type="header" id="t1" offset="0" length="128"/>
+  </tunits>
+</NAF>

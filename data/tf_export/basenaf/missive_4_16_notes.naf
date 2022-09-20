@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Van Goens, Speelman, Van Outhoorn, Camphuys, Pits; Batavia, 3 augustus 1678" filename="missive_4_16_notes.naf"/>
+    <public publicId="missive_4_16_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Met enige Engelse schepen uit Bantam verzonden. . 
+Vgl. Daghregisters 1678, p. 189-421 het huurschip St. Andries kwam in slechte staat uit patria te Batavia en wordX op Onrust gerepareerd; grote sterfte op Temate; de Koning veroverde Siau, » 
+Dit is een verschrijving voor: Roomse. 
+De contanten uit Europa worden naar Coromandel gezonden; gewapend optreden in Mataram noodzakelijker dan tegen Bantam; Speelman zou graag daarvoor gebruikt zijn, maar kan als Directeur-Generaal niet van Batavia gemist worden; gegevens over Java, vgl. Opkomst VII, p. LVII-LXV; het werd aan Aru Palakka overgelaten te beslissen, of hij met zijn troepen mee naar Java wil komen; er is te Batavia evenmin als bij de Engelsen te Bantam peper in voorraad; een geschikte commissaris voor Coromandel is niet aanwezig » 
+Dergelijke projecten worden voor de andere vestigingen opgemaakt; door het sluiten van de vrede neemt de areca- en textielhandel in Zuid-India toe; de fortificatie op Ceylon is gereed; verzoek aan Heren XVII daar geen veranderingen in te voeren, voor de Hoge Regering daarover in nov. zal geadviseerd hebben; enkele galjoots aangevraagd voor het overbrengen van tussentijdse adviezen van en naar patria; voorlopig zal Batavia bezwaard blijven met wegens overbodigheid van elders opgeroepen personeel; overwogen, of » 
+Velen onbekwamen zijn reeds ontslagen of in de militie opgenomen » 
+Daar Van Outhoorn werk genoeg heeft als president van de Raad van Justitie, is alleen Camphuys beschikbaar als helper van Gouverneur -Generaal en Directeur - Generaal; Pits staat op vertrek » 
+Compagnies eigen schepen kwamen soms wantoden uit patria » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[4]/missive[16]/footnote[1]" type="footnote" id="t1" offset="0" length="51"/>
+    <tunit xpath="//volume[4]/missive[16]/remark[2]" type="remark" id="t2" offset="51" length="192"/>
+    <tunit xpath="//volume[4]/missive[16]/footnote[3]" type="footnote" id="t3" offset="243" length="40"/>
+    <tunit xpath="//volume[4]/missive[16]/remark[4]" type="remark" id="t4" offset="283" length="513"/>
+    <tunit xpath="//volume[4]/missive[16]/remark[5]" type="remark" id="t5" offset="796" length="518"/>
+    <tunit xpath="//volume[4]/missive[16]/remark[6]" type="remark" id="t6" offset="1314" length="68"/>
+    <tunit xpath="//volume[4]/missive[16]/remark[7]" type="remark" id="t7" offset="1382" length="193"/>
+    <tunit xpath="//volume[4]/missive[16]/remark[8]" type="remark" id="t8" offset="1575" length="60"/>
+  </tunits>
+</NAF>

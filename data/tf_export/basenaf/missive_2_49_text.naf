@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:38CEST" title="Maetsuycker, Hulft, Hartsinck, Cunaeus, Verburch, Steur; Batavia, 4 februari 1655" filename="missive_2_49_text.naf"/>
+    <public publicId="missive_2_49_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[V. JOAN MAETSUYKER, GERARjD HULET, CAREL HARTZINCK, JOAN CUNAEUS, NICOLAES VERBURCH EN DIRCK STEUR, BATAVIA 4 febr. 1655. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[2]/missive[49]/header[1]" type="header" id="t1" offset="0" length="123"/>
+  </tunits>
+</NAF>

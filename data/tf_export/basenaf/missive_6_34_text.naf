@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:38CEST" title="Van Hoorn, Van Riebeeck, Pijl, Cops, Bornezee, Van Swoll, De Wilde, Douglas, Van Rijn, Van der Stel, Zwaardecroon, De Haan; Batavia, 6 maart 1705" filename="missive_6_34_text.naf"/>
+    <public publicId="missive_6_34_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[VI. JOAN VAN HOORN, ABRAHAM VAN RIEBEECK, LAURENS PIJL, JOANNES COPS, MANUEL BORNEZEE, CHRISTOFFEL VAN SWOLL, HERMAN DE WILDE, ABRAHAM DOUGLAS, ADAM VAN RIJN, ADRIAAN VAN DER STEL, HENDRIK ZWAARDECROON EN MATTHEUS DE HAAN, BATAVIA 6 maart 1705. 
+dogh alle seer kleen en maar wanckans, omdat er op ’t voorstel van den Tartarischen veldheer over de provintien van Chetchian en Fockien door expres verbod des Keysers geen grooter vaartuygen als van 18 voeten wijd en 70 voeten lang mogen buytenslands varen en ook niet hooger als met 30 k 40 koppen bemand, voor dewelcke dan ginder op hun vertrek ook nogh borge moet werden gesteld en dat, soo men gerugt, om de eyge onderlinge rooverijen der Chineesen ter zee daardoor te eer te dempen. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[6]/missive[34]/header[1]" type="header" id="t1" offset="0" length="246"/>
+    <tunit xpath="//volume[6]/missive[34]/paragraph[2]" type="paragraph" id="t2" offset="246" length="490"/>
+  </tunits>
+</NAF>

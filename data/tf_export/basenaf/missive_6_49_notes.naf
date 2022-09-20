@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Van Hoorn, Van Riebeeck, Van Swoll, De Wilde, Douglas, De Vos, Van Rijn, Phoonsen, Zwaardecroon, Chasteleyn; Batavia, 9 november 1707" filename="missive_6_49_notes.naf"/>
+    <public publicId="missive_6_49_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Hij leverde een relaas hierover in, zomede een „verhael” over Cochin-China, Cambodja en Pulau Kondor, tot Engels resident te Bandjarmasin benoemd, mocht hij derwaarts 15 mei met de Mercurius vertrekken, vergezeld van den onderkoopman Johan de Wolff, die 18 jidi terugkivam; 24 juli vernam men van Java's Oostkust bij geruchte, » 
+Men hielp hel met enig materiaal » 
+Zij verklaarden slechts, dat zij „met soek en pack de vlugt hadden moeten nemen” ; de derwaarts gevluchte » 
+Volgt Opkomst VIII, p. 129 tot 131, r. 6 v. o., men voege p. 129 r. 6 v. o. na „residentie” toe „in sijn rijck” en leze p. 130 r. 8 voor 2en” „27en” ; de voormalige Susuhunan schonk aan Surapati o. a.: » 
+Dodot, ja vaan s : hofkleed, om het onderlijf gedragen. 
+Ongetwijfeld bedoeld: hem; het was een hoge eer, dat de Susuhunan aan Surapati een door hemzelf gedragen kleed schonk. 
+Volgt ibid. p. 131 r. o v. o. tot p. 132 r. 6; men voege p. 131 r. 3 v. o. na „ bootschappen ” toe „ van den borger Daniël Prasser ” en leze p. 132 r. 3 voor „door” „voor” ; men kwam te Suratte tot volkomen overeenstemming; 26 oct. heeft men vernomen , dat Sjah Alam de nieuwe Groot- Mogol is; 25 aug. vertrok Becker als gouverneur naar Cexjlon; als Simons wil repatriëren ondanks zijn benoeming tot raad-extraordinair van Indië , zal hij commandeur van de retourvloot zijn, de eerste opperkoopman van het kasteel Batavia Louis Gerlag vice-commandant en Simon Langendam schout-bijnacht; 1* opperkoopman werd Gerrit van Tholl, die als tweede door F er dinand de Groot zal vervangen worden; 4 schepen gingen naar Japan met carg. van f. 513295 en Hermanus Mensinck als opperhoofd ; 8 aug. vertrok Cleur met de Sirja?island en de Spierdijk naar Siam, van waar hij 1 juni terug was gekomen; Schepmoes wordt op zijn verzoek als gezaghebber ter Westkust vervangen, nl. door den boekhouder -generaal Cornelis de Heyde als commandeur, zelf opgevolgd door Cornelis Besuyen; 31 aug. 1706 was netto in eenjaarf. 1783052 verloren; daar Rooselaar op Djambi door gebrek aan tijd weinig bereikte en men vreest, dat de van Bandjarmasin verdreven Engelsen er zich zullen vestigen, plaatste men er weer een onderkoopman, nl. Abraham Patras; Bengalen werd met 17 schepen van 31 ton gouds voorzien, Coromandel met f. 1313059 in goud; uit patria kwamen aan 21 schepen met brieven van 23 juli tot 30 oct. 1706, 2076 zeevarenden en 1311 militairen, het lid van de Raad van J ustitie J acob Roggeveen en den independent-fiskaal voor Malakka Abraham van Kervel; Adam van Rijn werd ordinaris raad van Indië, Pieter Rooselaar extra-ord. raad; de waterfiskaal Abraham Quevellerius werd op zijn verzoek vervangen, nl. door mr. Cornelis van Berendregt, die als advocaat -fiskaal werd opgevolgd door mr. Aernout Bitter, als secunde van Malabar vervangen door Pieter Bout » 
+In 1705, vgl. Nieuw Guinea, I, p. 175. 
+Er werd voor 245984 rsd. aan wissels op patria getrokken, o. a. 14000 van den koopman Dirck Clerck, 28000 van den baljuw Joannes Ens, 12000 van den vrijburger 
+Claas Clement , 12000 van Harmen Sluyter , 16800 van den vrijburger Albert Lubing, 35000 van Michiel Ram voor hemzelf , 11500 van Wouter de Vries , 12000 voor de weduwe van Ilendrick Vuyst voor haarzelf; waarde der retour en: » 
+Het retour bestaat vnl. uit textiel, 1174500 ® salpeter, waard f. 149749, 51782 ® indigo, f. 111264, 2350711 8? peper, ƒ. 310294, ook gaan mee 5 verzegelde zakjes met juwelen ten verzoeke van den Joodsen koopman Joan Gomes de Bos te Suratte; volgt Opkomst VIII, p. 132, laatste alinea » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[6]/missive[49]/remark[1]" type="remark" id="t1" offset="0" length="330"/>
+    <tunit xpath="//volume[6]/missive[49]/remark[2]" type="remark" id="t2" offset="330" length="36"/>
+    <tunit xpath="//volume[6]/missive[49]/remark[3]" type="remark" id="t3" offset="366" length="109"/>
+    <tunit xpath="//volume[6]/missive[49]/remark[4]" type="remark" id="t4" offset="475" length="205"/>
+    <tunit xpath="//volume[6]/missive[49]/footnote[5]" type="footnote" id="t5" offset="680" length="57"/>
+    <tunit xpath="//volume[6]/missive[49]/footnote[6]" type="footnote" id="t6" offset="737" length="120"/>
+    <tunit xpath="//volume[6]/missive[49]/remark[7]" type="remark" id="t7" offset="857" length="1942"/>
+    <tunit xpath="//volume[6]/missive[49]/footnote[8]" type="footnote" id="t8" offset="2799" length="40"/>
+    <tunit xpath="//volume[6]/missive[49]/remark[9]" type="remark" id="t9" offset="2839" length="160"/>
+    <tunit xpath="//volume[6]/missive[49]/remark[10]" type="remark" id="t10" offset="2999" length="229"/>
+    <tunit xpath="//volume[6]/missive[49]/remark[11]" type="remark" id="t11" offset="3228" length="288"/>
+  </tunits>
+</NAF>

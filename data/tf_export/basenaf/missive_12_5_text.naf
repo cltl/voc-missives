@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:39CEST" title="Mossel, Cluysenaar, Overbeek, Van Broyel, Van der Waeyen, Van der Parra, Van der Spar, Loten; Batavia, 8 april 1751" filename="missive_12_5_text.naf"/>
+    <public publicId="missive_12_5_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:39CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:39CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[V. JACOB MOSSEL, JOHANNES MATTHEUS CLUYSENAAR, DANIËL OVER-BEEK, AREND VAN BROYEL, JACOB VAN DER WAEYEN, PETRUS ALBERTUSVAN DER PARRA, JURGEN VAN DER SPAR en JOAN GIDEON LOTEN, BATAVIA8 april 1751, geheim. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[12]/missive[5]/header[1]" type="header" id="t1" offset="0" length="207"/>
+  </tunits>
+</NAF>

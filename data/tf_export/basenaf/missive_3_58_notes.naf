@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Maetsuycker, Verburch, Pit, Overtwater, Speelman, Van Hoorn; Batavia, 13 december 1672" filename="missive_3_58_notes.naf"/>
+    <public publicId="missive_3_58_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Vgl. voor de inhoud Daghregisters 1672 p. 348-349 gegevens Japan , vgl. Beschrijvinge II, I, p. 445, v anaf „Buy ten" vrijwel letterlijk gelijk; mogelijk wordt er 60% winst gemaakt ; men moet er evenals de Chinezen nu aan den gouverneur van Nagasaki verkopen, die met 50% winst doorverkoopt; vgl. ibid., p. 445-446 » 
+In Tonkin. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[3]/missive[58]/remark[1]" type="remark" id="t1" offset="0" length="318"/>
+    <tunit xpath="//volume[3]/missive[58]/footnote[2]" type="footnote" id="t2" offset="318" length="12"/>
+  </tunits>
+</NAF>

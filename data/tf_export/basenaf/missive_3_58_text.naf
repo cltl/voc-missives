@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:38CEST" title="Maetsuycker, Verburch, Pit, Overtwater, Speelman, Van Hoorn; Batavia, 13 december 1672" filename="missive_3_58_text.naf"/>
+    <public publicId="missive_3_58_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[LXIV. JOAN MAETSUYKER, NICOLAES VERBURCH, LAURENS PIT, PIETER OVERTWATER, CORNELIS SPEELMAN EN PIETER VAN HOORN, BATAVIA 13 dec. 1672. 
+d’Engelsen waeren daer met haer scheepjen geweest, waeren gelicentieert te handelen en te woonen omlaegh bij alle de vreemdelingen, behalven onse natie alleen. Sij hadde haere goederen bij provisie aen landt gebraght, waeren gints in ’t leste van junij verscheenen, maer en hadden tot het vertreck van d’onse van daer niets vercoght, soo door de veelvoudige vexatien, als omdat se haere goederen te hoogh op geldt hielden en hadde haer scheepien in ’t eerste van september ledigh naer Tajoan versonden. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[3]/missive[58]/header[1]" type="header" id="t1" offset="0" length="136"/>
+    <tunit xpath="//volume[3]/missive[58]/paragraph[2]" type="paragraph" id="t2" offset="136" length="504"/>
+  </tunits>
+</NAF>

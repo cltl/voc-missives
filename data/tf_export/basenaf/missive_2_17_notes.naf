@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Van Diemen, Van der Lijn, Maetsuycker, Schouten, Sweers; Batavia, 18 maart 1643" filename="missive_2_17_notes.naf"/>
+    <public publicId="missive_2_17_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Verzonden per de Deense Gulden Sonne; bevestiging van vorige brieven » 
+Proces tegen den opperkoopman J an de Lange e. a. wegens particuliere negotie » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[2]/missive[17]/remark[1]" type="remark" id="t1" offset="0" length="72"/>
+    <tunit xpath="//volume[2]/missive[17]/remark[2]" type="remark" id="t2" offset="72" length="81"/>
+  </tunits>
+</NAF>

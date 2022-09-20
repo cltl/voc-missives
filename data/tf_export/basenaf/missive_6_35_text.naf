@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:38CEST" title="Van Hoorn, Van Riebeeck, Pijl, Cops, Bornezee, Van Swoll, De Wilde, Douglas, Van Rijn, Van der Stel, Zwaardecroon, De Haan; Batavia, 10 mei 1705" filename="missive_6_35_text.naf"/>
+    <public publicId="missive_6_35_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[VII. JOAN VAN HOORN, ABRAHAM VAN RIEBEECK, LAURENS PIJL, JOANNES COPS, MANUEL BORNEZEE, CHRISTOFFEL VAN SWOLL, HERMAN DE WILDE, ABRAHAM DOUGLAS, ADAM VAN RIJN, ADRIAAN VAN DER STEL, HENDRIK ZWAARDECROON EN MATTHEUS DE HAAN, BATAVIA 10 mei 1705. 
+dat met [een] vaartuygh van Poulo Candoor door elff gevlugte Engel- sen aldaar was tijdinge gebragt, hoe hunnen gouverneur Benjamin Catspole en verdere Engelsen, tot ongevaar 22 coppen, op den 3e maart oude stijl in de nagt door 14 bij haar in dienst zijnde Bouginesen en Macassaren na voorgaande brandstigtinge alle waren vermoord. 
+Alle de zeestranden van Tagal tot Zourabaya toe zijn bereeds onder de gehoorsaamheyt van [den] nieuwen Sousouhounang door Comp. 8 adsistentie gesubjugeerd, daartoe ook veel contribueerd den goeden ijver van den ouden Pangeran van Sampan of Madura Sjaccraningrat, een man van ongevaar 80 jaren, maar in ’t Mataramse land en volk van veel credit en respect, soodat om een kort en goed eynde aldaar te erlangen en den Sousouhounang in zijn broeders throon tot Cartasoura te bevestigen wij alleen verlangen na een goed ontset van schepen en volk uyt het vaderland en een gewenschten uytslag van saken in Zouratta. 
+met alle Comp. 8 dienaren en het scheepsvolk van [de] Phenix door de Francen ontslagen en den 10e februarij op Nagapatnam aangekomen was, onder sodanigen accoord niet van randsoeneringe, maar van een ongewettigde en onge- qualificeerde wapenschorsinge tusschen ons en de Francen langs Chormandel ofte van Nagapatnam af tot Punto Palameras toe 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[6]/missive[35]/header[1]" type="header" id="t1" offset="0" length="246"/>
+    <tunit xpath="//volume[6]/missive[35]/paragraph[2]" type="paragraph" id="t2" offset="246" length="334"/>
+    <tunit xpath="//volume[6]/missive[35]/paragraph[3]" type="paragraph" id="t3" offset="580" length="611"/>
+    <tunit xpath="//volume[6]/missive[35]/paragraph[4]" type="paragraph" id="t4" offset="1191" length="344"/>
+  </tunits>
+</NAF>

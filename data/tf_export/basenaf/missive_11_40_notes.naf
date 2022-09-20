@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Van Imhoff, Cluysenaar, Overbeek, Mossel, Van Broyel, Van der Waeyen, Van der Spar, Huyghens; Batavia, 29 september 1750" filename="missive_11_40_notes.naf"/>
+    <public publicId="missive_11_40_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Deze missive wordt verstuurd met de Kievitsheuvel en Sloterdijk. Sinds het vertrek van de Vosmaar ; Bevalligheid en lmmagonda hebben de A/cerendam, Liefde en Jager de thuisreis aanvaard. Met de Kievitsheuvel en Sloterdijk vormen deze schepen het eerste deel van het retour van 1750/51. Ze vervoeren voor f 925. 541 aan thee op vracht en voor f 1. 092. 717 aan andere goederen, » 
+De waarde van de retourlading van de acht schepen bedraagt ƒ 2. 018. 258. De lading bestaat uit: » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[11]/missive[40]/remark[1]" type="remark" id="t1" offset="0" length="380"/>
+    <tunit xpath="//volume[11]/missive[40]/remark[2]" type="remark" id="t2" offset="380" length="100"/>
+  </tunits>
+</NAF>

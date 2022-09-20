@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:39CEST" title="Mossel, Cluysenaar, Overbeek, Van Broyel, Van der Waeyen, Van der Parra, Van der Spar, Huyghens, Loten; Batavia, 1 december 1750" filename="missive_12_1_text.naf"/>
+    <public publicId="missive_12_1_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:39CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:39CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[I. JACOB MOSSEL, JOHANNES MATTHEUS CLUYSENAAR, DANIËL OVERBEEK, AREND VAN BROYEL, JACOB VAN DER WAEYEN, PETRUS ALBERTUS VAN DER PARRA, JURGEN VAN DER SPAR, JAN HUYGHENS en JOAN GIDEON LOTEN, BATAVIA 1 december 1750. 
+W’ moeten bij dese gelegentheyt U Edele Hoogagtbarens mede kennisse geven van het gebeurde in ’t Bantamse rijk sedert het laast van october, wanneer zekeren misnoegden priester, die zig voor een soort van heylige wist te doen passeeren, onder anderen tot zig heeft weten te lokken eenen Ratoe Bagus Boeang natuurlijke zoon van den hier in arrest gesturvene panambaham, die broeder was van de jongst regerende koning van Bantam, nevens des panambahams moeder, vrouw, dogter, waarvan de laaste onder de bijsitten van den koning getelt is geweest, welke sig met eenig volk te samen vergaderden op zekeren berg Monara, gelegen boven Tangarang omtrend 10 uuren, dog aan de Bantamse zijde, en dus omtrend 18 uuren gaans van Batavia, waarvan kondschap bekomende heeft men ten eersten manschap derwaarts gesonden, dog z’ zig het in de nagt ontkomen en westwaard aangetrocken, sonder dat de manschap door de koning in derwaart g’ expedieert haar eer aantrof als eenige dagen daarna, dewijl het de koningin te laat, en nog als een bagatel was aangegeven, waardoor de rebellen, reeds aangegroeyt wesende, de andere de nederlaag kreegen, en dus couragieus voorttrocken na de stad Bantam, voorgevende den panambahan niet gestorven maar van Batavia gevlugt, en bij hen te zijn, hetwelk haar meer aanhang doende bekomen, en daarbij de koninginne-regentesse van binnen slegt gedient en als verraden werdende, so zijn door dese en andere manquementen twee uytvallen, die van onse zijde gedaan wierden, beyde mislukt en den moet der rebellen daardoor so hooglijk toegenomen, dat men zig genoodsaakt gevonden heeft te treeden tot de resolutie die uyt veele quaaden het beste toescheen, en vermeit werd bij secreet besluyt 
+van 23 en brief na Bantam van 24 november waaraan ons versoeken te mogen referee-ren, om de secretesse nog te beter te bewaren. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[12]/missive[1]/header[1]" type="header" id="t1" offset="0" length="217"/>
+    <tunit xpath="//volume[12]/missive[1]/paragraph[2]" type="paragraph" id="t2" offset="217" length="1704"/>
+    <tunit xpath="//volume[12]/missive[1]/paragraph[3]" type="paragraph" id="t3" offset="1921" length="129"/>
+  </tunits>
+</NAF>

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Mossel, Cluysenaar, Van Broyel, Van der Waeyen, Van der Parra, Van der Spar, Loten, Van Gollenesse, Van de Velde; Batavia, 31 december 1751" filename="missive_12_8_notes.naf"/>
+    <public publicId="missive_12_8_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[IX d. d. 18 januari 1752 zit eerder ingebonden in VOC 2770 dan missive VIII d. d. 31 december 1751. De bijlagen (fol. 728-742) zijn aan Hunne Hoogmogenden gegeven en bevinden zich niet meer in VOC 2770, met uitzondering van het overzicht van het aantal exemplaren van het plakkaat over de vijftigste penning per kantoor (fol. 732). Het plakkaat over de vijftigste penning (fol. 744-759) staat apart in het register vermeld maar is ook niet meer in VOC 2770 opgenomen. 
+De Hoge Regering stuurt Heren XVII een aparte bundel met de extracten van de resoluties van 5 oktober, en 1 en 4 november 1751, een exemplaar van het plakkaat over de heffing van de ‘liberale gifte van den vijftigsten penning ’, en een kopie van de * circulaire missive’ van 31 december 1751 over dit onderwerp. Batavia wil hiermee aantonen dat men hard en serieus aan de zaak werkt. » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[12]/missive[8]/footnote[1]" type="footnote" id="t1" offset="0" length="469"/>
+    <tunit xpath="//volume[12]/missive[8]/remark[2]" type="remark" id="t2" offset="469" length="387"/>
+  </tunits>
+</NAF>

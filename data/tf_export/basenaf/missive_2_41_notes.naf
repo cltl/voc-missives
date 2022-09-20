@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Reniers, Maetsuycker, Demmer, Hartsinck, De Vlaming van Oudtshoorn, Caesar, Versteghen; Batavia, 5 februari 1652" filename="missive_2_41_notes.naf"/>
+    <public publicId="missive_2_41_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Afsluiting contract met den Koning van Ternate, af gedrukt Corpus II, nr. CGIV; zending van 3 fluitschepen met cargasoen van f. 73809. 15. 5 naar Makassar; f. 76608. 2- voor Amboina en f. 34007. 6. 10 voor Banda en 266 soldaten; De Vlaming en de Koning van Ternate zullen volgen met 11 schepen en jachten; Wesel en Lisch zijn aan de wal gelegd; door onstuimig weer is het vertrek van bedoelde vloot en van de 5 resterende retourschepen nog niet mogelijk; 340 soldaten en 50 Kampang er s gaan nog naar Amboina; ds. Daniël Brouwerius gaat naar Banda, ds. Philippus Joannes naar Amboina; het cargasoen voor Amboina is f. 245000, w. o. 55000 realen, voor Banda f. 72000, w. o. 12000 realen, voor de Molukken f. 240000, w. o. 40000 realen; de door Verstegen in Quinam gelaten Nederlanders komen 2 febr. met een jonk te Batavia; zij hebben bijna het leven verloren, vgl. Quinam, p. 113-114 » 
+NI. dat van Verstegen. 
+Priserende, schattende, de waarde bepalende. 
+Geheten Jacob Discordt. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[2]/missive[41]/remark[1]" type="remark" id="t1" offset="0" length="887"/>
+    <tunit xpath="//volume[2]/missive[41]/footnote[2]" type="footnote" id="t2" offset="887" length="24"/>
+    <tunit xpath="//volume[2]/missive[41]/footnote[3]" type="footnote" id="t3" offset="911" length="46"/>
+    <tunit xpath="//volume[2]/missive[41]/footnote[4]" type="footnote" id="t4" offset="957" length="25"/>
+  </tunits>
+</NAF>

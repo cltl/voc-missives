@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:38CEST" title="Van Diemen, Van der Lijn, Maetsuycker, Schouten, Sweers; Batavia, 18 maart 1643" filename="missive_2_17_text.naf"/>
+    <public publicId="missive_2_17_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XXIII. ANTONIO VAN DIEMEN, CORNELIS VAN DER LIJN, JOAN MAETSUYCKER, JUSTUS SCHOUTEN EN SALOMON SWEERS, BATAVIA 18 maart 1643. 
+Dagelijcx wort in Batavia veel peper aengebracht. Heden hebben voor 2500 r. a Succedaense diamanten gecocht ende wert noch redelijcke partije verwacht. Soo bestaet den rijs mede al van d’een ende d’ander quartieren aen te comen. Des Mattarams volck verschijnen soo nu als dan ende verhopen in corte de relaxatie onser ellendige gevangenen. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[2]/missive[17]/header[1]" type="header" id="t1" offset="0" length="127"/>
+    <tunit xpath="//volume[2]/missive[17]/paragraph[2]" type="paragraph" id="t2" offset="127" length="341"/>
+  </tunits>
+</NAF>

@@ -56,7 +56,8 @@ compile_java_code() {
 
 install_textfabric() {
   echo "cloning the TextFabric repositories"
-  [[ ! -d ~/github ]] && mkdir ~/github
+  [[ ! -d ~/github ]] && mkdir -p ~/github/CLARIAH
+  git clone https://github.com/CLARIAH/wp6-missieven ~/github/CLARIAH/wp6-missieven
   git clone https://github.com/Dans-labs/clariah-gm ~/github/Dans-labs
   cd ~/github/Dans-labs
   git checkout fc67e0b

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Reael; Bantam, 17 december 1617" filename="missive_1_32_notes.naf"/>
+    <public publicId="missive_1_32_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[NI. de brieven V en VI. 
+Cornelis Co (o) mans kwam 1610 als koopman met Both in Indië. Sinds okt. 1616 werd hij enige malen naar Atjeh gezonden om daar toestemming te verwerven voor de peperhandel ter Westkust van Sumatra. Onderweg moest hij de Portugezen van Malakka bestoken. 
+Het Compagnieskantoor in Atjeh was in 1615 opgeheven. . 
+Het was in die tijd gewoonte van jonken van Aziaten, die te Djambi peper ingekocht hadden, de lading aan te halen tegen betaling van de marktwaarde. Men deed dit o. a. omdat de concurrerende Engelsen de peper van Chinese schepen, naar de Nederlanders meenden zonder iets te betalen, weg namen. . 
+Japara, vgl. Coen I, p. 255 aankomst van schepen. Gevechten met de Engélsen te Jakatra , zie Coen I , p. 301-303 » 
+Bitcharinge, bespreking, vergadering. Het woord is afgeleid van het Maleise bitjara, overleggen, vergaderen, bespreken. 
+Slot » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[1]/missive[32]/footnote[1]" type="footnote" id="t1" offset="0" length="25"/>
+    <tunit xpath="//volume[1]/missive[32]/footnote[2]" type="footnote" id="t2" offset="25" length="254"/>
+    <tunit xpath="//volume[1]/missive[32]/footnote[3]" type="footnote" id="t3" offset="279" length="57"/>
+    <tunit xpath="//volume[1]/missive[32]/footnote[4]" type="footnote" id="t4" offset="336" length="297"/>
+    <tunit xpath="//volume[1]/missive[32]/remark[5]" type="remark" id="t5" offset="633" length="116"/>
+    <tunit xpath="//volume[1]/missive[32]/footnote[6]" type="footnote" id="t6" offset="749" length="121"/>
+    <tunit xpath="//volume[1]/missive[32]/remark[7]" type="remark" id="t7" offset="870" length="8"/>
+  </tunits>
+</NAF>

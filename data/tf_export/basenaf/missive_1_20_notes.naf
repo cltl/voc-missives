@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Both; Bantam, 10 november 1614" filename="missive_1_20_notes.naf"/>
+    <public publicId="missive_1_20_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[3 aug. 1613 vertrok Both naar Java. 
+D. w. z. gouverneur onder den Gouvemeur-Generaal. 
+Enkele zinnen , van weinig belang , weggelaten » 
+Voor Both’s vertrek uit de Molukken. 
+Hier, een voor een bepaald doel aangewezen persoon. 
+D. i. Reael. 
+Volgt klacht over het gratiëren door Reael 'persoonlijk van soldaten , die op wacht sliepen » 
+Oudheden, een werk, dat men met voorzichtigheid dient te raadplegen, weet hiervan niets. 
+Een seecker quidam, geringschattend over een persoon, die men niet kan of wil noemen. 
+Eeael heeft ook een luitenant tot opperkoopman bevorderd » 
+Hieruit blijkt, hoe Both, hoewel hij Gouverneur-Generaal is, nog vasthoudt aan vlootgebruiken. 
+De vorst van Djailolo was vanouds een der vier Molukse koningen; omstreeks 1600 was hij evenwel niet veel meer dan een vazal van Ternate en daar verblijvend. 
+Oudheden vermeldt deze naamgeving door Both niet. 
+Hier wordt wel gezinspeeld op de voorrede van de door de weduwe van Arminius en haar broeders in 1610 te Leiden uitgegeven Verclaringhe Jacobi Arminii Saliger Ohedachten etc. waarover men leze G. Brandt, Hist. der Reformatie II, p. 116-117 en J. H. Maronier, Jac. Arminius Amsterdam 1905, p. 346-347. . 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[1]/missive[20]/footnote[1]" type="footnote" id="t1" offset="0" length="37"/>
+    <tunit xpath="//volume[1]/missive[20]/footnote[2]" type="footnote" id="t2" offset="37" length="51"/>
+    <tunit xpath="//volume[1]/missive[20]/remark[3]" type="remark" id="t3" offset="88" length="50"/>
+    <tunit xpath="//volume[1]/missive[20]/footnote[4]" type="footnote" id="t4" offset="138" length="38"/>
+    <tunit xpath="//volume[1]/missive[20]/footnote[5]" type="footnote" id="t5" offset="176" length="53"/>
+    <tunit xpath="//volume[1]/missive[20]/footnote[6]" type="footnote" id="t6" offset="229" length="14"/>
+    <tunit xpath="//volume[1]/missive[20]/remark[7]" type="remark" id="t7" offset="243" length="95"/>
+    <tunit xpath="//volume[1]/missive[20]/footnote[8]" type="footnote" id="t8" offset="338" length="90"/>
+    <tunit xpath="//volume[1]/missive[20]/footnote[9]" type="footnote" id="t9" offset="428" length="87"/>
+    <tunit xpath="//volume[1]/missive[20]/remark[10]" type="remark" id="t10" offset="515" length="60"/>
+    <tunit xpath="//volume[1]/missive[20]/footnote[11]" type="footnote" id="t11" offset="575" length="96"/>
+    <tunit xpath="//volume[1]/missive[20]/footnote[12]" type="footnote" id="t12" offset="671" length="159"/>
+    <tunit xpath="//volume[1]/missive[20]/footnote[13]" type="footnote" id="t13" offset="830" length="51"/>
+    <tunit xpath="//volume[1]/missive[20]/footnote[14]" type="footnote" id="t14" offset="881" length="304"/>
+  </tunits>
+</NAF>

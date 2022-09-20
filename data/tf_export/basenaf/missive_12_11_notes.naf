@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Mossel, Cluysenaar, Van der Waeyen, Van der Parra, Van der Spar, Loten, Van Gollenesse, Van de Velde, Van Rheede, De Nijs, Van Bazel; Batavia, 6 juni 1752" filename="missive_12_11_notes.naf"/>
+    <public publicId="missive_12_11_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Als laatste van dit retour stuurt Batavia de Prinses Carolina voor Amsterdam, » 
+Batavia heeft ingekocht » 
+Aangelegd voor Nederland zijn: » 
+Batavia beantwoordt de brieven van Heren XVII van september en oktober zoals gewoonlijk met de vroegscheepen\ » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[12]/missive[11]/remark[1]" type="remark" id="t1" offset="0" length="81"/>
+    <tunit xpath="//volume[12]/missive[11]/remark[2]" type="remark" id="t2" offset="81" length="27"/>
+    <tunit xpath="//volume[12]/missive[11]/remark[3]" type="remark" id="t3" offset="108" length="34"/>
+    <tunit xpath="//volume[12]/missive[11]/remark[4]" type="remark" id="t4" offset="142" length="113"/>
+  </tunits>
+</NAF>

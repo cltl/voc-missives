@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:39CEST" title="Van Imhoff, Pasques de Chavonnes, Crul, Nolthenius, Van Aerden, Lakeman, Cluysenaar; Batavia, 5 november 1743" filename="missive_11_3_text.naf"/>
+    <public publicId="missive_11_3_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:39CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:39CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[III. GUSTAAF WILLEM VAN IMHOFF, PIETER ROCHUS PASQUES DE CHAVONNES, NICOLAAS CRUL, DANIËL NOLTHENIUS, MAURITS VAN AERDEN, JACOB LAKEMAN en JOHANNES MATTHEUS CLUYSENAAR, BATAVIA 5 november 1743. 
+tot het opregten van een corps cadets de marine, ter aanqueeking van jonge zeeofficiers, en het stigten van een accademie voor deselve, waarvan enige gedrukte exemplaren desen worden bijgevoegt, ten blijke dat het fonds tot dies bestaan uytgevonden de Compagnie seer wijnig komt te kosten in comparatie van de nuttigheyd, die men sig daarvan beloven mag in den tijd. 
+ter indagatie naar den vuylen amphioenhandel en het verdere suspecte gedrag der Malakse ministers, met het ter resolutie van den 23e october jongstl. nog na Bengalen aangelegde schip de Batavier naar Malacca te laten overgaan den eersten secretaris deser regering Gerardus Cluysenaar en gewesen temporeel advocaat-fiscaal mr. Nicolaas Jongsma, opdat de enqueste die U Wel Edele Hoogagtb. g’ordonneert hebben moge geschieden met sooveel ordre en accuratesse als in sulke saaken nodig is om de waarheyd te ontdekken. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[11]/missive[3]/header[1]" type="header" id="t1" offset="0" length="195"/>
+    <tunit xpath="//volume[11]/missive[3]/paragraph[2]" type="paragraph" id="t2" offset="195" length="368"/>
+    <tunit xpath="//volume[11]/missive[3]/paragraph[3]" type="paragraph" id="t3" offset="563" length="516"/>
+  </tunits>
+</NAF>

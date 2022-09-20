@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:38CEST" title="Van Hoorn, Van Riebeeck, Van Swoll, Douglas, De Vos, Van Rijn, Zwaardecroon, Chasteleyn, De Haan; Batavia, 31 december 1708" filename="missive_6_56_text.naf"/>
+    <public publicId="missive_6_56_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XXVII. JOAN VAN HOORN, ABRAHAM VAN RIEBEECK, CHRISTOFFELVAN SWOLL, ABRAHAM DOUGLAS, PIETER DE VOS, ADAM VAN RIJN, HENDRICK ZWAARDECROON, CORNELIS CHASTELEIN EN MATTHEUSDE HAAN, BATAVIA 31 december 1708. 
+tot den 8e deser, wanneer deselve door veranderinge van de wind en door opgekomen hard weer niet alleen weder straatwaarts in wierden gedreven en van den anderen verstrooyt, maar raekten Beverwijck en ’t Huys te Hemelt door de donckerheyt en swaare regen als het breeken van de fockebras van dien eersten bodem sodanig aan den anderen, dat se beyde genoodsaekt wierden weder herwaarts te keeren. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[6]/missive[56]/header[1]" type="header" id="t1" offset="0" length="204"/>
+    <tunit xpath="//volume[6]/missive[56]/paragraph[2]" type="paragraph" id="t2" offset="204" length="397"/>
+  </tunits>
+</NAF>

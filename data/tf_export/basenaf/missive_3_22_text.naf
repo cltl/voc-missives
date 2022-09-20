@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:38CEST" title="Maetsuycker, Hartsinck, Verburch, Steur, Thijsz; Batavia, 29 januari 1663" filename="missive_3_22_text.naf"/>
+    <public publicId="missive_3_22_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XXVIII. JOAN MAETSUYKER, CAREL HARTS1NCK, NICOLAES VERBURCH, DIRCK JANSZ. STEUR EN JOAN THIJSZ., BATAVIA 29 januari 1663. 
+In cas de oorlogh tegen de Portugesen te cesseren comt . . . ., soo meenen wij, dat de negotie daer vooreerst noch wel met sal waergenomen connen worden alsoo ’t getal groot is ende gissingh maecken, dat, dewijl Coxin doot ende sijn regeringe genoegsaem gedissolveert is, tot het besleghten van de saecken om de noort soo grooten getal swaere scheepen voortaen niet sal van noode wesen, als daer present is militerende, die dan in plaetse van dien tot den handel sullen connen worden gebruyckt. 
+omdat de luyden meer ende meer sullen practiseren op middelen om te ontgaen het groot verlies, dat sij lijden op de penningen, die se hier aen de Compagnie tellen om haer in ’t vaderlandt weder uytgekeert te worden ende waermet de Engelsen tot Bantam ende andere plaetsen treffelijcke voordelen sullen weten te doen. Waerom wij niet connen naelaeten U Ed. andermael op het eerbiedigste in bedeneken te geven, off niet alsoo dienstigh voor de Compag. e en sal sijn, dat in ’t stuck van de voorsz. wissels wat moderatie werde gebruyckt; wij meenen jae. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[3]/missive[22]/header[1]" type="header" id="t1" offset="0" length="123"/>
+    <tunit xpath="//volume[3]/missive[22]/paragraph[2]" type="paragraph" id="t2" offset="123" length="496"/>
+    <tunit xpath="//volume[3]/missive[22]/paragraph[3]" type="paragraph" id="t3" offset="619" length="552"/>
+  </tunits>
+</NAF>

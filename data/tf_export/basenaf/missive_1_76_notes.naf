@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Coen, Jansz, Lefebvre, Van Gorcom, Vlack, Van Diemen, Blocq Martensz; Batavia, 3 november 1628" filename="missive_1_76_notes.naf"/>
+    <public publicId="missive_1_76_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Afgedrukt Coen V, p. 102-136 » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[1]/missive[76]/remark[1]" type="remark" id="t1" offset="0" length="32"/>
+  </tunits>
+</NAF>

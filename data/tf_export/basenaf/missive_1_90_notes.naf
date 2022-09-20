@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Brouwer, Van Diemen, Vlack, Van der Burch; Batavia, 20 februari 1634" filename="missive_1_90_notes.naf"/>
+    <public publicId="missive_1_90_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Gelegenheid tot overzenden van een brief met het Engelse schip Dolphijn Vgl. Daghregisters, 4 maart 1634, p. 268. . 
+Jochem Roelofsz. van Deutecom kwam 1618 als soldaat uit, was juli 1621 lanspassaat, april 1622 korporaal der adelborsten, juli 1624 vendrig te Batavia, nov. 1628 luitenant, tevens lid van den Raad van Justitie, juli 1633 kapitein en fabriekmeester, nadat hij in maart tot mei van dat jaar een zending naar Bali had verricht, mei 1634 schepen van Batavia, okt. 1634-medio 1637 gouverneur van Amboina, febr.-aug. 1638 als commissaris naar Atjeh, dec. 1638 commandeur van een retourvloot. In dec. 1646 kwam hij weer uit als raad van Indië, 1647 als commissaris naar Atjeh, juni 1648 president-weesmeester; hij stierf Batavia juli 1649- 
+Dus tussen de St. Nicolaaspunt, de noordwesthoek van Java, en Pulau Pandjang, het grootste eiland in de baai van Bantam. , 
+Tandjong Pontang is de kaap, die de baai van Bantam in het oosten afsluit. De bedoelde eilandekens zijn thans door aanslibbing aan het vasteland aangegroeid. , 
+Gegevens Mataramse oorlog sprauwen , af gedrukt Daghregisters, 13 februari 1634 , p. 244 komst van schepen uit Siam » 
+Lauwen, de bewoners van Laos. 
+Gegevens kust van China , af gedrukt Daghregisters, 31 jan. 1634, p. 231 vanaf „doordien”; aankomst van de Assendelft, ibid. 28 jan., p. 229; van een jonk met berichten van Cambodja, ibid. 1 febr., p. 232-235; van een vrijburgers jacht uit Quinam, ibid. 16 febr., p. 244-245; van de Zwarte Arend uit Atjeh, ibid. 6 febr., p. 236-238 „ende sub jugeert” ; zending schepen naar Makassar, ibid. 10 januari, p. 224-225, en 18 jan., p. 227; voornemen meer schepen daarheen te zenden; zending van Van den Heuvel naar Amboina, ibid. 18 februari, p. 246-248; komst van de Behagen uit Coromandel, ibid. 8 februari, p. 240-244, slot » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[1]/missive[90]/remark[1]" type="remark" id="t1" offset="0" length="117"/>
+    <tunit xpath="//volume[1]/missive[90]/footnote[2]" type="footnote" id="t2" offset="117" length="634"/>
+    <tunit xpath="//volume[1]/missive[90]/footnote[3]" type="footnote" id="t3" offset="751" length="124"/>
+    <tunit xpath="//volume[1]/missive[90]/footnote[4]" type="footnote" id="t4" offset="875" length="161"/>
+    <tunit xpath="//volume[1]/missive[90]/remark[5]" type="remark" id="t5" offset="1036" length="119"/>
+    <tunit xpath="//volume[1]/missive[90]/footnote[6]" type="footnote" id="t6" offset="1155" length="31"/>
+    <tunit xpath="//volume[1]/missive[90]/remark[7]" type="remark" id="t7" offset="1186" length="625"/>
+  </tunits>
+</NAF>

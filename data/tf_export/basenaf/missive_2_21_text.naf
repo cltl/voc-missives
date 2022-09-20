@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:38CEST" title="Van Diemen, Van der Lijn, Maetsuycker, Schouten, Sweers; Batavia, 13 januari 1644" filename="missive_2_21_text.naf"/>
+    <public publicId="missive_2_21_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XXVII. ANTONIO VAN DIEMEN, CORNELIS VAN DER LIJN, JOAN MAETSUY CKER, JUSTUS SCHOUTEN EN SALOMON SWEERS, BATAVIA 13 jan. 1644. 
+d’Advijsen communiceren ons egeene veranderingh, eenlijck door onderlinge questie tusschen de Jambynesen ende de Manicabers, mitsgaders nieuwen thol van 6 per cento, die den Pangoran op den van boven comende peper hadde gestelt, den peper opgehouden wirt, ingevolge seer sober afquam, apparent na Andrigiry ende Palimbangh vervoert te werden. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[2]/missive[21]/header[1]" type="header" id="t1" offset="0" length="127"/>
+    <tunit xpath="//volume[2]/missive[21]/paragraph[2]" type="paragraph" id="t2" offset="127" length="344"/>
+  </tunits>
+</NAF>

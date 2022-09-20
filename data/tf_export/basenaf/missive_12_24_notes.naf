@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Mossel, Van der Waeyen, Van der Parra, Van der Spar, Van de Velde, Van Rheede, De Nijs, Van Bazel, Hooreman, Van Hohendorf, Van Riemsdijk, Schreuder, De Klerk; Batavia, 15 oktober 1755" filename="missive_12_24_notes.naf"/>
+    <public publicId="missive_12_24_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Na het sturen van de missive van 31 december 1754 heeft Batavia brieven van Heren XVII ontvangen d. d. 10 en 17 oktober 1754, waarop het volgende wordt geantwoord. » 
+Batavia willigt het verzoek van de vorst om een tweede jonk in. Dit druist tegen het contract in waarbij één jonk werd toegestaan. Het is echter niet in het belang van de Compagnie zijn positie aldaar kwijt te raken en de Engelsen vrij spel te geven. Om fraude rond het versturen van de passen naar China te voorkomen, moeten ze vroegtijdig naar Bandjarmasin verstuurd worden om aan twee door de vorst goedgekeurde jonken verleend te worden. 
+Batavia heeft » 
+De supercargo's zullen Heren XVII aantonen dat de handel op Kanton niet zo onvoordelig is als Heren XVII berekend hebben. De vaart en handel tussen China en Surat is stopgezet en de residentie te Cochin Chine is opgeheven, zoals Heren XVII wensten. » 
+Batavia gaat ermee door » 
+Deze vaart is al lang gestaakt door de Compagnie na herhaalde orders daartoe. De vaart is aan particulieren overgelaten of op vracht toegestaan waartoe zich nog geen liefhebbers hebben aangemeld. » 
+Hiermee heeft Batavia de twee brieven van Heren XVII beantwoord. Verder deelt men mee dat » 
+Men heeft erover vergaderd en stuurt Heren XVII het antwoord apart met deze missive,) 
+De dag is niet ingevuld. Het moet 28 maart zijn. Zie noot 7 van missive XVIII. 
+Op Java is alles ‘ in goeden stand* f) 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[12]/missive[24]/remark[1]" type="remark" id="t1" offset="0" length="167"/>
+    <tunit xpath="//volume[12]/missive[24]/remark[2]" type="remark" id="t2" offset="167" length="443"/>
+    <tunit xpath="//volume[12]/missive[24]/remark[3]" type="remark" id="t3" offset="610" length="17"/>
+    <tunit xpath="//volume[12]/missive[24]/remark[4]" type="remark" id="t4" offset="627" length="252"/>
+    <tunit xpath="//volume[12]/missive[24]/remark[5]" type="remark" id="t5" offset="879" length="27"/>
+    <tunit xpath="//volume[12]/missive[24]/remark[6]" type="remark" id="t6" offset="906" length="199"/>
+    <tunit xpath="//volume[12]/missive[24]/remark[7]" type="remark" id="t7" offset="1105" length="93"/>
+    <tunit xpath="//volume[12]/missive[24]/remark[8]" type="remark" id="t8" offset="1198" length="87"/>
+    <tunit xpath="//volume[12]/missive[24]/footnote[9]" type="footnote" id="t9" offset="1285" length="80"/>
+    <tunit xpath="//volume[12]/missive[24]/remark[10]" type="remark" id="t10" offset="1365" length="40"/>
+  </tunits>
+</NAF>

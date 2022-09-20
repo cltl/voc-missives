@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:38CEST" title="Both; Bantam, 10 november 1614" filename="missive_1_21_text.naf"/>
+    <public publicId="missive_1_21_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XXI. PIETER BOTH, BANTAM 10 november 1614. 
+Wat aengaet de Engelsman tot Bantam, genfc cap. Jan Jardyn als principael, hij heeft ’t verleden jaer tot Amboyn [a] soo superbement met ons geprocedeert is hier tegenwoordich door sijn superbe procedures in grooten haet van de Pangoran alsmede van de principale Chinnesen, waeronder wij ons vijr stoocken, wij houden niettemin metten anderen een uytwendige vruntschap ende supporteren alles, wat hij van ons tegens den Pangoran seyt. Hebben malcanderen tweemael vergast, elck doet sijn schoonste. 
+Wij hebben hier sekere tijdinge, dat die stercke fortelesse van de Portugesen gebout in Pegu van don Flippe de Britto met louter ge welt van volck overrompelt is, den gouverneur gespit ende sijn hooft op een staeck geseth, veel Portugijsen doodtgeslagen, de reste landtwaert ingevoert ende tot slaven gemaect. 
+Hier is mede tijdinge, dat den Coninck van Auwa tegens die van Tsaull in oorloch sijn ende verovert souden hebben. Den machtigen Coninck van Atchyn met alle sijn geconfedereerde coningen rusten sich sterck ten oorloch om Mallacca met ge welt te fortseren, niettegenstaende die van Mallacca haer ambassadeurs in Atchyn gesonden hebben om den Coninck van sijn voorneemen te diverteren, die den Coninck gerenvoyeert heeft ende haer versoeck af f geslagen. 
+Het schijnt, dat de Portugijsen overalle groote schade lijden ende noch sullen connen lijden. Hieronder is te verwachten groot voordeel voor U E. in dese quartieren. 
+De Portugijsen beclagen sich overal over de Castillianen, die van de gemaecte treves in ’t vaderlandt niet en houden ende dat op ons arrivement alhier in Mallacca ende Goa den treves openbaerlijck gepubliceert is geweest. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[1]/missive[21]/header[1]" type="header" id="t1" offset="0" length="44"/>
+    <tunit xpath="//volume[1]/missive[21]/paragraph[2]" type="paragraph" id="t2" offset="44" length="499"/>
+    <tunit xpath="//volume[1]/missive[21]/paragraph[3]" type="paragraph" id="t3" offset="543" length="311"/>
+    <tunit xpath="//volume[1]/missive[21]/paragraph[4]" type="paragraph" id="t4" offset="854" length="454"/>
+    <tunit xpath="//volume[1]/missive[21]/paragraph[5]" type="paragraph" id="t5" offset="1308" length="167"/>
+    <tunit xpath="//volume[1]/missive[21]/paragraph[6]" type="paragraph" id="t6" offset="1475" length="223"/>
+  </tunits>
+</NAF>

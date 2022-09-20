@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Van Diemen, Van der Lijn, Sweers, Van Alphen; Batavia, 6 februari 1645" filename="missive_2_24_notes.naf"/>
+    <public publicId="missive_2_24_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[De brief gaat met de William, van 350 last, en de Blessing, van 150 last, de enige schepen der Engelsen, die naar Europa varen » 
+De Engelsen. 
+Korte samenvatting van berichten uit vorige generale missiven » 
+Vervólg van de samenvatting » 
+Vervólg van de samenvatting » 
+Vervolg samenvatting » 
+Thomas Haverland kwam 1635 als assistent uit, 1643 onderkoopman te Makassar, 1645 koopman, 1646 te Makassar, waar hij jan. 1647 stierf. 
+Naar Makassar. 
+Vervolg samenvatting; de Egmond komt uit Malakka, waar de Vrede 24 dec. met een lading van f. 580. 000 van Thaiwan naar Suratte is gepasseerd , 100 bahar tin van Malakka medenemende, de fluit Noordsterre 9 jan. naar Coromandel met fn 823. 000 vnl. goud en zilver , zomede uit Malakka 133. 146 ® tin , bedragende f 40736. 14. 7; in maart zal een fluit uit Batavia met f 70. 000 Sumatraans goud en f 300. 000 zilver volgen; slot samenvatting » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[2]/missive[24]/remark[1]" type="remark" id="t1" offset="0" length="130"/>
+    <tunit xpath="//volume[2]/missive[24]/footnote[2]" type="footnote" id="t2" offset="130" length="14"/>
+    <tunit xpath="//volume[2]/missive[24]/remark[3]" type="remark" id="t3" offset="144" length="65"/>
+    <tunit xpath="//volume[2]/missive[24]/remark[4]" type="remark" id="t4" offset="209" length="31"/>
+    <tunit xpath="//volume[2]/missive[24]/remark[5]" type="remark" id="t5" offset="240" length="31"/>
+    <tunit xpath="//volume[2]/missive[24]/remark[6]" type="remark" id="t6" offset="271" length="24"/>
+    <tunit xpath="//volume[2]/missive[24]/footnote[7]" type="footnote" id="t7" offset="295" length="137"/>
+    <tunit xpath="//volume[2]/missive[24]/footnote[8]" type="footnote" id="t8" offset="432" length="16"/>
+    <tunit xpath="//volume[2]/missive[24]/remark[9]" type="remark" id="t9" offset="448" length="443"/>
+  </tunits>
+</NAF>

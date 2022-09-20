@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Maetsuycker, Hulft, Hartsinck, Cunaeus, Verburch, Steur, Van den Bogaerde; Batavia, 12 juli 1655" filename="missive_3_1_notes.naf"/>
+    <public publicId="missive_3_1_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[25 april is de Indian M erchant te Bantam gekomen , vnl. met lood en - bedorven - bier; deze brief gaat mei dat schip naar Europa; de jonk Flora is 18 maart op een rif voor Japara vergaan; hout van daar aangebrachi; Reynier Serooskercken vervangt Dirck Fransz. als resident te Bantam » 
+Vertrek van twee schepen op 9 en 12 april naar Palembang; 20 april van Schouten mei twee jachten naar Atjeh; 27 mei komen twee schepen van Bengalen , cargasoen f. 393758, w. o. 647 pakken zijde; 17 april vertrekt de Griffioen naar Coromandel, cargasoen /. 186530, vnl. goud en schuitzilver voor Bengalen; 18 en 24 mei komen een fluit en een nieuw jacht van Siam; 10 mei de Trouw met cargasoen van f. 90153. 15. 10, vnl. Bengaalse zijde, naar Desjima vertrokken; hei opperhoofd Jan Boucheljon zal mei twee jachten volgen; 4 vaartuigen, cargasoen /. 242900. 18. 6, gaan 14 mei naar Thaiwan, waar weinig handel is en geen goud komt, . . . . » 
+In Tonkin zal geen zijde voor Japan worden gekocht; de Vleermuys met cargasoen van f. 25773. 2-, vnl. zilver, naar Tonkin en Thaiwan gezonden; schepen 20-25 mei van de Specerij eilanden gekomen; bij Birma is niet gevochten, daar de M akassaarse vaartuigen al waren vertrokken; gebeurtenissen op Buton en op Ceram, vgl. Ambonse Historie, p. 83-85, Valentijn II, Ambonsche Zaaken, p. 198-199; 29 juni komt directeur Pelgrom met twee jachten uit Suratte, cargasoen f. 318306, vnl. kleden » 
+Christoffel Egger was zeker in 1649 reeds als vendrig op Ceylon. 
+Harmen Broer, mij verder niet bekend. 
+Berckhout gaat 13 jebr. met 2 jachten van Suratte via Sindh naar Perzië om Sarcerius te vervangen; 4 maart zijn in Suratte de 3 schepen uit Thaiwan gekomen en doorgezonden naar Perzië; een jacht van Suratte naar Mokka gezonden; bericht van den koopman in Wingurla: » 
+Carveel, port. caravela, snelzeilend scheepje met smalle boeg en breed achtereinde. 
+Vgl. hiervoor Portugiiese II, p. 309. . 
+Weinig nieuws uit Ceylon » 
+12 mei komt de Gecroonde Leeuw uit patria , 17 mei de Oliphant en van de nieuwe equipage Malakka en Wapen van Hoüandt, in juni en op 1 juli nog 8 andere; alleen de Gecroonde Leeuw had vele , nl. 50, doden; Huift zal met 12 a 14 schepen naar Ceylon gaan voor het beleg van Colombo; 19 juni vaart de Enckhuysen, cargasoen f. 149276.-A, naar Thaiwan en 7 juli twee jachten met f. 597603. 2. 6 Tiaar Japan; 2 jachten zullen naar Canton gaan voor een ambassade naar Peking; 28 juni komt Terhorst uit Solor, die is opgevolgd door Jacob Verheyden » 
+9 juli komt een der drie Quinamse jonken van Palembang met Nederlandse bemanning; gegevens Palembang , uitvoeriger in brief VIII; 11 juli komt de fluit Salm uit Banda met 543 picol notemuskaat; einde van hel jaar zullen 4 schepen naar Amsterdam, 2 naar Zeeland, 1 naar Delft, Rotterdam, Enkhuizen elk, worden gezonden; 10 juli is de Prins Willem uit patria voor Anjer gekomen » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[3]/missive[1]/remark[1]" type="remark" id="t1" offset="0" length="287"/>
+    <tunit xpath="//volume[3]/missive[1]/remark[2]" type="remark" id="t2" offset="287" length="641"/>
+    <tunit xpath="//volume[3]/missive[1]/remark[3]" type="remark" id="t3" offset="928" length="488"/>
+    <tunit xpath="//volume[3]/missive[1]/footnote[4]" type="footnote" id="t4" offset="1416" length="66"/>
+    <tunit xpath="//volume[3]/missive[1]/footnote[5]" type="footnote" id="t5" offset="1482" length="39"/>
+    <tunit xpath="//volume[3]/missive[1]/remark[6]" type="remark" id="t6" offset="1521" length="268"/>
+    <tunit xpath="//volume[3]/missive[1]/footnote[7]" type="footnote" id="t7" offset="1789" length="85"/>
+    <tunit xpath="//volume[3]/missive[1]/footnote[8]" type="footnote" id="t8" offset="1874" length="41"/>
+    <tunit xpath="//volume[3]/missive[1]/remark[9]" type="remark" id="t9" offset="1915" length="28"/>
+    <tunit xpath="//volume[3]/missive[1]/remark[10]" type="remark" id="t10" offset="1943" length="543"/>
+    <tunit xpath="//volume[3]/missive[1]/remark[11]" type="remark" id="t11" offset="2486" length="379"/>
+  </tunits>
+</NAF>

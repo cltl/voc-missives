@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Van Diemen, Van der Lijn; Batavia, 9 september 1640" filename="missive_2_5_notes.naf"/>
+    <public publicId="missive_2_5_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Berichten over de in december en januari gerepatrieerde schepen; zending van deze brief met het Engelse schip Caesar » 
+Interlopers, niet tot de Engelse Compagnie behorende schepen, indringers. 
+Aron Baker was van mei 1641 tot eind 1642 Engels president te Bantam, repatrieerde en trad dec. 1645 tot 1648 en ook van 1650 tot 1652 weer als zodanig op, vervolgens in dezelfde rang te Madras, van waar hij begin 1655 repatrieerde. 
+Vgl. Borneo, p. 92. 
+Overlijden van Adam Westerwolt , Cornelis Symonsz. van der Veer, Philips Lucasz., Joan van Broecum, Jan van der Burch en anderen » 
+Cloeckers, slimmerds. 
+Zending van Wollébrant Geleynsz, naar Perzi'è, vgl. Zeemogendheid II 158; van Croocq naar Suratte, vgl. ibid. p. 151; handel in Coromandel; blokkade van Goa, ibid. p. 130 » 
+Tien regels uitgelaten » 
+Nicolaes Cornelisz. Blocq kwam 1634 als onderkoopman uit, was opperhoofd te Petapuli en 1636-1639 te Palicol, waarna hij repatrieerde; hij kwam 1640 weer uit als opperkoopman, diende korte tijd te Wingurla, daarna weer ter Kust van Coromandel; 1642, ’43, ’44 was hij commandeur of ondercommandeur op de vloot voor Goa; in 1645 werd hij naar Ispahan gezonden, waar hij aug. 1645 gedurende een hof re is stierf. 
+Gegevens over Ceylon, afgedrukt Ceilon, bijlage V, p. 8-10; onderneming tegen Malakka, vgl. Malakka » 
+Zie over deze reis Fidalgos, p. 121 en Christian Century, p. 384 vlg. ; er is daar slechts sprake van één schip, waarvan bijna alle opvarenden in Japan ter dood werden gebracht. 
+Schepen uit verschillende kwartieren gekomen » 
+Schepen uit Thaiwan gekomen » 
+Als zij, versta: zoals daar is, onder andere; de zin loopt ook verder zeer stroef. 
+Bedoeld: in de tijd dat. 
+Gevaren van het Chinese vaarwater; schepen naar Thaiwan , J apan en Cambodja gezonden » 
+Genoeght: bevalt. 
+Simulate redenen ; hier : in tegenstelling tot krachtig optreden met praatjes aankomen. 
+G’noralamma = Ngarolamo, vgl. dl. I, p. 536. 
+’t Finael; hier: het rechte, de bedoeling. 
+Berichten van Banda en Arakan; schepen naar Sumatra’s Westkust vertrokken » 
+kwam uit Europa .... 
+Aankomst van andere schepen uit patria; de Sayer en de Neptunus mélden , dat . . . » 
+Claes Ruyter was in Deense dienst al eerder in Bengalen geweest, toen hij in oct. 1640 met de Gulden Son of Reformatie voor Masulipatam kwam, waar hij wegens schulden der Denen enige tijd werd aangehouden. In april 1641 was hij voor Bantam, van waar hij in aug. naar Coromandel terugvoer. Hij repatrieerde maart 1643 met hetzelfde schip. 
+Willem Larsen ken ik verder niet. 
+De Christianshavn was te Teneriffe voor reparaties aangelopen en daar vastgehouden . 
+Volk en contanten van de bij Siërra Leone vergane Hoff aangebracht , ter waarde van fl. 112 905. 2. 14, terwijl voor fl. 12151. 2. 2. is vermist » 
+Met admiratie, hier: met verwondering. 
+Een quelpeert is een klein snelzeilend adviesjacht, geschikt voor ondiepe wateren; het hier bedoelde was de Brack, in 1640 uit Nederland te Batavia gekomen. 
+Ontvangen goederen; schepen bestemd voor patria; schip van Mauritius gekomen , vgl. Mauritius, p. 882 3 » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[2]/missive[5]/remark[1]" type="remark" id="t1" offset="0" length="120"/>
+    <tunit xpath="//volume[2]/missive[5]/footnote[2]" type="footnote" id="t2" offset="120" length="75"/>
+    <tunit xpath="//volume[2]/missive[5]/footnote[3]" type="footnote" id="t3" offset="195" length="234"/>
+    <tunit xpath="//volume[2]/missive[5]/footnote[4]" type="footnote" id="t4" offset="429" length="21"/>
+    <tunit xpath="//volume[2]/missive[5]/remark[5]" type="remark" id="t5" offset="450" length="132"/>
+    <tunit xpath="//volume[2]/missive[5]/footnote[6]" type="footnote" id="t6" offset="582" length="23"/>
+    <tunit xpath="//volume[2]/missive[5]/remark[7]" type="remark" id="t7" offset="605" length="174"/>
+    <tunit xpath="//volume[2]/missive[5]/remark[8]" type="remark" id="t8" offset="779" length="26"/>
+    <tunit xpath="//volume[2]/missive[5]/footnote[9]" type="footnote" id="t9" offset="805" length="411"/>
+    <tunit xpath="//volume[2]/missive[5]/remark[10]" type="remark" id="t10" offset="1216" length="103"/>
+    <tunit xpath="//volume[2]/missive[5]/footnote[11]" type="footnote" id="t11" offset="1319" length="179"/>
+    <tunit xpath="//volume[2]/missive[5]/remark[12]" type="remark" id="t12" offset="1498" length="48"/>
+    <tunit xpath="//volume[2]/missive[5]/remark[13]" type="remark" id="t13" offset="1546" length="31"/>
+    <tunit xpath="//volume[2]/missive[5]/footnote[14]" type="footnote" id="t14" offset="1577" length="84"/>
+    <tunit xpath="//volume[2]/missive[5]/footnote[15]" type="footnote" id="t15" offset="1661" length="26"/>
+    <tunit xpath="//volume[2]/missive[5]/remark[16]" type="remark" id="t16" offset="1687" length="89"/>
+    <tunit xpath="//volume[2]/missive[5]/footnote[17]" type="footnote" id="t17" offset="1776" length="19"/>
+    <tunit xpath="//volume[2]/missive[5]/footnote[18]" type="footnote" id="t18" offset="1795" length="89"/>
+    <tunit xpath="//volume[2]/missive[5]/footnote[19]" type="footnote" id="t19" offset="1884" length="46"/>
+    <tunit xpath="//volume[2]/missive[5]/footnote[20]" type="footnote" id="t20" offset="1930" length="44"/>
+    <tunit xpath="//volume[2]/missive[5]/remark[21]" type="remark" id="t21" offset="1974" length="77"/>
+    <tunit xpath="//volume[2]/missive[5]/footnote[22]" type="footnote" id="t22" offset="2051" length="22"/>
+    <tunit xpath="//volume[2]/missive[5]/remark[23]" type="remark" id="t23" offset="2073" length="86"/>
+    <tunit xpath="//volume[2]/missive[5]/footnote[24]" type="footnote" id="t24" offset="2159" length="339"/>
+    <tunit xpath="//volume[2]/missive[5]/footnote[25]" type="footnote" id="t25" offset="2498" length="35"/>
+    <tunit xpath="//volume[2]/missive[5]/footnote[26]" type="footnote" id="t26" offset="2533" length="86"/>
+    <tunit xpath="//volume[2]/missive[5]/remark[27]" type="remark" id="t27" offset="2619" length="148"/>
+    <tunit xpath="//volume[2]/missive[5]/footnote[28]" type="footnote" id="t28" offset="2767" length="40"/>
+    <tunit xpath="//volume[2]/missive[5]/footnote[29]" type="footnote" id="t29" offset="2807" length="158"/>
+    <tunit xpath="//volume[2]/missive[5]/remark[30]" type="remark" id="t30" offset="2965" length="107"/>
+  </tunits>
+</NAF>

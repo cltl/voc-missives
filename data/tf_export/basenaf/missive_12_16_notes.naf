@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Mossel, Van Broyel, Van der Waeyen, Van der Parra, Van der Spar, Van Gollenesse, Van de Velde, Van Rheede, De Nijs, Van Bazel; Batavia, 13 augustus 1753" filename="missive_12_16_notes.naf"/>
+    <public publicId="missive_12_16_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Deze missive wordt verstuurd met het Engelse compagniesschip Godolphin. Amboina heeft dit jaar slechts 157. 557 Ib. kruidnagels geleverd. Batavia kan dus geen 400. 000 Ib sturen zoals vorig jaar. » 
+Op 30 januari 1753 is raad ordinaris Johannes Mattheus Cluysenaar overleden. Op 15 januari is raad extraordinaris mr. Librecht Hooreman op eigen verzoek ontslagen als gouverneur van Coromandel. Secunde Steven Vermont is hem opgevolgd. De naar Batavia verloste directeur van Surat Johannes Pekok is opgevolgd door opperkoopman van het kasteel Johan de Rot. Op eigen verzoek is mr. Reinier Stapel ontslagen als voorzitter van de Raad van Justitie. Batavia laat de vervulling van deze plaats aan Heren XVII. Men heeft de brieven van september en oktober 1752 ontvangen van Heren XVII waarop ‘ per het vroegschip’ geantwoord zal worden. » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[12]/missive[16]/remark[1]" type="remark" id="t1" offset="0" length="199"/>
+    <tunit xpath="//volume[12]/missive[16]/remark[2]" type="remark" id="t2" offset="199" length="636"/>
+  </tunits>
+</NAF>

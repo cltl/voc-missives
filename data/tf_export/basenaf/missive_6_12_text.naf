@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:38CEST" title="Van Outhoorn, Van Hoorn, Pijl, De Haas, Van Riebeeck, Cops, Bornezee, Van Rhee, Van Dam, Van Swoll; Batavia, 26 oktober 1700" filename="missive_6_12_text.naf"/>
+    <public publicId="missive_6_12_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XXVII. WILLEM VAN OUTHOORN, JOAN VAN HOORN, LAURENS PIJL, DIRK DE HAAS, ABRAHAM VAN RIEBEECK, JOANNES COPS, MANUEL BORNEZEE, THOMAS VAN RHEE, JACOB VAN DAM EN CHRISTOFFEL VAN SWOLL, BATAVIA 26 october 1700. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[6]/missive[12]/header[1]" type="header" id="t1" offset="0" length="208"/>
+  </tunits>
+</NAF>

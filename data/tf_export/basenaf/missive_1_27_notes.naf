@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Reael; Ternate, 22 september 1616" filename="missive_1_27_notes.naf"/>
+    <public publicId="missive_1_27_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Reael’ s advies over zijn opvolging, afgedr. Bouwstoffen I, p. 164 A166 » 
+Zie voor deze reis Le Maire en Schouten. Volgens de reisbeschrijving kwamen zij 17 sept. 1616 aan. 
+Djailolo, gewoonlijk naam voor een plaats ter westkust van Halmaheira op 1° N. B. ; ook naam voor dat eiland. 
+Prins Maurits als admiraal -generaal. 
+Opgesteld. 
+Afgedrukt Le Maire en Schouten I, p. (15), de commissiebrief van prins Maurits ald. p. (17). 
+Over het weghalen van de Siauers van Pulau Ai door die van Run ; vgl. Bouw¬ stoffen I, p. 132-164 en Coen VII p. 152-170 en over een voorgenomen tocht van Lam naar de Philippijnen; vgl. Bouwstoffen I, p. 128, 170-184 en Coen I, p. 270 en VII, p. 243 vlg. » 
+Vgl. Goen I, p. 175, 176. 
+Zie voor dit onderwerp, echter uit wat later tijd, Voeding en Beschrigvinge I, I, p. 511 vlg. 
+Bedoeld is de vloot van Spilbergen, die door de Straat Magellaen kwam. 
+Verzoek om toezending van levensmiddelen » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[1]/missive[27]/remark[1]" type="remark" id="t1" offset="0" length="75"/>
+    <tunit xpath="//volume[1]/missive[27]/footnote[2]" type="footnote" id="t2" offset="75" length="100"/>
+    <tunit xpath="//volume[1]/missive[27]/footnote[3]" type="footnote" id="t3" offset="175" length="111"/>
+    <tunit xpath="//volume[1]/missive[27]/footnote[4]" type="footnote" id="t4" offset="286" length="39"/>
+    <tunit xpath="//volume[1]/missive[27]/footnote[5]" type="footnote" id="t5" offset="325" length="12"/>
+    <tunit xpath="//volume[1]/missive[27]/footnote[6]" type="footnote" id="t6" offset="337" length="94"/>
+    <tunit xpath="//volume[1]/missive[27]/remark[7]" type="remark" id="t7" offset="431" length="258"/>
+    <tunit xpath="//volume[1]/missive[27]/footnote[8]" type="footnote" id="t8" offset="689" length="27"/>
+    <tunit xpath="//volume[1]/missive[27]/footnote[9]" type="footnote" id="t9" offset="716" length="95"/>
+    <tunit xpath="//volume[1]/missive[27]/footnote[10]" type="footnote" id="t10" offset="811" length="72"/>
+    <tunit xpath="//volume[1]/missive[27]/remark[11]" type="remark" id="t11" offset="883" length="44"/>
+  </tunits>
+</NAF>

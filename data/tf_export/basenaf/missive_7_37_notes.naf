@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Zwaardecroon, De Haan, Huysman, Hasselaar, Crudop, Tolling, Bergman, Durven, Van Dishoeck, Blom; Batavia, 21 september 1723" filename="missive_7_37_notes.naf"/>
+    <public publicId="missive_7_37_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Kaap de Goede Hoop. 
+De Baan man kwam 23 juni aan de Kaap; uit patria kwamen te Batavia aan » 
+De Herstelde Leeuw en Middelwoud deden meer dan een jaar over de reis, de andere schepen hadden een voorspoedige reis, zij brachten brieven van Heren XVII van 17 juli en 7 october 1722 over; alleen de Huis te Assenburg gaat naar Mokka, via Malabar; 4 raden-extraordinair werden benoemd, echter is Jasper van Mansdale overleden, mr. Willem van Egten al drie jaar ziek, terwijl Sipman en Van West renen bejaard zijn, deze twee werden opgevolgd door resp. de tijdelijke secretaris van de Regering Gobius in Makassar en Dirk van Cloon in Coromandel, Oets is op de reis uit Perzië gestorven, Rumpff op die uit Ceylon, men verving hem als gouverneur door Johannes Hertenberg; van de aanwezige raden is Tolling president van de Raad van Justitie, Bergman eerste sergeant-majoor, zodat zij aan het schrijfwerk niet kunnen deelnemen, men kon daarom aan Van Dishoeck niet toestaan te repatriëren, men hoopt op benoeming van andere raden; de vorige provisionele secretaris Joan Paul Schagen werd gezaghebber van Gale, zodat er ook geen secretaris van de Hoge Regering is, Zwaardecroon kon het werk slechts moeilijk aan en vroeg 2 jan. bij apart briefje ontslag; uit Gamron werd verstaan, dat » 
+Sophy, bij Europeanen gebruikelijke titel voor den Sjah, omdat hij stamde uit het geslacht der Safaïden, stamvader Safiudin, betekenend : zuiver in het geloof. Het bericht is niet geheel juist, Sjah Husain gaf zich nabij Ispahan aan den Afghaan Mahmud Khan over. 
+T och zendt men de Sleewijk op verzoek van het personeel naar Gamron met specerijen; er vertrokken » 
+Voor Oost-Java en Bantam waren bijna evenveel schepen nodig, voorts » 
+Voor Malabar beschikt men niet over de geëiste 100000 dukaten, een gedeelte zal men er uit Ceylon naar toe kunnen zenden; te Mokka zal men de koffie enkel met het uit Batavia aan te voeren kapitaal ad ongeveer 5 ton moeten betalen; te Batavia leende men 13 aug. 200000 rsd. a 4Vi%; men gaf de schepen naar de Westerkantoren enige militie mee met het oog op de Europese zeerovers, op de retourschepen wordt op last van Heren XVII het aantal stuurlieden verdubbeld » 
+Vgl. I Koningen 4, 25: Ende Juda en Israël woonden seker een ijegelick onder sijnen wijnstock ende onder sijnen vijgeboom. 
+T weede reis van Durven naar de berg Parang ter hervatting van het mijnwerk, hoewel hij nog maar 9 voet in de berg liet graven, kwam enig goud en zilver leverend erts te voorschijn; einde van de oorlog op Java, qfgedr. Opkomst IX, p. 82, noot, le alinea; voor 12566 dukaten of f 67856 werd aan wissels op patria afgegeven; uit China kwamen 13 jonken van Amoy, 6 van Sjanghai, 2 van Ningpo en 3 andere; Van der Stoppel wordt naar patria gezonden; Bergman wil repatriëren wegens zijn kwalen; volgt de tweede alinea van dezelfde noot, men leze voor passebaan: passeerbaan en voor Gelekerken: Gelskerken; men hoopt, dat » 
+Danuredja zond 300 realen voor het onderhoud aan de Kaap van Pangéran Lor-ing-Pasar gedurende een jaar; de retourschepen Wendela, Linschoten en Slot Aldegonde hebben cargasoen van f 699727, waarvan voor Kamer Amsterdam f 353367, Zeeland f 186479 en elk der andere ongeveer f 40000; hiervan is 919258 ® Javakoffie, waard f 476538, en 199972 ffi thee, waard f 163959 » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[7]/missive[37]/footnote[1]" type="footnote" id="t1" offset="0" length="21"/>
+    <tunit xpath="//volume[7]/missive[37]/remark[2]" type="remark" id="t2" offset="21" length="74"/>
+    <tunit xpath="//volume[7]/missive[37]/remark[3]" type="remark" id="t3" offset="95" length="1184"/>
+    <tunit xpath="//volume[7]/missive[37]/footnote[4]" type="footnote" id="t4" offset="1279" length="264"/>
+    <tunit xpath="//volume[7]/missive[37]/remark[5]" type="remark" id="t5" offset="1543" length="102"/>
+    <tunit xpath="//volume[7]/missive[37]/remark[6]" type="remark" id="t6" offset="1645" length="71"/>
+    <tunit xpath="//volume[7]/missive[37]/remark[7]" type="remark" id="t7" offset="1716" length="466"/>
+    <tunit xpath="//volume[7]/missive[37]/footnote[8]" type="footnote" id="t8" offset="2182" length="124"/>
+    <tunit xpath="//volume[7]/missive[37]/remark[9]" type="remark" id="t9" offset="2306" length="619"/>
+    <tunit xpath="//volume[7]/missive[37]/remark[10]" type="remark" id="t10" offset="2925" length="368"/>
+  </tunits>
+</NAF>

@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Van der Lijn, Maetsuycker, Reniers, Van Alphen; Batavia, 31 december 1645" filename="missive_2_27_notes.naf"/>
+    <public publicId="missive_2_27_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[De acht retourschepen, 18 dec. vertrokken, hebben 1062 zielen aan boord; berichten over Atjeh, afgedr. Bouwstoffen III, p. 251-253 de Engelse Supply vaart van Suratte over Atjeh naar Manilla; de Akersloot komt van Sumatra’s Westkust te Batavia ; berichten over Malakka, afgedr. Bouwstoffen III p. 254-256 midden » 
+Commentaar op de eis van Japan » 
+Henrick Steen kwam 1635 als onderkoopman uit, hij diende op schepen, werd 1640 opperhoofd in Atjeh, 1643 opperkoopman te G-amron, 1644-45 sjahbandar te Malakka, 1645 commandeur van de vloot naar de Philippijnen, daarna op Formosa, waar hij weldra stierf. 
+Cornelis Caesar, 1636-37 koopman in Quinam, daarna te Thaiwan, 1641 opperkoopman; hij repatrieert in 1646 en komt 1651 weer uit als extra-ord. raad van Indië, president van de weeskamer, 1653 gouverneur van Formosa, 17 jan. 1657 tot zijn sterven op 5 oct. gewoon raad van Indië. 
+Nicasius de Hoge kwam 1638 als onderkoopman uit, werd vervolgens koopman, 1644 opperkoopman. Hij dient voortdurend op Formosa en repatrieert in 1647. 
+Aankomst te Batavia van het jacht Oudewater uit Arakan » 
+Thado, Koning van Arakan, 1645-1652. 
+Klein Bengalen, de grensstreek tussen Bengalen en Arakan. 
+Nicolaes van der Graeff, vrijburger te Malakka, werd, met zijn jacht in 1644 naar Chittagong varend, aangehouden in de haven van Arakan en met de bemanning het binnenland ingevoerd, waar hij stierf. 
+Het jacht Breskens komt uit Tonkin » 
+Jan van Riebeeck, de man, die later de Nederlandse vestiging aan de Kaap de Goede Hoop tot stand bracht. Van de uitgebreide literatuur over hem zie men bijv. Riebeeck. 
+Tuffon, taifoen. 
+Schadeloos, hier: zwaar beschadigd. 
+Het hoofd van het geslacht Trinh. oppermachtig in Tonkin, had van den nominalen Vorst, den Koning van Annam uit het geslacht Le, de titel Vuong, ongeveer: prins, gekregen. De Nederlanders meenden, dat hij de Koning was. Van 1623 tot 1657 was het Trinh Trang, die een van zijn zoons, in de Nederlandse stukken Duckongfoe genoemd, als kroonprins had afgezet. Deze man was met enige andere prinsen in verzet gekomen en 26 mei 1645 totaal verslagen. Hij werd met zijn voornaamste aanhangers ter dood gebracht. Men vgl. Tonkin register, i. c. Duckonghfoe. . 
+Gewenste hoeveelheid volk , afgedr. Bouwstoffen II p. 256-257 Salomon Sweers repatrieert buiten gage; andere repatriër enden; Mr J ohannes Gunaeus volgt Mestdagh op als secretaris van de Regering » 
+Naar patria overgemaakte lading, waard f 2519610. 9. 8; op patria getrokken wissels; aan reële effecten blijft na vertrek der retourschepen f. 10207091. 6. 6, meer dan ooit te voren » 
+Willem Leyel was 1639 uit Denemarken vertrokken met de Christianshavn, maar op Teneriffe aangehouden, waardoor hij eerst 1643 optrad als commandeur van Trankebar. In 1645 liquideerde hij het kantoor te Bantam, maar knoopte betrekkingen met Makassar aan. In 1648 kwam zijn personeel tegen hem in verzet, dat hem via Bantam naar Denemarken terugzond. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[2]/missive[27]/remark[1]" type="remark" id="t1" offset="0" length="315"/>
+    <tunit xpath="//volume[2]/missive[27]/remark[2]" type="remark" id="t2" offset="315" length="34"/>
+    <tunit xpath="//volume[2]/missive[27]/footnote[3]" type="footnote" id="t3" offset="349" length="256"/>
+    <tunit xpath="//volume[2]/missive[27]/footnote[4]" type="footnote" id="t4" offset="605" length="280"/>
+    <tunit xpath="//volume[2]/missive[27]/footnote[5]" type="footnote" id="t5" offset="885" length="151"/>
+    <tunit xpath="//volume[2]/missive[27]/remark[6]" type="remark" id="t6" offset="1036" length="58"/>
+    <tunit xpath="//volume[2]/missive[27]/footnote[7]" type="footnote" id="t7" offset="1094" length="38"/>
+    <tunit xpath="//volume[2]/missive[27]/footnote[8]" type="footnote" id="t8" offset="1132" length="59"/>
+    <tunit xpath="//volume[2]/missive[27]/footnote[9]" type="footnote" id="t9" offset="1191" length="200"/>
+    <tunit xpath="//volume[2]/missive[27]/remark[10]" type="remark" id="t10" offset="1391" length="38"/>
+    <tunit xpath="//volume[2]/missive[27]/footnote[11]" type="footnote" id="t11" offset="1429" length="169"/>
+    <tunit xpath="//volume[2]/missive[27]/footnote[12]" type="footnote" id="t12" offset="1598" length="18"/>
+    <tunit xpath="//volume[2]/missive[27]/footnote[13]" type="footnote" id="t13" offset="1616" length="37"/>
+    <tunit xpath="//volume[2]/missive[27]/footnote[14]" type="footnote" id="t14" offset="1653" length="554"/>
+    <tunit xpath="//volume[2]/missive[27]/remark[15]" type="remark" id="t15" offset="2207" length="199"/>
+    <tunit xpath="//volume[2]/missive[27]/remark[16]" type="remark" id="t16" offset="2406" length="185"/>
+    <tunit xpath="//volume[2]/missive[27]/footnote[17]" type="footnote" id="t17" offset="2591" length="350"/>
+  </tunits>
+</NAF>

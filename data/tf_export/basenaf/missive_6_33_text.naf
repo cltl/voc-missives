@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:38CEST" title="Van Hoorn, Van Riebeeck, Pijl, Cops, Bornezee, Van Swoll, De Wilde, Douglas, Van Rijn, Van der Stel, Zwaardecroon, De Haan; Batavia, 17 februari 1705" filename="missive_6_33_text.naf"/>
+    <public publicId="missive_6_33_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[V. JOAN VAN HOORN, ABRAHAM VAN RIEBEECK, LAURENS PIJL, JOANNES COPS, MANUEL BORNEZEE, CHRISTOFFEL VAN SWOLL, HERMAN DE WILDE, ABRAHAM DOUGLAS, ADAM VAN RIJN, ADRIAAN VAN DER STEL, HENDRIK ZWAARDECROON EN MATTHEUS DE HAAN, BATAVIA 17 februari 1705. 
+het arrivement van 4 France scheepen, als twee van den Konink en twee van de Comp. dier natie ter voormelte custe niet alleen maar ook wel voomamentlijk hare aankomste en verrigtingen op Cormandel, alwaar zij tusschen Palleacatte en Poedechery off Tegenepatnam ontmoet hebben het schip den Gouden Vogel Phenix, ’t welke den heer gedesigneerd commissaris dier Custe Bernard Phoonsen had verkooren om daarmede uyt Bengale na Cormandel, de plaatsen zijnder commissie, over te vaaren, dogh ook met eene het ongeluk gevild heefd, dat sijn e., van bovens winds voorin, vijandlijke bodems op steven lopende, door haar overmeesterd en weggenomen is geworden na een resistentie van des morgens tot op de middag met verlies van 10 dooden, waaronder den schipper Hendrik Mondiger en het bekomen van 25 gequetste. 
+aan die van Ceylon om assistentie van ten minsten 5 cloeke scheepen en een freguat med eenige branders. 
+door haar aan die van Mallabaar is versogt alle retoumeerende schepen uyt Persia en Souratte van Cochin na Colombo te doen oversteeken om sigh daar te voorsien en sterck te maken. 
+die 4 schepen med nog andere 5 d. 08 uyt Europa zijn uytgeloopen en op de hoogte van Caab de Goede Hoop med eenige Engelse oorlogschepen slaags geweest, bij welck conflict zij 2 van hare mackers souden hebben verlooren en dus egter nogh 7 bodems buyten de Phenix sterk gebleven zijn, - 
+het scheen, d’Europianen op Nilur door toedoen van den fameusen Abdul Gaffoer van de Mogolders benauwd wierden, ter zake hij van haar vergoeding begeerde voor seeker scheepken, hetwelcke door de Portugesen van d’Arabieren genomen en bij hem begroot was op 12 lack ropias. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[6]/missive[33]/header[1]" type="header" id="t1" offset="0" length="249"/>
+    <tunit xpath="//volume[6]/missive[33]/paragraph[2]" type="paragraph" id="t2" offset="249" length="803"/>
+    <tunit xpath="//volume[6]/missive[33]/paragraph[3]" type="paragraph" id="t3" offset="1052" length="105"/>
+    <tunit xpath="//volume[6]/missive[33]/paragraph[4]" type="paragraph" id="t4" offset="1157" length="181"/>
+    <tunit xpath="//volume[6]/missive[33]/paragraph[5]" type="paragraph" id="t5" offset="1338" length="287"/>
+    <tunit xpath="//volume[6]/missive[33]/paragraph[6]" type="paragraph" id="t6" offset="1625" length="273"/>
+  </tunits>
+</NAF>

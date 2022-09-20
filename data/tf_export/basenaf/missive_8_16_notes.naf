@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="De Haan, Huysman, Hasselaar, Blom, Durven, Van der Schuer, Versluys, Westpalm, Van Baerle, De Witte, Van Schooten, Van Heyningen, Van Bayen; Batavia, 8 december 1728" filename="missive_8_16_notes.naf"/>
+    <public publicId="missive_8_16_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Eind 1727 werden op de noordkust van Halmaheira uitgeroeid 178 vruchtdragende notebomen , 5389 vruchtdragende en 12. 786 telbare nagelbomen , op Taffuri en Meau 4 vruchtdragende en 104 telbare nagelbomen , op Sula-Mangoli 16 en 361 , in Maba, waar een V. O. C. merkteken werd geplaatst in maart 1728 2593 vruchtdragende en 30 telbare notebomen , in Weda en Patani was extirpatie door de vijandelijke houding der bevolking niet mogelijk , op de Obi-eilanden in april 15. 588 vruchtdragende notebomen , 4 vruchtdragende en 103 telbare nagelbomen , enkele noten daarvan gaan ter keuring naar patria, in aug. werden er in 18 dagen nog 8020 vruchtdragende notebomen omgehakt , blijkbaar heeft men vroeger niet zorgvuldig genoeg gezocht). 
+Hulp der inwoners is onontbeerlijk , zodat een klein geschenk aan hen op zijn plaats is; volgens een sengadji zouden enige specerijbomen op Sulabesi verborgen gehouden worden , wat het personeel te Ternate niet gelooft , daar de Koning van Ternate te vertrouwen is » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[8]/missive[16]/remark[1]" type="remark" id="t1" offset="0" length="734"/>
+    <tunit xpath="//volume[8]/missive[16]/remark[2]" type="remark" id="t2" offset="734" length="268"/>
+  </tunits>
+</NAF>

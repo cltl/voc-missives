@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:38CEST" title="Zwaardecroon, De Haan, Huysman, Hasselaar, Crudop, Tolling, Bergman, Durven, Van Dishoeck, Blom; Batavia, 15 oktober 1723" filename="missive_7_38_text.naf"/>
+    <public publicId="missive_7_38_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XXII HENDRIK ZWAARDECROON, MATTHEUS DE HAAN, ANTHONY HUYSMAN, CORNELIS HASSELAAR, JOAN ADRIAAN CRUDOP, LAURENS TOLLING, HANS FREDERIK BERGMAN, DIDERIK DURVEN, EWOUT VAN DISHOECK EN WIJBRANT BLOM, BATAVIA 15 october 1723. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[7]/missive[38]/header[1]" type="header" id="t1" offset="0" length="222"/>
+  </tunits>
+</NAF>

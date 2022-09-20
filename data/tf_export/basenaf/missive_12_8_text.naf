@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:39CEST" title="Mossel, Cluysenaar, Van Broyel, Van der Waeyen, Van der Parra, Van der Spar, Loten, Van Gollenesse, Van de Velde; Batavia, 31 december 1751" filename="missive_12_8_text.naf"/>
+    <public publicId="missive_12_8_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:39CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:39CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[VIII. JACOB MOSSEL, JOHANNES MATTHEUS CLUYSENAAR, AREND VANBROYEL, JACOB VAN DER WAEYEN, PETRUS ALBERTUS VAN DER PARRA, JURGEN VAN DER SPAR, JOAN GIDEON LOTEN, JULIUS VALENTIJN STEIJNVAN GOLLENESSE en PIETER VAN DE VELDE, BATAVIA 31 december 1751. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[12]/missive[8]/header[1]" type="header" id="t1" offset="0" length="249"/>
+  </tunits>
+</NAF>

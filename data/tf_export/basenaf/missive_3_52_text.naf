@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:38CEST" title="Maetsuycker, Verburch, Pit, Overtwater, Speelman, Van Hoorn; Batavia, 5 februari 1672" filename="missive_3_52_text.naf"/>
+    <public publicId="missive_3_52_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[LVIII. JOAN MAETSUYKER, NICOLAES VERBURCH, LAURENS PIT, PIETER OVERTWATER, CORNELIS SPEELMAN EN PIETER VAN HOORN, BATAVIA 5 febr. 1672. 
+dat se veelmalen gevraagt hadden naar de gelegentheyt der thollcn en inkomens ontrent den boom op Batavia, dat haar wel beantwoort was, maar sijluyden duyden die saack anders. 
+Of we niet gesint waaren Formosa weder in te nemen met behulp van andere Europische natiën, alsoo sulcke maniere van doen tegen de Turck wel gepractiseert was. 
+Ons opperhooft was van gevoelen, dat de zijde aanstaande jaar dier soude wesen, maar niet soo dier als ’t verleden jaar. Op ’t eylant stont een laboratorium gemaakt te worden ten dienste en koste van den Keyser, daar onse apotheeker in werken soude, dan soude noch wel eenige glaase retorten van nooden bebben, die uyt Hollant mosten komen. 
+Het was de Com. Pa toegestaan noch een nieuw packhuys op ’t eylant te timmeren, hetwelck kosten soude of aanbesteet was tot 3700 teylen of 12950 Indise guldens. 
+Daar stonden 2 joncken uyt Japan naa Tonquin te gaan, die ’t koopergelt ontrent 20 ten hondert dierder in Japan hadden ingekoght als de Comp. e en daarom wilden de burgermeesters van Nangasackij die gemelten handel bij octroy of previlegie van den Keyser alleen drijven, ons desel ve het 1000 niet een condrijn of grootien minder geven, maar op die wijse kond’er in Tonquin geen of bijna geen voordeel op behaalt worden, dat met silver dan weynigh verschilt. Daar wierde bij d’onse gints gelooft, dat de Japanders in dien handel herideerden. 
+De coopluyden van Japan hadden groote verliesen gehadt, bijsonderdegeene die de verdroncken en weder gedroogde lijnwaten gekoght hadden. 
+d’Onse wierden noch al gequelt met onredelijke betalinge der goederen, die se daar inkoghten, eetwaeren namentlijk, moetende bijkans dubbelt betalen van ’tgeene de goederen in de stadt gekogt wierden. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[3]/missive[52]/header[1]" type="header" id="t1" offset="0" length="137"/>
+    <tunit xpath="//volume[3]/missive[52]/paragraph[2]" type="paragraph" id="t2" offset="137" length="177"/>
+    <tunit xpath="//volume[3]/missive[52]/paragraph[3]" type="paragraph" id="t3" offset="314" length="161"/>
+    <tunit xpath="//volume[3]/missive[52]/paragraph[4]" type="paragraph" id="t4" offset="475" length="342"/>
+    <tunit xpath="//volume[3]/missive[52]/paragraph[5]" type="paragraph" id="t5" offset="817" length="162"/>
+    <tunit xpath="//volume[3]/missive[52]/paragraph[6]" type="paragraph" id="t6" offset="979" length="543"/>
+    <tunit xpath="//volume[3]/missive[52]/paragraph[7]" type="paragraph" id="t7" offset="1522" length="138"/>
+    <tunit xpath="//volume[3]/missive[52]/paragraph[8]" type="paragraph" id="t8" offset="1660" length="202"/>
+  </tunits>
+</NAF>

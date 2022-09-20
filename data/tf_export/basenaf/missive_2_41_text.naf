@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:38CEST" title="Reniers, Maetsuycker, Demmer, Hartsinck, De Vlaming van Oudtshoorn, Caesar, Versteghen; Batavia, 5 februari 1652" filename="missive_2_41_text.naf"/>
+    <public publicId="missive_2_41_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[VI. CAREL RENIERS, JOAN MAETSUYKER, GERARD DEMMER, CAREL HARTZINCK, AERNOUT DE VLAMING VAN OUDTSHOORN, CORNELIS CAESAR EN WILLEM VERSTEGHEN, BATAVIA 5 febr. 1652. 
+Daer wort gepresumeert ende heeft groote waerschijnelijcheyt, dat den Coningh voorgehat heeft het jacht af te loopen ende het volck doot te slaen, sich meester maeckende van hetselve ende d’ingelade goederen, hetwelck, als hem ontstaen was, sijnde d’h. r Verstegen vroeger, so het schijnt, als hij gegist had, vertrocken, so heeft hij, met een groten spijt ingenomen sijnde, hetselve op de verblevene ministers willen verhalen ende het voorverhaelde schandelijcke stuck willen in ’t werck stellen, hebbende d’onse naderhant tot haer vertreck buytendien vele versmaetheden, overlast ende injurie moeten lijden, sonderdat sij daerjegen dorsten kicken, maer mosten alles geduldich verdragen ende de boose menschen noch geschencken toegeven om in geen meerder swaricheyt te vervallen en heeft de Coninck de laeckenen ende perpetuanen, bij den e. Verstegen aldaer gelaten, na hem genomen, deselve priserende ende betalende na sijn welgevallen, daer oock geen reden tegen mochten helpen, waeruyt de groote brutaliteyt ende onbeschaemtheyt van die natie af te meten is ; tot justificatie van haer doen niet anders inbrengende, als dat sij met andere natiën mede op die wijse plegen te handelen. Desalniettegenstaende heeft de Coningh d’onse op hun vertreck noch 500 tail silver toegesonden om hier op Batavia eenige laeckenen, perpetuanen ende andere dingen, die hem mochten aengenaem sijn, voor hem te copen, niet eens gissingh maeckende, so het schijnt, dat wij ons het bovenverhaelde sullen aentrecken ofte te laten blij eken ons hetselve leet te sijn, twelck onses oordeels ten hoochsten nodich is, bijaldien Comp. 8 respect aen die cant niet t’enemael sal onder de voet geraecken, sijnde al meer dan te veel daermede vercleynt, dat wij sonder eenige satisfactie van de vorige injurie ende affronten becomen te hebben haer de vrede weder aen geboden ende veraccordeert hebben, sodat dit stuck nootsaeckelijck sal dienen gerevengieert, of hebben wij in Toncquin wellicht hetselve tractament te verwachten, al meest één natie sijnde ende mede cleyne discretie gebruyckende, daer te sijner tijt bij ruymte van schepen ende volck op gelet wort, also wij met U Ed. van gevoelen sijn beter te sijn stilgeseten als ijts bij der hand te nemen, dat met geen respect connen uytvoeren, gelijck daer voor desen is geschiet, daer sij apparent noch al moedich ende stout op sijn. De mestice barbier J aldaer voor desen gevangen, is daer alsnu weder verbleven, niet afgecomen sijnde, als d’andere vertrocken, diewij dan vresen, beswaerlijck uyt hare handen sal geraecken, te meer dewijl wij deQuinammers alhier, die op de getroffen vrede rede waren vrijgelaten, weder inslavernij e hebben doen nemen.( Verwachting , dat de schepen 7 of 8 febr. naar Amboina kunnen vertrekken) . 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[2]/missive[41]/header[1]" type="header" id="t1" offset="0" length="164"/>
+    <tunit xpath="//volume[2]/missive[41]/paragraph[2]" type="paragraph" id="t2" offset="164" length="2761"/>
+  </tunits>
+</NAF>

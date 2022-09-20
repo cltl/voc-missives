@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="De Carpentier, Dedel, Sonck, Specx, Van Gorcom; Batavia, 4 maart 1624" filename="missive_1_60_notes.naf"/>
+    <public publicId="missive_1_60_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Aangekomen schepen » 
+Vgl. Daghregisters, 25 febr. 1624. 
+Peper ontvang sten uit Djambi in 1623 » 
+Dus: slaven van de Kust van Coromandel. 
+Gebeurtenissen ter kust van China , vgl. China v nl. p. 470 vlg. » 
+In China: de Portugezen van Macao en de Spanjaarden van de Philippijnen. 
+NI. de overval te Amoy op Christiaen Francx, die daar voor onderhandelingen was gekomen. Zie China, p. 226 vlg. en p. 241-251. 
+To-tok, opperbevelhebber der troepen, militaire gouverneur. 
+Mogelijkheid van vestiging op Thaiwan, afgedr. China p. 248 » 
+Vele Portugezen waren met Japanse vrouwen gehuwd, die met haar dochters moesten achterblijven. 
+Vgl. Daghregisters, 6 febr. 1624. . 
+Chinese gevangenen maken zich van de Mokka meester , vgl. China p. 237 » 
+Voor deze kwestie over het verspillen van buskruit door saluutschoten zie men Coe. n I, p. 783, III, p. 281 en VII, p. 957. 
+Benodigd touw , benodigd volk , aankomst schip uit Suratte , vgl. Daghregisters, 3 maart 1624 , meded. betr. Perzië , vgl. Perzië v nl. p. 19, vlg. » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[1]/missive[60]/remark[1]" type="remark" id="t1" offset="0" length="22"/>
+    <tunit xpath="//volume[1]/missive[60]/footnote[2]" type="footnote" id="t2" offset="22" length="36"/>
+    <tunit xpath="//volume[1]/missive[60]/remark[3]" type="remark" id="t3" offset="58" length="41"/>
+    <tunit xpath="//volume[1]/missive[60]/footnote[4]" type="footnote" id="t4" offset="99" length="41"/>
+    <tunit xpath="//volume[1]/missive[60]/remark[5]" type="remark" id="t5" offset="140" length="68"/>
+    <tunit xpath="//volume[1]/missive[60]/footnote[6]" type="footnote" id="t6" offset="208" length="74"/>
+    <tunit xpath="//volume[1]/missive[60]/footnote[7]" type="footnote" id="t7" offset="282" length="128"/>
+    <tunit xpath="//volume[1]/missive[60]/footnote[8]" type="footnote" id="t8" offset="410" length="61"/>
+    <tunit xpath="//volume[1]/missive[60]/remark[9]" type="remark" id="t9" offset="471" length="63"/>
+    <tunit xpath="//volume[1]/missive[60]/footnote[10]" type="footnote" id="t10" offset="534" length="96"/>
+    <tunit xpath="//volume[1]/missive[60]/footnote[11]" type="footnote" id="t11" offset="630" length="37"/>
+    <tunit xpath="//volume[1]/missive[60]/remark[12]" type="remark" id="t12" offset="667" length="74"/>
+    <tunit xpath="//volume[1]/missive[60]/footnote[13]" type="footnote" id="t13" offset="741" length="125"/>
+    <tunit xpath="//volume[1]/missive[60]/remark[14]" type="remark" id="t14" offset="866" length="151"/>
+  </tunits>
+</NAF>

@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:20:05CEST" title="Van Goens, Speelman, Bort, Van Outhoorn, Camphuys; Batavia, 28 november 1678" filename="missive_4_17_notes.naf"/>
+    <public publicId="missive_4_17_notes"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:20:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Verzonden met de Engelse Berkeley Castle uit Bantam. . 
+Vgl. Daghregisters 1678, p. 421-690 het schip Willem Hendrick, vgl. ibid. P . 654, » 
+Het werd te Ponnekail voorlopig hersteld, verdere reparatie zal bij Onrust geschieden; uit Bengalen is geen salpeter aangebracht, daardoor kan de retourvloot pas in zijn geheel eind jan. verzonden worden; hoop, dat twee miljoen gulden uit China en Japan voor Coromandel beschikbaar zal zijn, terwijl ook Bengalen zal kunnen toekomen; vernomen, dat » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[4]/missive[17]/footnote[1]" type="footnote" id="t1" offset="0" length="56"/>
+    <tunit xpath="//volume[4]/missive[17]/remark[2]" type="remark" id="t2" offset="56" length="86"/>
+    <tunit xpath="//volume[4]/missive[17]/remark[3]" type="remark" id="t3" offset="142" length="351"/>
+  </tunits>
+</NAF>

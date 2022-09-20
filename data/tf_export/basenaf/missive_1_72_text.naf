@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-09-20T11:19:38CEST" title="Coen, De Carpentier, Specx, Van Duynen, Van Diemen, De Meester; Batavia, 9 november 1627" filename="missive_1_72_text.naf"/>
+    <public publicId="missive_1_72_text"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-09-20T11:19:38CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[I. JAN PIETERSZ. COEN, PIETER DE CARPENTIER, JACQUES SPECX, PIETER VAN DUYNEN, ANTONIO VAN DIEMEN EN JEREMIAS DE MEESTER, Batavia 9 november 1627. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[1]/missive[72]/header[1]" type="header" id="t1" offset="0" length="148"/>
+  </tunits>
+</NAF>
