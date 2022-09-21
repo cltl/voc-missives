@@ -85,16 +85,14 @@ class MissivesLoader:
 
     def get_letters(self):
         letters = []
-        for vid in range(1, 14):
-            for lid, letter in enumerate(self.get_letters_for_volume(vid), start=1):
+        for vnode in F.otype.s("volume"):
+            vid = F.n.v(vnode)
+            for lid, letter in enumerate(self.get_letters_for_volume(vnode), start=1):
                 letters.append((vid, lid, letter))
         return letters
 
-    def get_letters_for_volume(self, volume):
-        if type(volume) == int:
-            volume = str(volume)
-        vol = self.A.nodeFromSectionStr(volume)
-        return L.d(vol, otype="letter")
+    def get_letters_for_volume(self, vnode):
+        return L.d(vnode, otype="letter")
 
     def record_entities_as_tf_features(self, textdir, tsvdir, location=None):
         features = make_features(textdir, tsvdir)
