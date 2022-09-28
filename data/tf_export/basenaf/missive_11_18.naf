@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:06CEST" title="Van Imhoff, Pasques de Chavonnes, Crul, Nolthenius, Cluysenaar, Overbeek, Van den Bosch, Mossel, Van Broyel, Verijssel, Theling; Batavia, 25 november 1746" filename="missive_11_18.naf"/>
+    <public publicId="missive_11_18"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:06CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:06CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XVIII. GUSTAAF WILLEM VAN IMHOFF, PIETER ROCHUS PASQUES DE CHAVONNES, NICOLAAS CRUL, DANIËL NOLTHENIUS, JOHANNES MATTHEUS CLUYSENAAR, DANIËL OVERBEEK, JACOB VAN DEN BOSCH, JACOB MOSSEL, AREND VAN BROYEL, HUGO VERIJSSEL en JOHAN HERMAN THELING, BATAVIA 25 november 1746. Kol. Arch. 2549, VOC 2657, fol. 35-40. De Fortuin, Eindhoef, Huigenwaard en Rusten Werk zijn resp. 12, 22 en 28 oktober en 21 november 1 746 uitgevaren. Besloten was elk schip dat gereed was te laten vertrekken tot 1 5 november » 
+dog naderhand heeft men omtrent Tolsduyn op den 4e en omtrent de twee overige scheepen, ook op den 14e dier maand, nog eenige dagen moeten toegeven, omdat er met geen mogelijkheid meer haast konde werden gemaekt met die scheepen, waarvan Zelandia eerst den 30e october g’arriveerd is, en men dus nauwelijks tijt heeft gehad om Tolsduyn nog te kielen, dat egter noodsakelijk was omdat denselven met een gebroken onderste vingerling van zijn roer hier was aangekomen, waarvan de breuke niet nieuw was. 
+Buyten voormelte bodem Zelandia zijn op den 8e, 10e, 13e en 22e november nog alhier aan de Caab opgedaagt de scheepen de Getrouwigheyt van Hoorn, ’t Huys te Rijnsburg met de Standvastigheit en Akerendam van Amsterdam, en Dishoek van Rotterdam, werdende nog verwagt Padmos die in de Baay Fals was blijven leggen, sodat ter accompleteering van onse retourbezending onder uit. december aanstaende nog maar ontbreekt het Enkhuyser schip de Geregtigheyt, waarvoor men soo het niet intijds komt opdagen een ander schip sal moeten soeken uyt degeene die verder nog te wagten zijn. 
+De Akerendam heeft de brief van Heren XVII dd. 24 maart 1 746 aangebracht. Batavia heeft meteen » 
+nopens de timmerlieden en den roergang de nodige ordre gestelt dat die aan deese kant [van] de Caeb de Goede Hoop komen te overlijden maar voor twee vijfde off sestien guldens, die van de Caeb na Nederland overgaan en onder die roergang volgens gewoonte begrepen zijn voor drie vijfde of vierentwintig guldens en die van hier aan geene zijde [van] de Caab stervende voor de volle veertig guldens belast sullen werden opdat men Uw Ed. Hoogagtb. daarover in Nederland niet verder lastig valle. 
+De Fransen zouden voor de kust van Coromandel zijn verschenen met een eskader van 13 schepen waaronder twee bombardeerschepen en enkele in Azië uitgeruste schepen. Het eskader zou slaags zijn geraakt met het Engelse eskader dat in de zomer tussen Ceylon en Coromandel heeft gekruist. Het gevecht zou onbeslist zijn gebleven. In september zou het eskader zelfs het Engelse hoofdkantoor te Madras hebben aangevallen. Batavia hoopt dat Nederland buiten de strijd blijft. De Tolsduin is beladen voor Amsterdam en deZeelandia voor Zeeland met koffie en thee, de Slot van Kapelle voor Amsterdam met textiel, o. a. 150 balen grove doeken uit Bimlipatam, aangevoerd door de Ketel die ook het nieuws over de Fransen bracht, en specerijen. De lading van de Slot van Kapelle bedraagt ƒ 437. 077, die van de Tolsduin ƒ 255. 551. De ladingen van de Fortuin, de fluit Eindhoef en de Huigenwaard bedragen resp. ƒ 81. 702, ƒ 21 9. 840 en ƒ 228. 139, wat het totaal voor Amsterdam 
+brengt op f 920. 7 67. De som van ladingen voor Amsterdam is niet juist. Het totaal is niet ƒ 920. 767 maar ƒ 1. 222. 309. De ladingen van de Fortuin en Eindhoef zijn niet meegeteld. De Rust en Werk voor Delft heeft koffie en thee ingenomen t. w. v. f 180. 555. De Zeelandia wordt geladen met goederen voor Zeeland. Batavia hoopt dat de Getrouwigheid voor Zeeland, nog een schip voor Amsterdam, de Standvastigheid voor Rotterdam en een schip voor Enkhuizen eind december 1 746 kunnen vertrekken met een aanzienlijk retour. » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[11]/missive[18]/header[1]" type="header" id="t1" offset="0" length="501"/>
+    <tunit xpath="//volume[11]/missive[18]/paragraph[2]" type="paragraph" id="t2" offset="501" length="501"/>
+    <tunit xpath="//volume[11]/missive[18]/paragraph[3]" type="paragraph" id="t3" offset="1002" length="575"/>
+    <tunit xpath="//volume[11]/missive[18]/remark[4]" type="remark" id="t4" offset="1577" length="99"/>
+    <tunit xpath="//volume[11]/missive[18]/paragraph[5]" type="paragraph" id="t5" offset="1676" length="493"/>
+    <tunit xpath="//volume[11]/missive[18]/remark[6]" type="remark" id="t6" offset="2169" length="965"/>
+    <tunit xpath="//volume[11]/missive[18]/remark[7]" type="remark" id="t7" offset="3134" length="526"/>
+  </tunits>
+</NAF>

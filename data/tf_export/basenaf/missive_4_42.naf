@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:05CEST" title="Hurdt, Camphuys, Pit, Schaghen, Van Hoorn; Batavia, 24 december 1683" filename="missive_4_42.naf"/>
+    <public publicId="missive_4_42"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[VIIIA. ANTHONIO HURDT, JOANNES CAMPHUYS, MAKTEN PIT, NICOLAAS SCHAGHEN EN JOAN VAN HOORN, BATAVIA 24 december 1683. 1271, fol. 574-579. De raden beklagen zich over het optreden van Speelman , vgl. Opkomst VIII , p. II-III; deels zijn zij onkundig gelaten, deels voelen zij zich bezwaard over veel wat plaats vond, daar van de orders van Heren XVII werd af geweken; nog bij schrijven van 20 jan. 1681 hadden die Heren de last herhaald de retourvloot steeds begin december te laten vertrekken en nooit later dan de 15. e de raden besloten » 
+den 19. e novemb. e, als meynende, dat doenmaals den tijdt voor dit jaar en ’t saysoen alweder vrij verre genoegh verloopen waare, ons te addresseren aan den eersten raat en Directeur- Generaal d’ H. r Balthazar Bort om te hooren ende te vernemen, off wij van zijn E. op de voorgenome tekennenge vingen en vragen eenige ware reden van verligtinge ontrent onse beswaarnissen souden konnen te weten komen. 
+Dogh daardoor en daarmede niet alleen van een sober berigt en onderigt gedient, maar oock naar verloop van nog veele dagen geenige nader openinge ontwaarende ofte wijs werdende, soo konden wij evenwel niet stille staan onse begonne devoiren eenigksints nader te vervolgen. Dogh zijn buyten verwagtinge in dien deele al weder merckelijck verset en op den 2. e deser mettet subijt toebrengen van het concept der inleydinge van de nu overgaande Generale Missive aan Uw WelEd. e8 soo verre geobrueert dat te rade wierden ons daarop soodanigh nader te verclaren en vervolgens uyt de onverwagte bescheyden en door de mont van den e. secretaris Jacob van Dam te onttrecken en te praeca veren wegens eenige (buyten raatspleginge) opgestelde poincten en expressiën in saaken van geen geringh belangh. 
+Nr. IX, van 31 dec. 1683. 
+Geobrueert, vernietigd. 
+Mr. Jacob van Dam, 1661 onderkoopman en bgw. lid van de Raad van Justitie, aug. 1664 gewoon lid, juni 1673 secr. van schepenen, aug. 1682 secretaris van de Hoge Regering, aug. 1684 buiten gage en bediening gesteld , oct. 1691 vice-president van de Raad van Justitie, sept. 1698 extraord. raad van Indië, gestorven 1704. 
+Praecaveren, voorbehoud nemen, zich in acht nemen. 
+De raden bedoelden slechts het tijdige vertrek der schepen te bevorderen; Speelman en Bort trekken zich ook in andere zaken niets van hun opmerkingen aan, hierover willen de raden later schrijven; volgt het, zij het, in gemoderniseerde taal en verkort, Opkomst VIII, p. III -IV af gedrukte; de raden hebben er bezwaar tegen in eens de resolutiën over een geheel jaar of langer te moeten bekrachtigen, men heeft die nu in zo lange tijd niet gezien; Schaghen, vice-president van den Raad van Justitie, heeft ook bezwaren tegen den president Van Outhoorn in zake diens oordeel over het lid van dien Raad Daniël Heyns; men verzoekt Heren XVII, - » 
+dat het ons ten besten geduyt en niet qualijck af genomen mogte worden, indien wij ons genootsaakt vonden het teeckenen van de gemte resolutiën off wel een gedeelte daarvan, als se eyndelijck eens voor den dagh zullen komen, te excuseren, willende geerne bekennen onse geheugenisse sooveel niet te connen toebetrouwen, dat wij met gerustheyt zouden mogen verclaren ende met onse onderteeckeningh bekragtigen, dat het opgestelde zoodanigh oock was gearresteert ende vastgestelt ende datter niets en zoude zijn geomitteert ofte overgeslagen, zijnde wij buytendien oock niet buyten reden bedugt, dat verscheyde stellingen in de afgesondene brieven, die wij om rust en vreede te houden mede hebben onderteeckent, ons voor formele arresten en genomen resolutiën zullen worden aangereekent, schoon daarvan noyt in vergaderingh gesprooken ofte op gedelibereert is geworden. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[4]/missive[42]/header[1]" type="header" id="t1" offset="0" length="540"/>
+    <tunit xpath="//volume[4]/missive[42]/paragraph[2]" type="paragraph" id="t2" offset="540" length="405"/>
+    <tunit xpath="//volume[4]/missive[42]/paragraph[3]" type="paragraph" id="t3" offset="945" length="793"/>
+    <tunit xpath="//volume[4]/missive[42]/footnote[4]" type="footnote" id="t4" offset="1738" length="27"/>
+    <tunit xpath="//volume[4]/missive[42]/footnote[5]" type="footnote" id="t5" offset="1765" length="25"/>
+    <tunit xpath="//volume[4]/missive[42]/footnote[6]" type="footnote" id="t6" offset="1790" length="321"/>
+    <tunit xpath="//volume[4]/missive[42]/footnote[7]" type="footnote" id="t7" offset="2111" length="52"/>
+    <tunit xpath="//volume[4]/missive[42]/remark[8]" type="remark" id="t8" offset="2163" length="645"/>
+    <tunit xpath="//volume[4]/missive[42]/paragraph[9]" type="paragraph" id="t9" offset="2808" length="868"/>
+  </tunits>
+</NAF>

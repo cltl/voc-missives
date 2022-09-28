@@ -10,10 +10,9 @@
 
 set -e
 
-ddir=$1   # data dir, for text/tsv/annotations
-
 wdir=$(cd $(dirname "${BASH_SOURCE[0]}") && cd ../.. && pwd)
+ddir="$wdir"/data/tf_export
 
-python textfabric/tf2naf.py -o "$ddir"/tf
-python ner/src/utils/pipeline.py -i "$ddir"/tf/tf -o "$ddir"/ner
-python textfabric/tsv2tf.py "$ddir"/tf/tf "$ddir"/ner "$ddir"/tf/export
+python textfabric/tf2naf.py -o "$ddir"
+python ner/src/utils/pipeline.py -i "$ddir"/tf/ -o "$ddir"/ner
+python textfabric/tsv2tf.py "$ddir"/tf "$ddir"/ner export/tf

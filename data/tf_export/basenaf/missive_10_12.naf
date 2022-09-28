@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:06CEST" title="Valckenier, Schaghen, Thedens, Van Imhoff, De Haeze, Van Schinne, Van Suchtelen, Pasques de Chavonnes, Duquesne, Guillot, Van Berendregt, Crul, Macaré, Nolthenius, Van Aerden, Lakeman; Batavia, 31 oktober 1740" filename="missive_10_12.naf"/>
+    <public publicId="missive_10_12"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:06CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:06CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[X. ADRIAAN VALCKENIER, JOAN PAUL SCHAGHEN, JOHANNES THEDENS, GUSTAAF WILLEM VAN IMHOFF, ELIAS DE HAEZE, ISAAC VAN SCHINNE, HERMAN VAN SUCHTELEN, PIETER ROCHUS PASQUES DE CHAVONNES, PIETER DUQUESNE, ELIAS GUILLOT, NICOLAAS VAN BERENDREGT, NICOLAAS CRUL, JOHANNES MACARE, DANIËL NOLTHENIUS, MAURITS VAN AERDEN en JACOB LAKEMAN, BATAVIA 31 oktober 1740. Kol. Arch. 2371, VOC 2479, fol. 13-57. Van de tien retourschepen, Beukestijn, Goidschalxoord, Nieuw Walcheren en Hilversbeek voor de Kamer Amsterdam, de Everswaart en Sara Jacoba voor Zeeland, de Vreeland voor Delft, Hofwegen voor Rotterdam, Rijnhuizen voor Hoorn en Ouwerkerk voor Enkhuizen, zijn er zes wegens ‘een extraordinair en fataal geval deser dagen tegens verwagting van alle en een iegelijk in dese colonie g’ ex teert’. Slechts de Beukestijn, Goidschalxoord, Everswaart, Vreeland en Ouwerkerk zijn vertrokken. De oorzaak was » 
+een ongehoorde rebellie en stoutmoedige ondememinge der Chineesen tegens de Compagnie. 
+Zie De Jonge, Opkomst IX, p. 295-312. » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[10]/missive[12]/header[1]" type="header" id="t1" offset="0" length="891"/>
+    <tunit xpath="//volume[10]/missive[12]/paragraph[2]" type="paragraph" id="t2" offset="891" length="88"/>
+    <tunit xpath="//volume[10]/missive[12]/remark[3]" type="remark" id="t3" offset="979" length="41"/>
+  </tunits>
+</NAF>

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:05CEST" title="Coen, Van Duynen, Van Diemen, De Meester; Batavia, 13 januari 1628" filename="missive_1_74.naf"/>
+    <public publicId="missive_1_74"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[III. JAN PIETERSZ. COEN, PIETER VAN DUYNEN, ANTONIO VAN DIEMEN EN JEREMIAS DE MEESTER, Batavia 13 januari 1628. Afgedrukt Coen V, p. 84-86 » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[1]/missive[74]/header[1]" type="header" id="t1" offset="0" length="142"/>
+  </tunits>
+</NAF>

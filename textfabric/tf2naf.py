@@ -20,7 +20,10 @@ def export_letters_fromTF(workdir, text_type, max_letters=0, ml=None):
     if ml is None:
         ml = MissivesLoader()
     tfdir, refnafdir = create_outdirs(workdir)
-    if text_type == "text":
+    if text_type == "all":
+        pubids_titles_and_tunits = ml.extract_letters_all(
+            tfdir, max_letters=max_letters)
+    elif text_type == "text":
         pubids_titles_and_tunits = ml.extract_letters_text(
             tfdir, max_letters=max_letters
         )
@@ -92,5 +95,4 @@ if __name__ == "__main__":
         max_letters = 0
         if args.max_letters:
             max_letters = args.max_letters
-        export_letters_fromTF(args.outdir, 'text', max_letters=max_letters)
-        export_letters_fromTF(args.outdir, 'notes', max_letters=max_letters)
+        export_letters_fromTF(args.outdir, 'all', max_letters=max_letters)

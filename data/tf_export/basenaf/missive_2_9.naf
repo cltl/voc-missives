@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:05CEST" title="Van Diemen, Van der Lijn, Maetsuycker, Caron, Schouten; Batavia, 14 september 1641" filename="missive_2_9.naf"/>
+    <public publicId="missive_2_9"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XV. ANTONIO VAX DIEMEN, CORNELIS VAN DER LIJN, JOAN MAETSUYCKER, FRANQOIS CARON EN JUSTUS SCHOUTEN, BATAVIA 14 september 1641. Copie 1046, fol. 241-243 (potlood) en fol. 273-276 (potlood). Ongevallen , aan de schepen Haerlem , Maestrickt en Berckhout overkomen , vgl. Daghregisters 19 aug. 1641 , p. 392-393; Engelse schepen te Bantam aangekomen , Daghregisters 13 sept. 1641 , p. 432; Ceylonse gezanten te Batavia, Daghregisters 2 sept. 1641, p. 406-418; moord op Coster gepleegd, Ceilon p. 64, Bijlage XI, Dagh¬ registers 27 nov. 1640, p. 92-100; te Masulipatam zijn 2 ton aan opgenomen gelden afbetaald » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[2]/missive[9]/header[1]" type="header" id="t1" offset="0" length="609"/>
+  </tunits>
+</NAF>

@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:06CEST" title="Camphuys, Van Outhoorn, Van Hoorn, Valckenier, Van Riebeeck, Bornezee; Batavia, 17 april 1691" filename="missive_5_16.naf"/>
+    <public publicId="missive_5_16"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:06CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:06CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XXIV. JOANNES CAMPHUYS, WILLEM VAN OUTHOORN, JOAN VAN HOORN, WOUTER VALCKENIER, ABRAHAM VAN RIEBEECK EN MANUEL BORNEZEE, BATAVIA 17 april 1691. 
+Copie 
+Het origineel is verzonden met het Engelse schip O range via Bengkulen; herhaling van het verzoek om toezending van schepen enz. in verhand met de oorlog tegen Frankrijk; de schepen, uit patria gekomen, zijn hij Onrust tot de oorlog gereed gemaakt en extra oorlogshemanning is te Batavia in geval van nood beschikbaar gesteld; ofschoon de V. O. C. handelswinsten nodig heeft, » 
+het egter in tijde van oorlog veel raadsamer is door het bijeenhouden der oorlogschepen tot defencie ende offencie een gedeelte van de winsten voor een matigen tijt te derven, dan dat men door verspreyding der schepen bijna niet anders soude uytrigten dan daarmede rijke carguasoenen uyt de vaste plaatsen over te brengen door wegen ofte zeën, die men hier off daar door den vijant met een gecombineerde magt beset soude connen vinden, behalven nog de vergrote nootsakelijkh. 1 om dese hooftplaats door een geproportioneerde zeemagt te bewaren om niet alleen dan daarvandaan de nodige uj^tscttingen, daar het vereyscht werd, te connen doen, maar wel bijsondcrlijk om de oost voor den vijant te connen decken ende af te sluyten. 
+Het 29 sept. uit Plymouth vertrokken Engelse schip Orange kwam 10 april aan; de berichten stemmen overeen met » 
+die van mons. er du Quesnes scheepje aan de Caab gedaan sijnde, welcke tijding dan nog des te apperenter stelt, dat er voor dit jaar weder een nieuwe ende welligt veel sterker besending van schepen uyt Vrankrijk na India geschiet sal sijn als verleden jaar ende dat ook hetselve secours welligt niet verre van hier ofte van andere Indische plaatsen aff is. Ten tweden, omdat wij tot onse grote verwondering alsnog geen schepen van Ceylon nogte Bengale krijgen, dienvolgens niet alleen oncundig blijven, off de revire ter laatstgenoemde plaatse nog even gelijk, als de jongste tijding met het jagt Wijk op Zee vermelde, van de France schepen besloten blijft, dan off desel ve van daar weder vert rocken sijn, dog welck laatste niet apparent schijnt om het nog agterblijven van de Civetcat, welcke op het vertrek van ’t jagt Wijk op Zee mede genoegsaam in gereetheyt lag. 
+De markies Henri Duquesne zond 10 juli 1691 met medeweten van Heren XVII van Texel het scheepje La Hirondelle uit met Protestantse émigrós om een kolonie op het thans Réunion geheten eiland te vestigen. 
+Waarom men geen schip derwaarts durft zenden; er zijn voor de handel vrijwel geen schepen beschikbaar, ook als men China niet bevaart; 's Lande Welvaren, 31 dec. 1690 van de Kaap vertrokken, kwam nog niet aan, men vernam van daar ook niets van twee schepen van de Kamer Amsterdam, die volgens de Orange op komst zouden zijn; het varen om Schotland laat de schepen bijna een jaar over de reis doen, zodat schepen, in de Nederlandse winter vertrokken, veel te laat komen om ze in Azië te kunnen gebruiken voor de gewone handelstochten; 14 april komt de Civetkat, 16 april de Walenburg 
+uit Bengalen met brieven van 3 tot 23 febr. en met carg. van respectievelijk f. 102982 en f. 236267, w. o. voor f. 151828 aan zijde voor Japan en 300 kisten opium, dat te Batavia juist uitverkocht was; de 6 » 
+France oorlogschepen, nadat sijl. haar op Punto Negras gerepareert hadden en den 4n decemb. r 1690 weder voor Bellasoor verschenen waren, op den den 29n d. ° van daar vertrocken sijn ende alsoo aan onse ministers aldaar occagie gegeven hebben om van daar op den 25n januarij daaraanvolgende na het vaderland over de Caab de Goede Hoop (ende niet over Cheylon, omdat het daartoe te laat geworden was ende ook om aldaar door de Franschen niet waargenomen te werden) voort te senden - - - de Craab met een lading van f. 765054 ende het jagt de Faam met een carguasoen van f. 506579. 
+De Eemland vertrok van daar 13 febr. naar Ceylon met carg. van f. 170136 aan zijde voor patria, textiel voor Perzië, specerijen voor Malabar enz., op 13 febr. vertrok de Tarnen van daar naar Coromandel met carg. van f. 197219; de Fransen scheepten 13000 man salpeter, textiel en vivres in, vermoedelijk gaan sommige van hun schepen naar Frankrijk » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[5]/missive[16]/header[1]" type="header" id="t1" offset="0" length="145"/>
+    <tunit xpath="//volume[5]/missive[16]/paragraph[2]" type="paragraph" id="t2" offset="145" length="7"/>
+    <tunit xpath="//volume[5]/missive[16]/remark[3]" type="remark" id="t3" offset="152" length="379"/>
+    <tunit xpath="//volume[5]/missive[16]/paragraph[4]" type="paragraph" id="t4" offset="531" length="729"/>
+    <tunit xpath="//volume[5]/missive[16]/remark[5]" type="remark" id="t5" offset="1260" length="113"/>
+    <tunit xpath="//volume[5]/missive[16]/paragraph[6]" type="paragraph" id="t6" offset="1373" length="871"/>
+    <tunit xpath="//volume[5]/missive[16]/footnote[7]" type="footnote" id="t7" offset="2244" length="204"/>
+    <tunit xpath="//volume[5]/missive[16]/remark[8]" type="remark" id="t8" offset="2448" length="584"/>
+    <tunit xpath="//volume[5]/missive[16]/remark[9]" type="remark" id="t9" offset="3032" length="210"/>
+    <tunit xpath="//volume[5]/missive[16]/paragraph[10]" type="paragraph" id="t10" offset="3242" length="581"/>
+    <tunit xpath="//volume[5]/missive[16]/remark[11]" type="remark" id="t11" offset="3823" length="350"/>
+  </tunits>
+</NAF>

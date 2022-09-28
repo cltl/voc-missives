@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:05CEST" title="Both; Bantam, 10 november 1614" filename="missive_1_18.naf"/>
+    <public publicId="missive_1_18"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XVIII. PIETER BOTH. BANTAM 10 november 1614. 969, fol. 13-19. 
+Mijn héeren. Ick en can mij niet genouchsaem verwonderen, dat U Ed. (die alhier hebt te dirigeren een saeck van staet ende royaell.) soo weynich acht (onder correctie) sijt nemende in ’t aennemen van dengenen, die herwerts werden gesonden. Sommige van dien sijn banekerottiers, andere die ’t door quade menage niet langer aen de wal en connen houden, alsmede capiteyns, die van den vijandt zijn overgecomen ende meer bedreven sijn omme den coopman in den buyll te rijden als anders. Het schijnt dat het landt van ervaren landtsaten gepri veert is ende alsoo gaet het met alle de reste. Men brenght er in de schepen sommige met de boeyen aen de benen om herwerts te comen; van andere wert de schippers belast haer aen landt niet meer te laten keren ; eenige geheel van haer verstandt gepriveert ende alsoo onbequaem tot eenigen dienst - 
+De rest van deze brief, handelende over de slechte kwaliteit van het 'personeel en over uitreding van schepen, is niet van groot belang » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[1]/missive[18]/header[1]" type="header" id="t1" offset="0" length="63"/>
+    <tunit xpath="//volume[1]/missive[18]/paragraph[2]" type="paragraph" id="t2" offset="63" length="837"/>
+    <tunit xpath="//volume[1]/missive[18]/remark[3]" type="remark" id="t3" offset="900" length="139"/>
+  </tunits>
+</NAF>

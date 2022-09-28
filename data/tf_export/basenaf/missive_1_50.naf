@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:05CEST" title="Coen, De Carpentier, Lam, Van Antzen; Batavia, 16 november 1621" filename="missive_1_50.naf"/>
+    <public publicId="missive_1_50"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XIV. JAN PIETERSZ. COEN, PIETER DE CARPENTIER, JAN DIRCKSZ. LAM EN WILLEM VAN ANTZEN, BATAVIA Coen had aanvankelijk geen besluit genomen aangaande de naam van de stad. Reeds 31 okt, 1617 stelden Heren XVII vast, dat de hoofdvestiging van de Compagnie de naam Batavia zou dragen. De bezetting van het fort Jakatra gaf op 12 maart 1619 die naam B. aan dat fort. Uit een brief van 4 maart 1621 (Coen IV, p. 497 blijkt, dat Heren XVII die naam, definitief aan de door Coen gestichte stad wilden geven. De last daartoe werd met de West-vriesland verzonden (Coen IV, p. 480 maar dat schip kwam eerst eind 1621 ter bestemming. Inmiddels kwam de Gouden Leeuw na de uitzonderlijk korte reis van 4 maanden en 4 dagen 23 aug. 1621 aan. In de resolutie van do Hoge Reg. van 25 aug. vindt men dan de naam Batavia het eerst door Gouv. Gen. en Raden gebruikt (Coen III, p. 756, 757). 16 november 1621. Afgedrukt Coen I, p. 641-679 » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[1]/missive[50]/header[1]" type="header" id="t1" offset="0" length="919"/>
+  </tunits>
+</NAF>

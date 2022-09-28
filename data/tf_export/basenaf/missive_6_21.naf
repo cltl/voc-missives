@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:06CEST" title="Van Outhoorn, Van Hoorn, Pijl, Van Riebeeck, Cops, Bornezee, Van Dam, Van Swoll; Batavia, 4 augustus 1702" filename="missive_6_21.naf"/>
+    <public publicId="missive_6_21"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:06CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:06CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XXXVI. WILLEM VAN OUTHOORN, JOAN VAN HOORN, LAURENS PIJL, ABRAHAM VAN RIEBEECK, JOANNES COPS, MANUEL BORNEZEE, JACOB VAN DAM EN CHRISTOFFEL VAN SWOLL, BATAVIA 4 augustus 1702. Kol. Arch. 1543, fol. 1-2 en copie fol. 299-300. Uit patria werden brieven van 23 juli en 20 sept. ontvangen met » 
+U Ed. Ho. Achtb. r dispositie over het Gouverneur- en Directeur- 
+Generaalsamt - . Om ’twelk werkstellig te maken, wanneer wij ons appli- 
+cerden, so hebben sodanige hindernissen daarontrent hun opgedaan, dat voor den dienst van d’E. Comp. e geraden is gevonden tot nader dispositie van U Ed. Ho. Achtb. n in geen van beyde eenige verandering te laten geschieden, maar de Regeringe in sijn vorigen staat te laten continueren. 
+Deze brie} werd met het Engelse schip Bomeo verzonden » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[6]/missive[21]/header[1]" type="header" id="t1" offset="0" length="292"/>
+    <tunit xpath="//volume[6]/missive[21]/paragraph[2]" type="paragraph" id="t2" offset="292" length="66"/>
+    <tunit xpath="//volume[6]/missive[21]/paragraph[3]" type="paragraph" id="t3" offset="358" length="73"/>
+    <tunit xpath="//volume[6]/missive[21]/paragraph[4]" type="paragraph" id="t4" offset="431" length="288"/>
+    <tunit xpath="//volume[6]/missive[21]/remark[5]" type="remark" id="t5" offset="719" length="57"/>
+  </tunits>
+</NAF>

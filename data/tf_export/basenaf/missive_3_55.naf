@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:05CEST" title="Maetsuycker, Verburch, Pit, Overtwater, Speelman, Van Hoorn, Volger; Batavia, 27 augustus 1672" filename="missive_3_55.naf"/>
+    <public publicId="missive_3_55"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[LXI. JOAN MAETSUYKER, NICOLAES VERBURCH, LAURENS PIT, PIETER OVERTWATER, CORNELIS SPEELMAN, PIETER VAN HOORN EN WILLEM VOLGER, BATAVIA 27 aug. 1672. 117ö, fol. 85-87. (Copie, ondertekend door Jan van Riebeeck). Origineel verzonden met hei Engelse schip Suratte, vgl. Daghregisters 1672, p. 212-227 vier Portugese scheepjes van Goa passeren 27 juni MalaJcka op iveg naar Macao met den gouverneur, dom Anthonio Barbosa ; Francx . . . . » 
+had enpassant het eylant Oubij besocht, daer geen Europase volcken op ofte omtrent hetselve gevonden, dat temeer gerusth. geeft. Echter was het voornemen daer om ongemacken voor te comen eerstdaegs met een propere besettingh possessie van te nemen, off iemant daer het oogh op mochte hebben. 
+Nog vele zieken in de Molukken; een loodsboot, de Ganges, is op Onrust gebouwd » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[3]/missive[55]/header[1]" type="header" id="t1" offset="0" length="437"/>
+    <tunit xpath="//volume[3]/missive[55]/paragraph[2]" type="paragraph" id="t2" offset="437" length="293"/>
+    <tunit xpath="//volume[3]/missive[55]/remark[3]" type="remark" id="t3" offset="730" length="82"/>
+  </tunits>
+</NAF>

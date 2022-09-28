@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:05CEST" title="Hurdt, Camphuys, Pit, Schaghen, Van Hoorn; Batavia, 3 januari 1684" filename="missive_4_44.naf"/>
+    <public publicId="missive_4_44"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[IXA. ANTHONIO HURDT, JOANNES CAMPHUYS, MARTEN PIT, NICOLAAS SCHAGHEN EN JOAN VAN HOORN, BATAVIA 3 jan. 1684. 1271, fol. 572-574. De raden vonden in de voorafgaande Gen. Miss. niets over het door hen de 2e dec. aan den Gouv. Gen. verzochte; zij zonden daarom den secretaris Van Dam weer met een brief naar Zijn Edele, » 
+dogh vermits wij daerop buyten alle verwaghtinge een vremde ant- woorde door de mont van denselven secretaris tot drij malen toe quamen te ontmoeten sonder Sijn Ed. 1 selve deswegen te mogen spreken, soo vonden wij hedenmorgen tot onser decherge naeder nootsaeckelijck om denselven generaelen brieff onder soodanigen reserve te tekenen, als wij meenden nae ’t afsnijden van alle bequaeme wegen in ’t publijck bij ’s Compag. 8 schriftuuren eenighlijck overigh te wesen. 
+De Gouv. Gen. verklaarde het door hen ingediende geschrift bij het vorige te zullen leggen; de secretaris moest hun zeggen, dat » 
+Sijn Ed. 1 de H. r Gouv. r-Generael desselfs respect ende authoriteyt, soo lange hij leefde, wel soude blijven maintineren en bewaeren. 
+Zij deden hem geenszins tekort aan respect » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[4]/missive[44]/header[1]" type="header" id="t1" offset="0" length="320"/>
+    <tunit xpath="//volume[4]/missive[44]/paragraph[2]" type="paragraph" id="t2" offset="320" length="470"/>
+    <tunit xpath="//volume[4]/missive[44]/remark[3]" type="remark" id="t3" offset="790" length="131"/>
+    <tunit xpath="//volume[4]/missive[44]/paragraph[4]" type="paragraph" id="t4" offset="921" length="137"/>
+    <tunit xpath="//volume[4]/missive[44]/remark[5]" type="remark" id="t5" offset="1058" length="46"/>
+  </tunits>
+</NAF>

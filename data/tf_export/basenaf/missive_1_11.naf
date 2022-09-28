@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:05CEST" title="Both; Fort Mauritius nabij Ngofakiaha op het eiland Makéan, 26 juli 1612" filename="missive_1_11.naf"/>
+    <public publicId="missive_1_11"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XI. PIETER BOTH, FORT MAURITIUS NABIJ NGOFAKIAHA OP HET EILAND MAKÉAN 26 juli 1612. Over tyranniek optreden van schippers » 
+De vlo te van den admirael Verhoeven saliger wert hier dagelijcx genoemt de schippers vloot. Sij noemden haer Staten van Banda, President, Bredenraidt. Niemant van de coopluyden hadt acces dan haer favoriten ende die metten wolff conden huylen. Crackeel was president, continueel oppercoopman, schipper ende ondercoopman. Pieter Pietersz. ende wilde geen ondercoopman in de cajuyt hebben. Die in Japan sijn geweest, droegen het geweer ende waren capiteyns boven de coopluyden, die voor desen hier sijn geweest. Valt het wat swaer het gouvernement hier tegen woordich, want men respecteert een yder in sijn qualité. 
+Ik vermoed, dat hier de bekende Piet Heyn is bedoeld, die in een resolutie van Both van 11 maart 1611 als schipper Pieter Pietersz. Heyn in het Bandase wordt genoemd. Hij repatrieerde juni 1611 en kwam 9 juli 1612 te Texel binnen. Vgl. Piet Heyn, p. XLIX. 
+Diverse mededelingen » 
+Het waer voor mij te wenschen, dat ick in plaetse van dese bagatellen aen U Ed. te schrijven, mochte oversenden grote cargasoenen van diamanten, indigo, sijde ende andere costelijcke waren, dat U Ed. meer aengenaem soude wesen, maer den tijdt ende oorloch commanderen mij hier van d’een plaets op d’ander te trecken, de see te cruycen alles tot het gemeen besten, waervan ick hope, namaels de vruchten sullen comen. 
+Over Bastiaen de Castro » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[1]/missive[11]/header[1]" type="header" id="t1" offset="0" length="125"/>
+    <tunit xpath="//volume[1]/missive[11]/paragraph[2]" type="paragraph" id="t2" offset="125" length="616"/>
+    <tunit xpath="//volume[1]/missive[11]/footnote[3]" type="footnote" id="t3" offset="741" length="257"/>
+    <tunit xpath="//volume[1]/missive[11]/remark[4]" type="remark" id="t4" offset="998" length="24"/>
+    <tunit xpath="//volume[1]/missive[11]/paragraph[5]" type="paragraph" id="t5" offset="1022" length="417"/>
+    <tunit xpath="//volume[1]/missive[11]/remark[6]" type="remark" id="t6" offset="1439" length="27"/>
+  </tunits>
+</NAF>

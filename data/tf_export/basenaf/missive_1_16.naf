@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:05CEST" title="Both; Bantam, 1 januari 1614" filename="missive_1_16.naf"/>
+    <public publicId="missive_1_16"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XVI. PIETER BOTH, BANTAM 1 januari 1614. 968, fol. 113r.-115v. Brief, die betrekking heeft op het gehalte der ambtenaren en die grotendeels is afgedrukt in Bouwstoffen I, p. 36-41 36-41. Het niet afgedrukte slot is van weinig belang » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[1]/missive[16]/header[1]" type="header" id="t1" offset="0" length="236"/>
+  </tunits>
+</NAF>

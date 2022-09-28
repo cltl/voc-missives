@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:05CEST" title="Van Diemen, Van der Lijn, Maetsuycker, Schouten, Sweers; Batavia, 9 januari 1644" filename="missive_2_20.naf"/>
+    <public publicId="missive_2_20"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XXVI. ANTONIO VAX DIEMEN, CORNELIS VAN DER LIJN, JOAN MAETSUYCKER, JUSTUS SCHOUTEN EN SALOMON SWEERS, RATAVIA 9 januari 1644. 1051, fol. 96-100. Van Sumatra’s Westkust is in het afgelopen seizoen 808 last peper ontvangen » 
+De Suratse cleeden geven tot Ticco ende Priaman sobere proffijten en wort veroorsaeckt door den grooten toevoer der Mooren van Dabul, Suratte als elders in Atchin, twelck oock niet te beteren staet, totdat wij off den Portugees de Mooren ’t frequenteren der zee verhinderen, twelck van ons sonder groot misnoegen der Atchinse Coninghinne niet wel wil vallen ende, sooveel ons aengaet, tselve voor een tijt dienen te gedoogen. De Portugesen met ons in vreede sijnde, sullen daer haest ordre op stellen ende uyt der Mooren middelen trachten capitael te maecken. 
+Des Coninghinnes gerechtigheyt van de genegotieerde peper in Ticco als Priaman ende ’t weynige, tot Indrapoura boven het tolvrij schip aldaer ingenomen, comen tsamen te bedragen ƒ 25 643. 11. 5, dat alle tegen des Coninghinnes debet procederende over coop van juweelen a. ° 1642) gerescontreert ende op ’t comptoir Atchin affgesz. blijft ende onse realen in spetie off rijxdaelders doet strecken. Wij maken staet, dat van Ticco, Celida, Indrapoura, Lamajuta Cillebar, Bancoele ende Manacq noch ontrent 150 lasten peper in Batavia gebracht sal werden, item groote quantité van Palimbangh, Jamby, Patany ende Benjarmassingh, sulx de j oneken uyt China te comen hun competentie van peper staen t’ erlangen ende ’t ons omme Tayouan, Parsia als Mocha te versien aen die spetie tegen mey tot augusti niet manqueren sal, onaengesien ruym 600 lasten daertoe noodigh sullen wesen. Present sijn onse magasijnen niet alleen van peper maer alle coopmansz., voor Europa dienstigh, ledigh, dat in veele jaren niet gebeurt is. 
+Lamanjuta, Mandjuta, plaats aan de gelijknamige rivier in het noorden van de residentie Benkulen op 2£° Z. B. Thans van geen belang, doch destijds uitvoerplaats van peper. 
+Manacq, Manna of Manak, kustplaats in Benkulen op 4£° Z. B. 
+Schip uit Siam verwacht; een schip van daar , bestemd naar Malakka, te Batavia aangekomen » 
+Een jonekjen met 46 lasten rijs is mede van Siam verschenen, een ander Conings joneke met 110 lasten d. ° omtrent de n [oort] h [oeck] van Banca verongeluckt, ’t volck gesalveert ende hier seer armelijck met hun boot off champan aengelant. Noch een joneke stont te volgen ende seyt ons den oppercoopman Van Tzum toe desen jare dit mousson van daer te bestellen 800 lasten. 
+Reynier van Tzum kwam 1629 als assistent uit en werd al spoedig in Siam geplaatst; 1637 onderkoopman, later koopman, van 1641 tot 1643 als opperkoopman opperhoofd aldaar. In 1644 maakte hij als commissaris nogmaals een reis van Batavia derwaarts; 1645-1646 opperhoofd in Japan, waarna hij repatrieerde als vice-commandeur van de retourvloot. 
+De thans naar patria vertrekkende Leeuwarden heeft een last , waard fl 257747. 8. 14; het Indische fonds blijft fl 9762041. 3. 15; het retour over 1643 is in totaal waard fl 207066610. 5, w. v. aan peper fl 677280. 12. 13, aan kruidnagelen fl 236374. 4.-, aan indigo Biana fl 270677. 8-, aan poedersuiker fl 158852. 5-, aan diamanten 100708 » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[2]/missive[20]/header[1]" type="header" id="t1" offset="0" length="224"/>
+    <tunit xpath="//volume[2]/missive[20]/paragraph[2]" type="paragraph" id="t2" offset="224" length="561"/>
+    <tunit xpath="//volume[2]/missive[20]/paragraph[3]" type="paragraph" id="t3" offset="785" length="1013"/>
+    <tunit xpath="//volume[2]/missive[20]/footnote[4]" type="footnote" id="t4" offset="1798" length="173"/>
+    <tunit xpath="//volume[2]/missive[20]/footnote[5]" type="footnote" id="t5" offset="1971" length="61"/>
+    <tunit xpath="//volume[2]/missive[20]/remark[6]" type="remark" id="t6" offset="2032" length="93"/>
+    <tunit xpath="//volume[2]/missive[20]/paragraph[7]" type="paragraph" id="t7" offset="2125" length="374"/>
+    <tunit xpath="//volume[2]/missive[20]/footnote[8]" type="footnote" id="t8" offset="2499" length="343"/>
+    <tunit xpath="//volume[2]/missive[20]/remark[9]" type="remark" id="t9" offset="2842" length="344"/>
+  </tunits>
+</NAF>

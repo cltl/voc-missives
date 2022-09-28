@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:06CEST" title="Zwaardecroon, De Haan, Huysman, Hasselaar, Tolling, Durven, Blom, Sipman; Batavia, 14 december 1724" filename="missive_7_46.naf"/>
+    <public publicId="missive_7_46"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:06CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:06CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XXIX. HENDRIK ZWAARDECROON, MATTHEUS DE HAAN, ANTHONY HUYSMAN, CORNELIS HASSELAAR, LAURENS TOLLING, DIDERIK DURVEN, WIJBRANT BLOM EN JOHANNES PHILIPPUS SIPMAN, BATAVIA 14 december 1724. Kol. Arch. 1894, fol. 1266-1269. De schepen liggen door tegenwind nog oostelijk van Bantam; schipper Jacob Bernards van de Kasteel van Woerden meldde » 
+een onherstelbaar ongeluk, den schepe Apollonia, tegelijk met - het Casteel van Woerden na Japan gedepecheert, overgekomen op de reyse derwaards ter noorderbreete van omtrent 28 graden, alsoo hetselve aldaar door sware stormen en tempeesten in volle zee schijnd op het water nedergeslagen en versoncken en na den 2960 julij van sijnen benoemden macker niet meer vernomen, nog ook tot dies retour niet in Japan te voorschijn is gekomen. 
+De ramp geschiedde dicht bij de kust van China » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[7]/missive[46]/header[1]" type="header" id="t1" offset="0" length="339"/>
+    <tunit xpath="//volume[7]/missive[46]/paragraph[2]" type="paragraph" id="t2" offset="339" length="437"/>
+    <tunit xpath="//volume[7]/missive[46]/remark[3]" type="remark" id="t3" offset="776" length="50"/>
+  </tunits>
+</NAF>

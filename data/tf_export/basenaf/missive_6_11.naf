@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:06CEST" title="Van Outhoorn, Van Hoorn, Pijl, De Haas, Van Riebeeck, Cops, Bornezee, Pit, Van Rhee, Van Dam; Batavia, 19 februari 1700" filename="missive_6_11.naf"/>
+    <public publicId="missive_6_11"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:06CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:06CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XXVI. WILLEM VAN OUTHOORN, JOAN VAN HOORN, LAURENS PIJL, DIRK DE HAAS, ABRAHAM VAN RIEBEECK, JOANNES COPS, MANUELBORNEZEE, LAURENS PIT, THOMAS VAN RHEE EN JACOB VAN DAM, BATAVIA 19 februari 1700. Copie. Op arrest van de Raad van Justitie wordt verzocht een wissel van 2250 rsd., doorValckenier getrokken ter uitbetaling aan George Munnik o} mr. Dirk van Bleyswijck, niet uit te betalen» 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[6]/missive[11]/header[1]" type="header" id="t1" offset="0" length="388"/>
+  </tunits>
+</NAF>

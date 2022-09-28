@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:05CEST" title="Reael; Jakatra, 6 januari 1618" filename="missive_1_33.naf"/>
+    <public publicId="missive_1_33"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[VIII. LAURENS REAEL, JAKATRA 6 januari 1618. Copie, 978, fol. 1-4, tezamen met VII. Gevolgen van de nederlaag van Lam in de baai van Manilla , Franse schepen voor Bantam. Vgl. Coen 1 , 270 , 293, 322 , VII, 243 » 
+Het ware te wenschen, dat de groote contanten, met de Goede Fortune ende Zirckze gesonden ter handt gecomen waren ; bij avonture souden mette Chinesen yets verricht cunnen wordden, want wij staen in vrese, ingevalle de Chinesen, die wij, in de Manillos sijnde, naer ons comptoiren wijsen, van dit jaer ons met eenich goet overcomen, dat wij wederomme varen sullen als voor desen ende per faulte van contant haer niet en sullen cunnen aenhouden. Soo U E. dese goede occasie niet willen laten verbijgaen, soo moet er voor eerst geit zijn, daermede men vele meer sal uytrechten als met alle de machten, die wij gebruycken omme haer tot ons te diverteren 
+Deze beide schepen kwamen, na „wonder aevontuur gehadt” te hebben, ver over tijd, 8 januari 1618 te Bantam aan. 
+Door het systematisch leeghalen van de Chinese jonken, die van de kust van China naar Manilla voeren en het welkom heten van de Chinezen bij hun komst te Bantam, hoopte men hierheen de Chinese scheepvaart te verleggen. . 
+Slot » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[1]/missive[33]/header[1]" type="header" id="t1" offset="0" length="214"/>
+    <tunit xpath="//volume[1]/missive[33]/paragraph[2]" type="paragraph" id="t2" offset="214" length="652"/>
+    <tunit xpath="//volume[1]/missive[33]/footnote[3]" type="footnote" id="t3" offset="866" length="113"/>
+    <tunit xpath="//volume[1]/missive[33]/footnote[4]" type="footnote" id="t4" offset="979" length="222"/>
+    <tunit xpath="//volume[1]/missive[33]/remark[5]" type="remark" id="t5" offset="1201" length="8"/>
+  </tunits>
+</NAF>

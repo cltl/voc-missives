@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:05CEST" title="Coen; Kasteel Jakatra, 5 augustus 1619" filename="missive_1_37.naf"/>
+    <public publicId="missive_1_37"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[I. JAN PIETERSZ. COEN, KASTEEL JAKATRA 5 augustus 1619. Afgedrukt Coen I, p. 444-494 » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[1]/missive[37]/header[1]" type="header" id="t1" offset="0" length="88"/>
+  </tunits>
+</NAF>

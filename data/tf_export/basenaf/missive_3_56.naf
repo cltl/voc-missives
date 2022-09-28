@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:05CEST" title="Maetsuycker, Verburch, Pit, Overtwater, Speelman, Van Hoorn; Batavia, 22 september 1672" filename="missive_3_56.naf"/>
+    <public publicId="missive_3_56"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[LXII. JOAN MAETSUYKER, NICOLAES VERBURCH, LAURENS PIT, PIETER OVERTWATER, CORNELIS SPEELMAN EN PIETER VAN HOORN, BATAVIA 22 sept. 1672. 1175, fol. 88-89. (Copie, ondertekend door Jan van Riebeeck). Het origineel is verzonden met de Engelse Suratte, vgl. Daghregister 1672, p. 227-250 het f luitje Waterhoen strandde door „ < ongemaniertheyt' * op Manipa » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[3]/missive[56]/header[1]" type="header" id="t1" offset="0" length="357"/>
+  </tunits>
+</NAF>

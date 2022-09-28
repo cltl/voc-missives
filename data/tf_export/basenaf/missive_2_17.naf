@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:05CEST" title="Van Diemen, Van der Lijn, Maetsuycker, Schouten, Sweers; Batavia, 18 maart 1643" filename="missive_2_17.naf"/>
+    <public publicId="missive_2_17"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XXIII. ANTONIO VAN DIEMEN, CORNELIS VAN DER LIJN, JOAN MAETSUYCKER, JUSTUS SCHOUTEN EN SALOMON SWEERS, BATAVIA 18 maart 1643. Copie, 1050, (potlood-) folio 532-533. Verzonden per de Deense Gulden Sonne; bevestiging van vorige brieven » 
+Dagelijcx wort in Batavia veel peper aengebracht. Heden hebben voor 2500 r. a Succedaense diamanten gecocht ende wert noch redelijcke partije verwacht. Soo bestaet den rijs mede al van d’een ende d’ander quartieren aen te comen. Des Mattarams volck verschijnen soo nu als dan ende verhopen in corte de relaxatie onser ellendige gevangenen. 
+Proces tegen den opperkoopman J an de Lange e. a. wegens particuliere negotie » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[2]/missive[17]/header[1]" type="header" id="t1" offset="0" length="237"/>
+    <tunit xpath="//volume[2]/missive[17]/paragraph[2]" type="paragraph" id="t2" offset="237" length="341"/>
+    <tunit xpath="//volume[2]/missive[17]/remark[3]" type="remark" id="t3" offset="578" length="81"/>
+  </tunits>
+</NAF>

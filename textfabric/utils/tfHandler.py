@@ -1,6 +1,8 @@
 import glob
 import os
 import re
+from typing import Callable
+
 from tf.app import use
 from tf.core.api import Locality as L
 from tf.core.api import NodeFeatures as F
@@ -76,6 +78,7 @@ class MissivesLoader:
                 hoist=globals(),
             )
         self.DEFAULT_LOC = default_tf_loc()
+        self.vid_to_node = {F.n.v(vnode): vnode for vnode in F.otype.s("volume")}
 
     def reload(self):
         self.A = self.A.reuse()
@@ -87,12 +90,12 @@ class MissivesLoader:
         letters = []
         for vnode in F.otype.s("volume"):
             vid = F.n.v(vnode)
-            for lid, letter in enumerate(self.get_letters_for_volume(vnode), start=1):
+            for lid, letter in enumerate(self.get_letters_for_volume(vid), start=1):
                 letters.append((vid, lid, letter))
         return letters
 
-    def get_letters_for_volume(self, vnode):
-        return L.d(vnode, otype="letter")
+    def get_letters_for_volume(self, vid):
+        return L.d(self.vid_to_node[vid], otype="letter")
 
     def record_entities_as_tf_features(self, textdir, tsvdir, location=None):
         features = make_features(textdir, tsvdir)
@@ -108,6 +111,9 @@ class MissivesLoader:
             module=self.version(),
             silent="verbose",
         )
+
+    def extract_letters_all(self, outdir, max_letters=0):
+        return self.extract_letters(outdir, all_recorder, max_letters)
 
     def extract_letters_text(self, outdir, max_letters=0):
         return self.extract_letters(outdir, text_recorder, max_letters)
@@ -187,6 +193,12 @@ def public_id(v, let, text_type):
     return "missive_{}_{}_{}".format(v, let, text_type)
 
 
+def all_recorder(letter, v, let):
+    seqs = typed_sequences(letter)
+    rec, tunits = record_typed_sequences(v, let, seqs, letter)
+    return rec, tunits, f"missive_{v}_{let}"
+
+
 def text_recorder(letter, v, let):
     text_seqs = text_sequences(letter)
     rec, tunits = record_typed_sequences(v, let, text_seqs, letter)
@@ -221,10 +233,6 @@ def read_text_and_pos_files(text_path):
 def get_file_features(text_path, tsv_path):
     rec = read_text_and_pos_files(text_path)
     return rec.makeFeatures(tsv_path)
-
-
-def note_sequences(letter):
-    return list_remarks(letter), list_footnotes(letter)
 
 
 def get_parent(w):
@@ -393,89 +401,103 @@ def list_paragraphs(letter):
     return [L.d(p, otype="word") for p in L.d(letter, otype="para")]
 
 
-def list_remarks(letter):
-    return list_words(letter, lambda w: F.isremark.v(w))
-
-
-def list_footnotes(letter):
-    return list_words(letter, lambda w: F.isnote.v(w))
-
-
-def is_notelike(w):
-    return F.isnote.v(w) or F.isremark.v(w)
-
-
 def is_inparagraph(w):
     return L.u(w, otype="para")
 
 
 def text_sequences(letter):
-    seqs = []
-    seq = []
-    types = []
-    all_words = L.d(letter, otype="word")
-    i = 0
-    starts_new_text_unit = True
-    while i < len(all_words):
-        if F.isorig.v(all_words[i]):
-            paragraph = L.u(all_words[i], otype="para")
-            if paragraph:  # append all paragraph, excluding footnotes
-                pwords = L.d(paragraph[0], otype="word")
-                opwords = [w for w in pwords if F.isorig.v(w)]  # excludes footnotes
-                if seq:
-                    seqs.append(seq)
-                    types.append("header")
-                seqs.append(opwords)
-                types.append("paragraph")
-                seq = []
-                starts_new_text_unit = True
-                i += len(pwords)
-            else:
-                if starts_new_text_unit and seq:  # flush previous seq
-                    seqs.append(seq)
-                    types.append("header")
-                    seq = []
-                seq.append(all_words[i])
-                starts_new_text_unit = False
-                i += 1
-        else:
-            starts_new_text_unit = True
-            i += 1
-
-    if seq:
-        seqs.append(seq)
-        types.append("header")
-    return zip(seqs, types)
+    return [(seq, tseq) for (seq, tseq) in typed_sequences(letter) if tseq in ["paragraph", "header"]]
 
 
 def mixed_note_sequences(letter):
-    seqs = list_words(letter, is_notelike)
-    types = []
-    for seq in seqs:
-        if F.isnote.v(seq[0]):
-            types.append("footnote")
-        else:
-            types.append("remark")
-    return zip(seqs, types)
+    return [(seq, tseq) for (seq, tseq) in typed_sequences(letter) if tseq in ["footnote", "remark"]]
 
 
-def list_words(letter, to_list):
+def append_remark(words, seqs, types):
+    return append_unit(seqs, types, words, F.isremark.v, "remark")
+
+
+def append_header(words, seqs, types):
+    return append_unit(seqs, types, words, lambda w: not is_inparagraph(w), "header")
+
+
+def append_note(words, notes, types=[]):
+    # call with types=[] for separate processing of type sequence
+    return append_unit(notes, types, words, F.isnote.v, "footnote")
+
+
+def append_unit(seqs, types, words, condition: Callable[[int], bool], unit_type: str):
+    i = 0
+    while i < len(words) and condition(words[i]):
+        i += 1
+    seqs.append(words[0:i])
+    types.append(unit_type)
+    return i
+
+
+def append_text(words, text):
+    i = 0
+    while i < len(words) and F.isorig.v(words[i]):
+        i += 1
+    text.extend(words[0:i])
+    return i
+
+
+def append_paragraph_and_notes(seqs, types, words):
+    """Handle words contained in a paragraph. This includes the paragraph text proper and possible footnotes."""
+    notes = []
+    text = []
+    i = 0
+    paragraph = L.u(words[i], otype="para")
+    words_in_paragraph = L.d(paragraph[0], otype="word")
+    paragraph_length = len(words_in_paragraph)
+    while i < paragraph_length:
+        if F.isorig.v(words_in_paragraph[i]):
+            i += append_text(words_in_paragraph[i:], text)
+        elif F.isnote.v(words_in_paragraph[i]) or F.isremark.v(words_in_paragraph[i]):
+            # embedded remarks are treated like notes
+            i += append_note(words_in_paragraph[i:], notes)
+        elif is_empty(words_in_paragraph[i]) or F.isfolio.v(words_in_paragraph[i]):
+            i += 1
+    seqs.append(text)
+    types.append("paragraph")
+    seqs.extend(notes)
+    types.extend(["footnote"] * len(notes))
+    return paragraph_length
+
+
+def is_empty(w):
+    return not F.trans.v(w) and not F.punc.v(w)
+
+
+def typed_sequences(letter):
+    """extract sequences of words of a same type: header, paragraph, footnote or remark.
+
+    Words are classified as `orig`, `note` (for footnotes) or `remark`, where `orig` words are either part of a
+    paragraph or not. In the latter case, they must be part of a header.
+    Footnote words are embedded in paragraphs, so the extracted sequences are listed after the corresponding paragraph
+    sequence.
+    Sequence boundaries are marked by the change to another type of sequence, so contiguous footnotes or remarks would
+    be listed in the same sequence."""
     seqs = []
-    seq = []
-    starts_new_text_unit = True
-    for w in L.d(letter, otype="word"):
-        if to_list(w):
-            if starts_new_text_unit and seq:  # flush previous seq
-                seqs.append(seq)
-                seq = []
-            seq.append(w)
-            starts_new_text_unit = False
+    types = []
+    words = L.d(letter, otype="word")
+    i = 0
+    while i < len(words):
+        if F.isremark.v(words[i]):
+            i += append_remark(words[i:], seqs, types)
+        elif F.isorig.v(words[i]):
+            if is_inparagraph(words[i]):
+                i += append_paragraph_and_notes(seqs, types, words[i:])
+            else:
+                i += append_header(words[i:], seqs, types)
+        elif F.isnote.v(words[i]):
+            i += append_note(words[i:], seqs, types)
+        elif is_empty(words[i]) or F.isfolio.v(words[i]):
+            i += 1
         else:
-            starts_new_text_unit = True
-
-    if seq:
-        seqs.append(seq)
-    return seqs
+            raise ValueError(f"Expected word to be of type orig or remark")
+    return zip(seqs, types)
 
 
 def get_metadata():

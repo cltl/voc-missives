@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:06CEST" title="Mossel, Cluysenaar, Overbeek, Van Broyel, Van der Waeyen, Van der Parra, Van der Spar, Huyghens, Loten; Batavia, 21 januari 1751" filename="missive_12_3.naf"/>
+    <public publicId="missive_12_3"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:06CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:06CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[III. JACOB MOSSEL, JOHANNES MATTHEUS CLUYSENAAR, DANIËL OVER-BEEK, AREND VAN BROYEL, JACOB VAN DER WAEYEN, PETRUS ALBERTUSVAN DER PARRA, JURGEN VAN DER SPAR, JAN HUYGHENS en JOAN GIDEONLOTEN, BATAVIA 21 januari 1751, geheim. Kol. Arch. 2644, VOC 2752, fol. 935-939. Volgt De Jonge Opkomst X, p. 178 r. 25 - p. 180 r. 27. » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[12]/missive[3]/header[1]" type="header" id="t1" offset="0" length="324"/>
+  </tunits>
+</NAF>

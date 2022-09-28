@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:06CEST" title="Van Outhoorn, Van Hoorn, Pijl, De Haas, Valckenier, Van Riebeeck, Bornezee, Lycochthon; Batavia, 26 maart 1692" filename="missive_5_19.naf"/>
+    <public publicId="missive_5_19"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:06CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:06CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[III. WILLEM VAN OUTHOORN, JOAN VAN HOORN, LAURENS PIJL, DIRK DE HAAS, WOUTER VALCKENIER, ABRAHAM VAN RIEBEECK, MANUEL BORNEZEE EN WIJBRAND LYCOCHTHON, BATAVIA, 26 maart 1692. Kol. Arch. 1381fol. 519. Zo juist verneemt men uit Cheribon, dat ook de Zaamslag in de Dirk de Vriesbaai ligt » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[5]/missive[19]/header[1]" type="header" id="t1" offset="0" length="288"/>
+  </tunits>
+</NAF>

@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:05CEST" title="Van Goens, Speelman, Bort, Hurdt, Blom, Van Outhoorn, Camphuys; Batavia, 1 augustus 1679" filename="missive_4_21.naf"/>
+    <public publicId="missive_4_21"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[IX. RIJCKLOFF VAN GOENS, CORNELIS SPEELMAN, BALTHASAR BORT, ANTHONIO HURDT, DIRCK BLOM, WILLEM VAN OUTHOORN EN JOANNES CAMPHUYS, BATAVIA 1 augustus 1679. 1230, fol. 1-6; copie, fol. 84-88. Vgl. Daghregisters 1679 , p. 68-351 de 2 juni uit patria aangekomen Romeyn was 8\ maand onderweg; twee grote moeilijkheden op Java: » 
+De groote ende hartneckige tegenstant der uytgeweeken Macassaren, die hen niet gaarne vant dit vette coorn- ende menschrijcke eylant schijnen te willen retireren, maar liever haar zetel te vesten en hen verlooren heerschappye weder op te rechten. Hoedanige gebuuren U Ed. le hooftplaatse alhier ten hooghsten schadelijck zouden zijn, waaraff geen ander verhaal noodigh is, U Ed. de consequentie niet min dan ons bekent zijnde. Hierbij komt dan nogh de slaafse laffhertigheyt der Javanen en de inwoonders deses eylants, die hen slimmer als jakhalsen bij honderden van thienen ende bij duysenden van honderden Maccassaren laten verjagen ende met wijven en kinderen onderdanigh maeken. Welcke, zoo sij van zoo bellikeusen aart dan haar voorouderen waren, dese geringe maght en kleyn getal haarder vyanden zeer lichtel. zouden connen verdrijven, dogh de Macassaren, in den oorlogh nu ervaren ende door gebrek en noot tot armoede gebraght, schijnen het uytterste te willen hasarderen. Het tweede ende grootste obstacul wert U Ed. le staat toegebraght door de verradersse ende stercke machinatiën der Bantammere, die, nu in voorspoet verwildert ende van hooghmoet opgeblasen gewerden, door de troubelen ende ontroerten der Mattaramse Javanen op dit eylant haar heerschappye met vigeur soecken uyt te breyden en ook, tenware den tegenstant van ’s Comp. 8 wapenen, al tot haar ooghwit zouden gecomen wesen. 
+Tegen Bantam zal thans alleen , indien noodzakelijk , worden opgetreden, maar het loopt de spuigaten uit; moord door hen in Indragiri bedreven » 
+Achter Batavia, binnen de Jaccatrase jurisdictie, hebben de Bantammere de Javanen, ’s Comp. 8 onderdanen, alle verdreven, die haar heerschappye weygerden aan te nemen. Dit moeten wij aldus aansien ende dulden op de naam, van dat het stroopers ende bosroovers zijn ende wie wij, elders konnende attrapperen, mede niet quytschelden. Schijnende alsints het werk der Bantammere tegens ons aangeleyt te werden om ons aan alle kanten werk te geven ende te min vermogen te behouden om den Sousouhounam te herstellen. 
+Voor patria zijn geen kruidnagelen beschikbaar; in Coromandel zal men het opgenomen geld kunnen terugbetalen; 64 slaven, in Madagascar gekocht, zijn naar de Westkust gebracht, 51 andere stierven aan boord » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[4]/missive[21]/header[1]" type="header" id="t1" offset="0" length="324"/>
+    <tunit xpath="//volume[4]/missive[21]/paragraph[2]" type="paragraph" id="t2" offset="324" length="1400"/>
+    <tunit xpath="//volume[4]/missive[21]/remark[3]" type="remark" id="t3" offset="1724" length="146"/>
+    <tunit xpath="//volume[4]/missive[21]/paragraph[4]" type="paragraph" id="t4" offset="1870" length="511"/>
+    <tunit xpath="//volume[4]/missive[21]/remark[5]" type="remark" id="t5" offset="2381" length="208"/>
+  </tunits>
+</NAF>

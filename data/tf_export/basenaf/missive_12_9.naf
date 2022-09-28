@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:06CEST" title="Mossel, Cluysenaar, Van Broyel, Van der Waeyen, Van der Parra, Van der Spar, Loten, Van Gollenesse, Van de Velde; Batavia, 18 januari 1752" filename="missive_12_9.naf"/>
+    <public publicId="missive_12_9"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:06CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:06CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[IX. JACOB MOSSEL, JOHANNES MATTHEUS CLUYSENAAR, AREND VANBROYEL, JACOB VAN DER WAEYEN, PETRUS ALBERTUS VAN DER PARRA, JURGEN VAN DER SPAR, JOAN GIDEON LOTEN, JULIUS VALENTIJN STEIJNVAN GOLLENESSE en PIETER VAN DE VELDE, BATAVIA 18 januari 1752. Kol. Arch. 2662, VOC 2770, fol. 613-617. Na het voltooien van de missive van 31 december 1751 » 
+zijn alhier aangekomen een derdewaak, een bootsman en dertig mindere zeevarende van het China’s retourschip Geldermalsen, welke met de boot en schuyt ten eylande Edam waren ter houw gekomen, tot ons sensibel leetwesen medebrengende de fatale tijding dat dien bodem, den 3de dezer maand des middaags met een noordewind, bramzeilscoelte en goed weder op de noorderbreedte van 55 minuten gekomen sijnde, den schipper Jan Diderik Morel des na de middags, vermits zij het zoogenaamde Ruyge eyland N. W. van den bodem bevonden, g’ ordonneert hadde om zuyd te stuuren, sustineerende Geldria’s droogte reets gepasseert te wesen; dat tegens den avond een derdewaak en twee cadets naar boven geklommen waren om naar land uyt te sien, sonder iets t’ ontdecken, maar den bootsman tegens seven uuren branding vooruyt ziende, de facto geroepen hadde om het roer stuurboord aan boord te draayen, dog dat daarmede naauwlijks begonnen was, of men bevond dat het schip reets op de voorsz. droogte vastzat; dat daarop immediaat de bezaan uytgehaald, het grootzeyl bijgemaakt, en de groote schoot aan stuurboord opgekort wierd, hetgeene veroorsaakte dat het schip, van het zuyden tot het oosten loevende, weder vlot raakte, maar dat na dit alles op commando van den schipper de fokkeschoot aan stuurboord opgekort wierd, door welk verkeerde manoeuvre het schip, naar het zuyden vallende, weder op de klippen vastraakte, en vervolgens door het sterk stooten de groote steng nederviel, het roer uyt de vingerlingen raakte, de roerpen aan stucken brak, en het schip in een moment veertien voeten water inkreeg; dat hetselve egter door de in het werk gestelde debvoiren ten tweeden male van de klippen afgekomen sijnde, ter diepte van 25 vadems water voor het tuyanker was blijven leggen; dog dat men, ontwarende dat niettegenstaende alle d’ in ’t werk gestelde middelen het water in den bodem hand over hand toenam, schuyt en boot hadde uytgezet en agteraan laten drijven, dat vervolgens, het voorschip ’s nagts op een zijde gevallen en eerst gesonken zijnde, eenige van het volk overboord gesprongen en geswommen waren na de boot en schuyt, waarvan d’ eerste allenskens van het schip weggedreven was, sijnde op het laast daarvan niets als de kruyssteng meer te sien geweest soodat met d’ overige manschappen en eene kostbaare lading, bestaande in ƒ 714. 963, 2, 8 aan retouren voor ’t vaderland, buyten ƒ 68. 000,-,- aan goud voor India, is te gronde gegaan. 
+DAS III, 403, noemt 18 januari 1752 als datum van de schipbreuk, de elektronische versie van DAS 10 januari 1752. Volgens de missive verging de Geldermalsen in de nacht van 3 op 4 januari 1752. 
+De Hoge Regering stuurt Heren XVII een verslag van de schipbreuk zoals door de geredde derdewaak en bootsman gegeven. De advocaat- fiscaal heeft opdracht gekregen de zaak nauwkeurig te onderzoeken. Men is van plan het verlies voor Zeeland te vergoeden met een naschip. » 
+Ondertusschen noodzaakt ons de sorgelijke gesteldheyd van den handel in Japan, door de insupportable dwingelandij der Nangasackise regenten, volgens de ontfangene advi- sen met het schip Elswout op den 12e courant - , de precautie te gebruyken, hier nog bij te voegen een nadere petitie van tien maal hondertduyzend ponden Zweeds koper, \ in munt of platen en ^ gaarkoper. 
+Als de zaken zich ten goede keren en de maatregel overbodig blijkt te zijn , kan het koper toch binnen 3 jaar verkocht worden. » 
+Het voor Cormandel gedestineerde schip Sloten is uit. der voorledene maand uyt Japan op Malacca behouden g’ arriveert. Vrijburg op den 6e bevorens vandaar naar Souratta en Langewijk op den 13e naar Bengale voortgedepecheert, maar het schip Pasgeld, dat gelijk met Elswoud uyt Japan direct herwaards is vertrocken en waarop zig het afgegane opperhoofd Van Suchtelen bevind, is alhier nog niet opgedaagd, zijnde volgens rapport der schepelingen van laatsgenoemde bodem door tegenwind genoodsaakt geweest weeder onder de wal te loopen. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[12]/missive[9]/header[1]" type="header" id="t1" offset="0" length="342"/>
+    <tunit xpath="//volume[12]/missive[9]/paragraph[2]" type="paragraph" id="t2" offset="342" length="2438"/>
+    <tunit xpath="//volume[12]/missive[9]/footnote[3]" type="footnote" id="t3" offset="2780" length="195"/>
+    <tunit xpath="//volume[12]/missive[9]/remark[4]" type="remark" id="t4" offset="2975" length="272"/>
+    <tunit xpath="//volume[12]/missive[9]/paragraph[5]" type="paragraph" id="t5" offset="3247" length="374"/>
+    <tunit xpath="//volume[12]/missive[9]/remark[6]" type="remark" id="t6" offset="3621" length="130"/>
+    <tunit xpath="//volume[12]/missive[9]/paragraph[7]" type="paragraph" id="t7" offset="3751" length="534"/>
+  </tunits>
+</NAF>

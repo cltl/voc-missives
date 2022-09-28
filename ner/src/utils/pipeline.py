@@ -11,10 +11,13 @@ model = AutoModelForTokenClassification.from_pretrained("CLTL/gm-ner-xlmrbase")
 ner = pipeline("ner", model=model, tokenizer=tokenizer, aggregation_strategy="simple")
 
 file_id_pattern = re.compile(r'missive_(\d+)_(\d+)_(\w+)')
-
+base_file_id_pattern = re.compile(r'missive_(\d+)_(\d+)')
 
 def get_entity_prefix(name):
     m = re.match(file_id_pattern, name)
+    if m is None:
+        m = re.match(base_file_id_pattern, name)
+        return f'e_{m.group(1)}_{m.group(2)}'
     return f'e_{m.group(3)[0]}_{m.group(1)}_{m.group(2)}'
 
 

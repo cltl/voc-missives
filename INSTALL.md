@@ -1,18 +1,21 @@
 # Installing
-The repository consists of three main modules. Which ones to install depends on your needs:
+The repository consists of different modules. Which ones to install depends on your needs:
 
-* for format conversions and analysis scripts, compile the [Java source code](#java-source-code)
-* for interaction with TextFabric (to extract and format new General Letters from TextFabric, or to upload entity-annotated letters to TextFabric), compile the [Java source code](#java-source-code) and [install TextFabric](#installing-textfabric)
+* format conversions, analysis scripts and interaction with Text-Fabric rely on a java executable that is provided in `./target/voc-missives-1.1.jar`. Installation instructions for the [Java source code](#java-source-code) are therefore only provided for reference.
+* for interaction with TextFabric, see [install TextFabric](#installing-textfabric)
 * to run NER experiments, [install Transformers](#installing-transformers)
+* to run a fine-tuned NER model, see [install pipeline](#installing-the-ner-pipeline)
 
-The installation script `./scripts/install.sh` collects installation commands for all three modules:
+The installation script `./scripts/install.sh` collects installation commands for all modules:
 ```
-bash ./scripts/install.sh [--java] [--textfabric] [--transformers]
+bash ./install.sh [--java] [--textfabric] [--transformers] [--pipeline]
 ```
 
 ## Java source code
+The code is precompiled in `./target/voc-missives-1.1.jar`, so you can directly run scripts. Follow the instructions in this section if you want to recompile.
+
 ### Requirements
-The code is compatible with Java 8+ (JDK). You will need `xjc` (included in the JDK) to generate some of the source code, and `maven` to compile and package the code.
+The code is compatible with Java 8 (JDK). You will need `xjc` (included in the JDK) to generate some of the source code, and `maven` to compile and package the code.
 
 To test whether they are installed, run
 ```sh
@@ -21,18 +24,15 @@ $ mvn -version
 $ xjc -version
 ```
 
- The code was tested with `java` 1.8, `maven` 3.6.2, and `xjc` 2.2.8.
+The code was tested with `java` 1.8, `maven` 3.6.2, and `xjc` 2.2.8.
 
 ### Dependencies and compilation
-Dependencies are specified in the maven `pom`, and taken care of at compilation.
-
-The only exception is the tokenizer `ixa-pipe-tok`, which relies on a development version. 
-
-Running the installation script with the `java` flag will install this dependency, and then compile and package the source code:
-
+Run the installation script with the `java` flag to compile the java code and install dependencies:
 ```sh
-bash ./scripts/install.sh --java
+bash ./install.sh --java
 ```
+
+Dependencies are specified in the maven `pom`, and taken care of at compilation. The only exception is the tokenizer `ixa-pipe-tok`, which relies on a development version. 
 
 The script performs the following operations:
 ```sh
@@ -49,26 +49,27 @@ mvn clean package
 ## Installing TextFabric
 This step can be performed with the installation script:
 ```sh
-bash ./scripts/install.sh --textfabric
+bash ./install.sh --textfabric
 ```
 
-The script clones the TextFabric [clariah-gm](https://github.com/Dans-labs/clariah-gm) repository and the [missieven app](https://github.com/annotation/app-missieven), stores them in your home directory, and finally installs python dependencies for TextFabric and NAF (you may want to activate a *dedicated Python environment* for this)
+The script clones the TextFabric [clariah-gm](https://github.com/Dans-labs/clariah-gm) repository and the [missieven app](https://github.com/annotation/app-missieven), stores them in your home directory, and finally installs python dependencies for TextFabric and NAF (you may want to activate a *dedicated Python environment* for this).
 
 The script performs the following operations:
 ```sh
 # clone TextFabric repositories
-mkdir -p ~/github/Dans-labs
-mkdir -p ~/github/annotation
+git clone https://github.com/CLARIAH/wp6-missieven ~/github/CLARIAH/wp6-missieven
 git clone https://github.com/Dans-labs/clariah-gm ~/github/Dans-labs
-git clone https://github.com/annotation/app-missieven ~/github/annotation
+cd ~/github/Dans-labs
+git checkout fc67e0b
 # install python dependencies
-pip install -r tf/requirements.txt
+pip install -r ${workdir}/textfabric/requirements.txt
 ```
+
 
 ## Installing Transformers
 This step can be performed with the installation script:
 ```sh
-bash ./scripts/install.sh --transformers
+bash ./install.sh --transformers
 ```
 NOTE: you may want to activate a *dedicated Python environment* for this
 
@@ -81,4 +82,11 @@ git checkout 626a0a0
 pip install
 cd examples/pytorch/token-classification
 pip install -r requirements.txt
+```
+
+## Installing the NER pipeline
+To run a fine-tuned model, it is sufficient to [install Transformers](https://huggingface.co/docs/transformers/installation). In your favorite environment, run
+
+```sh
+bash ./install.sh --pipeline
 ```

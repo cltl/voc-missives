@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:05CEST" title="Both; Fort Mauritius nabij Ngofakiaha op het eiland Makéan, 26 juli 1612" filename="missive_1_12.naf"/>
+    <public publicId="missive_1_12"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XII. PIETER BOTH, FORT MAURITIUS NABIJ NGOFAKIAHA OP HET EILAND MAKÉAN 26 juli 1612. 961, 1folio. Zendt kleine geschenken aan zijn kinderen over » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[1]/missive[12]/header[1]" type="header" id="t1" offset="0" length="148"/>
+  </tunits>
+</NAF>

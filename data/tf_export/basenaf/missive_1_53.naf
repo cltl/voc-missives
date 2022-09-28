@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:05CEST" title="Coen, De Carpentier, Van Antzen; Batavia, 14 maart 1622" filename="missive_1_53.naf"/>
+    <public publicId="missive_1_53"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XVII. JAN PIETERSZ. COEN, PIETER DE CARPENTIER EN WILLEM VAN ANTZEN, BATAVIA 14 maart 1622. Afgedrukt Coen I, p. 701-702 » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[1]/missive[53]/header[1]" type="header" id="t1" offset="0" length="124"/>
+  </tunits>
+</NAF>

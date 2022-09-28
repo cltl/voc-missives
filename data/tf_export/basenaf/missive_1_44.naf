@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:05CEST" title="Coen, De Carpentier, Dedel, Sonck; Kasteel Jakatra, 31 juli 1620" filename="missive_1_44.naf"/>
+    <public publicId="missive_1_44"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[VIII. JAN PIETERSZ. COEN, PIETER DE CARPENTIER, JACOB DEDEL EN DR. MARTINUS SONCK, KASTEEL JAKATRA 31 juli 1620. Afgedrukt Coen I, p. 560-584 » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[1]/missive[44]/header[1]" type="header" id="t1" offset="0" length="145"/>
+  </tunits>
+</NAF>

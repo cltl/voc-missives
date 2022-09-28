@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:05CEST" title="Maetsuycker, Hartsinck, Verburch, Pit, Overtwater, Van den Brouck, Thijsz, Hustaert, Van Hoorn; Batavia, 26 februari 1665" filename="missive_3_28.naf"/>
+    <public publicId="missive_3_28"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XXXIV. JOAN MAETSUYKER, CAREL HARTSINCK, NICOLAES VERBURCH, LAURENS PIT, PIETER OVERTWATER, MATTHEUS VAN DEN BROUCK, JOAN THIJSZ., JACOB HUSTAERT EN PIETER VAN HOORN, BATAVIA 26 februari 1665. Kol. Arch. 1136, fol. 778-782, copie fol. 603-606, 2e copie 1142, fol. 381-385. Inhoud grotendeels in Daghregisters 1665 , p. 18-34 verder te vermelden: verzonden met bet Engelse schip Constantinopel Merchant, welk schip -meldde, dat de geschillen met Engeland waren bijgelegd; Nobel heeft in China maar 50 picol zijde kunnen kopen; uit pairia werden 23 febr. met de Zandlooper berichten ontvangen » 
+Niet zonder verwondering hebben wij daeruyt gelesen van de grote animeusheyt der Engelse natie ende het ongelijk, dat sij den staet der Vereenigde Nederlanden aen Cabo Verde ende op de cust van Guinea hebben gedaen ende dat daeruyt mitsgaders uyt de ongefondeerde pretentiën, die sij op de Oostindise Comp. e maken ende van tijt tot tijt cumuleren, wel een rupture tusschen beyde soude connen volgen. 
+Men is op zijn hoede; voornemen der Fransen zich op Madagascar te vestigen; zij maken zich gehaat door hun zeeroof in de Rode Zee; de Eendracht is 28 nov. de Kaap op weg naar Batavia gepasseerd » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[3]/missive[28]/header[1]" type="header" id="t1" offset="0" length="594"/>
+    <tunit xpath="//volume[3]/missive[28]/paragraph[2]" type="paragraph" id="t2" offset="594" length="402"/>
+    <tunit xpath="//volume[3]/missive[28]/remark[3]" type="remark" id="t3" offset="996" length="197"/>
+  </tunits>
+</NAF>

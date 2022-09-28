@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:05CEST" title="Van der Lijn, Caron, Reniers, Demmer; Batavia, 18 januari 1650" filename="missive_2_35.naf"/>
+    <public publicId="missive_2_35"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XI. CORNELIS VAX DER LIJN, FRANQOIS CARON, CAREL RENIERS, GERARD DEMMER, BATAVIA 18 januari 1650 Gedeeltelijk onleesbaar door vocht. . 1069, fol. 1-5. De fluit Lastdrager , bestemd voor patria, heeft voor het innemen van peper enige dagen moeten wachten; 4 jan. is van daar de Tijger aangekomen, die door stormschade Siërra] Leone heeft moeten aandoen; waarde van de lading is fl. 63940. 8. 8; 5 jan. komt de Wolf uit Bengalen met 80 last rijst en 40 tarwe; er is jaarlijks 60 a 70. 000 & zijde verkrijgbaar; bericht . . . » 
+dat het nieuwe rijs- ende suyckergewas redelijck stondt, met apparentie dat onse ende de Persise petitiën dit jaer sullen cunnen voldaen worden, soo maer door den quaedwilligen Melckbeeck daerin geen obstacul comen te lijden, die bij den prince Sasousa sooveel hadde tewegegebracht, dat . . . Sonneschijn1 sonder firmans tot den libren handel te obtineren onverrichter saecke terugge was gekeert, dat vertrouwen, met het gedane redres in Suratte welhaest beteren sal, d [aer] van op den 7 december noch geen tij [dinge] in Bengala was gecomen. 
+Joan Sonneschijn kwam 1638 als assistent uit, 1643 onderkoopman in Bengalen, 1646 koopman, 1649 opperkoopman. 
+Slechts de halve eis aan suiker is naar Perzië gezonden; twee schepen komen 8 en 14 jan. uit Siam met 419 last rijst, kostende fl. 15084, bestemd voor de Molukken en Banda; uit J apan is vernomen, » 
+dat volgens de becomen ordre van den Keyser uyt het hof van Jedo onsen gesant Frisius nevens den capitain Brouckhorst haer souden veerdich maecken om binnen 8 è, 10 dagen naer Jedo op te reysen, waertoe reede drye barcquen om de stucken ende voirdre schenckagie [met] de bagagie ende een suite van 24 persoonen over te voeren gereedt waren gemaeckt, dat den gesant oock specialijck was toege [seght] met sijn suite op de landtstrate apart [te] mogen logeren; doch in Jedo gecomen, dat haer als [dan] bij den anderen in ’t logys sullen ver [voegen] . . . 
+Andries Frisius, lid van de Raad van Justitie en secretaris van de Regering, was 1649 als medegezant naar Japan gezonden. Hij repatrieerde in 1653 en kwam 1656 als vrijburger terug; 1657 weer secretaris van de Regering, tevens president van huwelijkse zaken, kapitein der schutterij enz. In 1660 repatrieerde hij als commandeur van de retourvloot. 
+Hoop op gunstiger verhoudingen in Japan; de reële effecten in Azië bedragen fl. 12737084. 1. 5 » 
+Den president Overtwater heeft sich niet willen verweerdigen, noch den Generael ende raden van India daerin erkennen om sijne pretensiën, die hij op de Comp. e meent te hebben, hier voor te dragen, maer ronduyt geseght, dat die in ’t patria bij sijne Meesters wel soude obtineren . . . 
+Slot » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[2]/missive[35]/header[1]" type="header" id="t1" offset="0" length="526"/>
+    <tunit xpath="//volume[2]/missive[35]/paragraph[2]" type="paragraph" id="t2" offset="526" length="545"/>
+    <tunit xpath="//volume[2]/missive[35]/footnote[3]" type="footnote" id="t3" offset="1071" length="111"/>
+    <tunit xpath="//volume[2]/missive[35]/remark[4]" type="remark" id="t4" offset="1182" length="200"/>
+    <tunit xpath="//volume[2]/missive[35]/paragraph[5]" type="paragraph" id="t5" offset="1382" length="555"/>
+    <tunit xpath="//volume[2]/missive[35]/footnote[6]" type="footnote" id="t6" offset="1937" length="349"/>
+    <tunit xpath="//volume[2]/missive[35]/remark[7]" type="remark" id="t7" offset="2286" length="98"/>
+    <tunit xpath="//volume[2]/missive[35]/paragraph[8]" type="paragraph" id="t8" offset="2384" length="287"/>
+    <tunit xpath="//volume[2]/missive[35]/remark[9]" type="remark" id="t9" offset="2671" length="8"/>
+  </tunits>
+</NAF>

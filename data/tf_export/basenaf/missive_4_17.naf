@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:05CEST" title="Van Goens, Speelman, Bort, Van Outhoorn, Camphuys; Batavia, 28 november 1678" filename="missive_4_17.naf"/>
+    <public publicId="missive_4_17"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[Van (loens, Speelman, Bort, Van Outhoorn en Camphuys V, 26 november 1678 
+V. RYCKLOFF VAN GOENS, CORNELIS SPEELMAN, BALTHASAR BORT, WILLEM VAN OUTHOORN EN JOANNES CAMPHUYS, BATAVIA 28 november 1678 Verzonden met de Engelse Berkeley Castle uit Bantam. . 1220, fol. 118-119. Vgl. Daghregisters 1678, p. 421-690 het schip Willem Hendrick, vgl. ibid. P . 654, » 
+sijnde al in de maent julij op de Sumatrase Westcust vervallen geweest, doch door tegenwint en stroomen niet konnende opkomen ende het volck, door dagh en nacht te pompen afgemat ende voor grooter quaet vreesende, hebben ’t de overheyt wijselijck ende met goeden raed den len aug. ° voor de wint opgeduwt ende weder door de linie equinoctiael ende vervolgens nae Colombo overgesteecken, alwaer ’t voors. schip den 28en augustij aengekomen is. 
+Het werd te Ponnekail voorlopig hersteld, verdere reparatie zal bij Onrust geschieden; uit Bengalen is geen salpeter aangebracht, daardoor kan de retourvloot pas in zijn geheel eind jan. verzonden worden; hoop, dat twee miljoen gulden uit China en Japan voor Coromandel beschikbaar zal zijn, terwijl ook Bengalen zal kunnen toekomen; vernomen, dat » 
+door de heer extraordinarye raed Sijbrant Abbema - de reecq. n® met den hertogh Amynchan, soon van den ouden mirsamula off Chanchan was vereffent ende soude in Golconda werden uytgekeert 29000 oude en 13996 nieuwe pagooden, makende, met 9J p. r c. t0 opgeit op de oude pagooden ende 105 stuyvers de pagoode gerekent, uyt ontrent 232000 gulden ruym ende waermede de oude schuit eenmael sal uyt de boecken wesen tot gerustheyt. De questie met den serlesker was tot Comp. 8 reputatie vereffent ende was op ’t reglement van onse geordonneerde menagie op de Masulipatnamse comptoiren 15000 gulden ’s jaers uytgewonnen. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[4]/missive[17]/paragraph[1]" type="paragraph" id="t1" offset="0" length="74"/>
+    <tunit xpath="//volume[4]/missive[17]/header[2]" type="header" id="t2" offset="74" length="285"/>
+    <tunit xpath="//volume[4]/missive[17]/paragraph[3]" type="paragraph" id="t3" offset="359" length="444"/>
+    <tunit xpath="//volume[4]/missive[17]/remark[4]" type="remark" id="t4" offset="803" length="351"/>
+    <tunit xpath="//volume[4]/missive[17]/paragraph[5]" type="paragraph" id="t5" offset="1154" length="615"/>
+  </tunits>
+</NAF>

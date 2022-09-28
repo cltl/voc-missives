@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:05CEST" title="Both; Bantam, 10 november 1614" filename="missive_1_22.naf"/>
+    <public publicId="missive_1_22"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XXII. PIETER BOTH, BANTAM 10 november 1614. 969, fol. 41. 
+Ick hebbe in sommige van mijne brieven geperticulariseert het contra, sal in desen perticulariseren het pro. 
+Principaliter, van eenen Jan Pietersz. Coen van Hoorn, uytgevaren voor commandeur over de twee schepen de Geünieerde Provintien ende de Hope, ende van ons voor mijn vertreck uyt de Moluques door sijn grote ervarentheyt ende capasité medegenomen omme te bededen de plaetsen alhier, ten respecte ons gerelateert was de impotentie ende insuffisantie van Matheo Coteels. In effect, wij hebben op ons arrivement alhier bevonden niet alleen den voorsz. Coteels overleden, maar oock het groot disordre ende confusie op dese twee plaetsen tot dien eynde den voorsz. Coen alhier geauthoriseert als president, directeur- ende boeckhouder-generaell van alle de comptoiren in Indien. 
+Bantam en Jakatra. , 
+Ende onlancx ons gepasseert zijnde de veranderinge, gepasseert in de Moluques, hebbe met advijs van mijnen presenten raedt alhier den voornoemden Coen geëligeert als raedt van Indien, in plaetse van den erentfesten capiteyn Appolonius Schotte zaliger omme ons in alle occurentien te dienen ende met meerder authoriteyt te remedieren, tgunt gepasseert is in de Moluques ende op andere plaetsen. 
+Desen Coen is een persoon zeer wel ervaren in den coophandell, alsmede in saecken van state, seer eerlij ck ende modest van leven, altijdts laboureus, sonder eenigen tijdt te verliesen, alsoo dat ick mij versekere, dat hier noyt niemant en is geweest, die sijn cloeckheyt gejjasseert heeft, noch comen en sall, gelijck U Ed. sullen connen speuren uyt sijne missiven Wij hebben hem ten fijne voorsz. geaugmenteert zijn salaris tot hondert ende vijftich guldens ter maendt. 
+Alle uitgegeven in Coen. 
+Den heer Gouverneur- Ceneraell Reynst heeft in desen voorsz. vrundt een sonderlinge goet behagen. Het ware te wenschen, noch eenige andere diergelijeke hier waren. 
+Ick hadde voor mij genomen, in cas dat den heer Gouverneur- Ceneraell Reynst alhier niet en ware gearri veert voor den eersten januarij toecomende, op welcke tijdt ick vertrocken soude hebben, den voorsz. Coen bij provisie in mijn plaets gestelt te hebben, want het supremo gouvernement van Indien en dient in geenderley manieren vacant te wesen. Dan nu, Godt heb loff, den heer Generaell voorsz. is noch in tijdts alhier wel gecomen omme hem van alles in amplissima forma den staet ende standt in ’t generaell ende in ’t perticuïier te informeren. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[1]/missive[22]/header[1]" type="header" id="t1" offset="0" length="59"/>
+    <tunit xpath="//volume[1]/missive[22]/paragraph[2]" type="paragraph" id="t2" offset="59" length="110"/>
+    <tunit xpath="//volume[1]/missive[22]/paragraph[3]" type="paragraph" id="t3" offset="169" length="673"/>
+    <tunit xpath="//volume[1]/missive[22]/footnote[4]" type="footnote" id="t4" offset="842" length="22"/>
+    <tunit xpath="//volume[1]/missive[22]/paragraph[5]" type="paragraph" id="t5" offset="864" length="395"/>
+    <tunit xpath="//volume[1]/missive[22]/paragraph[6]" type="paragraph" id="t6" offset="1259" length="473"/>
+    <tunit xpath="//volume[1]/missive[22]/footnote[7]" type="footnote" id="t7" offset="1732" length="26"/>
+    <tunit xpath="//volume[1]/missive[22]/paragraph[8]" type="paragraph" id="t8" offset="1758" length="165"/>
+    <tunit xpath="//volume[1]/missive[22]/paragraph[9]" type="paragraph" id="t9" offset="1923" length="550"/>
+  </tunits>
+</NAF>

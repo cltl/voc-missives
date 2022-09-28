@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:05CEST" title="Coen, De Carpentier, Dedel; Kasteel Jakatra, 12 mei 1620" filename="missive_1_43.naf"/>
+    <public publicId="missive_1_43"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[VII. JAN PIETERSZ. COEN, PIETER DE CARPENTIER, EN JACOB DEDEL, KASTEEL JAKATRA 12 mei 1620. Afgedrukt Coen I, p. 558-559 » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[1]/missive[43]/header[1]" type="header" id="t1" offset="0" length="124"/>
+  </tunits>
+</NAF>

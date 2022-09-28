@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:05CEST" title="Both; zonder plaats, zonder datum" filename="missive_1_14.naf"/>
+    <public publicId="missive_1_14"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XIV. PIETER BOTH, ZONDER PLAATS EN DATUM 961, 1folio. B. kan geen rol van de soldaten overzenden » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[1]/missive[14]/header[1]" type="header" id="t1" offset="0" length="100"/>
+  </tunits>
+</NAF>

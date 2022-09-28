@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:06CEST" title="Van Outhoorn, Van Hoorn, Van Riebeeck, Pijl, Cops, Bornezee, Van Swoll, De Wilde, Douglas, Van Rijn, Van der Stel; Batavia, 14 maart 1704" filename="missive_6_28.naf"/>
+    <public publicId="missive_6_28"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:06CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:06CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XLIH. WILLEM VAN OUTHOORN, JOAN VAN HOORN, ABRAHAM VAN RIEBEECK, LAURENS PIJL, JOANNES COPS, MANUEL BORNEZEE, CHRISTOFFEL VAN SWOLL, HERMAN DE WILDE, ABRAHAM DOUGLAS, ADAM VAN RIJN EN ADRIAAN VAN DER STEL, BATAVIA 14 maart 1704. Kol. Arch. 1563, fol. 2180-2183, copie 1573, fol. 493-496 
+Gebruik is gemaakt van de beter leesbare copie. . 
+Verzonden met de Engelse Gloucester en Union; de Noordgouw kwam 6 maart om de hoek van Bantam; de Nederland kwam uit Perzië met een brief van 20 aug.; 5 retourschepen vertrokken 25 dec. van Galle » 
+Men wel soude mogen prognosticeren, de zoon van den Pangeran Poegar met sijn opstand tegen den nieuwen Soesoehoenang sijn intentie beswaarlijk sal bereiken, de wij le hij reets met sijn bij hebbende macht na het district van Ceribon soude sijn geweken, tenware dat die van Bagaleen en Madion aan de andere kant, over het reets aangedaan quaad tractement aan de hare misnoegt en de laatste reets op de been geraakt zijnde, hem incommodeerden en de handen vol werk geven. 
+Jacob van Dam overleed 9 maart , Adam van Rijn volgt hem voorlopig op als president van de Raad van Justitie; De Wilde is de jongste raad-ordinaris ; de Kattendijk kwam 29 febr. van de Kaap » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[6]/missive[28]/header[1]" type="header" id="t1" offset="0" length="288"/>
+    <tunit xpath="//volume[6]/missive[28]/footnote[2]" type="footnote" id="t2" offset="288" length="51"/>
+    <tunit xpath="//volume[6]/missive[28]/remark[3]" type="remark" id="t3" offset="339" length="199"/>
+    <tunit xpath="//volume[6]/missive[28]/paragraph[4]" type="paragraph" id="t4" offset="538" length="471"/>
+    <tunit xpath="//volume[6]/missive[28]/remark[5]" type="remark" id="t5" offset="1009" length="193"/>
+  </tunits>
+</NAF>

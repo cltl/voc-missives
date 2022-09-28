@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:05CEST" title="Coen, Vlack, Van Diemen; Batavia, 18 maart 1629" filename="missive_1_79.naf"/>
+    <public publicId="missive_1_79"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[VIII. JAN PIETERSZ. COEN, DR. PIETER VLACK EN ANTONIO VAN DIEMEN, Batavia 18 maart 1629. Afgedrukt Coen V, p. 155-166 » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[1]/missive[79]/header[1]" type="header" id="t1" offset="0" length="121"/>
+  </tunits>
+</NAF>

@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:06CEST" title="Van Hoorn, Van Riebeeck, Pijl, Cops, Bornezee, Van Swoll, De Wilde, Douglas, Van Rijn, Van der Stel, Zwaardecroon, De Haan; Batavia, 6 maart 1705" filename="missive_6_34.naf"/>
+    <public publicId="missive_6_34"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:06CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:06CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[VI. JOAN VAN HOORN, ABRAHAM VAN RIEBEECK, LAURENS PIJL, JOANNES COPS, MANUEL BORNEZEE, CHRISTOFFEL VAN SWOLL, HERMAN DE WILDE, ABRAHAM DOUGLAS, ADAM VAN RIJN, ADRIAAN VAN DER STEL, HENDRIK ZWAARDECROON EN MATTHEUS DE HAAN, BATAVIA 6 maart 1705. Kol. Arch. 1576, fol. 2266-2281, copie 1688, fol. 382-395 
+Gebruik is gemaakt van de beter leesbare copie. . 
+Verzonden met de Taxisboom; de residenten in Golconda Frangois Knobbaart en Zacheus van Heussen worden opgeroepen, omdat ze zich waarschijnlijk 3000 pagoden uit de V. O. C. kas toeeigenden; daar Phoonsen gevangen is, moet Goomans het ambt van gouverneur van Coromandel direct aan Joannes van Steelandt overdragen, en met den fiskaal Becker en den secretaris Dubbeldaard naar Batavia komen om hun geschillen voor de Raad van Justitie te brengen; Jacob de Roy heeft aan zijn met Simons gemaakt accoord „sinisterlijk en quaadaardigh, y willen ontkomen; de commandeur Nicolaas Welter dient tot doordienen op Ceylon geanimeerd te worden; tegen Guerreiro's optreden op Timor is geprotesteerd en de opperkoopman Gerrit Uuygelbosch is voor nader onderzoek derwaarts gezonden; uit Ningpo kwam een jonk, uit Amoy kwamen er 3, de laatste slechts klein; er worden er van elke plaats nog 2 of 3 verwacht, » 
+dogh alle seer kleen en maar wanckans, omdat er op ’t voorstel van den Tartarischen veldheer over de provintien van Chetchian en Fockien door expres verbod des Keysers geen grooter vaartuygen als van 18 voeten wijd en 70 voeten lang mogen buytenslands varen en ook niet hooger als met 30 k 40 koppen bemand, voor dewelcke dan ginder op hun vertrek ook nogh borge moet werden gesteld en dat, soo men gerugt, om de eyge onderlinge rooverijen der Chineesen ter zee daardoor te eer te dempen. 
+Fukiën, Chinese provincie, aan zee grenzend en naar het westen tot ongeveer 116° O. L., naar het noorden tot 28£° en naar het zuiden tot 23£° N. B. lopend. 
+Het hof van Siam belette het tijdig af varen van de Sion; 6 febr. vertrok de Vecht naar Amboina, 1 1 febr. de Eenhoorn mei gouverneur Erberveld naar Makassar, 6 en 24 febr. en 1 maart de Peperboom, Handboog en Leervis Tiaar Ternate, 6 maart de Schulp naar Banda; van half januari tot 1 maart bleef het weer ongehoord onstuimig; de Taxisboom heeft carg. voor Amsterdam van f. 116056, behalve de thee, die ook voor de andere Kamers is; in totaal werd van Batavia en Ceylon in dit seizoen carg. van f. 4578498 naar pair ia gezonden; het bedrijf in Azië gaf weer verlies; de Raad van Justitie veroordeelde Joannes Hackaart, oud-fiskaal te Makassar, wegens diverse misdrijven, o. a. tot 5 jaar verbanning; de zaak tegen wijlen den schipper Barthólomeus Laf er, die dranken uitpairia meebracht, die bij justitiële verkoop 5727 rsd. opbrachten, liep uit op een inbeslagneming van het meeste daarvan; de voortvluchtige mr. Amold van Alsem, oud-fiskaal te Malakka, is wegens o. a. diefstal veroordeeld tot o. a. verbanning buiten het V. O. C. territorium; andere rechtszaken konden nog niet worden afgedaan; enige Engelse scheepjes deden Batavia aan; de weesmeesters trokken een wissel op Middelburg van 3895 rsd. » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[6]/missive[34]/header[1]" type="header" id="t1" offset="0" length="304"/>
+    <tunit xpath="//volume[6]/missive[34]/footnote[2]" type="footnote" id="t2" offset="304" length="51"/>
+    <tunit xpath="//volume[6]/missive[34]/remark[3]" type="remark" id="t3" offset="355" length="895"/>
+    <tunit xpath="//volume[6]/missive[34]/paragraph[4]" type="paragraph" id="t4" offset="1250" length="490"/>
+    <tunit xpath="//volume[6]/missive[34]/footnote[5]" type="footnote" id="t5" offset="1740" length="157"/>
+    <tunit xpath="//volume[6]/missive[34]/remark[6]" type="remark" id="t6" offset="1897" length="1208"/>
+  </tunits>
+</NAF>

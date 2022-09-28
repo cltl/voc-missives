@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:05CEST" title="Van Goens, Speelman, Bort, Hurdt, Van Outhoorn, Camphuys, Bent; Batavia, 4 november 1681" filename="missive_4_33.naf"/>
+    <public publicId="missive_4_33"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XXI. RYCKLOFF VAX GOENS, CORNELIS SPEELMAN, BALTHASAR BORT, ANTHONIO HURDT, WILLEM VAN OUTHOORN, JOANNES CAMPHUYS EN FREDERIK BENT, BATAVIA 4 november 1681. 1252, fol. 141-151. Vgl. Daghregisters 1681, p. 529-650; de gevangen genomen Koning Amsterdam » 
+schijnende selffs daerover verblijt te wesen om van het miserabel oms werven verlost te zijn ende wederom in rust te geraken. Hij houd sich alhier wel vernoegt, schuyvende zijne losse en ongebonden actiën ende offentien, d’E. Comp. e aangedaan, op den quaden raad zijner raden. Hij is in Rade van India niet gehoort, dat welligt vooreerst niet nodig zal wesen, ten ware daertoe gelegentheyt vereyschte ende werdt middelerwijl naer gelegentheydt van zaeken wel getracteert ende nog wat seperaat gehouden. 
+In het gouvernement Amboina is het rustig; het sandelhout, t. a. p. p. 617 vermeld, was gekocht van Anthonio de Hornaya 8 rsd. het picol; op Roti zijn, vgl. t. a. p. p. 616 enige honderden inwoners omgebracht; in Mataram » 
+houdende sich den Pangiran Pougar nu weder in Bagaleen en Nam- roet op geen vaste plaats en met seer groot wantrouwen van den een op den anderen, hebbende elckanderen al eens met de wapenen aangetast ende Namroet eenige gequalificeerde vrouwen van Pougar, so men zegt, onder zijn magt bekomen. 
+Namrud, Balisch avonturier, die in de oorlogen in Mataram opkwam en door huwelijk verwant raakte met Pangeran Puger, met wien hij een tijd samenwerkte. Nadat dit in vijandschap was veranderd en Puger zich met den Susuhunan had verzoend, sneuvelde Namrud in dec. 1681 in een bloedige slag tegen Couper. 
+Tekort aan zware touwen; de lading van de Pulau Run, vgl. t. a. p. p. 627 , wordt hier als f. 230 126. 8. 3 opgegeven; in Malakka is niet genoeg textiel voor de handel; de goudinkoop ter Westkust ligt weer stil; Pit, vgl. t. a. p. p. 627, bracht slechts voor /. 15 000 aan goud mee; de lichamelijk zwakke berghopman Olits wil na inspectie van de mijn bij Salida weer naar patria terugkeren » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[4]/missive[33]/header[1]" type="header" id="t1" offset="0" length="254"/>
+    <tunit xpath="//volume[4]/missive[33]/paragraph[2]" type="paragraph" id="t2" offset="254" length="505"/>
+    <tunit xpath="//volume[4]/missive[33]/remark[3]" type="remark" id="t3" offset="759" length="224"/>
+    <tunit xpath="//volume[4]/missive[33]/paragraph[4]" type="paragraph" id="t4" offset="983" length="295"/>
+    <tunit xpath="//volume[4]/missive[33]/footnote[5]" type="footnote" id="t5" offset="1278" length="303"/>
+    <tunit xpath="//volume[4]/missive[33]/remark[6]" type="remark" id="t6" offset="1581" length="393"/>
+  </tunits>
+</NAF>

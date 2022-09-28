@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:05CEST" title="Maetsuycker, Verburch, Pit, Overtwater, Van den Brouck, Thijsz; Batavia, 31 december 1667" filename="missive_3_34.naf"/>
+    <public publicId="missive_3_34"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[XL. JOAN MAETSUYKER, NICOLAES VERBURCH, LAURENS PIT, PIETER OVERTWATER, MATTHEUS VAX DEX BROUCK EN JOAN THIJSEN, BATAVIA 31 dec. 1667. 1152, fol. 195-198. Vgl. Daghregisters 1667, p. 403-412 » 
+Van Manicabo en was tot dato niemant afgecomen hetwelck den swaren regen, die daer een tijdt langh was gevallen, toegeschreven wiert ende oorsaeck is geweest, dat de ... . quantiteyt goudt niet groter heeft connen wesen. 
+In Indragiri. 
+Het werck aldaer komt ons seer te ontschieten, maer dewijl het met ernst bijderhandt genomen sij, soo en konnen wij hetselve niet ten halve laten steecken, soo lang kans wort gesien daer een goet eynde van te maecken, te meer omdat wij de bontgenoten, die haer gansche fortuyn bij ons opgeset hebben, niet en connen verlaten ofte aen der vijanden discretie overgeven, soo lang ons de noot niet swaerder en dwingt ; zijnde een werck, daer rechtevoort al dese omleggende volckeren het oogh op hebben ende waeraen consequent de reputatie van de Comp. e ten hoogsten is gelegen. 
+Voor Makassar. 
+Oordeel over Speelman , afgedr. Speelman, p. 46-47 » 
+Bij oorlogh sijn ons cloecke, weerbare jachten nodigh, bij vrede groote, oock middelbare, fluytschepen dienstiger, oock sijn wij van gevoelen, dat U Ed. e seer wel sullen doen ons successive eenige hechte, snedige hoeckerboots toe te senden, alsoo deselve met weynigh volck gevoert connen worden ende soo alhier als elders tot vele gelegentheden seer dienstigh sijn. Voor Tematen alleen eyscht den e. Speelman 5 ét 6 stx. 
+Veel wissels werden in 1667 aangevraagd , nu slechts voor 300 rsd. » 
+Deselve meest sijn overges. 82 uyt penningen, die bij de Comp. e è. deposito gestaen hebben, soodat de interesten daerbij wel sooveel sijn gesoulageert ofte vermindert, maer de cassa heeft er cleyn gevoelen van gehadt. 
+De lading van de nu repatriërende Spreeuw is vnl. textiel, zijde en peper; in 1667 is 48700 picol peper naar patria gezonden; er is nog 67780 in de pakhuizen , 31925 notemuskaal, 121506 foelie, 229920 kaneel, geen kruidnagelen » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[3]/missive[34]/header[1]" type="header" id="t1" offset="0" length="194"/>
+    <tunit xpath="//volume[3]/missive[34]/paragraph[2]" type="paragraph" id="t2" offset="194" length="222"/>
+    <tunit xpath="//volume[3]/missive[34]/footnote[3]" type="footnote" id="t3" offset="416" length="15"/>
+    <tunit xpath="//volume[3]/missive[34]/paragraph[4]" type="paragraph" id="t4" offset="431" length="576"/>
+    <tunit xpath="//volume[3]/missive[34]/footnote[5]" type="footnote" id="t5" offset="1007" length="16"/>
+    <tunit xpath="//volume[3]/missive[34]/remark[6]" type="remark" id="t6" offset="1023" length="54"/>
+    <tunit xpath="//volume[3]/missive[34]/paragraph[7]" type="paragraph" id="t7" offset="1077" length="423"/>
+    <tunit xpath="//volume[3]/missive[34]/remark[8]" type="remark" id="t8" offset="1500" length="70"/>
+    <tunit xpath="//volume[3]/missive[34]/paragraph[9]" type="paragraph" id="t9" offset="1570" length="220"/>
+    <tunit xpath="//volume[3]/missive[34]/remark[10]" type="remark" id="t10" offset="1790" length="230"/>
+  </tunits>
+</NAF>

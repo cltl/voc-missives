@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:05CEST" title="Maetsuycker, Verburch, Pit, Overtwater, Speelman, Van Hoorn; Batavia, 13 december 1672" filename="missive_3_58.naf"/>
+    <public publicId="missive_3_58"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[LXIV. JOAN MAETSUYKER, NICOLAES VERBURCH, LAURENS PIT, PIETER OVERTWATER, CORNELIS SPEELMAN EN PIETER VAN HOORN, BATAVIA 13 dec. 1672. 1175, fol. 149-153. Vgl. voor de inhoud Daghregisters 1672 p. 348-349 gegevens Japan , vgl. Beschrijvinge II, I, p. 445, v anaf „Buy ten" vrijwel letterlijk gelijk; mogelijk wordt er 60% winst gemaakt ; men moet er evenals de Chinezen nu aan den gouverneur van Nagasaki verkopen, die met 50% winst doorverkoopt; vgl. ibid., p. 445-446 » 
+d’Engelsen waeren daer met haer scheepjen geweest, waeren gelicentieert te handelen en te woonen omlaegh bij alle de vreemdelingen, behalven onse natie alleen. Sij hadde haere goederen bij provisie aen landt gebraght, waeren gints in ’t leste van junij verscheenen, maer en hadden tot het vertreck van d’onse van daer niets vercoght, soo door de veelvoudige vexatien, als omdat se haere goederen te hoogh op geldt hielden en hadde haer scheepien in ’t eerste van september ledigh naer Tajoan versonden. 
+In Tonkin. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[3]/missive[58]/header[1]" type="header" id="t1" offset="0" length="473"/>
+    <tunit xpath="//volume[3]/missive[58]/paragraph[2]" type="paragraph" id="t2" offset="473" length="504"/>
+    <tunit xpath="//volume[3]/missive[58]/footnote[3]" type="footnote" id="t3" offset="977" length="12"/>
+  </tunits>
+</NAF>

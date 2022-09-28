@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:05CEST" title="Speelman, Bort, Hurdt, Van Outhoorn, Camphuys, Bent; Batavia, 8 januari 1682" filename="missive_4_37.naf"/>
+    <public publicId="missive_4_37"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[IV. CORNELIS SPEELMAN, BALTHASAR BORT, ANTHONIO HURDT, WILLEM VAN OUTHOORN, JOANNES CAMPHUYS EN FREDERIK BENT, BATAVIA 8 januari 1682. 1252, fol. 341-344. Vgl. Daghregisters 1681, p. 789-796 en 1682, p. 1-17; onder de 2000 volgelingen van Namrud , die te Masir sneuvelden, waren 500 vrouwen, die medestreden ; men verzekert, dat » 
+gedurende desen ganschen oorlog hoe zeer wij ook getergt zijn geworden, so veel zagtmoedigheyt en genade geoeffent is, dat wij mogen zeggen onszelven daarmede benadeelt en al te veel barmhertigheyt gebruykt te hebben, waardoor sommige belhamels nu en dan geschiappeert en weder in de rujTnte geraekt zijn om quaat te doen. 
+Bedoeld wordt gedurende de gehele expeditie, die sinds 1677 tot herstel van den rechtmatigen Susuhunan was uitgezonden. 
+Er is maar 3000 picol peper in voorraad voor de laatste retourschepen » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[4]/missive[37]/header[1]" type="header" id="t1" offset="0" length="332"/>
+    <tunit xpath="//volume[4]/missive[37]/paragraph[2]" type="paragraph" id="t2" offset="332" length="324"/>
+    <tunit xpath="//volume[4]/missive[37]/footnote[3]" type="footnote" id="t3" offset="656" length="121"/>
+    <tunit xpath="//volume[4]/missive[37]/remark[4]" type="remark" id="t4" offset="777" length="73"/>
+  </tunits>
+</NAF>

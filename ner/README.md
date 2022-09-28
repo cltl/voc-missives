@@ -1,9 +1,19 @@
 # NER with pretrained language models
 
 ## Prerequisites
-See [INSTALL.md](../INSTALL.md#installing-transformers) for installation instructions.
+Fine-tuning was conducted with a development version of the Transformers library; see [INSTALL.md](../INSTALL.md#installing-transformers) for installation instructions.
 
-## Data preparation
+To run the fine-tuned model with the Transformer model, it is sufficient to install Transformers, e.g. with pytorch:
+```
+pip install transformers[torch]
+```
+See the Transformers [installation guide](https://huggingface.co/docs/transformers/installation) for more information.
+
+## Running the fine-tuned model
+The script `ner/src/utils/pipeline.py` shows how to call the Transformers pipeline to load and run the `CLTL/gm-ner-xlmrbase` model. This script is used by `scripts/tf/ner-loop.sh` to extract missives from Text-Fabric, annotate them with the NER model, and export annotations for ingestion by Text-Fabric.
+
+## Model fine-tuning and experiments
+### Data preparation
 The corpus is provided under `voc-missives/data/ner/corpus`. 
 
 The script `./scripts/preprocessing/prep_data.py` performs the following operations:
@@ -13,7 +23,7 @@ model has its own tokenizer, so that this operation is model specific.
 * optionally (`-g` flag), GPE labels are remapped to LOC. Rare labels are automatically remapped (LOCpart -> LOCderiv; ORGpart -> ORG; REL and RELpart -> RELderiv)
 
 
-## Fine-tuning Test
+### Fine-tuning Test
 You can test your installation with the script and config files in the `./test` folder. 
 These will let you fine-tune XLM-R-base on 
 the notes and test the resulting model on both the notes and text test sets.
@@ -37,11 +47,11 @@ The config files for training fine-tune for a single epoch, using only part of t
 Training and prediction are logged under `./test/logs`. 
 This should take 5 to 10mn on a laptop, and result in 31.17 F1 on the notes and 32.26 on the text.
 
-## Replicating experiments
+### Replicating experiments
 The `./experiments` folder contains job scripts and config files (per seed) for replication. 
 You will need to adapt paths to your own working directory.
 
-### Standard NER
+#### Standard NER
 *(no distinction between LOC and GPE labels)*
 
 Prepare the data:
@@ -51,7 +61,7 @@ python ./scripts/preprocessing/prep_data.py -i ../data/ner/corpus -o experiments
 
 See the `./experiments/loc` folder for config files and fine-tuning scripts.
 
-### NER with metonymical use of locations
+#### NER with metonymical use of locations
 *(distinction between LOC and GPE labels, where GPE labels identify agent-like use of locations)*
 
 Prepare the data:

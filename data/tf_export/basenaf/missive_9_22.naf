@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:06CEST" title="Van Cloon, Blom, Van der Schuer, Westpalm, De Witte, Van Schooten, Van Bayen, Oostwalt, Valckenier, Schaghen, Patras, Thedens, Coyett; Batavia, 8 december 1732" filename="missive_9_22.naf"/>
+    <public publicId="missive_9_22"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:06CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:06CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[III. DIRK VAN CLOON, WIJBRANT BLOM, JOAN EVERARD VAN DER SCHUER, MICHIEL WESTPALM, JOAN FRANQOIS DE WITTE VAN SCHOOTEN, HERMAN VAN BAYEN, ADRIAAN OOSTWALT, ADRIAAN VALCKENIER, JOAN PAUL SCHAGHEN, ABRAHAM PATRAS, JOHANNES THEDENS EN FREDERIK JULIUS COYETT, BATAVIA 8 december 1732, secreet. Kol. Arch. 2102, VOC 2210, fol. 3211-3212. Tekst af gedrukt in De Jonge, Opkomst, dl. 6, p. 196-201 » 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[9]/missive[22]/header[1]" type="header" id="t1" offset="0" length="393"/>
+  </tunits>
+</NAF>

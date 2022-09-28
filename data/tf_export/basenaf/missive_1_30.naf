@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<NAF xml:lang="en" version="3.2">
+  <nafHeader>
+    <fileDesc creationtime="2022-10-04T10:16:05CEST" title="Reael; Bantam, 10 november 1617" filename="missive_1_30.naf"/>
+    <public publicId="missive_1_30"/>
+    <linguisticProcessors layer="raw">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="tunits">
+      <lp timestamp="2022-10-04T10:16:05CEST" name="tf-clariah-gm" version="1.0"/>
+    </linguisticProcessors>
+  </nafHeader>
+  <raw><![CDATA[V. LAURENS REAEL, BANTAM 10 november 1617. copie 978, fol 180-187 tezamen met VI en VII. 
+Ick sien wel, dat aen alle canten fraye caritaten werdden gedaen van deghene, die onse zaken van achteren cunnen sien ende gelegentheyt hebben omme daerover uytte uyteompste te commentariëren, derhalven ick geluckich achte soodanige, die onder de oogen haerer meesters haeren dienst mogen volvoeren ende elcken oogenblick hare actie door hare presentie beschermen ende verdedigen; derhalven, mij belangende, ick wensche de ure te sien, dat ick mijn meer dan zesjarige administratie oock eens mach verantwoorden. Biddende U E. hierop serieuselick te willen letten, dat onse verlossing, ingevalle tselve tot noch toe niet geschiet en is, metten eersten versorcht mach werdden ende mij sal vrundtschap geschieden. 
+]]></raw>
+  <tunits>
+    <tunit xpath="//volume[1]/missive[30]/header[1]" type="header" id="t1" offset="0" length="90"/>
+    <tunit xpath="//volume[1]/missive[30]/paragraph[2]" type="paragraph" id="t2" offset="90" length="712"/>
+  </tunits>
+</NAF>
